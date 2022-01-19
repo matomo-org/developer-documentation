@@ -127,7 +127,8 @@ Follow these guidelines when creating your own translation keys:
 
 1. **Reuse!** If a core plugin contains a translation you can use, use that instead. If there's a translation you want to use but can't because it's in the wrong case, don't use functions like `lcfirst` and `ucfirst` as it won't work in all languages and rather create a new translation key.
 2. **Use numbered placeholders** if more than one is required in your text.
-3. Simple HTML (`<br>,<i>,<strong>`) can be in the translation key. Other HTML where elements have attributed these should not be in the translation. Use placeholders like `%1$s` instead and pass the HTML as arguments when you translate. 
+3. Simple HTML (`<br>,<i>,<strong>`) can be in the translation key. Other HTML where elements have attributed these should not be in the translation. Use placeholders like `%1$s` instead and pass the HTML as arguments when you translate.
+4. Consider adding a new translation string rather than modifying an existing one. If changing an existing translation string in English remember that it takes a while for the other languages to be updated through Weblate. This means the existing translations of the English string will remain until they are updated and merged from Weblate. This also causes problems if you are adding or removing placeholders as the translations can then have the wrong number of placeholders.
 
 Using numbered placeholders, such as `%1$s`, `%2$s`, etc. instead of `%s` makes it possible for translators to switch the order. That might be necessary to translate it to certain languages properly.
 
