@@ -90,6 +90,26 @@ public function pingSite($siteMainUrl)
     file_get_contents($siteMainUrl);
 }
 ```
+### Retrying tasks that fail
+
+By default, a scheduled task that fails with an exception will not be run again until it's next normal execution time.
+If your task fails in a way where it would be appropriate to retry, then you can throw a `Piwik\SchedulerRetryableException`. 
+The task scheduler will reschedule any task that fails with a `RetryableException` to try the task again in one hour and the retry up to a maxium of three times.
+
+```php
+public function myTask()
+{
+    try {
+        // do something
+    } catch (Exception $e) {
+        if ($e->getMessage() == "Some API: too many requests, please retry later") {
+            throw new RetryableException($e->getMessage())           
+        } else {
+            throw $e;
+        }
+    }
+}
+```
 
 ### Testing scheduled tasks
 
