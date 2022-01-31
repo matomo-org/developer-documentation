@@ -35,8 +35,8 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 * `enableCrossDomainLinking()` - Enable cross domain linking. By default, the visitor ID that identifies a unique visitor is stored in the browser's first party cookies. This means the cookie can only be accessed by pages on the same domain. If you own multiple domains and would like to track all the actions and pageviews of a specific visitor into the same visit, you may enable [cross domain linking (learn more)](https://matomo.org/faq/how-to/faq_23654/) . Whenever a user clicks on a link it will append a URL parameter `pk_vid` to the clicked URL which forwards the current visitor ID value to the page of the different domain.
 * `setCrossDomainLinkingTimeout( timeout )` - Set the cross domain linking timeout (in seconds). By default, the two visits across domains will be linked together when the link is clicked and the page is loaded within a 180 seconds timeout window.`
 * `getCrossDomainLinkingUrlParameter()` - Get the query parameter to append to links to handle cross domain linking. Use this to add cross domain support for links that are added to the DOM dynamically.  [Learn more about cross domain linking](https://matomo.org/faq/how-to/faq_23654/). 
-* `disableBrowserFeatureDetection()` - Disable the the browser fingerprint tracking [Learn more about fingerprint tracking](https://matomo.org/faq/how-do-i-disable-browser-feature-detection-completely/)
- * `enableBrowserFeatureDetection()` - Enable the the browser fingerprint tracking [Learn more about fingerprint tracking](https://matomo.org/faq/general/how-is-the-visitor-config_id-processed/)  
+* `disableBrowserFeatureDetection()` - Disable the browser fingerprint tracking [Learn more about fingerprint tracking](https://matomo.org/faq/how-do-i-disable-browser-feature-detection-completely/)
+ * `enableBrowserFeatureDetection()` - Enable the browser fingerprint tracking [Learn more about fingerprint tracking](https://matomo.org/faq/general/how-is-the-visitor-config_id-processed/)  
 
 ### Configuration of the Tracker Object
 
