@@ -2797,6 +2797,7 @@ Callback Signature:
 ## Segment
 
 - [Segment.addSegments](#segmentaddsegments)
+- [Segment.filterSegments](#segmentfiltersegments)
 
 ### Segment.addSegments
 
@@ -2818,6 +2819,23 @@ Callback Signature:
 <pre><code>function($list)</code></pre>
 
 - [SegmentsList](/api-reference/Piwik/Segment/SegmentsList) `$list` An instance of the SegmentsList. You can add segments to the list this way.
+
+
+### Segment.filterSegments
+
+*Defined in [Piwik/Segment/SegmentsList](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Segment/SegmentsList.php) in line [147](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Segment/SegmentsList.php#L147)*
+
+Triggered to filter segment definitions. **Example**
+
+    public function filterSegments(&$segmentList)
+    {
+        $segmentList->remove('Category');
+    }
+
+Callback Signature:
+<pre><code>function($list)</code></pre>
+
+- [SegmentsList](/api-reference/Piwik/Segment/SegmentsList) `$list` An instance of the SegmentsList.
 
 ## SegmentEditor
 
