@@ -73,17 +73,21 @@ $notification->raw = true;
 
 ## Notifications using JavaScript
 
-Client side notifications can be shown using the `Notification.show` method:
+Client side notifications can be shown using the `NotificationsStore` singleton:
 
-```javascript
-var id = 'MyPluginName_unsucessfulLogin';
-var context = 'info'; // or 'warning' or 'error' or 'success'
-var UI = require('piwik/UI');
-var notification = new UI.Notification();
-notification.show(message, {context: context, id: id, title: 'Optional'});
-setTimeout(function () {
-    // optional
-    notification.scrollToNotification();
+```typescript
+import { NotificationsStore } from 'CoreHome';
+
+const instanceId = NotificationsStore.show({
+    id: 'MyPluginName_unsucessfulLogin',
+    type: 'transient',
+    context: 'info', // or 'warning' or 'error' or 'success'
+    title: 'Optional',
+    message,
+});
+
+setTimeout(() => {
+    NotificationsStore.scrollToNotification(instanceId);
 }, 200);
 ```
 
@@ -91,8 +95,21 @@ The options are the same as for PHP notifications.
 
 ### Placing a notification
 
-A unique feature that is available to JavaScript notifications is it's possibility to show the notification in a specific part of a page using the `placeat` property. Simply specify a CSS selector and Matomo will show the message as part of this element instead of the status bar.
+To place a notification in a specific part of the page, use the `Notification` Vue component specifically in
+another component.
 
-```javascript
-notification.show(message, {placeat: 'body .myElement', id: id});
+To place a notification outside of Vue, you can use the `placeat` option:
+
+```typescript
+import { NotificationsStore } from 'CoreHome';
+
+const instanceId = NotificationsStore.show({
+    type: 'transient',
+    context: 'info', // or 'warning' or 'error' or 'success'
+    title: 'Optional',
+    message,
+    placeat: '#mySelector', // this can also be an HTMLElement
+});
 ```
+
+The element that `placeat` references will be mounted as Vue app and any initial contents removed.
