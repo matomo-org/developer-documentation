@@ -5,6 +5,21 @@ category: DevelopInDepth
 
 This documents advanced and/or uncommon patterns found in Matomo's use of Vue.
 
+## Vue compilation
+
+Plugin UMD modules are compiled through the Vue CLI tool. This tool uses Webpack and passes the code in a plugin's `vue/`
+directory through the TypeScript compiler, then passes that output through babel to generate the final
+UMD modules.
+
+The base configuration for webpack is determined by the Vue CLI tool, but it is customized in the `vue.config.js`
+file. The webpack configuration is also partially where the TypeScript compiler is configured (the main place
+being the tsconfig.json file). Babel is configured primarily in the `babel.config.js` file.
+
+During development, TypeScript is configured to do a passthrough transpile only. This means it does very little
+type checking to keep compilation times fast. For the production UMD files however, we turn on full type checking.
+The output of this type information is stored in the `@types` directory, and is only needed and present during
+development.
+
 ## Stateful Directives
 
 In Vue, directives are meant to be stateless. The same is not true in AngularJS, the previous framework Matomo
