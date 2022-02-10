@@ -6,6 +6,7 @@ subGuides:
   - plugin-file
   - pages
   - menus
+  - request-parameters
   - expose-api-methods
   - working-with-piwiks-ui
   - plugin-settings
