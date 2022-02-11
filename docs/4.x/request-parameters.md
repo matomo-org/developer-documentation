@@ -4,7 +4,7 @@ title: Handling Request Parameters
 ---
 # Handling Request Parameters
 
-If you need to access a query or post parameter value, use the [`Common::getRequestVar()`](/api-reference/Piwik/Common#getrequestvar) method.
+If you need to access a query or post parameter value, use the [`Common::getRequestVar($varName, $varDefault = null, $varType = null, $requestArrayToUse = null)`](/api-reference/Piwik/Common#getrequestvar) method.
 
 **To avoid XSS vulnerabilities, never access `$_GET`/`$_POST` directly, always go through [Common::getRequestVar](/api-reference/Piwik/Common#getrequestvar).**
 
@@ -44,7 +44,7 @@ $var = Common::getRequestVar('var', null, 'string', $_POST);
 $var = Common::getRequestVar('var', null, 'string');
 ```
 
-This throws an exception if the variable is not provided or has another type than String
+This throws an exception if the request parameter is not provided or has another type than String
 
 ### Request parameter can be provided in a certain type, but a default should be used if not:
 
@@ -52,7 +52,7 @@ This throws an exception if the variable is not provided or has another type tha
 $var = Common::getRequestVar('var', $default, 'string');
 ```
 
-This uses $default if the variable is not provided or has another type than String
+This uses $default if the request parameter is not provided or has another type than String
 
 ### Request parameter is required but might have any type:
 
@@ -60,7 +60,7 @@ This uses $default if the variable is not provided or has another type than Stri
 $var = Common::getRequestVar('var');
 ```
 
-This throws an exception if the variable is not provided, otherwise the variable can have any type.
+This throws an exception if the request parameter is not provided, otherwise the variable can have any type.
 If you use this please ensure to do the type handling within your code, so the code won't break if an Array might be provided instead of a String.
 
 ### Request parameter can be provided, but a default should be used if not:
