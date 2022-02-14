@@ -8,6 +8,8 @@ If you need to access a query or post parameter value, use the [`Common::getRequ
 
 **To avoid XSS vulnerabilities, never access `$_GET`/`$_POST` directly, always go through [Common::getRequestVar](/api-reference/Piwik/Common#getrequestvar).**
 
+Using `Common::getRequestVar` will automatically sanitize the request variables using [Common#sanitizeInputValues](/api-reference/Piwik/Common#sanitizeinputvalues). For arrays and parsed json data this is done recursively. Internally this will escape e.g. special html characters. If you need to work with unescaped values, you may need to apply [Common#unsanitizeInputValues](/api-reference/Piwik/Common#unsanitizeinputvalues).
+
 ## Type handling
 
 When working with request variables you should be aware that your variables might not be provided with the type you expect.
