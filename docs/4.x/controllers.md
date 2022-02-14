@@ -54,9 +54,9 @@ The **`ajaxHelper`** JavaScript class is stored in the [piwik/plugins/Morpheus/j
 
 ### Getting query parameters
 
-Unlike API methods, controller methods do not take query parameters as input. If you need to access a query parameter value, use the [`Common::getRequestVar()`](/api-reference/Piwik/Common#getrequestvar) method.
+Unlike API methods, controller methods do not take query parameters as input. If you need to access a query parameter value, please have a look at [How to handle request parameters](/guides/request-parameters)
 
-**To avoid XSS vulnerabilities, never access `$_GET`/`$_POST` directly, always go through [Common::getRequestVar](/api-reference/Piwik/Common#getrequestvar).**
+
 
 ### Generating Output
 
