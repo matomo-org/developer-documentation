@@ -536,6 +536,8 @@ Index
 - [`getCurrentUserLogin()`](Piwik/Piwik.md#getcurrentuserlogin) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
 - [`getCurrentUserTokenAuth()`](Piwik/Piwik.md#getcurrentusertokenauth) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
 - [`getLoginPluginName()`](Piwik/Piwik.md#getloginpluginname) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
+- [`getPeriod()`](Piwik/Piwik.md#getperiod) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
+- [`getDate()`](Piwik/Piwik.md#getdate) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
 - [`getInformation()`](Piwik/Plugin.md#getinformation) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
 - [`getVersion()`](Piwik/Plugin.md#getversion) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
 - [`getPluginName()`](Piwik/Plugin.md#getpluginname) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)

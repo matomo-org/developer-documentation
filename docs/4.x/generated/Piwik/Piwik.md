@@ -43,6 +43,8 @@ The class defines the following methods:
 - [`postEvent()`](#postevent) &mdash; Post an event to Piwik's event dispatcher which will execute the event's observers.
 - [`addAction()`](#addaction) &mdash; Register an observer to an event.
 - [`translate()`](#translate) &mdash; Returns an internationalized string using a translation token.
+- [`getPeriod()`](#getperiod) &mdash; Returns the period provided in the current request.
+- [`getDate()`](#getdate) &mdash; Returns the date provided in the current request.
 
 <a name="getcurrentuseremail" id="getcurrentuseremail"></a>
 <a name="getCurrentUserEmail" id="getCurrentUserEmail"></a>
@@ -434,4 +436,38 @@ cannot be found for the token, the token is returned.
 
 - *Returns:*  `string` &mdash;
     The translated string or `$translationId`.
+
+<a name="getperiod" id="getperiod"></a>
+<a name="getPeriod" id="getPeriod"></a>
+### `getPeriod()`
+
+Returns the period provided in the current request.
+
+If no $default is provided, this method will throw an Exception if `period` can't be found in the request
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$default` (`string`|`null`) &mdash;
+       default value to use
+- It returns a `string` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
+
+<a name="getdate" id="getdate"></a>
+<a name="getDate" id="getDate"></a>
+### `getDate()`
+
+Returns the date provided in the current request.
+
+If no $default is provided, this method will throw an Exception if `date` can't be found in the request
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$default` (`string`|`null`) &mdash;
+       default value to use
+- It returns a `string` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
