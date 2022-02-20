@@ -2,9 +2,9 @@
 category: Integrate
 ---
 
-# Single-Page Application Tracking
+# Single-Page Application/Progressive Web App Tracking
 
-Single-page websites and web applications have become a standard over the last years. Getting the tracking of such websites and apps right is crucial to your success as you need to ensure the measured data is meaningful and correct.
+Single-page websites and Progressive Web App have become a standard over the last years. Getting the tracking of such websites and apps right is crucial to your success as you need to ensure the measured data is meaningful and correct.
 
 ## If available, consider using an existing integration for your framework
 
@@ -143,6 +143,9 @@ To trigger your Matomo tag (which calls `trackPageView`), you can either:
 2. or in your Single Page App, if you are using the 'Pageview Trigger' to trigger a Pageview, you can trigger a Tag Manager Event `{event: 'mtm.PageView'}` by calling the following line in JavaScript: `_mtm.push({'event': 'mtm.PageView'});`. 
    - This would also work similarly when you use instead the 'DOM Ready Trigger' (call `_mtm.push({'event': 'DOMReady'});`) or when you use the 'Window Loaded Trigger' (call `_mtm.push({'event': 'WindowLoad'});`
 
+## Offline Tracking
+
+If your web application require offline tracking, refer [Matomo Offline Tracking](https://matomo.org/faq/how-to/how-do-i-set-up-matomo-offline-tracking/)
 
 
 ## Questions?
