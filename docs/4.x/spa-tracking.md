@@ -4,7 +4,7 @@ category: Integrate
 
 # Single-Page Application/Progressive Web App Tracking
 
-Single-page websites and Progressive Web App have become a standard over the last years. Getting the tracking of such websites and apps right is crucial to your success as you need to ensure the measured data is meaningful and correct.
+Single-page websites and Progressive Web Apps have become a standard over the last years. Getting the tracking of such websites and apps right is crucial to your success as you need to ensure the measured data is meaningful and correct.
 
 ## If available, consider using an existing integration for your framework
 
