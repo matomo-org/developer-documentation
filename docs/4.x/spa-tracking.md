@@ -145,7 +145,7 @@ To trigger your Matomo tag (which calls `trackPageView`), you can either:
 
 ## Offline Tracking
 
-If your web application require offline tracking, refer [Matomo Offline Tracking](https://matomo.org/faq/how-to/how-do-i-set-up-matomo-offline-tracking/)
+If your web application requires offline tracking, please refer to the [Matomo  offline tracking](https://matomo.org/faq/how-to/how-do-i-set-up-matomo-offline-tracking/) guide.
 
 
 ## Questions?
