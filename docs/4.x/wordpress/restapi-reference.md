@@ -34,7 +34,7 @@ Namespace: `matomo/v1`
 * `GET languages_manager/available_language_names`
 * `GET languages_manager/language_for_user`
 * `GET live/counters`
-* `GET live/last_visit_details`
+* `GET live/last_visits_details`
 * `GET live/visitor_profile`
 * `GET live/most_recent_visitor_id`
 * `GET visits_summary/visits` (requires version 4.0.2 or newer)
