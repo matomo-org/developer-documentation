@@ -1066,6 +1066,7 @@ Index
 - [`subSeconds()`](Piwik/Date.md#subseconds) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`subPeriod()`](Piwik/Date.md#subperiod) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`secondsToDays()`](Piwik/Date.md#secondstodays) &mdash; *Method in class* [`Date`](Piwik/Date.md)
+- [`$supportsUncommitted`](Piwik/Db.md#$supportsuncommitted) &mdash; *Property in class* [`Db`](Piwik/Db.md)
 - [`segmentedFetchFirst()`](Piwik/Db.md#segmentedfetchfirst) &mdash; *Method in class* [`Db`](Piwik/Db.md)
 - [`segmentedFetchOne()`](Piwik/Db.md#segmentedfetchone) &mdash; *Method in class* [`Db`](Piwik/Db.md)
 - [`segmentedFetchAll()`](Piwik/Db.md#segmentedfetchall) &mdash; *Method in class* [`Db`](Piwik/Db.md)

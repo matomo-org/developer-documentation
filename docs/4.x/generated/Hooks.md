@@ -1227,7 +1227,7 @@ Callback Signature:
 
 ### Db.getDatabaseConfig
 
-*Defined in [Piwik/Db](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Db.php) in line [126](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Db.php#L126)*
+*Defined in [Piwik/Db](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Db.php) in line [128](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Db.php#L128)*
 
 Triggered before a database connection is established. This event can be used to change the settings used to establish a connection.
 
@@ -3254,7 +3254,7 @@ Callback Signature:
 
 ### Tracker.getDatabaseConfig
 
-*Defined in [Piwik/Tracker/Db](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/Db.php) in line [259](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/Db.php#L259)*
+*Defined in [Piwik/Tracker/Db](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/Db.php) in line [262](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/Db.php#L262)*
 
 Triggered before a connection to the database is established by the Tracker. This event can be used to change the database connection settings used by the Tracker.
 
