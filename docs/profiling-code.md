@@ -97,6 +97,8 @@ When profiling a query (before MySQL 5.7.20) or generally checking how long a qu
 
 To get more insights into a query like how many rows it will likely look at, whether it uses an index or not etc simply prepend `explain extended` or `explain format=json` or `explain format=tree` to the SQL select query. [Learn more about this here.](https://elephantdolphin.blogspot.com/2021/08/explaining-different-explains-in-mysql.html)
 
+Since MySQL 8.0.18 there is also `explain analyze` which breaks down the query execution stage by measuring each step of the query execution plan which can be a lot easier to read and understand. Learn more [here](https://dev.mysql.com/blog-archive/mysql-explain-analyze/) and [here](https://dev.mysql.com/doc/refman/8.0/en/explain.html#explain-analyze).
+
 ## JavaScript
 
 This can vary depending on the browser. You basically want to open the browser developer tools and activate the `Performance` tab.
