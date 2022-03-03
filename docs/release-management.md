@@ -83,10 +83,6 @@ See https://github.com/matomo-org/matomo-marketplace/wiki/New-Piwik-version
 
 ### When releasing a first beta
 
-#### matomo-package build script
-
-* [in `scripts/build.sh`](https://github.com/matomo-org/matomo-package/blob/master/scripts/build-package.sh), edit `CURRENT_LATEST_MAJOR_VERSION` and set it to the new major release eg. `4`
-
 #### developer.matomo.org
 
 * Follow steps as described in README.md: https://github.com/matomo-org/developer-documentation/#how-to-add-docs-for-a-new-matomo-version
