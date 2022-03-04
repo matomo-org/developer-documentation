@@ -652,7 +652,7 @@ Callback Signature:
 
 ### AssetManager.getJavaScriptFiles
 
-*Defined in [Piwik/AssetManager/UIAssetFetcher/JScriptUIAssetFetcher](https://github.com/matomo-org/matomo/blob/4.x-dev/core/AssetManager/UIAssetFetcher/JScriptUIAssetFetcher.php) in line [46](https://github.com/matomo-org/matomo/blob/4.x-dev/core/AssetManager/UIAssetFetcher/JScriptUIAssetFetcher.php#L46)*
+*Defined in [Piwik/AssetManager/UIAssetFetcher/JScriptUIAssetFetcher](https://github.com/matomo-org/matomo/blob/4.x-dev/core/AssetManager/UIAssetFetcher/JScriptUIAssetFetcher.php) in line [45](https://github.com/matomo-org/matomo/blob/4.x-dev/core/AssetManager/UIAssetFetcher/JScriptUIAssetFetcher.php#L45)*
 
 Triggered when gathering the list of all JavaScript files needed by Piwik
 and its plugins. Plugins that have their own JavaScript should use this event to make those
