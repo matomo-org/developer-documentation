@@ -655,10 +655,10 @@ Learn more about this use case [Tracking subdirectories of a domain in separate 
 
 ### Tracking a click as an outlink via CSS or JavaScript
 
-If you want to force Piwik to consider a link as an outlink (links to the current domain or to one of the alias domains), you can add the 'piwik_link' css class to the link:
+If you want to force Piwik to consider a link as an outlink (links to the current domain or to one of the alias domains), you can add the `matomo_link` or `piwik_link` css class to the link:
 
 ```html
-<a href='https://mysite.com/partner/' class='piwik_link'>Link I want to track as an outlink</a>
+<a href='https://mysite.com/partner/' class='matomo_link'>Link I want to track as an outlink</a>
 ```
 
 Note: you can customize and rename the CSS class used to force a click to be recorded as an outlink:
