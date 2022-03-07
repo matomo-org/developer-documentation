@@ -63,6 +63,7 @@ Also, as soon as we start working on the next major version, we need to require 
 * Travis CI, see what we did for Matomo 3 in https://github.com/matomo-org/matomo/pull/8452#discussion-diff-35731015L93 and https://github.com/matomo-org/travis-scripts/pull/53
 * Create the `PULL_REQUEST_TEMPLATE` similar to https://github.com/matomo-org/matomo/pull/12412/files
 * Once the build for 4.x-dev succeeds, make it the default branch for Matomo and all plugins
+* Update the [submodule github action](https://github.com/matomo-org/matomo/blob/4.x-dev/.github/workflows/submodules.yml), [composer update action](https://github.com/matomo-org/matomo/blob/4.x-dev/.github/workflows/composer-update.yml), and the [CLDR action](https://github.com/matomo-org/matomo/blob/4.x-dev/.github/workflows/update-intl.yml) to use the new main branch.
 
 #### api.matomo.org
 
@@ -81,10 +82,6 @@ Also, as soon as we start working on the next major version, we need to require 
 See https://github.com/matomo-org/matomo-marketplace/wiki/New-Piwik-version
 
 ### When releasing a first beta
-
-#### matomo-package build script
-
-* [in `scripts/build.sh`](https://github.com/matomo-org/matomo-package/blob/master/scripts/build-package.sh), edit `CURRENT_LATEST_MAJOR_VERSION` and set it to the new major release eg. `4`
 
 #### developer.matomo.org
 
