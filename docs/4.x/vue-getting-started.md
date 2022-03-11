@@ -88,25 +88,6 @@ Classes implementing the store pattern should:
 * use computed properties, not methods, to return derived data
 * provide public methods for logic that mutates the state
 
-#### Lazy store initialization
-
-Many stores will need to issue AJAX requests during initialization to provide data to components. A good place
-to do this is in the store's constructor, but not every store will be used on every page. Which means some of these
-AJAX requests will be unnecessary.
-
-To make sure these initialization requests are only issued when a store is actually used, the `lazyInitSingleton`
-method can be used:
-
-```typescript
-import { lazyInitSingleton } from 'CoreHome';
-
-class MyStore {
-    // ...
-}
-
-export default lazyInitSingleton(MyStore) as MyStore;
-```
-
 ### Accessing and changing the URL
 
 URLs in Matomo are mainly based on query parameters, the path and host are not normally used. The base URL's
