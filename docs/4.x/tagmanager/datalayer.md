@@ -19,7 +19,7 @@ _mtm.push({'orderTotal': 4545.45, 'orderCurrency': 'EUR'});
 ```
 
 <div markdown="1" class="alert alert-info">
-As the container will be loaded asynchronously and the variable `_mtm` may not be defined from the beginning, you may have to add a `var _mtm = _mtm || [];`.
+As the container will be loaded asynchronously and the variable `_mtm` may not be defined from the beginning, you may have to add a `var _mtm = window._mtm || [];`.
 </div>
 
 ### Configuration in Matomo Tag Manager

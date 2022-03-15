@@ -14,12 +14,12 @@ This way you can integrate for example any ecommerce, CRM, marketing suite, and 
 You can push one or multiple values at once to the data layer by calling the `_mtm.push` method:
 
 ```js
-var _mtm = _mtm || [];
+var _mtm = window._mtm || [];
 _mtm.push({'orderTotal': 4545.45, 'orderCurrency': 'EUR'});
 ```
 
 <div markdown="1" class="alert alert-info">
-As the container will be loaded asynchronously and the variable `_mtm` may not be defined from the beginning, you may have to add a `var _mtm = _mtm || [];`.
+As the container will be loaded asynchronously and the variable `_mtm` may not be defined from the beginning, you may have to add a `var _mtm = window._mtm || [];`.
 </div>
 
 ### Configuration in Matomo Tag Manager
@@ -31,7 +31,7 @@ To access this value as a variable in Matomo Tag Manager, create a new variable 
 Triggering an event within the container works similar as setting a variable. Simply specify a property named `event` as part of the parameters:
 
 ```js
-var _mtm = _mtm || [];
+var _mtm = window._mtm || [];
 _mtm.push({'event': 'purchase', 'orderTotal': 4545.45});
 ```
 <div markdown="1" class="alert alert-info">

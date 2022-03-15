@@ -29,7 +29,7 @@ Alternatively, you could also simply add this to the `<head>` (preferred) or `<b
 
 ```html
 <script type="text/javascript">
-var _mtm = _mtm || [];
+var _mtm = window._mtm || [];
 _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
 </script>
 <script type="text/javascript" src="${MATOMOURL}/js/container_${CONTAINERID}.js" async="true" defer="true"></script>
