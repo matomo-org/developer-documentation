@@ -44,7 +44,7 @@ as being mounted/unmounted (created/destroyed). Which means using them outside o
 
 However, AngularJS is different, in that it allows directives to simply exist and be invoked on any HTML. During
 the migration this behavior had to be maintained. Old AngularJS directives that were meant to be used on
-raw HTML outside of another stateful angularjs component/directive had to still be invoked on raw HTML.
+raw HTML outside of another stateful AngularJS component/directive had to still be invoked on raw HTML.
 
 This is accomplished by manually invoking the migrated Vue directive's mounted/unmounted on elements with
 the attribute when Matomo compiles AngularJS code. An example can be found in the Goals plugin in the
