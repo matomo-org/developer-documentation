@@ -157,7 +157,7 @@ for and notice when a vue-entry element is added to the DOM (except once on page
 If you are writing code that manually inserts HTML obtained from AJAX that can have a vue-entry element, you will
 need to run `compileVueEntryComponents()` yourself on the element containing the new HTML.
 
-**Also note that if you writing Vue code you should generally not need to use this feature, and instead
+**Also note that if you are writing Vue code you should generally not need to use this feature, and instead
 just directly use other Vue components.**
 
 Add this attribute to your HTML like so:
