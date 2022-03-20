@@ -144,3 +144,66 @@ watch(() => MatomoUrl.parsed.value, (newValue, oldValue) => {
     // do something that creates a side effect
 });
 ```
+
+### Making AjaxRequests
+
+AJAX requests in TypeScript and Vue code should use the `AjaxHelper` class exported by the CoreHome plugin.
+This class has two static methods that you can use to make requests: `fetch` and `post`. The only difference
+is `post` has a second parameter for POST parameters, but you can also specify those params in the options
+argument to `fetch`.
+
+All AJAX requests sent by Matomo are POST requests to avoid caching token_auth values in the browser.
+
+Example:
+
+```typescript
+import { AjaxHelper } from 'CoreHome';
+
+interface ResponseType {
+  id: number;
+  name: string;
+  value: string;
+}
+
+let isLoading = true;
+AjaxHelper.fetch<ResponseType>(
+  {
+    param: 'value',
+    arrayParam: [1, 2, 3],
+  },
+  {
+    // ... other AjaxHelper options ...
+    postParams: {
+      postValue: 'value 2',
+    },
+  },
+).then((response) => {
+  console.log(`Fetched ${response.name} with id = ${response.id}.`);
+}).finally(() => {
+  isLoading = false;
+});
+```
+
+#### Bulk Requests
+
+You can make bulk requests by simply passing an array of query objects to `fetch()`. All parameters will be
+sent as POST parameters.
+
+Example:
+
+```typescript
+import { AjaxHelper } from 'CoreHome';
+
+AjaxHelper.fetch<[ResponseType1, ResponseType2]>([
+  {
+    method: 'MyPlugin.firstApiRequest',
+    // ... 
+  },
+  {
+    method: 'MyPlugin.secondApiRequest',
+    // ... 
+  },
+]).then(([r1, r2]) => {
+  // use r1, r2
+});
+```

@@ -163,7 +163,7 @@ _Note: Though the object is stored in `window` and not a JS namespace, it can st
 
 To learn more about an individual function, see the method documentation in the `plugins/CoreHome/javascripts/broadcast.js` file.
 
-#### Loading new Piwik pages
+#### Loading new Matomo pages (vanilla JavaScript)
 
 To load a new page below the main Piwik menu, use the `propagateNewPage()` function with a URL to the controller method whose output should be displayed:
 
@@ -176,9 +176,9 @@ To load a new page below the main Piwik menu, use the `propagateNewPage()` funct
 })(require);
 ```
 
-### ajaxHelper
+### ajaxHelper (vanilla JavaScript)
 
-This class is considered deprecated and only exists for historical reasons as some non-angular components are still using it. You should usually instead use our angularjs service [piwikApi](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CoreHome/angularjs/common/services/piwik-api.js).
+AJAX requests in non-Vue, Vanilla JavaScript should use the `ajaxHelper` global.
 
 The `ajaxHelper` class should be used whenever you need to create an AJAX request. **Plugins should not use `$.ajax` directly.** `ajaxHelper` does some extra things that make it harder to write insecure code. It also keeps track of the current ongoing AJAX requests which is vital to the [UI tests](/guides/tests-ui).
 
