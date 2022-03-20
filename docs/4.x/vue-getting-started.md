@@ -144,3 +144,45 @@ watch(() => MatomoUrl.parsed.value, (newValue, oldValue) => {
     // do something that creates a side effect
 });
 ```
+
+
+### Using Vue components outside of Vue 
+
+Sometimes it's necessary to initiate and use a Vue component from a different context, such as in
+a twig template or in raw HTML. This can be accomplished through the use of the `vue-entry` attribute
+and the `piwikHelper.compileVueEntryComponents()` method (`Matomo.helper.compileVueEntryComponents()` in Vue code).
+
+Add this attribute to your HTML like so:
+
+```html
+<div
+  vue-entry="MyPlugin.MyComponent"
+  prop-value="&quot;value for propValue property&quot;"
+  my-other-property="{&quot;name&quot;: &quot;the name&quot;}"
+/>
+```
+
+This would mount the `MyComponent` component exported by `MyPlugin` in the div. It would pass the attribute values
+as the component's initial prop values. All attribute values should be JSON encoded.
+
+If your component uses slots, you can add a list of components for your slot content to use via a vue-components
+attribute:
+
+```html
+<div
+  vue-entry="MyPlugin.MyComponent"
+  vue-components="CoreHome.ProgressBar MyOtherPlugin.MyOtherComponent"
+>
+  <template v-slot:content>
+    <div id="my-content">
+      <my-other-component>
+        ...
+      </my-other-component>
+
+      <progress-bar
+        ...
+      />
+    </div>
+  </template>
+</div>
+```
