@@ -42,7 +42,7 @@ Some directives that do this include:
 Generally directives are a Vue specific concept. They involve methods that deal with Vue's update cycle as well
 as being mounted/unmounted (created/destroyed). Which means using them outside of Vue doesn't make sense.
 
-However, AngularJS is different, in that it allows directives to simply exist and invoked on any HTML. During
+However, AngularJS is different, in that it allows directives to simply exist and be invoked on any HTML. During
 the migration this behavior had to be maintained. Old AngularJS directives that were meant to be used on
 raw HTML outside of another stateful angularjs component/directive had to still be invoked on raw HTML.
 
