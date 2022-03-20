@@ -152,6 +152,14 @@ Sometimes it's necessary to initiate and use a Vue component from a different co
 a twig template or in raw HTML. This can be accomplished through the use of the `vue-entry` attribute
 and the `piwikHelper.compileVueEntryComponents()` method (`Matomo.helper.compileVueEntryComponents()` in Vue code).
 
+**Note: this attribute has to be handled manually by Matomo. Matomo's frontend does not automatically scan
+for and notice when a vue-entry element is added to the DOM (except once on page load and when displaying widgets/reporting pages).**
+If you are writing code that manually inserts HTML obtained from AJAX that can have a vue-entry element, you will
+need to run `compileVueEntryComponents()` yourself on the element containing the new HTML.
+
+**Also note that if you writing Vue code you should generally not need to use this feature, and instead
+just directly use other Vue components.**
+
 Add this attribute to your HTML like so:
 
 ```html
@@ -186,3 +194,4 @@ attribute:
   </template>
 </div>
 ```
+
