@@ -145,7 +145,7 @@ watch(() => MatomoUrl.parsed.value, (newValue, oldValue) => {
 });
 ```
 
-### Making AjaxRequests
+### Making AJAX Requests
 
 AJAX requests in TypeScript and Vue code should use the `AjaxHelper` class exported by the CoreHome plugin.
 This class has two static methods that you can use to make requests: `fetch` and `post`. The only difference
