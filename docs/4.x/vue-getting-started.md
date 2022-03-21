@@ -207,3 +207,52 @@ AjaxHelper.fetch<[ResponseType1, ResponseType2]>([
   // use r1, r2
 });
 ```
+
+### Using Vue components outside of Vue 
+
+Sometimes it's necessary to initiate and use a Vue component from a different context, such as in
+a twig template or in raw HTML. This can be accomplished through the use of the `vue-entry` attribute
+and the `piwikHelper.compileVueEntryComponents()` method (`Matomo.helper.compileVueEntryComponents()` in Vue code).
+
+**Note: this attribute has to be handled manually by Matomo. Matomo's frontend does not automatically scan
+for and notice when a vue-entry element is added to the DOM (except once on page load and when displaying widgets/reporting pages).**
+If you are writing code that manually inserts HTML obtained from AJAX that can have a vue-entry element, you will
+need to run `compileVueEntryComponents()` yourself on the element containing the new HTML.
+
+**Also note that if you are writing Vue code you should generally not need to use this feature, and instead
+just directly use other Vue components.**
+
+Add this attribute to your HTML like so:
+
+```html
+<div
+  vue-entry="MyPlugin.MyComponent"
+  prop-value="&quot;value for propValue property&quot;"
+  my-other-property="{&quot;name&quot;: &quot;the name&quot;}"
+/>
+```
+
+This would mount the `MyComponent` component exported by `MyPlugin` in the div. It would pass the attribute values
+as the component's initial prop values. All attribute values should be JSON encoded.
+
+If your component uses slots, you can add a list of components for your slot content to use via a vue-components
+attribute:
+
+```html
+<div
+  vue-entry="MyPlugin.MyComponent"
+  vue-components="CoreHome.ProgressBar MyOtherPlugin.MyOtherComponent"
+>
+  <template v-slot:content>
+    <div id="my-content">
+      <my-other-component>
+        ...
+      </my-other-component>
+
+      <progress-bar
+        ...
+      />
+    </div>
+  </template>
+</div>
+```
