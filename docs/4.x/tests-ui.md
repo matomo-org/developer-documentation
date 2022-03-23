@@ -324,6 +324,8 @@ The `tests:sync-ui-screenshots` console command can be used to speed up the proc
 
 For example executing `./console tests:sync-ui-screenshots {buildnumber}`, the script will automatically download all screenshots of tests that failed on Travis (meaning there was a change in the expected screenshot compared to the processed screenshot).
 
+For private repositories you need to also set the options `--http-user=$artifactsusername$ --http-password=$artifactspassword$` and set the correct artifacts username and password values.
+
 ## Learn more
 
 Check out this blog post to learn more about Screenshot Tests in Piwik:
