@@ -5,6 +5,11 @@ category: DevelopInDepth
 
 Upfront: This document is working draft and far from being complete. We will improve this over time as we do more work with Vue.
 
+## Development Workflow
+
+To learn how to structure and build a Vue module in your Matomo plugin, see the
+[relevant part of the Working with Matomo's UI guide](/guides/working-with-piwiks-ui#typescript-and-vue-workflow).
+
 ## Developer Concepts
 
 ### Component State vs. Application State
