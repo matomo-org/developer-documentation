@@ -20,6 +20,16 @@ type checking to keep compilation times fast. For the production UMD files howev
 The output of this type information is stored in the `@types` directory, and is only needed and present during
 development.
 
+### cli-service-proxy.js
+
+When compiling .vue files, the Vue CLI service splits out the TypeScript part of the file before feeding it into
+the TypeScript compiler. If errors are detected in this part of the file, the line numbers in the output will
+correspond to the location in the `<script>` element, not to the whole .vue file, which is not especially
+convenient.
+
+The `cli-service-proxy.js` file in the CoreVue plugins invokes the Vue CLI service and corrects these line numbers
+in the TypeScript output. `vue:build` invokes the proxy script.
+
 ## Stateful Directives
 
 In Vue, directives are meant to be stateless. The same is not true in AngularJS, the previous framework Matomo
