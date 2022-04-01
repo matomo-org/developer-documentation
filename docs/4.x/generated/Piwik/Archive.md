@@ -365,7 +365,7 @@ query parameter data. API methods can use this method to reduce code redundancy.
        If true, loads all subtables. See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)
     - `$flat` (`bool`) &mdash;
        If true, loads all subtables and disabled all recursive filters.
-    - `$idSubtable` (`int`|`null`) &mdash;
+    - `$idSubtable` (`int`|`null`|`string`) &mdash;
        See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)
     - `$depth` (`int`|`null`) &mdash;
        See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)
