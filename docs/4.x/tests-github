@@ -1,0 +1,31 @@
+---
+category: Develop
+previous: tests-js-tracker
+next: tests-troubleshooting
+---
+# Running tests/builds on GitHub Action
+
+[Github Action](https://github.com/features/actions) is a continuous integration tool that will run tests/builds for a GitHub repository every time commits are pushed.
+
+## Matomo on GitHub Action 
+
+Matomo uses GitHub Action to automatically run its build on every commit (for every branch and pull request).
+
+Each developer is responsible to keep the build green.
+
+## Github Action Scripts
+
+All the Github Action build file are locate in `.github/workflows/*.yml`
+
+Each scripts are trigger by its own conditions, for more details see [Github Action Docs](https://docs.github.com/en/actions)
+
+## Create a new CI script
+
+To create a new CI script please read [Quickstart for GitHub Actions](https://docs.github.com/en/actions/quickstart) 
+
+We recommend fork the Matomo project first and run on your own pipeline first. Also, please check the list before get starts.
+
+
+- Marketplace: To use a marketplace action/container, please always choose the official service or container.
+- Security Check: Make sure you read [script injection attacks](https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions#example-of-a-script-injection-attack) and [Security hardening](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions) 
+- Permission: we recommend use read permissions for the CI unless you want to update the code after CI runs, for more details [Assigning permissions to jobs](https://docs.github.com/en/enterprise-cloud@latest/actions/using-jobs/assigning-permissions-to-jobs) 
