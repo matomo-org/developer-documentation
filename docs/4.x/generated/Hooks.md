@@ -810,7 +810,7 @@ Usages:
 
 ### Config.beforeSave
 
-*Defined in [Piwik/Config/IniFileChain](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Config/IniFileChain.php) in line [540](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Config/IniFileChain.php#L540)*
+*Defined in [Piwik/Config/IniFileChain](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Config/IniFileChain.php) in line [549](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Config/IniFileChain.php#L549)*
 
 Triggered before a config is being written / saved on the local file system. A plugin can listen to it and modify which settings will be saved on the file system. This allows you
 to prevent saving config values that a plugin sets on demand. Say you configure the database password in the
@@ -823,7 +823,7 @@ by listening to this event like this:
     }
 
 Callback Signature:
-<pre><code>function(&amp;$values)</code></pre>
+<pre><code>function(&amp;$values]</code></pre>
 
 - array &$values Config values that will be saved
 
@@ -948,12 +948,12 @@ Callback Signature:
 
 ### Core.configFileDeleted
 
-*Defined in [Piwik/Config/Cache](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Config/Cache.php) in line [80](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Config/Cache.php#L80)*
+*Defined in [Piwik/Config/Cache](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Config/Cache.php) in line [87](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Config/Cache.php#L87)*
 
 
 
 Callback Signature:
-<pre><code>function($this-&gt;getFilename($id))</code></pre>
+<pre><code>function($this-&gt;getFilename($id)]</code></pre>
 
 
 ### Core.configFileSanityCheckFailed
