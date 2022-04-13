@@ -11,7 +11,7 @@ This way you can integrate for example any ecommerce, CRM, marketing suite, and 
 
 ## Setting a variable
 
-You can push one or multiple values at once to the data layer by calling the `_mtm.push` method:
+You can push one or multiple values at once to the data layer by calling the `window._mtm.push` method:
 
 ```js
 window._mtm = window._mtm || [];
@@ -19,7 +19,7 @@ window._mtm.push({'orderTotal': 4545.45, 'orderCurrency': 'EUR'});
 ```
 
 <div markdown="1" class="alert alert-info">
-As the container will be loaded asynchronously and the variable `_mtm` may not be defined from the beginning, you may have to add a `var _mtm = window._mtm || [];`.
+As the container will be loaded asynchronously and the variable `_mtm` may not be defined from the beginning, you may have to add a `window._mtm = window._mtm || [];`.
 </div>
 
 ### Configuration in Matomo Tag Manager

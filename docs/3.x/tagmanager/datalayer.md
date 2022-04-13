@@ -11,7 +11,7 @@ This way you can integrate for example any ecommerce, CRM, marketing suite, and 
 
 ## Setting a variable
 
-You can push one or multiple values at once to the data layer by calling the `_mtm.push` method:
+You can push one or multiple values at once to the data layer by calling the `window._mtm.push` method:
 
 ```js
 window._mtm = window._mtm || [];
