@@ -35,8 +35,8 @@ When you activate the preview mode, a cookie will be set in your browser that ac
 You may also enable debug messages without enabling the debug mode on the container by calling the following JavaScript code:
 
 ```js
-var _mtm = _mtm || [];
-_mtm.push(['enableDebugMode']);
+window._mtm = window._mtm || [];
+window._mtm.push(['enableDebugMode']);
 ```
 
 This will log various debug messages to the developer console and is targeted to developers only. It is recommended calling this code as early as possible.
