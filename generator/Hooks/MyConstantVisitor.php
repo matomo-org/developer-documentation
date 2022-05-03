@@ -25,7 +25,7 @@ class MyConstantVisitor extends \PHPParser\NodeVisitorAbstract
 
             $prettyPrinter = new \PHPParser\PrettyPrinter\Standard();
 
-            static::$constants[$node->name] = $prettyPrinter->prettyPrintExpr($node->value);
+            static::$constants[(string) $node->name] = $prettyPrinter->prettyPrintExpr($node->value);
         }
     }
 }

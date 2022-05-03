@@ -15,7 +15,7 @@ if (!defined('PIWIK_VENDOR_PATH')) {
 
 require_once PIWIK_INCLUDE_PATH . '/vendor/autoload.php';
 require $rootDir . '/generator/vendor/autoload.php';
-require $rootDir . '/generator/vendor/nikic/php-parser/lib/bootstrap.php';
+//require $rootDir . '/generator/vendor/nikic/php-parser/lib/bootstrap.php';
 require_once PIWIK_INCLUDE_PATH . '/libs/upgradephp/upgrade.php';
 
 $environment = new \Piwik\Application\Environment(null);
