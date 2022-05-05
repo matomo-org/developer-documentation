@@ -2966,7 +2966,7 @@ Usages:
 Use this event to register new SEO metrics providers.
 
 Callback Signature:
-<pre><code>function(&amp;$providers)</code></pre>
+<pre><code>function(&amp;$providers]</code></pre>
 
 - array `&$providers` Contains an array of Piwik\Plugins\SEO\Metric\MetricsProvider instances.
 
