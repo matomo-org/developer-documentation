@@ -1371,7 +1371,7 @@ Callback Signature:
 
 ### Http.sendHttpRequest
 
-*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Http.php) in line [317](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Http.php#L317)*
+*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Http.php) in line [318](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Http.php#L318)*
 
 Triggered to send an HTTP request. Allows plugins to resolve the HTTP request themselves or to find out
 when an HTTP request is triggered to log this information for example to a monitoring tool.
@@ -1399,7 +1399,7 @@ Callback Signature:
 
 ### Http.sendHttpRequest.end
 
-*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Http.php) in line [803](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Http.php#L803)*
+*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Http.php) in line [804](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Http.php#L804)*
 
 Triggered when an HTTP request finished. A plugin can for example listen to this and alter the response,
 status code, or finish a timer in case the plugin is measuring how long it took to execute the request
