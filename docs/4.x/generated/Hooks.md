@@ -1945,7 +1945,7 @@ Usages:
 
 ### MultiSites.filterRowsForTotalsCalculation
 
-*Defined in [Piwik/Plugins/MultiSites/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/MultiSites/API.php) in line [526](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/MultiSites/API.php#L526)*
+*Defined in [Piwik/Plugins/MultiSites/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/MultiSites/API.php) in line [563](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/MultiSites/API.php#L563)*
 
 Triggered to filter / restrict which rows should be included in the MultiSites (All Websites Dashboard)
 totals calculation **Example**
