@@ -9,6 +9,7 @@ category: DevelopInDepth
 * If you stop working on this issue for some reason, and you won't continue working on this issue, then unassign yourself and leave a comment about any kind of useful information and ideally why you stopped working on it.
 * Read the issue description carefully (best to read it twice) and make sure you fully understand the issue. If anything is unclear, comment in the issue and ask for more information.
 * If the issue is a bit bigger or there are many ways to solve this (from a UX or from a code perspective) and it's not clear which way to go be great to comment the findings and mentions this in a comment and seek the feedback from others. It may also help additionally going on a call with someone if it's not easy, as sometimes talking about things and discussing something with another human can help make things more clear.
+* When working on an issue that is likely to take longer than say 4 days because it is some complex refactoring or work, then it might be good to write first some concept and double check the concept is a good idea before doing any work on it.
 
 ## Commenting on issues
 
