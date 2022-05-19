@@ -200,15 +200,15 @@ External contributor pull requests should be reviewed in the same way as PRs fro
 
 ### Best practices
 
-* There should be some performance considerations although mostly things should be fine and we can change things later when needed to not micro-optimise.
-* Where it makes sense we might want to think about adding more informational results to the diagnostic report if there’s a way to troubleshoot such an issue easier/faster next time.
+* There should be some performance considerations, although mostly things should be fine, and we can change things later when needed to not micro-optimise.
+* Where it makes sense, we might want to think about adding more informational results to the diagnostic report if there’s a way to troubleshoot such an issue easier/faster next time.
 * Utilise the checklist in the PRs to make sure we paid attention to everything
 * Start looking at a PR from a high level and work your way down
 * Read the article: [Pull Requests: How to Get and Give Good Feedback](https://www.kickstarter.com/backing-and-hacking/pull-requests-how-to-get-and-give-good-feedback).
 
 For below best practices credits go to [Michael Lynch (mtlynch.io/human-code-reviews-1/)](https://mtlynch.io/human-code-reviews-1/#tie-notes-to-principles-not-opinions) see [license](https://creativecommons.org/licenses/by/4.0/). Minor changes were made to summarise the points.
 
--   **Say "we" instead of "you".** Eg Can we rename this variable to something more descriptive, like seconds_remaining? vs You misspelled 'successfully.' It minimizes the risk of raising your teammate's defenses
+-   **Say "we" instead of "you".** Eg Can we rename this variable to something more descriptive, like seconds_remaining? vs You misspelled 'successfully.' It minimizes the risk of raising your team mate's defences
 
 -   **Frame feedback as requests, not commands**
 
@@ -216,11 +216,11 @@ For below best practices credits go to [Michael Lynch (mtlynch.io/human-code-rev
     -   vs Request: Can we move the Foo class to a separate file?
     -   People like to feel in control of their own work. Making a request of the author gives them a sense of autonomy.
 
--   **Tie notes to principles, not opinions when possible.** Eg Instead of saying, "We should split this class into two," it's better to say, "Right now, this class is responsible for both downloading the file and parsing it. We should split it up into a downloader class and parsing class per the single responsibility principle." You can't always articulate exactly what is wrong with a piece of code in terms of established principles. Sometimes code is just ugly or unintuitive, and it's hard to pin down why. In these cases, explain what you can, but keep it objective. If you say, "I found this hard to understand," that's at least an objective statement, as opposed to, "this is confusing," which is a value judgment and may not be true for every person.
+-   **Tie notes to principles, not opinions, when possible.** Eg Instead of saying, "We should split this class into two," it's better to say, "Right now, this class is responsible for both downloading the file and parsing it. We should split it up into a downloader class and parsing class per the single responsibility principle." You can't always articulate exactly what is wrong with a piece of code in terms of established principles. Sometimes code is just ugly or unintuitive, and it's hard to pin down why. In these cases, explain what you can, but keep it objective. If you say, "I found this hard to understand," that's at least an objective statement, as opposed to, "this is confusing," which is a value judgement and may not be true for every person.
 
 -   **Limit feedback on repeated patterns.** When you notice that several of the author's mistakes fit the same pattern, don't flag every single instance. Point it out maybe 2 or 3 times and then rather point out the pattern not each individual mistake.
--   **Respect the scope of the review:** The rule of thumb is: if the changelist doesn't touch the line, it's out of scope.
--   **Offer sincere praise:** Reviews are a valuable opportunity to reinforce positive behaviors. Any time you see something in the changelist that delights you, tell the author about it:
+-   **Respect the scope of the review:** The rule of thumb is: if the change list doesn't touch the line, it's out of scope.
+-   **Offer sincere praise:** Reviews are a valuable opportunity to reinforce positive behaviors. Any time you see something in the change list that delights you, tell the author about it:
 
     -   "I wasn't aware of this API. That's really useful!"
     -   "This is an elegant solution. I never would have thought of that."
@@ -229,7 +229,7 @@ For below best practices credits go to [Michael Lynch (mtlynch.io/human-code-rev
 
 -   **Grant approval when remaining fixes are trivial**
 
-    -   We don't get stuck on minor things. It shouldn't matter if some code can be simplified by a few words or lines if the functionality itself works. It's also fine if the coding style isn't 100% correct. Most important is really that things work. Typos are fine too.
+    -   We don't get stuck on minor things. It shouldn't matter if some code can be simplified by a few words or lines if the functionality itself works. It's also fine if the coding style isn't 100% correct. Most important is really that things work. Typos are fine, too.
 
     -   The goal of submitting and reviewing a PR is to have the code merged, so try to focus on what is left to be done to merge the PR. The only time a review should not give a clear idea of what is left to be done for approval and merging is if the PR has very basic, fundamental issues that prevent it from being properly reviewed (eg the person who submitted it failed to do basic tests and/or the feature doesn't do what it is supposed to do).
 
