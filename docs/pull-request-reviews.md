@@ -60,6 +60,15 @@ Here are best practises we aim to follow when creating, reviewing and merging pu
 * PHP code should use our [Matomo code standards](/guides/coding-standards)
 * Pull requests should contain tests
 
+In the ideal efficiency case a Pull Request can be approved immediately. Obviously this is not always possible and many times useful information, considerations, edge cases, etc will be added by the reviewer which is also valuable. However, in aiming for fewer communication round trips during reviews the following points should be considered.
+
+* It is important that a reviewer is able to checkout your PR branch and run it in their environment without syntax errors, missing files, missing imports, console warnings/errors for js changes, or other simple bugs that a quick test would reveal. These types of issues create an immediate, unnecessary communication round trip and diminish the reviewer’s confidence in your work as a whole.
+* Check the PR does what you intended and matches the issue you’re working off.
+* Include comments in the PR if they would help clarify anything to the reviewer.
+* If the PR fixes an existing issue, reference it by mentioning `fix #issue-number` (eg `fix #11111`) in the PR description. This way the related issue will be closed automatically when the PR is merged.
+* Check PhpStorm for highlights as it can reveal many kinds of errors (including syntax errors, unused variables, missing import statements and more) that are easily avoidable.
+* The reviewer of your PR will run the code to see that it is doing the right thing, so you should also run your own code through it’s main use cases, including through the UI, through any applicable console commands, and for frontend changes consider trying it in a few different browsers.
+
 ## Reviewing Pull Requests
 
 ### Reviewing Core Developer PRs
