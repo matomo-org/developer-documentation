@@ -29,6 +29,7 @@ class DevelopInDepthCategory extends Category
                 new Guide('contributing-to-piwik-core'),
                 new Guide('contributing-to-piwik-plugins'),
                 new Guide('coding-standards'),
+                new Guide('using-github-issues'),
                 new Guide('pull-request-reviews'),
                 new Guide('core-team-workflow'),
                 new Guide('maintaining-plugins'),
