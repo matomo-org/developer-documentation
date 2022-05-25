@@ -120,11 +120,11 @@ object.
 #### Signature
 
 
-- *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|`Piwik\API\Map`|`string` &mdash;
+- *Returns:*  `Stmt_Namespace\DataTable`|`Stmt_Namespace\Map`|`string` &mdash;
     The data resulting from the API call.
 - It throws one of the following exceptions:
-    - `Piwik\Exception\PluginDeactivatedException` &mdash; if the module plugin is not activated.
-    - [`Exception`](http://php.net/class.Exception) &mdash; if the requested API method cannot be called, if required parameters for the
+    - `Stmt_Namespace\PluginDeactivatedException` &mdash; if the module plugin is not activated.
+    - `Stmt_Namespace\Exception` &mdash; if the requested API method cannot be called, if required parameters for the
                   API method are missing or if the API method throws an exception and the **format**
                   query parameter is **original**.
 
@@ -154,7 +154,7 @@ request within any request, have a look at [isApiRequest()](/api-reference/Piwik
 
 - It returns a `bool` value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - `Stmt_Namespace\Exception`
 
 <a name="iscurrentapirequesttherootapirequest" id="iscurrentapirequesttherootapirequest"></a>
 <a name="isCurrentApiRequestTheRootApiRequest" id="isCurrentApiRequestTheRootApiRequest"></a>
@@ -169,7 +169,7 @@ can be called programmatically. These requests are considered "child" API reques
 
 - It returns a `bool` value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - `Stmt_Namespace\Exception`
 
 <a name="isapirequest" id="isapirequest"></a>
 <a name="isApiRequest" id="isApiRequest"></a>
@@ -188,7 +188,7 @@ request or not, call [isRootRequestApiRequest()](/api-reference/Piwik/API/Reques
        eg array('module' => 'API', 'method' => 'Test.getMethod')
 - It returns a `bool` value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - `Stmt_Namespace\Exception`
 
 <a name="getmethodifapirequest" id="getmethodifapirequest"></a>
 <a name="getMethodIfApiRequest" id="getMethodIfApiRequest"></a>
@@ -205,7 +205,7 @@ Returns the current API method being executed, if the current request is an API 
 - *Returns:*  `string`|`null` &mdash;
     
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - `Stmt_Namespace\Exception`
 
 <a name="processrequest" id="processrequest"></a>
 <a name="processRequest" id="processRequest"></a>

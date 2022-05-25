@@ -163,7 +163,6 @@
 ## Plugins\PagePerformance\Columns\Metrics\AverageTimeServer
 ## Plugins\PagePerformance\Columns\Metrics\AverageTimeTransfer
 ## Plugins\Tour\Engagement\Challenge
-## Plugins\TreemapVisualization\TreemapConfig
 ## Plugins\UsersManager\UserPreferences
 ## Plugins\VisitFrequency\Columns\Metrics\ReturningMetric
 ## RankingQuery

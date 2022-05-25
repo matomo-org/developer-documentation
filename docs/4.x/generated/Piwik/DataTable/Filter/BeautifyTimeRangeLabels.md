@@ -5,7 +5,7 @@ BeautifyTimeRangeLabels
 
 A DataTable filter that replaces range labels whose values are in seconds with prettier, human-friendlier versions.
 
-This filter customizes the behavior of the [BeautifyRangeLabels](/api-reference/Piwik/DataTable/Filter/BeautifyRangeLabels) filter
+This filter customizes the behavior of the BeautifyRangeLabels filter
 so range values that are less than one minute are displayed in seconds but
 other ranges are displayed in minutes.
 
@@ -19,7 +19,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`filter()`](#filter) &mdash; See [ColumnCallbackReplace](/api-reference/Piwik/DataTable/Filter/ColumnCallbackReplace). Inherited from [`ColumnCallbackReplace`](../../../Piwik/DataTable/Filter/ColumnCallbackReplace.md)
+- [`filter()`](#filter) &mdash; See ColumnCallbackReplace. Inherited from [`ColumnCallbackReplace`](../../../Piwik/DataTable/Filter/ColumnCallbackReplace.md)
 - [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 - [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 - [`beautify()`](#beautify) &mdash; Beautifies a range label and returns the pretty result. Inherited from [`BeautifyRangeLabels`](../../../Piwik/DataTable/Filter/BeautifyRangeLabels.md)
@@ -49,12 +49,12 @@ Constructor.
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-See [ColumnCallbackReplace](/api-reference/Piwik/DataTable/Filter/ColumnCallbackReplace).
+See ColumnCallbackReplace.
 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+    - `$table` (`Stmt_Namespace\DataTable`) &mdash;
       
 - It does not return anything or a mixed result.
 
@@ -89,7 +89,7 @@ Filters a row's subtable, if one exists and is loaded in memory.
 <a name="beautify" id="beautify"></a>
 ### `beautify()`
 
-Beautifies a range label and returns the pretty result. See [BeautifyRangeLabels](/api-reference/Piwik/DataTable/Filter/BeautifyRangeLabels).
+Beautifies a range label and returns the pretty result. See BeautifyRangeLabels.
 
 #### Signature
 

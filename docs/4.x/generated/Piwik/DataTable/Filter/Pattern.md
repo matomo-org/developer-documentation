@@ -16,10 +16,10 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`filter()`](#filter) &mdash; See [Pattern](/api-reference/Piwik/DataTable/Filter/Pattern).
+- [`filter()`](#filter) &mdash; See Pattern.
 - [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 - [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
-- [`filterArray()`](#filterarray) &mdash; See [Pattern](/api-reference/Piwik/DataTable/Filter/Pattern).
+- [`filterArray()`](#filterarray) &mdash; See Pattern.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -43,12 +43,12 @@ Constructor.
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-See [Pattern](/api-reference/Piwik/DataTable/Filter/Pattern).
+See Pattern.
 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+    - `$table` (`Stmt_Namespace\DataTable`) &mdash;
       
 - It does not return anything or a mixed result.
 
@@ -83,7 +83,7 @@ Filters a row's subtable, if one exists and is loaded in memory.
 <a name="filterArray" id="filterArray"></a>
 ### `filterArray()`
 
-See [Pattern](/api-reference/Piwik/DataTable/Filter/Pattern).
+See Pattern.
 
 #### Signature
 

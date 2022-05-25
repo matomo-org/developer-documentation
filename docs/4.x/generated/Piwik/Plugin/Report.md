@@ -286,7 +286,7 @@ Defaults to false
 Here you can configure how your report should be displayed and which capabilities your report has. For instance
 whether your report supports a "search" or not. EG `$view->config->show_search = false`. You can also change the
 default request config. For instance you can change how many rows are displayed by default:
-`$view->requestConfig->filter_limit = 10;`. See [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) for more information.
+`$view->requestConfig->filter_limit = 10;`. See ViewDataTable for more information.
 
 #### Signature
 
@@ -509,7 +509,7 @@ recommended related report.
 
 #### Signature
 
-- It returns a [`Report[]`](../../Piwik/Plugin/Report.md) value.
+- It returns a `Stmt_Namespace\Report` value.
 
 <a name="getparameters" id="getparameters"></a>
 <a name="getParameters" id="getParameters"></a>
@@ -528,7 +528,7 @@ Returns the Dimension instance of this report's subtable report.
 #### Signature
 
 
-- *Returns:*  [`Dimension`](../../Piwik/Columns/Dimension.md)|`null` &mdash;
+- *Returns:*  `Stmt_Namespace\Dimension`|`null` &mdash;
     The subtable report's dimension or null if there is subtable report or
                        no dimension for the subtable report.
 
@@ -541,7 +541,7 @@ Returns the Dimension instance of the subtable report of this report's subtable 
 #### Signature
 
 
-- *Returns:*  [`Dimension`](../../Piwik/Columns/Dimension.md)|`null` &mdash;
+- *Returns:*  `Stmt_Namespace\Dimension`|`null` &mdash;
     The subtable report's dimension or null if there is no subtable report or
                        no dimension for the subtable report.
 
@@ -566,7 +566,7 @@ Fetches the report represented by this instance.
 -  It accepts the following parameter(s):
     - `$paramOverride` (`array`) &mdash;
        Query parameter overrides.
-- It returns a [`DataTable`](../../Piwik/DataTable.md) value.
+- It returns a `Stmt_Namespace\DataTable` value.
 
 <a name="fetchsubtable" id="fetchsubtable"></a>
 <a name="fetchSubtable" id="fetchSubtable"></a>
@@ -581,7 +581,7 @@ Fetches a subtable for the report represented by this instance.
        The subtable ID.
     - `$paramOverride` (`array`) &mdash;
        Query parameter overrides.
-- It returns a [`DataTable`](../../Piwik/DataTable.md) value.
+- It returns a `Stmt_Namespace\DataTable` value.
 
 <a name="getfordimension" id="getfordimension"></a>
 <a name="getForDimension" id="getForDimension"></a>
@@ -595,7 +595,7 @@ Finds a top level report that provides stats for a specific Dimension.
     - `$dimension` ([`Dimension`](../../Piwik/Columns/Dimension.md)) &mdash;
        The dimension whose report we're looking for.
 
-- *Returns:*  [`Report`](../../Piwik/Plugin/Report.md)|`null` &mdash;
+- *Returns:*  `Stmt_Namespace\Report`|`null` &mdash;
     The
 
 <a name="getprocessedmetricsbyid" id="getprocessedmetricsbyid"></a>
@@ -606,7 +606,7 @@ Returns an array mapping the ProcessedMetrics served by this report by their str
 
 #### Signature
 
-- It returns a [`ProcessedMetric[]`](../../Piwik/Plugin/ProcessedMetric.md) value.
+- It returns a `Stmt_Namespace\ProcessedMetric` value.
 
 <a name="getmetricsfortable" id="getmetricsfortable"></a>
 <a name="getMetricsForTable" id="getMetricsForTable"></a>
@@ -625,7 +625,7 @@ Includes ProcessedMetrics and Metrics.
       
     - `$baseType` (`string`) &mdash;
        The base type each metric class needs to be of.
-- It returns a [`Metric[]`](../../Piwik/Plugin/Metric.md) value.
+- It returns a `Stmt_Namespace\Metric` value.
 
 <a name="getprocessedmetricsfortable" id="getprocessedmetricsfortable"></a>
 <a name="getProcessedMetricsForTable" id="getProcessedMetricsForTable"></a>
@@ -642,5 +642,5 @@ as well as the DataTable metadata.
       
     - `$report` ([`Report`](../../Piwik/Plugin/Report.md)) &mdash;
       
-- It returns a [`ProcessedMetric[]`](../../Piwik/Plugin/ProcessedMetric.md) value.
+- It returns a `Stmt_Namespace\ProcessedMetric` value.
 

@@ -133,7 +133,7 @@ This method uses data that is found in query parameters, so the parameters to th
 function can be string values.
 
 If you want to create an Archive instance with an array of Period instances, use
-[Archive::factory()](/api-reference/Piwik/Archive#factory).
+Archive::factory().
 
 #### Signature
 
@@ -142,13 +142,13 @@ If you want to create an Archive instance with an array of Period instances, use
        A single ID (eg, `'1'`), multiple IDs (eg, `'1,2,3'` or `array(1, 2, 3)`), or `'all'`.
     - `$period` (`string`) &mdash;
        'day', `'week'`, `'month'`, `'year'` or `'range'`
-    - `$strDate` ([`Date`](../Piwik/Date.md)|`string`) &mdash;
-       'YYYY-MM-DD', magic keywords (ie, 'today'; [Date::factory()](/api-reference/Piwik/Date#factory) or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD').
+    - `$strDate` (`Stmt_Namespace\Date`|`string`) &mdash;
+       'YYYY-MM-DD', magic keywords (ie, 'today'; Date::factory() or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD').
     - `$segment` (`bool`|`false`|`string`) &mdash;
        Segment definition or false if no segment should be used. [Segment](/api-reference/Piwik/Segment)
     - `$_restrictSitesToLogin` (`bool`|`false`|`string`) &mdash;
        Used only when running as a scheduled task.
-- It returns a `Piwik\Archive\ArchiveQuery` value.
+- It returns a `Stmt_Namespace\ArchiveQuery` value.
 
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>
@@ -176,7 +176,7 @@ use [build()](/api-reference/Piwik/Archive#build).
        Whether `'all'` sites are being queried or not. If true, then the result of querying functions will be indexed by site, regardless of whether `count($idSites) == 1`.
     - `$isMultipleDate` (`bool`) &mdash;
        Whether multiple dates are being queried or not. If true, then the result of querying functions will be indexed by period, regardless of whether `count($periods) == 1`.
-- It returns a `Piwik\Archive\ArchiveQuery` value.
+- It returns a `Stmt_Namespace\ArchiveQuery` value.
 
 <a name="shouldskiparchiveifskippingsegmentarchivefortoday" id="shouldskiparchiveifskippingsegmentarchivefortoday"></a>
 <a name="shouldSkipArchiveIfSkippingSegmentArchiveForToday" id="shouldSkipArchiveIfSkippingSegmentArchiveForToday"></a>
@@ -236,7 +236,7 @@ and process blob data.
     - `$idSubtable`
       
 
-- *Returns:*  `Piwik\Archive\DataCollection` &mdash;
+- *Returns:*  `Stmt_Namespace\DataCollection` &mdash;
     the queried data.
 
 <a name="getdatatablefromnumeric" id="getdatatablefromnumeric"></a>
@@ -249,10 +249,10 @@ If multiple sites were requested in [build()](/api-reference/Piwik/Archive#build
 be a DataTable\Map that is indexed by site ID.
 
 If multiple periods were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
-be a [Map](/api-reference/Piwik/DataTable/Map) that is indexed by period.
+be a DataTable\Map that is indexed by period.
 
 The site ID index is always first, so if multiple sites & periods were requested, the result
-will be a [Map](/api-reference/Piwik/DataTable/Map) indexed by site ID which contains [Map](/api-reference/Piwik/DataTable/Map) instances that are
+will be a DataTable\Map indexed by site ID which contains DataTable\Map instances that are
 indexed by period.
 
 _Note: Every DataTable instance returned will have at most one row in it. The contents of each
@@ -264,7 +264,7 @@ _Note: Every DataTable instance returned will have at most one row in it. The co
     - `$names` (`string`|`array`) &mdash;
        One or more archive names, eg, 'nb_visits', 'Referrers_distinctKeywords', etc.
 
-- *Returns:*  [`DataTable`](../Piwik/DataTable.md)|[`Map`](../Piwik/DataTable/Map.md) &mdash;
+- *Returns:*  `Stmt_Namespace\DataTable`|`Stmt_Namespace\DataTable\Map` &mdash;
     A DataTable if multiple sites and periods were not requested.
                                 An appropriately indexed DataTable\Map if otherwise.
 
@@ -274,17 +274,17 @@ _Note: Every DataTable instance returned will have at most one row in it. The co
 
 Queries and returns one or more reports as DataTable instances.
 
-This method will query blob data that is a serialized array of of [Row](/api-reference/Piwik/DataTable/Row)'s and
+This method will query blob data that is a serialized array of of DataTable\Row's and
 unserialize it.
 
 If multiple sites were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
-be a [Map](/api-reference/Piwik/DataTable/Map) that is indexed by site ID.
+be a DataTable\Map that is indexed by site ID.
 
 If multiple periods were requested in [build()](/api-reference/Piwik/Archive#build) or [factory()](/api-reference/Piwik/Archive#factory) the result will
 be a DataTable\Map that is indexed by period.
 
 The site ID index is always first, so if multiple sites & periods were requested, the result
-will be a [Map](/api-reference/Piwik/DataTable/Map) indexed by site ID which contains [Map](/api-reference/Piwik/DataTable/Map) instances that are
+will be a DataTable\Map indexed by site ID which contains DataTable\Map instances that are
 indexed by period.
 
 #### Signature
@@ -295,9 +295,9 @@ indexed by period.
     - `$idSubtable` (`int`|`string`|`null`) &mdash;
        The ID of the subtable to get (if any).
 
-- *Returns:*  [`DataTable`](../Piwik/DataTable.md)|[`Map`](../Piwik/DataTable/Map.md) &mdash;
+- *Returns:*  `Stmt_Namespace\DataTable`|`Stmt_Namespace\DataTable\Map` &mdash;
     A DataTable if multiple sites and periods were not requested.
-                                An appropriately indexed [Map](/api-reference/Piwik/DataTable/Map) if otherwise.
+                                An appropriately indexed DataTable\Map if otherwise.
 
 <a name="getdatatableexpanded" id="getdatatableexpanded"></a>
 <a name="getDataTableExpanded" id="getDataTableExpanded"></a>
@@ -312,7 +312,7 @@ If multiple periods were requested in [build()](/api-reference/Piwik/Archive#bui
 be a DataTable\Map that is indexed by period.
 
 The site ID index is always first, so if multiple sites & periods were requested, the result
-will be a [indexed](/api-reference/Piwik/DataTable/Map) by site ID which contains [Map](/api-reference/Piwik/DataTable/Map) instances that are
+will be a indexed by site ID which contains DataTable\Map instances that are
 indexed by period.
 
 #### Signature
@@ -327,7 +327,7 @@ indexed by period.
     - `$addMetadataSubtableId` (`bool`) &mdash;
        Whether to add the database subtable ID as metadata to each datatable, or not.
 
-- *Returns:*  [`DataTable`](../Piwik/DataTable.md)|[`Map`](../Piwik/DataTable/Map.md) &mdash;
+- *Returns:*  `Stmt_Namespace\DataTable`|`Stmt_Namespace\DataTable\Map` &mdash;
     
 
 <a name="getparams" id="getparams"></a>
@@ -339,7 +339,7 @@ this Archive will query data for.
 
 #### Signature
 
-- It returns a `Piwik\Archive\Parameters` value.
+- It returns a `Stmt_Namespace\Parameters` value.
 
 <a name="createdatatablefromarchive" id="createdatatablefromarchive"></a>
 <a name="createDataTableFromArchive" id="createDataTableFromArchive"></a>
@@ -365,12 +365,12 @@ query parameter data. API methods can use this method to reduce code redundancy.
        If true, loads all subtables. See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)
     - `$flat` (`bool`) &mdash;
        If true, loads all subtables and disabled all recursive filters.
-    - `$idSubtable` (`int`|`null`) &mdash;
+    - `$idSubtable` (`int`|`null`|`string`) &mdash;
        See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)
     - `$depth` (`int`|`null`) &mdash;
        See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)
 
-- *Returns:*  [`DataTable`](../Piwik/DataTable.md)|[`Map`](../Piwik/DataTable/Map.md) &mdash;
+- *Returns:*  `Stmt_Namespace\DataTable`|`Stmt_Namespace\DataTable\Map` &mdash;
     
 
 <a name="getpluginforreport" id="getpluginforreport"></a>

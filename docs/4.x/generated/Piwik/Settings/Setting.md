@@ -39,7 +39,7 @@ Constructor.
     - `$pluginName` (`string`) &mdash;
        The name of the plugin the setting belongs to
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - `Stmt_Namespace\Exception`
 
 <a name="getname" id="getname"></a>
 <a name="getName" id="getName"></a>
@@ -134,8 +134,8 @@ is returned.
 Sets and persists this setting's value overwriting any existing value.
 
 Before a value is actually set it will be made sure the current user is allowed to change the value. The value
-will be first validated either via a system built-in validate method or via a set [FieldConfig::$validate](/api-reference/Piwik/Settings/FieldConfig#$validate)
-custom method. Afterwards the value will be transformed via a possibly specified [FieldConfig::$transform](/api-reference/Piwik/Settings/FieldConfig#$transform)
+will be first validated either via a system built-in validate method or via a set FieldConfig::$validate
+custom method. Afterwards the value will be transformed via a possibly specified FieldConfig::$transform
 method. Before storing the actual value, the value will be converted to the actually specified $type.
 
 #### Signature

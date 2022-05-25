@@ -243,7 +243,7 @@ to all subtables as well.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
+    - `$className` (`string`|`Stmt_Namespace\Closure`) &mdash;
        Class name, eg. `"Sort"` or "Piwik\DataTable\Filters\Sort"`. If no namespace is supplied, `Piwik\DataTable\BaseFilter` is assumed. This parameter can also be a closure that takes a DataTable as its first parameter.
     - `$parameters` (`array`) &mdash;
        Array of extra parameters to pass to the filter.
@@ -258,7 +258,7 @@ Applies a filter to all subtables but not to this datatable.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
+    - `$className` (`string`|`Stmt_Namespace\Closure`) &mdash;
        Class name, eg. `"Sort"` or "Piwik\DataTable\Filters\Sort"`. If no namespace is supplied, `Piwik\DataTable\BaseFilter` is assumed. This parameter can also be a closure that takes a DataTable as its first parameter.
     - `$parameters` (`array`) &mdash;
        Array of extra parameters to pass to the filter.
@@ -277,7 +277,7 @@ way they will be run after the table is truncated which will result in better pe
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
+    - `$className` (`string`|`Stmt_Namespace\Closure`) &mdash;
        The class name of the filter, eg. `'Limit'`.
     - `$parameters` (`array`) &mdash;
        The parameters to give to the filter, eg. `array($offset, $limit)` for the Limit filter.
@@ -296,7 +296,7 @@ way they will be run after the table is truncated which will result in better pe
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
+    - `$className` (`string`|`Stmt_Namespace\Closure`) &mdash;
        The class name of the filter, eg. `'Limit'`.
     - `$parameters` (`array`) &mdash;
        The parameters to give to the filter, eg. `array($offset, $limit)` for the Limit filter.
@@ -336,7 +336,7 @@ metadata can be used to specify a different type of operation.
       
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - `Stmt_Namespace\Exception`
 
 <a name="getrowfromlabel" id="getrowfromlabel"></a>
 <a name="getRowFromLabel" id="getRowFromLabel"></a>
@@ -353,7 +353,7 @@ label => row ID mappings.
     - `$label` (`string`) &mdash;
        `'label'` column value to look for.
 
-- *Returns:*  [`Row`](../../Piwik/DataTable/Row.md)|`false` &mdash;
+- *Returns:*  `Stmt_Namespace\Row`|`false` &mdash;
     The row if found, `false` if otherwise.
 
 <a name="getrowidfromlabel" id="getrowidfromlabel"></a>
@@ -385,7 +385,7 @@ Returns an empty DataTable with the same metadata and queued filters as `$this` 
 -  It accepts the following parameter(s):
     - `$keepFilters` (`bool`) &mdash;
        Whether to pass the queued filter list to the new DataTable or not.
-- It returns a [`DataTable`](../../Piwik/DataTable.md) value.
+- It returns a `Stmt_Namespace\DataTable` value.
 
 <a name="getrowfromid" id="getrowfromid"></a>
 <a name="getRowFromId" id="getRowFromId"></a>
@@ -399,7 +399,7 @@ Returns a row by ID. The ID is either the index of the row or `ID_SUMMARY_ROW`.
     - `$id` (`int`) &mdash;
        The row ID.
 
-- *Returns:*  [`Row`](../../Piwik/DataTable/Row.md)|`false` &mdash;
+- *Returns:*  `Stmt_Namespace\Row`|`false` &mdash;
     The Row or false if not found.
 
 <a name="getrowfromidsubdatatable" id="getrowfromidsubdatatable"></a>
@@ -414,7 +414,7 @@ Returns the row that has a subtable with ID matching `$idSubtable`.
     - `$idSubTable` (`int`) &mdash;
        The subtable ID.
 
-- *Returns:*  [`Row`](../../Piwik/DataTable/Row.md)|`false` &mdash;
+- *Returns:*  `Stmt_Namespace\Row`|`false` &mdash;
     The row or false if not found
 
 <a name="addrow" id="addrow"></a>
@@ -433,7 +433,7 @@ this row is set as the summary row.
     - `$row` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash;
       
 
-- *Returns:*  [`Row`](../../Piwik/DataTable/Row.md) &mdash;
+- *Returns:*  `Stmt_Namespace\Row` &mdash;
     `$row` or the summary row if we're at the maximum number of rows.
 
 <a name="addsummaryrow" id="addsummaryrow"></a>
@@ -450,7 +450,7 @@ _Note: A DataTable can have only one summary row._
     - `$row` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash;
       
 
-- *Returns:*  [`Row`](../../Piwik/DataTable/Row.md) &mdash;
+- *Returns:*  `Stmt_Namespace\Row` &mdash;
     Returns `$row`.
 
 <a name="getid" id="getid"></a>
@@ -505,7 +505,7 @@ row manually.
 
 #### Signature
 
-- It returns a [`Row[]`](../../Piwik/DataTable/Row.md) value.
+- It returns a `Stmt_Namespace\Row` value.
 
 <a name="getcolumn" id="getcolumn"></a>
 <a name="getColumn" id="getColumn"></a>
@@ -600,7 +600,7 @@ Returns the first row of the DataTable.
 #### Signature
 
 
-- *Returns:*  [`Row`](../../Piwik/DataTable/Row.md)|`false` &mdash;
+- *Returns:*  `Stmt_Namespace\Row`|`false` &mdash;
     The first row or `false` if it cannot be found.
 
 <a name="getlastrow" id="getlastrow"></a>
@@ -613,7 +613,7 @@ will always be considered the last row.
 #### Signature
 
 
-- *Returns:*  [`Row`](../../Piwik/DataTable/Row.md)|`false` &mdash;
+- *Returns:*  `Stmt_Namespace\Row`|`false` &mdash;
     The last row or `false` if it cannot be found.
 
 <a name="getrowscountrecursive" id="getrowscountrecursive"></a>
@@ -692,7 +692,7 @@ Deletes a row by ID.
        The row ID.
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If the row `$id` cannot be found.
+    - `Stmt_Namespace\Exception` &mdash; If the row `$id` cannot be found.
 
 <a name="deleterowsoffset" id="deleterowsoffset"></a>
 <a name="deleteRowsOffset" id="deleteRowsOffset"></a>
@@ -724,7 +724,7 @@ Deletes a set of rows by ID.
        The list of row IDs to delete.
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If a row ID cannot be found.
+    - `Stmt_Namespace\Exception` &mdash; If a row ID cannot be found.
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>
@@ -801,7 +801,7 @@ The result of this method is intended for use with the ArchiveProcessor::insertB
                       // etc.
                   );
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If infinite recursion detected. This will occur if a table&#039;s subtable is one of its parent tables.
+    - `Stmt_Namespace\Exception` &mdash; If infinite recursion detected. This will occur if a table&#039;s subtable is one of its parent tables.
 
 <a name="addrowsfromserializedarray" id="addrowsfromserializedarray"></a>
 <a name="addRowsFromSerializedArray" id="addRowsFromSerializedArray"></a>
@@ -820,7 +820,7 @@ _Note: This function will successfully load DataTables serialized by Piwik 1.X._
        A string with the format of a string in the array returned by [serialize()](http://php.net/function.serialize()).
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if `$serialized` is invalid.
+    - `Stmt_Namespace\Exception` &mdash; if `$serialized` is invalid.
 
 <a name="addrowsfromarray" id="addrowsfromarray"></a>
 <a name="addRowsFromArray" id="addRowsFromArray"></a>
@@ -851,7 +851,7 @@ Row metadata cannot be added with this method.
        Array with the following structure: array( array( col1_name => valueA, col2_name => valueC, ...), array( col1_name => valueB, col2_name => valueD, ...), )
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if `$array` is in an incorrect format.
+    - `Stmt_Namespace\Exception` &mdash; if `$array` is in an incorrect format.
 
 <a name="makefromindexedarray" id="makefromindexedarray"></a>
 <a name="makeFromIndexedArray" id="makeFromIndexedArray"></a>

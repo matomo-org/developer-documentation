@@ -40,5 +40,5 @@ The interface defines the following methods:
 
 #### Signature
 
-- It returns a [`DiagnosticResult[]`](../../../../Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md) value.
+- It returns a `Stmt_Namespace\DiagnosticResult` value.
 

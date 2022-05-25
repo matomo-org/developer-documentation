@@ -250,7 +250,7 @@ Redirects the user to the specified URL.
       
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - `Stmt_Namespace\Exception`
 
 <a name="getreferrer" id="getreferrer"></a>
 <a name="getReferrer" id="getReferrer"></a>

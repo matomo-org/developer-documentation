@@ -25,7 +25,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`filter()`](#filter) &mdash; See [ExcludeLowPopulation](/api-reference/Piwik/DataTable/Filter/ExcludeLowPopulation).
+- [`filter()`](#filter) &mdash; See ExcludeLowPopulation.
 - [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 - [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 
@@ -42,7 +42,7 @@ Constructor.
       
     - `$columnToFilter` (`string`) &mdash;
        The name of the column whose value will determine whether a row is deleted or not.
-    - `$minimumValue` (`Piwik\DataTable\Filter\number`|`false`) &mdash;
+    - `$minimumValue` (`Stmt_Namespace\number`|`false`) &mdash;
        The minimum column value. Rows with column values < this number will be deleted. If false, `$minimumPercentageThreshold` is used.
     - `$minimumPercentageThreshold` (`bool`|`float`) &mdash;
        If supplied, column values must be a greater percentage of the sum of all column values than this percentage.
@@ -51,12 +51,12 @@ Constructor.
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-See [ExcludeLowPopulation](/api-reference/Piwik/DataTable/Filter/ExcludeLowPopulation).
+See ExcludeLowPopulation.
 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+    - `$table` (`Stmt_Namespace\DataTable`) &mdash;
       
 - It does not return anything or a mixed result.
 

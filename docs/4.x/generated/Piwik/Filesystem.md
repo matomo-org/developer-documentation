@@ -87,7 +87,7 @@ Copies a file from `$source` to `$dest`.
        Whether to avoid copying files if the file is related to PHP (includes .php, .tpl, .twig files).
 - It returns a `true` value.
 - It throws one of the following exceptions:
-    - `Piwik\Exception\Exception` &mdash; If the file cannot be copied.
+    - `Stmt_Namespace\Exception` &mdash; If the file cannot be copied.
 
 <a name="copyrecursive" id="copyrecursive"></a>
 <a name="copyRecursive" id="copyRecursive"></a>
@@ -106,7 +106,7 @@ Copies the contents of a directory recursively from `$source` to `$target`.
        Whether to avoid copying files if the file is related to PHP (includes .php, .tpl, .twig files).
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - `Piwik\Exception\Exception` &mdash; If a file cannot be copied.
+    - `Stmt_Namespace\Exception` &mdash; If a file cannot be copied.
 
 <a name="deletefileifexists" id="deletefileifexists"></a>
 <a name="deleteFileIfExists" id="deleteFileIfExists"></a>

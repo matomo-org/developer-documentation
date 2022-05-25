@@ -113,7 +113,7 @@ Check that the current user is either the specified user or the superuser.
        A username.
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - [`Piwik\NoAccessException`](../Piwik/NoAccessException.md) &mdash; If the user is neither the Super User nor the user `$theUser`.
+    - `Stmt_Namespace\NoAccessException` &mdash; If the user is neither the Super User nor the user `$theUser`.
 
 <a name="hastheusersuperuseraccess" id="hastheusersuperuseraccess"></a>
 <a name="hasTheUserSuperUserAccess" id="hasTheUserSuperUserAccess"></a>
@@ -158,7 +158,7 @@ Checks that the user is not the anonymous user.
 
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - [`Piwik\NoAccessException`](../Piwik/NoAccessException.md) &mdash; if the current user is the anonymous user.
+    - `Stmt_Namespace\NoAccessException` &mdash; if the current user is the anonymous user.
 
 <a name="checkuserhassuperuseraccess" id="checkuserhassuperuseraccess"></a>
 <a name="checkUserHasSuperUserAccess" id="checkUserHasSuperUserAccess"></a>
@@ -170,7 +170,7 @@ Check that the current user has superuser access.
 
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if the current user is not the superuser.
+    - `Stmt_Namespace\Exception` &mdash; if the current user is not the superuser.
 
 <a name="isuserhasadminaccess" id="isuserhasadminaccess"></a>
 <a name="isUserHasAdminAccess" id="isUserHasAdminAccess"></a>
@@ -198,7 +198,7 @@ Checks that the current user has admin access to the requested list of sites.
        One or more site IDs to check access for.
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If user doesn&#039;t have admin access.
+    - `Stmt_Namespace\Exception` &mdash; If user doesn&#039;t have admin access.
 
 <a name="isuserhassomeadminaccess" id="isuserhassomeadminaccess"></a>
 <a name="isUserHasSomeAdminAccess" id="isUserHasSomeAdminAccess"></a>
@@ -220,7 +220,7 @@ Checks that the current user has write access to at least one site.
 
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if user doesn&#039;t have write access to any site.
+    - `Stmt_Namespace\Exception` &mdash; if user doesn&#039;t have write access to any site.
 
 <a name="isuserhassomewriteaccess" id="isuserhassomewriteaccess"></a>
 <a name="isUserHasSomeWriteAccess" id="isUserHasSomeWriteAccess"></a>
@@ -257,7 +257,7 @@ Checks that the current user has admin access to at least one site.
 
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if user doesn&#039;t have admin access to any site.
+    - `Stmt_Namespace\Exception` &mdash; if user doesn&#039;t have admin access to any site.
 
 <a name="isuserhasviewaccess" id="isuserhasviewaccess"></a>
 <a name="isUserHasViewAccess" id="isUserHasViewAccess"></a>
@@ -298,7 +298,7 @@ Checks that the current user has view access to the requested list of sites
        The list of site IDs to check access for.
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if the current user does not have view access to every site in the list.
+    - `Stmt_Namespace\Exception` &mdash; if the current user does not have view access to every site in the list.
 
 <a name="checkuserhaswriteaccess" id="checkuserhaswriteaccess"></a>
 <a name="checkUserHasWriteAccess" id="checkUserHasWriteAccess"></a>
@@ -313,7 +313,7 @@ Checks that the current user has write access to the requested list of sites
        The list of site IDs to check access for.
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if the current user does not have write access to every site in the list.
+    - `Stmt_Namespace\Exception` &mdash; if the current user does not have write access to every site in the list.
 
 <a name="isuserhassomeviewaccess" id="isuserhassomeviewaccess"></a>
 <a name="isUserHasSomeViewAccess" id="isUserHasSomeViewAccess"></a>
@@ -335,7 +335,7 @@ Checks that the current user has view access to at least one site.
 
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if user doesn&#039;t have view access to any site.
+    - `Stmt_Namespace\Exception` &mdash; if user doesn&#039;t have view access to any site.
 
 <a name="getloginpluginname" id="getloginpluginname"></a>
 <a name="getLoginPluginName" id="getLoginPluginName"></a>
@@ -452,7 +452,7 @@ If no $default is provided, this method will throw an Exception if `period` can'
        default value to use
 - It returns a `string` value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - `Stmt_Namespace\Exception`
 
 <a name="getdate" id="getdate"></a>
 <a name="getDate" id="getDate"></a>
@@ -469,5 +469,5 @@ If no $default is provided, this method will throw an Exception if `date` can't 
        default value to use
 - It returns a `string` value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - `Stmt_Namespace\Exception`
 

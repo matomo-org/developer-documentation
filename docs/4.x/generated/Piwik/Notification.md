@@ -109,7 +109,7 @@ Usage: `$notification->flags = Notification::FLAG_BAR | Notification::FLAG_FOO`.
 <a name="type" id="type"></a>
 ### `$type`
 
-The notification's display type. See `TYPE_*` constants in [Notification](/api-reference/Piwik/Notification).
+The notification's display type. See `TYPE_*` constants in Notification.
 
 #### Signature
 
@@ -119,7 +119,7 @@ The notification's display type. See `TYPE_*` constants in [Notification](/api-r
 <a name="context" id="context"></a>
 ### `$context`
 
-The notification's context (message type). See `CONTEXT_*` constants in [Notification](/api-reference/Piwik/Notification).
+The notification's context (message type). See `CONTEXT_*` constants in Notification.
 
 A notification's context determines how it will be styled.
 
@@ -132,7 +132,7 @@ A notification's context determines how it will be styled.
 ### `$priority`
 
 The notification's priority. The higher the priority, the higher the order. See `PRIORITY_*`
-constants in [Notification](/api-reference/Piwik/Notification) to see possible priority values.
+constants in Notification to see possible priority values.
 
 #### Signature
 

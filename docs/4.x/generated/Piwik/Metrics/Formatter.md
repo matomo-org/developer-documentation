@@ -60,7 +60,7 @@ Returns a prettified memory size value.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$size` (`Piwik\Metrics\number`) &mdash;
+    - `$size` (`Stmt_Namespace\number`) &mdash;
        The size in bytes.
     - `$unit` (`string`) &mdash;
        The specific unit to use, if any. If null, the unit is determined by $size.

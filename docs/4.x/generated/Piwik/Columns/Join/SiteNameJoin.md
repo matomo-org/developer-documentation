@@ -24,7 +24,7 @@ Join constructor.
 #### Signature
 
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - `Stmt_Namespace\Exception`
 
 <a name="gettable" id="gettable"></a>
 <a name="getTable" id="getTable"></a>

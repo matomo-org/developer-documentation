@@ -35,12 +35,12 @@ The class defines the following methods:
        The name of the method that will be regularly executed.
     - `$methodParameter` (`mixed`|`null`) &mdash;
        An optional parameter to pass to the method when executed. Must be convertible to string.
-    - `$scheduledTime` ([`Schedule`](../../Piwik/Scheduler/Schedule/Schedule.md)|`null`) &mdash;
+    - `$scheduledTime` (`Stmt_Namespace\Schedule`|`null`) &mdash;
        A Schedule instance that describes when the method should be executed and how long before the next execution.
     - `$priority` (`int`) &mdash;
        The priority of the task. Tasks with a higher priority will be executed first. Tasks with low priority will be executed last.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - `Stmt_Namespace\Exception`
 
 <a name="getobjectinstance" id="getobjectinstance"></a>
 <a name="getObjectInstance" id="getObjectInstance"></a>

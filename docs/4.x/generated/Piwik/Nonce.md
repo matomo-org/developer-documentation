@@ -51,7 +51,7 @@ Returns if a nonce is valid and comes from a valid request.
 A nonce is valid if it matches the current nonce and if the current nonce
 has not expired.
 
-The request is valid if the referrer is a local URL (see [Url::isLocalUrl()](/api-reference/Piwik/Url#islocalurl))
+The request is valid if the referrer is a local URL (see Url::isLocalUrl())
 and if the HTTP origin is valid (see [getAcceptableOrigins()](/api-reference/Piwik/Nonce#getacceptableorigins)).
 
 #### Signature
@@ -76,7 +76,7 @@ Returns error message
 A nonce is valid if it matches the current nonce and if the current nonce
 has not expired.
 
-The request is valid if the referrer is a local URL (see [Url::isLocalUrl()](/api-reference/Piwik/Url#islocalurl))
+The request is valid if the referrer is a local URL (see Url::isLocalUrl())
 and if the HTTP origin is valid (see [getAcceptableOrigins()](/api-reference/Piwik/Nonce#getacceptableorigins)).
 
 #### Signature

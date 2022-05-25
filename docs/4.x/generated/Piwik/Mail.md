@@ -100,7 +100,7 @@ Returns the address the mail will be sent from
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$body` ([`View`](../Piwik/View.md)|`string`) &mdash;
+    - `$body` (`Stmt_Namespace\View`|`string`) &mdash;
       
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
@@ -326,8 +326,8 @@ If the send email process throws an exception, we catch it and log it
 
 - It returns a `void` value.
 - It throws one of the following exceptions:
-    - `DI\NotFoundException`
-    - `DI\DependencyException`
+    - `Stmt_Namespace\NotFoundException`
+    - `Stmt_Namespace\DependencyException`
 
 <a name="setsmtpdebug" id="setsmtpdebug"></a>
 <a name="setSmtpDebug" id="setSmtpDebug"></a>

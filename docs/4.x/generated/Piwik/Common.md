@@ -91,7 +91,7 @@ should still be used._
 - *Returns:*  `mixed` &mdash;
     The sanitized value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If `$value` is of an incorrect type.
+    - `Stmt_Namespace\Exception` &mdash; If `$value` is of an incorrect type.
 
 <a name="unsanitizeinputvalue" id="unsanitizeinputvalue"></a>
 <a name="unsanitizeInputValue" id="unsanitizeInputValue"></a>
@@ -156,7 +156,7 @@ _See [sanitizeInputValues()](/api-reference/Piwik/Common#sanitizeinputvalues) to
 - *Returns:*  `mixed` &mdash;
     The sanitized request parameter.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; If the request parameter doesn&#039;t exist and there is no default value, or if the request parameter
+    - `Stmt_Namespace\Exception` &mdash; If the request parameter doesn&#039;t exist and there is no default value, or if the request parameter
                   exists but has an incorrect type.
 
 <a name="getsqlstringfieldsarray" id="getsqlstringfieldsarray"></a>

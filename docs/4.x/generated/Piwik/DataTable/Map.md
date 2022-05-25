@@ -94,7 +94,7 @@ See [DataTable::queueFilter()](/api-reference/Piwik/DataTable#queuefilter) for m
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
+    - `$className` (`string`|`Stmt_Namespace\Closure`) &mdash;
        Filter name, eg. `'Limit'` or a Closure.
     - `$parameters` (`array`) &mdash;
        Filter parameters, eg. `array(50, 10)`.
@@ -119,7 +119,7 @@ Apply a filter to all tables contained by this instance.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
+    - `$className` (`string`|`Stmt_Namespace\Closure`) &mdash;
        Name of filter class or a Closure.
     - `$parameters` (`array`) &mdash;
        Parameters to pass to the filter.
@@ -134,7 +134,7 @@ Apply a filter to all subtables contained by this instance.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
+    - `$className` (`string`|`Stmt_Namespace\Closure`) &mdash;
        Name of filter class or a Closure.
     - `$parameters` (`array`) &mdash;
        Parameters to pass to the filter.
@@ -149,7 +149,7 @@ Apply a queued filter to all subtables contained by this instance.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
+    - `$className` (`string`|`Stmt_Namespace\Closure`) &mdash;
        Name of filter class or a Closure.
     - `$parameters` (`array`) &mdash;
        Parameters to pass to the filter.
@@ -164,7 +164,7 @@ Returns the array of DataTables contained by this class.
 #### Signature
 
 
-- *Returns:*  [`DataTable[]`](../../Piwik/DataTable.md)|[`Map[]`](../../Piwik/DataTable/Map.md) &mdash;
+- *Returns:*  `Stmt_Namespace\DataTable`|`Stmt_Namespace\Map` &mdash;
     
 
 <a name="gettable" id="gettable"></a>
@@ -179,7 +179,7 @@ Returns the table with the specific label.
     - `$label` (`string`) &mdash;
       
 
-- *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md) &mdash;
+- *Returns:*  `Stmt_Namespace\DataTable`|`Stmt_Namespace\Map` &mdash;
     
 
 <a name="hastable" id="hastable"></a>
@@ -202,7 +202,7 @@ Returns the first element in the Map's array.
 #### Signature
 
 
-- *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md)|`false` &mdash;
+- *Returns:*  `Stmt_Namespace\DataTable`|`Stmt_Namespace\Map`|`false` &mdash;
     
 
 <a name="getlastrow" id="getlastrow"></a>
@@ -214,7 +214,7 @@ Returns the last element in the Map's array.
 #### Signature
 
 
-- *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md)|`false` &mdash;
+- *Returns:*  `Stmt_Namespace\DataTable`|`Stmt_Namespace\Map`|`false` &mdash;
     
 
 <a name="addtable" id="addtable"></a>
@@ -226,7 +226,7 @@ Adds a new DataTable or Map instance to this DataTable\Map.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md)) &mdash;
+    - `$table` (`Stmt_Namespace\DataTable`|`Stmt_Namespace\Map`) &mdash;
       
     - `$label` (`string`) &mdash;
        Label used to index this table in the array.
@@ -409,7 +409,7 @@ Note: This DataTable/Map will be destroyed and will be no longer usable after th
 #### Signature
 
 
-- *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md) &mdash;
+- *Returns:*  `Stmt_Namespace\DataTable`|`Stmt_Namespace\Map` &mdash;
     
 
 <a name="adddatatable" id="adddatatable"></a>
@@ -440,7 +440,7 @@ See DataTable::mergeSubtables().
 
 #### Signature
 
-- It returns a [`Map`](../../Piwik/DataTable/Map.md) value.
+- It returns a `Stmt_Namespace\Map` value.
 
 <a name="getemptyclone" id="getemptyclone"></a>
 <a name="getEmptyClone" id="getEmptyClone"></a>
@@ -451,7 +451,7 @@ the same key name as this instance.
 
 #### Signature
 
-- It returns a [`Map`](../../Piwik/DataTable/Map.md) value.
+- It returns a `Stmt_Namespace\Map` value.
 
 <a name="getmetadataintersectarray" id="getmetadataintersectarray"></a>
 <a name="getMetadataIntersectArray" id="getMetadataIntersectArray"></a>

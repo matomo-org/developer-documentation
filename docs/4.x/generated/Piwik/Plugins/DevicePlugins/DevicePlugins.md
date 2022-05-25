@@ -351,7 +351,7 @@ if we can't find one.
 #### Signature
 
 
-- *Returns:*  [`Date`](../../../Piwik/Date.md)|`null` &mdash;
+- *Returns:*  `Stmt_Namespace\Date`|`null` &mdash;
     
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
@@ -363,7 +363,7 @@ if we can't find one.
 #### Signature
 
 
-- *Returns:*  [`Date`](../../../Piwik/Date.md)|`null` &mdash;
+- *Returns:*  `Stmt_Namespace\Date`|`null` &mdash;
     
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)

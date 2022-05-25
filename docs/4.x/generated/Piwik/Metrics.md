@@ -6,7 +6,7 @@ Metrics
 This class contains metadata regarding core metrics and contains several related helper functions.
 
 Of note are the `INDEX_...` constants. In the database, metric column names
-in [DataTable](/api-reference/Piwik/DataTable) rows are stored as integers to save space. The integer
+in DataTable rows are stored as integers to save space. The integer
 values used are determined by these constants.
 
 Properties

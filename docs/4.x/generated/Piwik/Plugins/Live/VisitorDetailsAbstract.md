@@ -290,7 +290,7 @@ Will be called when visitor profile is initialized
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$visits` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+    - `$visits` (`Stmt_Namespace\DataTable`) &mdash;
       
     - `$profile` (`array`) &mdash;
       
@@ -312,7 +312,7 @@ Will be called for every action within the profile
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$visit` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
+    - `$visit` (`Stmt_Namespace\DataTable\Row`) &mdash;
       
     - `$profile` (`array`) &mdash;
       
@@ -365,7 +365,7 @@ Can be used to set profile information that requires data that was set while ite
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$visits` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+    - `$visits` (`Stmt_Namespace\DataTable`) &mdash;
       
     - `$profile` (`array`) &mdash;
       
@@ -380,6 +380,6 @@ Since Matomo Matomo
 #### Signature
 
 
-- *Returns:*  [`Db`](../../../Piwik/Db.md)|`Piwik\Db\AdapterInterface` &mdash;
+- *Returns:*  `Stmt_Namespace\Db`|`Stmt_Namespace\Db\AdapterInterface` &mdash;
     
 

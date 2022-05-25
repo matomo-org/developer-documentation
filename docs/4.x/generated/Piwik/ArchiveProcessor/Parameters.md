@@ -51,7 +51,7 @@ Returns the period we are computing statistics for.
 
 #### Signature
 
-- It returns a [`Period`](../../Piwik/Period.md) value.
+- It returns a `Stmt_Namespace\Period` value.
 
 <a name="getsite" id="getsite"></a>
 <a name="getSite" id="getSite"></a>
@@ -61,7 +61,7 @@ Returns the site we are computing statistics for.
 
 #### Signature
 
-- It returns a [`Site`](../../Piwik/Site.md) value.
+- It returns a `Stmt_Namespace\Site` value.
 
 <a name="getsegment" id="getsegment"></a>
 <a name="getSegment" id="getSegment"></a>
@@ -71,5 +71,5 @@ The Segment used to limit the set of visits that are being aggregated.
 
 #### Signature
 
-- It returns a [`Segment`](../../Piwik/Segment.md) value.
+- It returns a `Stmt_Namespace\Segment` value.
 

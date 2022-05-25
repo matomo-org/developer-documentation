@@ -466,7 +466,7 @@ Set (overwrite) widget configs.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$configs` ([`WidgetConfig[]`](../../Piwik/Widget/WidgetConfig.md)) &mdash;
+    - `$configs` (`Stmt_Namespace\WidgetConfig`) &mdash;
       
 - It does not return anything or a mixed result.
 
@@ -478,5 +478,5 @@ Get all added widget configs.
 
 #### Signature
 
-- It returns a [`WidgetConfig[]`](../../Piwik/Widget/WidgetConfig.md) value.
+- It returns a `Stmt_Namespace\WidgetConfig` value.
 

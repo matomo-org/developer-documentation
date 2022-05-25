@@ -234,7 +234,7 @@ To be implemented when a column references another column
 #### Signature
 
 
-- *Returns:*  [`Join`](../../../Piwik/Columns/Join.md)|`null` &mdash;
+- *Returns:*  `Stmt_Namespace\Join`|`null` &mdash;
     
 
 <a name="getdbdiscriminator" id="getdbdiscriminator"></a>
@@ -244,7 +244,7 @@ To be implemented when a column references another column
 #### Signature
 
 
-- *Returns:*  [`Discriminator`](../../../Piwik/Columns/Discriminator.md)|`null` &mdash;
+- *Returns:*  `Stmt_Namespace\Discriminator`|`null` &mdash;
     
 
 <a name="getenumcolumnvalues" id="getenumcolumnvalues"></a>
@@ -316,7 +316,7 @@ will be done.
 
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - `Stmt_Namespace\Exception`
 
 <a name="getcategoryid" id="getcategoryid"></a>
 <a name="getCategoryId" id="getCategoryId"></a>
@@ -441,7 +441,7 @@ $segmentsList->addSegment($segment);
       
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - `Stmt_Namespace\Exception`
 
 <a name="configuremetrics" id="configuremetrics"></a>
 <a name="configureMetrics" id="configureMetrics"></a>
@@ -503,7 +503,7 @@ of the dimension, but is modified to be more human readable.
 - *Returns:*  `string` &mdash;
     eg, `"Referrers.Keywords"`
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if the plugin and simple class name of this instance cannot be determined.
+    - `Stmt_Namespace\Exception` &mdash; if the plugin and simple class name of this instance cannot be determined.
                   This would only happen if the dimension is located in the wrong directory.
 
 <a name="getalldimensions" id="getalldimensions"></a>
@@ -514,7 +514,7 @@ Gets an instance of all available visit, action and conversion dimension.
 
 #### Signature
 
-- It returns a [`Dimension[]`](../../../Piwik/Columns/Dimension.md) value.
+- It returns a `Stmt_Namespace\Dimension` value.
 
 <a name="getdimensions" id="getdimensions"></a>
 <a name="getDimensions" id="getDimensions"></a>
@@ -547,7 +547,7 @@ Returns the name of the plugin that contains this Dimension.
 
 - It returns a `string` value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if the Dimension is not located within a Plugin module.
+    - `Stmt_Namespace\Exception` &mdash; if the Dimension is not located within a Plugin module.
 
 <a name="gettype" id="gettype"></a>
 <a name="getType" id="getType"></a>
@@ -592,7 +592,7 @@ An action id. The value returned by the lookup action will be associated with th
 
 - It returns a `int` value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; in case not implemented
+    - `Stmt_Namespace\Exception` &mdash; in case not implemented
 
 <a name="onnewaction" id="onnewaction"></a>
 <a name="onNewAction" id="onNewAction"></a>

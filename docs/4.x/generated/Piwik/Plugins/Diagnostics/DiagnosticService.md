@@ -35,5 +35,5 @@ The class defines the following methods:
 
 #### Signature
 
-- It returns a `Piwik\Plugins\Diagnostics\DiagnosticReport` value.
+- It returns a `Stmt_Namespace\DiagnosticReport` value.
 

@@ -167,7 +167,6 @@ This is a complete list of available classes:
 - [`Plugins\PagePerformance\Columns\Metrics\AverageTimeServer`](Piwik/Plugins/PagePerformance/Columns/Metrics/AverageTimeServer.md) &mdash; The average amount of time the server needs to start serving a page.
 - [`Plugins\PagePerformance\Columns\Metrics\AverageTimeTransfer`](Piwik/Plugins/PagePerformance/Columns/Metrics/AverageTimeTransfer.md) &mdash; The average amount of time it takes to transfer a page.
 - [`Plugins\Tour\Engagement\Challenge`](Piwik/Plugins/Tour/Engagement/Challenge.md) &mdash; Defines a new challenge which a super user needs to complete in order to become a "Matomo expert".
-- [`Plugins\TreemapVisualization\TreemapConfig`](Piwik/Plugins/TreemapVisualization/TreemapConfig.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_extra_columns to true.
 - [`Plugins\UsersManager\UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`Plugins\VisitFrequency\Columns\Metrics\ReturningMetric`](Piwik/Plugins/VisitFrequency/Columns/Metrics/ReturningMetric.md) &mdash; Processed metric for VisitFrequency.get API method which just copies VisitsSummary.get metrics as differently named metrics.
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while aggregating the rest in an a new "Others" row.

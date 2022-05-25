@@ -35,7 +35,7 @@ Constructor.
       
     - `$columnsToFilter` (`array`|`string`) &mdash;
        The column or array of columns that should be passed to the callback.
-    - `$function` (`Piwik\DataTable\Filter\callback`) &mdash;
+    - `$function` (`Stmt_Namespace\callback`) &mdash;
        The callback that determines whether a row should be deleted or not. Should return `true` if the row should be deleted.
     - `$functionParams` (`array`) &mdash;
        deprecated - use an [anonymous function](http://php.net/manual/en/functions.anonymous.php) instead.
@@ -49,7 +49,7 @@ Filters the given data table
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+    - `$table` (`Stmt_Namespace\DataTable`) &mdash;
       
 - It does not return anything or a mixed result.
 

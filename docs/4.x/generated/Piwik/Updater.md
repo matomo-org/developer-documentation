@@ -24,7 +24,7 @@ Execute multiple migration queries from a single Update file.
 -  It accepts the following parameter(s):
     - `$file` (`string`) &mdash;
        The path to the Updates file.
-    - `$migrations` ([`Migration[]`](../Piwik/Updater/Migration.md)) &mdash;
+    - `$migrations` (`Stmt_Namespace\Migration`) &mdash;
        An array of migrations
 - It does not return anything or a mixed result.
 
@@ -41,5 +41,5 @@ Execute multiple migration queries from a single Update file.
       
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - `Piwik\UpdaterErrorException`
+    - `Stmt_Namespace\UpdaterErrorException`
 

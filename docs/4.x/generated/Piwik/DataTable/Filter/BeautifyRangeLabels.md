@@ -17,7 +17,7 @@ more than one unit (ie '2-2', '3-5' or '6+').
 
 This filter can be extended to vary exactly how ranges are prettified based
 on the range values found in the DataTable. To see an example of this,
-take a look at the [BeautifyTimeRangeLabels](/api-reference/Piwik/DataTable/Filter/BeautifyTimeRangeLabels) filter.
+take a look at the BeautifyTimeRangeLabels filter.
 
 **Basic usage example**
 
@@ -29,7 +29,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`filter()`](#filter) &mdash; See [ColumnCallbackReplace](/api-reference/Piwik/DataTable/Filter/ColumnCallbackReplace). Inherited from [`ColumnCallbackReplace`](../../../Piwik/DataTable/Filter/ColumnCallbackReplace.md)
+- [`filter()`](#filter) &mdash; See ColumnCallbackReplace. Inherited from [`ColumnCallbackReplace`](../../../Piwik/DataTable/Filter/ColumnCallbackReplace.md)
 - [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 - [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 - [`beautify()`](#beautify) &mdash; Beautifies a range label and returns the pretty result.
@@ -57,12 +57,12 @@ Constructor.
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-See [ColumnCallbackReplace](/api-reference/Piwik/DataTable/Filter/ColumnCallbackReplace).
+See ColumnCallbackReplace.
 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+    - `$table` (`Stmt_Namespace\DataTable`) &mdash;
       
 - It does not return anything or a mixed result.
 
@@ -97,7 +97,7 @@ Filters a row's subtable, if one exists and is loaded in memory.
 <a name="beautify" id="beautify"></a>
 ### `beautify()`
 
-Beautifies a range label and returns the pretty result. See [BeautifyRangeLabels](/api-reference/Piwik/DataTable/Filter/BeautifyRangeLabels).
+Beautifies a range label and returns the pretty result. See BeautifyRangeLabels.
 
 #### Signature
 

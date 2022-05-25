@@ -5,7 +5,7 @@ ControllerAdmin
 
 Base class of plugin controllers that provide administrative functionality.
 
-See [Controller](/api-reference/Piwik/Plugin/Controller) to learn more about Piwik controllers.
+See Controller to learn more about Piwik controllers.
 
 Properties
 ----------
@@ -48,7 +48,7 @@ The Date object created with ($strDate)[#strDate] or null if the requested date 
 #### Signature
 
 - It can be one of the following types:
-    - [`Date`](../../Piwik/Date.md)
+    - `Stmt_Namespace\Date`
     - `null`
 
 <a name="$idsite" id="$idsite"></a>
@@ -69,7 +69,7 @@ The Site object created with [$idSite](/api-reference/Piwik/Plugin/ControllerAdm
 
 #### Signature
 
-- It is a [`Site`](../../Piwik/Site.md) value.
+- It is a `Stmt_Namespace\Site` value.
 
 <a name="$securitypolicy" id="$securitypolicy"></a>
 <a name="securityPolicy" id="securityPolicy"></a>
@@ -130,7 +130,7 @@ If the date is absolute, ie. YYYY-MM-DD, it will not be converted to the timezon
        `'today'`, `'yesterday'`, `'YYYY-MM-DD'`
     - `$timezone` (`string`) &mdash;
        The timezone to use.
-- It returns a [`Date`](../../Piwik/Date.md) value.
+- It returns a `Stmt_Namespace\Date` value.
 
 <a name="setdate" id="setdate"></a>
 <a name="setDate" id="setDate"></a>
@@ -223,7 +223,7 @@ for the last30 days/weeks/etc. of the current period, relative to the current da
        The name of the action that renders the desired report.
     - `$apiMethod` (`string`) &mdash;
        The API method that the ViewDataTable will use to get graph data.
-- It returns a [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md) value.
+- It returns a `Stmt_Namespace\ViewDataTable` value.
 
 <a name="getlastunitgraphacrossplugins" id="getlastunitgraphacrossplugins"></a>
 <a name="getLastUnitGraphAcrossPlugins" id="getLastUnitGraphAcrossPlugins"></a>
@@ -247,7 +247,7 @@ object based on the arguments supplied.
        The value to use for the ViewDataTable's documentation config property.
     - `$apiMethod` (`string`) &mdash;
        The API method that the ViewDataTable will use to get graph data.
-- It returns a [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md) value.
+- It returns a `Stmt_Namespace\ViewDataTable` value.
 
 <a name="geturlsparkline" id="geturlsparkline"></a>
 <a name="getUrlSparkline" id="getUrlSparkline"></a>
@@ -281,7 +281,7 @@ Sets the first date available in the period selector's calendar.
 -  It accepts the following parameter(s):
     - `$minDate` ([`Date`](../../Piwik/Date.md)) &mdash;
        The min date.
-    - `$view` ([`View`](../../Piwik/View.md)) &mdash;
+    - `$view` (`Stmt_Namespace\View`) &mdash;
        The view that contains the period selector.
 - It does not return anything or a mixed result.
 
@@ -297,7 +297,7 @@ for a site (which varies based on the timezone of a site).
 -  It accepts the following parameter(s):
     - `$maxDate` ([`Date`](../../Piwik/Date.md)) &mdash;
        The max date.
-    - `$view` ([`View`](../../Piwik/View.md)) &mdash;
+    - `$view` (`Stmt_Namespace\View`) &mdash;
        The view that contains the period selector.
 - It does not return anything or a mixed result.
 
@@ -376,7 +376,7 @@ Checks if the current host is valid and sets variables on the given view, includ
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$view` ([`View`](../../Piwik/View.md)) &mdash;
+    - `$view` (`Stmt_Namespace\View`) &mdash;
       
 - It does not return anything or a mixed result.
 
@@ -395,11 +395,11 @@ Sets general period variables on a view, including:
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$view` ([`View`](../../Piwik/View.md)) &mdash;
+    - `$view` (`Stmt_Namespace\View`) &mdash;
       
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if the current period is invalid.
+    - `Stmt_Namespace\Exception` &mdash; if the current period is invalid.
 
 <a name="redirecttoindex" id="redirecttoindex"></a>
 <a name="redirectToIndex" id="redirectToIndex"></a>
@@ -455,7 +455,7 @@ Returns a prettified date string for use in period selector widget.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$period` ([`Period`](../../Piwik/Period.md)) &mdash;
+    - `$period` (`Stmt_Namespace\Period`) &mdash;
        The period to return a pretty string for.
 - It returns a `string` value.
 

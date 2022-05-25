@@ -32,7 +32,7 @@ Join constructor.
     - `$discriminatorValue` (`null`|`int`) &mdash;
        should be only hard coded, safe values.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
+    - `Stmt_Namespace\Exception`
 
 <a name="isvalid" id="isvalid"></a>
 <a name="isValid" id="isValid"></a>

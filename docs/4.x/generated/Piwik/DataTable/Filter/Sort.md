@@ -13,7 +13,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`filter()`](#filter) &mdash; See [Sort](/api-reference/Piwik/DataTable/Filter/Sort).
+- [`filter()`](#filter) &mdash; See Sort.
 - [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 - [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 
@@ -36,19 +36,19 @@ Constructor.
        Whether to use a natural sort or not (see [http://php.net/natsort](http://php.net/natsort)).
     - `$recursiveSort` (`bool`) &mdash;
        Whether to sort all subtables or not.
-    - `$doSortBySecondaryColumn` (`bool`|`Piwik\DataTable\Filter\callback`) &mdash;
+    - `$doSortBySecondaryColumn` (`bool`|`Stmt_Namespace\callback`) &mdash;
        If true will sort by a secondary column. The column is automatically detected and will be either nb_visits or label, if possible. If callback given it will sort by the column returned by the callback (if any) callback will be called with 2 parameters: primaryColumnToSort and table
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-See [Sort](/api-reference/Piwik/DataTable/Filter/Sort).
+See Sort.
 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+    - `$table` (`Stmt_Namespace\DataTable`) &mdash;
       
 - It does not return anything or a mixed result.
 

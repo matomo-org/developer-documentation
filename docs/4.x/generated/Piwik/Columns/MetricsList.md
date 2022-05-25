@@ -39,7 +39,7 @@ Get all available metrics.
 
 #### Signature
 
-- It returns a [`Metric[]`](../../Piwik/Plugin/Metric.md) value.
+- It returns a `Stmt_Namespace\Metric` value.
 
 <a name="remove" id="remove"></a>
 <a name="remove" id="remove"></a>
@@ -66,6 +66,6 @@ Removes one or more metrics from the metrics list.
     - `$metricName` (`string`) &mdash;
       
 
-- *Returns:*  [`Metric`](../../Piwik/Plugin/Metric.md)|`Piwik\Plugin\ArchivedMetric`|`null` &mdash;
+- *Returns:*  `Stmt_Namespace\Metric`|`Stmt_Namespace\ArchivedMetric`|`null` &mdash;
     
 

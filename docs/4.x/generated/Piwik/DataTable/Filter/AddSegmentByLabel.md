@@ -16,7 +16,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Generates a segment filter based on the label column and the given segment names
-- [`filter()`](#filter) &mdash; See [AddSegmentByLabel](/api-reference/Piwik/DataTable/Filter/AddSegmentByLabel).
+- [`filter()`](#filter) &mdash; See AddSegmentByLabel.
 - [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 - [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 
@@ -40,12 +40,12 @@ Generates a segment filter based on the label column and the given segment names
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-See [AddSegmentByLabel](/api-reference/Piwik/DataTable/Filter/AddSegmentByLabel).
+See AddSegmentByLabel.
 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
+    - `$table` (`Stmt_Namespace\DataTable`) &mdash;
       
 - It does not return anything or a mixed result.
 

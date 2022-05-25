@@ -9,7 +9,7 @@ ViewDataTable instances load analytics data via Piwik's Reporting API and then o
 type of visualization of that data.
 
 Visualizations can be in any format. HTML-based visualizations should extend
-[Visualization](/api-reference/Piwik/Plugin/Visualization). Visualizations that use other formats, such as visualizations
+Visualization. Visualizations that use other formats, such as visualizations
 that output an image, should extend ViewDataTable directly.
 
 ### Creating ViewDataTables
@@ -196,7 +196,7 @@ Returns the default config instance.
 Visualizations that define their own display properties should override this method and
 return an instance of their new [Config](/api-reference/Piwik/ViewDataTable/Config) descendant.
 
-See the last example [here](/api-reference/Piwik/Plugin/ViewDataTable) for more information.
+See the last example here for more information.
 
 #### Signature
 
@@ -211,7 +211,7 @@ Returns the default request config instance.
 Visualizations that define their own request properties should override this method and
 return an instance of their new [RequestConfig](/api-reference/Piwik/ViewDataTable/RequestConfig) descendant.
 
-See the last example [here](/api-reference/Piwik/Plugin/ViewDataTable) for more information.
+See the last example here for more information.
 
 #### Signature
 
@@ -257,7 +257,7 @@ Returns the DataTable loaded from the API.
 
 #### Signature
 
-- It returns a [`DataTable`](../../Piwik/DataTable.md) value.
+- It returns a `Stmt_Namespace\DataTable` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if not yet loaded.
 
@@ -272,7 +272,7 @@ It won't be loaded from the API in this case.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$dataTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
+    - `$dataTable` (`Stmt_Namespace\DataTable`) &mdash;
        The DataTable to use.
 - It returns a `void` value.
 
