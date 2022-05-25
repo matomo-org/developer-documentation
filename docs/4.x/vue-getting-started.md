@@ -5,6 +5,11 @@ category: DevelopInDepth
 
 Upfront: This document is working draft and far from being complete. We will improve this over time as we do more work with Vue.
 
+## Development Workflow
+
+To learn how to structure and build a Vue module in your Matomo plugin, see the
+[relevant part of the Working with Matomo's UI guide](/guides/working-with-piwiks-ui#typescript-and-vue-workflow).
+
 ## Developer Concepts
 
 ### Component State vs. Application State
@@ -88,25 +93,6 @@ Classes implementing the store pattern should:
 * use computed properties, not methods, to return derived data
 * provide public methods for logic that mutates the state
 
-#### Lazy store initialization
-
-Many stores will need to issue AJAX requests during initialization to provide data to components. A good place
-to do this is in the store's constructor, but not every store will be used on every page. Which means some of these
-AJAX requests will be unnecessary.
-
-To make sure these initialization requests are only issued when a store is actually used, the `lazyInitSingleton`
-method can be used:
-
-```typescript
-import { lazyInitSingleton } from 'CoreHome';
-
-class MyStore {
-    // ...
-}
-
-export default lazyInitSingleton(MyStore) as MyStore;
-```
-
 ### Accessing and changing the URL
 
 URLs in Matomo are mainly based on query parameters, the path and host are not normally used. The base URL's
@@ -162,4 +148,116 @@ import { watch } from 'vue';
 watch(() => MatomoUrl.parsed.value, (newValue, oldValue) => {
     // do something that creates a side effect
 });
+```
+
+### Making AJAX Requests
+
+AJAX requests in TypeScript and Vue code should use the `AjaxHelper` class exported by the CoreHome plugin.
+This class has two static methods that you can use to make requests: `fetch` and `post`. The only difference
+is `post` has a second parameter for POST parameters, but you can also specify those params in the options
+argument to `fetch`.
+
+All AJAX requests sent by Matomo are POST requests to avoid caching token_auth values in the browser.
+
+Example:
+
+```typescript
+import { AjaxHelper } from 'CoreHome';
+
+interface ResponseType {
+  id: number;
+  name: string;
+  value: string;
+}
+
+let isLoading = true;
+AjaxHelper.fetch<ResponseType>(
+  {
+    param: 'value',
+    arrayParam: [1, 2, 3],
+  },
+  {
+    // ... other AjaxHelper options ...
+    postParams: {
+      postValue: 'value 2',
+    },
+  },
+).then((response) => {
+  console.log(`Fetched ${response.name} with id = ${response.id}.`);
+}).finally(() => {
+  isLoading = false;
+});
+```
+
+#### Bulk Requests
+
+You can make bulk requests by simply passing an array of query objects to `fetch()`. All parameters will be
+sent as POST parameters.
+
+Example:
+
+```typescript
+import { AjaxHelper } from 'CoreHome';
+
+AjaxHelper.fetch<[ResponseType1, ResponseType2]>([
+  {
+    method: 'MyPlugin.firstApiRequest',
+    // ... 
+  },
+  {
+    method: 'MyPlugin.secondApiRequest',
+    // ... 
+  },
+]).then(([r1, r2]) => {
+  // use r1, r2
+});
+```
+
+### Using Vue components outside of Vue 
+
+Sometimes it's necessary to initiate and use a Vue component from a different context, such as in
+a twig template or in raw HTML. This can be accomplished through the use of the `vue-entry` attribute
+and the `piwikHelper.compileVueEntryComponents()` method (`Matomo.helper.compileVueEntryComponents()` in Vue code).
+
+**Note: this attribute has to be handled manually by Matomo. Matomo's frontend does not automatically scan
+for and notice when a vue-entry element is added to the DOM (except once on page load and when displaying widgets/reporting pages).**
+If you are writing code that manually inserts HTML obtained from AJAX that can have a vue-entry element, you will
+need to run `compileVueEntryComponents()` yourself on the element containing the new HTML.
+
+**Also note that if you are writing Vue code you should generally not need to use this feature, and instead
+just directly use other Vue components.**
+
+Add this attribute to your HTML like so:
+
+```html
+<div
+  vue-entry="MyPlugin.MyComponent"
+  prop-value="&quot;value for propValue property&quot;"
+  my-other-property="{&quot;name&quot;: &quot;the name&quot;}"
+/>
+```
+
+This would mount the `MyComponent` component exported by `MyPlugin` in the div. It would pass the attribute values
+as the component's initial prop values. All attribute values should be JSON encoded.
+
+If your component uses slots, you can add a list of components for your slot content to use via a vue-components
+attribute:
+
+```html
+<div
+  vue-entry="MyPlugin.MyComponent"
+  vue-components="CoreHome.ProgressBar MyOtherPlugin.MyOtherComponent"
+>
+  <template v-slot:content>
+    <div id="my-content">
+      <my-other-component>
+        ...
+      </my-other-component>
+
+      <progress-bar
+        ...
+      />
+    </div>
+  </template>
+</div>
 ```

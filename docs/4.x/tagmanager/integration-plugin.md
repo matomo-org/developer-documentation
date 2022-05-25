@@ -15,8 +15,8 @@ The easiest way to embed a container without needing any authentication is to as
 ```html
 <!-- Matomo Tag Manager -->
 <script type="text/javascript">
-var _mtm = window._mtm = window._mtm || [];
-_mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+window._mtm = window._mtm || [];
+window._mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
 var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
 g.type='text/javascript'; g.async=true; g.src='${MATOMOURL}/js/container_${CONTAINERID}.js'; s.parentNode.insertBefore(g,s);
 </script>
@@ -29,8 +29,8 @@ Alternatively, you could also simply add this to the `<head>` (preferred) or `<b
 
 ```html
 <script type="text/javascript">
-var _mtm = _mtm || [];
-_mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+window._mtm = window._mtm || [];
+window._mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
 </script>
 <script type="text/javascript" src="${MATOMOURL}/js/container_${CONTAINERID}.js" async="true" defer="true"></script>
 ```
@@ -100,27 +100,27 @@ For example if you are developing an integration for an ecommerce shop, you may 
 
 ```js
 // for example when viewing a product
-_mtm.push({'woocommerce.productName': 'My Product', 'woocommerce.productPrice': '55.45', 'woocommerce.productCurrency': 'EUR'});
+window._mtm.push({'woocommerce.productName': 'My Product', 'woocommerce.productPrice': '55.45', 'woocommerce.productCurrency': 'EUR'});
 ```
 
 You may also trigger events through the `event` attribute on certain actions such as when a user is ordering something, when a user adds to the cart, or when a user is viewing a product.
 
 ```js
 // for example when viewing a product as event
-_mtm.push({'event': 'myshop.productView', 'myshop.productName': 'My Product', 'myshop.productPrice': '55.45', 'myshop.productCurrency': 'EUR'});
+window._mtm.push({'event': 'myshop.productView', 'myshop.productName': 'My Product', 'myshop.productPrice': '55.45', 'myshop.productCurrency': 'EUR'});
 
 // for example when user adds a product to the cart
-_mtm.push({'event': 'myshop.addToCart', 'myshop.productName': 'My Product', 'myshop.productPrice': '55.45', 'myshop.productCurrency': 'EUR'});
+window._mtm.push({'event': 'myshop.addToCart', 'myshop.productName': 'My Product', 'myshop.productPrice': '55.45', 'myshop.productCurrency': 'EUR'});
 
 // for example when user purchased a product
-_mtm.push({'event': 'myshop.purchase', 'myshop.cartTotal': '55.45', 'myshop.cartCurrency': 'EUR'});
+window._mtm.push({'event': 'myshop.purchase', 'myshop.cartTotal': '55.45', 'myshop.cartCurrency': 'EUR'});
 ```
 
 A forum may add values like the currently viewed forum category, the username, etc.
 
 ```js
 // for example when viewing a product
-_mtm.push({'myforum.username': 'Myusername', 'myforum.forumCategory': 'Developers'});
+window._mtm.push({'myforum.username': 'Myusername', 'myforum.forumCategory': 'Developers'});
 ```
 
 ### Prefixing data layer variables

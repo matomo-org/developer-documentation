@@ -11,15 +11,15 @@ This way you can integrate for example any ecommerce, CRM, marketing suite, and 
 
 ## Setting a variable
 
-You can push one or multiple values at once to the data layer by calling the `_mtm.push` method:
+You can push one or multiple values at once to the data layer by calling the `window._mtm.push` method:
 
 ```js
-var _mtm = _mtm || [];
-_mtm.push({'orderTotal': 4545.45, 'orderCurrency': 'EUR'});
+window._mtm = window._mtm || [];
+window._mtm.push({'orderTotal': 4545.45, 'orderCurrency': 'EUR'});
 ```
 
 <div markdown="1" class="alert alert-info">
-As the container will be loaded asynchronously and the variable `_mtm` may not be defined from the beginning, you may have to add a `var _mtm = _mtm || [];`.
+As the container will be loaded asynchronously and the variable `_mtm` may not be defined from the beginning, you may have to add a `window._mtm = window._mtm || [];`.
 </div>
 
 ### Configuration in Matomo Tag Manager
@@ -31,8 +31,8 @@ To access this value as a variable in Matomo Tag Manager, create a new variable 
 Triggering an event within the container works similar as setting a variable. Simply specify a property named `event` as part of the parameters:
 
 ```js
-var _mtm = _mtm || [];
-_mtm.push({'event': 'purchase', 'orderTotal': 4545.45});
+window._mtm = window._mtm || [];
+window._mtm.push({'event': 'purchase', 'orderTotal': 4545.45});
 ```
 <div markdown="1" class="alert alert-info">
 Keep in mind that this does not send an event to Matomo, but allows you to create a tag in Matomo Tag Manager that reacts based on this event.
@@ -48,7 +48,7 @@ Assuming you created a variable "Order Total" for the `orderTotal` data layer va
 
 * Prefix your variable names with your company or application name. For example `woocommerce.orderTotal` to avoid any potential collision with other systems. If you want to use the same container logic for example for different ecommerce systems, you may want to go for a more general prefix like `ecommerce.orderTotal`.
 * Ensure the casing for the variable is correct as the data layer is case-sensitive.
-* When you define a variable, you should always enclose it in quotes as otherwise JavaScript errors may occur. Instead of `_mtm.push({order-total: 100});` use `_mtm.push({'order-total': 100});`
+* When you define a variable, you should always enclose it in quotes as otherwise JavaScript errors may occur. Instead of `window._mtm.push({order-total: 100});` use `window._mtm.push({'order-total': 100});`
 
 ## Migration from Google Tag Manager
 
