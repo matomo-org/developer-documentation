@@ -38,7 +38,6 @@ class Parser {
         if (false === strpos($code, 'postEvent')) {
             return array();
         }
-		echo $phpFile.PHP_EOL;
         $stmts = $this->parser->parse($code);
 
         $traverser = new \PHPParser\NodeTraverser();
