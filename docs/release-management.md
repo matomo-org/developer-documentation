@@ -94,7 +94,7 @@ Also, as soon as we start working on the next major version, we need to require 
 #### demo2.matomo.org
 
 * Get a DevOps to change the PHP version to the newly required minimum PHP version for this account
-* If new major release will be `5`, make sure we check out the newly created `4.x-dev` branch regularly (ssh onto server, then `cd ~/www/demo2.piwik.org && git fetch --all && git checkout 5.x-dev` might make this work) 
+* If new major release will be `5`, make sure we check out the newly created `5.x-dev` branch regularly (ssh onto server, then `cd ~/www/demo2.piwik.org && git fetch --all && git checkout 5.x-dev` might make this work) 
 
 #### plugins.matomo.org
 
