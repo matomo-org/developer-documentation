@@ -98,6 +98,7 @@ The class defines the following methods:
 - [`setMaximumDepthLevelAllowedAtLeast()`](#setmaximumdepthlevelallowedatleast) &mdash; Sets the maximum depth level to at least a certain value. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getMetadata()`](#getmetadata) &mdash; Returns metadata by name. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`setMetadata()`](#setmetadata) &mdash; Sets a metadata value by name. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`deleteMetadata()`](#deletemetadata) &mdash; Deletes a metadata property by name. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getAllTableMetadata()`](#getalltablemetadata) &mdash; Returns all table metadata. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`setMetadataValues()`](#setmetadatavalues) &mdash; Sets several metadata values by name. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`setAllTableMetadata()`](#setalltablemetadata) &mdash; Sets metadata, erasing existing values. Inherited from [`DataTable`](../../Piwik/DataTable.md)
@@ -941,6 +942,21 @@ Sets a metadata value by name.
     - `$value` (`mixed`) &mdash;
       
 - It does not return anything or a mixed result.
+
+<a name="deletemetadata" id="deletemetadata"></a>
+<a name="deleteMetadata" id="deleteMetadata"></a>
+### `deleteMetadata()`
+
+Deletes a metadata property by name.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$name` (`bool`|`string`) &mdash;
+       The metadata name (omit to delete all metadata)
+
+- *Returns:*  `bool` &mdash;
+    True if the requested metadata was deleted
 
 <a name="getalltablemetadata" id="getalltablemetadata"></a>
 <a name="getAllTableMetadata" id="getAllTableMetadata"></a>
