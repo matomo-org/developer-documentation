@@ -3,7 +3,7 @@
 View
 ====
 
-Encapsulates and manages a [Twig](http://twig.sensiolabs.org/) template.
+Encapsulates and manages a [Twig](https://twig.symfony.com) template.
 
 View lets you set properties that will be passed on to a Twig template.
 View will also set several properties that will be available in all Twig
@@ -219,7 +219,7 @@ set just before rendering.
 
 -  It accepts the following parameter(s):
     - `$contentType` (`string`) &mdash;
-      
+
 - It does not return anything.
 
 <a name="setxframeoptions" id="setxframeoptions"></a>
