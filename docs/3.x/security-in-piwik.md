@@ -28,7 +28,7 @@ For text you know may contain special characters or if you need to output text i
 
 ### Use `|raw` sparingly in Twig templates
 
-When writing [Twig](https://twig.sensiolabs.org/) templates, try to avoid using the `|raw` filter when possible. As an alternative, put the HTML you want to reuse in a separate template and `{% include %}` it.
+When writing [Twig](https://twig.symfony.com) templates, try to avoid using the `|raw` filter when possible. As an alternative, put the HTML you want to reuse in a separate template and `{% include %}` it.
 
 If you do use `|raw`, make sure what you're inserting has been properly escaped.
 

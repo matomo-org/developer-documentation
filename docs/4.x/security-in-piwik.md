@@ -28,7 +28,7 @@ For text you know may contain special characters or if you need to output text i
 
 ### Use `|raw` sparingly in Twig templates
 
-When writing [Twig](https://twig.sensiolabs.org/) templates, try to avoid using the `|raw` filter when possible. As an alternative, put the HTML you want to reuse in a separate template and `{% include %}` it.
+When writing [Twig](https://twig.symfony.com) templates, try to avoid using the `|raw` filter when possible. As an alternative, put the HTML you want to reuse in a separate template and `{% include %}` it.
 
 If you do use `|raw`, make sure what you're inserting has been properly escaped.
 
@@ -66,11 +66,11 @@ Or using dependency injection by creating a `plugins/MyPlugin/config/config.php`
 return array(
     \Piwik\View\SecurityPolicy::class => DI\decorate(function ($previous) {
         /** @var \Piwik\View\SecurityPolicy $previous */
-        
+
         if (!\Piwik\SettingsPiwik::isMatomoInstalled()) {
             return $previous;
         }
-        
+
         $previous->addPolicy('default-src', 'my-cdn.example.com');
         return $previous;
     }),
@@ -226,7 +226,7 @@ By no means is below a complete checklist. You'll always be required to still th
 * **Secure data storing**: Passwords or similar data like a sessionId is stored securely hashed
 * External links have a `rel="noreferrer noopener"` (although newer browser versions add this automatically). The `noopener` is needed for security reasons. The `noreferrer` for privacy reasons. See [rel=noreferrer](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noreferrer) and [rel=noopener](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener)
 * **Email notifications are sent** for critical actions related to login credentials, tokens, 2FA etc and ideally also for any other crticial configuration change such as brute force changes etc.
-* **Unsafe methods**: Methods to watch out for: 
+* **Unsafe methods**: Methods to watch out for:
   * Insecure deserialization: `unserialize` is unsafe for user input. Consider using `Common::safe_unserialize` or for user input possibly `JSON` instead
   * `file_get_contents` can be unsafe when eg a protocol `phar://` can be passed to it
   * require|include(_once) should not use any user input unless it's whitelisted
