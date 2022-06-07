@@ -39,7 +39,7 @@ The class defines the following methods:
 - [`checkUserHasSomeViewAccess()`](#checkuserhassomeviewaccess) &mdash; Checks that the current user has view access to at least one site.
 - [`getLoginPluginName()`](#getloginpluginname) &mdash; Returns the name of the Login plugin currently being used.
 - [`redirectToModule()`](#redirecttomodule) &mdash; Redirects the current request to a new module and action.
-- [`isValidEmailString()`](#isvalidemailstring) &mdash; TODO: consider deprecated it, move to validator Returns `true` if supplied the email address is a valid.
+- [`isValidEmailString()`](#isvalidemailstring) &mdash; Returns `true` if supplied the email address is a valid.
 - [`postEvent()`](#postevent) &mdash; Post an event to Piwik's event dispatcher which will execute the event's observers.
 - [`addAction()`](#addaction) &mdash; Register an observer to an event.
 - [`translate()`](#translate) &mdash; Returns an internationalized string using a translation token.
@@ -371,7 +371,6 @@ Redirects the current request to a new module and action.
 <a name="isValidEmailString" id="isValidEmailString"></a>
 ### `isValidEmailString()`
 
-TODO: consider deprecated it, move to validator
 Returns `true` if supplied the email address is a valid.
 
 #### Signature
