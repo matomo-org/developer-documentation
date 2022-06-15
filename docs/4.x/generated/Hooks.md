@@ -330,7 +330,7 @@ Usages:
 
 ### API.Request.authenticate
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php) in line [441](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php#L441)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php) in line [442](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php#L442)*
 
 Triggered when authenticating an API request, but only if the **token_auth**
 query parameter is found in the request. Plugins that provide authentication capabilities should subscribe to this event
@@ -2384,7 +2384,7 @@ Usages:
 
 ### Request.getRenamedModuleAndAction
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php) in line [172](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php#L172)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php) in line [173](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php#L173)*
 
 This event is posted in the Request dispatcher and can be used
 to overwrite the Module and Action to dispatch. This is useful when some Controller methods or API methods have been renamed or moved to another plugin.
@@ -2466,7 +2466,7 @@ Usages:
 
 ### Request.shouldDisablePostProcessing
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php) in line [695](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php#L695)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php) in line [696](https://github.com/matomo-org/matomo/blob/4.x-dev/core/API/Request.php#L696)*
 
 After an API method returns a value, the value is post processed (eg, rows are sorted
 based on the `filter_sort_column` query parameter, rows are truncated based on the
@@ -3144,7 +3144,7 @@ Usages:
 
 ### Template.beforeGoalListActionsBody
 
-*Defined in [Piwik/Plugins/Goals/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Goals/Controller.php) in line [150](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Goals/Controller.php#L150)*
+*Defined in [Piwik/Plugins/Goals/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Goals/Controller.php) in line [151](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Goals/Controller.php#L151)*
 
 
 
@@ -3154,7 +3154,7 @@ Callback Signature:
 
 ### Template.beforeGoalListActionsHead
 
-*Defined in [Piwik/Plugins/Goals/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Goals/Controller.php) in line [159](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Goals/Controller.php#L159)*
+*Defined in [Piwik/Plugins/Goals/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Goals/Controller.php) in line [160](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Goals/Controller.php#L160)*
 
 
 
@@ -3164,7 +3164,7 @@ Callback Signature:
 
 ### Template.endGoalEditTable
 
-*Defined in [Piwik/Plugins/Goals/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Goals/Controller.php) in line [165](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Goals/Controller.php#L165)*
+*Defined in [Piwik/Plugins/Goals/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Goals/Controller.php) in line [166](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Goals/Controller.php#L166)*
 
 
 
