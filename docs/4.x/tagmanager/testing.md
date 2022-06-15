@@ -45,12 +45,12 @@ You can now define your first test like this:
 
 The main methods you will need to create tests are:
 
-* `test(testGroup, function)` creates a new test group, ideally you group all tests for one specific tag, trigger, or template together
-* `expect(numberOfTestAssertions)` define how many assertions you expect to run during this test group
-* `ok(expected, message)` expect a bool value as first parameter
-* `equal(expected, actual, message)` loose comparison of a value
-* `strictEqual(expected, actual, message)` strict comparison of a value
-* `deepEqual(expected, actual, message)` expecting an object (or array)
+* [`test(testGroup, function)`](https://api.qunitjs.com/QUnit/test/) creates a new test group, ideally you group all tests for one specific tag, trigger, or template together
+* [`expect(numberOfTestAssertions)`](https://api.qunitjs.com/assert/expect/) define how many assertions you expect to run during this test group
+* [`ok(state, message)`](https://api.qunitjs.com/assert/ok/) expect a bool value as first parameter
+* [`equal(actual, expected, message)`](https://api.qunitjs.com/assert/equal/) loose comparison of a value
+* [`strictEqual(actual, expected, message)`](https://api.qunitjs.com/assert/strictEqual/) strict comparison of a value
+* [`deepEqual(actual, expected, message)`](https://api.qunitjs.com/assert/deepEqual/) expecting an object (or array)
 
 You can find more information in the [QUnit API Documentation](https://api.qunitjs.com/)
 
