@@ -106,10 +106,10 @@ You may test a variable using the method `TagManagerTestHelper.resolveTemplateVa
 
 ```js
 // configure the required parameters for this tag, if any
-var params = {constantValue: TagManagerTestHelper.buildVariable('mytest');
+var params = {constantValue: TagManagerTestHelper.buildVariable('mytest')};
 
-// replace `ConstantVariable` with the name of your trigger
-var variable = TagManagerTestHelper.resolveTemplateVariable('ConstantVariable', params});
+// replace `ConstantVariable` with the name of your variable
+var variable = TagManagerTestHelper.resolveTemplateVariable('ConstantVariable', params);
 
 // assert the correct value was returned by the variable
 strictEqual('mytest', variable, 'returns any passed value');
