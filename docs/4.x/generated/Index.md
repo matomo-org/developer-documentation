@@ -947,6 +947,7 @@ Index
 - [`ProductConversionRate`](Piwik/Plugins/Goals/Columns/Metrics/ProductConversionRate.md) &mdash; *Class in namespace* `Piwik\Plugins\Goals\Columns\Metrics`- [`ProfileSummaryProvider`](Piwik/Plugins/Live/ProfileSummaryProvider.md) &mdash; *Class in namespace* `Piwik\Plugins\Live`- [`ProfileSummaryAbstract`](Piwik/Plugins/Live/ProfileSummary/ProfileSummaryAbstract.md) &mdash; *Class in namespace* `Piwik\Plugins\Live\ProfileSummary`- [`provideActionsForVisit()`](Piwik/Plugins/Live/VisitorDetailsAbstract.md#provideactionsforvisit) &mdash; *Method in class* [`VisitorDetailsAbstract`](Piwik/Plugins/Live/VisitorDetailsAbstract.md)
 - [`provideActionsForVisitIds()`](Piwik/Plugins/Live/VisitorDetailsAbstract.md#provideactionsforvisitids) &mdash; *Method in class* [`VisitorDetailsAbstract`](Piwik/Plugins/Live/VisitorDetailsAbstract.md)
 - [`partitionResultIntoMultipleGroups()`](Piwik/RankingQuery.md#partitionresultintomultiplegroups) &mdash; *Method in class* [`RankingQuery`](Piwik/RankingQuery.md)
+- [`$prepare`](Piwik/Settings/FieldConfig.md#$prepare) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
 - [`$plugin`](Piwik/Updater/Migration/Factory.md#$plugin) &mdash; *Property in class* [`Factory`](Piwik/Updater/Migration/Factory.md)
 - [`$pivot_by_dimension`](Piwik/ViewDataTable/Config.md#$pivot_by_dimension) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$pivot_by_column`](Piwik/ViewDataTable/Config.md#$pivot_by_column) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)

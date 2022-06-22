@@ -35,6 +35,7 @@ This class defines the following properties:
 - [`$introduction`](#$introduction) &mdash; Text that will appear above this setting's section in the _Plugin Settings_ admin page.
 - [`$description`](#$description) &mdash; Text that will appear directly underneath the setting title in the _Plugin Settings_ admin page.
 - [`$inlineHelp`](#$inlinehelp) &mdash; Text that will appear next to the setting's section in the _Plugin Settings_ admin page.
+- [`$prepare`](#$prepare) &mdash; A closure that prepares the setting value.
 - [`$validate`](#$validate) &mdash; A closure that does some custom validation on the setting before the setting is persisted.
 - [`$transform`](#$transform) &mdash; A closure that transforms the setting value.
 - [`$title`](#$title) &mdash; This setting's display name, for example, `'Refresh Interval'`.
@@ -152,6 +153,25 @@ Be sure to escape any user input as HTML can be used here.
 - It can be one of the following types:
     - `null`
     - `string`
+
+<a name="$prepare" id="$prepare"></a>
+<a name="prepare" id="prepare"></a>
+### `$prepare`
+
+A closure that prepares the setting value. If supplied, this closure will be executed before
+the setting has been validated.
+
+**Example**
+
+    $setting->prepare = function ($value, Setting $setting) {
+        return mb_strtolower($value);
+    }
+
+#### Signature
+
+- It can be one of the following types:
+    - `null`
+    - [`Closure`](http://php.net/class.Closure)
 
 <a name="$validate" id="$validate"></a>
 <a name="validate" id="validate"></a>
