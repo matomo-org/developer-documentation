@@ -157,7 +157,7 @@ Callback Signature:
 
 Usages:
 
-[Contents::provideActionDimensionFields](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Contents/Contents.php#L47), [CustomDimensions::provideActionDimensionFields](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CustomDimensions/CustomDimensions.php#L357), [Ecommerce::provideActionDimensionFields](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Ecommerce/Ecommerce.php#L33), [Events::provideActionDimensionFields](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Events/Events.php#L263)
+[Contents::provideActionDimensionFields](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Contents/Contents.php#L47), [CustomDimensions::provideActionDimensionFields](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CustomDimensions/CustomDimensions.php#L359), [Ecommerce::provideActionDimensionFields](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Ecommerce/Ecommerce.php#L33), [Events::provideActionDimensionFields](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Events/Events.php#L263)
 
 ## API
 
@@ -1259,7 +1259,7 @@ Callback Signature:
 
 Usages:
 
-[CustomAlerts::getTablesInstalled](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CustomAlerts/CustomAlerts.php#L42), [CustomDimensions::getTablesInstalled](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CustomDimensions/CustomDimensions.php#L393), [Dashboard::getTablesInstalled](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Dashboard/Dashboard.php#L45), [ExampleLogTables::getTablesInstalled](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/ExampleLogTables/ExampleLogTables.php#L38), [LanguagesManager::getTablesInstalled](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/LanguagesManager/LanguagesManager.php#L55), [PrivacyManager::getTablesInstalled](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/PrivacyManager.php#L230), [QueuedTracking::getTablesInstalled](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/QueuedTracking/QueuedTracking.php#L33), [ScheduledReports::getTablesInstalled](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/ScheduledReports/ScheduledReports.php#L109), [SegmentEditor::getTablesInstalled](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SegmentEditor/SegmentEditor.php#L76)
+[CustomAlerts::getTablesInstalled](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CustomAlerts/CustomAlerts.php#L42), [CustomDimensions::getTablesInstalled](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CustomDimensions/CustomDimensions.php#L395), [Dashboard::getTablesInstalled](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Dashboard/Dashboard.php#L45), [ExampleLogTables::getTablesInstalled](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/ExampleLogTables/ExampleLogTables.php#L38), [LanguagesManager::getTablesInstalled](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/LanguagesManager/LanguagesManager.php#L55), [PrivacyManager::getTablesInstalled](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/PrivacyManager.php#L230), [QueuedTracking::getTablesInstalled](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/QueuedTracking/QueuedTracking.php#L33), [ScheduledReports::getTablesInstalled](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/ScheduledReports/ScheduledReports.php#L109), [SegmentEditor::getTablesInstalled](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SegmentEditor/SegmentEditor.php#L76)
 
 ## Dimension
 
@@ -3431,7 +3431,7 @@ Callback Signature:
 
 Usages:
 
-[CoreHome::setTrackerCacheGeneral](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CoreHome/CoreHome.php#L61), [CustomDimensions::setTrackerCacheGeneral](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CustomDimensions/CustomDimensions.php#L380), [PrivacyManager::setTrackerCacheGeneral](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/PrivacyManager.php#L356), [Referrers::setTrackerCacheGeneral](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/Referrers.php#L106), [SitesManager::setTrackerCacheGeneral](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/SitesManager.php#L205), [UserCountry::setTrackerCacheGeneral](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UserCountry/UserCountry.php#L53)
+[CoreHome::setTrackerCacheGeneral](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CoreHome/CoreHome.php#L61), [CustomDimensions::setTrackerCacheGeneral](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/CustomDimensions/CustomDimensions.php#L382), [PrivacyManager::setTrackerCacheGeneral](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/PrivacyManager.php#L356), [Referrers::setTrackerCacheGeneral](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/Referrers.php#L106), [SitesManager::setTrackerCacheGeneral](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/SitesManager.php#L205), [UserCountry::setTrackerCacheGeneral](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UserCountry/UserCountry.php#L53)
 
 ## Translate
 
