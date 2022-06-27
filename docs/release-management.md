@@ -56,7 +56,7 @@ Also, as soon as we start working on the next major version, we need to require 
 
 * Define which PHP version the new major version of Matomo will require. To make this decision, we consider:
   * PHP versions that still receive security updates. Any PHP version that still receives security updates we would typically also support in the new major version.
-  * Percent usage of our user base that use a given PHP version.
+  * Percent usage of our user base that use a given PHP version. See internal process `Find PHP usage statistics for Matomo` on how to get this data.
   * Important: The PHP version usage above does not include any information from our WordPress users. While on On-Premise we can offer security updates for older Matomo versions for users that cannot easily update to a newer PHP version, this is not the case for Matomo for WordPress. WordPress users often use older PHP versions, meaning we can quickly lose and disappoint 40% of the user base even if we only require a currently supported PHP version. This means we might even need to still support "not supported PHP versions". Ideally we find statistics on PHP versions used by WordPress installs to help make this decision.  
   * What PHP versions current Linux LTS versions support. Some LTS versions only support older PHP version.
   * Whether specific library versions that we absolutely need require a newer PHP version.
