@@ -44,6 +44,8 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `setDomains( array )` - Set array of hostnames or domains to be treated as local. For wildcard subdomains, you can use: `setDomains('.example.com');` or `setDomains('*.example.com');`. You can also specify a path along a domain: `setDomains('*.example.com/subsite1');`
 *   `setCustomUrl( string )` - Override the page's reported URL
 *   `setReferrerUrl( string )` - Override the detected Http-Referer. We recommend you call this method early in your tracking code before you call `trackPageView` if it should be applied to all tracking requests.
+*   `setExcludedReferrers( string | array )` - Set array of hostnames or domains that should be ignored as referrers. For wildcard subdomains, you can use: `setExcludedReferrers('.example.com');` or `setExcludedReferrers('*.example.com');`. You can also specify a path along a domain: `setExcludedReferrers('*.example.com/subsite1');`. This method is available as of Matomo 4.12.
+*   `getExcludedReferrers()` - Returns the list if excluded referrers, which was previously set using `setExcludedReferrers`.
 *   `setSiteId( integer )` - Specify the website ID. Redundant: can be specified in `getTracker()` constructor.
 *   `setApiUrl( string )` - Specify the Piwik HTTP API URL endpoint. Points to the root directory of piwik, e.g. https://matomo.example.org/ or https://example.org/matomo/. This function is only useful when the 'Overlay' report is not working. By default, you do not need to use this function.
 *   `setTrackerUrl( string )` - Specify the Piwik server URL. Redundant: can be specified in `getTracker()` constructor.
