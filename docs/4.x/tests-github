@@ -17,7 +17,7 @@ Each developer is responsible to keep the build green.
 
 All the Github Action build file are locate in `.github/workflows/*.yml`
 
-Each scripts are trigger by its own conditions, for more details see [Github Action Docs](https://docs.github.com/en/actions)
+Each script is trigger by its own conditions, for more details see [Github Action Docs](https://docs.github.com/en/actions)
 
 ## Create a new CI script
 
