@@ -23,7 +23,7 @@ Each scripts are trigger by its own conditions, for more details see [Github Act
 
 To create a new CI script please read [Quickstart for GitHub Actions](https://docs.github.com/en/actions/quickstart) 
 
-We recommend fork the Matomo project first and run on your own pipeline first. Also, please check the list before get starts.
+We recommend to fork the Matomo project first and run actions on your own pipeline first. Also, please check the following list before getting started:
 
 
 - Marketplace: To use a marketplace action/container, please always choose the official service or container.
