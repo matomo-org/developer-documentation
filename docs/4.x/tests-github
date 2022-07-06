@@ -28,4 +28,4 @@ We recommend to fork the Matomo project first and run actions on your own pipeli
 
 - Marketplace: To use a marketplace action/container, please always choose the official service or container.
 - Security Check: Make sure you read [script injection attacks](https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions#example-of-a-script-injection-attack) and [Security hardening](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions) 
-- Permission: we recommend use read permissions for the CI unless you want to update the code after CI runs, for more details [Assigning permissions to jobs](https://docs.github.com/en/enterprise-cloud@latest/actions/using-jobs/assigning-permissions-to-jobs) 
+- Permission: we recommend using read permissions for the CI unless you want to update the code after CI runs, for more details [Assigning permissions to jobs](https://docs.github.com/en/enterprise-cloud@latest/actions/using-jobs/assigning-permissions-to-jobs) 
