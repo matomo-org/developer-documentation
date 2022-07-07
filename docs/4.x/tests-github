@@ -17,7 +17,7 @@ Matomo uses GitHub Action to automatically run its build by various triggers.
 - [Inactive PR] after 14 days, inactive PR will mark as state 
 
 
-Each developer is responsible to keep the build green.
+Each developer is responsible to keep the commits/pull requests build green.
 
 ## Github Action Scripts
 
