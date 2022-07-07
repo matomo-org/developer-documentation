@@ -5,7 +5,7 @@ next: tests-troubleshooting
 ---
 # Running tests/builds on GitHub Action
 
-[Github Action](https://github.com/features/actions) is a continuous integration tool that will run tests/builds for a GitHub repository every time commits are pushed.
+[Github Action](https://github.com/features/actions) makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub. Make code reviews, branch management, and issue triaging work the way you want.
 
 ## Matomo on GitHub Action 
 
