@@ -9,7 +9,13 @@ next: tests-troubleshooting
 
 ## Matomo on GitHub Action 
 
-Matomo uses GitHub Action to automatically run its build on every commit (for every branch and pull request).
+Matomo uses GitHub Action to automatically run its build by various triggers.
+- [Build Tracker JS] Trigger by the comment `build js` into the pull request.
+- [Build VUE] Auto trigger, then comment back to the PR
+- [Composer Update] Auto trigger by cron
+- [PHPCS check] Auto trigger, if not valid will return error details.
+- [Inactive PR] after 14 days, inactive PR will mark as state 
+
 
 Each developer is responsible to keep the build green.
 
