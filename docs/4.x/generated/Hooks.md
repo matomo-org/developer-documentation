@@ -3236,7 +3236,7 @@ Usages:
 
 ### Tracker.detectReferrerSearchEngine
 
-*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/Columns/Base.php) in line [287](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/Columns/Base.php#L287)*
+*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/Columns/Base.php) in line [305](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/Columns/Base.php#L305)*
 
 Triggered when detecting the search engine of a referrer URL. Plugins can use this event to provide custom search engine detection
 logic.
@@ -3258,7 +3258,7 @@ Callback Signature:
 
 ### Tracker.detectReferrerSocialNetwork
 
-*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/Columns/Base.php) in line [338](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/Columns/Base.php#L338)*
+*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/Columns/Base.php) in line [356](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Referrers/Columns/Base.php#L356)*
 
 Triggered when detecting the social network of a referrer URL. Plugins can use this event to provide custom social network detection
 logic.
@@ -3376,7 +3376,7 @@ Callback Signature:
 
 ### Tracker.PageUrl.getQueryParametersToExclude
 
-*Defined in [Piwik/Tracker/PageUrl](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/PageUrl.php) in line [100](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/PageUrl.php#L100)*
+*Defined in [Piwik/Tracker/PageUrl](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/PageUrl.php) in line [103](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Tracker/PageUrl.php#L103)*
 
 Triggered before setting the action url in Piwik\Tracker\Action so plugins can register
 parameters to be excluded from the tracking URL (e.g. campaign parameters).
