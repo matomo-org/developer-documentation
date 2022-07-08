@@ -7,14 +7,14 @@ next: tests-troubleshooting
 
 [Github Action](https://github.com/features/actions) makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub. Make code reviews, branch management, and issue triaging work the way you want.
 
-## Matomo on GitHub Action 
+## Matomo on GitHub Action
 
 Matomo uses GitHub Action to automatically run its build by various triggers.
 - [Build Tracker JS] Trigger by the comment `build js` into the pull request.
 - [Build VUE] Auto trigger, then comment back to the PR
 - [Composer Update] Auto trigger by cron
 - [PHPCS check] Auto trigger, if not valid will return error details.
-- [Inactive PR] after 14 days, inactive PR will mark as state 
+- [Inactive PR] after 14 days, inactive PR will mark as state
 
 
 Each developer is responsible to keep the commits/pull requests build green.
@@ -25,13 +25,19 @@ All the Github Action build file are locate in `.github/workflows/*.yml`
 
 Each script is trigger by its own conditions, for more details see [Github Action Docs](https://docs.github.com/en/actions)
 
+## Actions should always be pinned to a full length commit SHA
+
+One of the biggest concerns around GitHub Actions is the dependence on actions that were not authored by a trusted source. There was not an official Docker build and publish action for a long time, which meant that we had to trust a third party with our DockerHub username and password.
+
+More details can be found [Here](https://michaelheap.com/ensure-github-actions-pinned-sha/)
+
 ## Create a new CI script
 
-To create a new CI script please read [Quickstart for GitHub Actions](https://docs.github.com/en/actions/quickstart) 
+To create a new CI script please read [Quickstart for GitHub Actions](https://docs.github.com/en/actions/quickstart)
 
 We recommend forking the Matomo project first and running actions on your own pipeline first. Also, please check the following list before getting started:
 
 
 - Marketplace: To use a marketplace action/container, please always choose the official service or container.
-- Security Check: Make sure you read [script injection attacks](https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions#example-of-a-script-injection-attack) and [Security hardening](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions) 
-- Permission: we recommend using read permissions for the CI unless you want to update the code after CI runs, for more details [Assigning permissions to jobs](https://docs.github.com/en/enterprise-cloud@latest/actions/using-jobs/assigning-permissions-to-jobs) 
+- Security Check: Make sure you read [script injection attacks](https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions#example-of-a-script-injection-attack) and [Security hardening](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions)
+- Permission: we recommend using read permissions for the CI unless you want to update the code after CI runs, for more details [Assigning permissions to jobs](https://docs.github.com/en/enterprise-cloud@latest/actions/using-jobs/assigning-permissions-to-jobs)
