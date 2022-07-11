@@ -35,7 +35,7 @@ More details can be found [Here](https://michaelheap.com/ensure-github-actions-p
 
 To create a new CI script please read [Quickstart for GitHub Actions](https://docs.github.com/en/actions/quickstart)
 
-We recommend forking the Matomo project first and running actions on your own pipeline first. Also, please check the following list before getting started:
+We recommend forking the Matomo project and running actions on your own pipeline first. Also, please check the following list before getting started:
 
 
 - Marketplace: To use a marketplace action/container, please always choose the official service or container.
