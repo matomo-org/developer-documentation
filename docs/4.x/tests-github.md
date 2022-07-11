@@ -23,7 +23,7 @@ Each developer is responsible to keep the commits/pull requests build green.
 
 All the Github Action build file are locate in `.github/workflows/*.yml`
 
-Each script is trigger by its own conditions, for more details see [Github Action Docs](https://docs.github.com/en/actions)
+Each script is triggered by its own conditions, for more details see [Github Action Docs](https://docs.github.com/en/actions)
 
 ## Actions should always be pinned to a full length commit SHA
 
