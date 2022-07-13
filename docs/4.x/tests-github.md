@@ -23,13 +23,13 @@ Each developer is responsible to keep the commits/pull requests build green.
 
 All the GitHub Action build file are locate in `.github/workflows/*.yml`
 
-Each script is trigger by its own conditions, for more details see [Github Action Docs](https://docs.github.com/en/actions)
+Each script is triggered by its own conditions, for more details see [Github Action Docs](https://docs.github.com/en/actions)
 
 ## Create a new CI script
 
 To create a new CI script please read [Quickstart for GitHub Actions](https://docs.github.com/en/actions/quickstart)
 
-We recommend forking the Matomo project first and running actions on your own pipeline first. Also, please check the following list before getting started:
+We recommend forking the Matomo project and running actions on your own pipeline first. Also, please check the following list before getting started:
 
 ### Using other action
 If you need to use an action from the marketplace, please ensure that it is either an official action provided by GitHub, or you did a review of the actions code. In latter case, please ensure to use a version fixed by a full length commit SHA.
