@@ -1,6 +1,6 @@
 ---
-category: Develop
-previous: tests-js-tracker
+category: DevelopInDepth
+previous: tests-github
 next: tests-troubleshooting
 ---
 # Running tests on Travis CI

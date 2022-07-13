@@ -1,7 +1,7 @@
 ---
 category: Develop
 previous: tests-ui
-next: tests-travis
+next: tests-github
 title: JavaScript Tracker
 ---
 # Matomo JavaScript Tracker Tests
