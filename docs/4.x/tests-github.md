@@ -37,7 +37,7 @@ If you need to use an action from the marketplace, please ensure that it is eith
 ### Security
 There is a chance the action scripts getting hacked, paying attention to security is of the upmost importance when you create a new GitHub Action script. 
 
-It could lead a GitHub token lost and write access to our code. 
+It could lead a GitHub token lost and write access to our code. 【More details】(https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#stealing-the-jobs-github_token)
 
 There are two common attack [script injection attacks](https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions#example-of-a-script-injection-attack) and [Security hardening](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions).
 
