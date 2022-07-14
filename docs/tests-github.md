@@ -1,22 +1,10 @@
 ---
-category: Develop
-previous: tests-js-tracker
-next: tests-travis
+category: DevelopInDepth
+
 ---
 # Using GitHub Actions
 
 [Github Action](https://github.com/features/actions) makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub. Make code reviews, branch management, and issue triaging work the way you want.
-
-## GitHub Actions we use
-
-Matomo uses GitHub Action to automatically run its build by various triggers.
-- [Build Tracker JS] Trigger by the comment `build js` into the pull request. That will compress js/piwik.js into matomo.js and piwik.js
-- [Build VUE] Auto trigger, it will build VUE file and commit back to the PR
-- [Composer Update] Auto trigger by cron，it will run `composer update` and commit back to the repo
-- [PHPCS check] Auto trigger, checking PHPCS code quality if not valid will return error details.
-- [Inactive PR] after 14 days, inactive PR will mark as state
-
-(New scripts should be documented in the list above.)
 
 
 ## GitHub Action Scripts
@@ -30,6 +18,16 @@ Each script is triggered by its own conditions, for more details see [Github Act
 To create a new GitHub Action script please read [Quickstart for GitHub Actions](https://docs.github.com/en/actions/quickstart)
 
 We recommend forking the Matomo project and running actions on your own pipeline first. Also, please check the following list before getting started:
+
+### Existing GitHub Action Scripts
+Matomo uses GitHub Action to automatically run its build by various triggers.
+- [Build Tracker JS] Trigger by the comment `build js` into the pull request. That will compress js/piwik.js into matomo.js and piwik.js
+- [Build VUE] Auto trigger, it will build VUE file and commit back to the PR
+- [Composer Update] Auto trigger by cron，it will run `composer update` and commit back to the repo
+- [PHPCS check] Auto trigger, checking PHPCS code quality if not valid will return error details.
+- [Inactive PR] after 14 days, inactive PR will mark as state
+
+(New scripts should be documented in the list above.)
 
 ### Using other action
 If you need to use an action from the marketplace, please ensure that it is either an official action provided by GitHub, or you did a review of the actions code. In latter case, please ensure to use a version fixed by a full length commit SHA.
