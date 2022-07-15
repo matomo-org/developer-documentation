@@ -58,6 +58,7 @@ Now you need to let Piwik know which variation was activated for your current us
 HTML:
 
 ```js
+var _paq = window._paq = window._paq || [];
 _paq.push(['AbTesting::enter', {experiment: 'theExperimentNameOrId', variation: 'myVariation'}]);
 ```
 
@@ -112,7 +113,7 @@ Alternative version performing the redirect manually:
 /**
  * in index.php:
  */
-echo "_paq.push(['AbTesting::enter', {experiment: 'theExperimentName', variation: 'original'}]);"
+echo "window._paq = window._paq || [];window._paq.push(['AbTesting::enter', {experiment: 'theExperimentName', variation: 'original'}]);"
 
 $variations = [['name' => 'newDesign']];
 $experiment = new Experiment('theExperimentName', $variations);
@@ -125,13 +126,13 @@ if ($activated->getName() === 'newDesign') {
     exit;
 } else {
     // do nothing and show original variation
-    echo "_paq.push(['AbTesting::enter', {experiment: 'theExperimentName', variation: 'original'}]);"
+    echo "window._paq = window._paq || [];window._paq.push(['AbTesting::enter', {experiment: 'theExperimentName', variation: 'original'}]);"
 }
 
 /**
  * in newDesign.php:
  */
-echo "_paq.push(['AbTesting::enter', {experiment: 'theExperimentName', variation: 'newDesign'}]);"
+echo "window._paq = window._paq || [];window._paq.push(['AbTesting::enter', {experiment: 'theExperimentName', variation: 'newDesign'}]);"
 ```
 
 ### Custom A/B testing framework
@@ -147,7 +148,7 @@ You can also implement a simple A/B testing framework yourself. An A/B test fram
 * Execute the server-side code for the randomly chosen, or previously activated variation: 
   * this is the code which implements the changes needed to display this variation in your website, for example displaying a different design.  
 * Output in your website the one-line JavaScript code that lets Piwik know which variation was activated:
-  * `_paq.push(['AbTesting::enter', {experiment: 'theExperimentName', variation: 'variationNameOrIdActivatedForCurrentVisitor'}]);`
+  * `window._paq = window._paq || [];window._paq.push(['AbTesting::enter', {experiment: 'theExperimentName', variation: 'variationNameOrIdActivatedForCurrentVisitor'}]);`
 
 ## Finishing an experiment
 
