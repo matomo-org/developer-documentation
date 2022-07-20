@@ -3672,7 +3672,7 @@ Usages:
 
 ### UsersManager.getDefaultDates
 
-*Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/Controller.php) in line [193](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/Controller.php#L193)*
+*Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/Controller.php) in line [195](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/Controller.php#L195)*
 
 Triggered when the list of available dates is requested, for example for the
 User Settings > Report date to load by default.
@@ -3731,7 +3731,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.resendInvite
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [1544](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L1544)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [1543](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L1543)*
 
 Triggered after a new user was invited.
 
