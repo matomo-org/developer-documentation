@@ -140,10 +140,17 @@
 ## Plugins\Goals\Columns\Metrics\GoalConversionRate
 ## Plugins\Goals\Columns\Metrics\GoalSpecificProcessedMetric
 ## Plugins\Goals\Columns\Metrics\GoalSpecific\AverageOrderRevenue
+## Plugins\Goals\Columns\Metrics\GoalSpecific\ConversionEntryRate
+## Plugins\Goals\Columns\Metrics\GoalSpecific\ConversionPageRate
 ## Plugins\Goals\Columns\Metrics\GoalSpecific\ConversionRate
 ## Plugins\Goals\Columns\Metrics\GoalSpecific\Conversions
+## Plugins\Goals\Columns\Metrics\GoalSpecific\ConversionsAttrib
+## Plugins\Goals\Columns\Metrics\GoalSpecific\ConversionsEntry
 ## Plugins\Goals\Columns\Metrics\GoalSpecific\ItemsCount
 ## Plugins\Goals\Columns\Metrics\GoalSpecific\Revenue
+## Plugins\Goals\Columns\Metrics\GoalSpecific\RevenueAttrib
+## Plugins\Goals\Columns\Metrics\GoalSpecific\RevenueEntry
+## Plugins\Goals\Columns\Metrics\GoalSpecific\RevenuePerEntry
 ## Plugins\Goals\Columns\Metrics\GoalSpecific\RevenuePerVisit
 ## Plugins\Goals\Columns\Metrics\ProductConversionRate
 ## Plugins\Goals\Columns\Metrics\RevenuePerVisit

@@ -25,7 +25,7 @@ After you enter the appropriate information, a theme will be created for you in 
 
 Colors used in CSS are simple to override because they are defined as variables. These variables are defined in PHP because we also need to apply them to emails, PDF reports, exported images, etc.
 
-For example to change the background from white to black you can simply change the following variable in your `$YourPluginName.php` file. 
+For example to change the background from white to black you can simply change the following variable in your `$YourPluginName.php` file.
 
 ```php
 public function configureThemeVariables(Plugin\ThemeStyles $vars)
@@ -248,7 +248,7 @@ Here is a list of all named colors in Piwik:
 
 ## Twig, the template engine
 
-Piwik uses the [Twig templating engine](https://twig.sensiolabs.org/) to create HTML pages from PHP.
+Piwik uses the [Twig templating engine](https://twig.symfony.com) to create HTML pages from PHP.
 
 When creating a theme, you do not need to create or change any template as the recommended way is to only use Less (CSS) and JavaScript. However, in some rare cases where advanced customisation is necessary, you may need to customise Twig templates.
 

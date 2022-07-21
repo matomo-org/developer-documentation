@@ -59,6 +59,7 @@ When creating an experiment in your Piwik, the A/B testing plugin will generate 
 and that you need to embed in your pages. The code typically looks like this:
 
 ```js
+var _paq = window._paq = window._paq || [];
 _paq.push(['AbTesting::create', {
   name: 'theExperimentName',
   includedTargets: [{"attribute":"url","type":"starts_with","value":"http:\/\/www.example.org","inverted":"0"}],
@@ -96,6 +97,7 @@ For better understanding here is an explanation of what these properties mean:
 There are more properties that can be configured when you create an experiment in your Piwik. These properties are optional.
 
 ```js
+var _paq = window._paq = window._paq || [];
 _paq.push(['AbTesting::create', {
   // [...]
   percentage: 100,
@@ -211,6 +213,7 @@ Should you want to exclude Safari when running A/B tests, you can add the follow
 
 ```js
 // works from A/B testing 3.2.18
+var _paq = window._paq = window._paq || [];
 _paq.push(['AbTesting::disableWhenItp']);
 // or 
 Matomo.AbTesting.disableWhenItp();
@@ -225,6 +228,7 @@ from your website you can run execute the following code:
 
 ```js
 // works from A/B testing 3.2.18
+var _paq = window._paq = window._paq || [];
 _paq.push(['AbTesting::disable']);
 ```
 
@@ -558,6 +562,7 @@ If possible, we recommend making the `matomo.js` file writable.
 You can enable the debug mode by calling the following method:
 
 ```js
+var _paq = window._paq = window._paq || [];
 _paq.push(['AbTesting::enableDebugMode']);
 ```
  

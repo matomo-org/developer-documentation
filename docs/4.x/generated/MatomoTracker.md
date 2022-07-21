@@ -71,6 +71,7 @@ The class defines the following methods:
 - [`setIdSite()`](#setidsite) &mdash; Sets the current site ID.
 - [`setBrowserLanguage()`](#setbrowserlanguage) &mdash; Sets the Browser language.
 - [`setUserAgent()`](#setuseragent) &mdash; Sets the user agent, used to detect OS and browser.
+- [`setClientHints()`](#setclienthints) &mdash; Sets the client hints, used to detect OS and browser.
 - [`setCountry()`](#setcountry) &mdash; Sets the country of the visitor.
 - [`setRegion()`](#setregion) &mdash; Sets the region of the visitor.
 - [`setCity()`](#setcity) &mdash; Sets the city of the visitor.
@@ -443,6 +444,31 @@ If this function is not called, the User Agent will default to the current user 
 -  It accepts the following parameter(s):
     - `$userAgent` (`string`) &mdash;
       
+- It returns a `$this` value.
+
+<a name="setclienthints" id="setclienthints"></a>
+<a name="setClientHints" id="setClientHints"></a>
+### `setClientHints()`
+
+Sets the client hints, used to detect OS and browser.
+
+If this function is not called, the client hints sent with the current request will be used.
+
+Supported as of Matomo 4.12.0
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$model` (`string`) &mdash;
+       Value of the header 'HTTP_SEC_CH_UA_MODEL'
+    - `$platform` (`string`) &mdash;
+       Value of the header 'HTTP_SEC_CH_UA_PLATFORM'
+    - `$platformVersion` (`string`) &mdash;
+       Value of the header 'HTTP_SEC_CH_UA_PLATFORM_VERSION'
+    - `$fullVersionList` (`string`|`array`) &mdash;
+       Value of header 'HTTP_SEC_CH_UA_FULL_VERSION_LIST' or an array containing all brands with the structure [['brand' => 'Chrome', 'version' => '10.0.2'], ['brand' => '...]
+    - `$uaFullVersion` (`string`) &mdash;
+       Value of the header 'HTTP_SEC_CH_UA_FULL_VERSION'
 - It returns a `$this` value.
 
 <a name="setcountry" id="setcountry"></a>

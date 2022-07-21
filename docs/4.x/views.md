@@ -3,7 +3,7 @@ category: DevelopInDepth
 ---
 # Views
 
-Views are classes that implement `ViewInterface`. The main view class [Piwik\View](/api-reference/Piwik/View) will use a [Twig](https://twig.sensiolabs.org) template that is specified upon construction to generate output. There is also another class called [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) that is used specifically to visualize analytics data.
+Views are classes that implement `ViewInterface`. The main view class [Piwik\View](/api-reference/Piwik/View) will use a [Twig](https://twig.symfony.com) template that is specified upon construction to generate output. There is also another class called [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) that is used specifically to visualize analytics data.
 
 Using a view is straightforward. First, it is configured. The meaning of this is different based on the View type. For [Piwik\View](/api-reference/Piwik/View) instances, it simply means setting properties. For example:
 
@@ -29,7 +29,7 @@ This is the same for all view types.
 
 The preferred way to generate anything text-based (like HTML) using data is to define Twig templates and use a [View](/api-reference/Piwik/View). Plugin developers should not accomplish this task with new view types unless they need to output something that is not text-based (such as an image).
 
-*If you don't know how to create Twig templates, read [Twig's documentation](https://twig.sensiolabs.org/documentation).*
+*If you don't know how to create Twig templates, read [Twig's documentation](https://twig.symfony.com/doc/).*
 
 ### Template storage and referencing
 

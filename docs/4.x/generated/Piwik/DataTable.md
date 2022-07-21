@@ -228,6 +228,7 @@ The class defines the following methods:
 - [`setMaximumDepthLevelAllowedAtLeast()`](#setmaximumdepthlevelallowedatleast) &mdash; Sets the maximum depth level to at least a certain value.
 - [`getMetadata()`](#getmetadata) &mdash; Returns metadata by name.
 - [`setMetadata()`](#setmetadata) &mdash; Sets a metadata value by name.
+- [`deleteMetadata()`](#deletemetadata) &mdash; Deletes a metadata property by name.
 - [`getAllTableMetadata()`](#getalltablemetadata) &mdash; Returns all table metadata.
 - [`setMetadataValues()`](#setmetadatavalues) &mdash; Sets several metadata values by name.
 - [`setAllTableMetadata()`](#setalltablemetadata) &mdash; Sets metadata, erasing existing values.
@@ -1072,6 +1073,21 @@ Sets a metadata value by name.
     - `$value` (`mixed`) &mdash;
       
 - It does not return anything or a mixed result.
+
+<a name="deletemetadata" id="deletemetadata"></a>
+<a name="deleteMetadata" id="deleteMetadata"></a>
+### `deleteMetadata()`
+
+Deletes a metadata property by name.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$name` (`bool`|`string`) &mdash;
+       The metadata name (omit to delete all metadata)
+
+- *Returns:*  `bool` &mdash;
+    True if the requested metadata was deleted
 
 <a name="getalltablemetadata" id="getalltablemetadata"></a>
 <a name="getAllTableMetadata" id="getAllTableMetadata"></a>

@@ -72,7 +72,7 @@ public function render()
 ```
 
 As you can see, **just like in controllers**, the `render` method should return a string.
-Often the rendering will be a bit more complex and a [Twig View](https://twig.sensiolabs.org) can be used to render the actual content,
+Often the rendering will be a bit more complex and a [Twig View](https://twig.symfony.com) can be used to render the actual content,
 see the example above. Template files need to be put into a `templates` directory within your plugin. To render a Twig template,
 have a look how it's done in [Pages](/guides/pages).
 

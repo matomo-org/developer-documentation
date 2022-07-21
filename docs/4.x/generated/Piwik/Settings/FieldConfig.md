@@ -31,10 +31,12 @@ This class defines the following properties:
 - [`$customUiControlTemplateFile`](#$customuicontroltemplatefile) &mdash; Defines a custom template file for a UI control.
 - [`$customFieldComponent`](#$customfieldcomponent) &mdash; Defines a custom Vue component to use for the internal field UI control.
 - [`$uiControlAttributes`](#$uicontrolattributes) &mdash; Name-value mapping of HTML attributes that will be added HTML form control, eg, `array('size' => 3)`.
+- [`$fullWidth`](#$fullwidth) &mdash; Makes field full width.
 - [`$availableValues`](#$availablevalues) &mdash; The list of all available values for this setting.
 - [`$introduction`](#$introduction) &mdash; Text that will appear above this setting's section in the _Plugin Settings_ admin page.
 - [`$description`](#$description) &mdash; Text that will appear directly underneath the setting title in the _Plugin Settings_ admin page.
 - [`$inlineHelp`](#$inlinehelp) &mdash; Text that will appear next to the setting's section in the _Plugin Settings_ admin page.
+- [`$prepare`](#$prepare) &mdash; A closure that prepares the setting value.
 - [`$validate`](#$validate) &mdash; A closure that does some custom validation on the setting before the setting is persisted.
 - [`$transform`](#$transform) &mdash; A closure that transforms the setting value.
 - [`$title`](#$title) &mdash; This setting's display name, for example, `'Refresh Interval'`.
@@ -88,6 +90,18 @@ Name-value mapping of HTML attributes that will be added HTML form control, eg,
 #### Signature
 
 - It is a `array` value.
+
+<a name="$fullwidth" id="$fullwidth"></a>
+<a name="fullWidth" id="fullWidth"></a>
+### `$fullWidth`
+
+Makes field full width.
+
+Useful for `$field->uiControl = FieldConfig::UI_CONTROL_MULTI_TUPLE;`
+
+#### Signature
+
+- It is a `bool` value.
 
 <a name="$availablevalues" id="$availablevalues"></a>
 <a name="availableValues" id="availableValues"></a>
@@ -152,6 +166,25 @@ Be sure to escape any user input as HTML can be used here.
 - It can be one of the following types:
     - `null`
     - `string`
+
+<a name="$prepare" id="$prepare"></a>
+<a name="prepare" id="prepare"></a>
+### `$prepare`
+
+A closure that prepares the setting value. If supplied, this closure will be executed before
+the setting has been validated.
+
+**Example**
+
+    $setting->prepare = function ($value, Setting $setting) {
+        return mb_strtolower($value);
+    }
+
+#### Signature
+
+- It can be one of the following types:
+    - `null`
+    - [`Closure`](http://php.net/class.Closure)
 
 <a name="$validate" id="$validate"></a>
 <a name="validate" id="validate"></a>

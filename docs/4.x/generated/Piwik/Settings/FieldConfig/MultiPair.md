@@ -7,7 +7,7 @@ Lets you configure a multi pair field.
 
 Usage:
 
-$field->uiControl = FieldConfig::UI_CONTROL_MULTI_PAIR;
+$field->uiControl = FieldConfig::UI_CONTROL_MULTI_TUPLE;
 $field1 = new FieldConfig\MultiPair('Index', 'index', FieldConfig::UI_CONTROL_TEXT);
 $field2 = new FieldConfig\MultiPair('Value', 'value', FieldConfig::UI_CONTROL_TEXT);
 $field->uiControlAttributes['field1'] = $field1->toArray();

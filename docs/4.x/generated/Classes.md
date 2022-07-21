@@ -144,10 +144,17 @@ This is a complete list of available classes:
 - [`Plugins\Goals\Columns\Metrics\GoalConversionRate`](Piwik/Plugins/Goals/Columns/Metrics/GoalConversionRate.md) &mdash; The conversion rate for a specific goal.
 - [`Plugins\Goals\Columns\Metrics\GoalSpecificProcessedMetric`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecificProcessedMetric.md) &mdash; Base class for processed metrics that are calculated using metrics that are specific to certain goals.
 - [`Plugins\Goals\Columns\Metrics\GoalSpecific\AverageOrderRevenue`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/AverageOrderRevenue.md) &mdash; The average order revenue for a specific goal.
+- [`Plugins\Goals\Columns\Metrics\GoalSpecific\ConversionEntryRate`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/ConversionEntryRate.md) &mdash; The entry page conversion rate for a specific goal.
+- [`Plugins\Goals\Columns\Metrics\GoalSpecific\ConversionPageRate`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/ConversionPageRate.md) &mdash; The page conversion rate for a specific goal.
 - [`Plugins\Goals\Columns\Metrics\GoalSpecific\ConversionRate`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/ConversionRate.md) &mdash; The conversion rate for a specific goal.
 - [`Plugins\Goals\Columns\Metrics\GoalSpecific\Conversions`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/Conversions.md) &mdash; The conversions for a specific goal.
+- [`Plugins\Goals\Columns\Metrics\GoalSpecific\ConversionsAttrib`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/ConversionsAttrib.md) &mdash; The conversions for a specific goal.
+- [`Plugins\Goals\Columns\Metrics\GoalSpecific\ConversionsEntry`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/ConversionsEntry.md) &mdash; The conversions for a specific goal.
 - [`Plugins\Goals\Columns\Metrics\GoalSpecific\ItemsCount`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/ItemsCount.md) &mdash; The number of ecommerce order items for conversions of a goal.
 - [`Plugins\Goals\Columns\Metrics\GoalSpecific\Revenue`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/Revenue.md) &mdash; Revenue for a specific goal.
+- [`Plugins\Goals\Columns\Metrics\GoalSpecific\RevenueAttrib`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/RevenueAttrib.md) &mdash; Attributed Revenue for a specific goal.
+- [`Plugins\Goals\Columns\Metrics\GoalSpecific\RevenueEntry`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/RevenueEntry.md) &mdash; Attributed Revenue for a specific goal.
+- [`Plugins\Goals\Columns\Metrics\GoalSpecific\RevenuePerEntry`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/RevenuePerEntry.md) &mdash; Revenue per entry for a specific goal.
 - [`Plugins\Goals\Columns\Metrics\GoalSpecific\RevenuePerVisit`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/RevenuePerVisit.md) &mdash; Revenue per visit for a specific goal.
 - [`Plugins\Goals\Columns\Metrics\ProductConversionRate`](Piwik/Plugins/Goals/Columns/Metrics/ProductConversionRate.md) &mdash; The conversion rate for ecommerce orders.
 - [`Plugins\Goals\Columns\Metrics\RevenuePerVisit`](Piwik/Plugins/Goals/Columns/Metrics/RevenuePerVisit.md) &mdash; The amount of revenue per visit (or per conversion if there are no visits).

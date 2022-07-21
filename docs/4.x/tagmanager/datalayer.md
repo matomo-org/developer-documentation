@@ -40,7 +40,7 @@ Keep in mind that this does not send an event to Matomo, but allows you to creat
 
 ### Configuration in Matomo Tag Manager
 
-To create a trigger that is listening to this event in Matomo Tag Manager, create a new trigger of type `Custom Event and configure as `Event Name` the value `purchase`. You can now assign this trigger to a tag to ensure a tag will be fired or blocked whenever this event is being triggered from your website or app.
+To create a trigger that is listening to this event in Matomo Tag Manager, create a new trigger of type `Custom Event` and configure as `Event Name` the value `purchase`. You can now assign this trigger to a tag to ensure a tag will be fired or blocked whenever this event is being triggered from your website or app.
 
 Assuming you created a variable "Order Total" for the `orderTotal` data layer variable, you could even configure a condition along the trigger to for example only trigger when `Order Total is greater than 100`.
 
