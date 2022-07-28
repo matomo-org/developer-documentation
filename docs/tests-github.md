@@ -42,7 +42,7 @@ For more details, refer [this article](https://docs.github.com/en/actions/securi
 Please make the environment variables used in the action are not customizable by the PR title etc.
 
 #### Sensitive Information
-Do not save the secrets value like token, password or any sensitive information in plain text, JSON, XML, YAML (or similar).
+Do not save secrets with values like token, password or other sensitive information in plain text, JSON, XML, YAML (or similar).
 
 ### Third-party actions
 
