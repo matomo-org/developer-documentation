@@ -16,7 +16,7 @@ Each script is triggered by its own conditions, for more details see [Github Act
 Matomo uses GitHub Action to automatically run its build by various triggers.
 - [Build Tracker JS] Trigger by the comment `build js` into the pull request. That will compress js/piwik.js into matomo.js and piwik.js
 - [Build VUE] Auto trigger, it will build VUE file and commit back to the PR
-- [Composer Update] Auto trigger by cron，it will run `composer update` and commit back to the repo
+- [Composer Update] runs once a week. Executes `composer update` and creates a PR for available updates
 - [PHPCS check] Auto trigger, checking PHPCS code quality if not valid will return error details.
 - [Inactive PR] runs daily, inactive PR will be marked as stale after 14 days
 
