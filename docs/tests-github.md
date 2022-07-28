@@ -32,7 +32,7 @@ We recommend forking the Matomo project and running actions on your own pipeline
 
 There is a chance the action scripts getting hacked, paying attention to security is of the upmost importance when you create a new GitHub Action script. 
 
-It could lead a GitHub token lost and write access to our code. [More details](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#stealing-the-jobs-github_token)
+It could lead to a GitHub token loss and write access to our code. [More details](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#stealing-the-jobs-github_token)
 
 There are two common attack [script injection attacks](https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions#example-of-a-script-injection-attack) and [Security hardening](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions).
 
