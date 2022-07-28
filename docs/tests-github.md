@@ -9,7 +9,7 @@ category: DevelopInDepth
 
 ## GitHub Action Scripts
 
-All the GitHub Action build file are locate in `.github/workflows/*.yml`
+All the GitHub Action build files are locate in `.github/workflows/*.yml`
 
 Each script is triggered by its own conditions, for more details see [Github Action Docs](https://docs.github.com/en/actions)
 
