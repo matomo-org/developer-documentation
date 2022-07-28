@@ -39,7 +39,7 @@ There are two common attack [script injection attacks](https://docs.github.com/e
 For more details, refer [this article](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#overview)
 
 #### Environment Variables
-Please make the environment variables used in the action are not customizable by the PR title etc.
+Please make sure the environment variables used in the action are not customizable by the PR title etc.
 
 #### Sensitive Information
 Do not save secrets with values like token, password or other sensitive information in plain text, JSON, XML, YAML (or similar).
