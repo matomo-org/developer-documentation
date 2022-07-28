@@ -52,4 +52,4 @@ If you need to use an action from the marketplace, please ensure that it is eith
 
 
 ### Permission
-We recommend using `none` permissions where possible, `read` permissions if needed to read the value, `write` only if needed, for more details [Permission syntax](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions) and [Assigning permissions to jobs](https://docs.github.com/en/enterprise-cloud@latest/actions/using-jobs/assigning-permissions-to-jobs) 
+We recommend using `none` permissions where possible, `read` permissions if needed to read the value, `write` only if needed, for more details see [Permission syntax](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions) and [Assigning permissions to jobs](https://docs.github.com/en/enterprise-cloud@latest/actions/using-jobs/assigning-permissions-to-jobs) 
