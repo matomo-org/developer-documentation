@@ -28,7 +28,7 @@ For text you know may contain special characters or if you need to output text i
 
 ### Use the correct Twig escaping strategy
 
-It's import to use the [correct escaping strategy](https://twig.symfony.com/doc/3.x/filters/escape.html) depending on where you are printing a value. For example, when prining a value in an HTML attribute like "title" or "label", then we need to use an `|e('html_attr')` escaping strategy. Other escaping stragies are `js`, `css`,  `url` and `html` (which is the default strategy).
+It's important to use the [correct escaping strategy](https://twig.symfony.com/doc/3.x/filters/escape.html) depending on where you are printing a value. For example, when printing a value in an HTML attribute like "title" or "label", then we need to use an `|e('html_attr')` escaping strategy. Other escaping strategies are `js`, `css`,  `url` and `html` (which is the default strategy).
 
 ### Use `|raw` sparingly in Twig templates
 
