@@ -26,6 +26,10 @@ For text you know may contain special characters or if you need to output text i
 
 *Note: You can sanitize text that isn't in a request parameter by using [Piwik::sanitizeInputValues()](/api-reference/Piwik/Common#sanitizeinputvalues).*
 
+### Use the correct Twig escaping strategy
+
+It's important to use the [correct escaping strategy](https://twig.symfony.com/doc/3.x/filters/escape.html) depending on where you are printing a value. For example, when printing a value in an HTML attribute like "title" or "label", then we need to use an `|e('html_attr')` escaping strategy. Other escaping strategies are `js`, `css`,  `url` and `html` (which is the default strategy).
+
 ### Use `|raw` sparingly in Twig templates
 
 When writing [Twig](https://twig.symfony.com) templates, try to avoid using the `|raw` filter when possible. As an alternative, put the HTML you want to reuse in a separate template and `{% include %}` it.
@@ -220,10 +224,11 @@ By no means is below a complete checklist. You'll always be required to still th
 * **Authorisation checks**: Any controller action or api method has an access/permission check
 * **CSRF checks**: Any form or action or api that changes data has a CSRF nonce or token check
 * **SQL injection checks**: Database parameters use bound parameters or cast values to int
-* **XSS checks**: User input is escaped (also in JavaScript) see XSS section in this guide
+* **XSS checks**: User input is escaped (also in JavaScript) see XSS section in this guide. Ensure the [correct escaping strategy](https://twig.symfony.com/doc/3.x/filters/escape.html) is used
 * **Timing attack checks**: For sensitive equal comparisons `Common::hashEquals` is used
 * **Exposing of data**: No sensitive data is exposed (any tokens or passwords eg in the HTML as part of a system check or logs or so)
 * **Secure data storing**: Passwords or similar data like a sessionId is stored securely hashed
+* **Brute Force Attack**: If there is any token or password like authentication then we use our brute force prevention feature
 * External links have a `rel="noreferrer noopener"` (although newer browser versions add this automatically). The `noopener` is needed for security reasons. The `noreferrer` for privacy reasons. See [rel=noreferrer](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noreferrer) and [rel=noopener](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener)
 * **Email notifications are sent** for critical actions related to login credentials, tokens, 2FA etc and ideally also for any other crticial configuration change such as brute force changes etc.
 * **Unsafe methods**: Methods to watch out for:
