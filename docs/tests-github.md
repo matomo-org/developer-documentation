@@ -4,7 +4,7 @@ category: DevelopInDepth
 ---
 # Using GitHub Actions
 
-[Github Action](https://github.com/features/actions) makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub. Make code reviews, branch management, and issue triaging work the way you want.
+[Github Action](https://github.com/features/actions) are used to automate our software workflows including running javascript builds, test suites, releases and code checks.
 
 
 ## GitHub Action Scripts
