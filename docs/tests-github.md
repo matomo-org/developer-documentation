@@ -14,7 +14,7 @@ All the GitHub Action build files are locate in `.github/workflows/*.yml`
 Each script is triggered by its own conditions, for more details see [Github Action Docs](https://docs.github.com/en/actions)
 
 Matomo uses GitHub Action to automate some processes. Our current actions a listed below:
-- [Build Tracker JS] Trigger by the comment `build js` into the pull request. That will compress js/piwik.js into matomo.js and piwik.js
+- [Build Tracker JS] Triggered by the comment `build js` into the pull request. That will compress js/piwik.js into matomo.js and piwik.js and push the changes if PRs branch is within the same repo.
 - [Build VUE] Triggered for PRs when commits are pushed. It will build VUE files and commit back to the branch or leave a comment, if the branch is not within the same repo.
 - [Composer Update] runs once a week. Executes `composer update` and creates a PR for available updates
 - [PHPCS check] Auto trigger, checking PHPCS code quality if not valid will return error details.
