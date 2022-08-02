@@ -46,7 +46,7 @@ Do not save secrets with values like token, password or other sensitive informat
 
 ### Third-party actions
 
-Generally the best practice is to avoid using a third party GitHub action or script when possible. For example, when the action only executes few simple scripts. Then we won't need an action for this and can just do it ourselves thus reducing the security risk.
+Generally the best practice is to avoid using a third party GitHub action or script when possible. For example, when the action only executes few simple scripts, then we won't need an action for this and can just do it ourselves thus reducing the security risk.
 
 If you need to use an action from the marketplace, please ensure that it is either an official action provided by GitHub, or you did a review of the actions code. In latter case, please ensure to use a version fixed by a full length commit SHA.
 
