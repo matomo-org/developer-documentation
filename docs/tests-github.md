@@ -24,7 +24,7 @@ Matomo uses GitHub Action to automate some processes. Our current actions a list
 
 ## Create a new GitHub Action script
 
-To create a new GitHub Action script please read [Quickstart for GitHub Actions](https://docs.github.com/en/actions/quickstart)
+To create a new GitHub Action script please read [Quickstart for GitHub Actions](https://docs.github.com/en/actions/quickstart).
 
 We recommend forking the Matomo project and running actions on your own pipeline first. Also, please check the following list before getting started:
 
