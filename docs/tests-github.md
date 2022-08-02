@@ -17,7 +17,7 @@ Matomo uses GitHub Action to automate some processes. Our current actions a list
 - [Build Tracker JS] Triggered by the comment `build js` into the pull request. That will compress js/piwik.js into matomo.js and piwik.js and push the changes if PRs branch is within the same repo.
 - [Build VUE] Triggered for PRs when commits are pushed. It will build VUE files and commit back to the branch or leave a comment, if the branch is not within the same repo.
 - [Composer Update] runs once a week. Executes `composer update` and creates a PR for available updates
-- [PHPCS check] Auto trigger, checking PHPCS code quality if not valid will return error details.
+- [PHPCS check] Triggered for pull requests. Checks code quality using PHPCS and will return error details on failure.
 - [Inactive PR] runs daily, inactive PR will be marked as stale after 14 days
 
 (New scripts should be documented in the list above.)
