@@ -3749,7 +3749,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.resendInvite
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [1540](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L1540)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [1544](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L1544)*
 
 Triggered after a new user was invited.
 
@@ -3775,7 +3775,7 @@ Usages:
 
 ### UsersManager.removeSiteAccess
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [1116](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L1116)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [1120](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L1120)*
 
 
 
