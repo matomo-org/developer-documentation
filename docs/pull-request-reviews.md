@@ -101,7 +101,7 @@ By nature, edge cases are hard to find, but it's definitely better to catch them
 
 ### Usability review done
 
-If a feature touches Matomo's UX in any way, Thomas and Matt are required to provide their input (ping them if needed). But, we also want developers to think about usability themselves.
+If a feature touches Matomo's UX in any way, the UX person or Product Team is required to provide their input (ping them if needed). But, we also want developers to think about usability themselves.
 
 When reviewing a pull request, think about whether it's possible that users may be confused by how it works, or unsure of how to use it. If there's a possibility that they might reach
 out to support or the forums or make a github issue, then we'd like to prevent that, either with a change to the pull request, or by creating/editing a faq so we can address these
