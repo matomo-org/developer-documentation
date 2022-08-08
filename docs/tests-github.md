@@ -34,13 +34,13 @@ We recommend forking the Matomo project and running actions on your own pipeline
 
 ### Security
 
-There is a chance the action scripts are getting hacked, so paying attention to security is of the upmost importance when you create a new GitHub Action script. 
+There is a chance the action scripts are getting hacked, so paying attention to security is of the utmost importance when you create a new GitHub Action script. 
 
 It could lead to a GitHub token loss and write access to our code. [More details](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#stealing-the-jobs-github_token)
 
-There are two common attack [script injection attacks](https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions#example-of-a-script-injection-attack) and [Security hardening](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions).
+There are two common attacks - [script injection attacks](https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions#example-of-a-script-injection-attack) and [Security hardening](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions).
 
-For more details, refer [this article](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#overview)
+For more details, refer to [this article](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#overview)
 
 #### Environment Variables
 Please make sure the environment variables used in the action are not customizable by the PR title etc.
@@ -56,4 +56,4 @@ If you need to use an action from the marketplace, please ensure that it is eith
 
 
 ### Permission
-We recommend using `none` permissions where possible, `read` permissions if needed to read the value, `write` only if needed, for more details see [Permission syntax](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions) and [Assigning permissions to jobs](https://docs.github.com/en/enterprise-cloud@latest/actions/using-jobs/assigning-permissions-to-jobs) 
+We recommend using `none` permissions where possible, `read` permissions if needed to read the value, `write` only if needed. For more details see [Permission syntax](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions) and [Assigning permissions to jobs](https://docs.github.com/en/enterprise-cloud@latest/actions/using-jobs/assigning-permissions-to-jobs) 
