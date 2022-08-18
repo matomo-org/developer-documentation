@@ -122,7 +122,7 @@ $field->transform = function ($value, Setting $setting) {
 
 ### Migrating tags to include new parameters
 
-When you add a new parameter to a tag template, all the existing tags referencing this template will be shown as changed after the next version is published. They will continue to do so until each one is manually updated in some way and another version is published. To avoid this, in Matomo version 4.12 forward, there is a helper class that can be used in migration scripts.
+When you add a new parameter to a tag template, all the existing tags referencing this template will be shown as changed after the next version is published. They will continue to do so until each one is manually updated in some way and another version is published. To avoid this, there is a helper class that can be used in the migration script (Available Matomo version 4.12 and above).
 
 * First, you need to create a migration script following the process outlined in the [Extending the database](https://developer.matomo.org/guides/extending-database) page.
 * Then, in the doUpdate method, you can use the new migration helper class to update all of the tags that need to be updated.
