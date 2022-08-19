@@ -120,6 +120,28 @@ $field->transform = function ($value, Setting $setting) {
 }
 ```
 
+### Migrating tags to include new parameters
+
+When you add a new parameter to a tag template, all the existing tags referencing this template will be shown as changed after the next version is published. They will continue to do so until each one is manually updated in some way and another version is published. To avoid this, there is a helper class that can be used in the migration script (Available Matomo version 4.12 and above).
+
+* First, you need to create a migration script following the process outlined in the [Extending the database](https://developer.matomo.org/guides/extending-database) page.
+* Then, in the doUpdate method, you can use the new migration helper class to update all of the tags that need to be updated.
+```php
+public function doUpdate(Updater $updater)
+{
+    // This executes any migrations defined the normal way.
+    $updater->executeMigrations(__FILE__, $this->getMigrations($updater));
+
+    // Migrate the Matomo type tags to all include the newly configured field.
+    $migrator = new NewTagParameterMigrator(MatomoTag::ID, 'someNewParameterName');
+    $migrator->addField('anotherNewParameterName'); // This is optional and only needed if you added more than one parameter.
+    $migrator->migrate(); // This kicks off the processing of the tag migration.
+}
+```
+* If you're updating a different template class than `MatomoTag`, simply substitute the correct class, which should have the `ID` constant.
+* __Note:__ There's an `addField` method that can be called as many times as necessary if you added more than one new parameter. If you only added one, there's no need to use the `addField` method.
+* There is an optional third argument on the constructor and second argument on the `addField` method that allows you to specify what value to give the new parameter instead of leaving it empty.
+
 ### More information
 
 To get more information, check out the [FieldConfig API](https://developer.matomo.org/api-reference/Piwik/Settings/FieldConfig).
