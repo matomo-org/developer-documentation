@@ -53,13 +53,13 @@ if ($idsite) {
 
     $all_goals_configured_in_matomo = \Piwik\API\Request::processRequest('Goals.getGoals', array(
         'idSite' => $idsite
-    );
+    ));
 
     $country_report = \Piwik\API\Request::processRequest('UserCountry.getCountry', array(
         'idSite' => $idsite,
         'period' => 'day',
         'date' => 'today'
-    );
+    ));
 }
 ```
 
