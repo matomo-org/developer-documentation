@@ -33,7 +33,7 @@ current_user_can('view_matomo');
 
 Capabilities are inherited. This means a super user automatically also has admin, write and view permission.
 
-[Learn more about user permissions](https://developer.matomo/guides/permissions)
+[Learn more about user permissions](https://developer.matomo.org/guides/permissions)
 
 ## Generating links to Matomo app
 
