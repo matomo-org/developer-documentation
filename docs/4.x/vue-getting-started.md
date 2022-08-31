@@ -12,6 +12,22 @@ To learn how to structure and build a Vue module in your Matomo plugin, see the
 
 ## Developer Concepts
 
+### Unidirectional Data Flow
+
+Vue, like most other modern frontend frameworks, enforces an important concept called "Unidirectional Data Flow",
+which basically means changes to data flow in one direction through an app; a change in one part of the app
+does not implicitly affect other parts of the app.
+
+In practice this is seen in how components pass data to other components. Parent components pass data as properties
+to child components, and child components are disallowed from making changes to that data, so child components
+cannot implicitly affect the parent component.
+
+When a child component needs to pass data back up to the parent, it emits an event with the new data. The parent
+component receives the event and does something with the data, which could include modifying the data it passes
+to the child component.
+
+This loop or cycle is the core mechanism of frontend frameworks like Vue.
+
 ### Component State vs. Application State
 
 Vue allows us to create state driven UI components. Components are defined based on the data they display and manipulate.
