@@ -93,6 +93,30 @@ Classes implementing the store pattern should:
 * use computed properties, not methods, to return derived data
 * provide public methods for logic that mutates the state
 
+### v-for and keys
+
+It's best practice to always provide a `:key` binding when using the v-for directive, but it can sometimes be
+difficult for newcomers to know what exactly to use here, so we provide some guidelines.
+
+The property itself is used to uniquely identify an item in the collection v-for iterates over, which allows
+Vue to recognize when in-place modifications to the array changes. For example, if a component moves an item
+from one position to another in an array used in a v-for statement, Vue can see that the key for a position
+changed and trigger re-rendering.
+
+For some entities in Matomo, there is an ID stored in the database you can use. For example, Site's have
+an idsite, Goals have an idgoal, etc. But not every array you'll use with v-for has items with a unique ID,
+like the list of URLs for a Site. For arrays like these, you have two options:
+
+* generate a unique ID in the client at runtime
+* or just use the index (the preferred solution in Matomo)
+
+Using the array's index is generally considered bad practice, since in this case the key won't change when
+in-place modifications to an array are made, and Vue won't notice. It is however ok to use, and the simpler
+solution, if the array is treated as immutable and in-place modifications are avoided.
+
+In other words, it works if every time a change occurs to the array, an entirely new array instance is
+created and used.
+
 ### Accessing and changing the URL
 
 URLs in Matomo are mainly based on query parameters, the path and host are not normally used. The base URL's
