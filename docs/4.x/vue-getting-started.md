@@ -14,7 +14,7 @@ To learn how to structure and build a Vue module in your Matomo plugin, see the
 
 ### Unidirectional Data Flow
 
-Vue, like most other modern frontend frameworks, is enforces an important concept called "Unidirectional Data Flow",
+Vue, like most other modern frontend frameworks, enforces an important concept called "Unidirectional Data Flow",
 which basically means changes to data flow in one direction through an app; a change in one part of the app
 does not implicitly affect other parts of the app.
 
