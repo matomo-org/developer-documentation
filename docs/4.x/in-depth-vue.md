@@ -93,3 +93,144 @@ The component used must follow the following contract:
 
 And that's it, once your custom component is done and exported properly, you'll be able to use it in Vue
 components (via `Field` directly) or in Matomo settings via the `FieldConfig::$customFieldComponent` property.
+
+## Allowing plugins to add content to your Vue components
+
+This section describes the primary technique you can use to allow other plugins to extend your Vue component.
+
+First, decide what part of your component you'd like to add content to, then, make your component accept
+component references as a property:
+
+```vue
+<template>
+  <div>
+    
+    // ... here's where we want to allow plugins to add content ...
+
+  </div>
+</template>
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  props: {
+    extensions: Array,
+  },
+});
+</script>
+```
+
+Here, `extensions` will be an array like: `[{ plugin: 'MyPlugin', component: 'MyComponent' }, ...]`.
+
+Then we'll use dynamic Vue `<component>`s and the `useExternalPluginComponent` function to resolve those components
+at runtime:
+
+```vue
+<template>
+  <div>
+    <div v-for="(refComponent, index) in componentExtensions" :key="index">
+      <component :is="refComponent"/>
+    </div>
+  </div>
+</template>
+<script lang="ts">
+import { defineComponent, markRaw } from 'vue';
+import { useExternalPluginComponent } from 'CoreHome';
+
+export default defineComponent({
+  props: {
+    extensions: Array,
+  },
+  computed: {
+    componentExtensions() {
+      return markRaw(this.extensions.map((ref) => useExternalPluginComponent(ref.plugin, ref.component)));
+    },
+  },
+});
+</script>
+```
+
+The component is now extendable, we just need to allow plugins to specify components to use and supply them to
+our component. For the first part, you can use a server side event:
+
+```php
+class MyController extends \Piwik\Plugin\Controller
+{
+    private function getComponentExtensions()
+    {
+        $componentExtensions = [];
+        Piwik::postEvent('MyPlugin.getComponentExtensions', [&$componentExtensions]);
+        return $componentExtensions;
+    }
+}
+```
+
+The second part depends on where we use our extendable component. If we're using it in a twig template via, vue-entry,
+then we'd just supply the extensions property that way:
+
+```php
+class MyController extends \Piwik\Plugin\Controller
+{
+    public function myPage()
+    {
+        $view = new View('@MyPlugin/myPage.twig');
+        $view->extensions = self::getComponentExtensions();
+        return $this->renderView($view);
+    }
+
+    public static function getComponentExtensions()
+    {
+        $componentExtensions = [];
+        Piwik::postEvent('MyPlugin.getComponentExtensions', [&$componentExtensions]);
+        return $componentExtensions;
+    }
+}
+```
+
+```twig
+<div vue-entry="MyPlugin.MyExtendableComponent" extensions="{{ extensions|json_encode }}"></div>
+```
+
+If, however, the extendable component is used directly in another Vue component, then we'll need to store
+the array as a global via the `Template.jsGlobalVariables` event:
+
+```php
+class MyPlugin extends \Piwik\Plugin
+{
+    public function registerEvents()
+    {
+        return [
+            'Template.jsGlobalVariables' => 'addJsGlobalVariables',
+        ];
+    }
+    
+    public function addJsGlobalVariables(&$out)
+    {
+        $out .= "piwik.myPluginComponentExtensions = " . json_encode(MyController::getComponentExtensions()) . ";\n";
+    }
+}
+```
+
+then, we use this global variable when using our component:
+
+```vue
+<template>
+  <MyExtendableComponent :extensions="extensions"/>
+</template>
+<script lang="ts">
+import { defineComponent } from 'vue';
+import MyExtendableComponent from './MyExtendableComponent.vue';
+
+export default defineComponent({
+  props: {},
+  components: {
+    MyExtendableComponent,
+  },
+  computed: {
+    extensions() {
+      return window.piwik.myPluginComponentExtensions;
+    },
+  },
+});
+</script>
+```
