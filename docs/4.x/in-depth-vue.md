@@ -72,7 +72,7 @@ Matomo provides developers with a `Field` component that is used to create indiv
 of control (checkbox, select, text field, etc.) is specified via the `uicontrol` property.
 
 Sometimes, however, you may need something more complicated than the default form fields, something specifically
-related to you plugin. For cases like this, Matomo provides the `component` property, which allows you to specify
+related to your plugin. For cases like this, Matomo provides the `component` property, which allows you to specify
 a custom Vue component:
 
 ```html
