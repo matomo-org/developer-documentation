@@ -66,6 +66,34 @@ the presence of the goal-page-link attribute.
 **For all new code, this pattern should be avoided, and Vue directives should not be used, or be expected
 to be used on HTML.**
 
+## Extending Form Fields / Custom Form Controls
+
+Matomo provides developers with a `Field` component that is used to create individual form fields. The type
+of control (checkbox, select, text field, etc.) is specified via the `uicontrol` property.
+
+Sometimes, however, you may need something more complicated than the default form fields, something specifically
+related to your plugin. For cases like this, Matomo provides the `component` property, which allows you to specify
+a custom Vue component:
+
+```html
+<Field
+    :component="{plugin: 'MyPlugin', component: 'MyFieldComponent'}"
+/>
+```
+
+The component used must follow the following contract:
+
+* It must follow the v-model contract. That is, it must take a `modelValue` property and emit an
+  `update:modelValue` event when the value changes.
+* It must accept a `name` property which should be used on the `<input>`, if the custom component uses one.
+* It must accept a `title` property which should be used to label the field.
+* And it can accept a `uiControlAttributes` object property if you'd like the component to offer more configuration
+  options. If users want to use these options, they will bind to the `:ui-control-attributes` property on the `Field`
+  component, which will be forwarded to your custom component.
+
+And that's it, once your custom component is done and exported properly, you'll be able to use it in Vue
+components (via `Field` directly) or in Matomo settings via the `FieldConfig::$customFieldComponent` property.
+
 ## Allowing plugins to add content to your Vue components
 
 This section describes the primary technique you can use to allow other plugins to extend your Vue component.
