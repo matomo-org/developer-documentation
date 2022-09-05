@@ -301,3 +301,35 @@ attribute:
   </template>
 </div>
 ```
+
+### Using custom npm packages
+
+If you want to use npm packages that are not installed by Matomo by default, it is possible if you use Vue to define
+your plugin's frontend. To use other npm packages, simply run `npm install` or `yarn add` in the plugin directory.
+
+This will install the dependency in a new node_modules folder in the root of your plugin, eg, `plugins/MyPlugin/node_modules`.
+You can then import it as normal, webpack will resolve it correctly when looking for it.
+
+If you also want to include typings, then you'll have to provide your own tsconfig.json file as well. It should look
+something like:
+
+```json
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "typeRoots": [
+      "../../node_modules/@types",
+      "../../plugins/CoreVue/types/index.d.ts",
+      "./node_modules/@types"
+    ],
+    "types": [
+      "jquery",
+      "my-new-dependency",
+      "..."
+    ]
+  }
+}
+```
+
+You'll need to specify the types and typeRoots of the root tsconfig.json as well as any typings you want to add.
+The types should be found when running the `vue:build` command for your plugin.
