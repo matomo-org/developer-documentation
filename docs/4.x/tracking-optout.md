@@ -38,7 +38,7 @@ The embedded opt-out form code to add to the website page is simple:
 <script src="https://my-matomo-site.org/index.php?module=CoreAdminHome&action=optOutJS&div=matomo-opt-out></script>\
 ```
 
-The opt-out div may be positioned anywhere on the page and can have it's own styling. If the div is created dynamitcally then it must exist when the `DOMContentLoaded`
+The opt-out div may be positioned anywhere on the page and can have it's own styling. If the div is created dynamically then it must exist when the `DOMContentLoaded`
 event is fired.
 
 Opt-out form configuration options can be passed as URL parameters, the following options are available:
