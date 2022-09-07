@@ -21,7 +21,7 @@ Using this option the embedded opt-out form code will load Javascript from your 
 ### Process
 
 - The embedded website `<script>` tag requests  the `optOutJS` JavaScript from the Matomo instance, passing admin configuration options as URL parameters. 
-- The Matomo instance translates all form text to into the chosen language, or the browser language if `language=auto` is used and returns the resulting JavaScript.
+- The Matomo instance translates all form text into the chosen language, or the browser language if `language=auto` is used, and returns the resulting JavaScript.
 - The opt-out JavaScript executes when the `DOMContentLoaded` event is fired, indicating the page has finished loading.
 - It checks that the specified opt-out form div exists on the page, if not then an error is shown.
 - It then waits for the Matomo Tracker code to become available.
