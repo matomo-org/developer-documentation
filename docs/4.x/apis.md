@@ -72,6 +72,8 @@ Assuming we completely remove the deprecated API in the next major version, then
 
 Sometimes, deprecated APIs may still be in the code base for many new major releases. In that case, we review before each major release if a deprecated method can be safely removed or not. If in doubt, we rather keep it for another major release.
 
+In most case, we should be able to remove the `@api` tag starting from the next major release so it no longer appears in the developer documentation. 
+
 ## Developer changelog
 
 When we are adding a new API or when we are breaking or deprecating an existing API, then we change our [Developer Changelog](https://github.com/matomo-org/matomo/blob/4.x-dev/CHANGELOG.md). We also mention library updates and on occasion internal changes that may be interesting for developers.
