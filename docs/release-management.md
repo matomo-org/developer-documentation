@@ -82,9 +82,15 @@ Also, as soon as we start working on the next major version, we need to require 
 * Update the [submodule github action](https://github.com/matomo-org/matomo/blob/4.x-dev/.github/workflows/submodules.yml), [composer update action](https://github.com/matomo-org/matomo/blob/4.x-dev/.github/workflows/composer-update.yml), and the [CLDR action](https://github.com/matomo-org/matomo/blob/4.x-dev/.github/workflows/update-intl.yml) to use the new main branch.
 * We can now start working and merging PRs for the next major release
   * We first start working on the big issues that take a very long to make sure they are finished by the time we want to release the first RC, and so they won't delay the release
+  * We look for all `@deprecated` APIs and review if we can remove the API now safely see also [Deprecating APIs](https://developer.matomo.org/guides/apis#deprecating-a-php-or-api-method). Removing an API now safely means
+    * The method or event is no longer in use by any of our own plugins or SDKs
+    * It won't break the upgrade process even if someone upgrades from an older version
+    * The removal of the API was mentioned in our migration guide for plugin developers and it can be expected that they migrate to the new way 
+    * It won't cause any issues for example with the Matomo Mobile app and the majority of other API consumers and we have given them plenty of time to migrate. Plenty of time may mean that we need to give them one major release cycle time to migrate as otherwise it could break things the moment they upgrade to Matomo when you can't have something working with the old and the new way at the same time.
   * We then start working on the issues that cause BC breaks, so we have plenty of time to adjust all the plugins, and also we indirectly test these changes sooner
   * The core team makes sure to communicate breaking changes to the plugins team so the plugins team can make the plugins compatible whenever there's a change. Sometimes the core team might also directly suggest PRs/changes to make a plugin compatible 
   * As always, we maintain the changelog for any breaking change
+
 
 #### api.matomo.org
 
