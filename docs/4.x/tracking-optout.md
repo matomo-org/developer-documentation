@@ -7,7 +7,7 @@ title: Tracking Opt-out
 If you want to provide your visitors with the choice to opt-out of Matomo tracking rather than [asking for consent](/guides/tracking-consent) then Matomo
 includes a built-in opt-out form that you can add to your website. 
 
-This involves adding small amount of HTML/JavaScript to the appropriate pages on your site. This code can be generated from the Administration
+This involves adding a small snippet of HTML/JavaScript to the appropriate pages on your site. This code can be generated from the Administration
 => Privacy => Users opt-out menu in the Matomo dashboard. The generated code can include custom CSS styles and optionally skip the introduction text.
 
 The opt-out form code can be generated to work in two ways, either using the Matomo tracker code or as self-contained code, each option has advantages and 
