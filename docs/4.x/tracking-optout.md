@@ -26,7 +26,7 @@ Using this option the embedded opt-out form code will load Javascript from your 
 - It checks that the specified opt-out form div exists on the page, and shows an error if not.
 - It then waits for the Matomo Tracker code to become available.
   - If the Matomo tracker code is found then the opt-out form is created to use the Matomo tracker code to set consent.
-  - If the Matomo Tracker code does not become available with the timeout period then the opt-out form will be created to set consent cookies directly.
+  - If the Matomo Tracker code does not become available within the timeout period then the opt-out form will be created to set consent cookies directly.
 - If cookies are disabled in the browser or the connection is not `HTTPS` then an error will be shown. 
 
 ### Customization 
