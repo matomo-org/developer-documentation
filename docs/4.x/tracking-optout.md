@@ -13,10 +13,14 @@ This involves adding a small snippet of HTML/JavaScript to the appropriate pages
 The opt-out form code can be generated to work in two ways, either using the Matomo tracker code or as self-contained code, each option has advantages and 
 disadvantages.
 
-## Opt-out using the Matomo tracker code
+## Opt-out using the Matomo JavaScript Tracker code
 
 Using this option the embedded opt-out form code will load Javascript from your Matomo instance, this JavaScript will then create the opt-out form in the designated 
 `<div>` container. If the visitor opts in or out then the Matomo tracking code functions will be preferred to set the consent choice.
+
+In order for the [Matomo JavaScript tracking code](/guides/tracking-javascript-guide) to be used by the opt-out it must also be loaded by the same page. A common approach
+is to add both the opt-out form and Matomo JavaScript tracker to the website's Privacy Policy page. If it is not possible to load the Matomo JavaScript tracker on the privacy
+policy page then you can either use the self-contained opt-out form instead or add the `useCookieTimeout=0` URL parameter to avoid waiting for the JavaScript tracker to load.
 
 ### Process
 
@@ -56,6 +60,8 @@ Only used if applying a custom style:
 - `fontColor` Colour of the font, eg. `#ABCDEF`
 - `fontSize` Font size in pixels.
 - `fontFamily` Font family name, eg. `Arial`
+
+Any custom cookie settings for `cookie_path` and `cookie_domain` will automatically be applied from the `[Tracker]` section of `config.ini.php`. 
     
 ### Advantages
 
@@ -142,6 +148,18 @@ Translation strings:
 ### When should I choose this opt-out form type?
 
 When the opt-out must work for visitors who block third party scripts and domains.
+
+## Testing your opt-out
+
+It's important to test the opt-out form once it has been added to your site. Each website is different and there is always the possibility that existing scripts on the
+page may interfere with the opt-out form code or that other incompatibilities exist.
+
+To ensure that your opt-out is working properly with your website it is recommended to perform the following quick test after adding the opt-out code.
+
+- Browse to the website page with the opt-out form.
+- Once the page has loaded you should see the opt-out box.
+- Unchecking the checkbox to opt-out should show the opted-out message.
+- Checking the checkbox to opt-in should show the opted-in message.
 
 ## Legacy iFrame Opt-out
 
