@@ -42,7 +42,7 @@ The embedded opt-out form code to add to the website page is simple:
 <script src="https://my-matomo-site.org/index.php?module=CoreAdminHome&action=optOutJS&div=matomo-opt-out></script>\
 ```
 
-The opt-out div may be positioned anywhere on the page and can have it's own styling. If the div is created dynamically then it must exist when the `DOMContentLoaded`
+The opt-out div may be positioned anywhere on the page and can have its own styling. If the div is created dynamically then it must exist when the `DOMContentLoaded`
 event is fired.
 
 Opt-out form configuration options can be passed as URL parameters, the following options are available:
@@ -54,6 +54,8 @@ based on the browser. To force a particular language pass language code such as 
 - `useCookiesIfNoTracker` Fall back to setting consent cookies directly if the Matomo tracking code cannot be found on the page, defaults to `1`. If this is set to `0` 
 and the Matomo tracking code cannot be found then the opt-out form will not be shown.
 - `useCookiesTimeout` How long to wait for the Matomo tracking code to become available before giving up and setting consent cookies directly, defaults to 10 seconds.
+- `cookiePath` Override the default path for Matomo setting consent cookies, should be blank for most websites.
+- `cookieDomain` Override the default domain for Matomo setting consent cookies, should be blank for most websites.
 
 Only used if applying a custom style:
 - `backgroundColor` The background colour to apply to the opt-out form div.
@@ -105,7 +107,7 @@ The embedded opt-out form code to add to the website page is quite long. Customi
 <script>               
 ```
 
-Just like other opt-out form type, the opt-out div may be positioned anywhere on the page and can have it's own styling. If the div is created dynamitcally then it must
+Just like other opt-out form type, the opt-out div may be positioned anywhere on the page and can have its own styling. If the div is created dynamitcally then it must
 exist when the `DOMContentLoaded` event is fired.
 
 The third line of code contains an array of settings which may be used to configure the self-contained opt-out form. 
