@@ -3719,7 +3719,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.declined
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php) in line [693](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php#L693)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php) in line [694](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php#L694)*
 
 Triggered after a user accepted an invite
 
