@@ -9,6 +9,7 @@ subGuides:
   - piwiks-extensibility-points
   - multi-tenants
   - jstracker-core
+  - in-depth-opt-out
   - tracking-requests
   - segments
 ---
