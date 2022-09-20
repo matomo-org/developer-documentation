@@ -67,6 +67,7 @@ try {
             'build_dir'            => $rootDir.'/docs/' . $longVersionName . '/generated/',
             'cache_dir'            => $rootDir.'/docs/' . $longVersionName . '/cache/',
             'template_dirs'        => array($rootDir.'/generator/template'),
+            'store'                => new \Sami\Store\ArrayStore(),
             'default_opened_level' => 5,
             'include_parent_data'  => true,
             'filter'               => new ApiClassFilter()
@@ -98,6 +99,9 @@ try {
             $content = preg_replace("/(\n)+/", ' ', $content);
             $content = preg_replace("/(\s)+/", ' ', $content);
             return $content;
+        }));
+        $twig->addFilter(new Twig_SimpleFilter('string', function ($content) {
+            return (string) $content;
         }));
         $twig->addFilter(new Twig_SimpleFilter('shortDescription', function ($content) {
 
