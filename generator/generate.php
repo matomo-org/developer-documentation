@@ -10,6 +10,7 @@
 
 include_once 'bootstrap.php';
 
+use PhpParser\NodeAbstract;
 use Sami\Sami;
 use Symfony\Component\Finder\Finder;
 use Sami\Reflection\ClassReflection;
@@ -101,6 +102,9 @@ try {
             return $content;
         }));
         $twig->addFilter(new Twig_SimpleFilter('string', function ($content) {
+            if (is_object($content) && $content instanceof NodeAbstract && property_exists($content, 'name')) {
+                return $content->name;
+            } 
             return (string) $content;
         }));
         $twig->addFilter(new Twig_SimpleFilter('shortDescription', function ($content) {
