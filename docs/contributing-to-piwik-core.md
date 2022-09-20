@@ -1,7 +1,7 @@
 ---
 category: DevelopInDepth
 ---
-# Contributing to Piwik Core
+# Contributing to Matomo Core
 
 ## About this guide
 
@@ -26,6 +26,12 @@ This guide assumes that you:
 The contribution process starts with a bug you want to fix or an idea that you want to implement. _If you don't have one, feel free to pick an open ticket on [github.com/matomo-org/matomo/milestones](https://github.com/matomo-org/matomo/milestones)._
 
 Once you've decided on something, continue below.
+
+### Getting confirmation the Matomo team is interested in the idea
+
+Most of the issues in Matomo issue tracker are ideas and bugs that the Matomo team would like to implement or solve. However it is not always the case, and the Matomo team may not be interested anymore in some of the issues even though they are still open. 
+
+Before you spend time working on a bug or idea, and risking it may not be merged eventually, then it is highly recommended that **you first leave a comment on the issue and explain that you are interested to contribute to the issue**. In your comment also explain how you plan on solving the bug or creating the new feature, and ask the team for a quick validation of your plan. This gives the Matomo team the opportunity to review your proposal and whether they want to see this added to Matomo, and provide you guidance early on. The team will reply to you in the issue and once they confirm, then you can confidently work on the issue and work towards opening a Pull Request.
 
 ### Getting a copy of Piwik to work on
 

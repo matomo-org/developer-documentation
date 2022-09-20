@@ -8,7 +8,7 @@ This guide applies to Matomo core developers. If you develop a plugin and want t
 
 ## How to add a new plugin
 
-* Get Matt or Thomas to create a new github repository under `matomo-org`. The name for the plugin usually starts with `plugin-` followed by the plugin name. You can for example ping us in our slack. We use `*.x-dev` as the main branch where `*` would be replaced by the latest major version of Matomo.
+* Follow the internal process `Creating a new GitHub repository` to create a new github repository under `matomo-org`. The name for the plugin usually starts with `plugin-` followed by the plugin name. You can for example ping us in our slack. We use `*.x-dev` as the main branch where `*` would be replaced by the latest major version of Matomo.
   * After creating the repository, we should also configure it for translation in [Weblate](https://hosted.weblate.org/projects/matomo/). To do this,
   * go to Repository Settings -> Webhooks 
   * create a webhook with `https://hosted.weblate.org/hooks/github/` as the Payload URL
