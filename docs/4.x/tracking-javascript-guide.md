@@ -789,6 +789,8 @@ If you want to ignore download or outlink tracking on a specific link, you can a
 
 [View our integration guide for implementing tracking or cookie consent.](/guides/tracking-consent)
 
+[View the opt-out guide for implementing an opt-out form using the built-in Matomo options](/guides/tracking-optout)  
+
 ## Optional: creating a custom opt-out form
 
 If you'd like to provide your users with the ability to opt-out entirely from tracking, you can use an opt-out form. Matomo ships with an

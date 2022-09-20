@@ -5,6 +5,7 @@ subGuides:
   - tracking-javascript-guide
   - spa-tracking
   - tracking-consent
+  - tracking-optout
   - content-tracking
 ---
 # Tracking your application

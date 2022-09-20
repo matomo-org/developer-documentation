@@ -12,6 +12,22 @@ To learn how to structure and build a Vue module in your Matomo plugin, see the
 
 ## Developer Concepts
 
+### Unidirectional Data Flow
+
+Vue, like most other modern frontend frameworks, enforces an important concept called "Unidirectional Data Flow",
+which basically means changes to data flow in one direction through an app; a change in one part of the app
+does not implicitly affect other parts of the app.
+
+In practice this is seen in how components pass data to other components. Parent components pass data as properties
+to child components, and child components are disallowed from making changes to that data, so child components
+cannot implicitly affect the parent component.
+
+When a child component needs to pass data back up to the parent, it emits an event with the new data. The parent
+component receives the event and does something with the data, which could include modifying the data it passes
+to the child component.
+
+This loop or cycle is the core mechanism of frontend frameworks like Vue.
+
 ### Component State vs. Application State
 
 Vue allows us to create state driven UI components. Components are defined based on the data they display and manipulate.
@@ -92,6 +108,30 @@ Classes implementing the store pattern should:
   state should be modifiable by other classes.
 * use computed properties, not methods, to return derived data
 * provide public methods for logic that mutates the state
+
+### v-for and keys
+
+It's best practice to always provide a `:key` binding when using the v-for directive, but it can sometimes be
+difficult for newcomers to know what exactly to use here, so we provide some guidelines.
+
+The property itself is used to uniquely identify an item in the collection v-for iterates over, which allows
+Vue to recognize when in-place modifications to the array changes. For example, if a component moves an item
+from one position to another in an array used in a v-for statement, Vue can see that the key for a position
+changed and trigger re-rendering.
+
+For some entities in Matomo, there is an ID stored in the database you can use. For example, Site's have
+an idsite, Goals have an idgoal, etc. But not every array you'll use with v-for has items with a unique ID,
+like the list of URLs for a Site. For arrays like these, you have two options:
+
+* generate a unique ID in the client at runtime
+* or just use the index (the preferred solution in Matomo)
+
+Using the array's index is generally considered bad practice, since in this case the key won't change when
+in-place modifications to an array are made, and Vue won't notice. It is however ok to use, and the simpler
+solution, if the array is treated as immutable and in-place modifications are avoided.
+
+In other words, it works if every time a change occurs to the array, an entirely new array instance is
+created and used.
 
 ### Accessing and changing the URL
 
@@ -261,3 +301,35 @@ attribute:
   </template>
 </div>
 ```
+
+### Using custom npm packages
+
+If you want to use npm packages that are not installed by Matomo by default, it is possible if you use Vue to define
+your plugin's frontend. To use other npm packages, simply run `npm install` or `yarn add` in the plugin directory.
+
+This will install the dependency in a new node_modules folder in the root of your plugin, eg, `plugins/MyPlugin/node_modules`.
+You can then import it as normal, webpack will resolve it correctly when looking for it.
+
+If you also want to include typings, then you'll have to provide your own tsconfig.json file as well. It should look
+something like:
+
+```json
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "typeRoots": [
+      "../../node_modules/@types",
+      "../../plugins/CoreVue/types/index.d.ts",
+      "./node_modules/@types"
+    ],
+    "types": [
+      "jquery",
+      "my-new-dependency",
+      "..."
+    ]
+  }
+}
+```
+
+You'll need to specify the types and typeRoots of the root tsconfig.json as well as any typings you want to add.
+The types should be found when running the `vue:build` command for your plugin.
