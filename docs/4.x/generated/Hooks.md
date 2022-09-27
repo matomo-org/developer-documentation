@@ -2998,7 +2998,7 @@ Callback Signature:
 
 ### SitesManager.addSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php) in line [742](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php#L742)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php) in line [748](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php#L748)*
 
 Triggered after a site has been added.
 
@@ -3010,7 +3010,7 @@ Callback Signature:
 
 ### SitesManager.deleteSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php) in line [855](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php#L855)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php) in line [861](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/SitesManager/API.php#L861)*
 
 Triggered after a site has been deleted. Plugins can use this event to remove site specific values or settings, such as removing all
 goals that belong to a specific website. If you store any data related to a website you
