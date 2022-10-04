@@ -89,7 +89,7 @@ Returns the segment expression.
 
 #### Signature
 
-- It returns a `Stmt_Namespace\SegmentExpression` value.
+- It returns a `Piwik\SegmentExpression` value.
 
 <a name="isempty" id="isempty"></a>
 <a name="isEmpty" id="isEmpty"></a>
@@ -209,7 +209,7 @@ The combination is naive in that it does not take order of operations into accou
        The segment condition to add.
 - It returns a `string` value.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception`
+    - `Piwik\Exception`
 
 <a name="getstoredsegmentname" id="getstoredsegmentname"></a>
 <a name="getStoredSegmentName" id="getStoredSegmentName"></a>

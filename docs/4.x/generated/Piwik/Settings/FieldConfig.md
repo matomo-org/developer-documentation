@@ -10,7 +10,7 @@ Constants
 
 This class defines the following constants:
 
-- [`UI_CONTROL_MULTI_SELECT`](#ui_control_multi_select) — Shows a select field where a user can select multiple values.- [`UI_CONTROL_SINGLE_EXPANDABLE_SELECT`](#ui_control_single_expandable_select) — Shows an expandable select field which is useful when each selectable value belongs to a group.
+- [`UI_CONTROL_MULTI_SELECT`](#ui_control_multi_select) — Shows a select field where a user can select multiple values. Inherited from [`FieldConfig`](../../Piwik/Settings/FieldConfig.md)- [`UI_CONTROL_SINGLE_EXPANDABLE_SELECT`](#ui_control_single_expandable_select) — Shows an expandable select field which is useful when each selectable value belongs to a group. Inherited from [`FieldConfig`](../../Piwik/Settings/FieldConfig.md)
 <a name="ui_control_multi_select" id="ui_control_multi_select"></a>
 <a name="UI_CONTROL_MULTI_SELECT" id="UI_CONTROL_MULTI_SELECT"></a>
 ### `UI_CONTROL_MULTI_SELECT`
@@ -192,7 +192,7 @@ the setting has been validated.
 
 A closure that does some custom validation on the setting before the setting is persisted.
 
-The closure should take two arguments: the setting value and the Setting instance being
+The closure should take two arguments: the setting value and the [Setting](/api-reference/Piwik/Settings/Setting) instance being
 validated. If the value is found to be invalid, the closure should throw an exception with
 a message that describes the error.
 
@@ -284,4 +284,4 @@ The core comes with a set of various validators that can be used.
 
 #### Signature
 
-- It is a `Stmt_Namespace\BaseValidator` value.
+- It is a `Piwik\Settings\BaseValidator` value.

@@ -45,7 +45,7 @@ Add multiple widget configs at once. See [addWidgetConfig()](/api-reference/Piwi
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$widgets` (`Stmt_Namespace\WidgetConfig`) &mdash;
+    - `$widgets` ([`WidgetConfig[]`](../../Piwik/Widget/WidgetConfig.md)) &mdash;
       
 - It does not return anything or a mixed result.
 
@@ -57,7 +57,7 @@ Get all added widget configs.
 
 #### Signature
 
-- It returns a `Stmt_Namespace\WidgetConfig` value.
+- It returns a [`WidgetConfig[]`](../../Piwik/Widget/WidgetConfig.md) value.
 
 <a name="addtocontainerwidget" id="addtocontainerwidget"></a>
 <a name="addToContainerWidget" id="addToContainerWidget"></a>
@@ -87,7 +87,7 @@ Removes one or more widgets from the widget list.
 
 -  It accepts the following parameter(s):
     - `$widgetCategoryId` (`string`) &mdash;
-       The widget category id. Can be a translation token eg 'General_Visits' see WidgetConfig::setCategoryId().
+       The widget category id. Can be a translation token eg 'General_Visits' see [WidgetConfig::setCategoryId()](/api-reference/Piwik/Widget/WidgetConfig#setcategoryid).
     - `$widgetName` (`string`|`false`) &mdash;
        The name of the widget to remove eg 'VisitTime_ByServerTimeWidgetName'. If not supplied, all widgets within that category will be removed.
 - It does not return anything or a mixed result.

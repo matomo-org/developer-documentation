@@ -24,7 +24,7 @@ Join constructor.
 #### Signature
 
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception`
+    - `Piwik\Columns\Exception`
 
 <a name="gettable" id="gettable"></a>
 <a name="getTable" id="getTable"></a>

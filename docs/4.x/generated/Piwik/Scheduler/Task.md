@@ -35,12 +35,12 @@ The class defines the following methods:
        The name of the method that will be regularly executed.
     - `$methodParameter` (`mixed`|`null`) &mdash;
        An optional parameter to pass to the method when executed. Must be convertible to string.
-    - `$scheduledTime` (`Stmt_Namespace\Schedule`|`null`) &mdash;
+    - `$scheduledTime` (`Piwik\Scheduler\Schedule`|`null`) &mdash;
        A Schedule instance that describes when the method should be executed and how long before the next execution.
     - `$priority` (`int`) &mdash;
        The priority of the task. Tasks with a higher priority will be executed first. Tasks with low priority will be executed last.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception`
+    - `Piwik\Scheduler\Exception`
 
 <a name="getobjectinstance" id="getobjectinstance"></a>
 <a name="getObjectInstance" id="getObjectInstance"></a>
@@ -112,7 +112,7 @@ Returns the time in milliseconds when this task will be executed next.
 ### `getPriority()`
 
 Returns the task priority. The priority will be an integer whose value is
-between `HIGH_PRIORITY` and `LOW_PRIORITY`.
+between HIGH\_PRIORITY and LOW\_PRIORITY.
 
 #### Signature
 

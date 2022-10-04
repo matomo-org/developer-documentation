@@ -109,7 +109,7 @@ Returns the first day of the period.
 
 #### Signature
 
-- It returns a `Stmt_Namespace\Date` value.
+- It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="getdatetimestart" id="getdatetimestart"></a>
 <a name="getDateTimeStart" id="getDateTimeStart"></a>
@@ -119,7 +119,7 @@ Returns the start date & time of this period.
 
 #### Signature
 
-- It returns a `Stmt_Namespace\Date` value.
+- It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="getdatetimeend" id="getdatetimeend"></a>
 <a name="getDateTimeEnd" id="getDateTimeEnd"></a>
@@ -129,7 +129,7 @@ Returns the end date & time of this period.
 
 #### Signature
 
-- It returns a `Stmt_Namespace\Date` value.
+- It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="getdateend" id="getdateend"></a>
 <a name="getDateEnd" id="getDateEnd"></a>
@@ -139,7 +139,7 @@ Returns the last day of the period.
 
 #### Signature
 
-- It returns a `Stmt_Namespace\Date` value.
+- It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="getid" id="getid"></a>
 <a name="getId" id="getId"></a>
@@ -184,7 +184,7 @@ this would be 12 months. For a month this would be 28-31 days. Etc.
 
 #### Signature
 
-- It returns a `Stmt_Namespace\Period` value.
+- It returns a [`Period[]`](../Piwik/Period.md) value.
 
 <a name="isdateinperiod" id="isdateinperiod"></a>
 <a name="isDateInPeriod" id="isDateInPeriod"></a>

@@ -78,7 +78,7 @@ data for.
 
 #### Signature
 
-- It returns a `Stmt_Namespace\Parameters` value.
+- It returns a `Piwik\Parameters` value.
 
 <a name="getlogaggregator" id="getlogaggregator"></a>
 <a name="getLogAggregator" id="getLogAggregator"></a>
@@ -89,7 +89,7 @@ ArchiveProcessor will insert archive data for.
 
 #### Signature
 
-- It returns a `Stmt_Namespace\LogAggregator` value.
+- It returns a `Piwik\LogAggregator` value.
 
 <a name="aggregatedatatablerecords" id="aggregatedatatablerecords"></a>
 <a name="aggregateDataTableRecords" id="aggregateDataTableRecords"></a>

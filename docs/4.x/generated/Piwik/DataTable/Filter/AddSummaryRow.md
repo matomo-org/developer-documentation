@@ -40,12 +40,12 @@ Constructor.
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-Executes the filter. See AddSummaryRow.
+Executes the filter. See [AddSummaryRow](/api-reference/Piwik/DataTable/Filter/AddSummaryRow).
 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table` (`Stmt_Namespace\DataTable`) &mdash;
+    - `$table` (`Piwik\DataTable\DataTable`) &mdash;
       
 - It does not return anything or a mixed result.
 

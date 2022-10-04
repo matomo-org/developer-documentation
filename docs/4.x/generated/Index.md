@@ -1210,7 +1210,7 @@ Index
 - [`toString()`](Piwik/Period.md#tostring) &mdash; *Method in class* [`Period`](Piwik/Period.md)
 - [`translate()`](Piwik/Piwik.md#translate) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
 - [`Tasks`](Piwik/Plugin/Tasks.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`throwWhenSettingNonOverridableParameter()`](Piwik/Plugin/ViewDataTable.md#throwwhensettingnonoverridableparameter) &mdash; *Method in class* [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md)
-- [`TrackerUpdater`](Piwik/Plugins/CustomJsTracker/TrackerUpdater.md) &mdash; *Class in namespace* `Piwik\Plugins\CustomJsTracker`- [`TreemapConfig`](Piwik/Plugins/TreemapVisualization/TreemapConfig.md) &mdash; *Class in namespace* `Piwik\Plugins\TreemapVisualization`- [`Task`](Piwik/Scheduler/Task.md) &mdash; *Class in namespace* `Piwik\Scheduler`- [`$transform`](Piwik/Settings/FieldConfig.md#$transform) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
+- [`TrackerUpdater`](Piwik/Plugins/CustomJsTracker/TrackerUpdater.md) &mdash; *Class in namespace* `Piwik\Plugins\CustomJsTracker`- [`Task`](Piwik/Scheduler/Task.md) &mdash; *Class in namespace* `Piwik\Scheduler`- [`$transform`](Piwik/Settings/FieldConfig.md#$transform) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
 - [`$title`](Piwik/Settings/FieldConfig.md#$title) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
 - [`$title`](Piwik/Settings/FieldConfig/ArrayField.md#$title) &mdash; *Property in class* [`ArrayField`](Piwik/Settings/FieldConfig/ArrayField.md)
 - [`toArray()`](Piwik/Settings/FieldConfig/ArrayField.md#toarray) &mdash; *Method in class* [`ArrayField`](Piwik/Settings/FieldConfig/ArrayField.md)

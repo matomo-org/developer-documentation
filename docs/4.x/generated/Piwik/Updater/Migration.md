@@ -44,7 +44,7 @@ Decides whether an error should be ignored or not.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$exception` (`Stmt_Namespace\Exception`) &mdash;
+    - `$exception` (`Piwik\Updater\Exception`) &mdash;
       
 - It returns a `bool` value.
 

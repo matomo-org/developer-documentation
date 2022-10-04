@@ -44,7 +44,7 @@ The class defines the following methods:
       
     - `$comment` (`string`) &mdash;
       
-- It returns a `Stmt_Namespace\DiagnosticResult` value.
+- It returns a [`DiagnosticResult`](../../../../Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md) value.
 
 <a name="informationalresult" id="informationalresult"></a>
 <a name="informationalResult" id="informationalResult"></a>
@@ -59,7 +59,7 @@ The class defines the following methods:
       
     - `$escapeComment` (`bool`) &mdash;
       
-- It returns a `Stmt_Namespace\DiagnosticResult` value.
+- It returns a [`DiagnosticResult`](../../../../Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md) value.
 
 <a name="getlabel" id="getlabel"></a>
 <a name="getLabel" id="getLabel"></a>
@@ -75,7 +75,7 @@ The class defines the following methods:
 
 #### Signature
 
-- It returns a `Stmt_Namespace\DiagnosticResultItem` value.
+- It returns a [`DiagnosticResultItem[]`](../../../../Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResultItem.md) value.
 
 <a name="additem" id="additem"></a>
 <a name="addItem" id="addItem"></a>

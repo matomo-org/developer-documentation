@@ -39,7 +39,7 @@ Returns the settings that can be displayed for the current user.
 
 #### Signature
 
-- It returns a `Stmt_Namespace\Setting` value.
+- It returns a [`Setting[]`](../../Piwik/Settings/Setting.md) value.
 
 <a name="addsetting" id="addsetting"></a>
 <a name="addSetting" id="addSetting"></a>

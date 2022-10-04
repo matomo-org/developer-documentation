@@ -19,7 +19,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`filter()`](#filter) &mdash; See ColumnCallbackAddMetadata. Inherited from [`ColumnCallbackAddMetadata`](../../../Piwik/DataTable/Filter/ColumnCallbackAddMetadata.md)
+- [`filter()`](#filter) &mdash; See [ColumnCallbackAddMetadata](/api-reference/Piwik/DataTable/Filter/ColumnCallbackAddMetadata). Inherited from [`ColumnCallbackAddMetadata`](../../../Piwik/DataTable/Filter/ColumnCallbackAddMetadata.md)
 - [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 - [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 
@@ -41,12 +41,12 @@ Constructor.
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-See ColumnCallbackAddMetadata.
+See [ColumnCallbackAddMetadata](/api-reference/Piwik/DataTable/Filter/ColumnCallbackAddMetadata).
 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table` (`Stmt_Namespace\DataTable`) &mdash;
+    - `$table` (`Piwik\DataTable\DataTable`) &mdash;
       
 - It does not return anything or a mixed result.
 

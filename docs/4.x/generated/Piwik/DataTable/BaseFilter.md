@@ -48,7 +48,7 @@ Manipulates a DataTable in some way.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table` (`Stmt_Namespace\DataTable`) &mdash;
+    - `$table` (`Piwik\DataTable\DataTable`) &mdash;
       
 - It does not return anything or a mixed result.
 

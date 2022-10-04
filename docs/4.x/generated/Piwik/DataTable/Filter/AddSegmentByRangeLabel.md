@@ -40,7 +40,7 @@ Generates a segment filter based on the label column and the given segment name
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table` (`Stmt_Namespace\DataTable`) &mdash;
+    - `$table` (`Piwik\DataTable\DataTable`) &mdash;
       
 - It does not return anything or a mixed result.
 

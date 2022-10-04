@@ -76,7 +76,7 @@ Constructor.
     - `$idsite` (`int`) &mdash;
        The ID of the site we want data for.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\UnexpectedWebsiteFoundException`
+    - `Piwik\UnexpectedWebsiteFoundException`
 
 <a name="setsites" id="setsites"></a>
 <a name="setSites" id="setSites"></a>
@@ -114,7 +114,7 @@ Returns the name of the site.
 
 - It returns a `string` value.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; if data for the site cannot be found.
+    - `Piwik\Exception` &mdash; if data for the site cannot be found.
 
 <a name="getmainurl" id="getmainurl"></a>
 <a name="getMainUrl" id="getMainUrl"></a>
@@ -126,7 +126,7 @@ Returns the main url of the site.
 
 - It returns a `string` value.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; if data for the site cannot be found.
+    - `Piwik\Exception` &mdash; if data for the site cannot be found.
 
 <a name="getid" id="getid"></a>
 <a name="getId" id="getId"></a>
@@ -138,7 +138,7 @@ Returns the id of the site.
 
 - It returns a `int` value.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; if data for the site cannot be found.
+    - `Piwik\Exception` &mdash; if data for the site cannot be found.
 
 <a name="gettype" id="gettype"></a>
 <a name="getType" id="getType"></a>
@@ -158,9 +158,9 @@ Returns the creation date of the site.
 
 #### Signature
 
-- It returns a `Stmt_Namespace\Date` value.
+- It returns a [`Date`](../Piwik/Date.md) value.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; if data for the site cannot be found.
+    - `Piwik\Exception` &mdash; if data for the site cannot be found.
 
 <a name="gettimezone" id="gettimezone"></a>
 <a name="getTimezone" id="getTimezone"></a>
@@ -172,7 +172,7 @@ Returns the timezone of the size.
 
 - It returns a `string` value.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; if data for the site cannot be found.
+    - `Piwik\Exception` &mdash; if data for the site cannot be found.
 
 <a name="getcurrency" id="getcurrency"></a>
 <a name="getCurrency" id="getCurrency"></a>
@@ -184,7 +184,7 @@ Returns the currency of the site.
 
 - It returns a `string` value.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; if data for the site cannot be found.
+    - `Piwik\Exception` &mdash; if data for the site cannot be found.
 
 <a name="getexcludedips" id="getexcludedips"></a>
 <a name="getExcludedIps" id="getExcludedIps"></a>
@@ -196,7 +196,7 @@ Returns the excluded ips of the site.
 
 - It returns a `string` value.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; if data for the site cannot be found.
+    - `Piwik\Exception` &mdash; if data for the site cannot be found.
 
 <a name="getexcludedqueryparameters" id="getexcludedqueryparameters"></a>
 <a name="getExcludedQueryParameters" id="getExcludedQueryParameters"></a>
@@ -208,7 +208,7 @@ Returns the excluded query parameters of the site.
 
 - It returns a `string` value.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; if data for the site cannot be found.
+    - `Piwik\Exception` &mdash; if data for the site cannot be found.
 
 <a name="isecommerceenabled" id="isecommerceenabled"></a>
 <a name="isEcommerceEnabled" id="isEcommerceEnabled"></a>
@@ -220,7 +220,7 @@ Returns whether ecommerce is enabled for the site.
 
 - It returns a `bool` value.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; if data for the site cannot be found.
+    - `Piwik\Exception` &mdash; if data for the site cannot be found.
 
 <a name="getsearchkeywordparameters" id="getsearchkeywordparameters"></a>
 <a name="getSearchKeywordParameters" id="getSearchKeywordParameters"></a>
@@ -232,7 +232,7 @@ Returns the site search keyword query parameters for the site.
 
 - It returns a `string` value.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; if data for the site cannot be found.
+    - `Piwik\Exception` &mdash; if data for the site cannot be found.
 
 <a name="getsearchcategoryparameters" id="getsearchcategoryparameters"></a>
 <a name="getSearchCategoryParameters" id="getSearchCategoryParameters"></a>
@@ -244,7 +244,7 @@ Returns the site search category query parameters for the site.
 
 - It returns a `string` value.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; if data for the site cannot be found.
+    - `Piwik\Exception` &mdash; if data for the site cannot be found.
 
 <a name="issitesearchenabled" id="issitesearchenabled"></a>
 <a name="isSiteSearchEnabled" id="isSiteSearchEnabled"></a>
@@ -256,7 +256,7 @@ Returns whether Site Search Tracking is enabled for the site.
 
 - It returns a `bool` value.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; if data for the site cannot be found.
+    - `Piwik\Exception` &mdash; if data for the site cannot be found.
 
 <a name="getcreatorlogin" id="getcreatorlogin"></a>
 <a name="getCreatorLogin" id="getCreatorLogin"></a>

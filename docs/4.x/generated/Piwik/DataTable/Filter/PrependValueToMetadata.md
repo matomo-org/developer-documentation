@@ -15,7 +15,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct)
-- [`filter()`](#filter) &mdash; See PrependValueToMetadata.
+- [`filter()`](#filter) &mdash; See [PrependValueToMetadata](/api-reference/Piwik/DataTable/Filter/PrependValueToMetadata).
 - [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 - [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 
@@ -37,12 +37,12 @@ The class defines the following methods:
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-See PrependValueToMetadata.
+See [PrependValueToMetadata](/api-reference/Piwik/DataTable/Filter/PrependValueToMetadata).
 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table` (`Stmt_Namespace\DataTable`) &mdash;
+    - `$table` (`Piwik\DataTable\DataTable`) &mdash;
       
 - It does not return anything or a mixed result.
 

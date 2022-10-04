@@ -27,7 +27,7 @@ If the plugin is already activated or if any other error occurs it will be ignor
 -  It accepts the following parameter(s):
     - `$pluginName` (`string`) &mdash;
       
-- It returns a `Stmt_Namespace\Activate` value.
+- It returns a `Piwik\Updater\Migration\Plugin\Activate` value.
 
 <a name="deactivate" id="deactivate"></a>
 <a name="deactivate" id="deactivate"></a>
@@ -42,7 +42,7 @@ If the plugin is already deactivated or if any other error occurs it will be ign
 -  It accepts the following parameter(s):
     - `$pluginName` (`string`) &mdash;
       
-- It returns a `Stmt_Namespace\Deactivate` value.
+- It returns a `Piwik\Updater\Migration\Plugin\Deactivate` value.
 
 <a name="uninstall" id="uninstall"></a>
 <a name="uninstall" id="uninstall"></a>
@@ -57,5 +57,5 @@ If the plugin is still active or if any other error occurs it will be ignored.
 -  It accepts the following parameter(s):
     - `$pluginName` (`string`) &mdash;
       
-- It returns a `Stmt_Namespace\Uninstall` value.
+- It returns a `Piwik\Updater\Migration\Plugin\Uninstall` value.
 

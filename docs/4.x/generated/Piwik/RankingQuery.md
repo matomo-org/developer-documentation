@@ -134,7 +134,7 @@ by [execute()](/api-reference/Piwik/RankingQuery#execute).
        string Name of the column.
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; if method is used more than once.
+    - `Piwik\Exception` &mdash; if method is used more than once.
 
 <a name="partitionresultintomultiplegroups" id="partitionresultintomultiplegroups"></a>
 <a name="partitionResultIntoMultipleGroups" id="partitionResultIntoMultipleGroups"></a>
@@ -162,7 +162,7 @@ rows `log_action.type = TYPE_DOWNLOAD`.
        Array of possible column values.
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; if method is used more than once.
+    - `Piwik\Exception` &mdash; if method is used more than once.
 
 <a name="execute" id="execute"></a>
 <a name="execute" id="execute"></a>
@@ -176,7 +176,7 @@ The object has to be configured first using the other methods.
 
 -  It accepts the following parameter(s):
     - `$innerQuery`
-       string The "payload" query that does the actual data aggregation. The ordering has to be specified in this query. RankingQuery cannot apply ordering itself.
+       string The "payload" query that does the actual data aggregation. The ordering has to be specified in this query. [RankingQuery](/api-reference/Piwik/RankingQuery) cannot apply ordering itself.
     - `$bind`
        array Bindings for the inner query.
     - `$timeLimitInMs` (`int`) &mdash;
@@ -199,7 +199,7 @@ yourself, use this method.
 
 -  It accepts the following parameter(s):
     - `$innerQuery`
-       string The "payload" query that does the actual data aggregation. The ordering has to be specified in this query. RankingQuery cannot apply ordering itself.
+       string The "payload" query that does the actual data aggregation. The ordering has to be specified in this query. [RankingQuery](/api-reference/Piwik/RankingQuery) cannot apply ordering itself.
 
 - *Returns:*  `string` &mdash;
     The entire ranking query SQL.

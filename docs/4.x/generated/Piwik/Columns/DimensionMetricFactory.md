@@ -42,7 +42,7 @@ Generates a new dimension metric factory.
       
     - `$documentation`
       
-- It returns a `Stmt_Namespace\ArchivedMetric` value.
+- It returns a `Piwik\Columns\ArchivedMetric` value.
 
 <a name="createcomputedmetric" id="createcomputedmetric"></a>
 <a name="createComputedMetric" id="createComputedMetric"></a>
@@ -68,5 +68,5 @@ Generates a new dimension metric factory.
 -  It accepts the following parameter(s):
     - `$aggregation`
       
-- It returns a `Stmt_Namespace\ArchivedMetric` value.
+- It returns a `Piwik\Columns\ArchivedMetric` value.
 

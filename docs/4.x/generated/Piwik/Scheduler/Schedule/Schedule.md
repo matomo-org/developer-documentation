@@ -26,7 +26,7 @@ Sets the hour of the day on which the task should be executed.
        Must be `>= 0` and `< 24`.
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; If the current scheduled period is **hourly** or if `$hour` is invalid.
+    - `Piwik\Scheduler\Schedule\Exception` &mdash; If the current scheduled period is **hourly** or if `$hour` is invalid.
 
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>
@@ -43,8 +43,8 @@ and a string description of the day within the period to execute the task on.
     - `$periodDay` (`bool`|`false`|`int`|`string`) &mdash;
        A string describing the day within the scheduled period to execute the task on. Only valid for week and month periods. If `'weekly'` is supplied for `$periodType`, this should be a day of the week, for example, `'monday'` or `'tuesday'`. If `'monthly'` is supplied for `$periodType`, this can be a numeric day in the month or a day in one week of the month. For example, `12`, `23`, `'first sunday'` or `'fourth tuesday'`.
 
-- *Returns:*  `Stmt_Namespace\Hourly`|`Stmt_Namespace\Daily`|`Stmt_Namespace\Weekly`|`Stmt_Namespace\Monthly` &mdash;
+- *Returns:*  [`Hourly`](../../../Piwik/Scheduler/Schedule/Hourly.md)|[`Daily`](../../../Piwik/Scheduler/Schedule/Daily.md)|[`Weekly`](../../../Piwik/Scheduler/Schedule/Weekly.md)|[`Monthly`](../../../Piwik/Scheduler/Schedule/Monthly.md) &mdash;
     
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception`
+    - `Piwik\Scheduler\Schedule\Exception`
 

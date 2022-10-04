@@ -27,5 +27,5 @@ Sets a configuration to the Matomo config file
       
     - `$value` (`string`) &mdash;
       
-- It returns a `Stmt_Namespace\Set` value.
+- It returns a `Piwik\Updater\Migration\Config\Set` value.
 

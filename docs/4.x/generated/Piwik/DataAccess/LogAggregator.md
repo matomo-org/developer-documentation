@@ -100,18 +100,18 @@ a DB statement that can be used to iterate over the result
 
 The following columns are in each row of the result set:
 
-- **`Metrics::INDEX_NB_UNIQ_VISITORS`**: The total number of unique visitors in this group
+- **\Piwik\Metrics::INDEX\_NB\_UNIQ\_VISITORS**: The total number of unique visitors in this group
                                                      of aggregated visits.
-- **`Metrics::INDEX_NB_VISITS`**: The total number of visits aggregated.
-- **`Metrics::INDEX_NB_ACTIONS`**: The total number of actions performed in this group of
+- **\Piwik\Metrics::INDEX\_NB\_VISITS**: The total number of visits aggregated.
+- **\Piwik\Metrics::INDEX\_NB\_ACTIONS**: The total number of actions performed in this group of
                                                aggregated visits.
-- **`Metrics::INDEX_MAX_ACTIONS`**: The maximum actions performed in one visit for this group of
+- **\Piwik\Metrics::INDEX\_MAX\_ACTIONS**: The maximum actions performed in one visit for this group of
                                                 visits.
-- **`Metrics::INDEX_SUM_VISIT_LENGTH`**: The total amount of time spent on the site for this
+- **\Piwik\Metrics::INDEX\_SUM\_VISIT\_LENGTH**: The total amount of time spent on the site for this
                                                      group of visits.
-- **`Metrics::INDEX_BOUNCE_COUNT`**: The total number of bounced visits in this group of
+- **\Piwik\Metrics::INDEX\_BOUNCE\_COUNT**: The total number of bounced visits in this group of
                                                  visits.
-- **`Metrics::INDEX_NB_VISITS_CONVERTED`**: The total number of visits for which at least one
+- **\Piwik\Metrics::INDEX\_NB\_VISITS\_CONVERTED**: The total number of visits for which at least one
                                                         conversion occurred, for this group of visits.
 
 Additional data can be selected by setting the `$additionalSelects` parameter.
@@ -128,7 +128,7 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
     - `$additionalSelects` (`array`) &mdash;
        Additional `SELECT` fields that are not included in the group by clause. These can be aggregate expressions, eg, `SUM(somecol)`.
     - `$metrics` (`bool`|`array`) &mdash;
-       The set of metrics to calculate and return. If false, the query will select all of them. The following values can be used: - `Metrics::INDEX_NB_UNIQ_VISITORS` - `Metrics::INDEX_NB_VISITS` - `Metrics::INDEX_NB_ACTIONS` - `Metrics::INDEX_MAX_ACTIONS` - `Metrics::INDEX_SUM_VISIT_LENGTH` - `Metrics::INDEX_BOUNCE_COUNT` - `Metrics::INDEX_NB_VISITS_CONVERTED`
+       The set of metrics to calculate and return. If false, the query will select all of them. The following values can be used: - \Piwik\Metrics::INDEX\_NB\_UNIQ\_VISITORS - \Piwik\Metrics::INDEX\_NB\_VISITS - \Piwik\Metrics::INDEX\_NB\_ACTIONS - \Piwik\Metrics::INDEX\_MAX\_ACTIONS - \Piwik\Metrics::INDEX\_SUM\_VISIT\_LENGTH - \Piwik\Metrics::INDEX\_BOUNCE\_COUNT - \Piwik\Metrics::INDEX\_NB\_VISITS\_CONVERTED
     - `$rankingQuery` (`bool`|[`RankingQuery`](../../Piwik/RankingQuery.md)) &mdash;
        A pre-configured ranking query instance that will be used to limit the result. If set, the return value is the array returned by [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute).
     - `$orderBy` (`bool`|`string`) &mdash;
@@ -156,13 +156,13 @@ Executes and returns a query aggregating ecommerce item data (everything stored 
 Each row of the result set represents an aggregated group of ecommerce items. The following
 columns are in each row of the result set:
 
-- **`Metrics::INDEX_ECOMMERCE_ITEM_REVENUE`**: The total revenue for the group of items.
-- **`Metrics::INDEX_ECOMMERCE_ITEM_QUANTITY`**: The total number of items in this group.
-- **`Metrics::INDEX_ECOMMERCE_ITEM_PRICE`**: The total price for the group of items.
-- **`Metrics::INDEX_ECOMMERCE_ORDERS`**: The total number of orders this group of items
+- **Piwik\Metrics::INDEX\_ECOMMERCE\_ITEM\_REVENUE**: The total revenue for the group of items.
+- **Piwik\Metrics::INDEX\_ECOMMERCE\_ITEM\_QUANTITY**: The total number of items in this group.
+- **Piwik\Metrics::INDEX\_ECOMMERCE\_ITEM\_PRICE**: The total price for the group of items.
+- **Piwik\Metrics::INDEX\_ECOMMERCE\_ORDERS**: The total number of orders this group of items
                                                      belongs to. This will be <= to the total number
                                                      of items in this group.
-- **`Metrics::INDEX_NB_VISITS`**: The total number of visits that caused these items to be logged.
+- **Piwik\Metrics::INDEX\_NB\_VISITS**: The total number of visits that caused these items to be logged.
 - **ecommerceType**: Either Piwik\Tracker\GoalManager::IDGOAL\_CART if the items in this group were
                      abandoned by a visitor, or Piwik\Tracker\GoalManager::IDGOAL\_ORDER if they
                      were ordered by a visitor.
@@ -195,10 +195,10 @@ a DB statement that can be used to iterate over the result
 Each row of the result set represents an aggregated group of actions. The following columns
 are in each aggregate row:
 
-- **`Metrics::INDEX_NB_UNIQ_VISITORS`**: The total number of unique visitors that performed
+- **Piwik\Metrics::INDEX\_NB\_UNIQ\_VISITORS**: The total number of unique visitors that performed
                                             the actions in this group.
-- **`Metrics::INDEX_NB_VISITS`**: The total number of visits these actions belong to.
-- **`Metrics::INDEX_NB_ACTIONS`**: The total number of actions in this aggregate group.
+- **Piwik\Metrics::INDEX\_NB\_VISITS**: The total number of visits these actions belong to.
+- **Piwik\Metrics::INDEX\_NB\_ACTIONS**: The total number of actions in this aggregate group.
 
 Additional data can be selected through the `$additionalSelects` parameter.
 
@@ -214,7 +214,7 @@ _Note: The metrics calculated by this query can be customized by the `$metrics` 
     - `$additionalSelects` (`array`) &mdash;
        Additional SELECT fields that are not included in the group by clause. These can be aggregate expressions, eg, `SUM(somecol)`.
     - `$metrics` (`bool`|`array`) &mdash;
-       The set of metrics to calculate and return. If `false`, the query will select all of them. The following values can be used: - `Metrics::INDEX_NB_UNIQ_VISITORS` - `Metrics::INDEX_NB_VISITS` - `Metrics::INDEX_NB_ACTIONS`
+       The set of metrics to calculate and return. If `false`, the query will select all of them. The following values can be used: - Piwik\Metrics::INDEX\_NB\_UNIQ\_VISITORS - Piwik\Metrics::INDEX\_NB\_VISITS - Piwik\Metrics::INDEX\_NB\_ACTIONS
     - `$rankingQuery` (`bool`|[`RankingQuery`](../../Piwik/RankingQuery.md)) &mdash;
        A pre-configured ranking query instance that will be used to limit the result. If set, the return value is the array returned by [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute).
     - `$joinLogActionOnColumn` (`bool`|`string`) &mdash;

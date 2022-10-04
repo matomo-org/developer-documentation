@@ -39,7 +39,7 @@ Get all available metrics.
 
 #### Signature
 
-- It returns a `Stmt_Namespace\Metric` value.
+- It returns a `Piwik\Columns\Metric` value.
 
 <a name="remove" id="remove"></a>
 <a name="remove" id="remove"></a>
@@ -66,6 +66,6 @@ Removes one or more metrics from the metrics list.
     - `$metricName` (`string`) &mdash;
       
 
-- *Returns:*  `Stmt_Namespace\Metric`|`Stmt_Namespace\ArchivedMetric`|`null` &mdash;
+- *Returns:*  `Piwik\Columns\Metric`|`Piwik\Columns\ArchivedMetric`|`null` &mdash;
     
 

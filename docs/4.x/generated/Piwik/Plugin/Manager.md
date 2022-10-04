@@ -83,7 +83,7 @@ If no theme is enabled, the **Morpheus** plugin is returned (this is the base an
 
 #### Signature
 
-- It returns a `Stmt_Namespace\Plugin` value.
+- It returns a `Piwik\Plugin\Plugin` value.
 
 <a name="loadallpluginsandgettheirinfo" id="loadallpluginsandgettheirinfo"></a>
 <a name="loadAllPluginsAndGetTheirInfo" id="loadAllPluginsAndGetTheirInfo"></a>

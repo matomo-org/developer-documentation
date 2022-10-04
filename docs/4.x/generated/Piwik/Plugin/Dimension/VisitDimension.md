@@ -238,7 +238,7 @@ To be implemented when a column references another column
 #### Signature
 
 
-- *Returns:*  `Stmt_Namespace\Join`|`null` &mdash;
+- *Returns:*  [`Join`](../../../Piwik/Columns/Join.md)|`null` &mdash;
     
 
 <a name="getdbdiscriminator" id="getdbdiscriminator"></a>
@@ -248,7 +248,7 @@ To be implemented when a column references another column
 #### Signature
 
 
-- *Returns:*  `Stmt_Namespace\Discriminator`|`null` &mdash;
+- *Returns:*  [`Discriminator`](../../../Piwik/Columns/Discriminator.md)|`null` &mdash;
     
 
 <a name="getenumcolumnvalues" id="getenumcolumnvalues"></a>
@@ -320,7 +320,7 @@ will be done.
 
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception`
+    - `Piwik\Plugin\Dimension\Exception`
 
 <a name="getcategoryid" id="getcategoryid"></a>
 <a name="getCategoryId" id="getCategoryId"></a>
@@ -445,7 +445,7 @@ $segmentsList->addSegment($segment);
       
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception`
+    - `Piwik\Columns\Exception`
 
 <a name="configuremetrics" id="configuremetrics"></a>
 <a name="configureMetrics" id="configureMetrics"></a>
@@ -507,7 +507,7 @@ of the dimension, but is modified to be more human readable.
 - *Returns:*  `string` &mdash;
     eg, `"Referrers.Keywords"`
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; if the plugin and simple class name of this instance cannot be determined.
+    - `Piwik\Columns\Exception` &mdash; if the plugin and simple class name of this instance cannot be determined.
                   This would only happen if the dimension is located in the wrong directory.
 
 <a name="getalldimensions" id="getalldimensions"></a>
@@ -518,7 +518,7 @@ Get all visit dimensions that are defined by all activated plugins.
 
 #### Signature
 
-- It returns a `Stmt_Namespace\Dimension` value.
+- It returns a [`Dimension[]`](../../../Piwik/Columns/Dimension.md) value.
 
 <a name="getdimensions" id="getdimensions"></a>
 <a name="getDimensions" id="getDimensions"></a>
@@ -551,7 +551,7 @@ Returns the name of the plugin that contains this Dimension.
 
 - It returns a `string` value.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; if the Dimension is not located within a Plugin module.
+    - `Piwik\Columns\Exception` &mdash; if the Dimension is not located within a Plugin module.
 
 <a name="gettype" id="gettype"></a>
 <a name="getType" id="getType"></a>
@@ -592,7 +592,7 @@ the event "onExistingVisit" is executed. Meaning for each visitor this method is
       
     - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
       
-    - `$action` (`Stmt_Namespace\Action`|`null`) &mdash;
+    - `$action` (`Piwik\Plugin\Dimension\Action`|`null`) &mdash;
       
 
 - *Returns:*  `mixed`|`false` &mdash;
@@ -614,7 +614,7 @@ You can overwrite any previous value set by the event `onNewVisit` by implemting
       
     - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
       
-    - `$action` (`Stmt_Namespace\Action`|`null`) &mdash;
+    - `$action` (`Piwik\Plugin\Dimension\Action`|`null`) &mdash;
       
 
 - *Returns:*  `mixed`|`false` &mdash;
@@ -637,7 +637,7 @@ current value.
       
     - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
       
-    - `$action` (`Stmt_Namespace\Action`|`null`) &mdash;
+    - `$action` (`Piwik\Plugin\Dimension\Action`|`null`) &mdash;
       
 
 - *Returns:*  `mixed`|`false` &mdash;
@@ -661,7 +661,7 @@ created automatically.
       
     - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
       
-    - `$action` (`Stmt_Namespace\Action`|`null`) &mdash;
+    - `$action` (`Piwik\Plugin\Dimension\Action`|`null`) &mdash;
       
 
 - *Returns:*  `mixed`|`false` &mdash;

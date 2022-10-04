@@ -207,7 +207,7 @@ Returns the associated subtable, if one exists. Returns `false` if none exists.
 #### Signature
 
 
-- *Returns:*  `Stmt_Namespace\DataTable`|`bool` &mdash;
+- *Returns:*  `Piwik\DataTable\DataTable`|`bool` &mdash;
     
 
 <a name="sumsubtable" id="sumsubtable"></a>
@@ -239,7 +239,7 @@ if any.
     - `$subTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
        DataTable to associate to this row.
 
-- *Returns:*  `Stmt_Namespace\DataTable` &mdash;
+- *Returns:*  `Piwik\DataTable\DataTable` &mdash;
     Returns `$subTable`.
 
 <a name="issubtableloaded" id="issubtableloaded"></a>
@@ -348,7 +348,7 @@ Add a new column to the row. If the column already exists, throws an exception.
        value of the column to set or a PHP callable.
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; if the column already exists.
+    - `Piwik\DataTable\Exception` &mdash; if the column already exists.
 
 <a name="addcolumns" id="addcolumns"></a>
 <a name="addColumns" id="addColumns"></a>
@@ -363,7 +363,7 @@ Add many columns to this row.
        Name/Value pairs, e.g., `array('name' => $value , ...)`
 - It returns a `void` value.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; if any column name does not exist.
+    - `Piwik\DataTable\Exception` &mdash; if any column name does not exist.
 
 <a name="addmetadata" id="addmetadata"></a>
 <a name="addMetadata" id="addMetadata"></a>
@@ -380,7 +380,7 @@ Add a new metadata to the row. If the metadata already exists, throws an excepti
        value of the metadata to set.
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; if the metadata already exists.
+    - `Piwik\DataTable\Exception` &mdash; if the metadata already exists.
 
 <a name="sumrow" id="sumrow"></a>
 <a name="sumRow" id="sumRow"></a>
@@ -404,7 +404,7 @@ Columns in `$rowToSum` that don't exist in `$this` are added to `$this`.
        for columns that should not be summed, determine which aggregation should be used (min, max). format: `array('column name' => 'function name')`
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception`
+    - `Piwik\DataTable\Exception`
 
 <a name="sumrowmetadata" id="sumrowmetadata"></a>
 <a name="sumRowMetadata" id="sumRowMetadata"></a>
@@ -415,7 +415,7 @@ Sums the metadata in `$rowToSum` with the metadata in `$this` row.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$rowToSum` (`Stmt_Namespace\Row`) &mdash;
+    - `$rowToSum` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash;
       
     - `$aggregationOperations` (`array`) &mdash;
       
@@ -448,7 +448,7 @@ Returns the associated comparisons DataTable, if any.
 #### Signature
 
 
-- *Returns:*  `Stmt_Namespace\DataTable`|`null` &mdash;
+- *Returns:*  `Piwik\DataTable\DataTable`|`null` &mdash;
     
 
 <a name="setcomparisons" id="setcomparisons"></a>

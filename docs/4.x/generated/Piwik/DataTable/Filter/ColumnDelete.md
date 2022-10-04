@@ -21,7 +21,7 @@ Constants
 This class defines the following constants:
 
 - [`APPEND_TO_COLUMN_NAME_TO_KEEP`](#append_to_column_name_to_keep) — Hack: when specifying "showColumns", sometimes we'd like to also keep columns that "look" like a given column,
-without manually specifying all these columns (which may not be possible if column names are generated dynamically)
+without manually specifying all these columns (which may not be possible if column names are generated dynamically) Inherited from [`ColumnDelete`](../../../Piwik/DataTable/Filter/ColumnDelete.md)
 <a name="append_to_column_name_to_keep" id="append_to_column_name_to_keep"></a>
 <a name="APPEND_TO_COLUMN_NAME_TO_KEEP" id="APPEND_TO_COLUMN_NAME_TO_KEEP"></a>
 ### `APPEND_TO_COLUMN_NAME_TO_KEEP`
@@ -34,7 +34,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`filter()`](#filter) &mdash; See ColumnDelete.
+- [`filter()`](#filter) &mdash; See [ColumnDelete](/api-reference/Piwik/DataTable/Filter/ColumnDelete).
 - [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 - [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 
@@ -62,12 +62,12 @@ Constructor.
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-See ColumnDelete.
+See [ColumnDelete](/api-reference/Piwik/DataTable/Filter/ColumnDelete).
 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table` (`Stmt_Namespace\DataTable`) &mdash;
+    - `$table` (`Piwik\DataTable\DataTable`) &mdash;
       
 - It does not return anything or a mixed result.
 

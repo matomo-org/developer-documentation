@@ -43,7 +43,7 @@ Constants
 This class defines the following constants:
 
 - [`FLAG_NO_CLEAR`](#flag_no_clear) — If this flag is applied, no close icon will be displayed. _Note: persistent notifications always have a close
-icon._- [`FLAG_CLEAR`](#flag_clear) — If this flag is applied, a close icon will be displayed.- [`TYPE_PERSISTENT`](#type_persistent) — Notifications of this type will be displayed until the new user explicitly closes the notification.
+icon._ Inherited from [`Notification`](../Piwik/Notification.md)- [`FLAG_CLEAR`](#flag_clear) — If this flag is applied, a close icon will be displayed. Inherited from [`Notification`](../Piwik/Notification.md)- [`TYPE_PERSISTENT`](#type_persistent) — Notifications of this type will be displayed until the new user explicitly closes the notification. Inherited from [`Notification`](../Piwik/Notification.md)
 <a name="flag_no_clear" id="flag_no_clear"></a>
 <a name="FLAG_NO_CLEAR" id="FLAG_NO_CLEAR"></a>
 ### `FLAG_NO_CLEAR`
@@ -109,7 +109,7 @@ Usage: `$notification->flags = Notification::FLAG_BAR | Notification::FLAG_FOO`.
 <a name="type" id="type"></a>
 ### `$type`
 
-The notification's display type. See `TYPE_*` constants in Notification.
+The notification's display type. See `TYPE_*` constants in [Notification](/api-reference/Piwik/Notification).
 
 #### Signature
 
@@ -119,7 +119,7 @@ The notification's display type. See `TYPE_*` constants in Notification.
 <a name="context" id="context"></a>
 ### `$context`
 
-The notification's context (message type). See `CONTEXT_*` constants in Notification.
+The notification's context (message type). See `CONTEXT_*` constants in [Notification](/api-reference/Piwik/Notification).
 
 A notification's context determines how it will be styled.
 
@@ -132,7 +132,7 @@ A notification's context determines how it will be styled.
 ### `$priority`
 
 The notification's priority. The higher the priority, the higher the order. See `PRIORITY_*`
-constants in Notification to see possible priority values.
+constants in [Notification](/api-reference/Piwik/Notification) to see possible priority values.
 
 #### Signature
 

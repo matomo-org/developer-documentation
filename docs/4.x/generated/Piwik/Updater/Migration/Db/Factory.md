@@ -45,7 +45,7 @@ $factory->sql("DELETE * FROM table_name WHERE plugin_name = 'MyPluginName'");
        The SQL query that should be executed. Make sure to prefix a table name via Piwik\Commin::prefixTable().
     - `$errorCodesToIgnore` (`int`|`int[]`) &mdash;
        Any given MySQL server error code will be ignored. For a list of all possible error codes have a look at [Db](/api-reference/Piwik/Updater/Migration/Db). If no error should be ignored use an empty array or `false`.
-- It returns a `Stmt_Namespace\Sql` value.
+- It returns a `Piwik\Updater\Migration\Db\Sql` value.
 
 <a name="boundsql" id="boundsql"></a>
 <a name="boundSql" id="boundSql"></a>
@@ -67,7 +67,7 @@ $factory->boundSql('DELETE * FROM table_name WHERE idsite = ?, array($idSite = 1
        An array of values that need to be replaced with the question marks in the SQL query.
     - `$errorCodesToIgnore` (`int`|`int[]`) &mdash;
        Any given MySQL server error code will be ignored. For a list of all possible error codes have a look at [Db](/api-reference/Piwik/Updater/Migration/Db). If no error should be ignored use `false`.
-- It returns a `Stmt_Namespace\BoundSql` value.
+- It returns a `Piwik\Updater\Migration\Db\BoundSql` value.
 
 <a name="createtable" id="createtable"></a>
 <a name="createTable" id="createTable"></a>
@@ -84,7 +84,7 @@ Creates a new database table.
        An array of column names and their type they should use. For example: array('column_name_1' => 'VARCHAR(200) NOT NULL', 'column_name_2' => 'INT(10) DEFAULT 0')
     - `$primaryKey` (`string`|`string[]`) &mdash;
        Optional. One or multiple columns that shall define the primary key.
-- It returns a `Stmt_Namespace\CreateTable` value.
+- It returns a `Piwik\Updater\Migration\Db\CreateTable` value.
 
 <a name="droptable" id="droptable"></a>
 <a name="dropTable" id="dropTable"></a>
@@ -97,7 +97,7 @@ Drops an existing database table.
 -  It accepts the following parameter(s):
     - `$table` (`string`) &mdash;
        Unprefixed database table name, eg 'log_visit'.
-- It returns a `Stmt_Namespace\DropTable` value.
+- It returns a `Piwik\Updater\Migration\Db\DropTable` value.
 
 <a name="addcolumn" id="addcolumn"></a>
 <a name="addColumn" id="addColumn"></a>
@@ -116,7 +116,7 @@ Adds a new database table column to an existing table.
        The column type it should have, eg 'VARCHAR(200) NOT NULL'.
     - `$placeColumnAfter` (`string`|`null`) &mdash;
        If specified, the added column will be added after this specified column name. If you specify a column be sure it actually exists and can be added after this column.
-- It returns a `Stmt_Namespace\AddColumn` value.
+- It returns a `Piwik\Updater\Migration\Db\AddColumn` value.
 
 <a name="addcolumns" id="addcolumns"></a>
 <a name="addColumns" id="addColumns"></a>
@@ -136,7 +136,7 @@ separately.
        An array of column name to column type pairs, eg array('my_column_name' => 'VARCHAR(200) NOT NULL', 'column2' => '...')
     - `$placeColumnAfter` (`string`|`null`) &mdash;
        If specified, the first added column will be added after this specified column name. All following columns will be added after the previous specified in $columns. If you specify a column be sure it actually exists and can be added after this column.
-- It returns a `Stmt_Namespace\AddColumns` value.
+- It returns a `Piwik\Updater\Migration\Db\AddColumns` value.
 
 <a name="dropcolumn" id="dropcolumn"></a>
 <a name="dropColumn" id="dropColumn"></a>
@@ -151,7 +151,7 @@ Drops an existing database table column.
        Unprefixed database table name, eg 'log_visit'.
     - `$columnName` (`string`) &mdash;
        The name of the column that shall be dropped, eg 'my_column_name'.
-- It returns a `Stmt_Namespace\DropColumn` value.
+- It returns a `Piwik\Updater\Migration\Db\DropColumn` value.
 
 <a name="dropcolumns" id="dropcolumns"></a>
 <a name="dropColumns" id="dropColumns"></a>
@@ -166,7 +166,7 @@ Drops an existing database table column.
       
     - `$columnNames`
       
-- It returns a `Stmt_Namespace\DropColumns` value.
+- It returns a `Piwik\Updater\Migration\Db\DropColumns` value.
 
 <a name="changecolumn" id="changecolumn"></a>
 <a name="changeColumn" id="changeColumn"></a>
@@ -185,7 +185,7 @@ Changes the column name and column type of an existing database table column.
        The new name of the column, eg 'new_column_name'.
     - `$columnType` (`string`) &mdash;
        The updated type the new column should have, eg 'VARCHAR(200) NOT NULL'.
-- It returns a `Stmt_Namespace\ChangeColumn` value.
+- It returns a `Piwik\Updater\Migration\Db\ChangeColumn` value.
 
 <a name="changecolumntype" id="changecolumntype"></a>
 <a name="changeColumnType" id="changeColumnType"></a>
@@ -202,7 +202,7 @@ Changes the type of an existing database table column.
        The name of the column that shall be changed, eg 'my_column_name'.
     - `$columnType` (`string`) &mdash;
        The updated type the column should have, eg 'VARCHAR(200) NOT NULL'.
-- It returns a `Stmt_Namespace\ChangeColumnType` value.
+- It returns a `Piwik\Updater\Migration\Db\ChangeColumnType` value.
 
 <a name="changecolumntypes" id="changecolumntypes"></a>
 <a name="changeColumnTypes" id="changeColumnTypes"></a>
@@ -220,7 +220,7 @@ of each column separately.
        Unprefixed database table name, eg 'log_visit'.
     - `$columns` (`array`) &mdash;
        An array of column name to column type pairs, eg array('my_column_name' => 'VARCHAR(200) NOT NULL', 'column2' => '...')
-- It returns a `Stmt_Namespace\ChangeColumnTypes` value.
+- It returns a `Piwik\Updater\Migration\Db\ChangeColumnTypes` value.
 
 <a name="addindex" id="addindex"></a>
 <a name="addIndex" id="addIndex"></a>
@@ -245,7 +245,7 @@ will be used. For example when using columns `array('column1', 'column2(10)')` t
        Either one or multiple column names, eg array('column_name_1', 'column_name_2'). A column name can be appended by a number bracket eg "column_name_1(10)".
     - `$indexName` (`string`) &mdash;
        If specified, the given index name will be used instead of the automatically generated one.
-- It returns a `Stmt_Namespace\AddIndex` value.
+- It returns a `Piwik\Updater\Migration\Db\AddIndex` value.
 
 <a name="adduniquekey" id="adduniquekey"></a>
 <a name="addUniqueKey" id="addUniqueKey"></a>
@@ -269,7 +269,7 @@ will be used. For example when using columns `array('column1', 'column2(10)')` t
        Either one or multiple column names, eg array('column_name_1', 'column_name_2'). A column name can be appended by a number bracket eg "column_name_1(10)".
     - `$indexName` (`string`) &mdash;
        If specified, the given unique key name will be used instead of the automatically generated one.
-- It returns a `Stmt_Namespace\AddIndex` value.
+- It returns a `Piwik\Updater\Migration\Db\AddIndex` value.
 
 <a name="dropindex" id="dropindex"></a>
 <a name="dropIndex" id="dropIndex"></a>
@@ -284,7 +284,7 @@ Drops an existing index from a database table.
        Unprefixed database table name, eg 'log_visit'.
     - `$indexName` (`string`) &mdash;
        The name of the index that shall be dropped.
-- It returns a `Stmt_Namespace\DropIndex` value.
+- It returns a `Piwik\Updater\Migration\Db\DropIndex` value.
 
 <a name="dropprimarykey" id="dropprimarykey"></a>
 <a name="dropPrimaryKey" id="dropPrimaryKey"></a>
@@ -297,7 +297,7 @@ Drops an existing index from a database table.
 -  It accepts the following parameter(s):
     - `$table` (`string`) &mdash;
        Unprefixed database table name, eg 'log_visit'.
-- It returns a `Stmt_Namespace\DropIndex` value.
+- It returns a `Piwik\Updater\Migration\Db\DropIndex` value.
 
 <a name="addprimarykey" id="addprimarykey"></a>
 <a name="addPrimaryKey" id="addPrimaryKey"></a>
@@ -314,7 +314,7 @@ This is equivalent to an `ADD PRIMARY KEY(column_name_1, column_name_2)` in SQL.
        Unprefixed database table name, eg 'log_visit'.
     - `$columnNames` (`string[]`|`string`) &mdash;
        Either one or multiple column names, eg array('column_name_1', 'column_name_2')
-- It returns a `Stmt_Namespace\AddPrimaryKey` value.
+- It returns a `Piwik\Updater\Migration\Db\AddPrimaryKey` value.
 
 <a name="insert" id="insert"></a>
 <a name="insert" id="insert"></a>
@@ -332,7 +332,7 @@ be for example columns that are not nullable and therefore need a value.
        Unprefixed database table name, eg 'log_visit'.
     - `$columnValuePairs` (`array`) &mdash;
        An array containing column => value pairs. For example: array('column_name_1' => 'value1', 'column_name_2' => 'value2')
-- It returns a `Stmt_Namespace\Insert` value.
+- It returns a `Piwik\Updater\Migration\Db\Insert` value.
 
 <a name="batchinsert" id="batchinsert"></a>
 <a name="batchInsert" id="batchInsert"></a>
@@ -358,5 +358,5 @@ via `$updater->executeMigration($factory->dbBatchInsert(...));`
        Whether to throw an exception that was caught while trying LOAD DATA INFILE, or not.
     - `$charset` (`string`) &mdash;
        The charset to use, defaults to utf8
-- It returns a `Stmt_Namespace\BatchInsert` value.
+- It returns a `Piwik\Updater\Migration\Db\BatchInsert` value.
 

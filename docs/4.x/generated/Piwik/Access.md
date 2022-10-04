@@ -5,7 +5,7 @@ Access
 
 Singleton that manages user access to Piwik resources.
 
-To check whether a user has access to a resource, use one of the Piwik::checkUser...
+To check whether a user has access to a resource, use one of the [Piwik::checkUser...](/api-reference/Piwik/Piwik)
 methods.
 
 In Piwik there are four different access levels:
@@ -39,11 +39,11 @@ before this method exits. Privileges will be rescinded even if an exception is t
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$function` (`Stmt_Namespace\callback`) &mdash;
+    - `$function` (`Piwik\callback`) &mdash;
        The callback to execute. Should accept no arguments.
 
 - *Returns:*  `mixed` &mdash;
     The result of `$function`.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; rethrows any exceptions thrown by `$function`.
+    - `Piwik\Exception` &mdash; rethrows any exceptions thrown by `$function`.
 

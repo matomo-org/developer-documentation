@@ -22,7 +22,7 @@ The class defines the following methods:
 -  It accepts the following parameter(s):
     - `$updater` ([`Updater`](../../Piwik/Updater.md)) &mdash;
       
-- It returns a `Stmt_Namespace\Migration` value.
+- It returns a `Piwik\Migration` value.
 
 <a name="doupdate" id="doupdate"></a>
 <a name="doUpdate" id="doUpdate"></a>

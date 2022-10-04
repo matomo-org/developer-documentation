@@ -16,7 +16,7 @@ Columns added are:
 Adding the **filter_add_columns_when_show_all_columns** query parameter to
 an API request will trigger the execution of this Filter.
 
-_Note: This filter must be called before ReplaceColumnNames is called._
+_Note: This filter must be called before [ReplaceColumnNames](/api-reference/Piwik/DataTable/Filter/ReplaceColumnNames) is called._
 
 **Basic usage example**
 
@@ -50,13 +50,13 @@ Constructor.
 <a name="filter" id="filter"></a>
 ### `filter()`
 
-Adds the processed metrics. See AddColumnsProcessedMetrics for
+Adds the processed metrics. See [AddColumnsProcessedMetrics](/api-reference/Piwik/DataTable/Filter/AddColumnsProcessedMetrics) for
 more information.
 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table` (`Stmt_Namespace\DataTable`) &mdash;
+    - `$table` (`Piwik\DataTable\DataTable`) &mdash;
       
 - It does not return anything or a mixed result.
 

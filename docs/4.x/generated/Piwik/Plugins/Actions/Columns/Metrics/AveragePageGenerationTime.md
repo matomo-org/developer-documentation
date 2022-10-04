@@ -111,7 +111,7 @@ formatting (for example, the site ID).
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$report` (`Stmt_Namespace\Report`) &mdash;
+    - `$report` ([`Report`](../../../../../Piwik/Plugin/Report.md)) &mdash;
       
     - `$table` ([`DataTable`](../../../../../Piwik/DataTable.md)) &mdash;
       
@@ -129,7 +129,7 @@ its name or by its special numerical index value.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$row` (`Stmt_Namespace\Row`|`array`) &mdash;
+    - `$row` (`Piwik\Plugin\Row`|`array`) &mdash;
       
     - `$columnName` (`string`) &mdash;
       
@@ -224,7 +224,7 @@ to skip computing this metric.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$report` (`Stmt_Namespace\Report`) &mdash;
+    - `$report` ([`Report`](../../../../../Piwik/Plugin/Report.md)) &mdash;
       
     - `$table` ([`DataTable`](../../../../../Piwik/DataTable.md)) &mdash;
       

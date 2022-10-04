@@ -103,9 +103,9 @@ result will be in UTC.
        `'today'`, `'yesterday'`, `'now'`, `'yesterdaySameTime'`, a string with `'YYYY-MM-DD HH:MM:SS'` format or a unix timestamp.
     - `$timezone` (`string`) &mdash;
        The timezone of the result. If specified, `$dateString` will be converted from UTC to this timezone before being used in the Date return value.
-- It returns a `Stmt_Namespace\Date` value.
+- It returns a [`Date`](../Piwik/Date.md) value.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception` &mdash; If `$dateString` is in an invalid format or if the time is before
+    - `Piwik\Exception` &mdash; If `$dateString` is in an invalid format or if the time is before
                   Tue, 06 Aug 1991.
 
 <a name="getdatetime" id="getdatetime"></a>
@@ -128,7 +128,7 @@ Returns the current hour in UTC timezone.
 
 - It returns a `string` value.
 - It throws one of the following exceptions:
-    - `Stmt_Namespace\Exception`
+    - `Piwik\Exception`
 
 <a name="getdatestartutc" id="getdatestartutc"></a>
 <a name="getDateStartUTC" id="getDateStartUTC"></a>
@@ -148,7 +148,7 @@ be `'2007-07-24'` as a Date.
 
 #### Signature
 
-- It returns a `Stmt_Namespace\Date` value.
+- It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="getdateendutc" id="getdateendutc"></a>
 <a name="getDateEndUTC" id="getDateEndUTC"></a>
@@ -168,7 +168,7 @@ be `'2007-07-24 23:59:59'`.
 
 #### Signature
 
-- It returns a `Stmt_Namespace\Date` value.
+- It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="settimezone" id="settimezone"></a>
 <a name="setTimezone" id="setTimezone"></a>
@@ -184,7 +184,7 @@ See [getTimestamp()](/api-reference/Piwik/Date#gettimestamp) to see how the time
 -  It accepts the following parameter(s):
     - `$timezone` (`string`) &mdash;
        eg, `'UTC'`, `'Europe/London'`, etc.
-- It returns a `Stmt_Namespace\Date` value.
+- It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="getutcoffset" id="getutcoffset"></a>
 <a name="getUtcOffset" id="getUtcOffset"></a>
@@ -625,7 +625,7 @@ Date instance does not have to be created.
 -  It accepts the following parameter(s):
     - `$timestamp` (`int`) &mdash;
        The timestamp to add to.
-    - `$n` (`Stmt_Namespace\number`) &mdash;
+    - `$n` (`Piwik\number`) &mdash;
        Number of hours to add, must be > 0.
 
 - *Returns:*  `int` &mdash;

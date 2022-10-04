@@ -36,7 +36,7 @@ they won't be displayed to the user.
 -  It accepts the following parameter(s):
     - `$updater` ([`Updater`](../Piwik/Updater.md)) &mdash;
       
-- It returns a `Stmt_Namespace\Migration` value.
+- It returns a `Piwik\Migration` value.
 
 <a name="doupdate" id="doupdate"></a>
 <a name="doUpdate" id="doUpdate"></a>
@@ -45,7 +45,7 @@ they won't be displayed to the user.
 Perform the incremental version update.
 
 This method should perform all updating logic. If you define migrations in an overridden `getMigrations()`
-method, you must call Updater::executeMigrations() here.
+method, you must call [Updater::executeMigrations()](/api-reference/Piwik/Updater#executemigrations) here.
 
 See \Piwik\Plugins\ExamplePlugin\Updates\Updates\_0\_0\_2 for an example.
 
