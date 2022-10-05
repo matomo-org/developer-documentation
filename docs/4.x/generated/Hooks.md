@@ -1250,7 +1250,7 @@ Callback Signature:
 
 ### Db.getTablesInstalled
 
-*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Db/Schema/Mysql.php) in line [476](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Db/Schema/Mysql.php#L476)*
+*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Db/Schema/Mysql.php) in line [477](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Db/Schema/Mysql.php#L477)*
 
 
 
@@ -3629,6 +3629,7 @@ Callback Signature:
 - [UsersManager.inviteUser.accepted](#usersmanagerinviteuseraccepted)
 - [UsersManager.inviteUser.declined](#usersmanagerinviteuserdeclined)
 - [UsersManager.inviteUser.end](#usersmanagerinviteuserend)
+- [UsersManager.inviteUser.generateInviteLinkToken](#usersmanagerinviteusergenerateinvitelinktoken)
 - [UsersManager.inviteUser.resendInvite](#usersmanagerinviteuserresendinvite)
 - [UsersManager.removeSiteAccess](#usersmanagerremovesiteaccess)
 - [UsersManager.removeSiteAccess](#usersmanagerremovesiteaccess)
@@ -3636,7 +3637,7 @@ Callback Signature:
 
 ### UsersManager.addUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [760](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L760)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [762](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L762)*
 
 Triggered after a new user is created.
 
@@ -3673,7 +3674,7 @@ Callback Signature:
 
 ### UsersManager.deleteUser
 
-*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/Model.php) in line [671](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/Model.php#L671)*
+*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/Model.php) in line [679](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/Model.php#L679)*
 
 Triggered after a user has been deleted. This event should be used to clean up any data that is related to the now deleted user.
 The **Dashboard** plugin, for example, uses this event to remove the user's dashboards.
@@ -3690,7 +3691,7 @@ Usages:
 
 ### UsersManager.getDefaultDates
 
-*Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/Controller.php) in line [195](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/Controller.php#L195)*
+*Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/Controller.php) in line [197](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/Controller.php#L197)*
 
 Triggered when the list of available dates is requested, for example for the
 User Settings > Report date to load by default.
@@ -3735,7 +3736,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [795](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L795)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [797](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L797)*
 
 Triggered after a new user was invited.
 
@@ -3747,9 +3748,21 @@ Callback Signature:
 - string `$email` The new user's e-mail.
 
 
+### UsersManager.inviteUser.generateInviteLinkToken
+
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [1606](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L1606)*
+
+Triggered after a new user invite token was generate.
+
+Callback Signature:
+<pre><code>function($userLogin, $userfunction(&#039;email&#039;]]</code></pre>
+
+- string `$userLogin` The new user's login.
+
+
 ### UsersManager.inviteUser.resendInvite
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [1555](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L1555)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [1565](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L1565)*
 
 Triggered after a new user was invited.
 
@@ -3775,7 +3788,7 @@ Usages:
 
 ### UsersManager.removeSiteAccess
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [1131](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L1131)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [1133](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L1133)*
 
 
 
@@ -3789,7 +3802,7 @@ Usages:
 
 ### UsersManager.updateUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [954](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L954)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php) in line [956](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/UsersManager/API.php#L956)*
 
 Triggered after an existing user has been updated. Event notify about password change.
 
