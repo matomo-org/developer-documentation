@@ -22,7 +22,7 @@ class DefaultFormatter extends ApiReferenceFormatter {
 
     private function logUnresolvedLink(Link $link)
     {
-        $blacklist = array('array', 'string', 'mixed', 'int', 'integer', 'bool');
+        $blacklist = array('array', 'string', 'mixed', 'int', 'integer', 'bool', 'boolean');
 
         if (in_array($link->getDestination(), $blacklist)) {
             return;
