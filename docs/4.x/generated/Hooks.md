@@ -37,7 +37,7 @@ Triggered to add new capabilities. **Example**
 
     public function addCapabilities(&$capabilities)
     {
-        $capabilities[] = new MyNewCapabilitiy();
+        $capabilities[] = new MyNewCapability();
     }
 
 Callback Signature:

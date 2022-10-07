@@ -26,7 +26,7 @@ This abstract class defines the following properties:
 - [`$segmentName`](#$segmentname) &mdash; By defining a segment name a user will be able to filter their visitors by this column. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`$suggestedValuesCallback`](#$suggestedvaluescallback) &mdash; Sets a callback which will be executed when user will call for suggested values for segment. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`$acceptValues`](#$acceptvalues) &mdash; Here you should explain which values are accepted/useful for your segment, for example: "1, 2, 3, etc." or "comcast.net, proxad.net, etc.". Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
-- [`$sqlSegment`](#$sqlsegment) &mdash; Defines to which column in the MySQL database the segment belongs (if one is conifugred). Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
+- [`$sqlSegment`](#$sqlsegment) &mdash; Defines to which column in the MySQL database the segment belongs (if one is configured). Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`$sqlFilter`](#$sqlfilter) &mdash; Interesting when specifying a segment. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`$sqlFilterValue`](#$sqlfiltervalue) &mdash; Similar to [$sqlFilter](/api-reference/Piwik/Plugin/Dimension/VisitDimension#$sqlfilter) you can map a given segment value to another value. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`$allowAnonymous`](#$allowanonymous) &mdash; Defines whether this dimension (and segment based on this dimension) is available to anonymous users. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
@@ -115,7 +115,7 @@ this as well. For example "Any URL including protocol. The URL must be URL encod
 <a name="sqlSegment" id="sqlSegment"></a>
 ### `$sqlSegment`
 
-Defines to which column in the MySQL database the segment belongs (if one is conifugred). Defaults to
+Defines to which column in the MySQL database the segment belongs (if one is configured). Defaults to
 `$this.dbTableName . '.'. $this.columnName` but you can customize it eg like `HOUR(log_visit.visit_last_action_time)`.
 
 #### Signature
@@ -227,7 +227,7 @@ The abstract class defines the following methods:
 - [`onConvertedVisit()`](#onconvertedvisit) &mdash; This event is executed shortly after `onNewVisit` or `onExistingVisit` in case the visitor converted a goal.
 - [`onAnyGoalConversion()`](#onanygoalconversion) &mdash; By implementing this event you can persist a value to the `log_conversion` table in case a conversion happens.
 - [`shouldForceNewVisit()`](#shouldforcenewvisit) &mdash; This hook is executed by the tracker when determining if an action is the start of a new visit or part of an existing one.
-- [`sortStaticListByUsage()`](#sortstaticlistbyusage) &mdash; Sort a key => value array descending by the number of occurances of the key in the supplied table and column
+- [`sortStaticListByUsage()`](#sortstaticlistbyusage) &mdash; Sort a key => value array descending by the number of occurrences of the key in the supplied table and column
 
 <a name="getdbcolumnjoin" id="getdbcolumnjoin"></a>
 <a name="getDbColumnJoin" id="getDbColumnJoin"></a>
@@ -604,7 +604,7 @@ the event "onExistingVisit" is executed. Meaning for each visitor this method is
 
 The `onExistingVisit` method is triggered when a visitor was recognized meaning it is not a new visitor.
 
-You can overwrite any previous value set by the event `onNewVisit` by implemting this event. By returning boolean
+You can overwrite any previous value set by the event `onNewVisit` by implementing this event. By returning boolean
 `false` no value will be updated.
 
 #### Signature
@@ -695,7 +695,7 @@ campaign information for the current action is different from the last.
 <a name="sortStaticListByUsage" id="sortStaticListByUsage"></a>
 ### `sortStaticListByUsage()`
 
-Sort a key => value array descending by the number of occurances of the key in the supplied table and column
+Sort a key => value array descending by the number of occurrences of the key in the supplied table and column
 
 #### Signature
 
@@ -703,12 +703,12 @@ Sort a key => value array descending by the number of occurances of the key in t
     - `$array` (`array`) &mdash;
        Key value array
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-       Datatable from which to count occurances
+       Datatable from which to count occurrences
     - `$keyColumn` (`string`) &mdash;
        Column in the datatable to match against the array key
     - `$maxValuesToReturn` (`int`) &mdash;
        Limit the return array to this number of elements
 
 - *Returns:*  `array` &mdash;
-    An array of values from the source array sorted by most occurances, descending
+    An array of values from the source array sorted by most occurrences, descending
 
