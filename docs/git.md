@@ -153,7 +153,7 @@ While `git push --force` works too it overwrites the entire remote branch with y
 
 ## Submodules
 
-Various of out git repositories use submodules. From a git perspective a submodule within a repository is similar to work with as a file but its content includes a specific commit hash. This way git knows to which commit within a submodule it references.
+Various of our git repositories use submodules. From a git perspective a submodule within a repository is similar to work with as a file but its content includes a specific commit hash. This way git knows to which commit within a submodule it references.
 
 Submodules are configured in a `.gitmodules` file ([see this example](https://github.com/matomo-org/matomo/blob/4.x-dev/.gitmodules)) and its content look like this:
 
