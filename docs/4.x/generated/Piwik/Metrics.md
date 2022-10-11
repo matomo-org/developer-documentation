@@ -5,7 +5,7 @@ Metrics
 
 This class contains metadata regarding core metrics and contains several related helper functions.
 
-okOf note are the `INDEX_...` constants. In the database, metric column names
+Of note are the `INDEX_...` constants. In the database, metric column names
 in [DataTable](/api-reference/Piwik/DataTable) rows are stored as integers to save space. The integer
 values used are determined by these constants.
 

@@ -3,7 +3,7 @@
 AddColumnsProcessedMetricsGoal
 ==============================
 
-Adds goal related metrics to a [DataTable](/api-reference/Piwik/DataTable) using metrics that already exist.
+Adds goal related metrics to a DataTable using metrics that already exist.
 
 Metrics added are:
 

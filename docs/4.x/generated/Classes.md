@@ -28,8 +28,8 @@ This is a complete list of available classes:
 - [`DataAccess\LogAggregator`](Piwik/DataAccess/LogAggregator.md) &mdash; Contains methods that calculate metrics by aggregating log data (visits, actions, conversions, ecommerce items).
 - [`DataTable`](Piwik/DataTable.md) &mdash; The primary data structure used to store analytics data in Piwik.
 - [`DataTable\BaseFilter`](Piwik/DataTable/BaseFilter.md) &mdash; A filter is set of logic that manipulates a DataTable.
-- [`DataTable\Filter\AddColumnsProcessedMetrics`](Piwik/DataTable/Filter/AddColumnsProcessedMetrics.md) &mdash; Adds processed metrics columns to a [DataTable](/api-reference/Piwik/DataTable) using metrics that already exist.
-- [`DataTable\Filter\AddColumnsProcessedMetricsGoal`](Piwik/DataTable/Filter/AddColumnsProcessedMetricsGoal.md) &mdash; Adds goal related metrics to a [DataTable](/api-reference/Piwik/DataTable) using metrics that already exist.
+- [`DataTable\Filter\AddColumnsProcessedMetrics`](Piwik/DataTable/Filter/AddColumnsProcessedMetrics.md) &mdash; Adds processed metrics columns to a DataTable using metrics that already exist.
+- [`DataTable\Filter\AddColumnsProcessedMetricsGoal`](Piwik/DataTable/Filter/AddColumnsProcessedMetricsGoal.md) &mdash; Adds goal related metrics to a DataTable using metrics that already exist.
 - [`DataTable\Filter\AddSegmentByLabel`](Piwik/DataTable/Filter/AddSegmentByLabel.md) &mdash; Executes a filter for each row of a DataTable and generates a segment filter for each row.
 - [`DataTable\Filter\AddSegmentByLabelMapping`](Piwik/DataTable/Filter/AddSegmentByLabelMapping.md) &mdash; Executes a filter for each row of a DataTable and generates a segment filter for each row.
 - [`DataTable\Filter\AddSegmentByRangeLabel`](Piwik/DataTable/Filter/AddSegmentByRangeLabel.md) &mdash; Executes a filter for each row of a DataTable and generates a segment filter for each row.
