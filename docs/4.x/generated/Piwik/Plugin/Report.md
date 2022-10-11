@@ -528,7 +528,7 @@ Returns the Dimension instance of this report's subtable report.
 #### Signature
 
 
-- *Returns:*  `Piwik\Plugin\Dimension`|`null` &mdash;
+- *Returns:*  [`Dimension`](../../Piwik/Columns/Dimension.md)|`null` &mdash;
     The subtable report's dimension or null if there is subtable report or
                        no dimension for the subtable report.
 
@@ -541,7 +541,7 @@ Returns the Dimension instance of the subtable report of this report's subtable 
 #### Signature
 
 
-- *Returns:*  `Piwik\Plugin\Dimension`|`null` &mdash;
+- *Returns:*  [`Dimension`](../../Piwik/Columns/Dimension.md)|`null` &mdash;
     The subtable report's dimension or null if there is no subtable report or
                        no dimension for the subtable report.
 
@@ -566,7 +566,7 @@ Fetches the report represented by this instance.
 -  It accepts the following parameter(s):
     - `$paramOverride` (`array`) &mdash;
        Query parameter overrides.
-- It returns a `Piwik\Plugin\DataTable` value.
+- It returns a [`DataTable`](../../Piwik/DataTable.md) value.
 
 <a name="fetchsubtable" id="fetchsubtable"></a>
 <a name="fetchSubtable" id="fetchSubtable"></a>
@@ -581,7 +581,7 @@ Fetches a subtable for the report represented by this instance.
        The subtable ID.
     - `$paramOverride` (`array`) &mdash;
        Query parameter overrides.
-- It returns a `Piwik\Plugin\DataTable` value.
+- It returns a [`DataTable`](../../Piwik/DataTable.md) value.
 
 <a name="getfordimension" id="getfordimension"></a>
 <a name="getForDimension" id="getForDimension"></a>

@@ -32,7 +32,7 @@ The class defines the following methods:
     - `$idType` (`string`|`null`) &mdash;
        If null, idType will be detected automatically if the site already exists. Only needed to set a value when idSite = 0 (this is the case when a site is about) to be created.
 
-- *Returns:*  `Piwik\Plugin\MeasurableSettings`|`null` &mdash;
+- *Returns:*  `Piwik\Settings\Measurable\MeasurableSettings`|`null` &mdash;
     Returns null if no MeasurableSettings implemented by this plugin or when plugin
                                  is not loaded and activated. Returns an instance of the settings otherwise.
 
@@ -47,5 +47,5 @@ The class defines the following methods:
        The ID of a site. If a site is about to be created pass idSite = 0.
     - `$idMeasurableType` (`string`|`null`) &mdash;
        If null, idType will be detected automatically if the site already exists. Only needed to set a value when idSite = 0 (this is the case when a site is about) to be created.
-- It returns a `Piwik\Plugin\MeasurableSettings` value.
+- It returns a `Piwik\Settings\Measurable\MeasurableSettings` value.
 

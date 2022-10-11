@@ -48,7 +48,7 @@ See [ReplaceSummaryRowLabel](/api-reference/Piwik/DataTable/Filter/ReplaceSummar
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table` (`Piwik\DataTable\DataTable`) &mdash;
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
       
 - It does not return anything or a mixed result.
 

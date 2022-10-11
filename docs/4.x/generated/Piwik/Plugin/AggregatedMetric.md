@@ -120,7 +120,7 @@ its name or by its special numerical index value.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$row` (`Piwik\Plugin\Row`|`array`) &mdash;
+    - `$row` ([`Row`](../../Piwik/DataTable/Row.md)|`array`) &mdash;
       
     - `$columnName` (`string`) &mdash;
       

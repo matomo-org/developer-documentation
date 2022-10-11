@@ -78,7 +78,7 @@ data for.
 
 #### Signature
 
-- It returns a `Piwik\Parameters` value.
+- It returns a [`Parameters`](../Piwik/ArchiveProcessor/Parameters.md) value.
 
 <a name="getlogaggregator" id="getlogaggregator"></a>
 <a name="getLogAggregator" id="getLogAggregator"></a>
@@ -89,7 +89,7 @@ ArchiveProcessor will insert archive data for.
 
 #### Signature
 
-- It returns a `Piwik\LogAggregator` value.
+- It returns a [`LogAggregator`](../Piwik/DataAccess/LogAggregator.md) value.
 
 <a name="aggregatedatatablerecords" id="aggregatedatatablerecords"></a>
 <a name="aggregateDataTableRecords" id="aggregateDataTableRecords"></a>

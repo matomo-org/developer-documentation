@@ -24,7 +24,7 @@ Sets the hour of the day on which the task should be executed.
        Must be `>= 0` and `< 24`.
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - `Piwik\Scheduler\Schedule\Exception` &mdash; If the current scheduled period is **hourly** or if `$hour` is invalid.
+    - [`Exception`](http://php.net/class.Exception) &mdash; If the current scheduled period is **hourly** or if `$hour` is invalid.
 
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>
@@ -44,5 +44,5 @@ and a string description of the day within the period to execute the task on.
 - *Returns:*  [`Hourly`](../../../Piwik/Scheduler/Schedule/Hourly.md)|[`Daily`](../../../Piwik/Scheduler/Schedule/Daily.md)|[`Weekly`](../../../Piwik/Scheduler/Schedule/Weekly.md)|[`Monthly`](../../../Piwik/Scheduler/Schedule/Monthly.md) &mdash;
     
 - It throws one of the following exceptions:
-    - `Piwik\Scheduler\Schedule\Exception`
+    - [`Exception`](http://php.net/class.Exception)
 

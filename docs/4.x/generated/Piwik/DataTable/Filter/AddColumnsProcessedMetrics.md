@@ -3,7 +3,7 @@
 AddColumnsProcessedMetrics
 ==========================
 
-Adds processed metrics columns to a DataTable using metrics that already exist.
+Adds processed metrics columns to a [DataTable](/api-reference/Piwik/DataTable) using metrics that already exist.
 
 Columns added are:
 
@@ -56,7 +56,7 @@ more information.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table` (`Piwik\DataTable\DataTable`) &mdash;
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
       
 - It does not return anything or a mixed result.
 

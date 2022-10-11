@@ -284,4 +284,4 @@ The core comes with a set of various validators that can be used.
 
 #### Signature
 
-- It is a `Piwik\Settings\BaseValidator` value.
+- It is a `Piwik\Validators\BaseValidator` value.

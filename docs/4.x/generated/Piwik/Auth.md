@@ -97,7 +97,7 @@ uses an MD5 hash of a user's password.
 
 - It returns a `string` value.
 - It throws one of the following exceptions:
-    - `Piwik\Exception` &mdash; if the token auth secret does not exist or cannot be obtained.
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the token auth secret does not exist or cannot be obtained.
 
 <a name="setlogin" id="setlogin"></a>
 <a name="setLogin" id="setLogin"></a>
@@ -138,7 +138,7 @@ Sets the hash of the password to authenticate with. The hash will be an MD5 hash
        The hashed password.
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - `Piwik\Exception` &mdash; if authentication by hashed password is not supported.
+    - [`Exception`](http://php.net/class.Exception) &mdash; if authentication by hashed password is not supported.
 
 <a name="authenticate" id="authenticate"></a>
 <a name="authenticate" id="authenticate"></a>
@@ -156,7 +156,7 @@ hash of the token auth in the session cookie. You can calculate the token auth h
 
 - It returns a [`AuthResult`](../Piwik/AuthResult.md) value.
 - It throws one of the following exceptions:
-    - `Piwik\Exception` &mdash; if the Auth implementation has an invalid state (ie, no login
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the Auth implementation has an invalid state (ie, no login
                   was specified). Note: implementations are not **required** to throw
                   exceptions for invalid state, but they are allowed to.
 

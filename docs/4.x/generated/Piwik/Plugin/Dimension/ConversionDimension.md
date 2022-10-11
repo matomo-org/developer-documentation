@@ -27,7 +27,7 @@ This abstract class defines the following properties:
 - [`$segmentName`](#$segmentname) &mdash; By defining a segment name a user will be able to filter their visitors by this column. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`$suggestedValuesCallback`](#$suggestedvaluescallback) &mdash; Sets a callback which will be executed when user will call for suggested values for segment. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`$acceptValues`](#$acceptvalues) &mdash; Here you should explain which values are accepted/useful for your segment, for example: "1, 2, 3, etc." or "comcast.net, proxad.net, etc.". Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
-- [`$sqlSegment`](#$sqlsegment) &mdash; Defines to which column in the MySQL database the segment belongs (if one is conifugred). Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
+- [`$sqlSegment`](#$sqlsegment) &mdash; Defines to which column in the MySQL database the segment belongs (if one is configured). Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`$sqlFilter`](#$sqlfilter) &mdash; Interesting when specifying a segment. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`$sqlFilterValue`](#$sqlfiltervalue) &mdash; Similar to [$sqlFilter](/api-reference/Piwik/Plugin/Dimension/ConversionDimension#$sqlfilter) you can map a given segment value to another value. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
 - [`$allowAnonymous`](#$allowanonymous) &mdash; Defines whether this dimension (and segment based on this dimension) is available to anonymous users. Inherited from [`Dimension`](../../../Piwik/Columns/Dimension.md)
@@ -116,7 +116,7 @@ this as well. For example "Any URL including protocol. The URL must be URL encod
 <a name="sqlSegment" id="sqlSegment"></a>
 ### `$sqlSegment`
 
-Defines to which column in the MySQL database the segment belongs (if one is conifugred). Defaults to
+Defines to which column in the MySQL database the segment belongs (if one is configured). Defaults to
 `$this.dbTableName . '.'. $this.columnName` but you can customize it eg like `HOUR(log_visit.visit_last_action_time)`.
 
 #### Signature
@@ -317,7 +317,7 @@ will be done.
 
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - `Piwik\Columns\Exception`
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="getcategoryid" id="getcategoryid"></a>
 <a name="getCategoryId" id="getCategoryId"></a>
@@ -442,7 +442,7 @@ $segmentsList->addSegment($segment);
       
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - `Piwik\Columns\Exception`
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="configuremetrics" id="configuremetrics"></a>
 <a name="configureMetrics" id="configureMetrics"></a>
@@ -504,7 +504,7 @@ of the dimension, but is modified to be more human readable.
 - *Returns:*  `string` &mdash;
     eg, `"Referrers.Keywords"`
 - It throws one of the following exceptions:
-    - `Piwik\Columns\Exception` &mdash; if the plugin and simple class name of this instance cannot be determined.
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the plugin and simple class name of this instance cannot be determined.
                   This would only happen if the dimension is located in the wrong directory.
 
 <a name="getalldimensions" id="getalldimensions"></a>
@@ -548,7 +548,7 @@ Returns the name of the plugin that contains this Dimension.
 
 - It returns a `string` value.
 - It throws one of the following exceptions:
-    - `Piwik\Columns\Exception` &mdash; if the Dimension is not located within a Plugin module.
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the Dimension is not located within a Plugin module.
 
 <a name="gettype" id="gettype"></a>
 <a name="getType" id="getType"></a>
@@ -575,7 +575,7 @@ Return boolean `false` if you do not want to change the value in some cases.
       
     - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
       
-    - `$action` (`Piwik\Plugin\Dimension\Action`|`null`) &mdash;
+    - `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
       
     - `$goalManager` (`Piwik\Tracker\GoalManager`) &mdash;
       
@@ -597,7 +597,7 @@ database. Return boolean `false` if you do not want to change the value in some 
       
     - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
       
-    - `$action` (`Piwik\Plugin\Dimension\Action`|`null`) &mdash;
+    - `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
       
     - `$goalManager` (`Piwik\Tracker\GoalManager`) &mdash;
       
@@ -619,7 +619,7 @@ database. Return boolean `false` if you do not want to change the value in some 
       
     - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
       
-    - `$action` (`Piwik\Plugin\Dimension\Action`|`null`) &mdash;
+    - `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
       
     - `$goalManager` (`Piwik\Tracker\GoalManager`) &mdash;
       

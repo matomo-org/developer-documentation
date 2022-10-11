@@ -36,7 +36,7 @@ they won't be displayed to the user.
 -  It accepts the following parameter(s):
     - `$updater` ([`Updater`](../Piwik/Updater.md)) &mdash;
       
-- It returns a `Piwik\Migration` value.
+- It returns a [`Migration[]`](../Piwik/Updater/Migration.md) value.
 
 <a name="doupdate" id="doupdate"></a>
 <a name="doUpdate" id="doUpdate"></a>

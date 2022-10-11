@@ -118,7 +118,7 @@ Returns the start date of the period.
 
 - It returns a [`Date`](../../Piwik/Date.md) value.
 - It throws one of the following exceptions:
-    - `Piwik\Period\Exception`
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="getdatetimestart" id="getdatetimestart"></a>
 <a name="getDateTimeStart" id="getDateTimeStart"></a>
@@ -318,7 +318,7 @@ Constructor.
        The date range, eg, `'2007-07-24,2013-11-15'`.
     - `$timezone` (`string`) &mdash;
        The timezone to use, eg, `'UTC'`.
-    - `$today` (`bool`|`Piwik\Period\Date`) &mdash;
+    - `$today` (`bool`|[`Date`](../../Piwik/Date.md)) &mdash;
        The date to use as _today_. Defaults to `Date::factory('today', $timzeone)`.
 
 <a name="setdefaultenddate" id="setdefaultenddate"></a>
@@ -398,7 +398,7 @@ Return the number of days contained in this range
 
 - It returns a `int` value.
 - It throws one of the following exceptions:
-    - `Piwik\Period\Exception`
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="getrelativetoenddate" id="getrelativetoenddate"></a>
 <a name="getRelativeToEndDate" id="getRelativeToEndDate"></a>

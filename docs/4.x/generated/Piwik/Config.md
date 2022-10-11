@@ -54,7 +54,7 @@ Returns a configuration value or section by name.
 - *Returns:*  `string`|`array` &mdash;
     The requested value requested. Returned by reference.
 - It throws one of the following exceptions:
-    - `Piwik\Exception` &mdash; If the value requested not found in either `config.ini.php` or
+    - [`Exception`](http://php.net/class.Exception) &mdash; If the value requested not found in either `config.ini.php` or
                   `global.ini.php`.
 
 <a name="getfromglobalconfig" id="getfromglobalconfig"></a>

@@ -39,7 +39,7 @@ Constructor.
     - `$pluginName` (`string`) &mdash;
        The name of the plugin the setting belongs to
 - It throws one of the following exceptions:
-    - `Piwik\Settings\Exception`
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="getname" id="getname"></a>
 <a name="getName" id="getName"></a>

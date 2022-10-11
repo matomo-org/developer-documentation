@@ -74,6 +74,6 @@ Executes the requested plugin controller method.
 - *Returns:*  `void`|`mixed` &mdash;
     The returned value of the call. This is the output of the controller method.
 - It throws one of the following exceptions:
-    - `Piwik\Exception|\Piwik\Exception\PluginDeactivatedException` &mdash; in case the plugin doesn&#039;t exist, the action doesn&#039;t exist,
+    - `Exception|\Piwik\Exception\PluginDeactivatedException` &mdash; in case the plugin doesn&#039;t exist, the action doesn&#039;t exist,
                                                     there is not enough permission, etc.
 

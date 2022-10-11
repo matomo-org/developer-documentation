@@ -38,7 +38,7 @@ Constructor.
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
       
-    - `$pastDataTable` (`Piwik\DataTable\Filter\DataTable`) &mdash;
+    - `$pastDataTable` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
        The DataTable containing data for the period in the past.
     - `$columnToAdd` (`string`) &mdash;
        The column to add evolution data to, eg, `'visits_evolution'`.
@@ -56,7 +56,7 @@ See [ColumnCallbackAddColumnQuotient](/api-reference/Piwik/DataTable/Filter/Colu
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table` (`Piwik\DataTable\DataTable`) &mdash;
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
       
 - It does not return anything or a mixed result.
 

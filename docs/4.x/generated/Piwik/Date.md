@@ -105,7 +105,7 @@ result will be in UTC.
        The timezone of the result. If specified, `$dateString` will be converted from UTC to this timezone before being used in the Date return value.
 - It returns a [`Date`](../Piwik/Date.md) value.
 - It throws one of the following exceptions:
-    - `Piwik\Exception` &mdash; If `$dateString` is in an invalid format or if the time is before
+    - [`Exception`](http://php.net/class.Exception) &mdash; If `$dateString` is in an invalid format or if the time is before
                   Tue, 06 Aug 1991.
 
 <a name="getdatetime" id="getdatetime"></a>
@@ -128,7 +128,7 @@ Returns the current hour in UTC timezone.
 
 - It returns a `string` value.
 - It throws one of the following exceptions:
-    - `Piwik\Exception`
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="getdatestartutc" id="getdatestartutc"></a>
 <a name="getDateStartUTC" id="getDateStartUTC"></a>

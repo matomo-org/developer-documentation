@@ -75,7 +75,7 @@ Sends an HTTP request using best available transport method.
 
                     `false` is still returned on failure.
 - It throws one of the following exceptions:
-    - `Piwik\Exception` &mdash; if the response cannot be saved to `$destinationPath`, if the HTTP response cannot be sent,
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the response cannot be saved to `$destinationPath`, if the HTTP response cannot be sent,
                   if there are more than 5 redirects or if the request times out.
 
 <a name="downloadchunk" id="downloadchunk"></a>
@@ -139,7 +139,7 @@ public function myAction()
        `true` if this is the continuation of a download, or if we're starting a fresh one.
 - It returns a `array` value.
 - It throws one of the following exceptions:
-    - `Piwik\Exception` &mdash; if the file already exists and we&#039;re starting a new download,
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the file already exists and we&#039;re starting a new download,
                   if we&#039;re trying to continue a download that never started
 
 <a name="fetchremotefile" id="fetchremotefile"></a>
@@ -163,6 +163,6 @@ Fetches a file located at `$url` and saves it to `$destinationPath`.
 - *Returns:*  `bool` &mdash;
     `true` on success, throws Exception on failure
 - It throws one of the following exceptions:
-    - `Piwik\Exception` &mdash; if the response cannot be saved to `$destinationPath`, if the HTTP response cannot be sent,
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the response cannot be saved to `$destinationPath`, if the HTTP response cannot be sent,
                   if there are more than 5 redirects or if the request times out.
 

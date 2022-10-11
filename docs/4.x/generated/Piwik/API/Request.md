@@ -5,7 +5,7 @@ Request
 
 Dispatches API requests to the appropriate API method.
 
-The Request class is used throughout Piwik to call API methods. The difference
+okokokThe Request class is used throughout Piwik to call API methods. The difference
 between using Request and calling API methods directly is that Request
 will do more after calling the API including: applying generic filters, applying queued filters,
 and handling the **flat** and **label** query parameters.
@@ -120,11 +120,11 @@ object.
 #### Signature
 
 
-- *Returns:*  `Piwik\API\DataTable`|`Piwik\API\Map`|`string` &mdash;
+- *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|`Piwik\API\Map`|`string` &mdash;
     The data resulting from the API call.
 - It throws one of the following exceptions:
-    - `Piwik\API\PluginDeactivatedException` &mdash; if the module plugin is not activated.
-    - `Piwik\API\Exception` &mdash; if the requested API method cannot be called, if required parameters for the
+    - `Piwik\Exception\PluginDeactivatedException` &mdash; if the module plugin is not activated.
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the requested API method cannot be called, if required parameters for the
                   API method are missing or if the API method throws an exception and the **format**
                   query parameter is **original**.
 
@@ -147,14 +147,14 @@ Returns the name of a plugin's API class by plugin name.
 <a name="isRootRequestApiRequest" id="isRootRequestApiRequest"></a>
 ### `isRootRequestApiRequest()`
 
-Detect if the root request (the actual request) is an API request or not. To detect whether an API is currently
+okDetect if the root request (the actual request) is an API request or not. To detect whether an API is currently
 request within any request, have a look at [isApiRequest()](/api-reference/Piwik/API/Request#isapirequest).
 
 #### Signature
 
 - It returns a `bool` value.
 - It throws one of the following exceptions:
-    - `Piwik\API\Exception`
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="iscurrentapirequesttherootapirequest" id="iscurrentapirequesttherootapirequest"></a>
 <a name="isCurrentApiRequestTheRootApiRequest" id="isCurrentApiRequestTheRootApiRequest"></a>
@@ -169,13 +169,13 @@ can be called programmatically. These requests are considered "child" API reques
 
 - It returns a `bool` value.
 - It throws one of the following exceptions:
-    - `Piwik\API\Exception`
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="isapirequest" id="isapirequest"></a>
 <a name="isApiRequest" id="isApiRequest"></a>
 ### `isApiRequest()`
 
-Detect if request is an API request. Meaning the module is 'API' and an API method having a valid format was
+okDetect if request is an API request. Meaning the module is 'API' and an API method having a valid format was
 specified. Note that this method will return true even if the actual request is for example a regular UI
 reporting page request but within this request we are currently processing an API request (eg a
 controller calls Request::processRequest('API.getMatomoVersion')). To find out if the root request is an API
@@ -188,7 +188,7 @@ request or not, call [isRootRequestApiRequest()](/api-reference/Piwik/API/Reques
        eg array('module' => 'API', 'method' => 'Test.getMethod')
 - It returns a `bool` value.
 - It throws one of the following exceptions:
-    - `Piwik\API\Exception`
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="getmethodifapirequest" id="getmethodifapirequest"></a>
 <a name="getMethodIfApiRequest" id="getMethodIfApiRequest"></a>
@@ -205,7 +205,7 @@ Returns the current API method being executed, if the current request is an API 
 - *Returns:*  `string`|`null` &mdash;
     
 - It throws one of the following exceptions:
-    - `Piwik\API\Exception`
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="processrequest" id="processrequest"></a>
 <a name="processRequest" id="processRequest"></a>
@@ -225,7 +225,7 @@ and `$_POST`.
        Default query parameters. If a query parameter is absent in `$request`, it will be loaded from this. Defaults to `$_GET + $_POST`. To avoid using any parameters from $_GET or $_POST, set this to an empty `array()`.
 
 - *Returns:*  `mixed` &mdash;
-    The result of the API request. See [process()](/api-reference/Piwik/API/Request#process).
+    okThe result of the API request. See [process()](/api-reference/Piwik/API/Request#process).
 
 <a name="getrequestparametersget" id="getrequestparametersget"></a>
 <a name="getRequestParametersGET" id="getRequestParametersGET"></a>

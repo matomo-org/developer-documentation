@@ -45,5 +45,5 @@ before this method exits. Privileges will be rescinded even if an exception is t
 - *Returns:*  `mixed` &mdash;
     The result of `$function`.
 - It throws one of the following exceptions:
-    - `Piwik\Exception` &mdash; rethrows any exceptions thrown by `$function`.
+    - [`Exception`](http://php.net/class.Exception) &mdash; rethrows any exceptions thrown by `$function`.
 

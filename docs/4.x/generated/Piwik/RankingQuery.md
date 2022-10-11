@@ -134,7 +134,7 @@ by [execute()](/api-reference/Piwik/RankingQuery#execute).
        string Name of the column.
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - `Piwik\Exception` &mdash; if method is used more than once.
+    - [`Exception`](http://php.net/class.Exception) &mdash; if method is used more than once.
 
 <a name="partitionresultintomultiplegroups" id="partitionresultintomultiplegroups"></a>
 <a name="partitionResultIntoMultipleGroups" id="partitionResultIntoMultipleGroups"></a>
@@ -162,7 +162,7 @@ rows `log_action.type = TYPE_DOWNLOAD`.
        Array of possible column values.
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - `Piwik\Exception` &mdash; if method is used more than once.
+    - [`Exception`](http://php.net/class.Exception) &mdash; if method is used more than once.
 
 <a name="execute" id="execute"></a>
 <a name="execute" id="execute"></a>

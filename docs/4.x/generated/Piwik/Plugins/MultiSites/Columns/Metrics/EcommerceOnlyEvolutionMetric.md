@@ -128,7 +128,7 @@ its name or by its special numerical index value.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$row` (`Piwik\Plugin\Row`|`array`) &mdash;
+    - `$row` ([`Row`](../../../../../Piwik/DataTable/Row.md)|`array`) &mdash;
       
     - `$columnName` (`string`) &mdash;
       
@@ -241,7 +241,7 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$wrapped` (`string`|`Piwik\Plugins\CoreHome\Columns\Metrics\Metric`) &mdash;
+    - `$wrapped` (`string`|[`Metric`](../../../../../Piwik/Plugin/Metric.md)) &mdash;
        The metric used to calculate the evolution.
     - `$pastData` ([`DataTable`](../../../../../Piwik/DataTable.md)|`null`) &mdash;
        The data in the past to use when calculating evolutions.

@@ -58,7 +58,7 @@ create the container.
 -  It accepts the following parameter(s):
     - `$containerId` (`string`) &mdash;
        eg 'Products' or 'Contents' see {Piwik\Widget\WidgetContainerConfig::setId()}. Other reports or widgets will be able to add more widgets to this container. This is useful when you want to show for example multiple related widgets together.
-- It returns a `Piwik\Report\WidgetContainerConfig` value.
+- It returns a [`WidgetContainerConfig`](../../Piwik/Widget/WidgetContainerConfig.md) value.
 
 <a name="createcustomwidget" id="createcustomwidget"></a>
 <a name="createCustomWidget" id="createCustomWidget"></a>

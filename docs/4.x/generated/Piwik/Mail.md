@@ -326,8 +326,8 @@ If the send email process throws an exception, we catch it and log it
 
 - It returns a `void` value.
 - It throws one of the following exceptions:
-    - `Piwik\NotFoundException`
-    - `Piwik\DependencyException`
+    - `DI\NotFoundException`
+    - `DI\DependencyException`
 
 <a name="setsmtpdebug" id="setsmtpdebug"></a>
 <a name="setSmtpDebug" id="setSmtpDebug"></a>

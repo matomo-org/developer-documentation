@@ -148,7 +148,7 @@ If you want to create an Archive instance with an array of Period instances, use
        Segment definition or false if no segment should be used. [Segment](/api-reference/Piwik/Segment)
     - `$_restrictSitesToLogin` (`bool`|`false`|`string`) &mdash;
        Used only when running as a scheduled task.
-- It returns a `Piwik\ArchiveQuery` value.
+- It returns a `Piwik\Archive\ArchiveQuery` value.
 
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>
@@ -176,7 +176,7 @@ use [build()](/api-reference/Piwik/Archive#build).
        Whether `'all'` sites are being queried or not. If true, then the result of querying functions will be indexed by site, regardless of whether `count($idSites) == 1`.
     - `$isMultipleDate` (`bool`) &mdash;
        Whether multiple dates are being queried or not. If true, then the result of querying functions will be indexed by period, regardless of whether `count($periods) == 1`.
-- It returns a `Piwik\ArchiveQuery` value.
+- It returns a `Piwik\Archive\ArchiveQuery` value.
 
 <a name="shouldskiparchiveifskippingsegmentarchivefortoday" id="shouldskiparchiveifskippingsegmentarchivefortoday"></a>
 <a name="shouldSkipArchiveIfSkippingSegmentArchiveForToday" id="shouldSkipArchiveIfSkippingSegmentArchiveForToday"></a>
@@ -236,7 +236,7 @@ and process blob data.
     - `$idSubtable`
       
 
-- *Returns:*  `Piwik\DataCollection` &mdash;
+- *Returns:*  `Piwik\Archive\DataCollection` &mdash;
     the queried data.
 
 <a name="getdatatablefromnumeric" id="getdatatablefromnumeric"></a>
@@ -339,7 +339,7 @@ this Archive will query data for.
 
 #### Signature
 
-- It returns a `Piwik\Parameters` value.
+- It returns a `Piwik\Archive\Parameters` value.
 
 <a name="createdatatablefromarchive" id="createdatatablefromarchive"></a>
 <a name="createDataTableFromArchive" id="createDataTableFromArchive"></a>

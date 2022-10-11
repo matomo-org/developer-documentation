@@ -24,7 +24,7 @@ Execute multiple migration queries from a single Update file.
 -  It accepts the following parameter(s):
     - `$file` (`string`) &mdash;
        The path to the Updates file.
-    - `$migrations` (`Piwik\Migration`) &mdash;
+    - `$migrations` ([`Migration[]`](../Piwik/Updater/Migration.md)) &mdash;
        An array of migrations
 - It does not return anything or a mixed result.
 

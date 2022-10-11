@@ -38,7 +38,7 @@ Get all available segments.
 
 #### Signature
 
-- It returns a `Piwik\Segment\Segment` value.
+- It returns a [`Segment[]`](../../Piwik/Plugin/Segment.md) value.
 
 <a name="remove" id="remove"></a>
 <a name="remove" id="remove"></a>
@@ -65,6 +65,6 @@ Removes one or more segments from the segments list.
     - `$segmentExpression` (`string`) &mdash;
        Name of the segment expression. eg `pageUrl`
 
-- *Returns:*  `Piwik\Segment\Segment`|`null` &mdash;
+- *Returns:*  [`Segment`](../../Piwik/Plugin/Segment.md)|`null` &mdash;
     
 

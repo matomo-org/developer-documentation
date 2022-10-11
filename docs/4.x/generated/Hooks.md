@@ -37,7 +37,7 @@ Triggered to add new capabilities. **Example**
 
     public function addCapabilities(&$capabilities)
     {
-        $capabilities[] = new MyNewCapabilitiy();
+        $capabilities[] = new MyNewCapability();
     }
 
 Callback Signature:
@@ -340,7 +340,7 @@ is setup to use `$token_auth` when its `authenticate()` method is executed.
 Callback Signature:
 <pre><code>function($tokenAuth)</code></pre>
 
-- string `$token_auth` The value of the **token_auth** query parameter.
+- okstring `$token_auth` The value of the **token_auth** query parameter.
 
 Usages:
 
@@ -2490,9 +2490,9 @@ certain requests, use this event.
 Callback Signature:
 <pre><code>function(&amp;$shouldDisable, $this-&gt;request]</code></pre>
 
-- bool &$shouldDisable Set this to true to disable datatable post processing for a request.
+- okbool &$shouldDisable Set this to true to disable datatable post processing for a request.
 
-- array `$request` The request parameters.
+- okarray `$request` The request parameters.
 
 Usages:
 

@@ -45,7 +45,7 @@ Decides whether an error should be ignored or not.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$exception` (`Piwik\Updater\Exception`) &mdash;
+    - `$exception` ([`Exception`](http://php.net/class.Exception)) &mdash;
       
 - It returns a `bool` value.
 

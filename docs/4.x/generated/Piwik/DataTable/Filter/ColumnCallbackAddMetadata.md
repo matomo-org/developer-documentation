@@ -50,7 +50,7 @@ See [ColumnCallbackAddMetadata](/api-reference/Piwik/DataTable/Filter/ColumnCall
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table` (`Piwik\DataTable\DataTable`) &mdash;
+    - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
       
 - It does not return anything or a mixed result.
 

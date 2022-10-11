@@ -36,7 +36,7 @@ Creates a segment based on the dimension properties
 -  It accepts the following parameter(s):
     - `$segment` ([`Segment`](../../Piwik/Plugin/Segment.md)) &mdash;
        optional Segment to enrich with dimension data (if properties not already set)
-- It returns a `Piwik\Columns\Segment` value.
+- It returns a [`Segment`](../../Piwik/Plugin/Segment.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 

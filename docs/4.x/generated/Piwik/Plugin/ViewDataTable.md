@@ -257,7 +257,7 @@ Returns the DataTable loaded from the API.
 
 #### Signature
 
-- It returns a `Piwik\Plugin\DataTable` value.
+- It returns a [`DataTable`](../../Piwik/DataTable.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if not yet loaded.
 
@@ -272,7 +272,7 @@ It won't be loaded from the API in this case.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$dataTable` (`Piwik\Plugin\DataTable`) &mdash;
+    - `$dataTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
        The DataTable to use.
 - It returns a `void` value.
 

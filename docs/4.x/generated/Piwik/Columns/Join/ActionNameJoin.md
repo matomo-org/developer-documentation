@@ -24,7 +24,7 @@ Join constructor.
 #### Signature
 
 - It throws one of the following exceptions:
-    - `Piwik\Columns\Exception`
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="gettable" id="gettable"></a>
 <a name="getTable" id="getTable"></a>

@@ -290,7 +290,7 @@ Will be called when visitor profile is initialized
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$visits` (`Piwik\Plugins\Live\DataTable`) &mdash;
+    - `$visits` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
       
     - `$profile` (`array`) &mdash;
       
@@ -312,7 +312,7 @@ Will be called for every action within the profile
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$visit` (`Piwik\Plugins\Live\DataTable\Row`) &mdash;
+    - `$visit` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
       
     - `$profile` (`array`) &mdash;
       
@@ -365,7 +365,7 @@ Can be used to set profile information that requires data that was set while ite
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$visits` (`Piwik\Plugins\Live\DataTable`) &mdash;
+    - `$visits` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
       
     - `$profile` (`array`) &mdash;
       
@@ -380,6 +380,6 @@ Since Matomo Matomo
 #### Signature
 
 
-- *Returns:*  `Piwik\Plugins\Live\Db`|`Piwik\Plugins\Live\Db\AdapterInterface` &mdash;
+- *Returns:*  [`Db`](../../../Piwik/Db.md)|`Piwik\Db\AdapterInterface` &mdash;
     
 
