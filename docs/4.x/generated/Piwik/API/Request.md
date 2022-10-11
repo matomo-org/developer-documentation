@@ -5,7 +5,7 @@ Request
 
 Dispatches API requests to the appropriate API method.
 
-okokokThe Request class is used throughout Piwik to call API methods. The difference
+The Request class is used throughout Piwik to call API methods. The difference
 between using Request and calling API methods directly is that Request
 will do more after calling the API including: applying generic filters, applying queued filters,
 and handling the **flat** and **label** query parameters.
@@ -147,7 +147,7 @@ Returns the name of a plugin's API class by plugin name.
 <a name="isRootRequestApiRequest" id="isRootRequestApiRequest"></a>
 ### `isRootRequestApiRequest()`
 
-okDetect if the root request (the actual request) is an API request or not. To detect whether an API is currently
+Detect if the root request (the actual request) is an API request or not. To detect whether an API is currently
 request within any request, have a look at [isApiRequest()](/api-reference/Piwik/API/Request#isapirequest).
 
 #### Signature
@@ -175,7 +175,7 @@ can be called programmatically. These requests are considered "child" API reques
 <a name="isApiRequest" id="isApiRequest"></a>
 ### `isApiRequest()`
 
-okDetect if request is an API request. Meaning the module is 'API' and an API method having a valid format was
+Detect if request is an API request. Meaning the module is 'API' and an API method having a valid format was
 specified. Note that this method will return true even if the actual request is for example a regular UI
 reporting page request but within this request we are currently processing an API request (eg a
 controller calls Request::processRequest('API.getMatomoVersion')). To find out if the root request is an API
@@ -225,7 +225,7 @@ and `$_POST`.
        Default query parameters. If a query parameter is absent in `$request`, it will be loaded from this. Defaults to `$_GET + $_POST`. To avoid using any parameters from $_GET or $_POST, set this to an empty `array()`.
 
 - *Returns:*  `mixed` &mdash;
-    okThe result of the API request. See [process()](/api-reference/Piwik/API/Request#process).
+    The result of the API request. See [process()](/api-reference/Piwik/API/Request#process).
 
 <a name="getrequestparametersget" id="getrequestparametersget"></a>
 <a name="getRequestParametersGET" id="getRequestParametersGET"></a>
