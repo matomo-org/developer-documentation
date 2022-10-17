@@ -27,7 +27,7 @@ function generateDocs {
     git rev-parse --abbrev-ref HEAD
     git pull origin $1
     sleep 3
-    git submodule update --recursive --force
+    git submodule update --init --recursive --force
     php ../app/composer.phar self-update
     php ../app/composer.phar install || true
     cd ..
