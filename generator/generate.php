@@ -50,12 +50,15 @@ try {
         if ($longVersionName === '3.x') {
             $trackerPath = '/vendor/piwik/piwik-php-tracker';
         }
-
+		/*
+		 * The activity folders are excluded because they create a reference to the activityLog plugin
+		 * which is not embed as a submodule.
+		 */
         $iterator = Finder::create()
             ->files()
             ->name('*.php')
-            ->notName('tcpdf_config.php')
-            ->exclude(array('tests', 'config', 'ScheduledReports/config'))
+            ->notName(array('tcpdf_config.php'))
+            ->exclude(array('tests', 'config', 'ScheduledReports/config', 'Activity'))
             ->in(array(PIWIK_DOCUMENT_ROOT . '/core',
                        PIWIK_DOCUMENT_ROOT . '/plugins',
                        PIWIK_DOCUMENT_ROOT . $trackerPath))
