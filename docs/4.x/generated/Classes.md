@@ -110,10 +110,32 @@ This is a complete list of available classes:
 - [`Plugin\Tasks`](Piwik/Plugin/Tasks.md) &mdash; Base class for all Tasks declarations.
 - [`Plugin\ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; The base class of all report visualizations.
 - [`Plugin\Visualization`](Piwik/Plugin/Visualization.md) &mdash; The base class for report visualizations that output HTML and use JavaScript.
+- [`Plugins\AbTesting\Columns\Metrics\AverageMoney`](Piwik/Plugins/AbTesting/Columns/Metrics/AverageMoney.md)
+- [`Plugins\AbTesting\Columns\Metrics\AverageValue`](Piwik/Plugins/AbTesting/Columns/Metrics/AverageValue.md)
+- [`Plugins\AbTesting\Columns\Metrics\AverageVisitLength`](Piwik/Plugins/AbTesting/Columns/Metrics/AverageVisitLength.md)
+- [`Plugins\AbTesting\Columns\Metrics\BounceRate`](Piwik/Plugins/AbTesting/Columns/Metrics/BounceRate.md)
+- [`Plugins\AbTesting\Columns\Metrics\ConversionRate`](Piwik/Plugins/AbTesting/Columns/Metrics/ConversionRate.md)
+- [`Plugins\AbTesting\Columns\Metrics\DetectedEffect`](Piwik/Plugins/AbTesting/Columns/Metrics/DetectedEffect.md)
+- [`Plugins\AbTesting\Columns\Metrics\ProcessedMetric`](Piwik/Plugins/AbTesting/Columns/Metrics/ProcessedMetric.md)
+- [`Plugins\AbTesting\Columns\Metrics\RemainingVisitors`](Piwik/Plugins/AbTesting/Columns/Metrics/RemainingVisitors.md)
+- [`Plugins\AbTesting\Columns\Metrics\SignificanceRate`](Piwik/Plugins/AbTesting/Columns/Metrics/SignificanceRate.md)
+- [`Plugins\AbTesting\Columns\Metrics\TotalMoney`](Piwik/Plugins/AbTesting/Columns/Metrics/TotalMoney.md)
 - [`Plugins\Actions\Columns\Metrics\AveragePageGenerationTime`](Piwik/Plugins/Actions/Columns/Metrics/AveragePageGenerationTime.md) &mdash; The average amount of time it takes to generate a page.
 - [`Plugins\Actions\Columns\Metrics\AverageTimeOnPage`](Piwik/Plugins/Actions/Columns/Metrics/AverageTimeOnPage.md) &mdash; The average amount of time spent on a page.
 - [`Plugins\Actions\Columns\Metrics\BounceRate`](Piwik/Plugins/Actions/Columns/Metrics/BounceRate.md) &mdash; The bounce rate for individual pages.
 - [`Plugins\Actions\Columns\Metrics\ExitRate`](Piwik/Plugins/Actions/Columns/Metrics/ExitRate.md) &mdash; Percent of visits that finished on this page.
+- [`Plugins\Bandwidth\Columns\Metrics\AvgBandwidth`](Piwik/Plugins/Bandwidth/Columns/Metrics/AvgBandwidth.md) &mdash; The average amount bandwidth per page.
+- [`Plugins\Bandwidth\Columns\Metrics\Base`](Piwik/Plugins/Bandwidth/Columns/Metrics/Base.md)
+- [`Plugins\Bandwidth\Columns\Metrics\DownloadBandwidth`](Piwik/Plugins/Bandwidth/Columns/Metrics/DownloadBandwidth.md) &mdash; The total amount bandwidth used for downloads.
+- [`Plugins\Bandwidth\Columns\Metrics\HitsWithBandwidth`](Piwik/Plugins/Bandwidth/Columns/Metrics/HitsWithBandwidth.md) &mdash; The amount of a pages that were tracked having a bandwidth.
+- [`Plugins\Bandwidth\Columns\Metrics\MaxBandwidth`](Piwik/Plugins/Bandwidth/Columns/Metrics/MaxBandwidth.md) &mdash; The max amount bandwidth of a pages.
+- [`Plugins\Bandwidth\Columns\Metrics\MinBandwidth`](Piwik/Plugins/Bandwidth/Columns/Metrics/MinBandwidth.md) &mdash; The min amount bandwidth of a pages.
+- [`Plugins\Bandwidth\Columns\Metrics\OverallBandwidth`](Piwik/Plugins/Bandwidth/Columns/Metrics/OverallBandwidth.md) &mdash; The total amount bandwidth used.
+- [`Plugins\Bandwidth\Columns\Metrics\PageviewBandwidth`](Piwik/Plugins/Bandwidth/Columns/Metrics/PageviewBandwidth.md) &mdash; The total amount bandwidth used for page views.
+- [`Plugins\Bandwidth\Columns\Metrics\SumBandwidth`](Piwik/Plugins/Bandwidth/Columns/Metrics/SumBandwidth.md) &mdash; The sum amount bandwidth of a pages.
+- [`Plugins\Cohorts\Columns\Metrics\CohortTableColumn`](Piwik/Plugins/Cohorts/Columns/Metrics/CohortTableColumn.md)
+- [`Plugins\Cohorts\Columns\Metrics\VisitorRetentionPercent`](Piwik/Plugins/Cohorts/Columns/Metrics/VisitorRetentionPercent.md)
+- [`Plugins\Cohorts\Visualizations\Cohorts\Config`](Piwik/Plugins/Cohorts/Visualizations/Cohorts/Config.md)
 - [`Plugins\Contents\Columns\Metrics\InteractionRate`](Piwik/Plugins/Contents/Columns/Metrics/InteractionRate.md) &mdash; The content interaction rate.
 - [`Plugins\CoreHome\Columns\Metrics\ActionsPerVisit`](Piwik/Plugins/CoreHome/Columns/Metrics/ActionsPerVisit.md) &mdash; The average number of actions per visit.
 - [`Plugins\CoreHome\Columns\Metrics\AverageTimeOnSite`](Piwik/Plugins/CoreHome/Columns/Metrics/AverageTimeOnSite.md) &mdash; The average number of seconds spent on the site per visit.
@@ -138,6 +160,31 @@ This is a complete list of available classes:
 - [`Plugins\Diagnostics\Diagnostic\DiagnosticResult`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md) &mdash; The result of a diagnostic.
 - [`Plugins\Diagnostics\Diagnostic\DiagnosticResultItem`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResultItem.md)
 - [`Plugins\Events\Columns\Metrics\AverageEventValue`](Piwik/Plugins/Events/Columns/Metrics/AverageEventValue.md) &mdash; The average value for a triggered event.
+- [`Plugins\FormAnalytics\Columns\Metrics\FieldAvgHesitationTime`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FieldAvgHesitationTime.md)
+- [`Plugins\FormAnalytics\Columns\Metrics\FieldAvgSizeConverted`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FieldAvgSizeConverted.md)
+- [`Plugins\FormAnalytics\Columns\Metrics\FieldAvgSizeOverall`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FieldAvgSizeOverall.md)
+- [`Plugins\FormAnalytics\Columns\Metrics\FieldAvgSizeSubmitted`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FieldAvgSizeSubmitted.md)
+- [`Plugins\FormAnalytics\Columns\Metrics\FieldAvgTimeSpent`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FieldAvgTimeSpent.md)
+- [`Plugins\FormAnalytics\Columns\Metrics\FieldRateAmendment`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FieldRateAmendment.md)
+- [`Plugins\FormAnalytics\Columns\Metrics\FieldRateCursors`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FieldRateCursors.md)
+- [`Plugins\FormAnalytics\Columns\Metrics\FieldRateDeletes`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FieldRateDeletes.md)
+- [`Plugins\FormAnalytics\Columns\Metrics\FieldRateLeftBlankConversion`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FieldRateLeftBlankConversion.md)
+- [`Plugins\FormAnalytics\Columns\Metrics\FieldRateLeftBlankSubmit`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FieldRateLeftBlankSubmit.md)
+- [`Plugins\FormAnalytics\Columns\Metrics\FieldRateRefocus`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FieldRateRefocus.md)
+- [`Plugins\FormAnalytics\Columns\Metrics\FieldSumHesitationTime`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FieldSumHesitationTime.md)
+- [`Plugins\FormAnalytics\Columns\Metrics\FieldSumInteractionUnsubmitted`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FieldSumInteractionUnsubmitted.md)
+- [`Plugins\FormAnalytics\Columns\Metrics\FieldSumTimeSpent`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FieldSumTimeSpent.md)
+- [`Plugins\FormAnalytics\Columns\Metrics\FormAvgHesitationTime`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FormAvgHesitationTime.md)
+- [`Plugins\FormAnalytics\Columns\Metrics\FormAvgTimeSpent`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FormAvgTimeSpent.md)
+- [`Plugins\FormAnalytics\Columns\Metrics\FormAvgTimeToConversion`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FormAvgTimeToConversion.md)
+- [`Plugins\FormAnalytics\Columns\Metrics\FormAvgTimeToFirstSubmission`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FormAvgTimeToFirstSubmission.md)
+- [`Plugins\FormAnalytics\Columns\Metrics\FormRateConversion`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FormRateConversion.md)
+- [`Plugins\FormAnalytics\Columns\Metrics\FormRateResubmitter`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FormRateResubmitter.md)
+- [`Plugins\FormAnalytics\Columns\Metrics\FormRateStarters`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FormRateStarters.md)
+- [`Plugins\FormAnalytics\Columns\Metrics\FormRateSubmitter`](Piwik/Plugins/FormAnalytics/Columns/Metrics/FormRateSubmitter.md)
+- [`Plugins\Funnels\Columns\Metrics\AbandonedRate`](Piwik/Plugins/Funnels/Columns/Metrics/AbandonedRate.md)
+- [`Plugins\Funnels\Columns\Metrics\ConversionRate`](Piwik/Plugins/Funnels/Columns/Metrics/ConversionRate.md)
+- [`Plugins\Funnels\Columns\Metrics\ProceededRate`](Piwik/Plugins/Funnels/Columns/Metrics/ProceededRate.md)
 - [`Plugins\Goals\Columns\Metrics\AverageOrderRevenue`](Piwik/Plugins/Goals/Columns/Metrics/AverageOrderRevenue.md) &mdash; The average value for each order.
 - [`Plugins\Goals\Columns\Metrics\AveragePrice`](Piwik/Plugins/Goals/Columns/Metrics/AveragePrice.md) &mdash; The average price for each ecommerce order or abandoned cart.
 - [`Plugins\Goals\Columns\Metrics\AverageQuantity`](Piwik/Plugins/Goals/Columns/Metrics/AverageQuantity.md) &mdash; The average amount of products in each order or abandoned cart.
@@ -158,12 +205,33 @@ This is a complete list of available classes:
 - [`Plugins\Goals\Columns\Metrics\GoalSpecific\RevenuePerVisit`](Piwik/Plugins/Goals/Columns/Metrics/GoalSpecific/RevenuePerVisit.md) &mdash; Revenue per visit for a specific goal.
 - [`Plugins\Goals\Columns\Metrics\ProductConversionRate`](Piwik/Plugins/Goals/Columns/Metrics/ProductConversionRate.md) &mdash; The conversion rate for ecommerce orders.
 - [`Plugins\Goals\Columns\Metrics\RevenuePerVisit`](Piwik/Plugins/Goals/Columns/Metrics/RevenuePerVisit.md) &mdash; The amount of revenue per visit (or per conversion if there are no visits).
+- [`Plugins\HeatmapSessionRecording\Columns\Metrics\BaseMetric`](Piwik/Plugins/HeatmapSessionRecording/Columns/Metrics/BaseMetric.md)
+- [`Plugins\HeatmapSessionRecording\Columns\Metrics\Browser`](Piwik/Plugins/HeatmapSessionRecording/Columns/Metrics/Browser.md)
+- [`Plugins\HeatmapSessionRecording\Columns\Metrics\Device`](Piwik/Plugins/HeatmapSessionRecording/Columns/Metrics/Device.md)
+- [`Plugins\HeatmapSessionRecording\Columns\Metrics\Location`](Piwik/Plugins/HeatmapSessionRecording/Columns/Metrics/Location.md)
+- [`Plugins\HeatmapSessionRecording\Columns\Metrics\OperatingSystem`](Piwik/Plugins/HeatmapSessionRecording/Columns/Metrics/OperatingSystem.md)
+- [`Plugins\HeatmapSessionRecording\Columns\Metrics\SessionTime`](Piwik/Plugins/HeatmapSessionRecording/Columns/Metrics/SessionTime.md)
+- [`Plugins\HeatmapSessionRecording\Columns\Metrics\TimeOnPage`](Piwik/Plugins/HeatmapSessionRecording/Columns/Metrics/TimeOnPage.md)
+- [`Plugins\HeatmapSessionRecording\Columns\Metrics\TimeOnSite`](Piwik/Plugins/HeatmapSessionRecording/Columns/Metrics/TimeOnSite.md)
 - [`Plugins\Live\ProfileSummaryProvider`](Piwik/Plugins/Live/ProfileSummaryProvider.md)
 - [`Plugins\Live\ProfileSummary\ProfileSummaryAbstract`](Piwik/Plugins/Live/ProfileSummary/ProfileSummaryAbstract.md) &mdash; Class ProfileSummaryAbstract
 - [`Plugins\Live\Visitor`](Piwik/Plugins/Live/Visitor.md)
 - [`Plugins\Live\VisitorDetailsAbstract`](Piwik/Plugins/Live/VisitorDetailsAbstract.md) &mdash; Class VisitorDetailsAbstract
 - [`Plugins\Live\Visualizations\VisitorLog\Config`](Piwik/Plugins/Live/Visualizations/VisitorLog/Config.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_extra_columns to true.
+- [`Plugins\MediaAnalytics\Columns\Metrics\AvgMediaCompletion`](Piwik/Plugins/MediaAnalytics/Columns/Metrics/AvgMediaCompletion.md)
+- [`Plugins\MediaAnalytics\Columns\Metrics\AvgMediaLength`](Piwik/Plugins/MediaAnalytics/Columns/Metrics/AvgMediaLength.md)
+- [`Plugins\MediaAnalytics\Columns\Metrics\AvgSecondsMetric`](Piwik/Plugins/MediaAnalytics/Columns/Metrics/AvgSecondsMetric.md)
+- [`Plugins\MediaAnalytics\Columns\Metrics\AvgTimeToPlay`](Piwik/Plugins/MediaAnalytics/Columns/Metrics/AvgTimeToPlay.md)
+- [`Plugins\MediaAnalytics\Columns\Metrics\AvgTimeWatched`](Piwik/Plugins/MediaAnalytics/Columns/Metrics/AvgTimeWatched.md)
+- [`Plugins\MediaAnalytics\Columns\Metrics\FinishRate`](Piwik/Plugins/MediaAnalytics/Columns/Metrics/FinishRate.md)
+- [`Plugins\MediaAnalytics\Columns\Metrics\FullscreenRate`](Piwik/Plugins/MediaAnalytics/Columns/Metrics/FullscreenRate.md)
+- [`Plugins\MediaAnalytics\Columns\Metrics\ImpressionRate`](Piwik/Plugins/MediaAnalytics/Columns/Metrics/ImpressionRate.md)
+- [`Plugins\MediaAnalytics\Columns\Metrics\PlayRate`](Piwik/Plugins/MediaAnalytics/Columns/Metrics/PlayRate.md)
+- [`Plugins\MediaAnalytics\Columns\Metrics\SegmentPlayRate`](Piwik/Plugins/MediaAnalytics/Columns/Metrics/SegmentPlayRate.md)
 - [`Plugins\MobileMessaging\SMSProvider`](Piwik/Plugins/MobileMessaging/SMSProvider.md) &mdash; The SMSProvider abstract class is used as a base class for SMS provider implementations.
+- [`Plugins\MultiChannelConversionAttribution\Columns\Metrics\AttributionComparison`](Piwik/Plugins/MultiChannelConversionAttribution/Columns/Metrics/AttributionComparison.md)
+- [`Plugins\MultiChannelConversionAttribution\Columns\Metrics\Conversion`](Piwik/Plugins/MultiChannelConversionAttribution/Columns/Metrics/Conversion.md)
+- [`Plugins\MultiChannelConversionAttribution\Columns\Metrics\Revenue`](Piwik/Plugins/MultiChannelConversionAttribution/Columns/Metrics/Revenue.md)
 - [`Plugins\MultiSites\Columns\Metrics\EcommerceOnlyEvolutionMetric`](Piwik/Plugins/MultiSites/Columns/Metrics/EcommerceOnlyEvolutionMetric.md) &mdash; Ecommerce evolution metric adapter.
 - [`Plugins\PagePerformance\Columns\Metrics\AveragePageLoadTime`](Piwik/Plugins/PagePerformance/Columns/Metrics/AveragePageLoadTime.md) &mdash; The average amount of time it took loading a page completely.
 - [`Plugins\PagePerformance\Columns\Metrics\AveragePerformanceMetric`](Piwik/Plugins/PagePerformance/Columns/Metrics/AveragePerformanceMetric.md) &mdash; The average amount for a certain performance metric.
@@ -173,7 +241,16 @@ This is a complete list of available classes:
 - [`Plugins\PagePerformance\Columns\Metrics\AverageTimeOnLoad`](Piwik/Plugins/PagePerformance/Columns/Metrics/AverageTimeOnLoad.md) &mdash; The average amount of time browser needs to execute javascript waiting for window.load event.
 - [`Plugins\PagePerformance\Columns\Metrics\AverageTimeServer`](Piwik/Plugins/PagePerformance/Columns/Metrics/AverageTimeServer.md) &mdash; The average amount of time the server needs to start serving a page.
 - [`Plugins\PagePerformance\Columns\Metrics\AverageTimeTransfer`](Piwik/Plugins/PagePerformance/Columns/Metrics/AverageTimeTransfer.md) &mdash; The average amount of time it takes to transfer a page.
+- [`Plugins\TagManager\MenuTagManager`](Piwik/Plugins/TagManager/MenuTagManager.md) &mdash; Contains menu entries for the Tag Manager menu.
+- [`Plugins\TagManager\Template\BaseTemplate`](Piwik/Plugins/TagManager/Template/BaseTemplate.md)
+- [`Plugins\TagManager\Template\Tag\BaseTag`](Piwik/Plugins/TagManager/Template/Tag/BaseTag.md)
+- [`Plugins\TagManager\Template\Trigger\BaseTrigger`](Piwik/Plugins/TagManager/Template/Trigger/BaseTrigger.md)
+- [`Plugins\TagManager\Template\Variable\BaseVariable`](Piwik/Plugins/TagManager/Template/Variable/BaseVariable.md)
 - [`Plugins\Tour\Engagement\Challenge`](Piwik/Plugins/Tour/Engagement/Challenge.md) &mdash; Defines a new challenge which a super user needs to complete in order to become a "Matomo expert".
+- [`Plugins\TreemapVisualization\TreemapConfig`](Piwik/Plugins/TreemapVisualization/TreemapConfig.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_extra_columns to true.
+- [`Plugins\UsersFlow\Columns\Metrics\ExitRate`](Piwik/Plugins/UsersFlow/Columns/Metrics/ExitRate.md)
+- [`Plugins\UsersFlow\Columns\Metrics\Proceeded`](Piwik/Plugins/UsersFlow/Columns/Metrics/Proceeded.md)
+- [`Plugins\UsersFlow\Columns\Metrics\ProceededRate`](Piwik/Plugins/UsersFlow/Columns/Metrics/ProceededRate.md)
 - [`Plugins\UsersManager\UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`Plugins\VisitFrequency\Columns\Metrics\ReturningMetric`](Piwik/Plugins/VisitFrequency/Columns/Metrics/ReturningMetric.md) &mdash; Processed metric for VisitFrequency.get API method which just copies VisitsSummary.get metrics as differently named metrics.
 - [`RankingQuery`](Piwik/RankingQuery.md) &mdash; The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while aggregating the rest in an a new "Others" row.
