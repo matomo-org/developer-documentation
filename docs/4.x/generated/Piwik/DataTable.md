@@ -11,7 +11,7 @@ The primary data structure used to store analytics data in Piwik.
 DataTables consist of rows and each row consists of columns. A column value can be
 a numeric, a string or an array.
 
-Every row has an ID. The ID is either the index of the row or `ID_SUMMARY_ROW`.
+Every row has an ID. The ID is either the index of the row or ID\_SUMMARY\_ROW.
 
 DataTables are hierarchical data structures. Each row can also contain an additional
 nested sub-DataTable (commonly referred to as a 'subtable').
@@ -144,7 +144,7 @@ Constants
 This class defines the following constants:
 
 - [`COLUMN_AGGREGATION_OPS_METADATA_NAME`](#column_aggregation_ops_metadata_name) — Name for metadata that describes how individual columns should be aggregated when [addDataTable()](/api-reference/Piwik/DataTable#adddatatable)
-or [Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) is called.- [`ID_ARCHIVED_METADATA_ROW`](#id_archived_metadata_row) — The ID of the special metadata row. This row only exists in the serialized row data and stores the datatable metadata.- [`EXTRA_PROCESSED_METRICS_METADATA_NAME`](#extra_processed_metrics_metadata_name) — Name for metadata that contains extra [ProcessedMetric](/api-reference/Piwik/Plugin/ProcessedMetric)s for a DataTable.
+or [Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) is called. Inherited from [`DataTable`](../Piwik/DataTable.md)- [`ID_ARCHIVED_METADATA_ROW`](#id_archived_metadata_row) — The ID of the special metadata row. This row only exists in the serialized row data and stores the datatable metadata. Inherited from [`DataTable`](../Piwik/DataTable.md)- [`EXTRA_PROCESSED_METRICS_METADATA_NAME`](#extra_processed_metrics_metadata_name) — Name for metadata that contains extra [ProcessedMetric](/api-reference/Piwik/Plugin/ProcessedMetric)s for a DataTable. Inherited from [`DataTable`](../Piwik/DataTable.md)
 <a name="column_aggregation_ops_metadata_name" id="column_aggregation_ops_metadata_name"></a>
 <a name="COLUMN_AGGREGATION_OPS_METADATA_NAME" id="COLUMN_AGGREGATION_OPS_METADATA_NAME"></a>
 ### `COLUMN_AGGREGATION_OPS_METADATA_NAME`
@@ -457,7 +457,7 @@ If the subtables for this table are loaded, they will be summed as well.
 
 Rows are summed together by summing individual columns. By default columns are summed by
 adding one column value to another. Some columns cannot be aggregated this way. In these
-cases, the `[COLUMN_AGGREGATION_OPS_METADATA_NAME](/api-reference/Piwik/DataTable#piwik\datatable::column_aggregation_ops_metadata_name)`
+cases, the COLUMN\_AGGREGATION\_OPS\_METADATA\_NAME
 metadata can be used to specify a different type of operation.
 
 #### Signature
@@ -522,7 +522,7 @@ Returns an empty DataTable with the same metadata and queued filters as `$this` 
 <a name="getRowFromId" id="getRowFromId"></a>
 ### `getRowFromId()`
 
-Returns a row by ID. The ID is either the index of the row or `ID_SUMMARY_ROW`.
+Returns a row by ID. The ID is either the index of the row or ID\_SUMMARY\_ROW.
 
 #### Signature
 

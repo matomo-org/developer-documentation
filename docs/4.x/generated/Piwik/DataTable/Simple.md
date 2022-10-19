@@ -327,7 +327,7 @@ If the subtables for this table are loaded, they will be summed as well.
 
 Rows are summed together by summing individual columns. By default columns are summed by
 adding one column value to another. Some columns cannot be aggregated this way. In these
-cases, the `[COLUMN_AGGREGATION_OPS_METADATA_NAME](/api-reference/Piwik/DataTable/Simple#piwik\datatable::column_aggregation_ops_metadata_name)`
+cases, the COLUMN\_AGGREGATION\_OPS\_METADATA\_NAME
 metadata can be used to specify a different type of operation.
 
 #### Signature
@@ -392,7 +392,7 @@ Returns an empty DataTable with the same metadata and queued filters as `$this` 
 <a name="getRowFromId" id="getRowFromId"></a>
 ### `getRowFromId()`
 
-Returns a row by ID. The ID is either the index of the row or `ID_SUMMARY_ROW`.
+Returns a row by ID. The ID is either the index of the row or ID\_SUMMARY\_ROW.
 
 #### Signature
 

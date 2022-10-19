@@ -68,8 +68,8 @@ class MyHookVisitor extends \PHPParser\NodeVisitorAbstract
 
     public function leaveNode(\PHPParser\Node $node) {
 
-        if ($node instanceof \PHPParser\Node\Expr\StaticCall) {
-            if (!$node->name || 'postEvent' !== $node->name) {
+		if ($node instanceof \PhpParser\Node\Expr\StaticCall) {
+			if (!$node->name || 'postEvent' !== (string) $node->name) {
                 return;
             }
 
@@ -125,7 +125,7 @@ class MyHookVisitor extends \PHPParser\NodeVisitorAbstract
         if ($arg->value instanceof \PHPParser\Node\Expr\ClassConstFetch) {
 
             $constant  = $arg->value;
-            $rightPart = $constant->name;
+            $rightPart = (string) $constant->name;
 
             if (array_key_exists($rightPart, MyConstantVisitor::$constants)) {
                 return MyConstantVisitor::$constants[$rightPart];

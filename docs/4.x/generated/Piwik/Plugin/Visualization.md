@@ -115,7 +115,7 @@ Constants
 
 This class defines the following constants:
 
-- [`TEMPLATE_FILE`](#template_file) — The Twig template file to use when rendering, eg, `"@MyPlugin/_myVisualization.twig"`.
+- [`TEMPLATE_FILE`](#template_file) — The Twig template file to use when rendering, eg, `"@MyPlugin/_myVisualization.twig"`. Inherited from [`Visualization`](../../Piwik/Plugin/Visualization.md)
 <a name="template_file" id="template_file"></a>
 <a name="TEMPLATE_FILE" id="TEMPLATE_FILE"></a>
 ### `TEMPLATE_FILE`
@@ -170,7 +170,7 @@ The class defines the following methods:
 - [`isComparing()`](#iscomparing) &mdash; Returns true if both this current visualization supports comparison, and if comparison query parameters are present in the URL. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
 - [`supportsComparison()`](#supportscomparison) &mdash; Implementations should override this method if they support a special comparison view. Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
 - [`getRequestArray()`](#getrequestarray) Inherited from [`ViewDataTable`](../../Piwik/Plugin/ViewDataTable.md)
-- [`assignTemplateVar()`](#assigntemplatevar) &mdash; Assigns a template variable making it available in the Twig template specified by `[TEMPLATE_FILE](/api-reference/Piwik/Plugin/Visualization#piwik\plugin\visualization::template_file)`.
+- [`assignTemplateVar()`](#assigntemplatevar) &mdash; Assigns a template variable making it available in the Twig template specified by TEMPLATE\_FILE.
 - [`isThereDataToDisplay()`](#istheredatatodisplay) &mdash; Returns `true` if there is data to display, `false` if otherwise.
 - [`beforeLoadDataTable()`](#beforeloaddatatable) &mdash; Hook that is called before loading report data from the API.
 - [`beforeGenericFiltersAreAppliedToLoadedDataTable()`](#beforegenericfiltersareappliedtoloadeddatatable) &mdash; Hook that is executed before generic filters are applied.
@@ -388,7 +388,7 @@ default, it is assumed visualizations do not support comparison.
 ### `assignTemplateVar()`
 
 Assigns a template variable making it available in the Twig template specified by
-`[TEMPLATE_FILE](/api-reference/Piwik/Plugin/Visualization#piwik\plugin\visualization::template_file)`.
+TEMPLATE\_FILE.
 
 #### Signature
 

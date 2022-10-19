@@ -114,6 +114,15 @@ This is a complete list of available classes:
 - [`Plugins\Actions\Columns\Metrics\AverageTimeOnPage`](Piwik/Plugins/Actions/Columns/Metrics/AverageTimeOnPage.md) &mdash; The average amount of time spent on a page.
 - [`Plugins\Actions\Columns\Metrics\BounceRate`](Piwik/Plugins/Actions/Columns/Metrics/BounceRate.md) &mdash; The bounce rate for individual pages.
 - [`Plugins\Actions\Columns\Metrics\ExitRate`](Piwik/Plugins/Actions/Columns/Metrics/ExitRate.md) &mdash; Percent of visits that finished on this page.
+- [`Plugins\Bandwidth\Columns\Metrics\AvgBandwidth`](Piwik/Plugins/Bandwidth/Columns/Metrics/AvgBandwidth.md) &mdash; The average amount bandwidth per page.
+- [`Plugins\Bandwidth\Columns\Metrics\Base`](Piwik/Plugins/Bandwidth/Columns/Metrics/Base.md)
+- [`Plugins\Bandwidth\Columns\Metrics\DownloadBandwidth`](Piwik/Plugins/Bandwidth/Columns/Metrics/DownloadBandwidth.md) &mdash; The total amount bandwidth used for downloads.
+- [`Plugins\Bandwidth\Columns\Metrics\HitsWithBandwidth`](Piwik/Plugins/Bandwidth/Columns/Metrics/HitsWithBandwidth.md) &mdash; The amount of a pages that were tracked having a bandwidth.
+- [`Plugins\Bandwidth\Columns\Metrics\MaxBandwidth`](Piwik/Plugins/Bandwidth/Columns/Metrics/MaxBandwidth.md) &mdash; The max amount bandwidth of a pages.
+- [`Plugins\Bandwidth\Columns\Metrics\MinBandwidth`](Piwik/Plugins/Bandwidth/Columns/Metrics/MinBandwidth.md) &mdash; The min amount bandwidth of a pages.
+- [`Plugins\Bandwidth\Columns\Metrics\OverallBandwidth`](Piwik/Plugins/Bandwidth/Columns/Metrics/OverallBandwidth.md) &mdash; The total amount bandwidth used.
+- [`Plugins\Bandwidth\Columns\Metrics\PageviewBandwidth`](Piwik/Plugins/Bandwidth/Columns/Metrics/PageviewBandwidth.md) &mdash; The total amount bandwidth used for page views.
+- [`Plugins\Bandwidth\Columns\Metrics\SumBandwidth`](Piwik/Plugins/Bandwidth/Columns/Metrics/SumBandwidth.md) &mdash; The sum amount bandwidth of a pages.
 - [`Plugins\Contents\Columns\Metrics\InteractionRate`](Piwik/Plugins/Contents/Columns/Metrics/InteractionRate.md) &mdash; The content interaction rate.
 - [`Plugins\CoreHome\Columns\Metrics\ActionsPerVisit`](Piwik/Plugins/CoreHome/Columns/Metrics/ActionsPerVisit.md) &mdash; The average number of actions per visit.
 - [`Plugins\CoreHome\Columns\Metrics\AverageTimeOnSite`](Piwik/Plugins/CoreHome/Columns/Metrics/AverageTimeOnSite.md) &mdash; The average number of seconds spent on the site per visit.
@@ -173,6 +182,11 @@ This is a complete list of available classes:
 - [`Plugins\PagePerformance\Columns\Metrics\AverageTimeOnLoad`](Piwik/Plugins/PagePerformance/Columns/Metrics/AverageTimeOnLoad.md) &mdash; The average amount of time browser needs to execute javascript waiting for window.load event.
 - [`Plugins\PagePerformance\Columns\Metrics\AverageTimeServer`](Piwik/Plugins/PagePerformance/Columns/Metrics/AverageTimeServer.md) &mdash; The average amount of time the server needs to start serving a page.
 - [`Plugins\PagePerformance\Columns\Metrics\AverageTimeTransfer`](Piwik/Plugins/PagePerformance/Columns/Metrics/AverageTimeTransfer.md) &mdash; The average amount of time it takes to transfer a page.
+- [`Plugins\TagManager\MenuTagManager`](Piwik/Plugins/TagManager/MenuTagManager.md) &mdash; Contains menu entries for the Tag Manager menu.
+- [`Plugins\TagManager\Template\BaseTemplate`](Piwik/Plugins/TagManager/Template/BaseTemplate.md)
+- [`Plugins\TagManager\Template\Tag\BaseTag`](Piwik/Plugins/TagManager/Template/Tag/BaseTag.md)
+- [`Plugins\TagManager\Template\Trigger\BaseTrigger`](Piwik/Plugins/TagManager/Template/Trigger/BaseTrigger.md)
+- [`Plugins\TagManager\Template\Variable\BaseVariable`](Piwik/Plugins/TagManager/Template/Variable/BaseVariable.md)
 - [`Plugins\Tour\Engagement\Challenge`](Piwik/Plugins/Tour/Engagement/Challenge.md) &mdash; Defines a new challenge which a super user needs to complete in order to become a "Matomo expert".
 - [`Plugins\TreemapVisualization\TreemapConfig`](Piwik/Plugins/TreemapVisualization/TreemapConfig.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_extra_columns to true.
 - [`Plugins\UsersManager\UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)

@@ -110,6 +110,15 @@
 ## Plugins\Actions\Columns\Metrics\AverageTimeOnPage
 ## Plugins\Actions\Columns\Metrics\BounceRate
 ## Plugins\Actions\Columns\Metrics\ExitRate
+## Plugins\Bandwidth\Columns\Metrics\AvgBandwidth
+## Plugins\Bandwidth\Columns\Metrics\Base
+## Plugins\Bandwidth\Columns\Metrics\DownloadBandwidth
+## Plugins\Bandwidth\Columns\Metrics\HitsWithBandwidth
+## Plugins\Bandwidth\Columns\Metrics\MaxBandwidth
+## Plugins\Bandwidth\Columns\Metrics\MinBandwidth
+## Plugins\Bandwidth\Columns\Metrics\OverallBandwidth
+## Plugins\Bandwidth\Columns\Metrics\PageviewBandwidth
+## Plugins\Bandwidth\Columns\Metrics\SumBandwidth
 ## Plugins\Contents\Columns\Metrics\InteractionRate
 ## Plugins\CoreHome\Columns\Metrics\ActionsPerVisit
 ## Plugins\CoreHome\Columns\Metrics\AverageTimeOnSite
@@ -169,6 +178,11 @@
 ## Plugins\PagePerformance\Columns\Metrics\AverageTimeOnLoad
 ## Plugins\PagePerformance\Columns\Metrics\AverageTimeServer
 ## Plugins\PagePerformance\Columns\Metrics\AverageTimeTransfer
+## Plugins\TagManager\MenuTagManager
+## Plugins\TagManager\Template\BaseTemplate
+## Plugins\TagManager\Template\Tag\BaseTag
+## Plugins\TagManager\Template\Trigger\BaseTrigger
+## Plugins\TagManager\Template\Variable\BaseVariable
 ## Plugins\Tour\Engagement\Challenge
 ## Plugins\TreemapVisualization\TreemapConfig
 ## Plugins\UsersManager\UserPreferences

@@ -38,7 +38,6 @@ class Parser {
         if (false === strpos($code, 'postEvent')) {
             return array();
         }
-
         $stmts = $this->parser->parse($code);
 
         $traverser = new \PHPParser\NodeTraverser();
