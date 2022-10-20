@@ -534,7 +534,7 @@ Callback Signature:
 
 ### Archiving.getIdSitesToMarkArchivesAsInvalidated
 
-*Defined in [Piwik/Archive/ArchiveInvalidator](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Archive/ArchiveInvalidator.php) in line [313](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Archive/ArchiveInvalidator.php#L313)*
+*Defined in [Piwik/Archive/ArchiveInvalidator](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Archive/ArchiveInvalidator.php) in line [317](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Archive/ArchiveInvalidator.php#L317)*
 
 Triggered when a Matomo user requested the invalidation of some reporting archives. Using this event, plugin
 developers can automatically invalidate another site, when a site is being invalidated. A plugin may even
@@ -549,9 +549,17 @@ invalidated. **Example**
     }
 
 Callback Signature:
-<pre><code>function(&amp;$idSites)</code></pre>
+<pre><code>function(&amp;$idSites, $dates, $period, $segment, $name)</code></pre>
 
 - array &$idSites An array containing a list of site IDs which are requested to be invalidated.
+
+- array `$dates` An array containing the dates to invalidate.
+
+- string `$period` A string containing the period to be invalidated.
+
+- \Segment `$segment` A Segment Object containing segment to invalidate.
+
+- string `$name` A string containing the name of the archive to be invalidated.
 
 
 ### Archiving.makeNewArchiverObject
