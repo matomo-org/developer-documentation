@@ -126,6 +126,10 @@ Now that we have made all our plugins (including premium features) compatible wi
 
 Typically, at this stage the RC phase isn't far away and a first RC will follow within a couple weeks. Again, this is because we want to have ideally a few third party plugins compatible with this new version.
 
+#### api.matomo.org
+
+* After triggering the first beta release, edit `config.ini.php` and point the path of the latest release beta channel to the correct latest beta file. For example, if Matomo 5 beta is released, then change  `'path_latest_5x_beta' => __DIR__ . '/../LATEST_BETA'` to `'path_latest_5x_beta' => __DIR__ . '/../LATEST_5X_BETA'`.
+
 #### Marketing
 
 * Inform marketing team we're working on a new major release and that it is coming and in case they want to plan a blog and a newsletter just so they are aware of we will ping them at some point
@@ -181,6 +185,10 @@ Please let us know if you have any question or if we can help in any way. We're 
 
 * Release the new core version and go through the regular process
 * Marketing to release a blog post if there is one
+
+#### api.matomo.org
+
+* After triggering the first stable release of a new major version, edit `config.ini.php` and point the path of the latest release channel to the correct latest file. For example, if Matomo 5.0 is released, then change `'path_latest_5x_stable' => __DIR__ . '/../LATEST',` to `'path_latest_5x_stable' => __DIR__ . '/../LATEST_5X',`.
 
 ### Once a LTS version expires, we remove old plugins from the Marketplace
 
