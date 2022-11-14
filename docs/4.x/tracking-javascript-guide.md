@@ -796,7 +796,7 @@ If you want to ignore download or outlink tracking on a specific link, you can a
 If you'd like to provide your users with the ability to opt-out entirely from tracking, you can use an opt-out form. Matomo ships with an
 opt-out form implementation that uses third-party cookies (which you can configure within Matomo on the _Matomo > Administration > Privacy_ page).
 
-This form is simple to embed since it only requires that you add an iframe to your website, but it is not always ideal. In such a case, you may want to consider creating a custom opt-out form. The specifics of creating an HTML/JS form are out of scope for
+This form is simple to embed since it only requires that you add a snippet of code to your website, but it is not always ideal. In such a case, you may want to consider creating a custom opt-out form. The specifics of creating an HTML/JS form are out of scope for
 this document, but there are some things every custom opt-out form will have to do: **check if the user is currently opted out**,
 **opt a user out** and **opt a user in**. Here is how to do those things:
 
