@@ -966,7 +966,7 @@ Callback Signature:
 
 ### Core.configFileSanityCheckFailed
 
-*Defined in [Piwik/Config](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Config.php) in line [487](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Config.php#L487)*
+*Defined in [Piwik/Config](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Config.php) in line [491](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Config.php#L491)*
 
 Triggered when the INI config file was not written correctly with the expected content.
 
