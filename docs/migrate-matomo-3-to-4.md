@@ -8,7 +8,7 @@ all changes in Matomo 4 can be found in the [Changelog](/changelog).
 
 ## Create a new branch
 
-We recommend you create a new branch for your plugin that supports Matomo 4. For example `4.x-dev`. This way you will be able to make changes to your plugin for Matomo 3 and Matomo 4 and release independent versions for each of them. You can still publish updates to your plugin that supports Matomo 3 once you have published an update for a version that supports Matomo 4.
+We recommend you create a new branch for your plugin that supports Matomo 4. For example `5.x-dev`. This way you will be able to make changes to your plugin for Matomo 3 and Matomo 4 and release independent versions for each of them. You can still publish updates to your plugin that supports Matomo 3 once you have published an update for a version that supports Matomo 4.
 
 ## Adjust the required Matomo version
 

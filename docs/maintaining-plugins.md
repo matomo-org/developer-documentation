@@ -22,7 +22,7 @@ This guide applies to Matomo core developers. If you develop a plugin and want t
 
 ### New plugin checklist
 
-* The new plugin has a `LICENSE` file similar to https://github.com/matomo-org/plugin-QueuedTracking/blob/4.x-dev/LICENSE
+* The new plugin has a `LICENSE` file similar to https://github.com/matomo-org/plugin-QueuedTracking/blob/5.x-dev/LICENSE
 * The same license is also defined in `plugin.json`
 * A descriptive description and useful keywords are configured in `plugin.json`. Same for other values in the plugin JSON file.
 * If any possible screenshots are defined in the `screenshots` folder.
@@ -40,7 +40,7 @@ This guide applies to Matomo core developers. If you develop a plugin and want t
 
 ### How do I Get travis to use LFS?
 
-To get travis to checkout the screenshots correctly and use LFS you will need to add/change the `.travis.yml` within your plugin like this (eg [see this file](https://github.com/matomo-org/tag-manager/blob/4.x-dev/.travis.yml#L65-L68)):
+To get travis to checkout the screenshots correctly and use LFS you will need to add/change the `.travis.yml` within your plugin like this (eg [see this file](https://github.com/matomo-org/tag-manager/blob/5.x-dev/.travis.yml#L65-L68)):
 
 ```
 before_install:
@@ -48,7 +48,7 @@ before_install:
   - if [[ "${TEST_SUITE}" == "UITests" ]]; then git lfs fetch; git lfs checkout; fi
 ```
 
-And you need to create a file `tests/travis/before_install.after.yml` in your plugin with the following content (eg [see this file](https://github.com/matomo-org/tag-manager/blob/4.x-dev/tests/travis/before_install.after.yml)):
+And you need to create a file `tests/travis/before_install.after.yml` in your plugin with the following content (eg [see this file](https://github.com/matomo-org/tag-manager/blob/5.x-dev/tests/travis/before_install.after.yml)):
 
 ```
 - if [[ "${TEST_SUITE}" == "UITests" ]]; then git lfs fetch; git lfs checkout; fi
