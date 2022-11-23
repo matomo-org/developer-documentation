@@ -24,7 +24,7 @@ composer require-dev package/name ^1.2.3
 ### Minor or patch release update
 
 Almost all requirements in our `composer.json` are defined in a way that allow minor and/or patch release updates without any adjustments in `composer.json`.
-As there are normally no problems expected for those updates there is an [automatic GitHub action](https://github.com/matomo-org/matomo/blob/4.x-dev/.github/workflows/composer-update.yml) that automatically checks for updates and creates a Pull Request if any are available.
+As there are normally no problems expected for those updates there is an [automatic GitHub action](https://github.com/matomo-org/matomo/blob/5.x-dev/.github/workflows/composer-update.yml) that automatically checks for updates and creates a Pull Request if any are available.
 
 ### Major updates
 
@@ -54,7 +54,7 @@ composer outdated
 If there are major updates available we should go through them and update each. As some updates might require code changes on our side it is best to only update one requirement after the other. Otherwise it will be harder to identify why e.g. some code breaks or why some tests start failing.
 Updating a single requirement can be achieved this way:
 
-* Update the version number for the updated component in [matomo/composer.json](https://github.com/matomo-org/matomo/blob/4.x-dev/composer.json) if needed
+* Update the version number for the updated component in [matomo/composer.json](https://github.com/matomo-org/matomo/blob/5.x-dev/composer.json) if needed
 * Execute `composer update --with-dependencies package/name`. You need to replace `package/name` with the name of the requirement, like `phpmailer/phpmailer`. 
 * Commit & push `composer.json` and `composer.lock`.
 * Check if any tests are failing and adjust the code / tests if needed.
@@ -78,7 +78,7 @@ If an update to a newer version is mandatory there are basically two possible op
 
 We are managing some of our [core components](/guides/core-components) and libraries through composer as well. Whenever we release a new version of those packages we should directly issue an update of the composer requirement in Matomo.
 
-* Update the version number for the updated component in [matomo/composer.json](https://github.com/matomo-org/matomo/blob/4.x-dev/composer.json) if needed
+* Update the version number for the updated component in [matomo/composer.json](https://github.com/matomo-org/matomo/blob/5.x-dev/composer.json) if needed
 * Execute `composer update matomo/$COMPONENT_NAME`. You need to replace `$COMPONENT_NAME` with the name of the component. For the cache component you may need to execute `composer update matomo/cache  matomo/doctrine-cache-fork`.
 * Push `composer.json` and `composer.lock`.
 * Create a PR and get it merged.

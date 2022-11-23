@@ -161,7 +161,7 @@ There are many ways we might break the PHP API. For example:
 
 ### Developer changelog updated if needed
 
-The developer changelog is located at [https://github.com/matomo-org/matomo/blob/4.x-dev/CHANGELOG.md](https://github.com/matomo-org/matomo/blob/4.x-dev/CHANGELOG.md). If a change
+The developer changelog is located at [https://github.com/matomo-org/matomo/blob/5.x-dev/CHANGELOG.md](https://github.com/matomo-org/matomo/blob/5.x-dev/CHANGELOG.md). If a change
 affects the work of plugin developers or developers who integrate Matomo into their websites, we'd want to mention the change in the developer changelog. This can include:
 
 * breaking changes

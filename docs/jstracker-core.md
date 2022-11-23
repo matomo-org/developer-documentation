@@ -16,7 +16,7 @@ Generally we try to keep the JS file smallish for fast performance.
 
 ## Making changes to the JS tracker
 
-To make changes to the JS tracker, you need to edit the raw/unminfied JS tracker itself which you can find in the [js/piwik.js](https://github.com/matomo-org/matomo/blob/4.x-dev/js/piwik.js) directory. When you create a pull request, you can then minify the JS tracker see below.
+To make changes to the JS tracker, you need to edit the raw/unminfied JS tracker itself which you can find in the [js/piwik.js](https://github.com/matomo-org/matomo/blob/5.x-dev/js/piwik.js) directory. When you create a pull request, you can then minify the JS tracker see below.
 
 ### Adding a new public JS tracker method
 
@@ -72,7 +72,7 @@ When you create a pull request for a JS tracker change you will notice that a te
 If you are reviewing a pull request from a community contributor and you are happy with the change, then follow these steps:
 
 * Click on `edit` PR in the top
-* Open the select field that says eg `base: 4.x-dev`. 
+* Open the select field that says eg `base: 5.x-dev`. 
 * Enter a new branch name and select this branch
 * Save the change
 * Merge the PR
