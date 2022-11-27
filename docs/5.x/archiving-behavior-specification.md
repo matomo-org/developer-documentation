@@ -459,7 +459,7 @@ rare occurrence, this is considered acceptable.
 * `--concurrent-requests-per-website`: Controls the maximum number of concurrent archiving requests that are launched at a time, for a single
                                        website.
 * `--concurrent-archivers`: The maximum number of core:archive commands that should be running in parallel on a single server. This does not
-                            affect archivers running on other servers.
+                            affect archivers running on other servers. Default is 3 archivers, use `-1` to set unlimited archivers.
 * `--force-all-websites`: Like `--force-idsites` but for every website in the instance.
 
 ## Archive Invalidation
