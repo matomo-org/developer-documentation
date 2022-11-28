@@ -119,6 +119,7 @@ To be ready for the next step, the first beta release of core, we need to:
 * Replace all mentions of eg. `4.x-dev` by `5.x-dev` in the docs in  `docs/*.md` and `docs/5.x-dev/*.md` (for example [this page](https://github.com/matomo-org/developer-documentation/pull/233/files)). The files in `docs/4.x-dev` should remain unchanged.
 * Document new APIs if there are any
 * Create the new migration guide for plugins similar to [this migration guide](https://developer.matomo.org/guides/migrate-matomo-3-to-4). We create this guide even if there are no breaking changes for plugins.
+* Remove docs from the previous version. For example, if we are currently on Matomo 4 and are starting to work on Matomo 5, and we are still showing docs for Matomo 3, then we edit [config/app.php](https://github.com/matomo-org/developer-documentation/blob/live/app/config/app.php#L13) to remove the docs for Matomo 3 from the UI assuming Matomo 3 was released more than 12 months ago. We keep the docs for at least 12 months as then the LTS expires (see bottom of this page).
 
 ### When releasing a first beta
 
