@@ -270,7 +270,7 @@ Usages:
 
 ### API.DocumentationGenerator.$token
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [566](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L566)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [634](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L634)*
 
 This event exists for checking whether a Plugin API class or a Plugin API method tagged
 with a `@hideXYZ` should be hidden in the API listing.
