@@ -78,6 +78,7 @@ The class defines the following methods:
 - [`setLatitude()`](#setlatitude) &mdash; Sets the latitude of the visitor.
 - [`setLongitude()`](#setlongitude) &mdash; Sets the longitude of the visitor.
 - [`enableBulkTracking()`](#enablebulktracking) &mdash; Enables the bulk request feature.
+- [`disableBulkTracking()`](#disablebulktracking) &mdash; Disables the bulk request feature.
 - [`enableCookies()`](#enablecookies) &mdash; Enable Cookie Creation - this will cause a first party VisitorId cookie to be set when the VisitorId is set or reset
 - [`disableSendImageResponse()`](#disablesendimageresponse) &mdash; If image response is disabled Matomo will respond with a HTTP 204 header instead of responding with a gif.
 - [`doTrackPageView()`](#dotrackpageview) &mdash; Tracks a page view
@@ -91,6 +92,8 @@ The class defines the following methods:
 - [`doTrackEcommerceCartUpdate()`](#dotrackecommercecartupdate) &mdash; Tracks a Cart Update (add item, remove item, update item).
 - [`doBulkTrack()`](#dobulktrack) &mdash; Sends all stored tracking actions at once.
 - [`doTrackEcommerceOrder()`](#dotrackecommerceorder) &mdash; Tracks an Ecommerce order.
+- [`doTrackPhpThrowable()`](#dotrackphpthrowable) &mdash; Tracks a PHP Throwable a crash (requires CrashAnalytics to be enabled in the target Matomo)
+- [`doTrackCrash()`](#dotrackcrash) &mdash; Track a crash (requires CrashAnalytics to be enabled in the target Matomo)
 - [`doPing()`](#doping) &mdash; Sends a ping request.
 - [`setEcommerceView()`](#setecommerceview) &mdash; Sets the current page view as an item (product) page view, or an Ecommerce Category page view.
 - [`getUrlTrackPageView()`](#geturltrackpageview) &mdash; Builds URL to track a page view.
@@ -100,6 +103,7 @@ The class defines the following methods:
 - [`getUrlTrackSiteSearch()`](#geturltracksitesearch) &mdash; Builds URL to track a site search.
 - [`getUrlTrackGoal()`](#geturltrackgoal) &mdash; Builds URL to track a goal with idGoal and revenue.
 - [`getUrlTrackAction()`](#geturltrackaction) &mdash; Builds URL to track a new action.
+- [`getUrlTrackCrash()`](#geturltrackcrash) &mdash; Builds URL to track a crash.
 - [`setForceVisitDateTime()`](#setforcevisitdatetime) &mdash; Overrides server date and time for the tracking requests.
 - [`setForceNewVisit()`](#setforcenewvisit) &mdash; Forces Matomo to create a new visit for the tracking request.
 - [`setIp()`](#setip) &mdash; Overrides IP address
@@ -562,6 +566,17 @@ doBulkTrack method is called. This method will send all tracking data at once.
 
 - It does not return anything or a mixed result.
 
+<a name="disablebulktracking" id="disablebulktracking"></a>
+<a name="disableBulkTracking" id="disableBulkTracking"></a>
+### `disableBulkTracking()`
+
+Disables the bulk request feature. Make sure to call `doBulkTrack()` before disabling it if you have stored
+tracking actions previously as this method won't be sending any previously stored actions before disabling it.
+
+#### Signature
+
+- It does not return anything or a mixed result.
+
 <a name="enablecookies" id="enablecookies"></a>
 <a name="enableCookies" id="enableCookies"></a>
 ### `enableCookies()`
@@ -817,6 +832,50 @@ Only the parameters $orderId and $grandTotal are required.
 - *Returns:*  `mixed` &mdash;
     Response or true if using bulk request
 
+<a name="dotrackphpthrowable" id="dotrackphpthrowable"></a>
+<a name="doTrackPhpThrowable" id="doTrackPhpThrowable"></a>
+### `doTrackPhpThrowable()`
+
+Tracks a PHP Throwable a crash (requires CrashAnalytics to be enabled in the target Matomo)
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$ex` ([`Throwable`](http://php.net/class.Throwable)) &mdash;
+       (required) the throwable to track. The message, stack trace, file location and line number of the crash are deduced from this parameter. The crash type is set to the class name of the Throwable.
+    - `$category` (`string`|`null`) &mdash;
+       (optional) a category value for this crash. This can be any information you want to attach to the crash.
+
+- *Returns:*  `mixed` &mdash;
+    Response or true if using bulk request
+
+<a name="dotrackcrash" id="dotrackcrash"></a>
+<a name="doTrackCrash" id="doTrackCrash"></a>
+### `doTrackCrash()`
+
+Track a crash (requires CrashAnalytics to be enabled in the target Matomo)
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$message` (`string`) &mdash;
+       (required) the error message.
+    - `$type` (`string`|`null`) &mdash;
+       (optional) the error type, such as the class name of an Exception.
+    - `$category` (`string`|`null`) &mdash;
+       (optional) a category value for this crash. This can be any information you want to attach to the crash.
+    - `$stack` (`string`|`null`) &mdash;
+       (optional) the stack trace of the crash.
+    - `$location` (`string`|`null`) &mdash;
+       (optional) the source file URI where the crash originated.
+    - `$line` (`int`|`null`) &mdash;
+       (optional) the source file line where the crash originated.
+    - `$column` (`int`|`null`) &mdash;
+       (optional) the source file column where the crash originated.
+
+- *Returns:*  `mixed` &mdash;
+    Response or true if using bulk request
+
 <a name="doping" id="doping"></a>
 <a name="doPing" id="doPing"></a>
 ### `doPing()`
@@ -1016,6 +1075,37 @@ Builds URL to track a new action.
        URL of the download or outlink
     - `$actionType` (`string`) &mdash;
        Type of the action: 'download' or 'link'
+
+- *Returns:*  `string` &mdash;
+    URL to matomo.php with all parameters set to track an action
+
+<a name="geturltrackcrash" id="geturltrackcrash"></a>
+<a name="getUrlTrackCrash" id="getUrlTrackCrash"></a>
+### `getUrlTrackCrash()`
+
+Builds URL to track a crash.
+
+#### See Also
+
+- `doTrackCrash()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$message` (`string`) &mdash;
+       (required) the error message.
+    - `$type` (`string`|`null`) &mdash;
+       (optional) the error type, such as the class name of an Exception.
+    - `$category` (`string`|`null`) &mdash;
+       (optional) a category value for this crash. This can be any information you want to attach to the crash.
+    - `$stack` (`string`|`null`) &mdash;
+       (optional) the stack trace of the crash.
+    - `$location` (`string`|`null`) &mdash;
+       (optional) the source file URI where the crash originated.
+    - `$line` (`int`|`null`) &mdash;
+       (optional) the source file line where the crash originated.
+    - `$column` (`int`|`null`) &mdash;
+       (optional) the source file column where the crash originated.
 
 - *Returns:*  `string` &mdash;
     URL to matomo.php with all parameters set to track an action
