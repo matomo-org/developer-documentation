@@ -50,7 +50,7 @@ These screenshots are stored [in git: CustomAlerts/screenshots](https://github.c
 <a name="plugin-json-required-fields"></a>
 The `plugin.json` file must contain the following information:
 
-- `name`: The plugin's name. It can only contain letters (a-z), numbers (0-9) and must start with a capital letter. The name cannot contain the words `"Piwik"`, `"Core"` or `"Analytics"`. A maximum of 40 characters are allowed.
+- `name`: The plugin's name. It can only contain letters (a-z), numbers (0-9) and must start with a capital letter. The name cannot contain the words `"Piwik"`, `"Core"` or `"Analytics"`. A maximum of 60 characters are allowed.
 - `version`: The plugin's version. It must be a valid [semantic version number](http://semver.org/). If [node-semver](https://github.com/isaacs/node-semver) can't parse it, it won't be considered valid.
 - `description`: A short description of your plugin (up to 150 characters). This will be displayed below the plugin's name in search results and below the top-level heading on your plugin's page. It can include any character.
 - `keywords`: An array of words or short phrases that describe your plugin. The keywords are listed on the Marketplace, which helps users discover your plugin. Keywords can only contain letters, numbers, hyphens, and dots.
