@@ -1368,7 +1368,7 @@ command).
 
 ### FrontController.modifyErrorPage
 
-*Defined in [Piwik/ExceptionHandler](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ExceptionHandler.php) in line [178](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ExceptionHandler.php#L178)*
+*Defined in [Piwik/ExceptionHandler](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ExceptionHandler.php) in line [188](https://github.com/matomo-org/matomo/blob/4.x-dev/core/ExceptionHandler.php#L188)*
 
 Triggered before a Piwik error page is displayed to the user. This event can be used to modify the content of the error page that is displayed when
 an exception is caught.
@@ -1721,7 +1721,7 @@ Usages:
 
 ### Login.logout
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php) in line [521](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php#L521)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php) in line [523](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php#L523)*
 
 
 
@@ -4094,7 +4094,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.accepted
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php) in line [630](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php#L630)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php) in line [632](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php#L632)*
 
 Triggered after a user accepted an invite
 
@@ -4110,7 +4110,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.declined
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php) in line [700](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php#L700)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php) in line [702](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php#L702)*
 
 Triggered after a user accepted an invite
 
