@@ -67,6 +67,28 @@ If your API method is able to handle multiple types for one parameter, you may d
 
 #### Parameter sanitizing
 
+Since the early days Matomo automatically sanitizes all parameters that are passed to an API method using [`Common::sanitizeInputValues`](/api-reference/Piwik/Common#sanitizeinputvalues). That way all input parameters could be used without thinking much about security, as risky content is automatically escaped. 
+With Matomo 5 we started to deprecate this automatic sanitizing. At least until Matomo 6 all API parameters will still be sanitized automatically. But there are now possibilities to disable this behaviour for certain API classes and even single API methods.
+
+To disable the automatic sanitizing for a whole API class, you simply need to set the API class' property `$autoSanitizeInputParams`:
+```php
+class API extends \Piwik\Plugin\API
+{
+    protected $autoSanitizeInputParams = false;
+```
+
+To disable it for a single API method only, you need to add `@unsanitized` to the methods doc block:
+```php
+/**
+ * API method description
+ * @param int $idSite
+ * @unsanitized
+ */
+public function getSomething(int $idSite) {
+```
+
+Attention: When using unsanitized parameters of type `string` or `array`, please ensure that the values are used with care. As they might contain content, that can break HTML or SQL syntax, please ensure to escape the values correctly, when they are used.
+
 ### Returning a value
 
 In an API method you can return any boolean, number, string or array value. A resource or an object cannot be returned unless it implements the DataTableInterface such as [DataTable](/api-reference/Piwik/DataTable) (the primary data structure used to store analytics data in Matomo), [DataTable\Map](/api-reference/Piwik/DataTable/Map) (stores a set of DataTables) and [DataTable\Simple](/api-reference/Piwik/DataTable/Simple) (a DataTable where every row has two columns: label and value).
