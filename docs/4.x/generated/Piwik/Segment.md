@@ -176,7 +176,7 @@ Extend an SQL query that aggregates data over one of the 'log_' tables with segm
     - `$forceGroupBy`
       
 
-- *Returns:*  `string` &mdash;
+- *Returns:*  `array` &mdash;
     The entire select query.
 
 <a name="__tostring" id="__tostring"></a>
