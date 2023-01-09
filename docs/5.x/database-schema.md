@@ -48,9 +48,9 @@ Each visit contains the following information:
 - `visitor_localtime`: the visit datetime in the  visitor's time of day
 - `visitor_returning`: whether the visit is the first visit for this visitor or not
 - `visitor_count_visits`: the number of visits the visitor has made up to this one
-- `visitor_days_since_last`: the number of days since this visitor's last visit (if any)
-- `visitor_days_since_order`: the number of days since this visitor's last order (if any)
-- `visitor_days_since_first`: the number of days since this visitor's first visit
+- `visitor_seconds_since_last`: the number of seconds since this visitor's last visit (if any)
+- `visitor_seconds_since_order`: the number of seconds since this visitor's last order (if any)
+- `visitor_seconds_since_first`: the number of seconds since this visitor's first visit
 - `visit_first_action_time`: the datetime of the visit's first action
 - `visit_last_action_time`: the datetime of the visit's last action
 - `visit_exit_idaction_url`: the ID of the URL action type of the visit's last action
