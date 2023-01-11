@@ -890,11 +890,13 @@ Index
 
 ## K
 
+- [`$keepSummaryRow`](Piwik/DataTable/Filter/Limit.md#$keepsummaryrow) &mdash; *Property in class* [`Limit`](Piwik/DataTable/Filter/Limit.md)
 - [`$key`](Piwik/Settings/FieldConfig/MultiPair.md#$key) &mdash; *Property in class* [`MultiPair`](Piwik/Settings/FieldConfig/MultiPair.md)
 
 ## L
 
-- [`LogAggregator`](Piwik/DataAccess/LogAggregator.md) &mdash; *Class in namespace* `Piwik\DataAccess`- [`Limit`](Piwik/DataTable/Filter/Limit.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`lastWeek()`](Piwik/Date.md#lastweek) &mdash; *Method in class* [`Date`](Piwik/Date.md)
+- [`LogAggregator`](Piwik/DataAccess/LogAggregator.md) &mdash; *Class in namespace* `Piwik\DataAccess`- [`Limit`](Piwik/DataTable/Filter/Limit.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`$limit`](Piwik/DataTable/Filter/Limit.md#$limit) &mdash; *Property in class* [`Limit`](Piwik/DataTable/Filter/Limit.md)
+- [`lastWeek()`](Piwik/Date.md#lastweek) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`lastMonth()`](Piwik/Date.md#lastmonth) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`lastYear()`](Piwik/Date.md#lastyear) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`$lockPrivilegeGranted`](Piwik/Db.md#$lockprivilegegranted) &mdash; *Property in class* [`Db`](Piwik/Db.md)
@@ -935,6 +937,7 @@ Index
 - [`offsetGet()`](Piwik/DataTable.md#offsetget) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`offsetSet()`](Piwik/DataTable.md#offsetset) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`offsetUnset()`](Piwik/DataTable.md#offsetunset) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
+- [`$offset`](Piwik/DataTable/Filter/Limit.md#$offset) &mdash; *Property in class* [`Limit`](Piwik/DataTable/Filter/Limit.md)
 - [`optimizeTables()`](Piwik/Db.md#optimizetables) &mdash; *Method in class* [`Db`](Piwik/Db.md)
 - [`Option`](Piwik/Option.md) &mdash; *Class in namespace* `Piwik`- [`onLookupAction()`](Piwik/Plugin/Dimension/ActionDimension.md#onlookupaction) &mdash; *Method in class* [`ActionDimension`](Piwik/Plugin/Dimension/ActionDimension.md)
 - [`onNewAction()`](Piwik/Plugin/Dimension/ActionDimension.md#onnewaction) &mdash; *Method in class* [`ActionDimension`](Piwik/Plugin/Dimension/ActionDimension.md)
