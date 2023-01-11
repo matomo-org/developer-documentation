@@ -19,7 +19,7 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
 ### Recommended parameters
 
 * `action_name` **(recommended)** &mdash; The title of the action being tracked. It is possible to [use slashes / to set one or several](https://matomo.org/faq/how-to/#faq_62) [categories for this action](https://matomo.org/faq/how-to/#faq_62). For example, **Help / Feedback** will create the Action **Feedback** in the category **Help**.
-* `url` **(recommended)** &mdash; The full URL for the current action.
+* `url` **(recommended)** &mdash; The full URL for the current action. The URL must not end with a trailing slash.
 * `_id` **(recommended)** &mdash; The unique visitor ID, must be a 16 characters hexadecimal string. Every unique visitor must be assigned a different ID and this ID must not change after it is assigned. If this value is not set Piwik will still track visits, but the unique visitors metric might be less accurate.
 * `rand` **(recommended)** &mdash; Meant to hold a random value that is generated before each request. Using it helps avoid the tracking request being cached by the browser or a proxy.
 * `apiv` **(recommended)** &mdash; The parameter &amp;apiv=1 defines the api version to use (currently always set to 1)
