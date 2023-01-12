@@ -77,6 +77,38 @@ If you use the [Form Analytics](https://matomo.org/docs/form-analytics/) feature
 _paq.push(['FormAnalytics::scanForForms', documentOrElement]);
 ```
 
+### A/B testing
+
+If you use the [A/B Testing](https://matomo.org/docs/ab-testing/) feature to test your experiments, whenever a new page is displayed you need to embed the js code again before tracking a new pageview as explained below:
+
+```javascript
+window.addEventListener('pathchange', function() {
+   var _paq = window._paq = window._paq || [];
+   _paq.push(['setCustomUrl', window.location.pathname]);
+   _paq.push(['setDocumentTitle', document.title]);
+   _paq.push(['AbTesting::create', {
+      name: 'theExperimentName',
+      includedTargets: [{"attribute":"url","type":"starts_with","value":"http:\/\/www.example.org","inverted":"0"}],
+      excludedTargets: [],
+      variations: [
+         {
+            name: 'original',
+            activate: function (event) {
+               // usually nothing needs to be done here
+            }
+         },
+         {
+            name: 'blue',
+            activate: function(event) {
+               // eg $('#btn').attr('style', 'color: ' + this.name + ';');
+            }
+         }
+      ]
+   }]);
+   _paq.push(['trackPageView']);
+});
+```
+
 Where `documentOrElement` points either to `document` to re-scan the entire
 DOM (the default when no parameter is set) or you can pass an element to
 restrict the re-scan to a specific area.
@@ -121,7 +153,26 @@ window.addEventListener('hashchange', function() {
     _paq.push(['setDocumentTitle', 'My New Title']);
 
     // remove all previously assigned custom variables, requires Piwik 3.0.2
-    _paq.push(['deleteCustomVariables', 'page']); 
+    _paq.push(['deleteCustomVariables', 'page']);
+    _paq.push(['AbTesting::create', {
+       name: 'theExperimentName',
+       includedTargets: [{"attribute":"url","type":"starts_with","value":"http:\/\/www.example.org","inverted":"0"}],
+       excludedTargets: [],
+       variations: [
+          {
+             name: 'original',
+             activate: function (event) {
+                // usually nothing needs to be done here
+             }
+          },
+          {
+             name: 'blue',
+             activate: function(event) {
+                // eg $('#btn').attr('style', 'color: ' + this.name + ';');
+             }
+          }
+       ]
+    }]);
     _paq.push(['trackPageView']);
     
     // make Matomo aware of newly added content
