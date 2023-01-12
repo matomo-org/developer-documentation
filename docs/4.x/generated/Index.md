@@ -461,6 +461,7 @@ Index
 - [`getTimestampUTC()`](Piwik/Date.md#gettimestamputc) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`getTimestamp()`](Piwik/Date.md#gettimestamp) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`getLocalized()`](Piwik/Date.md#getlocalized) &mdash; *Method in class* [`Date`](Piwik/Date.md)
+- [`getDateTimeZone()`](Piwik/Date.md#getdatetimezone) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`get()`](Piwik/Db.md#get) &mdash; *Method in class* [`Db`](Piwik/Db.md)
 - [`getReader()`](Piwik/Db.md#getreader) &mdash; *Method in class* [`Db`](Piwik/Db.md)
 - [`getDatabaseConfig()`](Piwik/Db.md#getdatabaseconfig) &mdash; *Method in class* [`Db`](Piwik/Db.md)

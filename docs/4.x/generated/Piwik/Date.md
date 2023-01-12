@@ -88,6 +88,7 @@ The class defines the following methods:
 - [`addPeriod()`](#addperiod) &mdash; Adds a period to `$this` date and returns the result in a new Date instance.
 - [`subPeriod()`](#subperiod) &mdash; Subtracts a period from `$this` date and returns the result in a new Date instance.
 - [`secondsToDays()`](#secondstodays) &mdash; Returns the number of days represented by a number of seconds.
+- [`getDateTimeZone()`](#getdatetimezone) &mdash; Generate a DateTimeZone object using a timezone string.
 
 <a name="factory" id="factory"></a>
 <a name="factory" id="factory"></a>
@@ -699,4 +700,22 @@ Returns the number of days represented by a number of seconds.
     - `$secs` (`int`) &mdash;
       
 - It returns a `float` value.
+
+<a name="getdatetimezone" id="getdatetimezone"></a>
+<a name="getDateTimeZone" id="getDateTimeZone"></a>
+### `getDateTimeZone()`
+
+Generate a DateTimeZone object using a timezone string. It should be a valid PHP timezone or a UTF offset string.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$tzString` (`string`) &mdash;
+       String to use while instantiating the DateTimeZone object.
+    - `$defaultBadTzToUtc` (`bool`) &mdash;
+       If an error occurs while instantiating, should we default to a UTC object or null. The default is true so that we return a UTC DateTimeZone object.
+
+- *Returns:*  `Piwik\DateTimeZone`|`null` &mdash;
+    This should always be a DateTimeZone object unless the tzString is invalid and
+defaultBadTzToUtc is set to false.
 
