@@ -10,6 +10,39 @@ Delete all rows from the table that are not in the given [offset, offset+limit) 
     // delete all rows from 5 -> 15
     $dataTable->filter('Limit', array(5, 10));
 
+Properties
+----------
+
+This class defines the following properties:
+
+- [`$offset`](#$offset)
+- [`$limit`](#$limit)
+- [`$keepSummaryRow`](#$keepsummaryrow)
+
+<a name="$offset" id="$offset"></a>
+<a name="offset" id="offset"></a>
+### `$offset`
+
+#### Signature
+
+- It is a `int` value.
+
+<a name="$limit" id="$limit"></a>
+<a name="limit" id="limit"></a>
+### `$limit`
+
+#### Signature
+
+- It is a `int` value.
+
+<a name="$keepsummaryrow" id="$keepsummaryrow"></a>
+<a name="keepSummaryRow" id="keepSummaryRow"></a>
+### `$keepSummaryRow`
+
+#### Signature
+
+- It is a `bool` value.
+
 Methods
 -------
 
