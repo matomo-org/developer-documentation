@@ -352,7 +352,7 @@ Callback Signature:
 
 Usages:
 
-[Login::ApiRequestAuthenticate](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Login.php#L205), [LoginLdap::ApiRequestAuthenticate](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/LoginLdap/LoginLdap.php#L225)
+[Login::ApiRequestAuthenticate](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Login.php#L205), [LoginLdap::ApiRequestAuthenticate](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/LoginLdap/LoginLdap.php#L227)
 
 
 ### API.Request.dispatch
@@ -1747,7 +1747,7 @@ Callback Signature:
 
 Usages:
 
-[LoginLdap::skipPasswordConfirmation](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/LoginLdap/LoginLdap.php#L280)
+[LoginLdap::skipPasswordConfirmation](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/LoginLdap/LoginLdap.php#L282)
 
 ## Mail
 
@@ -2483,7 +2483,7 @@ Usages:
 
 Usages:
 
-[Login::onInitAuthenticationObject](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Login.php#L88), [LoginLdap::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/LoginLdap/LoginLdap.php#L215)
+[Login::onInitAuthenticationObject](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Login.php#L88), [LoginLdap::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/LoginLdap/LoginLdap.php#L217)
 
 
 ### Request.initAuthenticationObject
@@ -2494,7 +2494,7 @@ Usages:
 
 Usages:
 
-[Login::onInitAuthenticationObject](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Login.php#L88), [LoginLdap::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/LoginLdap/LoginLdap.php#L215)
+[Login::onInitAuthenticationObject](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Login.php#L88), [LoginLdap::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/LoginLdap/LoginLdap.php#L217)
 
 
 ### Request.initAuthenticationObject
@@ -2505,7 +2505,7 @@ Usages:
 
 Usages:
 
-[Login::onInitAuthenticationObject](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Login.php#L88), [LoginLdap::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/LoginLdap/LoginLdap.php#L215)
+[Login::onInitAuthenticationObject](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Login.php#L88), [LoginLdap::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/LoginLdap/LoginLdap.php#L217)
 
 
 ### Request.initAuthenticationObject
@@ -2516,7 +2516,7 @@ Usages:
 
 Usages:
 
-[Login::onInitAuthenticationObject](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Login.php#L88), [LoginLdap::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/LoginLdap/LoginLdap.php#L215)
+[Login::onInitAuthenticationObject](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Login.php#L88), [LoginLdap::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/LoginLdap/LoginLdap.php#L217)
 
 
 ### Request.initAuthenticationObject
@@ -2535,7 +2535,7 @@ to set the global authentication object (which must derive from [Auth](/api-refe
 
 Usages:
 
-[Login::onInitAuthenticationObject](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Login.php#L88), [LoginLdap::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/LoginLdap/LoginLdap.php#L215)
+[Login::onInitAuthenticationObject](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Login.php#L88), [LoginLdap::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/LoginLdap/LoginLdap.php#L217)
 
 
 ### Request.shouldDisablePostProcessing
@@ -3982,7 +3982,7 @@ Callback Signature:
 
 Usages:
 
-[Login::noAccess](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Login.php#L189), [LoginLdap::noAccess](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/LoginLdap/LoginLdap.php#L204)
+[Login::noAccess](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Login.php#L189), [LoginLdap::noAccess](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/LoginLdap/LoginLdap.php#L206)
 
 ## UserSettings
 
@@ -4059,7 +4059,7 @@ Callback Signature:
 
 Usages:
 
-[LoginLdap::checkPassword](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/LoginLdap/LoginLdap.php#L268)
+[LoginLdap::checkPassword](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/LoginLdap/LoginLdap.php#L270)
 
 
 ### UsersManager.deleteUser
