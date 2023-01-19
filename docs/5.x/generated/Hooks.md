@@ -4031,7 +4031,7 @@ Callback Signature:
 
 ### UsersManager.addUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [762](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L762)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [769](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L769)*
 
 Triggered after a new user is created.
 
@@ -4134,7 +4134,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [797](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L797)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [804](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L804)*
 
 Triggered after a new user was invited.
 
@@ -4148,7 +4148,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.generateInviteLinkToken
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1605](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1605)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1612](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1612)*
 
 Triggered after a new user invite token was generate.
 
@@ -4160,7 +4160,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.resendInvite
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1564](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1564)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1571](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1571)*
 
 Triggered after a new user was invited.
 
@@ -4186,7 +4186,7 @@ Usages:
 
 ### UsersManager.removeSiteAccess
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1133](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1133)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1140](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1140)*
 
 
 
@@ -4200,7 +4200,7 @@ Usages:
 
 ### UsersManager.updateUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [956](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L956)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [963](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L963)*
 
 Triggered after an existing user has been updated. Event notify about password change.
 
