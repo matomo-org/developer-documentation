@@ -239,6 +239,15 @@ By no means is below a complete checklist. You'll always be required to still th
 * Think of other ways such as RCE etc
 * **Password confirmation** for critical actions related to login credentials, tokens, 2FA etc and ideally also other critical/sensitive changes like installing/activating plugins etc.
 
+### Component specific checklist
+
+#### Tracker
+* When creating a tracking plugin, ensure there are limitations on how often the tracker can send a tracking request per page view. For example limit the amount of forms per page view
+
+#### Live / raw data features
+* Ensure the `live_query_max_execution_time` config setting is respected and the query aborts after given amonut of seconds
+* Ideally limit the date range a raw data query can look at most. For example, by limiting the `lastMinutes` parameter to a max value.
+
 
 ## Learn more
 
