@@ -858,7 +858,7 @@ Usages:
 
 ### Console.filterCommands
 
-*Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Console.php) in line [196](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Console.php#L196)*
+*Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Console.php) in line [208](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Console.php#L208)*
 
 Triggered to filter / restrict console commands. Plugins that want to restrict commands
 should subscribe to this event and remove commands from the existing list. **Example**
@@ -1047,26 +1047,26 @@ Callback Signature:
 
 ### CronArchive.end
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [603](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L603)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [599](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L599)*
 
 This event is triggered after archiving.
 
 Callback Signature:
-<pre><code>function($this)</code></pre>
+<pre><code>function($this]</code></pre>
 
 - \CronArchive `$this`
 
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [782](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L782)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [778](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L778)*
 
 Triggered by the **core:archive** console command so plugins can modify the priority of
 websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
 the order in which websites will be archived.
 
 Callback Signature:
-<pre><code>function(&amp;$websiteIds)</code></pre>
+<pre><code>function(&amp;$websiteIds]</code></pre>
 
 - array `&$websiteIds` The list of website IDs to launch the archiving process for.
 
@@ -1089,7 +1089,7 @@ Callback Signature:
 
 ### CronArchive.init.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [339](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L339)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [337](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L337)*
 
 This event is triggered after a CronArchive instance is initialized.
 
@@ -1103,12 +1103,12 @@ Callback Signature:
 
 ### CronArchive.init.start
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [296](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L296)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php) in line [294](https://github.com/matomo-org/matomo/blob/4.x-dev/core/CronArchive.php#L294)*
 
 This event is triggered during initializing archiving.
 
 Callback Signature:
-<pre><code>function($this)</code></pre>
+<pre><code>function($this]</code></pre>
 
 - \CronArchive `$this`
 
@@ -2510,7 +2510,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Console.php) in line [302](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Console.php#L302)*
+*Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Console.php) in line [314](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Console.php#L314)*
 
 
 
