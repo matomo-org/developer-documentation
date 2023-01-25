@@ -40,7 +40,7 @@ The file containing all tests is located in `tests/javascript/index.php`.
 
 To execute tests for a specific module use the `module` URL parameter, for example `&module=core`.
 
-If you are developing multiple tracker plugins and want to only include tests for a specific tracker plugin (like Travis would do) use the URL parameter `plugin` as in `&plugin=MyPluginName`.
+If you are developing multiple tracker plugins and want to only include tests for a specific tracker plugin (like our CI would do) use the URL parameter `plugin` as in `&plugin=MyPluginName`.
 
 ### Testing private methods that aren't exposed
 

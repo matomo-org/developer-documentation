@@ -124,7 +124,7 @@ tests all plugins will be loaded allowing you to write actual integration tests.
 
 The `IntegrationTestCase` base class also provides two extra methods that can be overridden:
 
-* `beforeTableDataCached()`: `IntegrationTestCase` will initialize a fixture before running any test. The fixture could add entities, track visits, archive them or affect the database in another way. As an optimization, `IntegrationTestCase` will cache all this data in memory after the fixture is set up, and simply re-insert all of it into the database tables in the test's `setUp()` method. This allows us to have a clean slate for each test, without having to destroy the database and re-run the fixture every single time (which would be much slower than just restoring the table state). Some tests, however, add data outside of the fixture in the `setUp()` method. This can slow the test down and by extension the already long running builds on travis-ci.com. If that data is meant to be static for each test, it can be added in an overridden `beforeTableDataCached()` method. Then it will be cached along with fixture data.
+* `beforeTableDataCached()`: `IntegrationTestCase` will initialize a fixture before running any test. The fixture could add entities, track visits, archive them or affect the database in another way. As an optimization, `IntegrationTestCase` will cache all this data in memory after the fixture is set up, and simply re-insert all of it into the database tables in the test's `setUp()` method. This allows us to have a clean slate for each test, without having to destroy the database and re-run the fixture every single time (which would be much slower than just restoring the table state). Some tests, however, add data outside of the fixture in the `setUp()` method. This can slow the test down and by extension the already long running builds on our CI. If that data is meant to be static for each test, it can be added in an overridden `beforeTableDataCached()` method. Then it will be cached along with fixture data.
   Some examples of things you can add here are: adding many websites via SitesManager API or adding many users via the UsersManager API. Using the API is far slower than just inserting the data back into truncated tables.
 * `configureFixture()`: to handle the creation/destruction of the Matomo environment, integration tests use a blank fixture (it can be overwritten just like in system tests to bootstrap a test with some data). The configuration for this fixture may not be ideal for every test, so this method can be used to configure the fixture differently. For example, by default we don't create a real superuser in the system (as in, adding a row to the `user` table and everything else), and we don't load any translations. Some tests may not want this.
 
@@ -344,7 +344,7 @@ You can then compare the two directories for changes. If you are using PHPStorm,
 
 Once you have updated all expected files, then you need to `git add` and `git commit` and `git push` these changes.
 
-### When the build fails on Travis
+### When the build fails on GitHub Actions
 
 System PHP tests in Matomo typically execute an API method and compare the entire XML output of the API method with an expected XML output.
 
@@ -354,7 +354,7 @@ any change in the output is actually expected.
 If they are not expected, determine the cause of the change and fix it in a new commit. If the changes are expected,
 then you should update the expected system files accordingly. To compare and update the expected system files, follow these steps:
 
-* Find out the Travis build number by opening the Travis run for your pull request. The build number is typically a 5 or 6 digit number and has a leading hash character. For example when the build is `#45511`, then `45511` is the build number.
+* Find out the GitHub build number by opening the GitHub action run for your pull request. The build number is typically a 10 digit number.
 * Execute this command and replace `{buildnumber}` with the actual build number. `./console development:sync-system-test-processed {buildnumber}`.
   * To update the expected files directly append the option `--expected`. You then need to make sure before committing and pushing these changes that every change is actually expected.
   * Or if you only want to update some files or if you don't use a visual tool for git then you can execute the command without the expected option in which case the system files are updated in the `processed` directory. For example `tests/PHPUnit/System/processed` and `plugins/Goals/tests/System/processed`. If you are using PHPStorm you can then select both the processed and expected directory and then `right click -> Compare Directories`. This allows you to review every change of added, changed and removed files and lets you update each expected file individually. 

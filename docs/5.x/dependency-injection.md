@@ -3,7 +3,7 @@ category: Develop
 subGuides:
   - tests-php
   - tests-ui
-  - tests-travis
+  - tests-github
 ---
 # Dependency injection
 

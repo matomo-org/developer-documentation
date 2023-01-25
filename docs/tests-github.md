@@ -24,6 +24,7 @@ Matomo uses GitHub Action to automate some processes. Our current actions a list
 - [Release] Release Matomo new version, the process require release password and version number.
 - [Update Intl data] Create a PR for latest language updates. 
 - [Update Submodules] Will do submodules update on Friday each week.
+- [Matomo Tests] Will perform all Matomo test suites for every pull request as well as for each commit on a development branch
 (New scripts should be documented in the list above.)
 
 ## Create a new GitHub Action script
