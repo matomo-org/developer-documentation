@@ -4094,7 +4094,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.accepted
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php) in line [632](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php#L632)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php) in line [633](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php#L633)*
 
 Triggered after a user accepted an invite
 
@@ -4110,7 +4110,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.declined
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php) in line [702](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php#L702)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php) in line [703](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/Controller.php#L703)*
 
 Triggered after a user accepted an invite
 
