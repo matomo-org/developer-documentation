@@ -1359,6 +1359,7 @@ Index
 - [`__toString()`](Piwik/DataTable/Row.md#__tostring) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
 - [`__toString()`](Piwik/Date.md#__tostring) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`__construct()`](Piwik/Mail.md#__construct) &mdash; *Method in class* [`Mail`](Piwik/Mail.md)
+- [`__construct()`](Piwik/NoAccessException.md#__construct) &mdash; *Method in class* [`NoAccessException`](Piwik/NoAccessException.md)
 - [`__construct()`](Piwik/Notification.md#__construct) &mdash; *Method in class* [`Notification`](Piwik/Notification.md)
 - [`__sleep()`](Piwik/Period.md#__sleep) &mdash; *Method in class* [`Period`](Piwik/Period.md)
 - [`__wakeup()`](Piwik/Period.md#__wakeup) &mdash; *Method in class* [`Period`](Piwik/Period.md)
