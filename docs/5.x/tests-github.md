@@ -88,6 +88,11 @@ You can control how the generated action file behaves, by providing certain opti
 
     If this option is provided a redis server and a redis sentinal will be setup. Provide this option if your tests require using redis.
 
+
+  * **--has-submodules**
+
+    Provide tihs option if your plugin contains git submodules that need to be fetched when checking out the plugin. If this option is not provided submodules will be ignored.
+
 ### Updating the matomo-tests.yml file
 
 The `generate:test-action` command may be changed over time as we modify the GitHub action process. If you build stops working correctly you may need to re-run the command to update `.github/workflows/matomo-tests.yml`.
