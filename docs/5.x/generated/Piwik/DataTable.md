@@ -186,6 +186,7 @@ The class defines the following methods:
 - [`enableRecursiveSort()`](#enablerecursivesort) &mdash; Enables recursive sorting.
 - [`enableRecursiveFilters()`](#enablerecursivefilters) &mdash; Enables recursive filtering.
 - [`filter()`](#filter) &mdash; Applies a filter to this datatable.
+- [`multiFilter()`](#multifilter) &mdash; Invokes `$filter` with this table and every table in `$otherTables`.
 - [`filterSubtables()`](#filtersubtables) &mdash; Applies a filter to all subtables but not to this datatable.
 - [`queueFilterSubtables()`](#queuefiltersubtables) &mdash; Adds a filter and a list of parameters to the list of queued filters of all subtables.
 - [`queueFilter()`](#queuefilter) &mdash; Adds a filter and a list of parameters to the list of queued filters.
@@ -379,6 +380,27 @@ to all subtables as well.
     - `$parameters` (`array`) &mdash;
        Array of extra parameters to pass to the filter.
 - It does not return anything or a mixed result.
+
+<a name="multifilter" id="multifilter"></a>
+<a name="multiFilter" id="multiFilter"></a>
+### `multiFilter()`
+
+Invokes `$filter` with this table and every table in `$otherTables`. The result of `$filter()` is returned.
+
+This method is used to iterate over multiple DataTable\Map's concurrently.
+
+See [Map::multiFilter()](/api-reference/Piwik/DataTable/Map#multifilter) for more information.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$otherTables` ([`DataTable[]`](../Piwik/DataTable.md)) &mdash;
+      
+    - `$filter` (`callable`) &mdash;
+       filter A function like `function (DataTable $thisTable, $otherTable1, $otherTable2) {}`.
+
+- *Returns:*  `mixed` &mdash;
+    The result of $filter.
 
 <a name="filtersubtables" id="filtersubtables"></a>
 <a name="filterSubtables" id="filterSubtables"></a>

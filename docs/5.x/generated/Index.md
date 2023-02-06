@@ -917,10 +917,12 @@ Index
 ## M
 
 - [`$metricId`](Piwik/Columns/Dimension.md#$metricid) &mdash; *Property in class* [`Dimension`](Piwik/Columns/Dimension.md)
-- [`MetricsList`](Piwik/Columns/MetricsList.md) &mdash; *Class in namespace* `Piwik\Columns`- [`makeFromIndexedArray()`](Piwik/DataTable.md#makefromindexedarray) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
+- [`MetricsList`](Piwik/Columns/MetricsList.md) &mdash; *Class in namespace* `Piwik\Columns`- [`multiFilter()`](Piwik/DataTable.md#multifilter) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
+- [`makeFromIndexedArray()`](Piwik/DataTable.md#makefromindexedarray) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`mergeSubtables()`](Piwik/DataTable.md#mergesubtables) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`makeFromSimpleArray()`](Piwik/DataTable.md#makefromsimplearray) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
-- [`MetadataCallbackAddMetadata`](Piwik/DataTable/Filter/MetadataCallbackAddMetadata.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`MetadataCallbackReplace`](Piwik/DataTable/Filter/MetadataCallbackReplace.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`Map`](Piwik/DataTable/Map.md) &mdash; *Class in namespace* [`Piwik\DataTable`](Piwik/DataTable)- [`mergeChildren()`](Piwik/DataTable/Map.md#mergechildren) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
+- [`MetadataCallbackAddMetadata`](Piwik/DataTable/Filter/MetadataCallbackAddMetadata.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`MetadataCallbackReplace`](Piwik/DataTable/Filter/MetadataCallbackReplace.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`Map`](Piwik/DataTable/Map.md) &mdash; *Class in namespace* [`Piwik\DataTable`](Piwik/DataTable)- [`multiFilter()`](Piwik/DataTable/Map.md#multifilter) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
+- [`mergeChildren()`](Piwik/DataTable/Map.md#mergechildren) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
 - [`mergeSubtables()`](Piwik/DataTable/Map.md#mergesubtables) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
 - [`$maxVisitsSummed`](Piwik/DataTable/Row.md#$maxvisitssummed) &mdash; *Property in class* [`Row`](Piwik/DataTable/Row.md)
 - [`mkdir()`](Piwik/Filesystem.md#mkdir) &mdash; *Method in class* [`Filesystem`](Piwik/Filesystem.md)

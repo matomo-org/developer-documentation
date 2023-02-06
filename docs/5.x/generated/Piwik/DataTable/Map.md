@@ -21,6 +21,7 @@ The class defines the following methods:
 - [`queueFilter()`](#queuefilter) &mdash; Queue a filter to DataTable child of contained by this instance.
 - [`applyQueuedFilters()`](#applyqueuedfilters) &mdash; Apply the filters previously queued to each DataTable contained by this DataTable\Map.
 - [`filter()`](#filter) &mdash; Apply a filter to all tables contained by this instance.
+- [`multiFilter()`](#multifilter) &mdash; Apply a callback to all tables contained by this instance and tables with the same key in $otherTables.
 - [`filterSubtables()`](#filtersubtables) &mdash; Apply a filter to all subtables contained by this instance.
 - [`queueFilterSubtables()`](#queuefiltersubtables) &mdash; Apply a queued filter to all subtables contained by this instance.
 - [`getDataTables()`](#getdatatables) &mdash; Returns the array of DataTables contained by this class.
@@ -124,6 +125,32 @@ Apply a filter to all tables contained by this instance.
     - `$parameters` (`array`) &mdash;
        Parameters to pass to the filter.
 - It does not return anything or a mixed result.
+
+<a name="multifilter" id="multifilter"></a>
+<a name="multiFilter" id="multiFilter"></a>
+### `multiFilter()`
+
+Apply a callback to all tables contained by this instance and tables with the same key in $otherTables.
+
+This method is used to iterate over multiple DataTable\Map's concurrently.
+
+$filter will be called with multiple DataTable instances, the first is the instance contained in
+this Map instance. The rest are the corresponding instances found in $otherTables. The position of
+the parameter in $filter corresponds with the position in $otherTables.
+
+If a key exists in this instance but not in one of the otherTables, $filter will be invoked with null
+for that parameter.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$otherTables` ([`Map[]`](../../Piwik/DataTable/Map.md)) &mdash;
+       Other tables to invoke $filter with.
+    - `$filter` (`callable`) &mdash;
+       A function like `function (DataTable $thisTable, $otherTable1, $otherTable2, ...) {}`.
+
+- *Returns:*  `mixed[]` &mdash;
+    The return value of each `multiFilter()` call made on child tables, indexed by the keys in this Map instance.
 
 <a name="filtersubtables" id="filtersubtables"></a>
 <a name="filterSubtables" id="filterSubtables"></a>
