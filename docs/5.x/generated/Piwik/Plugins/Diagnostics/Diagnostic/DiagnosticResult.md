@@ -137,5 +137,5 @@ Returns the worst status of the items.
 
 #### Signature
 
-- It returns a `mixed` value.
+- It returns a `array` value.
 

@@ -47,5 +47,5 @@ The class defines the following methods:
 
 #### Signature
 
-- It returns a `mixed` value.
+- It returns a `array` value.
 
