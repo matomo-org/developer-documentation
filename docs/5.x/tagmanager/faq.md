@@ -19,3 +19,7 @@ For example if your tag is implemented in `PopupTag.web.js`, you may provide a `
 If you self host your Matomo on premise, you can configure the list of available environments in the plugin settings by going to "Administration => Plugin Settings".
 
 The "live" environment will always be present.
+
+## Why do I need to update the Tag Manager JavaScript when adding a new tracker configuration?
+
+The Matomo Configuration type Variables defined in a container and referenced by a Tag result in JavaScript trackers. When a tracker configuration is set using `_paq.push()`, that configuration is applied to all trackers created by Matomo tag manager and can override the values set in the Matomo Configuration Variables. If you create a new tracker configuration or find one that isn't working while using Matomo Tag Manager, please update `plugins/TagManager/Template/Tag/MatomoTag.web.js` so that the configuration is applied to all JavaScript trackers created by Tag Manager.
