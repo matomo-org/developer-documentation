@@ -40,6 +40,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 * `enableBrowserFeatureDetection()` - Enable the browser feature detection if you previously disabled it. 
 
 ### Configuration of the Tracker Object
+__NOTE: If you add a new configuration or find one that doesn't work while using Matomo Tag Manager, please update `plugins/TagManager/Template/Tag/MatomoTag.web.js` so that it sets the config on each tracker correctly.  See the [Tag Manager FAQ](/guides/tagmanager/faq#why-do-i-need-to-update-the-tag-manager-javascript-when-adding-a-new-tracker-configuration) for more information.__
 
 *   `setDocumentTitle( string )` - Override document.title
 *   `setDomains( array )` - Set array of hostnames or domains to be treated as local. For wildcard subdomains, you can use: `setDomains('.example.com');` or `setDomains('*.example.com');`. You can also specify a path along a domain: `setDomains('*.example.com/subsite1');`
