@@ -866,7 +866,7 @@ Usages:
 
 ### Console.filterCommands
 
-*Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Console.php) in line [208](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Console.php#L208)*
+*Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Console.php) in line [213](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Console.php#L213)*
 
 Triggered to filter / restrict console commands. Plugins that want to restrict commands
 should subscribe to this event and remove commands from the existing list. **Example**
@@ -2518,7 +2518,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Console.php) in line [314](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Console.php#L314)*
+*Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Console.php) in line [319](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Console.php#L319)*
 
 
 
