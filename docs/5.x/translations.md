@@ -76,7 +76,7 @@ or
 
 ## Translation in JavaScript
 
-Translating text in the browser is a bit more complicated than on the server. The browser doesn't have access to the translations, and we don't want to send every translation file to every user just so a couple lines of text can be translated.
+Translating text in the browser is a bit more complicated than on the server. The browser doesn't have access to the translations, and we don't want to send every translation file to every user just so a couple of lines of text can be translated.
 
 Matomo solves this problem by allowing plugins to define which translation keys should be available in the browser. It can then send only those translations in the current language to the browser.
 

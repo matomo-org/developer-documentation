@@ -179,7 +179,7 @@ The flow for updating a submodule is typically like below where we are assuming 
 * You add, commit and push changes within this repository like `git add Controller.php && git commit -m "Update" && git push origin mynewbranch`.
 * This commit will get a new unique commit hash.
 
-Your next steps depend whether you need those changes in your "Parent" repository right away or not.
+Your next steps depend on whether you need those changes in your "Parent" repository right away or not.
 
 #### Variation A - You don't need the submodule changes in your parent repository as part of your feature
 

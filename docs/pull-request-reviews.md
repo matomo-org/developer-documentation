@@ -194,7 +194,7 @@ but for smaller changes, developers might be expected to make those themselves.
 
 We should also think about whether new faqs should be created or if we need to modify existing ones.
 
-If a screenshot changes significantly, then we should also update screenshots on our website. If only a wording changes, then usually it's not needed to update the screenshot. There are no hard rules when or when not to update a screenshot. If basically depends if the screenshot is still clear in the context of the content. 
+If a screenshot changes significantly, then we should also update screenshots on our website. If only a wording changes, then usually it's not needed to update the screenshot. There are no hard rules when or when not to update a screenshot. If basically depends on if the screenshot is still clear in the context of the content. 
 
 ### Reviewing External Contributors' PRs
 

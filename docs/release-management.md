@@ -125,7 +125,7 @@ To be ready for the next step, the first beta release of core, we need to:
 
 Now that we have made all our plugins (including premium features) compatible with this version and have released a new version, we can release the first beta for core. This allows most people to upgrade smoothly. Users will run into problems though when they use third party plugins that aren't compatible with this new major version yet. This means features/plugins will be disabled for them, which can cause them issues. So we rather release a first beta bit later in the process in the hope that some plugins are already compatible.
 
-Typically, at this stage the RC phase isn't far away and a first RC will follow within a couple weeks. Again, this is because we want to have ideally a few third party plugins compatible with this new version.
+Typically, at this stage the RC phase isn't far away and a first RC will follow within a couple of weeks. Again, this is because we want to have ideally a few third party plugins compatible with this new version.
 
 #### api.matomo.org
 

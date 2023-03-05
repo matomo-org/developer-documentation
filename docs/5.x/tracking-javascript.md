@@ -133,7 +133,7 @@ Do you want to build a custom opt-out form instead of a consent screen or instea
 
 *   `optUserOut()` - After calling this function, the user will be opted out and no longer be tracked.
 *   `forgetUserOptOut()` - After calling this method the user will be tracked again. Call this method if the user opted out before.
-*   `isUserOptedOut()` - Returns true or false depending whether the user is opted out or not. Note: This method might not return the correct value if you are using the [opt out iframe](https://matomo.org/faq/general/faq_20000/).
+*   `isUserOptedOut()` - Returns true or false depending on whether the user is opted out or not. Note: This method might not return the correct value if you are using the [opt out iframe](https://matomo.org/faq/general/faq_20000/).
 
 You can use these methods to build your own consent form/pages. [Learn more about asking for consent.](https://developer.matomo.org/guides/tracking-javascript-guide#asking-for-consent)
 

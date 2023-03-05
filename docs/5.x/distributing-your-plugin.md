@@ -18,7 +18,7 @@ It's also a great way for you to:
 
 ## Preparing your plugin for the marketplace
 
-Getting your completed plugin on the marketplace takes a couple steps, all listed below.
+Getting your completed plugin on the marketplace takes a couple of steps, all listed below.
 
 ### Make sure your plugin has a unique name
 
@@ -248,7 +248,7 @@ $ git push origin --tags
 
 Every time you push a new tag to your GitHub repository, a new version of your plugin will become available in the marketplace. Alternatively you can also create the tag by [creating a release](https://help.github.com/articles/creating-releases/) on GitHub. The name of the tag doesn't matter, the marketplace will always use the version in your `plugin.json` file.
 
-**Assuming all goes well, your plugin should be visible on the marketplace within a couple minutes. Congratulations!**
+**Assuming all goes well, your plugin should be visible on the marketplace within a couple of minutes. Congratulations!**
 
 ### Troubleshooting
 

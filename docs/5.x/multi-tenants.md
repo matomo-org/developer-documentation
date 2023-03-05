@@ -13,7 +13,7 @@ To do this, place a `config.ini.php` inside `misc/user/` for each hostname. For 
 * `$matomoDir/misc/user/subdomain_a.mydomain.com/config.ini.php`
 * `$matomoDir/misc/user/subdomain_b.mydomain.com/config.ini.php`
 
-Depending if you access Matomo using `subdomain_b.mydomain.com` or `subdomain_a.mydomain.com` the different config file will be read. Each config file may have different configurations and can point to a different database.
+Depending on if you access Matomo using `subdomain_b.mydomain.com` or `subdomain_a.mydomain.com` the different config file will be read. Each config file may have different configurations and can point to a different database.
 
 It's also possible to define the config files per hostname like `$matomoDir/config/$hostname.config.ini.php`. However, this may be removed in the future and we always highly recommend putting them into the `misc/user` directory as it is this way a lot easier to share all files (config files, logos) for a tenant using a shared fil esystem like EFS or NFS.
 
