@@ -142,7 +142,7 @@ public function doUpdate(Updater $updater)
 
 ## Plugin Settings
 
-* System Settings and User Settings used to be defined in one `PluginSettings` class. We have splitted this into two new classes
+* System Settings and User Settings used to be defined in one `PluginSettings` class. We have split this into two new classes
  and to convert existing plugin settings we recommend to first generate new settings for different types, eg
 
 

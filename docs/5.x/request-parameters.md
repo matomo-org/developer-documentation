@@ -25,7 +25,7 @@ To force type validation you can pass one of the following types as third parame
 - `float`
 - `json` (this tries to perform a `json_decode` on the provided value)
 
-When providing a default value (other than `null`) together with a specific type, please ensure the default value has the same type. The default will be casted to the expected type, which might cause unexpected results. This doesn't apply for the special type `json`.
+When providing a default value (other than `null`) together with a specific type, please ensure the default value has the same type. The default will be cast to the expected type, which might cause unexpected results. This doesn't apply for the special type `json`.
 
 It's recommended to use the method with three parameters where ever a certain type is expected. This will prevent PHP warnings or errors if an unexpected type was provided.
 
