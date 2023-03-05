@@ -299,7 +299,7 @@ See also below the steps for how to sync the files automatically.
 * Go to the Tests travis build: [https://travis-ci.org/matomo-org/matomo](https://travis-ci.org/matomo-org/matomo) and select the build containing `TEST_SUITE=UITests`
 * Find the build you are interested in. The UI tests build will be run for each commit in each branch, so if you're
   looking to resolve a specific failure, you'll have to find the build for the commit you've made.
-* In the build output, at the beginning of the test output, there will be a link to a image diff viewer. It will look something
+* In the build output, at the beginning of the test output, there will be a link to an image diff viewer. It will look something
   like this:
 
       View UI failures (if any) here https://builds-artifacts.matomo.org/ui-tests.master/1837.1/screenshot-diffs/diffviewer.html

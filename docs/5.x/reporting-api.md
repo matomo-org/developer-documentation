@@ -133,7 +133,7 @@ Notice that urls[0] is the url-encoded call to VisitsSummary.get by itself and t
 
 The API Response will be an array containing the formatted result of each individual API method, in this case VisitsSummary.get and VisitorInterest.getNumberOfVisitsPerVisitDuration.
 
-You can also issue the Bulk request as a HTTP POST request to work around any request URI size limitations:
+You can also issue the Bulk request as an HTTP POST request to work around any request URI size limitations:
 
     curl -i -X POST -d 'module=API&method=API.getBulkRequest&format=json&urls[0]=method%3dVisitsSummary.get%26idSite%3d3%26date%3d2012-03-06%26period%3dday&urls[1]=method%3dVisitorInterest.getNumberOfVisitsPerVisitDuration%26idSite%3d3%26date%3d2012-03-06%26period%3dday' https://demo.matomo.org/index.php
 

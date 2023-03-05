@@ -50,7 +50,7 @@ To create a system test, extends `Piwik\Tests\Framework\TestCase\SystemTestCase`
 
 The first element in the array should be one or more API methods or the `'all'` string. This determines which API methods whose output should be compared against expected files. The second element should be an associative array that contains a set of options that affect the way the test is run or URL used to invoke the API method. You are allowed to set the following options:
 
-* **testSuffix**: The suffix added to the output file name. If you call a single API method more than once in an system test, all but one of them should have a **testSuffix** set so different output files will be created.
+* **testSuffix**: The suffix added to the output file name. If you call a single API method more than once in a system test, all but one of them should have a **testSuffix** set so different output files will be created.
 * **format**: The desired format of the output. Defaults to `'xml'`. The extension of the output is determined by the format.
 * **idSite**: The ID of the website to get data for or `'all'`.
 * **date**: The date to get data for.

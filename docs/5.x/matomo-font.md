@@ -37,7 +37,7 @@ Follow below steps to add, change or remove an icon.
 * Go to [https://icomoon.io/app/](https://icomoon.io/app/).
 * Upload the downloaded file in icomoon by clicking on "Import Icons".
 * Confirm the question "Would you like to use all settings from the selected file" with "Yes".
-* Now you can make changes to the font such as removing a icon by unselecting it.
+* Now you can make changes to the font such as removing an icon by unselecting it.
 * To add a new icon enter a name and search for the icon. We only use icons from these three fonts if any possible:
   * Material Icons (preferred if a matching icon can be found here)
   * `IcoMoon - Free` or `Font Awesome` (depending on which one looks better in the app)
