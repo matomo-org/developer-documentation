@@ -91,18 +91,18 @@ When we are adding a new API or when we are breaking or deprecating an existing 
 Any change would usually fall under one of these categories:
 
 ```
-#‎# Template: Matomo version number
+## Template: Matomo version number
 
-#‎## Breaking Changes
-#‎## Deprecations
-#‎## API Changes
-#‎## New features
-#‎## New APIs
-#‎## New commands
-#‎## New config.ini.php settings
-#‎## New developer guide
-#‎## Library updates
-#‎## Internal change
+### Breaking Changes
+### Deprecations
+### API Changes
+### New features
+### New APIs
+### New commands
+### New config.ini.php settings
+### New developer guide
+### Library updates
+### Internal change
 ```
 
 ## PHP Plugin API
