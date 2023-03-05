@@ -28,7 +28,7 @@ Whether a segment is being processed in real time or not is stored in the `auto_
 
 Segment reports are stored in the archive tables just like any other report too. However, the `done` flag in the numeric or invalidation archive tables have a segment hash attached and looks for example like this: `donefea44bece172bc9696ae57c26888bf8a` or `donefea44bece172bc9696ae57c26888bf8a.VisitsSummary` for a specific plugin.
 
-The segment hash is calculated as an md5 hash on the segment definition. For example `$segmentHash = md5('actions>1')`. 
+The segment hash is calculated as an MD5 hash on the segment definition. For example `$segmentHash = md5('actions>1')`. 
 
 ### How do I get the correct segment hash for a segment?
 
