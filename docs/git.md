@@ -13,7 +13,7 @@ If you prefer using Git through your IDE like PHPStorm, or if you are more accus
 
 ## Cloning a repository
 
-Github supports cloning via HTTPS and SSH URLs. You will always want to use SSH URLs when cloning a repository, for example `git@github.com:matomo-org/matomo.git`.
+GitHub supports cloning via HTTPS and SSH URLs. You will always want to use SSH URLs when cloning a repository, for example `git@github.com:matomo-org/matomo.git`.
 
 To clone a repository, use for example:
 

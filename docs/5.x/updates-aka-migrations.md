@@ -97,7 +97,7 @@ Sometimes it can take a while before a pull request is ready to merge. It's poss
 updates were merged in the meantime, bumping the version each time. So when the original pull request is ready
 to merge, the version bump there may no longer be to a new version.
 
-Since every Update requires a change to the Version.php file, this will result in a merge conflict visible in github.
+Since every Update requires a change to the Version.php file, this will result in a merge conflict visible in GitHub.
 To resolve it, simply change the version to the new next version in both Version.php and the new Update file you added.
 
 ## Differences with the Migration pattern

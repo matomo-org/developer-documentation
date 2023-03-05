@@ -41,7 +41,7 @@ If you are a Matomo core developer then you have write permissions to the Matomo
 
 #### Fork the Piwik repository
 
-While logged in GitHub, visit [Matomo's repository](https://github.com/matomo-org/matomo). In the upper right corner there is a _Fork_ button. Click it. Github will copy the repository into your account. This copy (or fork) is the one you will work on. If you don't know forks, read more about [forks on GitHub](https://help.github.com/articles/fork-a-repo/).
+While logged in GitHub, visit [Matomo's repository](https://github.com/matomo-org/matomo). In the upper right corner there is a _Fork_ button. Click it. GitHub will copy the repository into your account. This copy (or fork) is the one you will work on. If you don't know forks, read more about [forks on GitHub](https://help.github.com/articles/fork-a-repo/).
 
 #### Setup git
 

@@ -5,7 +5,7 @@ title: Setting up
 # Setting up Media Analytics
 
 In this guide we will learn how to get [Media Analytics](https://www.media-analytics.net/) to automatically track your website's video and audio media, 
-in particular: HTML5 videos and audios, Youtube videos and Vimeo videos. Supported players are for example JW Player, VideoJS, MediaElement.js, and also many other HTML5 based video players.
+in particular: HTML5 videos and audios, YouTube videos and Vimeo videos. Supported players are for example JW Player, VideoJS, MediaElement.js, and also many other HTML5 based video players.
 
 ## Embedding the Media Analytics JavaScript Tracker
 
@@ -82,14 +82,14 @@ The tracking of SoundCloud audio works automatically if the audio is embedded as
 ## Tracking YouTube videos
 
 MediaAnalytics uses the [YouTube iFrame API](https://developers.google.com/youtube/iframe_api_reference).
-For your Youtube videos to be tracked, you need to enable this Youtube API by adding a URL parameter `?enablejsapi=1` to all your video source URLs. 
+For your YouTube videos to be tracked, you need to enable this YouTube API by adding a URL parameter `?enablejsapi=1` to all your video source URLs. 
 For example:
 
 ```html
 <iframe src="https://www.youtube.com/embed/yA2NUur0770?enablejsapi=1"></iframe>
 ```
 
-If the `enablejsapi=1` parameter is not specified in your Youtube URLs, the Media Analytics tracker will likely not receive video events from the YouTube player.
+If the `enablejsapi=1` parameter is not specified in your YouTube URLs, the Media Analytics tracker will likely not receive video events from the YouTube player.
 
 ### Loading of additional YouTube files
 
@@ -139,4 +139,4 @@ If possible, we recommend making the `matomo.js` file writable.
 ## What to read next
 
 Now that you've setup Media Analytics, you may want to [enrich and customise how your media data is tracked](/guides/media-analytics/options), 
-or if you use a player other than Youtube/Vimeo/HTML5, learn about [tracking your Custom Video Players](/guides/media-analytics/custom-player).
+or if you use a player other than YouTube/Vimeo/HTML5, learn about [tracking your Custom Video Players](/guides/media-analytics/custom-player).

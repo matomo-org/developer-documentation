@@ -77,9 +77,9 @@ Also, as soon as we start working on the next major version, we need to require 
   * Set the version number to `5.0.0`
 * Adjust the min required PHP version in tests yml, so we no longer execute the tests on the previously required min PHP version.
 * Travis CI, see what we did for Matomo 3 in https://github.com/matomo-org/matomo/pull/8452#discussion-diff-35731015L93 and https://github.com/matomo-org/travis-scripts/pull/53 
-  * Other changes may be needed for github tests
+  * Other changes may be needed for GitHub tests
 * Once the builds for `5.x-dev` branch succeeds, make it the default branch for Matomo core and all plugins
-* Update the [submodule github action](https://github.com/matomo-org/matomo/blob/5.x-dev/.github/workflows/submodules.yml), [composer update action](https://github.com/matomo-org/matomo/blob/5.x-dev/.github/workflows/composer-update.yml), and the [CLDR action](https://github.com/matomo-org/matomo/blob/5.x-dev/.github/workflows/update-intl.yml) to use the new main branch.
+* Update the [submodule GitHub action](https://github.com/matomo-org/matomo/blob/5.x-dev/.github/workflows/submodules.yml), [composer update action](https://github.com/matomo-org/matomo/blob/5.x-dev/.github/workflows/composer-update.yml), and the [CLDR action](https://github.com/matomo-org/matomo/blob/5.x-dev/.github/workflows/update-intl.yml) to use the new main branch.
 * We can now start working and merging PRs for the next major release
   * We first start working on the big issues that take a very long to make sure they are finished by the time we want to release the first RC, and so they won't delay the release
   * We then start working on the issues that cause BC breaks, so we have plenty of time to adjust all the plugins, and also we indirectly test these changes sooner

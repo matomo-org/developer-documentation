@@ -20,7 +20,7 @@ This guide describes how we, the team of developers that makes changes to Piwik 
 
 ## How we manage our work
 
-We use **[Github](https://github.com/matomo-org/matomo/issues)** to keep track of all bugs, feature requests and tasks that concern Piwik, the website and Matomo's documentation.
+We use **[GitHub](https://github.com/matomo-org/matomo/issues)** to keep track of all bugs, feature requests and tasks that concern Piwik, the website and Matomo's documentation.
 
 We make sure all tickets contain enough information, including:
 
@@ -35,7 +35,7 @@ Developers (Piwik team members or external contributors) decide for themselves w
 ## How we organise issues
 
 ### Milestones
-All opened tickets are grouped in [Milestones](https://github.com/matomo-org/matomo/milestones). Click the menu link 'Milestones' [in github issues](https://github.com/matomo-org/matomo/issues).
+All opened tickets are grouped in [Milestones](https://github.com/matomo-org/matomo/milestones). Click the menu link 'Milestones' [in GitHub issues](https://github.com/matomo-org/matomo/issues).
 The versions milestones are listed at the very top and contains all the most important issues to close in accordance with [our vision for the Piwik analytics platform](https://piwik.org/roadmap/).
 
 Most important issues and bugs are moved to [Short term milestone](https://github.com/matomo-org/matomo/milestones/Short%20term).
@@ -83,9 +83,9 @@ The changelog typically lists all tickets closed in this release, and point peop
 
 ## How we manage source code
 
-The Piwik git repository is hosted at [Github](https://github.com) and is publicly accessible at [https://github.com/matomo-org/matomo](https://github.com/matomo-org/matomo).
+The Piwik git repository is hosted at [GitHub](https://github.com) and is publicly accessible at [https://github.com/matomo-org/matomo](https://github.com/matomo-org/matomo).
 
-As of 2014, we manage [over fourty repositories at Github](https://github.com/matomo-org). This includes the [main repository for Piwik](https://github.com/matomo-org/matomo) and several plugins, themes, and toolsets to make the most out of Piwik, such as Piwik clients for software development in Python, Ruby, C#, SDKs for iOS, debian packages and other useful Piwik developer tools.
+As of 2014, we manage [over fourty repositories at GitHub](https://github.com/matomo-org). This includes the [main repository for Piwik](https://github.com/matomo-org/matomo) and several plugins, themes, and toolsets to make the most out of Piwik, such as Piwik clients for software development in Python, Ruby, C#, SDKs for iOS, debian packages and other useful Piwik developer tools.
 
 #### Git Owners
 
@@ -100,7 +100,7 @@ It is highly recommended that code committed in the [main branch (*.x-dev)](http
     fixes #159 - changed patch to use wrapInner() instead of wrap()
 
 This message will automatically close the ticket [#472](https://github.com/matomo-org/matomo/issues/472).
-You can also use simply `#159` and a comment will be automatically added to the ticket #159 with a link to the commit on Github.
+You can also use simply `#159` and a comment will be automatically added to the ticket #159 with a link to the commit on GitHub.
 
 When applicable, the related [online documentation](https://piwik.org/docs/) and the related [FAQs](https://piwik.org/faq/) should be updated.
 

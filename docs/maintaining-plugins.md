@@ -8,7 +8,7 @@ This guide applies to Matomo core developers. If you develop a plugin and want t
 
 ## How to add a new plugin
 
-* Follow the internal process `Creating a new GitHub repository` to create a new github repository under `matomo-org`. The name for the plugin usually starts with `plugin-` followed by the plugin name. You can for example ping us in our slack. We use `*.x-dev` as the main branch where `*` would be replaced by the latest major version of Matomo.
+* Follow the internal process `Creating a new GitHub repository` to create a new GitHub repository under `matomo-org`. The name for the plugin usually starts with `plugin-` followed by the plugin name. You can for example ping us in our slack. We use `*.x-dev` as the main branch where `*` would be replaced by the latest major version of Matomo.
   * After creating the repository, we should also configure it for translation in [Weblate](https://hosted.weblate.org/projects/matomo/). To do this,
   * go to Repository Settings -> Webhooks 
   * create a webhook with `https://hosted.weblate.org/hooks/github/` as the Payload URL
@@ -20,7 +20,7 @@ This guide applies to Matomo core developers. If you develop a plugin and want t
 * In Manage -> Access give the "core team" and the "plugin reviewers" team write access. Add the "product management" them and give it triage access.
 * In Manage -> Branches protect the branch `*.x-dev` and only allow the "plugin reviewers" team to merge into these branches.
 
-### Github tests
+### GitHub tests
 
 Go to [Matomo-org secrets](https://github.com/organizations/matomo-org/settings/secrets/actions) and change the `ARTIFACTS_PASS` secret to allow the repository to access this secret. To do this, follow below steps for each secret:
 
@@ -44,7 +44,7 @@ Go to [Matomo-org secrets](https://github.com/organizations/matomo-org/settings/
 * Create (or update if you already have it) a `.gitignore` file in your _plugins_ folder and add the new folder. This `.gitignore` file is already ignored in the main `.gitignore`
 * Activate the plugin on the Administration dashboard, _System > Plugins_ page
 * You can create branches, PRs inside this plugin folder
-* To configure the plugin for Github action tests and more please see the steps described in the internal doc `Build and launch a new Premium Plugin`.
+* To configure the plugin for GitHub action tests and more please see the steps described in the internal doc `Build and launch a new Premium Plugin`.
 
 ## Maintaining plugin FAQs
 

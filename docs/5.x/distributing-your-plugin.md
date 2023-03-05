@@ -9,7 +9,7 @@ Every instance of Piwik running version 2.0 or greater is able to directly downl
 
 It's also a great way for you to:
 
-* get user feedback via email or the Github issue tracker
+* get user feedback via email or the GitHub issue tracker
 * see how many people use your plugin
 * allow people to donate money
 * allow people to buy your plugin ([get in touch](https://piwik.org/contact/marketplace/))
@@ -214,17 +214,17 @@ It is recommended to put an FAQ for your plugin directly into a `/docs/faq.md` f
 
 ### Put your plugin on GitHub
 
-The marketplace uses [GitHub](https://github.com) webhooks to learn about your plugin and serve it to Piwik users that want it. This means you don't manually upload any files to the marketplace. Instead, you put your code into a Github repository and let the marketplace know about it.
+The marketplace uses [GitHub](https://github.com) webhooks to learn about your plugin and serve it to Piwik users that want it. This means you don't manually upload any files to the marketplace. Instead, you put your code into a GitHub repository and let the marketplace know about it.
 
-Creating and initializing a [git](https://git-scm.com) repository on Github is out of the scope of this guide. If you need to learn how to create a Github repository, [read this article](https://help.github.com/articles/create-a-repo).
+Creating and initializing a [git](https://git-scm.com) repository on GitHub is out of the scope of this guide. If you need to learn how to create a GitHub repository, [read this article](https://help.github.com/articles/create-a-repo).
 
 ### Activate the Piwik Plugins webhook
 
-Once your plugin is in a Github repository, you need to let the marketplace know about it. This is done by activating the Piwik Plugins webhook.
+Once your plugin is in a GitHub repository, you need to let the marketplace know about it. This is done by activating the Piwik Plugins webhook.
 
 To activate this webhook, follow these steps:
 
-1. Go to your plugin's Github repo in a browser.
+1. Go to your plugin's GitHub repo in a browser.
 2. Click on **Settings**
 3. Click on **Webhooks**
 4. Click on **Add webhook**
@@ -246,7 +246,7 @@ $ git tag 0.1.0
 $ git push origin --tags
 ```
 
-Every time you push a new tag to your Github repository, a new version of your plugin will become available in the marketplace. Alternatively you can also create the tag by [creating a release](https://help.github.com/articles/creating-releases/) on Github. The name of the tag doesn't matter, the marketplace will always use the version in your `plugin.json` file.
+Every time you push a new tag to your GitHub repository, a new version of your plugin will become available in the marketplace. Alternatively you can also create the tag by [creating a release](https://help.github.com/articles/creating-releases/) on GitHub. The name of the tag doesn't matter, the marketplace will always use the version in your `plugin.json` file.
 
 **Assuming all goes well, your plugin should be visible on the marketplace within a couple minutes. Congratulations!**
 

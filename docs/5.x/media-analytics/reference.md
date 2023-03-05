@@ -179,4 +179,4 @@ Detect if the tracking of progress is currently enabled or disabled. Returns a b
 
 You may be interested in the [Media Analytics HTTP Tracking API Reference](/guides/media-analytics/custom-player#media-analytics-http-tracking-api-reference),
  or the [Reporting HTTP API Reference](https://developer.matomo.org/api-reference/reporting-api#MediaAnalytics).
- If you use a player other than Youtube / Vimeo / HTML5 / JwPlayer / Flowplayer / Video.js, learn about [implementing analytics for your Custom Video Player](/guides/media-analytics/custom-player).
+ If you use a player other than YouTube / Vimeo / HTML5 / JwPlayer / Flowplayer / Video.js, learn about [implementing analytics for your Custom Video Player](/guides/media-analytics/custom-player).

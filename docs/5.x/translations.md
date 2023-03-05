@@ -114,7 +114,7 @@ As long as you are [developing an open source plugin](https://developer.matomo.o
 
 ### Importing your plugin’s strings in the translation platform
 
-While doing the initial setup for your plugin, we will import your English translation file (`en.json`) in your Github plugin repository. For Weblate to be notified of any changes to the English strings, you need to set up a [webhook](https://docs.weblate.org/en/latest/admin/continuous.html#github-setup) using `https://hosted.weblate.org/hooks/github/` as the Payload URL and keep the rest of the settings at the default.
+While doing the initial setup for your plugin, we will import your English translation file (`en.json`) in your GitHub plugin repository. For Weblate to be notified of any changes to the English strings, you need to set up a [webhook](https://docs.weblate.org/en/latest/admin/continuous.html#github-setup) using `https://hosted.weblate.org/hooks/github/` as the Payload URL and keep the rest of the settings at the default.
 
 
 ### How to fetch your plugins translations into your repository

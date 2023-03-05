@@ -4,14 +4,14 @@ category: DevelopInDepth
 ---
 # Using GitHub Actions
 
-[Github Action](https://github.com/features/actions) are used to automate our software workflows including running javascript builds, test suites, releases and code checks.
+[GitHub Action](https://github.com/features/actions) are used to automate our software workflows including running javascript builds, test suites, releases and code checks.
 
 
 ## GitHub Action Scripts
 
 All the GitHub Action build files are locate in `.github/workflows/*.yml`
 
-Each script is triggered by its own conditions, for more details see [Github Action Docs](https://docs.github.com/en/actions)
+Each script is triggered by its own conditions, for more details see [GitHub Action Docs](https://docs.github.com/en/actions)
 
 Matomo uses GitHub Action to automate some processes. Our current actions a listed below:
 - [Build Tracker JS] Triggered by the comment `build js` into the pull request. That will compress js/piwik.js into matomo.js and piwik.js and push the changes if PRs branch is within the same repo.

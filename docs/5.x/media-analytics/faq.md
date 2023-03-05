@@ -5,9 +5,9 @@ category: Integrate
 
 This page is the Developer FAQ for [Media Analytics](https://www.media-analytics.net/). You may also be interested in the [Media Analytics User FAQs](https://matomo.org/faq/media-analytics/).
 
-## How do I enable video analytics for Youtube videos? 
+## How do I enable video analytics for YouTube videos? 
 
-You need to add `&enablejsapi=1` to the Youtube URLs: [read more about setting up Youtube Analytics](/guides/media-analytics/setup#tracking-youtube-videos).
+You need to add `&enablejsapi=1` to the YouTube URLs: [read more about setting up YouTube Analytics](/guides/media-analytics/setup#tracking-youtube-videos).
 
 ## How do I enable video analytics for Vimeo videos? 
 

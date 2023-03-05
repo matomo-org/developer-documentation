@@ -47,7 +47,7 @@ These are only a few of the possibilities — it is not possible to categorize a
 **Whatever ideas your imagination cooks up, we think you can implement them with Piwik.**
 
 <div markdown="1" class="alert alert-info">
-If you can't think of an idea for a plugin, you can check the *[New plugin](https://github.com/matomo-org/matomo/labels/c%3A%20New%20plugin)* label on Github or [adopt an existing, not maintained plugin](https://forum.matomo.org/t/adopt-a-plugin-dog/26869).
+If you can't think of an idea for a plugin, you can check the *[New plugin](https://github.com/matomo-org/matomo/labels/c%3A%20New%20plugin)* label on GitHub or [adopt an existing, not maintained plugin](https://forum.matomo.org/t/adopt-a-plugin-dog/26869).
 </div>
 
 ## Getting setup to extend Piwik
