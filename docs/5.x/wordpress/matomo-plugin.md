@@ -113,7 +113,7 @@ Next, you need to create a directory named `plugins` within your WordPress plugi
 
 ## Changing plugin behaviour for WordPress / On-Premise
 
-Within you Matomo plugin, you can use below code to check if the plugin is running wihin Matomo for WordPress or Matomo On-Premise and behave differently if needed. Because this method was only added in Matomo 3.13.1, we recommend checking if the method exists so your plugin stays compatible with older versions of Matomo:
+Within you Matomo plugin, you can use below code to check if the plugin is running within Matomo for WordPress or Matomo On-Premise and behave differently if needed. Because this method was only added in Matomo 3.13.1, we recommend checking if the method exists so your plugin stays compatible with older versions of Matomo:
 
 ```php
 $isOnPremise = !method_exists('\Piwik\SettingsServer', 'isMatomoForWordPress') || !\Piwik\SettingsServer::isMatomoForWordPress();

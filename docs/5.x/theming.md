@@ -175,7 +175,7 @@ Here is a list of all named colors in Piwik:
   * **series5**: The color of the pie graph segment representing the fifth value in the data displayed.
   * **series6**: The color of the pie graph segment representing the sixth value in the data displayed.
   * **series7**: The color of the pie graph segment representing the seventh value in the data displayed.
-  * **series8**: The color of the pie graph segment representing the eigth value in the data displayed.
+  * **series8**: The color of the pie graph segment representing the eighth value in the data displayed.
   * **series9**: The color of the pie graph segment representing the ninth value in the data displayed.
   * **series10**: The color of the pie graph segment representing the tenth value in the data displayed.
   * **single-metric-label**: The color of the series name label if only **one** series is displayed. If you don't care about whether there's one series displayed or not, set this color to the one you used in **series1**.
@@ -235,7 +235,7 @@ Here is a list of all named colors in Piwik:
   * **city-highlight-stroke-color**: The stroke color to use when a city is _highlighted_ (a city is highlighted when the mouse enters it).
   * **city-highlight-fill-color**: The fill color to use when a city is _highlighted_ and the shift key is pressed (a city is highlighted when the mouse enters it).
   * **city-highlight-label-color**: The label color to use while the shift key is pressed for a city that is _highlighted_.
-  * **city-label-fill-color**: The fill color for a city label. <!-- TODO: the city label fill color is never set initially only when unhighlighting. Will cause bugs for themes.) -->
+  * **city-label-fill-color**: The fill color for a city label. <!-- TODO: the city label fill color is never set initially only when unhighlighting. Will cause bugs for themes. -->
   * **city-selected-color**: The fill color to use for a city when it is _selected_ (ie, when a city is being used in a row evolution popup).
   * **city-selected-label-color**: The label color to use for a city when it is _selected_ (ie, when a city is being used in a row evolution popup).
   * **special-metrics-color-scale-1**: The start of the color scale used to color countries and regions for _special metrics_. [[1]](#named-colors-footnote-1)

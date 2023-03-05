@@ -177,7 +177,7 @@ All other periods (`week`, `month`, `year`, and custom date `range`) are generat
 
 Archive data can be:
 
-- **numeric metric records**: simple numeric values (like the number of page views or the number of visists)
+- **numeric metric records**: simple numeric values (like the number of page views or the number of visits)
 
     These are stored in the `archive_numeric_*` tables. Values are stored as float.
 

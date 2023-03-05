@@ -206,7 +206,7 @@ While developing or debugging tests, there isn't the need to always execute all 
 $ ./console tests:run path/file.php --filter="test_mymethod"
 ```
 
-This will only run the test cases that start with the sepcific method name `test_mymethod`. This will make troubleshooting this test a lot faster as you don't need to wait until all other test cases finish.
+This will only run the test cases that start with the specific method name `test_mymethod`. This will make troubleshooting this test a lot faster as you don't need to wait until all other test cases finish.
 
 ## Special Tests
 
@@ -224,7 +224,7 @@ Plugins sometimes define their own version of this test.
 
 ### Make use of the right assertions
 
-* When possible prefer using `assertSame` over `assertEquals` so it does an exact comparision (including type)
+* When possible prefer using `assertSame` over `assertEquals` so it does an exact comparison (including type)
 * Know the other methods like instead of `$this->assertSame(1, count($array))` use `$this->assertCount(1, $array)`
 * See the [full list of available assertions](https://phpunit.readthedocs.io/en/9.5/assertions.html).
 

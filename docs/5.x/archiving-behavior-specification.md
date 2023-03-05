@@ -174,7 +174,7 @@ for each valid entry.
 * **Piwik\Plugins\CoreConsole\Commands\CoreArchiver**: The `Command` class for the `core:archive` command. This will create and use a `CronArchive`
   instance. This is the main code path from which `CronArchive` is invoked, the only other being the `CoreAdminHome.runCronArchiving` API method.
 * **Piwik\CronArchive**: Encapsulates the entire cron archiving process. This class will loop over every requested site (or work on an existing
-  shared queue of site IDs), invalidate data tha needs to be invalidated for it, and process archives for every invalidation for the site.
+  shared queue of site IDs), invalidate data that needs to be invalidated for it, and process archives for every invalidation for the site.
 * **Piwik\CronArchive\QueueConsumer**: This class is used by CronArchive to get the next invalidated archives to process. It queries the
   archive_invalidations table and returns a batch of archive invalidations to process. CronArchive will then launch API requests to
   `CoreAdminHome.archiveReports` for those invalidations.
@@ -321,7 +321,7 @@ The values of these options are also cached so the tracker doesn't have to query
 
 core:archive can detect when the core archiving process fails, since it will not be able to parse the output of a climulti:request
 command or the archiving curl request. When this occurs, the invalidation being processed's status is reset to 0, so it will be picked up
-again. BUT we also take note of the idinvalidation and skip it for the rest of the current core:archive run. In case the problem
+again. BUT we also take note of the idinvalidation (invalidation ID) and skip it for the rest of the current core:archive run. In case the problem
 is persistent, we don't want to continuously run a failing job.
 
 Note: we currently don't try to immediately retry the job, since archiving jobs are usually compute intensive, and generally do not fail

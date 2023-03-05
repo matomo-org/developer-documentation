@@ -124,7 +124,7 @@ There is an angularjs component that makes this possible easily, not only with w
 #### How does it work?
 
 1. create a method in your plugin's controller file
-1. return a rendered template (the template can contains javascript in script tag)
+1. return a rendered template (the template can contain javascript in script tag)
 1. include the `piwik-widget-loader` component in the main twig file that loads when the user opens the page
 
 ```php

@@ -12,7 +12,7 @@ This guide applies to Matomo core developers. If you develop a plugin and want t
   * After creating the repository, we should also configure it for translation in [Weblate](https://hosted.weblate.org/projects/matomo/). To do this,
   * go to Repository Settings -> Webhooks 
   * create a webhook with `https://hosted.weblate.org/hooks/github/` as the Payload URL
-  * create a component on Weblate with this plugins repostitory as source
+  * create a component on Weblate with this plugin's repository as source
 * Push the code
 * Add the plugin's repository as a submodule to our main matomo repository `git submodule add {http-plugin-github-address} plugins/{pluginname}`
 * Edit `.gitmodules` and move the entry for this submodule before the comment at the bottom (see description of that comment)

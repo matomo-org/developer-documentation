@@ -16,7 +16,7 @@ Above screenshot shows notifications of type error, warning, info and success. T
 To trigger a notification, create an instance of a notification object and call the `notify` method to actually show the notification:
 
 ```php
-$id = '$PluginName_$NotificationId'; // for example `MyPluginName_unsucessfulLogin`.
+$id = '$PluginName_$NotificationId'; // for example `MyPluginName_unsuccessfulLogin`.
 $notification = new \Piwik\Notification('My notification message');
 \Piwik\Notification\Manager::notify($id, $notification);
 ```

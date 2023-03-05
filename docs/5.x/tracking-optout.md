@@ -107,7 +107,7 @@ The embedded opt-out form code to add to the website page is quite long. Customi
 <script>               
 ```
 
-Just like other opt-out form type, the opt-out div may be positioned anywhere on the page and can have its own styling. If the div is created dynamitcally then it must
+Just like other opt-out form type, the opt-out div may be positioned anywhere on the page and can have its own styling. If the div is created dynamically then it must
 exist when the `DOMContentLoaded` event is fired.
 
 The third line of code contains an array of settings which may be used to configure the self-contained opt-out form. 
@@ -116,11 +116,11 @@ The third line of code contains an array of settings which may be used to config
 - `showIntro` Set to `1` if the opt-out form should include text explaining the opt-out choice, set to `0` if the form should just show the checkbox.
 - `cookiePath` Override the default path for Matomo setting consent cookies, should be blank for most websites.
 - `cookieDomain` Override the default domain for Matomo setting consent cookies, should be blank for most websites.
-- `cookieSameSite` Defaults to setting Matomo constent cookies same-site attribute as `Lax`, some sites may want to set this to `strict` if the Matomo instance is hosted on 
+- `cookieSameSite` Defaults to setting Matomo consent cookies same-site attribute as `Lax`, some sites may want to set this to `strict` if the Matomo instance is hosted on 
 the same domain as the website.
 
 Since the self-contained opt-out code does not make any requests to the Matomo instance, dynamic translation of text strings is not possible. When generating the 
-self-containted embedded code from the Matomo administration UI a target language can be chosen and the appropriate translations are included in the settings array.
+self-contained embedded code from the Matomo administration UI a target language can be chosen and the appropriate translations are included in the settings array.
 
 Translation strings:
 

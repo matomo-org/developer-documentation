@@ -313,9 +313,9 @@ Seeing millions of rows in an archiving table is not uncommon. Depending on what
 
 For a fully completed month we typically have approximately 30 archives for each day, 4 archives for each week and 1 archive for the month. Meaning you might see around 35 different archives per month per site or segment. Each of these archives then include multiple entries see above (typically 40-80 in a blob table and 10-30 in a numeric table).
 
-If you have say 10 sites and 10 segments, then you would have (10 + 10) * 35 = 700 archives. Again, each of these entries may contain a different number of entries per archive. If you have 10 sites with 10 global segments (applies to each sites) then there would be (10 + 10*10) * 35 = 3850 different archives.
+If you have say 10 sites and 10 segments, then you would have (10 + 10) * 35 = 700 archives. Again, each of these entries may contain a different number of entries per archive. If you have 10 sites with 10 global segments (applies to each site) then there would be (10 + 10*10) * 35 = 3850 different archives.
 
-Additional archives will be stored when requesting data for a date range but these should be deleted again over time. The current month might store a lot more archive entries overall as the arichiving might be launched many times per day resulting in many invalidated archives. These should also be deleted automatically over time.
+Additional archives will be stored when requesting data for a date range but these should be deleted again over time. The current month might store a lot more archive entries overall as the archiving might be launched many times per day resulting in many invalidated archives. These should also be deleted automatically over time.
 
 ## Other data
 
@@ -805,7 +805,7 @@ Every time a visit matches a certain step in a funnel we create a record in this
 - `idlink_va`: The ID of the `log_link_visit_action` entry that matched this step.
 - `idaction`: The ID of the `log_action` entry that matched this step. This is for example the page URL that was viewed to match this step.
 - `idaction_prev`: The ID of the `log_action` entry that the user viewed before matching this step. 
-- `idaction_next`: The ID of the `log_action` entry the user nagivated to next after matching this step.
+- `idaction_next`: The ID of the `log_action` entry the user navigated to next after matching this step.
 - `min_step`: The step position where this visit entered this funnel. If the first step is configured to be "required" then this is usually "1". Otherwise the user might have entered on another step.
 - `max_step`: The max step position this visit entered. It tells us basically how far in the funnel the user came.
 

@@ -24,11 +24,11 @@ public function getParameters()
 ```
 
 You may notice a couple of things such as the parameter name `popupText` under which the parameter will be
-later available in Javscript using `parameters.get('popupText')`, the default value, the title that will be shown in the UI to the user, which UI control should be used, and more.
+later available in Javascript using `parameters.get('popupText')`, the default value, the title that will be shown in the UI to the user, which UI control should be used, and more.
 
 ### UI controls
 
-You can choose between a selection of different UI controls, for example a check box or a select field. Check out the [FieldConfig API](https://developer.matomo.org/api-reference/Piwik/Settings/FieldConfig) for more information on the available
+You can choose between a selection of different UI controls, for example a checkbox or a select field. Check out the [FieldConfig API](https://developer.matomo.org/api-reference/Piwik/Settings/FieldConfig) for more information on the available
 control types.
 
 ### Selecting variables

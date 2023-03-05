@@ -13,7 +13,7 @@ We use them to test our PHP Controllers, Twig templates, CSS, and indirectly tes
 
 **When is it better to create a php tests?** 
 
-We usually don't create a UI test if the same logic or behaviour can be tested using an integration or system test and the UI isn't actually rendering any custom UI. For example if something is throwing an excption, then the generic error UI will be used and as there is no custom UI an integration or system test may be better suited to check if an exception is triggered as it's more easy to debug, more clear what goes wrong, easier to write these tests and they are faster to execute. 
+We usually don't create a UI test if the same logic or behaviour can be tested using an integration or system test and the UI isn't actually rendering any custom UI. For example if something is throwing an exception, then the generic error UI will be used and as there is no custom UI an integration or system test may be better suited to check if an exception is triggered as it's more easy to debug, more clear what goes wrong, easier to write these tests and they are faster to execute. 
 
 ## Requirements
 

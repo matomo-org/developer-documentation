@@ -114,6 +114,6 @@ When an experiment is finished:
 
  * remove the two URL parameters `pk_abe` and `pk_abv` from your marketing campaigns. 
  If visitors still visit your website via one of these URLs, Piwik will simply ignore the two URL parameters and not enter visitors into the experiment anymore. 
- * if the experiment proved that one of your campaign variations performed significantly better than another, it is now time to change your campaignsr to the winning variation and benefit from higher conversion rates. 
+ * if the experiment proved that one of your campaign variations performed significantly better than another, it is now time to change your campaigns to the winning variation and benefit from higher conversion rates. 
 
 Happy experimenting!

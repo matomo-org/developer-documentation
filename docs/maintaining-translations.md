@@ -129,7 +129,7 @@ This can be disabled as there should never be a reason to add new translation ke
 
 ##### Push on commit (`push_on_commit`)
 
-This is enabled, which means that whenever a change in Weblate is commited, a new pull request will be created or the existing one will be updated.
+This is enabled, which means that whenever a change in Weblate is committed, a new pull request will be created or the existing one will be updated.
 
 ##### Language code Style (`language_code_style`)
 

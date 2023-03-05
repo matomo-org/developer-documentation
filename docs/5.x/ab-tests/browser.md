@@ -7,7 +7,7 @@ title: Websites (JavaScript)
 This guide covers how to run experiments (A/B tests) in your website using the [Piwik JavaScript Tracker](/guides/tracking-javascript-guide)
 and the Piwik A/B Testing JavaScript framework. 
 
-We will learn how to embed the A/B testing framework in your website, how to embed and implement your experiments using best practises, 
+We will learn how to embed the A/B testing framework in your website, how to embed and implement your experiments using best practices, 
 and what to do when an experiment is finished. 
 
 ## Creating an experiment

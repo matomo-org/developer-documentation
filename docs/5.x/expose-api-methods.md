@@ -60,10 +60,10 @@ Both example methods define some parameters. To pass any value to a parameter of
 
 It is possible to define type hints for parameters of API methods. If a parameter has a type hint our API request processor will automatically check if the provided value is compatible with expected type. If the type does not match, the API will return an according error message.
 
-As parameters for API paramters are usually provided as URL or request parameters only the following type hints are supported: `string`, `int`, `float`, `bool`, `array`.
-Boolish paramters will automatically be converted by matching against `0`, `'0'`, `'false'` and `1`, `'1'`, `'true'`
+As parameters for API parameters are usually provided as URL or request parameters only the following type hints are supported: `string`, `int`, `float`, `bool`, `array`.
+Boolish parameters will automatically be converted by matching against `0`, `'0'`, `'false'` and `1`, `'1'`, `'true'`
 
-If your API method is able to handle multiple types for one parameter, you may define no type hint. The paramter will then either be passed as string or an array of strings (depending on the request parameter). It's required to validate and check the parameters value manually then.
+If your API method is able to handle multiple types for one parameter, you may define no type hint. The parameter will then either be passed as string or an array of strings (depending on the request parameter). It's required to validate and check the parameters value manually then.
 
 #### Parameter sanitizing
 

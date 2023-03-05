@@ -60,7 +60,7 @@ Below is the list of all supported environment variables:
   * **TRAVIS\_COMMITTER\_NAME**
   * **TRAVIS\_COMMITTER\_EMAIL**
 
-    These variables control the username and email address used when commiting changes from within a travis build.
+    These variables control the username and email address used when committing changes from within a travis build.
 
     When the .travis.yml file is auto-updated, the travis build will commit the changes and push them to your plugin's git repository. The committer's username and email address are determined by these variable.
 
