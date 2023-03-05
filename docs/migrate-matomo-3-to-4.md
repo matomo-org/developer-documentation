@@ -8,14 +8,14 @@ all changes in Matomo 4 can be found in the [Changelog](/changelog).
 
 ## Create a new branch
 
-We recommend you create a new branch for your plugin that supports Matomo 4. For example `5.x-dev`. This way you will be able to make changes to your plugin for Matomo 3 and Matomo 4 and release independent versions for each of them. You can still publish updates to your plugin that supports Matomo 3 once you have published an update for a version that supports Matomo 4.
+We recommend creating a new branch for your plugin that supports Matomo 4. For example `5.x-dev`. This way you will be able to make changes to your plugin for Matomo 3 and Matomo 4 and release independent versions for each of them. You can still publish updates to your plugin that supports Matomo 3 once you have published an update for a version that supports Matomo 4.
 
 ## Adjust the required Matomo version
 
 For your plugin to be executed in Matomo 4 you first need to show it is compatible with Matomo 4 in your `plugin.json` file:
 
 * specify that your plugin requires Matomo 4 (the require for Piwik 3 used to be eg `"piwik": ">=3.0.0-b1,<4.0.0-b1"`). 
-* we recommend to also increase your plugin's major version number eg from `3.2.3` to `4.0.0`.
+* we also recommend increasing your plugin's major version number eg from `3.2.3` to `4.0.0`.
 
 The `plugin.json` would look like this:
 

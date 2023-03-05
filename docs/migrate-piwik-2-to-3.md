@@ -52,7 +52,7 @@ The next step is for you to make your plugin compatible with Piwik 3: this guide
 Once your plugin is compatible with Piwik 3:
 
 * specify that your plugin requires Piwik 3.
-* we recommend to also increase your plugin's major version number eg from `1.2.3` to `2.0.0`.
+* we also recommend increasing your plugin's major version number eg from `1.2.3` to `2.0.0`.
 
 The `plugin.json` would look like this:
 

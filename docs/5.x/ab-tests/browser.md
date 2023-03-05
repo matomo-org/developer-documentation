@@ -51,7 +51,7 @@ To prevent any flickering / flashing of content when you run your experiments, y
     ```
     
 In the case where you are using the [`SitesManager.getJavascriptTag` API](/api-reference/reporting-api#SitesManager) to embed the tracking code automatically into your website, 
-the JavaScript code will automatically load synchronously. It is still recommended to move the tracking code into `<head>`.
+the JavaScript code will automatically load synchronously. It is still recommended moving the tracking code into `<head>`.
 
 ## Embedding an experiment
 
@@ -280,7 +280,7 @@ window.addEventListener('pathchange', function() {
 
 #### Load matomo.js synchronously
 
-As already mentioned earlier in this guide: it is highly recommended to load the `matomo.js` file 
+As already mentioned earlier in this guide: it is highly recommended loading the `matomo.js` file 
 [synchronously](#loading-matomojs-synchronously-as-early-as-possible) in the HTML `<head>`.
 
 #### Deciding where to place the experiment code
@@ -352,7 +352,7 @@ Read more about this option in [Custom experiment implementation without _paq.pu
 
 #### Hide the body until the variations are executed
 
-If you have a persistent flashing that you cannot resolve, you might want to consider to hide the entire `<body>`
+If you have a persistent flashing that you cannot resolve, you might want to consider hiding the entire `<body>`
 until your experiment is executed. This should be usually not needed but it can be a solution if the other options didn't help.
 
 ## Finishing an experiment
@@ -423,7 +423,7 @@ Yes, please see below the different ways this can be achieved:
 1. When you create your experiment in the UI, under the section “Redirects”, for each variation (including the “Original” variation) you can can enter the Page URL to redirect to and test. ([learn more in this FAQ](https://matomo.org/faq/ab-testing/faq_22493/)). This is the easiest way to compare the performance of different page URLs. Note that a page redirect will be triggered in JavaScript, which will cause a small delay before the page is reloaded and showing the variation, therefore for optimal performance we recommend to use server side redirects (see below).
 2. Alternatively, you can compare different pages URLs by running an experiment on your [server](https://developer.matomo.org/guides/ab-tests/server#redirects). 
 **Server side redirects** are recommended for performance reasons: they have the advantage that they are more SEO friendly and faster to load for your users.
-It is highly recommended to send your users to a different page URL via an HTTP 302 redirect (temporary) and not via a 301 (permanent). 
+It is highly recommended sending your users to a different page URL via an HTTP 302 redirect (temporary) and not via a 301 (permanent). 
 This way search engines know the redirect is temporary and that they should keep the original URL in their search index. 
 3. If running the experiment server-side is not an option, you can also use **JavaScript redirects**, by calling the `redirect` method on the `event` that is passed to your 
 `activate` methods. Here is an example:

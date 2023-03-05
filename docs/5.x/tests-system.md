@@ -5,7 +5,7 @@ category: DevelopInDepth
 
 System tests files are in `tests/PHPUnit/System/*Test.php`
 
-System tests allow to test how major Matomo components interact together.
+System tests allow testing how major Matomo components interact together.
 A test will typically generate hits to the Tracker (record visits and page views)
 and then test all API responses and for each API output. It then checks that they match expected XML (or CSV, json, etc.).
 If a test fails, you can compare the processed/ and expected/ directories in a graphical text compare tool, such as WinMerge on Win, or MELD on Linux, or even with PhpStorm, to easily view changes between files.

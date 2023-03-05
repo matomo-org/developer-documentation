@@ -36,7 +36,7 @@ Similarly you can set a value using `Option:set('MyPluginName.valueDescribeSetti
 
 When a user is deleted, you would need to make sure to cleanup any configured value using the `'UsersManager.deleteUser'` event where you can then do a `Option::delete($key)`.
 
-It's very much recommended to encapsulate all related logic to this in one class and not spread the `Option` calls across different classes.
+It's very much recommended encapsulating all related logic to this in one class and not spread the `Option` calls across different classes.
 
 Using the option table can be a good solution if you need to store a value that is not a setting/preference. Like you want to store when the user
 last performed a specific action.

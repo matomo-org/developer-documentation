@@ -52,7 +52,7 @@ To learn more about the detection of page views, have a look at the [disableAuto
 ## How do I capture heatmap and session activities for longer than 10 minutes per page view?  
 
 By default, Piwik will stop the recording of new activities after 10 minutes after the last page view. You can increase this time limit by 
-calling the `setMaxCaptureTime` method. We recommend to set this value to less than 29 minutes. Piwik creates a new visit 
+calling the `setMaxCaptureTime` method. We recommend setting this value to less than 29 minutes. Piwik creates a new visit 
 after an inactivity of 30 minutes and there may be a risk of creating a new visit without the user being actually "active".
 
 ```js

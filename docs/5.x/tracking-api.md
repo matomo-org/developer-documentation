@@ -70,7 +70,7 @@ For pageviews the following page performance metrics can be tracked:
 * `pf_net` &mdash; Network time. How long it took to connect to server.
 * `pf_srv` &mdash; Server time. How long it took the server to generate page.
 * `pf_tfr` &mdash; Transfer time. How long it takes the browser to download the response from the server
-* `pf_dm1` &mdash; Dom processing time. How long the browser spends loading the webpage after the response was fully received until the user can starting interacting with it.
+* `pf_dm1` &mdash; Dom processing time. How long the browser spends loading the webpage after the response was fully received until the user can start interacting with it.
 * `pf_dm2` &mdash; Dom completion time. How long it takes for the browser to load media and execute any Javascript code listening for the DOMContentLoaded event.
 * `pf_onl` &mdash; Onload time. How long it takes the browser to execute Javascript code waiting for the window.load event.
 
@@ -116,7 +116,7 @@ Use the following values to record a cart and/or an ecommerce order.
 
 The following parameters require that you set `&token_auth=` to the token\_auth value of the Super User, or a user with *write* or *admin* permission to the website visits are being tracked for.
 
-* `token_auth` &mdash; 32 character authorization key used to authenticate the API request. We recommend to create a user specifically for accessing the Tracking API, and give the user only *write* permission on the website(s).
+* `token_auth` &mdash; 32 character authorization key used to authenticate the API request. We recommend creating a user specifically for accessing the Tracking API, and give the user only *write* permission on the website(s).
 * `cip` &mdash; Override value for the visitor IP (both IPv4 and IPv6 notations supported).
 * `cdt` &mdash; Override for the datetime of the request (normally the current time is used). This can be used to record visits and page views in the past. The expected format is either a datetime such as: `2011-04-05 00:11:42` (remember to URL encode the value!), or a valid UNIX timestamp such as `1301919102`. The datetime must be sent in UTC timezone.
  _Note: if you record data in the past, you will need to [force Piwik to re-process reports for the past dates](https://matomo.org/faq/how-to/#faq_59)._
