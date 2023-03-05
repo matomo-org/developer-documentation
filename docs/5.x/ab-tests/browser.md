@@ -420,7 +420,7 @@ is stored in a cookie for up to 365 days.
 
 Yes, please see below the different ways this can be achieved:
 
-1. When you create your experiment in the UI, under the section “Redirects”, for each variation (including the “Original” variation) you can can enter the Page URL to redirect to and test. ([learn more in this FAQ](https://matomo.org/faq/ab-testing/faq_22493/)). This is the easiest way to compare the performance of different page URLs. Note that a page redirect will be triggered in JavaScript, which will cause a small delay before the page is reloaded and showing the variation, therefore for optimal performance we recommend to use server side redirects (see below).
+1. When you create your experiment in the UI, under the section “Redirects”, for each variation (including the “Original” variation) you can enter the Page URL to redirect to and test. ([learn more in this FAQ](https://matomo.org/faq/ab-testing/faq_22493/)). This is the easiest way to compare the performance of different page URLs. Note that a page redirect will be triggered in JavaScript, which will cause a small delay before the page is reloaded and showing the variation, therefore for optimal performance we recommend to use server side redirects (see below).
 2. Alternatively, you can compare different pages URLs by running an experiment on your [server](https://developer.matomo.org/guides/ab-tests/server#redirects). 
 **Server side redirects** are recommended for performance reasons: they have the advantage that they are more SEO friendly and faster to load for your users.
 It is highly recommended sending your users to a different page URL via an HTTP 302 redirect (temporary) and not via a 301 (permanent). 

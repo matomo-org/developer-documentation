@@ -121,7 +121,8 @@ These hashes are useful for many things
 * You can use it to check out this commit similar to a branch `git checkout $COMMIT_HASH`
 * and much more.
 
-Some git operations may require such a commit hash. You find these history in many places like Github commit history or when executing `git log`.
+Some git operations may require such a commit hash. You find these in many places like GitHub commit history or when executing `git log`.
+
 ### Reviewing the last commit
 
 If you committed changes and want to see what the last commit looked like then you can execute `git show`.

@@ -175,7 +175,7 @@ affects the work of plugin developers or developers who integrate Matomo into th
 
 * changes to existing features
 
-  If we change how an existing feature or API works, we want to mention it to developers. These are not breaking changes, those are mentioned above, just changes in the how something works.
+  If we change how an existing feature or API works, we want to mention it to developers. These are not breaking changes, those are mentioned above, just changes in how something works.
   An example would be when we introduced an allowlist for trusted hosts to download geoip databases from. It's unlikely this would break anything for existing users, but it's still worth
   mentioning.
 

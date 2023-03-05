@@ -58,7 +58,7 @@ You can find details on that on this deprecation lists.
 
 Changes from those lists we had to apply in core:
 
-* Adding an if condition on a for tag is deprecated in Twig 2.10. Use a filter filter or an “if” condition inside the “for” body instead (if your condition depends on a variable updated inside the loop).
+* Adding an if condition on a for tag is deprecated in Twig 2.10. Use a filter or an “if” condition inside the “for” body instead (if your condition depends on a variable updated inside the loop).
 
 eg. 
 ```

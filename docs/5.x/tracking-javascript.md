@@ -141,8 +141,8 @@ You can use these methods to build your own consent form/pages. [Learn more abou
 
 Piwik uses first party cookies to keep track of some user information over time. Consideration must be given to retention times and avoiding conflicts with other cookies, trackers, and apps.
 
-*   `disableCookies()` - Disable all first party cookies. Existing Piwik cookies for this websites will be deleted on the next page view. Cookies will be even disabled if the user has given cookie consent using the method `rememberCookieConsentGiven()`.
-*   `deleteCookies()` - Delete the tracking cookies currently currently set (this is useful when [creating new visits](https://matomo.org/faq/how-to/#faq_187))
+*   `disableCookies()` - Disable all first party cookies. Existing Piwik cookies for this website will be deleted on the next page view. Cookies will be even disabled if the user has given cookie consent using the method `rememberCookieConsentGiven()`.
+*   `deleteCookies()` - Delete the tracking cookies currently set (this is useful when [creating new visits](https://matomo.org/faq/how-to/#faq_187))
 *   `hasCookies()` - Return whether cookies are enabled and supported by this browser.
 *   `setCookieNamePrefix( prefix )` - the default prefix is '_pk_'.
 *   `setCookieDomain( domain )` - the default is the document domain; if your website can be visited at both www.example.com and example.com, you would use: `tracker.setCookieDomain('.example.com');` or `tracker.setCookieDomain('*.example.com');`
