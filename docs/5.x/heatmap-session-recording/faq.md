@@ -52,7 +52,7 @@ To learn more about the detection of page views, have a look at the [disableAuto
 ## How do I capture heatmap and session activities for longer than 10 minutes per page view?  
 
 By default, Piwik will stop the recording of new activities after 10 minutes after the last page view. You can increase this time limit by 
-calling the `setMaxCaptureTime` method. We recommend to set this value to less than 29 minutes. Piwik creates a new visit 
+calling the `setMaxCaptureTime` method. We recommend setting this value to less than 29 minutes. Piwik creates a new visit 
 after an inactivity of 30 minutes and there may be a risk of creating a new visit without the user being actually "active".
 
 ```js
@@ -247,7 +247,7 @@ The screenshot for a Heatmap is taken when the page is officially loaded accordi
 
 ## How do I get Heatmap and Session Recording to save the CSS in the database when the CSS is loaded from a different domain?
 
-When a session is recorded or a heatmap screenshot taken, Matomo tries to read the content of all CSS files. This ensures that the pages will later always shown correctly, even if the CSS on the page changes at some point. If CSS is loaded from a different domain than the webpage itself, then this might not work out of the box unless these [CORS changes](https://matomo.org/faq/heatmap-session-recording/#faq_47431) are made. If your recorded heatmap or session doesn't show correctly, then this might be the reason why.
+When a session is recorded or a heatmap screenshot taken, Matomo tries to read the content of all CSS files. This ensures that the pages will be later always shown correctly, even if the CSS on the page changes at some point. If CSS is loaded from a different domain than the webpage itself, then this might not work out of the box unless these [CORS changes](https://matomo.org/faq/heatmap-session-recording/#faq_47431) are made. If your recorded heatmap or session doesn't show correctly, then this might be the reason why.
 
 ## How do I disable loading of CSS from database for Heatmap and Session Recording?
 

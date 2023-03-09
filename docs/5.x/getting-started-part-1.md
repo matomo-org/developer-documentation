@@ -47,7 +47,7 @@ These are only a few of the possibilities — it is not possible to categorize a
 **Whatever ideas your imagination cooks up, we think you can implement them with Piwik.**
 
 <div markdown="1" class="alert alert-info">
-If you can't think of an idea for a plugin, you can check the *[New plugin](https://github.com/matomo-org/matomo/labels/c%3A%20New%20plugin)* label on Github or [adopt an existing, not maintained plugin](https://forum.matomo.org/t/adopt-a-plugin-dog/26869).
+If you can't think of an idea for a plugin, you can check the *[New plugin](https://github.com/matomo-org/matomo/labels/c%3A%20New%20plugin)* label on GitHub or [adopt an existing, not maintained plugin](https://forum.matomo.org/t/adopt-a-plugin-dog/26869).
 </div>
 
 ## Getting setup to extend Piwik
@@ -198,7 +198,7 @@ For more detailed instructions you can visit the [PHP Tests page](/guides/tests-
 
 Your development environment is set up, and you are now ready to create a plugin!
 
-First of all, you need to choose the plugin's name. Remember, if you're going to publish on [Matomo's marketplace](https://plugins.matomo.org/), CamelCase will be splitted into words. So, for example "MyPlugin" will be published as "My Plugin".
+First of all, you need to choose the plugin's name. Remember, if you're going to publish on [Matomo's marketplace](https://plugins.matomo.org/), CamelCase will be split into words. So, for example "MyPlugin" will be published as "My Plugin".
 
 Creating a plugin consists primarily of creating a couple of files which can be done by running the following command:
 

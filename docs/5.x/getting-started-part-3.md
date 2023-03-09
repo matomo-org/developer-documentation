@@ -180,7 +180,7 @@ Open the report and you'll now see:
 
 #### Rename the report
 
-Finally, we'll rename the report. After all, it can do more than just aggregate the last 100 visits by browser now. Rename all occurences of `getLastVisitsByBrowser` to `getLastVisitsByDimension`. Make sure you replace it in the following files:
+Finally, we'll rename the report. After all, it can do more than just aggregate the last 100 visits by browser now. Rename all occurrences of `getLastVisitsByBrowser` to `getLastVisitsByDimension`. Make sure you replace it in the following files:
 
 * API.php
 * Reports/GetLastVisitsByBrowser.php (The filename has to be renamed to **GetLastVisitsByDimension.php** as well)
@@ -196,7 +196,7 @@ Translation tokens are associated with translated text in multiple JSON files, o
 
 #### Locating the language file
 
-To internationalize our plugin, an english language file to hold our translated text is needed. This file is already created for you by the report generator. It is located in your plugin's `lang/` directory. In that folder, a file named `en.json` should exist containing translations:
+To internationalize our plugin, an English language file to hold our translated text is needed. This file is already created for you by the report generator. It is located in your plugin's `lang/` directory. In that folder, a file named `en.json` should exist containing translations:
 
 ```json
 {

@@ -20,7 +20,7 @@ potentially inappropriate for some sites.
 
 Because of this two opt-out form implementations are provided, one which tries to use the Matomo JavaScript tracker code to record the opt-out and one
 implementation which is completely self-contained, making no server requests and using no remote resources. This allows site administrators the 
-flexiblity to choose the approach most suitable for their circumstances.
+flexibility to choose the approach most suitable for their circumstances.
 
 ## Opt-out using the Matomo JavaScript Tracker
 
@@ -529,7 +529,7 @@ Text translations are stored as inline settings and generated for the chosen lan
 <script>               
 ```
 
-The self-contained opt-out code will reamain inactive until the `DOMContentLoaded` page event fires. It will then attempt to render the opt-out form
+The self-contained opt-out code will remain inactive until the `DOMContentLoaded` page event fires. It will then attempt to render the opt-out form
 using the following process:
 
 - Attempt to find the content div by id, if not found then new div will be added to the page in order to show an error.

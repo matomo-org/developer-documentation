@@ -17,7 +17,7 @@ Each developer is responsible to keep the build green.
 
 ## Running your plugins tests on Travis CI
 
-Plugins can do the same if they include a `.travis.yml` file in their github repository. You can generate this file using the `generate:travis-yml` console command:
+Plugins can do the same if they include a `.travis.yml` file in their GitHub repository. You can generate this file using the `generate:travis-yml` console command:
 
 ```
 $ ./console generate:travis-yml --plugin=MyPlugin --php-versions="7.2,7.4" --distribution="bionic" --sudo-false --verbose
@@ -77,7 +77,7 @@ Below is the list of all supported environment variables:
         - DEPENDENT_PLUGINS="myGithubAccount/myDependentPlugin myGithubAccount/myOtherDependentPlugin"
     ```
     
-    Should a dependent plugin be from a private repository, then you need to go Travis and select the build for your plugin (the plugin you are wanting to run the tests for, not the dependent plugin). Next go to "Settings". In the "Environment Variables" section add a new variable named "GITHUB_USER_TOKEN" and specify the token. Make sure to have the setting "DISPLAY VALUE IN BUILD LOG" disabled so the token value won't be visible to others. You can generate this github user token by going to https://github.com/settings/tokens and generating a new token. Make sure to select all checkboxes in the "repo" scope.
+    Should a dependent plugin be from a private repository, then you need to go Travis and select the build for your plugin (the plugin you are wanting to run the tests for, not the dependent plugin). Next go to "Settings". In the "Environment Variables" section add a new variable named "GITHUB_USER_TOKEN" and specify the token. Make sure to have the setting "DISPLAY VALUE IN BUILD LOG" disabled so the token value won't be visible to others. You can generate this GitHub user token by going to https://github.com/settings/tokens and generating a new token. Make sure to select all checkboxes in the "repo" scope.
 
 ### Extending .travis.yml behavior
 

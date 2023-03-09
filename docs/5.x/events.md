@@ -33,7 +33,7 @@ class MyPlugin extends \Piwik\Plugin
     public function addExampleSearchEngine(&$searchEngines)
     {
         // Will be called when the Referrer.addSearchEngineUrls event is posted
-        $searchEngines['www.example.org'] = array('Example earch engine');
+        $searchEngines['www.example.org'] = array('Example search engine');
     }
 }
 ```

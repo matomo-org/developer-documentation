@@ -38,7 +38,7 @@ request/process, and cannot find a recent, usable archive, we generate it, by la
   for archives for other periods.
 * `[General] time_before_week_archive_considered_outdated`, `[General time_before_month_archive_considered_outdated]`,
   `[General] time_before_year_archive_considered_outdated`, `[General] time_before_range_archive_considered_outdated`:
-  specific ttls for different period types. They each default to the 'today time to live' value if not specified
+  specific TTLs for different period types. They each default to the 'today time to live' value if not specified
 * custom date ranges to pre-process: there is an INI config setting and some user settings that allow users to specify that
   certain ranges should be pre-archived. The INI setting is `[General] archiving_custom_ranges`. The user setting is the
   setting that controls the default period to load in Matomo. These ranges will be processed in core:archive if specified.
@@ -174,7 +174,7 @@ for each valid entry.
 * **Piwik\Plugins\CoreConsole\Commands\CoreArchiver**: The `Command` class for the `core:archive` command. This will create and use a `CronArchive`
   instance. This is the main code path from which `CronArchive` is invoked, the only other being the `CoreAdminHome.runCronArchiving` API method.
 * **Piwik\CronArchive**: Encapsulates the entire cron archiving process. This class will loop over every requested site (or work on an existing
-  shared queue of site IDs), invalidate data tha needs to be invalidated for it, and process archives for every invalidation for the site.
+  shared queue of site IDs), invalidate data that needs to be invalidated for it, and process archives for every invalidation for the site.
 * **Piwik\CronArchive\QueueConsumer**: This class is used by CronArchive to get the next invalidated archives to process. It queries the
   archive_invalidations table and returns a batch of archive invalidations to process. CronArchive will then launch API requests to
   `CoreAdminHome.archiveReports` for those invalidations.
@@ -321,7 +321,7 @@ The values of these options are also cached so the tracker doesn't have to query
 
 core:archive can detect when the core archiving process fails, since it will not be able to parse the output of a climulti:request
 command or the archiving curl request. When this occurs, the invalidation being processed's status is reset to 0, so it will be picked up
-again. BUT we also take note of the idinvalidation and skip it for the rest of the current core:archive run. In case the problem
+again. BUT we also take note of the idinvalidation (invalidation ID) and skip it for the rest of the current core:archive run. In case the problem
 is persistent, we don't want to continuously run a failing job.
 
 Note: we currently don't try to immediately retry the job, since archiving jobs are usually compute intensive, and generally do not fail
@@ -364,7 +364,7 @@ Note, there is a currently unhandled edge case: if the last job in a batch has d
 duplicates will also be run, because we won't query for those invalidations until the first batch finishes. Duplicates
 are an edge case to begin with so we haven't handled this.
 
-**how and when the ttl is checked**
+**how and when the TTL is checked**
 
 Each period type has an associated TTL that is sometimes used to check if an archive is still valid. These TTLs are only
 used if certain prerequisites are true:
@@ -377,7 +377,7 @@ used if certain prerequisites are true:
 
 - if the period is a range, then we always recompute it when it is no longer valid. This is because ranges are just two
   arbitrary dates. We cannot preprocess every single permutation during core:archive, so instead we launch the archiving process
-  in browser requests when the ttl expires. Since range archives just aggregate day periods together, and we don't launch
+  in browser requests when the TTL expires. Since range archives just aggregate day periods together, and we don't launch
   archiving for those days, this is still performant.
 
 The TTLs are determined by user and config settings. The day period can be specific in the UI in the System Settings page

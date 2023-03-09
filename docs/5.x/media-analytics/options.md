@@ -225,7 +225,7 @@ It is recommended to call this method as early as possible, for example just aft
 
 ## What to read next
 
-If you use a player other than Youtube / Vimeo / HTML5 / JwPlayer / Flowplayer / Video.js, learn about [tracking your Custom Video Players](/guides/media-analytics/custom-player). 
+If you use a player other than YouTube / Vimeo / HTML5 / JwPlayer / Flowplayer / Video.js, learn about [tracking your Custom Video Players](/guides/media-analytics/custom-player). 
 Or you may want to learn more about the [Media Analytics JavaScript API](/guides/media-analytics/reference), 
  read the [Media Analytics User Guide](https://matomo.org/docs/media-analytics/), 
  the Media Analytics [User FAQs](https://matomo.org/faq/media-analytics/) or the [Developer FAQs](/guides/media-analytics/faq).

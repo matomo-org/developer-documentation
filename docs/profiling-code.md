@@ -81,7 +81,7 @@ If you also want to profile the tracker DB queries, then you additionally need t
 
 ### Profiling a specific query
 
-You can profile a specifc query like this:
+You can profile a specific query like this:
 
 ```
 SET SESSION profiling = 1;

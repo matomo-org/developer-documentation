@@ -80,7 +80,7 @@ public function execute()
         $comment = '';
     }
     
-    $label = 'JS Direcotry Writable';
+    $label = 'JS Directory Writable';
     $result[] = DiagnosticResult::singleResult($label, $status, $comment);
 
     return $result;

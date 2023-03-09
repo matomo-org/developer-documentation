@@ -32,7 +32,7 @@ foreach ($rows as $row) {
 If you need to change data (insert, update, delete, alter), there are two methods you can use:
 
 * `exec` - Executes an unprepared SQL query (no bound parameters can be used). Recommended for DDL statements like `CREATE`, `DROP`, `LOCK` and `ALTER`. The return value is DBMS-specific.
-* `query` - Executes a SQL query. This method is meant for non-query SQL statements like `INSERT`, `UPDATE` and `DELETE`.
+* `query` - Executes an SQL query. This method is meant for non-query SQL statements like `INSERT`, `UPDATE` and `DELETE`.
 
 Example:
 

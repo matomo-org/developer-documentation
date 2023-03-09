@@ -243,7 +243,7 @@ In case there is no content name, no content piece and no title set anywhere it 
 // content target = https://www.example.com
 ```
 
-In case there is no content name and no content piece we will fall back to the `title` attribute of the content block. The `title` attribute of the block element takes precendence over the piece element in this example.
+In case there is no content name and no content piece we will fall back to the `title` attribute of the content block. The `title` attribute of the block element takes precedence over the piece element in this example.
 
 #### How do we detect the content target element?
 

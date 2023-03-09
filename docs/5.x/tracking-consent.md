@@ -4,7 +4,7 @@ title: Tracking & Cookie Consent
 --- 
 # Implementing tracking or cookie consent with the Matomo JavaScript Tracking Client
 
-In the context of the [GDPR privacy regulations](https://matomo.org/docs/gdpr/), when you are processing personal data, in some cases you will need to ask for your users' consent. To identify whether you need to ask for any consent, you need to determine whether your lawful basis for processing personal data is "Consent" or "Legitimate interest", or whether you can avoid collecting personal data altogether. We recommend to learn more about the [lawful basis under the GDPR for Matomo](https://matomo.org/blog/2018/04/lawful-basis-for-processing-personal-data-under-gdpr-with-matomo/). 
+In the context of the [GDPR privacy regulations](https://matomo.org/docs/gdpr/), when you are processing personal data, in some cases you will need to ask for your users' consent. To identify whether you need to ask for any consent, you need to determine whether your lawful basis for processing personal data is "Consent" or "Legitimate interest", or whether you can avoid collecting personal data altogether. We recommend learning more about the [lawful basis under the GDPR for Matomo](https://matomo.org/blog/2018/04/lawful-basis-for-processing-personal-data-under-gdpr-with-matomo/). 
 
 Matomo differentiates between cookie and tracking consent:
 

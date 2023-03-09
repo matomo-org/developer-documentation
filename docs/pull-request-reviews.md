@@ -33,7 +33,7 @@ Once you're ready to create the pull request, write a description of the pull re
 
 If the PR is ready for a review, assign the label `Needs Review` and put it in the correct milestone. The milestone for the PR is usually the same milestone as the original issue you worked on. If there is an issue for this PR, then we also assign the label `Not In Changelog`. This prevents the same issue being listed twice in the changelog. A PR will only be reviewed when it has the `Needs Review` label.
 
-If the PR is not ready for a review yet and the PR is in progress, then you can click on the link `Convert to draft` which you find in the Github PR UI below `Reviewers`. Once you finished the work for the PR and it's ready for a review, you can click on `Ready for review` where it says `This pull request is still a work in progress` and assign the labels as mentioned above.
+If the PR is not ready for a review yet and the PR is in progress, then you can click on the link `Convert to draft` which you find in the GitHub PR UI below `Reviewers`. Once you finished the work for the PR and it's ready for a review, you can click on `Ready for review` where it says `This pull request is still a work in progress` and assign the labels as mentioned above.
 
 For more PR best practices read below.
 
@@ -74,7 +74,7 @@ In the ideal efficiency case, a Pull Request can be approved immediately. Obviou
 ### Reviewing Core Developer PRs
 
 As core developers one of our primary responsibilities is to review and merge other pull requests. This document lays out the general process and things to look for.
-In the pull request template on github, there is a checklist of reminders of what to look for. Here, we'll go into details:
+In the pull request template on GitHub, there is a checklist of reminders of what to look for. Here, we'll go into details:
 
 ### Functional review done
 
@@ -104,7 +104,7 @@ By nature, edge cases are hard to find, but it's definitely better to catch them
 If a feature touches Matomo's UX in any way, the UX person or Product Team is required to provide their input (ping them if needed). But, we also want developers to think about usability themselves.
 
 When reviewing a pull request, think about whether it's possible that users may be confused by how it works, or unsure of how to use it. If there's a possibility that they might reach
-out to support or the forums or make a github issue, then we'd like to prevent that, either with a change to the pull request, or by creating/editing a faq so we can address these
+out to support or the forums or make a GitHub issue, then we'd like to prevent that, either with a change to the pull request, or by creating/editing a faq so we can address these
 requests quickly.
 
 ### Translations / Wording review done
@@ -175,7 +175,7 @@ affects the work of plugin developers or developers who integrate Matomo into th
 
 * changes to existing features
 
-  If we change how an existing feature or API works, we want to mention it to developers. These are not breaking changes, those are mentioned above, just changes in the how something works.
+  If we change how an existing feature or API works, we want to mention it to developers. These are not breaking changes, those are mentioned above, just changes in how something works.
   An example would be when we introduced an allowlist for trusted hosts to download geoip databases from. It's unlikely this would break anything for existing users, but it's still worth
   mentioning.
 
@@ -194,7 +194,7 @@ but for smaller changes, developers might be expected to make those themselves.
 
 We should also think about whether new faqs should be created or if we need to modify existing ones.
 
-If a screenshot changes significantly, then we should also update screenshots on our website. If only a wording changes, then usually it's not needed to update the screenshot. There are no hard rules when or when not to update a screenshot. If basically depends if the screenshot is still clear in the context of the content. 
+If a screenshot changes significantly, then we should also update screenshots on our website. If only a wording changes, then usually it's not needed to update the screenshot. There are no hard rules when or when not to update a screenshot. If basically depends on if the screenshot is still clear in the context of the content. 
 
 ### Reviewing External Contributors' PRs
 
@@ -270,6 +270,6 @@ When reviewing a pull request in the current milestone, if it works, all review 
 
 If a PR affects the [public API](https://github.com/matomo-org/matomo/issues/8125) in any way a PR should not be merged without a review.
 
-For anything else, we'd have to know whether it is something we want in the current milestone. This "approval" can be an explicit comment from Thomas or Matt, or it could just be from a slack conversation (remember, we can always revert something later). Exceptions can be made, however, if the change is small and not likely to cause any problems when released. Then it's fine to change the milestone to the current one and merge it.
+For anything else, we'd have to know whether it is something we want in the current milestone. This "approval" can be an explicit comment from Thomas or Matt, or it could just be from a Slack conversation (remember, we can always revert something later). Exceptions can be made, however, if the change is small and not likely to cause any problems when released. Then it's fine to change the milestone to the current one and merge it.
 
 Since we work on issues in the current milestone first, reviewing pull requests outside of the current milestone isn't something that happens very often.

@@ -10,7 +10,7 @@ Looking for some plugin examples? [Check out our Matomo for WordPress examples r
 ## Checking if Matomo plugin is enabled
 
 It is recommended to check if Matomo for WordPress plugin is actually installed and activated before accessing any of our
-WordPerss PHP APIs to prevent fatal errors:
+WordPress PHP APIs to prevent fatal errors:
 
 ```php
 if ( is_plugin_active('matomo/matomo.php') ) {

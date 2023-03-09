@@ -130,7 +130,7 @@ Piwik users will then be able to see and select **myReport** in the widget selec
 The following is a list of visualizations, called **Core Visualizations**, that are available by default (listed by their *viewDataTable ID*):
 
 - `table`: table of rows and columns (the main visualization used to view reports)
-- `tableAllColumns`: same as `table` but includes a couple extra processed metrics
+- `tableAllColumns`: same as `table` but includes a couple of extra processed metrics
 - `tableGoals`: same as `table` but includes goal metrics and goals of the website
 - `graphVerticalBar`: vertical bar graph (uses *jqPlot*)
 - `graphPie`: pie graph (uses *jqPlot*)

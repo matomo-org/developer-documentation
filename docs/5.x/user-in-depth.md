@@ -34,9 +34,9 @@ User specific data can also be stored in the `option` table similar to [retrievi
 
 Similarly you can set a value using `Option:set('MyPluginName.valueDescribeSetting.' . Piwik::getCurrentUserLogin(), $value)` or get all values for all users like `Option.getLike('MyPluginName.valueDescribeSetting.%')`.
 
-When a user is deleted, you would need to make sure to cleanup any configured value using the `'UsersManager.deleteUser'` event where you can then do a `Option::delete($key)`.
+When a user is deleted, you would need to make sure to clean up any configured value using the `'UsersManager.deleteUser'` event where you can then do a `Option::delete($key)`.
 
-It's very much recommended to encapsulate all related logic to this in one class and not spread the `Option` calls across different classes.
+It's very much recommended encapsulating all related logic to this in one class and not spread the `Option` calls across different classes.
 
 Using the option table can be a good solution if you need to store a value that is not a setting/preference. Like you want to store when the user
 last performed a specific action.

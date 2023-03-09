@@ -52,7 +52,7 @@ The next step is for you to make your plugin compatible with Piwik 3: this guide
 Once your plugin is compatible with Piwik 3:
 
 * specify that your plugin requires Piwik 3.
-* we recommend to also increase your plugin's major version number eg from `1.2.3` to `2.0.0`.
+* we also recommend increasing your plugin's major version number eg from `1.2.3` to `2.0.0`.
 
 The `plugin.json` would look like this:
 
@@ -142,7 +142,7 @@ public function doUpdate(Updater $updater)
 
 ## Plugin Settings
 
-* System Settings and User Settings used to be defined in one `PluginSettings` class. We have splitted this into two new classes
+* System Settings and User Settings used to be defined in one `PluginSettings` class. We have split this into two new classes
  and to convert existing plugin settings we recommend to first generate new settings for different types, eg
 
 

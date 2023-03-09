@@ -13,7 +13,7 @@ If you prefer using Git through your IDE like PHPStorm, or if you are more accus
 
 ## Cloning a repository
 
-Github supports cloning via HTTPS and SSH URLs. You will always want to use SSH URLs when cloning a repository, for example `git@github.com:matomo-org/matomo.git`.
+GitHub supports cloning via HTTPS and SSH URLs. You will always want to use SSH URLs when cloning a repository, for example `git@github.com:matomo-org/matomo.git`.
 
 To clone a repository, use for example:
 
@@ -121,7 +121,8 @@ These hashes are useful for many things
 * You can use it to check out this commit similar to a branch `git checkout $COMMIT_HASH`
 * and much more.
 
-Some git operations may require such a commit hash. You find these history in many places like Github commit history or when executing `git log`.
+Some git operations may require such a commit hash. You find these in many places like GitHub commit history or when executing `git log`.
+
 ### Reviewing the last commit
 
 If you committed changes and want to see what the last commit looked like then you can execute `git show`.
@@ -179,7 +180,7 @@ The flow for updating a submodule is typically like below where we are assuming 
 * You add, commit and push changes within this repository like `git add Controller.php && git commit -m "Update" && git push origin mynewbranch`.
 * This commit will get a new unique commit hash.
 
-Your next steps depend whether you need those changes in your "Parent" repository right away or not.
+Your next steps depend on whether you need those changes in your "Parent" repository right away or not.
 
 #### Variation A - You don't need the submodule changes in your parent repository as part of your feature
 

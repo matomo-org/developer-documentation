@@ -23,19 +23,19 @@ You can use `file_get_contents()` to call the reporting API directly. Learn more
 
 ### Ruby client
 
-A Ruby client for the reporting API is available on Github: [github.com/matomo-org/matomo-ruby-api](https://github.com/matomo-org/piwik-ruby-api).
+A Ruby client for the reporting API is available on GitHub: [github.com/matomo-org/matomo-ruby-api](https://github.com/matomo-org/piwik-ruby-api).
 
 ### Python client
 
-A complete Python client implementation of the reporting API is available on Github at [github.com/matomo-org/matomo-python-api](https://github.com/matomo-org/piwik-python-api).
+A complete Python client implementation of the reporting API is available on GitHub at [github.com/matomo-org/matomo-python-api](https://github.com/matomo-org/piwik-python-api).
 
 ### C# client
 
-A C# client implementation of the reporting API is available on Github at [github.com/matomo-org/matomo-dotnet-api](https://github.com/matomo-org/piwik-dotnet-api).
+A C# client implementation of the reporting API is available on GitHub at [github.com/matomo-org/matomo-dotnet-api](https://github.com/matomo-org/piwik-dotnet-api).
 
 ### NodeJS client
 
-A NodeJS client is available on Github at [github.com/sandfox/nodejs-piwik](https://github.com/sandfox/nodejs-piwik).
+A NodeJS client is available on GitHub at [github.com/sandfox/nodejs-piwik](https://github.com/sandfox/nodejs-piwik).
 
 ### Laravel
 

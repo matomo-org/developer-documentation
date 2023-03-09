@@ -42,7 +42,7 @@ As mentioned Matomo comes with quite a lot of translations. You can and should r
 
 ### Don't try to reduce the amount of translation keys
 
-Sometimes you have repetitive translations like `Choose the site` and `Choose the user` and you might be tempted to rather use a translation key for `The %s` for the translation and then pass different words for the replaceholder like `translate('Choose the %s', 'site')` and `translate('Choose the %s', 'user')`. We recommend not doing this as it can lead to poorly translated text. For example in other languages there might be many different words for `The` (like `der`, `die` and `das` in German). Also using upper and lower case might differ depending on the language. We therefore recommend not trying to reduce the amount of translation keys using placeholders and rather use a translation key for each sentence.
+Sometimes you have repetitive translations like `Choose the site` and `Choose the user` and you might be tempted to rather use a translation key for `The %s` for the translation and then pass different words for the placeholder like `translate('Choose the %s', 'site')` and `translate('Choose the %s', 'user')`. We recommend not doing this as it can lead to poorly translated text. For example in other languages there might be many different words for `The` (like `der`, `die` and `das` in German). Also using upper and lower case might differ depending on the language. We therefore recommend not trying to reduce the amount of translation keys using placeholders and rather use a translation key for each sentence.
 
 ## Translations in PHP
 
@@ -76,7 +76,7 @@ or
 
 ## Translation in JavaScript
 
-Translating text in the browser is a bit more complicated than on the server. The browser doesn't have access to the translations, and we don't want to send every translation file to every user just so a couple lines of text can be translated.
+Translating text in the browser is a bit more complicated than on the server. The browser doesn't have access to the translations, and we don't want to send every translation file to every user just so a couple of lines of text can be translated.
 
 Matomo solves this problem by allowing plugins to define which translation keys should be available in the browser. It can then send only those translations in the current language to the browser.
 
@@ -114,7 +114,7 @@ As long as you are [developing an open source plugin](https://developer.matomo.o
 
 ### Importing your plugin’s strings in the translation platform
 
-While doing the initial setup for your plugin, we will import your English translation file (`en.json`) in your Github plugin repository. For Weblate to be notified of any changes to the English strings, you need to set up a [webhook](https://docs.weblate.org/en/latest/admin/continuous.html#github-setup) using `https://hosted.weblate.org/hooks/github/` as the Payload URL and keep the rest of the settings at the default.
+While doing the initial setup for your plugin, we will import your English translation file (`en.json`) in your GitHub plugin repository. For Weblate to be notified of any changes to the English strings, you need to set up a [webhook](https://docs.weblate.org/en/latest/admin/continuous.html#github-setup) using `https://hosted.weblate.org/hooks/github/` as the Payload URL and keep the rest of the settings at the default.
 
 
 ### How to fetch your plugins translations into your repository

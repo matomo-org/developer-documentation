@@ -4,7 +4,7 @@ category: Develop
 # Widgets
 
 All widgets can be added to your dashboards or exported via a URL to embed it on any page. Most widgets in Piwik
-represent a report but a widget can display anything, for example a RSS feed of your corporate news. You can also use
+represent a report but a widget can display anything, for example an RSS feed of your corporate news. You can also use
 widgets to add new content to an existing report page and to create new report pages.
 
 ## Creating a widget

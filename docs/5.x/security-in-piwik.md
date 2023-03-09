@@ -230,7 +230,7 @@ By no means is below a complete checklist. You'll always be required to still th
 * **Secure data storing**: Passwords or similar data like a sessionId is stored securely hashed
 * **Brute Force Attack**: If there is any token or password like authentication then we use our brute force prevention feature
 * External links have a `rel="noreferrer noopener"` (although newer browser versions add this automatically). The `noopener` is needed for security reasons. The `noreferrer` for privacy reasons. See [rel=noreferrer](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noreferrer) and [rel=noopener](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener)
-* **Email notifications are sent** for critical actions related to login credentials, tokens, 2FA etc and ideally also for any other crticial configuration change such as brute force changes etc.
+* **Email notifications are sent** for critical actions related to login credentials, tokens, 2FA etc and ideally also for any other critical configuration change such as brute force changes etc.
 * **Unsafe methods**: Methods to watch out for:
   * Insecure deserialization: `unserialize` is unsafe for user input. Consider using `Common::safe_unserialize` or for user input possibly `JSON` instead
   * `file_get_contents` can be unsafe when eg a protocol `phar://` can be passed to it
@@ -245,7 +245,7 @@ By no means is below a complete checklist. You'll always be required to still th
 * When creating a tracking plugin, ensure there are limitations on how often the tracker can send a tracking request per page view. For example limit the amount of forms per page view
 
 #### Live / raw data features
-* Ensure the `live_query_max_execution_time` config setting is respected and the query aborts after given amonut of seconds
+* Ensure the `live_query_max_execution_time` config setting is respected and the query aborts after given amount of seconds
 * Ideally limit the date range a raw data query can look at most. For example, by limiting the `lastMinutes` parameter to a max value.
 
 

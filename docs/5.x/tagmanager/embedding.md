@@ -33,7 +33,7 @@ The code looks as follows:
 
 In your code, `{$MATOMO_URL}` will be replaced by your Matomo URL, and `{$CONTAINER}` by a combination of containerId and possibly other factors.
 
-We recommend to embed this HTML block as early as possible within the `<head>` element of your website.
+We recommend embedding this HTML block as early as possible within the `<head>` element of your website.
 
 ## Multiple containers
 

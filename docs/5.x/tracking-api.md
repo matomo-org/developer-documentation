@@ -3,7 +3,7 @@ category: API Reference
 ---
 # Tracking HTTP API
 
-To track page views, events, visits, you have to send a HTTP request (GET or POST) to your Tracking HTTP API endpoint, for example, **https://your-matomo-domain.example/matomo.php** with the correct query parameters set.
+To track page views, events, visits, you have to send an HTTP request (GET or POST) to your Tracking HTTP API endpoint, for example, **https://your-matomo-domain.example/matomo.php** with the correct query parameters set.
 
 ## Supported Query Parameters
 
@@ -42,7 +42,7 @@ _(We recommend that these parameters be used if the information is available and
 * `ua` &mdash; An override value for the **User-Agent** HTTP header field. The user agent is used to detect the operating system and browser used.
 * `uadata` &mdash; JSON encoded **Client Hints** collected by javascript. This will be used to enrich the detected user agent data. (requires Matomo 4.12.0)
 * `lang` &mdash; An override value for the **Accept-Language** HTTP header field. This value is used to detect the visitor's country if [GeoIP](https://matomo.org/faq/troubleshooting/#faq_65) is not enabled.
-* `uid` &mdash; defines the [User ID](https://matomo.org/docs/user-id/) for this request. User ID is any non-empty unique string identifying the user (such as an email address or an username). To access this value, users must be logged-in in your system so you can fetch this user ID from your system, and pass it to Piwik. The User ID appears in the visits log, the Visitor profile, and you can [Segment](https://developer.matomo.org/api-reference/segmentation) reports for one or several User ID (`userId` segment). When specified, the User ID will be "enforced". This means that if there is no recent visit with this User ID, a new one will be created. If a visit is found in the last 30 minutes with your specified User ID, then the new action will be recorded to this existing visit.
+* `uid` &mdash; defines the [User ID](https://matomo.org/docs/user-id/) for this request. User ID is any non-empty unique string identifying the user (such as an email address or a username). To access this value, users must be logged-in in your system so you can fetch this user ID from your system, and pass it to Piwik. The User ID appears in the visits log, the Visitor profile, and you can [Segment](https://developer.matomo.org/api-reference/segmentation) reports for one or several User ID (`userId` segment). When specified, the User ID will be "enforced". This means that if there is no recent visit with this User ID, a new one will be created. If a visit is found in the last 30 minutes with your specified User ID, then the new action will be recorded to this existing visit.
 * `cid` &mdash; defines the visitor ID for this request. You must set this value to exactly a 16 character hexadecimal string (containing only characters 01234567890abcdefABCDEF). We recommended setting the User ID via `uid` rather than use this `cid`.
 * `new_visit` &mdash; If set to 1, will force a new visit to be created for this action. This feature is also [available in JavaScript](https://matomo.org/faq/how-to/#faq_187).
 * `dimension[0-999]` &mdash; A Custom Dimension value for a specific Custom Dimension ID (requires Piwik 2.15.1 + [Custom Dimensions plugin](https://plugins.matomo.org/CustomDimensions) see the [Custom Dimensions guide](https://matomo.org/docs/custom-dimensions/)). If Custom Dimension ID is `2` use `dimension2=dimensionValue` to send a value for this dimension. The configured Custom Dimension has to be in scope "Visit".
@@ -70,7 +70,7 @@ For pageviews the following page performance metrics can be tracked:
 * `pf_net` &mdash; Network time. How long it took to connect to server.
 * `pf_srv` &mdash; Server time. How long it took the server to generate page.
 * `pf_tfr` &mdash; Transfer time. How long it takes the browser to download the response from the server
-* `pf_dm1` &mdash; Dom processing time. How long the browser spends loading the webpage after the response was fully received until the user can starting interacting with it.
+* `pf_dm1` &mdash; Dom processing time. How long the browser spends loading the webpage after the response was fully received until the user can start interacting with it.
 * `pf_dm2` &mdash; Dom completion time. How long it takes for the browser to load media and execute any Javascript code listening for the DOMContentLoaded event.
 * `pf_onl` &mdash; Onload time. How long it takes the browser to execute Javascript code waiting for the window.load event.
 
@@ -116,7 +116,7 @@ Use the following values to record a cart and/or an ecommerce order.
 
 The following parameters require that you set `&token_auth=` to the token\_auth value of the Super User, or a user with *write* or *admin* permission to the website visits are being tracked for.
 
-* `token_auth` &mdash; 32 character authorization key used to authenticate the API request. We recommend to create a user specifically for accessing the Tracking API, and give the user only *write* permission on the website(s).
+* `token_auth` &mdash; 32 character authorization key used to authenticate the API request. We recommend creating a user specifically for accessing the Tracking API, and give the user only *write* permission on the website(s).
 * `cip` &mdash; Override value for the visitor IP (both IPv4 and IPv6 notations supported).
 * `cdt` &mdash; Override for the datetime of the request (normally the current time is used). This can be used to record visits and page views in the past. The expected format is either a datetime such as: `2011-04-05 00:11:42` (remember to URL encode the value!), or a valid UNIX timestamp such as `1301919102`. The datetime must be sent in UTC timezone.
  _Note: if you record data in the past, you will need to [force Piwik to re-process reports for the past dates](https://matomo.org/faq/how-to/#faq_59)._
@@ -145,7 +145,7 @@ Learn more in the [Media Analytics HTTP Tracking API Reference](/guides/media-an
 
 ### Other parameters
 
-* `send_image` &mdash; If set to 0 (`send_image=0`) Piwik will respond with a HTTP 204 response code instead of a GIF image. This improves performance and can fix errors if images are not allowed to be obtained directly (eg Chrome Apps). Available since Piwik 2.10.0
+* `send_image` &mdash; If set to 0 (`send_image=0`) Piwik will respond with an HTTP 204 response code instead of a GIF image. This improves performance and can fix errors if images are not allowed to be obtained directly (eg Chrome Apps). Available since Piwik 2.10.0
 * `ping`  &mdash; If set to 1 (`ping=1`), the request will be a [Heartbeat request](https://matomo.org/faq/how-to/faq_21824/) which will not track any new activity (such as a new visit, new action or new goal). The heartbeat request will only update the visit's total time to provide accurate "Visit duration" metric when this parameter is set. It won't record any other data. This means by sending an additional tracking request when the user leaves your site or app with `&ping=1`, you fix the issue where the time spent of the last page visited is reported as 0 seconds.
 
 ## Tracking Bots

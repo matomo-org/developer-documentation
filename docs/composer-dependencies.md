@@ -31,7 +31,7 @@ As there are normally no problems expected for those updates there is an [automa
 Every 6 months we should check for possible major updates of our requirements. These can only be upgraded if:
 
 * There is a severe security fix that's exploitable for that component
-* It still supports the same minmimum PHP version
+* It still supports the same minimum PHP version
 
 In other cases we usually cannot upgrade to a major update and need to wait for the next Matomo major release. This is to keep backwards compatibility with Matomo for WordPress, the Cloud, and also all the third party plugins on the Marketplace and the many more that aren't on the Marketplace. 
 

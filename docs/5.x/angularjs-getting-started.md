@@ -82,7 +82,7 @@ Basically we create a folder for each feature within the plugin folder. Say we w
         + corehomespecific.js
 
 Sometimes you might have some reusable components within your plugin in which case you can but them into a `common` folder.
-What's the adventage of this? Beside that is scales with the project you will notice immediately what a plugin does when opening a plugin folder whereas this is not the case if you see only `javascripts`, `templates` and `stylesheets` folders. Another advantage is we could - in theory - extract a feature into a separate repository and share single widgets with other people.
+What's the advantage of this? Beside that is scales with the project you will notice immediately what a plugin does when opening a plugin folder whereas this is not the case if you see only `javascripts`, `templates` and `stylesheets` folders. Another advantage is we could - in theory - extract a feature into a separate repository and share single widgets with other people.
 
 A module always ends with `.module.js`. A service or factory always ends with `.service.js`, a controller with `.controller.js`, a directive with `.directive.js` and a filter with `.filter.js`. Filenames are lowercase and words should be separated by a dash: `site-selector.directive.js`. If there is a config for an app the file has to be named as `appname.config.js`, eg. `piwikApp.config.js`.
 

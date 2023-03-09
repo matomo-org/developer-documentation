@@ -41,7 +41,7 @@ If you are a Matomo core developer then you have write permissions to the Matomo
 
 #### Fork the Piwik repository
 
-While logged in GitHub, visit [Matomo's repository](https://github.com/matomo-org/matomo). In the upper right corner there is a _Fork_ button. Click it. Github will copy the repository into your account. This copy (or fork) is the one you will work on. If you don't know forks, read more about [forks on GitHub](https://help.github.com/articles/fork-a-repo/).
+While logged in GitHub, visit [Matomo's repository](https://github.com/matomo-org/matomo). In the upper right corner there is a _Fork_ button. Click it. GitHub will copy the repository into your account. This copy (or fork) is the one you will work on. If you don't know forks, read more about [forks on GitHub](https://help.github.com/articles/fork-a-repo/).
 
 #### Setup git
 
@@ -166,7 +166,7 @@ It will only be executed when the composer or npm actually changes.
 
 ### Dealing with Matomo updates
 
-When the version inreases and there is an update, the UI/API will automatically let you know that a [migration update](https://developer.matomo.org/guides/extending-database#defining-database-updates) needs to be executed. The UI will directly present the update screen where it asks you to execute any outstanding migration updates. The API will return an error message mentioning an update is available and then you need to open the UI to execute this update or run `./console core:update --yes`.
+When the version increases and there is an update, the UI/API will automatically let you know that a [migration update](https://developer.matomo.org/guides/extending-database#defining-database-updates) needs to be executed. The UI will directly present the update screen where it asks you to execute any outstanding migration updates. The API will return an error message mentioning an update is available and then you need to open the UI to execute this update or run `./console core:update --yes`.
 
 In some cases a required migration update may not be executed. This happens for example if you're working in a different branch where the version number is higher and meanwhile in eg `5.x-dev` an update was added for a lower version number. It also happens when you're working on the current version number and an update is added to the current Matomo version number without increasing the version number. Matomo will then think it already executed the update because the version number didn't increase. You can't really detect when this happens until you run into a problem because for example a column is missing. When this happens, you need to manually set back the version number of your Matomo in the database and run for example below queries:
 

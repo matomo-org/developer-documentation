@@ -127,7 +127,7 @@ If no action returns true for a tracking request, then the default page view act
 
 ### Accessing an action in a request processor
 
-In the request processor, these action instances can be accessed using the metadata see below example. There a plugin defines it's own action and will only record an entry, if the action for the current tracking request was actually meant for this plugin
+In the request processor, these action instances can be accessed using the metadata see below example. There a plugin defines its own action and will only record an entry, if the action for the current tracking request was actually meant for this plugin
 
 ```php
 public function recordLogs(VisitProperties $visitProperties, Request $request)

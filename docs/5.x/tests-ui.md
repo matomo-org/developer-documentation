@@ -13,7 +13,7 @@ We use them to test our PHP Controllers, Twig templates, CSS, and indirectly tes
 
 **When is it better to create a php tests?** 
 
-We usually don't create a UI test if the same logic or behaviour can be tested using an integration or system test and the UI isn't actually rendering any custom UI. For example if something is throwing an excption, then the generic error UI will be used and as there is no custom UI an integration or system test may be better suited to check if an exception is triggered as it's more easy to debug, more clear what goes wrong, easier to write these tests and they are faster to execute. 
+We usually don't create a UI test if the same logic or behaviour can be tested using an integration or system test and the UI isn't actually rendering any custom UI. For example if something is throwing an exception, then the generic error UI will be used and as there is no custom UI an integration or system test may be better suited to check if an exception is triggered as it's more easy to debug, more clear what goes wrong, easier to write these tests and they are faster to execute. 
 
 ## Requirements
 
@@ -299,7 +299,7 @@ See also below the steps for how to sync the files automatically.
 * Go to the Tests travis build: [https://travis-ci.org/matomo-org/matomo](https://travis-ci.org/matomo-org/matomo) and select the build containing `TEST_SUITE=UITests`
 * Find the build you are interested in. The UI tests build will be run for each commit in each branch, so if you're
   looking to resolve a specific failure, you'll have to find the build for the commit you've made.
-* In the build output, at the beginning of the test output, there will be a link to a image diff viewer. It will look something
+* In the build output, at the beginning of the test output, there will be a link to an image diff viewer. It will look something
   like this:
 
       View UI failures (if any) here https://builds-artifacts.matomo.org/ui-tests.master/1837.1/screenshot-diffs/diffviewer.html

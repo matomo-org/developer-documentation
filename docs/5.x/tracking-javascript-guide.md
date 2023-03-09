@@ -199,7 +199,7 @@ _paq.push(['trackSiteSearch',
 // _paq.push(['trackPageView']);
 ```
 
-We also highly recommend to set the searchCount parameter, as Piwik will specifically report "No Result Keywords", ie. Keywords that were searched, but did not return any result. It is usually very interesting to know what users search for but can't find (yet?) on your website. Learn more about [Site Search Analytics in the User Doc](https://matomo.org/docs/site-search/).
+We also highly recommend setting the searchCount parameter, as Piwik will specifically report "No Result Keywords", ie. Keywords that were searched, but did not return any result. It is usually very interesting to know what users search for but can't find (yet?) on your website. Learn more about [Site Search Analytics in the User Doc](https://matomo.org/docs/site-search/).
 
 ## Custom variables
 

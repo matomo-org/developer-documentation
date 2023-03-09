@@ -5,7 +5,7 @@ category: DevelopInDepth
 
 System tests files are in `tests/PHPUnit/System/*Test.php`
 
-System tests allow to test how major Matomo components interact together.
+System tests allow testing how major Matomo components interact together.
 A test will typically generate hits to the Tracker (record visits and page views)
 and then test all API responses and for each API output. It then checks that they match expected XML (or CSV, json, etc.).
 If a test fails, you can compare the processed/ and expected/ directories in a graphical text compare tool, such as WinMerge on Win, or MELD on Linux, or even with PhpStorm, to easily view changes between files.
@@ -50,7 +50,7 @@ To create a system test, extends `Piwik\Tests\Framework\TestCase\SystemTestCase`
 
 The first element in the array should be one or more API methods or the `'all'` string. This determines which API methods whose output should be compared against expected files. The second element should be an associative array that contains a set of options that affect the way the test is run or URL used to invoke the API method. You are allowed to set the following options:
 
-* **testSuffix**: The suffix added to the output file name. If you call a single API method more than once in an system test, all but one of them should have a **testSuffix** set so different output files will be created.
+* **testSuffix**: The suffix added to the output file name. If you call a single API method more than once in a system test, all but one of them should have a **testSuffix** set so different output files will be created.
 * **format**: The desired format of the output. Defaults to `'xml'`. The extension of the output is determined by the format.
 * **idSite**: The ID of the website to get data for or `'all'`.
 * **date**: The date to get data for.
@@ -144,7 +144,7 @@ When you first create a system test, there will be no expected files. You will h
 
 ## Downloading processed files from Travis to fix system tests
 
-When you work on a bug or feature and you push the code to Github then Travis will run our system tests. You might then notice that some system tests are failing because the expected content is different to the processed content. To not having to run the all the tests locally and as Travis might include different plugins it's recommended to download the processed files from Travis and then committing these to make the tests pass. However, it is very much needed to look at each changed file and assess that the changed content is expected. This can be done for example before pushing the changes.
+When you work on a bug or feature and you push the code to GitHub then Travis will run our system tests. You might then notice that some system tests are failing because the expected content is different to the processed content. To not having to run the all the tests locally and as Travis might include different plugins it's recommended to download the processed files from Travis and then committing these to make the tests pass. However, it is very much needed to look at each changed file and assess that the changed content is expected. This can be done for example before pushing the changes.
 
 To download the processed files from system tests execute below command. You will need to replace `{BUILD_NUMBER}` with the number of the build. You find this number when you select a build in Travis where it says eg `Build #18`. In this case, the build number is `18`.
 

@@ -20,7 +20,7 @@ To make changes to the JS tracker, you need to edit the raw/unminfied JS tracker
 
 ### Adding a new public JS tracker method
 
-Public tracker methods like `trackPageView` can be called eg using `_paq.push(['trackPageView', '...parameters'])`. Such methods are defined similiar to this [example](https://github.com/matomo-org/matomo/blob/4.4.1/js/piwik.js#L6260-L6275).
+Public tracker methods like `trackPageView` can be called eg using `_paq.push(['trackPageView', '...parameters'])`. Such methods are defined similar to this [example](https://github.com/matomo-org/matomo/blob/4.4.1/js/piwik.js#L6260-L6275).
 
 Any newly added method or changed parameters will be documented in the [developer changelog](https://developer.matomo.org/guides/apis#developer-changelog) and on the [JS tracking client](https://developer.matomo.org/api-reference/tracking-javascript) page.
 

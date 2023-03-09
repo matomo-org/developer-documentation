@@ -133,7 +133,7 @@ Do you want to build a custom opt-out form instead of a consent screen or instea
 
 *   `optUserOut()` - After calling this function, the user will be opted out and no longer be tracked.
 *   `forgetUserOptOut()` - After calling this method the user will be tracked again. Call this method if the user opted out before.
-*   `isUserOptedOut()` - Returns true or false depending whether the user is opted out or not. Note: This method might not return the correct value if you are using the [opt out iframe](https://matomo.org/faq/general/faq_20000/).
+*   `isUserOptedOut()` - Returns true or false depending on whether the user is opted out or not. Note: This method might not return the correct value if you are using the [opt out iframe](https://matomo.org/faq/general/faq_20000/).
 
 You can use these methods to build your own consent form/pages. [Learn more about asking for consent.](https://developer.matomo.org/guides/tracking-javascript-guide#asking-for-consent)
 
@@ -141,8 +141,8 @@ You can use these methods to build your own consent form/pages. [Learn more abou
 
 Piwik uses first party cookies to keep track of some user information over time. Consideration must be given to retention times and avoiding conflicts with other cookies, trackers, and apps.
 
-*   `disableCookies()` - Disable all first party cookies. Existing Piwik cookies for this websites will be deleted on the next page view. Cookies will be even disabled if the user has given cookie consent using the method `rememberCookieConsentGiven()`.
-*   `deleteCookies()` - Delete the tracking cookies currently currently set (this is useful when [creating new visits](https://matomo.org/faq/how-to/#faq_187))
+*   `disableCookies()` - Disable all first party cookies. Existing Piwik cookies for this website will be deleted on the next page view. Cookies will be even disabled if the user has given cookie consent using the method `rememberCookieConsentGiven()`.
+*   `deleteCookies()` - Delete the tracking cookies currently set (this is useful when [creating new visits](https://matomo.org/faq/how-to/#faq_187))
 *   `hasCookies()` - Return whether cookies are enabled and supported by this browser.
 *   `setCookieNamePrefix( prefix )` - the default prefix is '_pk_'.
 *   `setCookieDomain( domain )` - the default is the document domain; if your website can be visited at both www.example.com and example.com, you would use: `tracker.setCookieDomain('.example.com');` or `tracker.setCookieDomain('*.example.com');`
@@ -161,7 +161,7 @@ Piwik uses first party cookies to keep track of some user information over time.
 *   `setCustomRequestProcessing( function )` - Set a function that will process the request content. The function will be called once the request (query parameters string) has been prepared, and before the request content is sent.
 *   `setRequestContentType( contentType )` - Set request Content-Type header value. Applicable when "POST" request method is used via `setRequestMethod`.
 *   `disableQueueRequest()` - Disable the feature which groups together multiple tracking requests and send them as a bulk POST request. Disabling this feature is useful when you want to be able to [replay all logs](https://matomo.org/faq/log-analytics-tool/faq_19221/): one must use `disableQueueRequest` to disable this behaviour to later be able to replay logged Matomo logs (otherwise a subset of the requests wouldn't be able to be replayed).
-*   `setRequestQueueInterval( interval )` -  Defines after how many ms a queued requests will be executed after the request was queued initially. The higher the value the more tracking requests can be send together at once. `interval` has to be at least `1000` (1000ms = 1s) and defaults to 2.5 seconds.
+*   `setRequestQueueInterval( interval )` -  Defines after how many ms a queued requests will be executed after the request was queued initially. The higher the value the more tracking requests can be sent together at once. `interval` has to be at least `1000` (1000ms = 1s) and defaults to 2.5 seconds.
 * `setPagePerformanceTiming([networkTimeInMs], [serverTimeInMs], [transferTimeInMs], [domProcessingTimeInMs], [domCompletionTimeInMs], [onloadTimeInMs])` - Manually set performance metrics in milliseconds in a Single Page App or when Matomo cannot detect some metrics. You can set parameters to `undefined` if you do not want to track this metric. At least one parameter needs to be set. The set performance timings will be tracked only on the next page view. If you track another page view then you will need to set the performance timings again. Requires Matomo 4.5 or newer.
 
 ## Unit Tests Covering matomo.js

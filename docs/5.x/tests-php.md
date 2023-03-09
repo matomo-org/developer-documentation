@@ -206,7 +206,7 @@ While developing or debugging tests, there isn't the need to always execute all 
 $ ./console tests:run path/file.php --filter="test_mymethod"
 ```
 
-This will only run the test cases that start with the sepcific method name `test_mymethod`. This will make troubleshooting this test a lot faster as you don't need to wait until all other test cases finish.
+This will only run the test cases that start with the specific method name `test_mymethod`. This will make troubleshooting this test a lot faster as you don't need to wait until all other test cases finish.
 
 ## Special Tests
 
@@ -224,7 +224,7 @@ Plugins sometimes define their own version of this test.
 
 ### Make use of the right assertions
 
-* When possible prefer using `assertSame` over `assertEquals` so it does an exact comparision (including type)
+* When possible prefer using `assertSame` over `assertEquals` so it does an exact comparison (including type)
 * Know the other methods like instead of `$this->assertSame(1, count($array))` use `$this->assertCount(1, $array)`
 * See the [full list of available assertions](https://phpunit.readthedocs.io/en/9.5/assertions.html).
 
@@ -357,7 +357,7 @@ then you should update the expected system files accordingly. To compare and upd
 * Find out the Travis build number by opening the Travis run for your pull request. The build number is typically a 5 or 6 digit number and has a leading hash character. For example when the build is `#45511`, then `45511` is the build number.
 * Execute this command and replace `{buildnumber}` with the actual build number. `./console development:sync-system-test-processed {buildnumber}`.
   * To update the expected files directly append the option `--expected`. You then need to make sure before committing and pushing these changes that every change is actually expected.
-  * Or if you only want to update some files or if you don't use a visual tool for git then you can execute the command without the expected option in which case the system files are updated in the `processed` directory. For example `tests/PHPUnit/System/processed` and `plugins/Goals/tests/System/processed`. If you are using PHPStorm you can then select both the processed and expected directory and then `right click -> Compare Directories`. This allows you to review every change of added, changed and removed files and let's you update each expected file individually. 
+  * Or if you only want to update some files or if you don't use a visual tool for git then you can execute the command without the expected option in which case the system files are updated in the `processed` directory. For example `tests/PHPUnit/System/processed` and `plugins/Goals/tests/System/processed`. If you are using PHPStorm you can then select both the processed and expected directory and then `right click -> Compare Directories`. This allows you to review every change of added, changed and removed files and lets you update each expected file individually. 
 * Then `git add` and `git commit` and `git push` the changes to trigger another build run. 
 * If some tests are still failing you may need to repeat this process as sometimes you might forget to update some.
 

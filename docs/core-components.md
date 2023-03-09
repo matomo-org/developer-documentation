@@ -19,7 +19,7 @@ As part of Matomo we maintain a few components which we embed into core using co
 ### Step 1B: Special step only needed for doctrine cache fork matomo-org/cache
 
 * You need to increase the required version number in [component-cache/composer.json](https://github.com/matomo-org/component-cache/blob/2.0.3/composer.json#L26) see [example PR](https://github.com/matomo-org/component-cache/pull/32).
-* Basically you require the newly release version number and then run `composer update matomo/doctrine-cache-fork`.
+* Basically you require the newly released version number and then run `composer update matomo/doctrine-cache-fork`.
 * Push `composer.json` and `composer.lock`.
 * Create a PR and get it merged.
 * Release a new version for the component cache which is same as step 1.

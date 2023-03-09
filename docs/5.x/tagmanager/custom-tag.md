@@ -3,7 +3,7 @@ category: Develop
 ---
 # Tags
 
-A tag in the context of a tag manager is a snippet of code which can be executed on your site. Most of the times, a tag may be used to either send data to a third-party (for example tracking data) or to embed content from a third-party into your website (for example social widgets or surveys).
+A tag in the context of a tag manager is a snippet of code which can be executed on your site. Most of the time, a tag may be used to either send data to a third-party (for example tracking data) or to embed content from a third-party into your website (for example social widgets or surveys).
 
 Matomo lets you easily create a new tag. When you create a new tag, please consider contributing this new tag to the [official Tag Manager plugin](https://github.com/matomo-org/tag-manager) by creating a pull request.
 

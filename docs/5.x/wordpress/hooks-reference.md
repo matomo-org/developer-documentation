@@ -36,7 +36,7 @@ title: Hooks
 
 * `matomo_systemreport_tables ( $tables )`
 
-    Let's plugin enrich or filter the Matmo system report. Each table is an array containing keys like `title` and `rows`. Each row contains array keys like `name`, `value`, `comment`, `is_warning`, and `is_error`.
+    Lets plugin enrich or filter the Matomo system report. Each table is an array containing keys like `title` and `rows`. Each row contains array keys like `name`, `value`, `comment`, `is_warning`, and `is_error`.
 
 ## Actions
 
