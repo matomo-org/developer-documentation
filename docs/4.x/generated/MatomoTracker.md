@@ -52,6 +52,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Builds a MatomoTracker object, used to track visits, pages and Goal conversions for a specific website, by using the Matomo Tracking API.
+- [`setApiUrl()`](#setapiurl)
 - [`setPageCharset()`](#setpagecharset) &mdash; By default, Matomo expects utf-8 encoded values, for example for the page URL parameter values, Page Title, etc.
 - [`setUrl()`](#seturl) &mdash; Sets the current URL being tracked
 - [`setUrlReferrer()`](#seturlreferrer) &mdash; Sets the URL referrer used to track Referrers details for new visits.
@@ -144,6 +145,17 @@ for a specific website, by using the Matomo Tracking API.
        Id site to be tracked
     - `$apiUrl` (`string`) &mdash;
        "http://example.org/matomo/" or "http://matomo.example.org/" If set, will overwrite MatomoTracker::$URL
+
+<a name="setapiurl" id="setapiurl"></a>
+<a name="setApiUrl" id="setApiUrl"></a>
+### `setApiUrl()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$url` (`string`) &mdash;
+      
+- It does not return anything or a mixed result.
 
 <a name="setpagecharset" id="setpagecharset"></a>
 <a name="setPageCharset" id="setPageCharset"></a>
