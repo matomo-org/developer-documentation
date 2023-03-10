@@ -194,6 +194,7 @@ The class defines the following methods:
 - [`getMetrics()`](#getmetrics) &mdash; Returns an array of supported metrics and their corresponding translations.
 - [`getMetricsRequiredForReport()`](#getmetricsrequiredforreport) &mdash; Returns the list of metrics required at minimum for a report factoring in the columns requested by the report requester.
 - [`getProcessedMetrics()`](#getprocessedmetrics) &mdash; Returns an array of supported processed metrics and their corresponding translations.
+- [`getMetricSemanticTypes()`](#getmetricsemantictypes) &mdash; Returns the semantic types for metrics this report displays.
 - [`getAllMetrics()`](#getallmetrics) &mdash; Returns the array of all metrics displayed by this report.
 - [`getMetricNamesToProcessReportTotals()`](#getmetricnamestoprocessreporttotals) &mdash; Use this method to register metrics to process report totals.
 - [`getMetricsDocumentation()`](#getmetricsdocumentation) &mdash; Returns an array of metric documentations and their corresponding translations.
@@ -399,6 +400,24 @@ get all default translations and overwrite any custom metric translations.
 
 - *Returns:*  `array`|`mixed` &mdash;
     
+
+<a name="getmetricsemantictypes" id="getmetricsemantictypes"></a>
+<a name="getMetricSemanticTypes" id="getMetricSemanticTypes"></a>
+### `getMetricSemanticTypes()`
+
+Returns the semantic types for metrics this report displays.
+
+If the semantic type is not defined by the derived Report class, it defaults to
+the value returned by Metrics::getDefaultMetricSemanticTypes() or
+[Metric::getSemanticType()](/api-reference/Piwik/Plugin/Metric#getsemantictype). If the semantic type cannot be found this way,
+this method tries to deduce it from the metric name, though this process will
+not identify the semantic type for most metrics.
+
+#### Signature
+
+
+- *Returns:*  `array` &mdash;
+    maps metric name => semantic type
 
 <a name="getallmetrics" id="getallmetrics"></a>
 <a name="getAllMetrics" id="getAllMetrics"></a>
