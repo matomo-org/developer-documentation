@@ -30,8 +30,8 @@ _(We recommend that these parameters be used if the information is available and
 
 * `urlref` &mdash; The full HTTP Referrer URL. This value is used to determine how someone got to your website (ie, through a website, search engine or campaign).
 * `_cvar` &mdash; Visit scope [custom variables](https://matomo.org/docs/custom-variables/). This is a JSON encoded string of the custom variable array (see below for an example value).
-* `_rcn` &mdash; The Campaign name (see [Tracking Campaigns](https://matomo.org/docs/tracking-campaigns/)). Used to populate the _Referrers > Campaigns_ report. _Note: this parameter will only be used for the first pageview of a visit._
-* `_rck` &mdash; The Campaign Keyword (see [Tracking Campaigns](https://matomo.org/docs/tracking-campaigns/)). Used to populate the _Referrers > Campaigns_ report (clicking on a campaign loads all keywords for this campaign). _Note: this parameter will only be used for the first pageview of a visit._
+* `_rcn` &mdash; The Campaign name used to attribute conversions (For attributing visits see [Tracking Campaigns](https://matomo.org/docs/tracking-campaigns/)).
+* `_rck` &mdash; The Campaign keyword used to attribute conversions (For attributing visits see [Tracking Campaigns](https://matomo.org/docs/tracking-campaigns/)).
 * `res` &mdash; The resolution of the device the visitor is using, eg **1280x1024**.
 * `h` &mdash; The current hour (local time).
 * `m` &mdash; The current minute (local time).
