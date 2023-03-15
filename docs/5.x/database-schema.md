@@ -68,6 +68,7 @@ Each visit contains the following information:
   - **Common::REFERRER\_TYPE\_SEARCH\_ENGINE = 2**: If set to this value, `referer_url` is the url of the search engine and `referer_keyword` is the keyword used (if we can find it).
   - **Common::REFERRER\_TYPE\_WEBSITE = 3**: If set to this value, `referer_url` is the url of the website.
   - **Common::REFERRER\_TYPE\_CAMPAIGN = 6**: If set to this value, `referer_name` is the name of the campaign.
+  - **Common::REFERRER\_TYPE\_SOCIAL\_NETWORK = 7**: If set to this value, `referer_name` is the name of the social network.
 - `referer_name`: referrer name; its meaning depends on the specific referrer type
 - `referer_url`: the referrer URL; its meaning depends on the specific referrer type
 - `referer_keyword`: the keyword used if a search engine was the referrer
