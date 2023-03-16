@@ -25,6 +25,7 @@ The abstract class defines the following methods:
 - [`getTranslatedName()`](#gettranslatedname) &mdash; Returns the human readable translated name of this metric, eg, `"Visits"` or `"Avg.
 - [`getCategoryId()`](#getcategoryid) &mdash; Returns the category that this metric belongs to.
 - [`getDocumentation()`](#getdocumentation) &mdash; Returns a string describing what the metric represents.
+- [`getSemanticType()`](#getsemantictype) &mdash; Returns this metric's semantic type.
 - [`format()`](#format) &mdash; Returns a formatted metric value.
 - [`beforeFormat()`](#beforeformat) &mdash; Executed before formatting all metrics for a report.
 - [`getMetric()`](#getmetric) &mdash; Helper method that will access a metric in a [Row](/api-reference/Piwik/DataTable/Row) or array either by its name or by its special numerical index value.
@@ -77,6 +78,29 @@ Implementing this method is optional.
 #### Signature
 
 - It returns a `string` value.
+
+<a name="getsemantictype" id="getsemantictype"></a>
+<a name="getSemanticType" id="getSemanticType"></a>
+### `getSemanticType()`
+
+Returns this metric's semantic type. This can be used to provide the semantic
+type for processed metrics.
+
+A metric's semantic type is metadata used primarily in integrations with Matomo
+and third party services/applications. It provides information that can be used
+to determine how to display or use the information.
+
+It is recommended for your plugin to provide this information so users of third
+party services that connect with Matomo can make full use of the data your plugin
+tracks.
+
+See Metrics for the list of available semantic types.
+
+#### Signature
+
+
+- *Returns:*  `string`|`null` &mdash;
+    
 
 <a name="format" id="format"></a>
 <a name="format" id="format"></a>

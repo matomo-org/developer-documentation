@@ -44,6 +44,7 @@ The class defines the following methods:
 - [`getVisitsMetricNames()`](#getvisitsmetricnames)
 - [`getMappingFromNameToId()`](#getmappingfromnametoid)
 - [`getMappingFromNameToIdGoal()`](#getmappingfromnametoidgoal)
+- [`getDefaultMetricSemanticTypes()`](#getdefaultmetricsemantictypes)
 - [`getDefaultMetricTranslations()`](#getdefaultmetrictranslations)
 - [`getDefaultMetrics()`](#getdefaultmetrics)
 - [`getDefaultProcessedMetrics()`](#getdefaultprocessedmetrics)
@@ -83,6 +84,14 @@ The class defines the following methods:
 #### Signature
 
 - It does not return anything or a mixed result.
+
+<a name="getdefaultmetricsemantictypes" id="getdefaultmetricsemantictypes"></a>
+<a name="getDefaultMetricSemanticTypes" id="getDefaultMetricSemanticTypes"></a>
+### `getDefaultMetricSemanticTypes()`
+
+#### Signature
+
+- It returns a `array` value.
 
 <a name="getdefaultmetrictranslations" id="getdefaultmetrictranslations"></a>
 <a name="getDefaultMetricTranslations" id="getDefaultMetricTranslations"></a>
