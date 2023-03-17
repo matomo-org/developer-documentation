@@ -59,6 +59,7 @@ The class defines the following methods:
 - [`isCurrentApiRequestTheRootApiRequest()`](#iscurrentapirequesttherootapirequest) &mdash; Checks if the currently executing API request is the root API request or not.
 - [`isApiRequest()`](#isapirequest) &mdash; Detect if request is an API request.
 - [`getMethodIfApiRequest()`](#getmethodifapirequest) &mdash; Returns the current API method being executed, if the current request is an API request.
+- [`isTokenAuthPosted()`](#istokenauthposted) &mdash; Returns true if a token_auth parameter was supplied via a POST request and is not present as a URL parameter
 - [`processRequest()`](#processrequest) &mdash; Helper method that processes an API request in one line using the variables in `$_GET` and `$_POST`.
 - [`getRequestParametersGET()`](#getrequestparametersget) &mdash; Returns the original request parameters in the current query string as an array mapping query parameter names with values.
 - [`getBaseReportUrl()`](#getbasereporturl) &mdash; Returns the URL for the current requested report w/o any filter parameters.
@@ -206,6 +207,18 @@ Returns the current API method being executed, if the current request is an API 
     
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
+
+<a name="istokenauthposted" id="istokenauthposted"></a>
+<a name="isTokenAuthPosted" id="isTokenAuthPosted"></a>
+### `isTokenAuthPosted()`
+
+Returns true if a token_auth parameter was supplied via a POST request and is not present as a URL parameter
+
+#### Signature
+
+
+- *Returns:*  `bool` &mdash;
+    True if token supplied via POST request
 
 <a name="processrequest" id="processrequest"></a>
 <a name="processRequest" id="processRequest"></a>

@@ -809,6 +809,7 @@ Index
 - [`isRootRequestApiRequest()`](Piwik/API/Request.md#isrootrequestapirequest) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
 - [`isCurrentApiRequestTheRootApiRequest()`](Piwik/API/Request.md#iscurrentapirequesttherootapirequest) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
 - [`isApiRequest()`](Piwik/API/Request.md#isapirequest) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
+- [`isTokenAuthPosted()`](Piwik/API/Request.md#istokenauthposted) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
 - [`insertNumericRecords()`](Piwik/ArchiveProcessor.md#insertnumericrecords) &mdash; *Method in class* [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`insertNumericRecord()`](Piwik/ArchiveProcessor.md#insertnumericrecord) &mdash; *Method in class* [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
 - [`insertBlobRecord()`](Piwik/ArchiveProcessor.md#insertblobrecord) &mdash; *Method in class* [`ArchiveProcessor`](Piwik/ArchiveProcessor.md)
