@@ -35,6 +35,8 @@ Generates a segment filter based on the label column and the given segment names
        Either one segment or an array of segments. If more than one segment is given a delimter has to be defined.
     - `$delimiter` (`string`) &mdash;
        The delimiter by which the label should be splitted.
+    - `$allowEmptyValue` (`bool`) &mdash;
+       Forces adding a segment metadata for empty values
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
