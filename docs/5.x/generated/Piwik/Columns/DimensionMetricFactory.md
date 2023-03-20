@@ -42,6 +42,8 @@ Generates a new dimension metric factory.
       
     - `$documentation`
       
+    - `$semanticType` (`string`) &mdash;
+      
 - It returns a `Piwik\Plugin\ArchivedMetric` value.
 
 <a name="createcomputedmetric" id="createcomputedmetric"></a>
