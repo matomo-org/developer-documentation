@@ -92,7 +92,7 @@ It is recommended for your plugin to provide this information so users of third
 party services that connect with Matomo can make full use of the data your plugin
 tracks.
 
-See Metrics for the list of available semantic types.
+See [Dimension](/api-reference/Piwik/Columns/Dimension) for the list of available semantic types.
 
 #### Signature
 
