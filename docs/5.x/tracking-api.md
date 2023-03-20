@@ -29,9 +29,6 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
 _(We recommend that these parameters be used if the information is available and relevant to your use case.)_
 
 * `urlref` &mdash; The full HTTP Referrer URL. This value is used to determine how someone got to your website (ie, through a website, search engine or campaign).
-* `_cvar` &mdash; Visit scope [custom variables](https://matomo.org/docs/custom-variables/). This is a JSON encoded string of the custom variable array (see below for an example value).
-* `_rcn` &mdash; The Campaign name used to attribute conversions (For attributing visits see [Tracking Campaigns](https://matomo.org/docs/tracking-campaigns/)).
-* `_rck` &mdash; The Campaign keyword used to attribute conversions (For attributing visits see [Tracking Campaigns](https://matomo.org/docs/tracking-campaigns/)).
 * `res` &mdash; The resolution of the device the visitor is using, eg **1280x1024**.
 * `h` &mdash; The current hour (local time).
 * `m` &mdash; The current minute (local time).
@@ -46,7 +43,18 @@ _(We recommend that these parameters be used if the information is available and
 * `cid` &mdash; defines the visitor ID for this request. You must set this value to exactly a 16 character hexadecimal string (containing only characters 01234567890abcdefABCDEF). We recommended setting the User ID via `uid` rather than use this `cid`.
 * `new_visit` &mdash; If set to 1, will force a new visit to be created for this action. This feature is also [available in JavaScript](https://matomo.org/faq/how-to/#faq_187).
 * `dimension[0-999]` &mdash; A Custom Dimension value for a specific Custom Dimension ID (requires Piwik 2.15.1 + [Custom Dimensions plugin](https://plugins.matomo.org/CustomDimensions) see the [Custom Dimensions guide](https://matomo.org/docs/custom-dimensions/)). If Custom Dimension ID is `2` use `dimension2=dimensionValue` to send a value for this dimension. The configured Custom Dimension has to be in scope "Visit".
+* `_cvar` &mdash; Visit scope [custom variables](https://matomo.org/docs/custom-variables/). This is a JSON encoded string of the custom variable array (see below for an example value). (Note: it is recommended to use "Custom Dimensions" instead of "Custom Variables")
 
+### Optional [Acquisition Channel Attribution](https://matomo.org/guide/reports/acquisition-and-marketing-channels/)
+
+In Matomo, it is possible to measure the channel used by the visitor to find the website, and then to attribute conversions to specific campaigns or channels. This is useful to identify which marketing efforts are driving the most traffic and conversions.
+
+* To attribute a visit (and all the conversions triggered by this visit) to a channel, you can set the campaigns details in the Page URL and encode it before passing it to the Matomo Tracking API via the `url` parameter. You can [generate a Campaign Tracking URL using the URL Builder](https://matomo.org/faq/tracking-campaigns-url-builder/) to include Campaign name, medium, source, content, Campaign ID, placement, group in the URL. 
+
+You may also use the following Tracking API parameters to additionally ensure goal conversions will be recorded with the right Campaign name or Campaign keyword:
+* `_rcn` &mdash; The Campaign name used to attribute goal conversions. (Note: this will only be used to attribute goal conversions, not visits)
+* `_rck` &mdash; The Campaign keyword used to attribute goal conversions. (Note: this will only be used to attribute goal conversions, not visits)
+  
 ### Optional Action info (measure Page view, Outlink, Download, Site search)
 
 * `cvar` &mdash; Page scope [custom variables](https://matomo.org/docs/custom-variables/). This is a JSON encoded string of the custom variable array (see below for an example value).
