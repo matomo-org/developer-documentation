@@ -52,6 +52,7 @@ In Matomo, it is possible to measure the channel used by the visitor to find the
 * To attribute a visit (and all the conversions triggered by this visit) to a channel, you can set the campaigns details in the Page URL and encode it before passing it to the Matomo Tracking API via the `url` parameter. You can [generate a Campaign Tracking URL using the URL Builder](https://matomo.org/faq/tracking-campaigns-url-builder/) to include Campaign name, medium, source, content, Campaign ID, placement, group in the URL. 
 
 You may also use the following Tracking API parameters to additionally ensure goal conversions will be recorded with the right Campaign name or Campaign keyword:
+
 * `_rcn` &mdash; The Campaign name used to attribute goal conversions. (Note: this will only be used to attribute goal conversions, not visits)
 * `_rck` &mdash; The Campaign keyword used to attribute goal conversions. (Note: this will only be used to attribute goal conversions, not visits)
   
