@@ -18,6 +18,21 @@ $segment->setSqlSegment('log_visit.entry_keyword');
 $segment->setAcceptedValues('Any keywords people search for on your website such as "help" or "imprint"');
 ```
 
+Properties
+----------
+
+This class defines the following properties:
+
+- [`$dimension`](#$dimension)
+
+<a name="$dimension" id="$dimension"></a>
+<a name="dimension" id="dimension"></a>
+### `$dimension`
+
+#### Signature
+
+- It is a [`Dimension`](../../Piwik/Columns/Dimension.md) value.
+
 Methods
 -------
 
@@ -126,7 +141,7 @@ If the closure returns NULL, then Piwik assumes the segment sub-string will not 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$sqlFilter` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
+    - `$sqlFilter` (`callable`) &mdash;
       
 - It does not return anything or a mixed result.
 
