@@ -212,6 +212,7 @@
 ## Settings\Settings
 ## Singleton
 ## Site
+## SiteContentDetector
 ## Translation\Translator
 ## Updater
 ## Updater\Migration

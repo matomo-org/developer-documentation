@@ -216,6 +216,7 @@ This is a complete list of available classes:
 - [`Settings\Settings`](Piwik/Settings/Settings.md) &mdash; Base class of all settings providers.
 - [`Singleton`](Piwik/Singleton.md) &mdash; The singleton base class restricts the instantiation of derived classes to one object only.
 - [`Site`](Piwik/Site.md) &mdash; Provides access to individual [site entity](/guides/persistence-and-the-mysql-backend#websites-aka-sites) data (including name, URL, etc.).
+- [`SiteContentDetector`](Piwik/SiteContentDetector.md) &mdash; This class provides detection functions for specific content on a site.
 - [`Translation\Translator`](Piwik/Translation/Translator.md) &mdash; Translates messages.
 - [`Updater`](Piwik/Updater.md) &mdash; Load and execute all relevant, incremental update scripts for Piwik core and plugins, and bump the component version numbers for completed updates.
 - [`Updater\Migration`](Piwik/Updater/Migration.md) &mdash; Base class for migrations.
