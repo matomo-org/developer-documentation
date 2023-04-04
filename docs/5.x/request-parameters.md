@@ -4,7 +4,17 @@ title: Handling Request Parameters
 ---
 # Handling Request Parameters
 
-## Request object
+Matomo currently serves two ways of accessing request variables. While using a `Request` object is recommended, there is still a global method `Common::getRequestVar` that can be used to access request parameters.
+
+Both methods basically have one big difference. 
+
+The old way `Common::getRequestVar`, was designed in a way, that all values returned by that method are automatically sanitized for security reasons. Having that was kind of useful, as it automatically protected Matomo against certain security vulnerabilities like XSS.
+Having a requirement of unsaitizing values on purpose to work with it's original data prevented an acidental output of unsafe data.
+
+However, this automatic sanitization can sometimes cause issues, where unsanitizing a value doesn't fully bring back it's original value. To address this, we have introduced a new `Request` object in Matomo 5. It allows a direct access to request parameters without any sanitization (only null byte characters are removed). So when using values returned by this object, you need to handle them with care. Make sure to sanitize the values, e.g. with `Common::sanitizeInputValue()`, where ever they might be directly used in any output.
+In Templates and API responses this might already happen automatically, but we recommend to always double check this with potential XSS content.
+
+## Using a `Request` object (recommended)
 
 With Matomo 5 we introduced a new `Request` class that can be used to easily access any type of request parameters and then provides various methods to access request values type safe (if possible).
 
@@ -40,16 +50,16 @@ $request = \Piwik\Request::fromQueryString('param=value&arr[]=1');
 $request = new \Piwik\Request(['param1' => 'val1', 'param2' => 'val2']);
 ```
 
-## Accessing parameters
+### Accessing parameters
 
 To access the parameters in the `Request` object, there are various methods. 
 
-### Missing parameters & default values
+#### Handling of missing parameters & default values
 
 All methods provide the possibility to define a default value. 
 If no default value is provided and the parameter is missing in the request object an `InvalidArgumentException` will be thrown.
 
-### Accessing parameters with an expected type
+#### Accessing parameters with an expected type
 
 If you are expecting a certain type your request variable should contain, you should use one of the type safe methods. This methods will automatically check if the request parameter has a certain type (or can be lossless converted to it). If this is not the case, the default value will be used or an `InvalidArgumentException` will be thrown if non was provided.
 
@@ -88,7 +98,7 @@ If you are expecting a certain type your request variable should contain, you sh
   $request->getBoolParameter(string $name, bool $default = null): bool
   ```
 
-### Accessing parameters with special or unknown types
+#### Accessing parameters with special or unknown types
 
 If your parameters does not have a specific type you may use the following methods. But always keep in mind, that the returned values might of any type, so you need to use them with care to avoid type related problems.
 
@@ -116,7 +126,7 @@ If your parameters does not have a specific type you may use the following metho
   $request->getParameter(string $name, mixed $default = null): mixed
   ```
 
-## Using `Common::getRequestVar`  (deprecated)
+## Using `Common::getRequestVar` (deprecated)
 
 Before Matomo 5 we provided another possibility only, that is still available and can be used. We nevertheless recommend to use the Request class instead.
 
