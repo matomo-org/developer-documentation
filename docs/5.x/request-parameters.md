@@ -4,19 +4,19 @@ title: Handling Request Parameters
 ---
 # Handling Request Parameters
 
-Matomo currently serves two ways of accessing request variables. While using a `Request` object is recommended, there is still a global method `Common::getRequestVar` that can be used to access request parameters.
+Matomo currently serves two ways of accessing request variables. While using a [`Request`](/api-reference/Piwik/Request) object is recommended, there is still a global method [`Common::getRequestVar()`](/api-reference/Piwik/Common#getrequestvar) that can be used to access request parameters.
 
 Both methods basically have one big difference. 
 
-The old way `Common::getRequestVar`, was designed in a way, that all values returned by that method are automatically sanitized for security reasons. Having that was kind of useful, as it automatically protected Matomo against certain security vulnerabilities like XSS.
+The old way [`Common::getRequestVar()`](/api-reference/Piwik/Common#getrequestvar), was designed in a way, that all values returned by that method are automatically sanitized for security reasons. Having that was kind of useful, as it automatically protected Matomo against certain security vulnerabilities like XSS.
 Having a requirement of unsaitizing values on purpose to work with it's original data prevented an acidental output of unsafe data.
 
-However, this automatic sanitization can sometimes cause issues, where unsanitizing a value doesn't fully bring back it's original value. To address this, we have introduced a new `Request` object in Matomo 5. It allows a direct access to request parameters without any sanitization (only null byte characters are removed). So when using values returned by this object, you need to handle them with care. Make sure to sanitize the values, e.g. with `Common::sanitizeInputValue()`, where ever they might be directly used in any output.
+However, this automatic sanitization can sometimes cause issues, where unsanitizing a value doesn't fully bring back it's original value. To address this, we have introduced a new [`Request`](/api-reference/Piwik/Request) object in Matomo 5. It allows a direct access to request parameters without any sanitization (only null byte characters are removed). So when using values returned by this object, you need to handle them with care. Especially parameters received as string, array or json might contain malicious content. Make sure to sanitize the values, e.g. with [`Common::sanitizeInputValues()`](/api-reference/Piwik/Common#sanitizeinputvalues), where ever they might be directly used in any output.
 In Templates and API responses this might already happen automatically, but we recommend to always double check this with potential XSS content.
 
 ## Using a `Request` object (recommended)
 
-With Matomo 5 we introduced a new `Request` class that can be used to easily access any type of request parameters and then provides various methods to access request values type safe (if possible).
+With Matomo 5 we introduced a new [`Request`](/api-reference/Piwik/Request) class that can be used to easily access any type of request parameters and then provides various methods to access request values type safe (if possible).
 
 The class can be used for accessing different type of request parameters:
 
@@ -52,7 +52,7 @@ $request = new \Piwik\Request(['param1' => 'val1', 'param2' => 'val2']);
 
 ### Accessing parameters
 
-To access the parameters in the `Request` object, there are various methods. 
+To access the parameters in the [`Request`](/api-reference/Piwik/Request) object, there are various methods. 
 
 #### Handling of missing parameters & default values
 
