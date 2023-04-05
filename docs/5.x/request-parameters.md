@@ -8,10 +8,10 @@ Matomo currently serves two ways of accessing request variables. While using a [
 
 Both methods basically have one big difference. 
 
-The old way [`Common::getRequestVar()`](/api-reference/Piwik/Common#getrequestvar), was designed in a way, that all values returned by that method are automatically sanitized for security reasons. Having that was kind of useful, as it automatically protected Matomo against certain security vulnerabilities like XSS.
+The old [`Common::getRequestVar()`](/api-reference/Piwik/Common#getrequestvar), was designed in a way, that all values returned by that method are automatically sanitized for security reasons. Having that was kind of useful, as it automatically protected Matomo against certain security vulnerabilities like XSS.
 Having a requirement of unsaitizing values on purpose to work with it's original data prevented an acidental output of unsafe data.
 
-However, this automatic sanitization can sometimes cause issues, where unsanitizing a value doesn't fully bring back it's original value. To address this, we have introduced a new [`Request`](/api-reference/Piwik/Request) object in Matomo 5. It allows a direct access to request parameters without any sanitization (only null byte characters are removed). So when using values returned by this object, you need to handle them with care. Especially parameters received as string, array or json might contain malicious content. Make sure to sanitize the values, e.g. with [`Common::sanitizeInputValues()`](/api-reference/Piwik/Common#sanitizeinputvalues), where ever they might be directly used in any output.
+However, this automatic sanitization sometimes caused issues, where unsanitizing a value doesn't fully bring back it's original value. To address this, we have introduced a new [`Request`](/api-reference/Piwik/Request) object in Matomo 5. It allows a direct access to request parameters without any sanitization (only null byte characters are removed). So when using values returned by this object, you need to handle them with care. Especially parameters received as string, array or json might contain malicious content. Make sure to sanitize the values, e.g. with [`Common::sanitizeInputValues()`](/api-reference/Piwik/Common#sanitizeinputvalues), where ever they might be directly used in any output.
 In Templates and API responses this might already happen automatically, but we recommend to always double check this with potential XSS content.
 
 ## Using a `Request` object (recommended)
@@ -125,6 +125,11 @@ If your parameters does not have a specific type you may use the following metho
   ```php
   $request->getParameter(string $name, mixed $default = null): mixed
   ```
+
+### Sanitizing request parameters
+
+As mention in the introduction, values returned by a request object are not sanitized automatically. Only null byte sequences are removed for security reasons.
+When using parameters of type string, array, json or with unspecific type you need to ensure to sanitize/escape the content, where ever those values are used in output.
 
 ## Using `Common::getRequestVar` (deprecated)
 
