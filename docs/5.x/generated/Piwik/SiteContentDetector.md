@@ -29,6 +29,7 @@ This class defines the following properties:
 - [`$ga4`](#$ga4)
 - [`$gtm`](#$gtm)
 - [`$cms`](#$cms)
+- [`$cloudflare`](#$cloudflare)
 
 <a name="$consentmanagerid" id="$consentmanagerid"></a>
 <a name="consentManagerId" id="consentManagerId"></a>
@@ -96,6 +97,15 @@ This class defines the following properties:
 <a name="$cms" id="$cms"></a>
 <a name="cms" id="cms"></a>
 ### `$cms`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$cloudflare" id="$cloudflare"></a>
+<a name="cloudflare" id="cloudflare"></a>
+### `$cloudflare`
 
 #### Signature
 

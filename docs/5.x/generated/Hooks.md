@@ -1484,7 +1484,7 @@ Usages:
 
 ### Installation.defaultSettingsForm.init
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php) in line [464](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php#L464)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php) in line [466](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php#L466)*
 
 Triggered on initialization of the form to customize default Matomo settings (at the end of the installation process).
 
@@ -1500,7 +1500,7 @@ Usages:
 
 ### Installation.defaultSettingsForm.submit
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php) in line [475](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php#L475)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php) in line [477](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php#L477)*
 
 Triggered on submission of the form to customize default Matomo settings (at the end of the installation process).
 
