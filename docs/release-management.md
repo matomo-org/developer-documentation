@@ -139,7 +139,11 @@ Typically, at this stage the RC phase isn't far away and a first RC will follow 
 
 We can release an RC as soon as we have implemented all features (and all breaking changes were already completed before the first beta).
 
+#### Wait 4 weeks during RC cycle
+
 The RC phase will be at least 4 weeks, so plugin developers have some time to make the plugins compatible. This way the RC will be also tested for longer.
+
+#### The core team can then focus on the next minor release X.1.0
 
 Now the teams can already start working on the next minor release because we would only fix regressions and security issues etc in the `5.0` release. This means the team would then start working on the 5.1 release. Typically, this minor release will be  released shortly after the 5.0 release as the team would have had a month to work on this release while the RC is out.
 
@@ -162,7 +166,8 @@ Thank you for contributing to Matomo by creating this plugin.
 
 We wanted to let you know that we will release Matomo 5 in about one month.
 
-For making it easy for Matomo users to be able to upgrade to this new Matomo version, it would be great if you could make this plugin compatible with Matomo 5. If your plugin is not compatible with Matomo 5, your plugin will be automatically deactivated when someone upgrades to this new Matomo version. 
+For making it easy for Matomo users to be able to upgrade to this new Matomo version, it would be great if you could make this plugin compatible with Matomo 5 within the next 4 weeks. If your plugin is not compatible with Matomo 5, your plugin will be automatically deactivated when someone upgrades to this new Matomo version. 
+We really appreciate your contribution and we can help you release an update of your plugin for Matomo. 
 
 Learn more about how to get your plugin ready: $linkToOurBlog
 
@@ -177,10 +182,14 @@ Please let us know if you have any question or if we can help in any way. We're 
 
 * If there are any unexpected breaking changes that could cause many people problems, then we consider creating dedicated blog posts for these to inform people upfront. These could be short posts.
 
-### 1.5 weeks before the release
+### 2 weeks before the release
 
 * Send an email to all plugin developers again as a reminder (see internal process `How to notify plugin developers about an upcoming new Matomo major release`)
-* Look out for popular plugins on our Marketplace that aren't compatible yet and consider creating pull requests for these so the developer can merge and release it causing people less upgrade pain and causing users to lose less features and a better experience.
+* Look out for popular plugins on our Marketplace that aren't compatible yet 
+
+#### Consider creating Pull Request to help plugin developers maintain their plugins
+
+* Look out for popular plugins on our Marketplace that aren't compatible yet and consider creating pull requests for these so the developer can merge and release it causing people less upgrade pain and causing users to lose less features and a better experience. (In the future, we could consider using AI to help Matomo plugin developers maintain their plugins with the latest version of Matomo in a lot less time!)
 
 ### When releasing
 
