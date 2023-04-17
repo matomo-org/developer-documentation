@@ -164,7 +164,7 @@ Piwik uses first party cookies to keep track of some user information over time.
 
 ## Using Matomo Tag Manager?
 
-If you use [Matomo Tag Manager](https://matomo.org/guide/tag-manager/) and you are trying to use one of these JavaScript functions above, you may find that they are not yet available in the Matomo Configuration Variables. When that happens, please [open an issue here](https://github.com/matomo-org/tag-manager/issues/new) (or open a Pull Request to implement the new feature [here](https://github.com/matomo-org/tag-manager/blob/5.x-dev/Template/Tag/MatomoTag.web.js))
+If you use [Matomo Tag Manager](https://matomo.org/guide/tag-manager/) and you are trying to use one of these JavaScript functions above, you may find that they are not yet available in the Matomo Configuration Variables. When that happens, please [open an issue here](https://github.com/matomo-org/tag-manager/issues/new) (or open a Pull Request to implement the new feature [here](https://github.com/matomo-org/tag-manager/blob/4.x-dev/Template/Tag/MatomoTag.web.js))
 
 
 ## Unit Tests Covering matomo.js
