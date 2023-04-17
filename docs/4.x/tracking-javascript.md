@@ -39,7 +39,6 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
  * `enableBrowserFeatureDetection()` - Enable the browser feature detection if you previously disabled it. 
 
 ### Configuration of the Tracker Object
-__NOTE: After Matomo 4.14.3, if you add a new configuration or find one that doesn't work while using Matomo Tag Manager, please update `plugins/TagManager/Template/Tag/MatomoTag.web.js` so that it sets the config on each tracker correctly.  See the [Tag Manager FAQ](/guides/tagmanager/faq#why-do-i-need-to-update-the-tag-manager-javascript-when-adding-a-new-tracker-configuration) for more information.__
 
 *   `setDocumentTitle( string )` - Override document.title
 *   `setDomains( array )` - Set array of hostnames or domains to be treated as local. For wildcard subdomains, you can use: `setDomains('.example.com');` or `setDomains('*.example.com');`. You can also specify a path along a domain: `setDomains('*.example.com/subsite1');`
@@ -162,6 +161,11 @@ Piwik uses first party cookies to keep track of some user information over time.
 *   `disableQueueRequest()` - Disable the feature which groups together multiple tracking requests and send them as a bulk POST request. Disabling this feature is useful when you want to be able to [replay all logs](https://matomo.org/faq/log-analytics-tool/faq_19221/): one must use `disableQueueRequest` to disable this behaviour to later be able to replay logged Matomo logs (otherwise a subset of the requests wouldn't be able to be replayed).
 *   `setRequestQueueInterval( interval )` -  Defines after how many ms a queued requests will be executed after the request was queued initially. The higher the value the more tracking requests can be send together at once. `interval` has to be at least `1000` (1000ms = 1s) and defaults to 2.5 seconds.
 * `setPagePerformanceTiming([networkTimeInMs], [serverTimeInMs], [transferTimeInMs], [domProcessingTimeInMs], [domCompletionTimeInMs], [onloadTimeInMs])` - Manually set performance metrics in milliseconds in a Single Page App or when Matomo cannot detect some metrics. You can set parameters to `undefined` if you do not want to track this metric. At least one parameter needs to be set. The set performance timings will be tracked only on the next page view. If you track another page view then you will need to set the performance timings again. Requires Matomo 4.5 or newer.
+
+## Using Matomo Tag Manager?
+
+If you use [Matomo Tag Manager](https://matomo.org/guide/tag-manager/) and you are trying to use one of these JavaScript functions above, you may find that they are not yet available in the Matomo Configuration Variables. When that happens, please [open an issue here](https://github.com/matomo-org/tag-manager/issues/new) (or open a Pull Request to implement the new feature [here](https://github.com/matomo-org/tag-manager/blob/4.x-dev/Template/Tag/MatomoTag.web.js))
+
 
 ## Unit Tests Covering matomo.js
 
