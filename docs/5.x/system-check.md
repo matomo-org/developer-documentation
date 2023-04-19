@@ -44,17 +44,17 @@ First you need to decide if your system check is of type required, optional or i
 
 ```php
 return [
-    'diagnostics.required' => DI\add(array(
+    'diagnostics.required' => Piwik\DI::add(array(
         // adds a required system check
-        DI\get('Piwik\Plugins\MyPluginName\Diagnostic\JsDirectoryWritePermissionCheck'),
+        Piwik\DI::get('Piwik\Plugins\MyPluginName\Diagnostic\JsDirectoryWritePermissionCheck'),
     )),
-    'diagnostics.optional' => DI\add(array(
+    'diagnostics.optional' => Piwik\DI::add(array(
         // adds an optional system check
-        DI\get('Piwik\Plugins\MyPluginName\Diagnostic\JsDirectoryWritePermissionCheck'),
+        Piwik\DI::get('Piwik\Plugins\MyPluginName\Diagnostic\JsDirectoryWritePermissionCheck'),
     )),
-    'diagnostics.informational' => DI\add(array(
+    'diagnostics.informational' => Piwik\DI::add(array(
         // adds an informational system check
-        DI\get('Piwik\Plugins\MyPluginName\Diagnostic\JsDirectoryWritePermissionCheck'),
+        Piwik\DI::get('Piwik\Plugins\MyPluginName\Diagnostic\JsDirectoryWritePermissionCheck'),
     ))
 ];
 ```
@@ -128,8 +128,8 @@ You can remove existing system checks from other plugins using the `config/confi
 
 ```php
 return [
-    'diagnostics.disabled' => DI\add(array(
-        DI\get('Piwik\Plugins\Diagnostics\Diagnostic\PhpVersionCheck'),
+    'diagnostics.disabled' => Piwik\DI::add(array(
+        Piwik\DI::get('Piwik\Plugins\Diagnostics\Diagnostic\PhpVersionCheck'),
     )),
 ];
 ```

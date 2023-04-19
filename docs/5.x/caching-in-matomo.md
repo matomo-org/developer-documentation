@@ -131,7 +131,7 @@ only invalidated after an update otherwise. Basically when development mode is o
 
 ```php
 // config/environment/dev.php
-'Matomo\Cache\Backend' => DI\autowire('Matomo\Cache\Backend\ArrayCache'),
+'Matomo\Cache\Backend' => Piwik\DI::autowire('Matomo\Cache\Backend\ArrayCache'),
 ```
 
 If we turn off development mode and setup filesystem cache in our local environment, we can see the cache files in the `tmp/cache` folder by default.

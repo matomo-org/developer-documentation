@@ -74,7 +74,7 @@ Logs a message using the ERROR log level.
 
 #### See Also
 
-- `\Psr\Log\LoggerInterface::error()`
+- `\Piwik\Log\LoggerInterface::error()`
 
 #### Signature
 
@@ -91,7 +91,7 @@ Logs a message using the WARNING log level.
 
 #### See Also
 
-- `\Psr\Log\LoggerInterface::warning()`
+- `\Piwik\Log\LoggerInterface::warning()`
 
 #### Signature
 
@@ -108,7 +108,7 @@ Logs a message using the INFO log level.
 
 #### See Also
 
-- `\Psr\Log\LoggerInterface::info()`
+- `\Piwik\Log\LoggerInterface::info()`
 
 #### Signature
 
@@ -125,7 +125,7 @@ Logs a message using the DEBUG log level.
 
 #### See Also
 
-- `\Psr\Log\LoggerInterface::debug()`
+- `\Piwik\Log\LoggerInterface::debug()`
 
 #### Signature
 
@@ -142,7 +142,7 @@ Logs a message using the VERBOSE log level.
 
 #### See Also
 
-- `\Psr\Log\LoggerInterface::debug()`
+- `\Piwik\Log\LoggerInterface::debug()`
 
 #### Signature
 
