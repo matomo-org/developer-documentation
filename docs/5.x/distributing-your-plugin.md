@@ -141,7 +141,7 @@ The following fields are not required for publishing a plugin, but you may want 
 
 
 - `archive` - Lets you define some options for creating Piwik Plugin archives.
-    - `exclude` - Allows you to configure which files or directories should be removed from the ZIP file when a user downloads or installs a plugin. It is not possible to use any wildcards and the path must start with a leading slash `/`. By default, a few directories and files are always removed from the ZIP archive: the directories `tests`, `Test` and `screenshots` as well as the files `.travis.yml` and `.gitignore` found in your plugin's root directory.
+    - `exclude` - Allows you to configure which files or directories should be removed from the ZIP file when a user downloads or installs a plugin. It is not possible to use any wildcards and the path must start with a leading slash `/`. By default, a few directories and files are always removed from the ZIP archive: the directories `.github`, `tests`, `Test` and `screenshots` as well as the files `.gitattributes` and `.gitignore` found in your plugin's root directory.
 
     ```json
     "archive": {

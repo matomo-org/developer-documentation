@@ -45,21 +45,3 @@ Go to [Matomo-org secrets](https://github.com/organizations/matomo-org/settings/
 * Activate the plugin on the Administration dashboard, _System > Plugins_ page
 * You can create branches, PRs inside this plugin folder
 * To configure the plugin for GitHub action tests and more please see the steps described in the internal doc `Build and launch a new Premium Plugin`.
-
-## Maintaining plugin FAQs
-
-### How do I Get travis to use LFS?
-
-To get travis to checkout the screenshots correctly and use LFS you will need to add/change the `.travis.yml` within your plugin like this (eg [see this file](https://github.com/matomo-org/tag-manager/blob/5.x-dev/.travis.yml#L65-L68)):
-
-```
-before_install:
-
-  - if [[ "${TEST_SUITE}" == "UITests" ]]; then git lfs fetch; git lfs checkout; fi
-```
-
-And you need to create a file `tests/travis/before_install.after.yml` in your plugin with the following content (eg [see this file](https://github.com/matomo-org/tag-manager/blob/5.x-dev/tests/travis/before_install.after.yml)):
-
-```
-- if [[ "${TEST_SUITE}" == "UITests" ]]; then git lfs fetch; git lfs checkout; fi
-```

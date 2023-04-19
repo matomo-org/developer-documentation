@@ -9,7 +9,7 @@ Some might know a UI test under the term 'CSS test' or 'screenshot test'. When w
 
 **What is a UI test good for?**
 
-We use them to test our PHP Controllers, Twig templates, CSS, and indirectly test our JavaScript. We usually don't write Unit or Integration tests for our controllers. For example, we use UI tests to ensure that the installation, the login and the update process works as expected. We also have tests for most pages, reports, settings, etc. This increases the quality of our product and saves us a lot of time as it is easy to write and maintain such tests. All UI tests are executed on [Travis](https://travis-ci.org/matomo-org/matomo) after each commit and compared with [our expected screenshots](https://github.com/matomo-org/matomo-ui-tests).
+We use them to test our PHP Controllers, Twig templates, CSS, and indirectly test our JavaScript. We usually don't write Unit or Integration tests for our controllers. For example, we use UI tests to ensure that the installation, the login and the update process works as expected. We also have tests for most pages, reports, settings, etc. This increases the quality of our product and saves us a lot of time as it is easy to write and maintain such tests. All UI tests are executed as [GitHub Action](https://github.com/matomo-org/matomo/actions/workflows/matomo-tests.yml) after each commit in a pull request or on a development branch. They are then compared with [our expected screenshots](https://github.com/matomo-org/matomo-ui-tests).
 
 **When is it better to create a php tests?** 
 
@@ -277,7 +277,7 @@ describe("PiwikUpdater", function () {
 
 ## Troubleshooting UI tests
 
-If a UI test fails and it's not clear why, then open all the Travis UI jobs in your browser and check if there was any warning or error logged for a particular UI test. Please note that at the time of writing there are 3 jobs in each travis build dedicated to UI tests (so they complete faster than one long running job) and you need to click into each job to find the output for a specific UI test. You can identify that a travis job was running a UI test by looking in the environment variables for the jobs that have `TEST_SUITE=UITests`. Within the output of a specific job, you can find the UI test by searching for the name of the UI test, for example `"should show percent metrics like bounce rate correctly`". Simply search each of the UI jobs for the name of the test that is failing and see if there's any additional information printed.
+If a UI test fails and it's not clear why, then open all the GitHub action UI jobs in your browser and check if there was any warning or error logged for a particular UI test. Please note that at the time of writing there are 3 jobs in each GitHub actions dedicated to UI tests (so they complete faster than one long running job) and you need to click into each job to find the output for a specific UI test. Within the output of a specific job, you can find the UI test by searching for the name of the UI test, for example `"should show percent metrics like bounce rate correctly`". Simply search each of the UI jobs for the name of the test that is failing and see if there's any additional information printed.
 
 ### Checklist for common problems
 
@@ -296,7 +296,7 @@ then you should update the expected screenshots accordingly.
 
 See also below the steps for how to sync the files automatically.
 
-* Go to the Tests travis build: [https://travis-ci.org/matomo-org/matomo](https://travis-ci.org/matomo-org/matomo) and select the build containing `TEST_SUITE=UITests`
+* Go to the GitHub action run: [https://github.com/matomo-org/matomo/actions/workflows/matomo-tests.yml](https://github.com/matomo-org/matomo/actions/workflows/matomo-tests.yml) and select the jobs called `UI`
 * Find the build you are interested in. The UI tests build will be run for each commit in each branch, so if you're
   looking to resolve a specific failure, you'll have to find the build for the commit you've made.
 * In the build output, at the beginning of the test output, there will be a link to an image diff viewer. It will look something
@@ -316,13 +316,13 @@ See also below the steps for how to sync the files automatically.
 
   _Note: When determining whether a screenshot is correct, the data displayed is not important. Report data correctness is verified through System and other PHP tests. The UI tests should only test UI behavior._
 * Push the changes (to your code and/or to the expected-screenshots directory).
-* Wait for next Test build [on travis](https://travis-ci.org/matomo-org/matomo). Hopefully, the build should be green!
+* Wait for next GitHub action run. Hopefully, the build should be green!
 
 #### Sync command 
 
 The `tests:sync-ui-screenshots` console command can be used to speed up the process. Run `./console tests:sync-ui-screenshots -h` to learn more._
 
-For example executing `./console tests:sync-ui-screenshots {buildnumber}`, the script will automatically download all screenshots of tests that failed on Travis (meaning there was a change in the expected screenshot compared to the processed screenshot).
+For example executing `./console tests:sync-ui-screenshots {buildnumber}`, the script will automatically download all screenshots of tests that failed in a GitHub action (meaning there was a change in the expected screenshot compared to the processed screenshot).
 
 For private repositories you need to also set the options `--http-user=$artifactsusername$ --http-password=$artifactspassword$` and set the correct artifacts username and password values.
 

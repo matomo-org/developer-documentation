@@ -76,8 +76,7 @@ Also, as soon as we start working on the next major version, we need to require 
   * Increase the required Matomo version to eg `"matomo": ">=5.0.0-b1,<6.0.0-b1"`
   * Set the version number to `5.0.0`
 * Adjust the min required PHP version in tests yml, so we no longer execute the tests on the previously required min PHP version.
-* Travis CI, see what we did for Matomo 3 in https://github.com/matomo-org/matomo/pull/8452#discussion-diff-35731015L93 and https://github.com/matomo-org/travis-scripts/pull/53 
-  * Other changes may be needed for GitHub tests
+* GitHub test action: Update the scripts in the action, so the default branches to test against match the new one. e.g. in this file https://github.com/matomo-org/github-action-tests/blob/main/scripts/bash/checkout_test_against_branch.sh
 * Once the builds for `5.x-dev` branch succeeds, make it the default branch for Matomo core and all plugins
 * Update the [submodule GitHub action](https://github.com/matomo-org/matomo/blob/5.x-dev/.github/workflows/submodules.yml), [composer update action](https://github.com/matomo-org/matomo/blob/5.x-dev/.github/workflows/composer-update.yml), and the [CLDR action](https://github.com/matomo-org/matomo/blob/5.x-dev/.github/workflows/update-intl.yml) to use the new main branch.
 * We can now start working and merging PRs for the next major release
