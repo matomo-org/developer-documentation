@@ -142,7 +142,7 @@ Piwik Core defines many classes that should be reused by new plugins and contrib
 
 _This class is considered deprecated and only exists for historical reasons as some components are still using it. [Please use the `MatomoUrl` class instead.](/guides/vue-getting-started#accessing-and-changing-the-url)._
 
-The `broadcast` object is stored directly in the `window` object and has methods parse the current URL.
+The `broadcast` object is stored directly in the `window` object and has methods to parse the current URL.
 
 #### Parsing the URL
 
