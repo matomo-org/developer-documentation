@@ -140,11 +140,9 @@ Piwik Core defines many classes that should be reused by new plugins and contrib
 
 ### Broadcast
 
-This class is considered deprecated and only exists for historical reasons as some components are still using it. Whenever possible you should instead use angularjs components like [$location](https://docs.angularjs.org/api/ng/service/$location). In cases where this is not possible, `broadcast` can be used. 
+_This class is considered deprecated and only exists for historical reasons as some components are still using it. [Please use the `MatomoUrl` class instead.](/guides/vue-getting-started#accessing-and-changing-the-url)._
 
-The `broadcast` object is stored directly in the `window` object and should be used to parse the current URL, load a page in the area below the menu and load persistent popovers.
-
-_Note: Though the object is stored in `window` and not a JS namespace, it can still be accessed using `require` by calling `require('broadcast')`._
+The `broadcast` object is stored directly in the `window` object and has methods to parse the current URL.
 
 #### Parsing the URL
 
@@ -163,19 +161,6 @@ _Note: Though the object is stored in `window` and not a JS namespace, it can st
 
 To learn more about an individual function, see the method documentation in the `plugins/CoreHome/javascripts/broadcast.js` file.
 
-#### Loading new Matomo pages (vanilla JavaScript)
-
-To load a new page below the main Piwik menu, use the `propagateNewPage()` function with a URL to the controller method whose output should be displayed:
-
-```javascript
-(function (require) {
-
-    var broadcast = require('broadcast');
-    broadcast.propagateNewPage('index.php?module=MyPlugin&action=mySpecialPage', true);
-
-})(require);
-```
-
 ### ajaxHelper (vanilla JavaScript)
 
 AJAX requests in non-Vue, Vanilla JavaScript should use the `ajaxHelper` global.
@@ -187,9 +172,9 @@ To use the `ajaxHelper`, create an instance, configure it, and then call the `se
 For example:
 
 ```javascript
-(function (require, $) {
+(function ($) {
 
-    var ajaxHelper = require('ajaxHelper');
+    var ajaxHelper = window.ajaxHelper;
 
     var ajax = new ajaxHelper();
     ajax.setUrl('index.php?module=Actions&action=getPageUrls&idSite=1&date=today&period=day');
@@ -200,7 +185,7 @@ For example:
     ajax.setLoadingElement('#myReportContainerLoading');
     ajax.send();
 
-})(require, jQuery);
+})(jQuery);
 ```
 
 ## Troubleshooting
