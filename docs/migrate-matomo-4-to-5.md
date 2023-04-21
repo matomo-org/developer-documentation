@@ -14,8 +14,8 @@ We recommend creating a new branch for your plugin that supports Matomo 5. For e
 
 For your plugin to be executed in Matomo 5 you first need to show it is compatible with Matomo 5 in your `plugin.json` file:
 
-* specify that your plugin requires Matomo 5 (the require for Matomo 4 used to be eg `"matomo": ">=4.0.0-b1,<5.0.0-b1"`). 
-* we also recommend increasing your plugin's major version number eg from `4.1.9` to `5.0.0`.
+* specify that your plugin requires Matomo 5 (the require for Matomo 4 used to be e.g. `"matomo": ">=4.0.0-b1,<5.0.0-b1"`). 
+* we also recommend increasing your plugin's major version number e.g. from `4.1.9` to `5.0.0`.
 
 The `plugin.json` would look like this:
 
@@ -98,6 +98,6 @@ You can find more details on how to set up your own GitHub test action in [this 
 ## Summary
 
 In this guide we have seen which steps to take to migrate your Matomo plugin to be compatible with our latest Matomo 5.
-If you need further help for converting your plugin to Matomo 3, head over to the [Matomo developers community forums](https://forum.matomo.org/c/plugins-platform).
+If you need further help with converting your plugin to Matomo 5, head over to the [Matomo developers community forums](https://forum.matomo.org/c/plugins-platform).
 
 Once you've adjusted your plugin, don't forget to release a new version.
