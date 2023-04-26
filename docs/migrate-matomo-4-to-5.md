@@ -14,7 +14,7 @@ We recommend creating a new branch for your plugin that supports Matomo 5. For e
 
 For your plugin to be executed in Matomo 5 you first need to show it is compatible with Matomo 5 in your `plugin.json` file:
 
-* specify that your plugin requires Matomo 5 (the require for Matomo 4 used to be e.g. `"matomo": ">=4.0.0-b1,<5.0.0-b1"`). 
+* specify that your plugin requires Matomo 5 (the requirement for Matomo 4 used to be e.g. `"matomo": ">=4.0.0-b1,<5.0.0-b1"`). 
 * we also recommend increasing your plugin's major version number e.g. from `4.1.9` to `5.0.0`.
 
 The `plugin.json` would look like this:
@@ -35,7 +35,22 @@ Matomo still requires PHP 7.2.5. So there won't be any changes needed in terms o
 
 ## AngularJS replaced with VueJS
 
-tbc.
+Matomo 5 completes the migration from AngularJS to the [VueJS 3 framework](https://vuejs.org/guide/introduction.html). If your plugin contains templates which make use of AngularJS components or directives then these will need to be recreated in VueJS and the templates adjusted. 
+
+A new VueJS component can be created for your plugin using the console command:
+
+```
+./console generate:vue-component --pluginname=MYPLUGIN --component=NEWCOMPONENT
+``` 
+
+This will create an example component in `plugins/MYPLUGIN/vue/src/NEWCOMPONENT.vue` which shows the basic component structure and can be used a starting point to build a new component.
+
+Because VueJS uses [TypeScript](https://www.typescriptlang.org/) the `*.vue` files must be compiled into `*.ts` TypeScript files and stored in `/plugins/MYPLUGIN/vue/dist` before they can be used. This can be achieved using the following console command:
+
+```
+./console vue:build MYPLUGIN
+```
+This will build all vue components for your plugin and must be run before testing any VueJS change. The `--watch` option for this command can be used to constantly monitor any VueJS changes for your plugin and automatically compile them.
 
 ## Vendor proxies
 
@@ -43,7 +58,7 @@ With Matomo 5 we have introduced vendor proxy patterns. Plugin should no longer 
 
 The following part will explain how to replace the usage of certain vendor libraries with our proxies:
 
-### Confgiuration and Dependency Injection
+### Configuration and Dependency Injection
 
 In `config.php` files and in methods like `provideContainerConfig` in tests it is possible to define dependency configurations. Those configurations were previously done by directly using functions of the PHPDI library. We have introduced our own class providing static methods with the same functionallity that need to be used instead. In addition you can no longer use `\Psr\Container\ContainerInterface` or `\DI\Container` as type hints as we are now using or own container class `\Piwik\Container\Container`.
 
@@ -91,7 +106,7 @@ Our console commands were using parts of the symfony console directly. Command c
 
 ## Tests on CI
 
-We used to use Travis CI for testing. With Matomo 5 we dicontinued support for running tests on Travis CI. Instead it is possible to use a GitHub action for this.
+We used to use Travis CI for testing. With Matomo 5 we dicontinued support for running tests on Travis CI, instead it is possible to use a GitHub action for this.
 You can find more details on how to set up your own GitHub test action in [this guide](/guides/tests-github).
 
 
