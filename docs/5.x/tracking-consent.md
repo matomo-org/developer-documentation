@@ -12,12 +12,13 @@ Matomo differentiates between tracking and cookie consent:
 * **Cookie consent:** tracking requests will be always sent. However, cookies will be only used if consent for storing and using cookies was given by the user. [Learn how cookies impact reports accuracy](https://matomo.org/faq/general/faq_156/).
            
 Matomo has guides available for setting up consent tracking with the following popular consent managers:
-- [Osano Consent Manager](https://matomo.org/faq/how-to/using-osano-consent-manager-with-matomo/)
-- [Cookiebot Consent Manager](https://matomo.org/faq/how-to/using-cookiebot-consent-manager-with-matomo/)
-- [CookieYes Consent Manager](https://matomo.org/faq/how-to/using-cookieyes-consent-manager-with-matomo/)
-- [Tarte au Citron Consent Manager](https://matomo.org/faq/how-to/using-tarte-au-citron-consent-manager-with-matomo/)
-- [Klaro Consent Manager](https://matomo.org/faq/how-to/using-klaro-consent-manager-with-matomo/)
-- [Complianz for WordPress Consent Manager](https://matomo.org/faq/how-to/using-complianz-for-wordpress-consent-manager-with-matomo/)
+
+* [Osano Consent Manager](https://matomo.org/faq/how-to/using-osano-consent-manager-with-matomo/)
+* [Cookiebot Consent Manager](https://matomo.org/faq/how-to/using-cookiebot-consent-manager-with-matomo/)
+* [CookieYes Consent Manager](https://matomo.org/faq/how-to/using-cookieyes-consent-manager-with-matomo/)
+* [Tarte au Citron Consent Manager](https://matomo.org/faq/how-to/using-tarte-au-citron-consent-manager-with-matomo/)
+* [Klaro Consent Manager](https://matomo.org/faq/how-to/using-klaro-consent-manager-with-matomo/)
+* [Complianz for WordPress Consent Manager](https://matomo.org/faq/how-to/using-complianz-for-wordpress-consent-manager-with-matomo/)
 
 If you're not using one of these consent managers, you can follow the steps below to ask your users for tracking and cookie consent before their data is processed within Matomo.
 
