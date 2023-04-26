@@ -4,14 +4,22 @@ title: Tracking & Cookie Consent
 --- 
 # Implementing tracking or cookie consent with the Matomo JavaScript Tracking Client
 
-In the context of the [GDPR privacy regulations](https://matomo.org/docs/gdpr/), when you are processing personal data, in some cases you will need to ask for your users' consent. To identify whether you need to ask for any consent, you need to determine whether your lawful basis for processing personal data is "Consent" or "Legitimate interest", or whether you can avoid collecting personal data altogether. We recommend learning more about the [lawful basis under the GDPR for Matomo](https://matomo.org/blog/2018/04/lawful-basis-for-processing-personal-data-under-gdpr-with-matomo/). 
+In the context of the [GDPR privacy regulations](https://matomo.org/faq/new-to-piwik/what-is-gdpr/), when you are processing personal data, in some cases you will need to ask for your users' consent. To identify whether you need to ask for any consent, you need to determine whether your lawful basis for processing personal data is "Consent" or "Legitimate interest", or whether you can avoid collecting personal data altogether. We recommend learning more about the [lawful basis under the GDPR for Matomo](https://matomo.org/blog/2018/04/lawful-basis-for-processing-personal-data-under-gdpr-with-matomo/). 
 
-Matomo differentiates between cookie and tracking consent:
+Matomo differentiates between tracking and cookie consent:
 
-* In the context of **tracking consent** no cookies will be used and no tracking request will be sent unless consent was given. As soon as consent was given, tracking requests will be sent and cookies will be used. 
-* In the context of **cookie consent** tracking requests will be always sent. However, cookies will be only used if consent for storing and using cookies was given by the user. [Learn how cookies impact reports accuracy](https://matomo.org/faq/general/faq_156/).
+* **Tracking consent:** no cookies will be used and no tracking request will be sent unless consent was given. As soon as consent was given, tracking requests will be sent and cookies will be used. 
+* **Cookie consent:** tracking requests will be always sent. However, cookies will be only used if consent for storing and using cookies was given by the user. [Learn how cookies impact reports accuracy](https://matomo.org/faq/general/faq_156/).
            
-Follow the steps below to ask your user for either tracking or cookie consent before their data is processed within Matomo.
+Matomo has guides available for setting up consent tracking with the following popular consent managers:
+- [Osano Consent Manager](https://matomo.org/faq/how-to/using-osano-consent-manager-with-matomo/)
+- [Cookiebot Consent Manager](https://matomo.org/faq/how-to/using-cookiebot-consent-manager-with-matomo/)
+- [CookieYes Consent Manager](https://matomo.org/faq/how-to/using-cookieyes-consent-manager-with-matomo/)
+- [Tarte au Citron Consent Manager](https://matomo.org/faq/how-to/using-tarte-au-citron-consent-manager-with-matomo/)
+- [Klaro Consent Manager](https://matomo.org/faq/how-to/using-klaro-consent-manager-with-matomo/)
+- [Complianz for WordPress Consent Manager](https://matomo.org/faq/how-to/using-complianz-for-wordpress-consent-manager-with-matomo/)
+
+If you're not using one of these consent managers, you can follow the steps below to ask your users for tracking and cookie consent before their data is processed within Matomo.
 
 ## Step 1: require consent
 
