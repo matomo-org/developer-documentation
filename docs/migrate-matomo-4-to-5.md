@@ -32,7 +32,6 @@ It's not allowed to support multiple major Matomo versions such as Matomo 4 and 
 
 Matomo still requires PHP 7.2.5. So there won't be any changes needed in terms of e.g. removed PHP functions. But with releases of PHP 8.1 and 8.2 you may need to check if your plugin might not start throwing warnings or deprecation notices in newer PHP releases.
 
-
 ## AngularJS replaced with VueJS
 
 Matomo 5 completes the migration from AngularJS to the [VueJS 3 framework](https://vuejs.org/guide/introduction.html). If your plugin contains templates which make use of AngularJS components or directives then these will need to be recreated in VueJS and the templates adjusted. 
@@ -54,7 +53,7 @@ This will build all vue components for your plugin and must be run before testin
 
 ## Vendor proxies
 
-With Matomo 5 we have introduced vendor proxy patterns. Plugin should no longer use any dependencies that are shipped with Matomo directly. Instead we have introduced a set of classes and methods that can be used instead. This step will allow us to easier update and replace vendor libraries without the requirement to do a major release for it as plugins will be fully encasuplated from our dependencies. If your plugin needs direct access to a certain dependency consider creating a GitHub issue for adding a proxy pattern for it or bundle your own prefixed version of the dependency with your plugin.
+With Matomo 5 we have introduced vendor proxy patterns. Plugin should no longer use any dependencies that are shipped with Matomo directly, we have introduced a set of classes and methods that can be used instead. This step will allow us to easily update and replace vendor libraries without the requirement to do a major release for it as plugins will be fully encasuplated from our dependencies. If your plugin needs direct access to a certain dependency consider creating a GitHub issue for adding a proxy pattern for it or bundle your own prefixed version of the dependency with your plugin.
 
 The following part will explain how to replace the usage of certain vendor libraries with our proxies:
 
@@ -90,7 +89,7 @@ public function __construct(\Piwik\Log\LoggerInterface $logger)
 
 ### Console Commands
 
-Our console commands were using parts of the symfony console directly. Command classes will no longer be allowed to any symfony components diretly. Instead we have rewritten our base class for commands `\Piwik\Plugins\ConsoleCommand`. This class will no give you access to console functionalities directly. To update your plugin command you need to apply the following changes:
+Our console commands were using parts of the symfony console directly. Command classes will no longer be allowed to any symfony components diretly, instead we have rewritten our base class for commands `\Piwik\Plugins\ConsoleCommand`. This class will no give you access to console functionalities directly. To update your plugin command you need to apply the following changes:
 * Methods like `run`, `execute`, `interact` or `initialize` can no longer be overwritten. Instead, use our custom methods prefixed with `do`: `doExecute`, `doInteract` or `doInitialize`
   * `doExecute()` method needs to return integers. We recommend using the class constants `SUCCESS` or `FAILURE` as return values.
 * Where ever you need to work with input or output streams use `$this->getInput()` or `$this->getOutput` instead. Don't use `InputInterface` or `OutputInterface` as method typehints.
@@ -103,12 +102,23 @@ Our console commands were using parts of the symfony console directly. Command c
   * Tables can be rendered using the new method `renderTable`
 * For executing another command within your command use the new method `runCommand`
 
-
 ## Tests on CI
 
-We used to use Travis CI for testing. With Matomo 5 we dicontinued support for running tests on Travis CI, instead it is possible to use a GitHub action for this.
+We used to use Travis CI for testing. With Matomo 5 we discontinued support for running tests on Travis CI, instead it is possible to use a GitHub action for this.
 You can find more details on how to set up your own GitHub test action in [this guide](/guides/tests-github).
 
+## JQuery Updated
+
+jQuery has been updated to 3.6.3. Please check your plugin's JavaScript code if it needs to be adjusted. More details can be found in jQuery update guides: https://jquery.com/upgrade-guide/3.0/ and https://jquery.com/upgrade-guide/3.5/
+
+## Plugin names
+
+Plugin names are now limited to 60 characters. If your plugin name is longer then 60 characters then you will need to rename it.
+
+### Deprecations
+
+* The javascript event `piwikPageChange`, which is triggered when a reporting page is loaded, has been renamed to `matomoPageChange`. Ensure to update your plugin if you rely on it.
+* The `Common::fixLbrace()` function has been removed. It was only necessary for AngularJS and no longer needs to be used.
 
 ## Summary
 
