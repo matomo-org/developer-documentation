@@ -96,6 +96,15 @@ always_archive_data_day = 0;
 always_archive_data_range = 0;
 ```
 
+### Debugging UI tests
+
+To debug a failing UI test that also fails locally, these steps might be helpful:
+
+1. In global.ini.php (temporarily) set `[Development] enabled = 1` and `[Development] disable_merged_assets = 1` (this allows the UI tests to use unmerged JS so you get better stack traces).
+2. Go into the UI test and put a return after the first test that fails (this speeds up the iteration cycle since you don't have to wait for the entire test to run to get a result).
+3. When the test fails, there will be a 'URL to reproduce' link, open that in a browser.
+4. Debug as if you were developing locally by changing files and reloading. You may have to run `vue:build --watch {Plugin}` for the vue changes.
+
 ## JavaScript
 
 It's best to use the browser developer tools. Go to the source tab and select the right source and set breakpoints. 
