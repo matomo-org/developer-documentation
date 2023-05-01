@@ -83,7 +83,7 @@ To access our logging interface you can e.g. use
 $logger = \Piwik\Container\StaticContainer::get(\Piwik\Log\Logger::class);
 ```
 
-Or when injection the logger into e.g. an API constructor using dependency injection you can use
+Or when injecting the logger into e.g. an API constructor using dependency injection you can use
 ```php
 public function __construct(\Piwik\Log\LoggerInterface $logger)
 {
