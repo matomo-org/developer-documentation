@@ -117,7 +117,7 @@ Plugin names are now limited to 60 characters. If your plugin name is longer the
 
 ### Deprecations
 
-* The javascript event `piwikPageChange`, which is triggered when a reporting page is loaded, has been renamed to `matomoPageChange`. Ensure to update your plugin if you rely on it.
+* The JavaScript event `piwikPageChange`, which is triggered when a reporting page is loaded, has been renamed to `matomoPageChange`. Ensure to update your plugin if you rely on it.
 * The `Common::fixLbrace()` function has been removed. It was only necessary for AngularJS and no longer needs to be used.
 
 ## Summary
