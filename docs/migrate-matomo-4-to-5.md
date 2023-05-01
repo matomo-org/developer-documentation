@@ -62,7 +62,7 @@ The following part will explain how to replace the usage of certain vendor libra
 
 ### Configuration and Dependency Injection
 
-In `config.php` files and in methods like `provideContainerConfig` in tests it is possible to define dependency configurations. Those configurations were previously done by directly using functions of the PHPDI library. We have introduced our own class providing static methods with the same functionallity that need to be used instead. In addition you can no longer use `\Psr\Container\ContainerInterface` or `\DI\Container` as type hints as we are now using or own container class `\Piwik\Container\Container`.
+In `config.php` files and in methods like `provideContainerConfig` in tests it is possible to define dependency configurations. Those configurations were previously done by directly using functions of the PHPDI library. We have introduced our own class providing static methods with the same functionality that need to be used instead. In addition you can no longer use `\Psr\Container\ContainerInterface` or `\DI\Container` as type hints as Matomo is now using its own container class `\Piwik\Container\Container`.
 
 * `DI` namespaced functions need to be replaced with static `\Piwik\DI` methods. 
   * `\DI\add()` will become `\Piwik\DI::add()`
