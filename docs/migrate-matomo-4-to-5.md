@@ -128,4 +128,4 @@ Plugin names are now limited to 60 characters. If your plugin name is longer tha
 In this guide we have seen which steps to take to migrate your Matomo plugin to be compatible with our latest Matomo 5.
 If you need further help with converting your plugin to Matomo 5, head over to the [Matomo developers community forums](https://forum.matomo.org/c/plugins-platform).
 
-Once you've adjusted your plugin, don't forget to release a new version.
+Once you've adjusted your plugin, don't forget to release a new version!
