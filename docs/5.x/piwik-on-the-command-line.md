@@ -69,5 +69,5 @@ This class inherits from the Symfony Console Command class, but has some adjustm
 * Directly using any of the console helpers is now prohibited
   * When needing user input use the new methods `askForConfirmation`, `askAndValidate` or `ask`
   * For progress bars use the methods `initProgressBar`, `startProgressBar`, `advanceProgressBar` and `finishProgressBar`
-  * Tables can be rendered using the new method `renderTable`
+  * To render tables use the new method `renderTable`
 * For executing another command within your command use the method `runCommand`
