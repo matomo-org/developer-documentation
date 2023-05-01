@@ -30,7 +30,8 @@ It's not allowed to support multiple major Matomo versions such as Matomo 4 and 
 
 ## Required PHP version
 
-Matomo still requires PHP 7.2.5. So there won't be any changes needed in terms of e.g. removed PHP functions. But with releases of PHP 8.1 and 8.2 you may need to check if your plugin might not start throwing warnings or deprecation notices in newer PHP releases.
+The minimum PHP version that Matomo is still compatible with is PHP 7.2.5, so there aren't any changes needed in terms of e.g. removed PHP functions.
+However, with PHP 8.1 and 8.2 being available already, you may need to check that your plugin doesn't throw warnings or deprecation notices in those newer PHP versions.
 
 ## AngularJS replaced with VueJS
 
