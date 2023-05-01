@@ -54,7 +54,9 @@ This will build all vue components for your plugin and must be run before testin
 
 ## Vendor proxies
 
-With Matomo 5 we have introduced vendor proxy patterns. Plugin should no longer use any dependencies that are shipped with Matomo directly, we have introduced a set of classes and methods that can be used instead. This step will allow us to easily update and replace vendor libraries without the requirement to do a major release for it as plugins will be fully encasuplated from our dependencies. If your plugin needs direct access to a certain dependency consider creating a GitHub issue for adding a proxy pattern for it or bundle your own prefixed version of the dependency with your plugin.
+With Matomo 5 we have introduced vendor proxy patterns. Plugins should no longer directly use any dependencies that are shipped with Matomo. We have introduced a set of classes and methods that can be used instead.
+
+This step will allow us to easily update and replace vendor libraries without the requirement to do a major release for it as plugins will be fully encapsulated and separated from our dependencies. If your plugin needs direct access to a certain dependency, consider creating a GitHub issue for adding a proxy pattern for it, or bundle your own prefixed version of the dependency with your plugin.
 
 The following part will explain how to replace the usage of certain vendor libraries with our proxies:
 
