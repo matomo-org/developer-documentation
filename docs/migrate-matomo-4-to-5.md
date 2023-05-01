@@ -116,7 +116,7 @@ jQuery has been updated to 3.6.3. Please check your plugin's JavaScript code if 
 
 ## Plugin names
 
-Plugin names are now limited to 60 characters. If your plugin name is longer then 60 characters then you will need to rename it.
+Plugin names are now limited to 60 characters. If your plugin name is longer than 60 characters then you will need to rename it.
 
 ### Deprecations
 
