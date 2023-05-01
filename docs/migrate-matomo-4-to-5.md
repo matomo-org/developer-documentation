@@ -107,7 +107,7 @@ Our console commands were using parts of the Symfony Console library directly. C
 
 ## Tests on CI
 
-We used to use Travis CI for testing. With Matomo 5 we discontinued support for running tests on Travis CI, instead it is possible to use a GitHub action for this.
+We used to use Travis CI for testing. With Matomo 5 we discontinued support for running tests on Travis CI, instead we now use GitHub actions for this.
 You can find more details on how to set up your own GitHub test action in [this guide](/guides/tests-github).
 
 ## JQuery Updated
