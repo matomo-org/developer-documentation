@@ -63,7 +63,7 @@ Nevertheless, there are some differences when building Matomo commands. As plugi
 This class inherits from the Symfony Console Command class, but has some adjustments that will avoid the direct requirement of using typehints like `InputInterface` or `OutputInterface`, class constants from `InputOption` or `InputArgument` and any Console helpers.
 * Methods like `run`, `execute`, `interact` or `initialize` can not be overwritten. Instead, use our custom methods prefixed with `do`: `doExecute`, `doInteract` or `doInitialize`
 * Where ever you need to work with input or output use `$this->getInput()` or `$this->getOutput()` instead. Don't use `InputInterface` or `OutputInterface` as method typehints.
-* When configuring input options and arguments `addOption` and `addArgument` can not be used
+* When configuring input options and arguments `addOption` and `addArgument` cannot be used
   * For arguments use `addOptionalArgument` or `addRequiredArgument`
   * For options use `addNegatableOption`, `addOptionalValueOption`, `addNoValueOption` or `addRequiredValueOption`
 * Directly using any console helpers is now prohibited
