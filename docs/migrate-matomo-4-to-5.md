@@ -3,8 +3,8 @@ category: Develop
 ---
 # Migrate Plugin from Matomo 4.X to Matomo 5
 
-This migration guide covers how to do some migrations to make a plugin compatible with Matomo 5. A list of
-all changes in Matomo 5 can be found in the [Changelog](/changelog).
+This migration guide covers the changes required in order to make a plugin compatible with Matomo 5.
+A list of all changes in Matomo 5 can be found in the [Changelog](/changelog).
 
 ## Create a new branch
 
