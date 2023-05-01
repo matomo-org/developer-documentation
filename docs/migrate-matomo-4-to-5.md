@@ -102,7 +102,7 @@ Our console commands were using parts of the Symfony Console library directly. C
 * Directly using any console helpers is now prohibited
   * To ask for user input use the new methods `askForConfirmation`, `askAndValidate` or `ask`
   * For a progress bar use the methods `initProgressBar`, `startProgressBar`, `advanceProgressBar` and `finishProgressBar`
-  * Tables can be rendered using the new method `renderTable`
+  * To render tables use the new method `renderTable`
 * For executing another command within your command use the new method `runCommand`
 
 ## Tests on CI
