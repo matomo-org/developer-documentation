@@ -43,7 +43,7 @@ A new VueJS component can be created for your plugin using the console command:
 ./console generate:vue-component --pluginname=MYPLUGIN --component=NEWCOMPONENT
 ``` 
 
-This will create an example component in `plugins/MYPLUGIN/vue/src/NEWCOMPONENT.vue` which shows the basic component structure and can be used a starting point to build a new component.
+This will create an example component in `plugins/MYPLUGIN/vue/src/NEWCOMPONENT.vue` which shows the basic component structure and can be used as a starting point to build a new component.
 
 Because VueJS uses [TypeScript](https://www.typescriptlang.org/) the `*.vue` files must be compiled into `*.ts` TypeScript files and stored in `/plugins/MYPLUGIN/vue/dist` before they can be used. This can be achieved using the following console command:
 
