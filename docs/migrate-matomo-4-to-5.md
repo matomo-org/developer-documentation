@@ -92,7 +92,7 @@ public function __construct(\Piwik\Log\LoggerInterface $logger)
 
 ### Console Commands
 
-Our console commands were using parts of the symfony console directly. Command classes will no longer be allowed to any symfony components diretly, instead we have rewritten our base class for commands `\Piwik\Plugins\ConsoleCommand`. This class will no give you access to console functionalities directly. To update your plugin command you need to apply the following changes:
+Our console commands were using parts of the Symfony Console library directly. Command classes will no longer be allowed to extend any Symfony components directly, instead we have rewritten our base class for commands `\Piwik\Plugins\ConsoleCommand`. This class will now give you access to console functionalities directly. To update your plugin command you need to apply the following changes:
 * Methods like `run`, `execute`, `interact` or `initialize` can no longer be overwritten. Instead, use our custom methods prefixed with `do`: `doExecute`, `doInteract` or `doInitialize`
   * `doExecute()` method needs to return integers. We recommend using the class constants `SUCCESS` or `FAILURE` as return values.
 * Where ever you need to work with input or output streams use `$this->getInput()` or `$this->getOutput` instead. Don't use `InputInterface` or `OutputInterface` as method typehints.
