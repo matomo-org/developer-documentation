@@ -26,7 +26,7 @@ The `plugin.json` would look like this:
     },
 ```
 
-It's not allowed to support multiple major Matomo versions such as Matomo 4 and Matomo 5: `"matomo": ">=4.0.0-b1,<6.0.0-b1"`. You would in this case receive an error email and the release would not be published.
+It's not allowed to support multiple major Matomo versions such as Matomo 4 and Matomo 5: `"matomo": ">=4.0.0-b1,<6.0.0-b1"`. In this case you would receive an error email and the release would not be published.
 
 ## Required PHP version
 
