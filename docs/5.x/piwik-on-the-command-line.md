@@ -66,7 +66,7 @@ This class inherits from the Symfony Console Command class, but has some adjustm
 * When configuring input options and arguments `addOption` and `addArgument` cannot be used
   * For arguments use `addOptionalArgument` or `addRequiredArgument`
   * For options use `addNegatableOption`, `addOptionalValueOption`, `addNoValueOption` or `addRequiredValueOption`
-* Directly using any console helpers is now prohibited
+* Directly using any of the console helpers is now prohibited
   * When needing user input use the new methods `askForConfirmation`, `askAndValidate` or `ask`
   * For progress bars use the methods `initProgressBar`, `startProgressBar`, `advanceProgressBar` and `finishProgressBar`
   * Tables can be rendered using the new method `renderTable`
