@@ -83,9 +83,9 @@ Plugin developers may also use [dependency injection](/guides/dependency-injecti
 
 The entry point for the web application is `index.php` in the root. This file initializes everything and calls the `FrontController` class.
 
-Matomo's user interface is built upon HTML and JavaScript. While some pages are HTML documents served by PHP controllers (built using the [Twig templating engine](https://twig.symfony.com)), some parts of the Matomo UI are built with AngularJS (currently being migrated to Vue.js).
+Matomo's user interface is built upon HTML and JavaScript. While some pages are HTML documents served by PHP controllers (built using the [Twig templating engine](https://twig.symfony.com)), some parts of the Matomo UI are built with Vue.js.
 
-AngularJS and Vue.js are front-end JavaScript frameworks. This means that the user interface is built on the client side and the data is fetched from the HTTP Reporting API (described in the next section) as JSON. That also means a better user experience, as it lets Matomo developers build a more dynamic and reactive application.
+Vue.js is a front-end JavaScript framework. This means that the user interface is built on the client side and the data is fetched from the HTTP Reporting API (described in the next section) as JSON. That also means a better user experience, as it lets Matomo developers build a more dynamic and reactive application.
 
 A part of Matomo's long-term roadmap is to move more and more parts of Matomo's UI to Vue.js.
 
