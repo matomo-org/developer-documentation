@@ -141,11 +141,10 @@ public function myWidget() {
 
 ```twig
 // add this to your main template file
-// the loading message is optional
-<div piwik-widget-loader='{"module":"MyPlugin","action":"myWidget"}' loading-message="Widget loading..."></div>
+<div vue-entry="CoreHome.WidgetLoader" widget-params="{&quot;module&quot;:&quot;MyPlugin&quot;,&quot;action&quot;:&quot;myWidget&quot;}"></div>
 ```
 
-For the angularjs component, see [widgetloader.directive.js](https://github.com/matomo-org/matomo/blob/master/plugins/CoreHome/angularjs/widget-loader/widgetloader.directive.js).
+For the Vue.js component, see [WidgetLoader.vue](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/vue/src/WidgetLoader/WidgetLoader.vue#L3).
 
 ## Learn more
 

@@ -32,7 +32,7 @@ When it is a token_auth, then the authentication happens [here](https://github.c
 
 ### Adding the token_auth to a UI request in JS
 
-In JavaScript we are adding the correct `token_auth` value automatically to all requests if you are doing an API request. For all other requests you need to add the token manually. You can add the `token_auth` to a request either using `ajaxRequest.withTokenInUrl();` when it is a request using `ajaxHelper` or `piwikApi.withTokenInUrl()` if you are using the `piwikApi` angular.js service.
+In JavaScript we are adding the correct `token_auth` value automatically to all requests if you are doing an API request. For all other requests you need to add the token manually. You can add the `token_auth` to a request either using `ajaxRequest.withTokenInUrl();` when it is a request using `ajaxHelper`.
 
 ### Special case "force_api_session=1"
 
