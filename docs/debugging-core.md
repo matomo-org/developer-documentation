@@ -104,7 +104,7 @@ To debug a failing UI test that also fails locally, these steps might be helpful
 2. Go into the UI test and put a return after the first test that fails (this speeds up the iteration cycle since you don't have to wait for the entire test to run to get a result).
 3. When the test fails, there will be a 'URL to reproduce' link, open that in a browser.
 4. Debug as if you were developing locally by changing files and reloading. You may have to run `vue:build --watch {Plugin}` for the vue changes.
-5. When finished, don't forget to revert the temporarily changed config values from step  1.
+5. When finished, don't forget to revert the temporarily changed config values from step 1.
 
 ## JavaScript
 
