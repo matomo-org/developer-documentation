@@ -23,7 +23,7 @@ The [UsersManager.setUserPreference API](https://github.com/matomo-org/matomo/bl
 To define a new preference, you might need to adjust the `plugins/MyPluginName/config/config.php` and define the name of the preference like this:
 
 ```
-return array('usersmanager.user_preference_names' => DI\add(array('preference_name_1', 'preference_name_2')))
+return array('usersmanager.user_preference_names' => Piwik\DI::add(array('preference_name_1', 'preference_name_2')))
 ```
 
 This would allow you to call eg `UsersManager.(set|get)UserPreference($login, 'preference_name_1')`

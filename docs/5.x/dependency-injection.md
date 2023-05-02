@@ -26,7 +26,7 @@ also works for your own classes. For example:
 
 ```php
   use Piwik\Translation\Translator;
-  use Psr\Log\LoggerInterface;
+  use Piwik\Log\LoggerInterface;
   use Piwik\Plugins\MyPlugin\Dao\MyEntityDao;
 
   class API
@@ -67,7 +67,7 @@ constructor. Say for the above `MyEntityDao` example you can take advantage of h
 ```php
   namespace Piwik\Plugins\MyPlugin\Dao;
   use Piwik\Translation\Translator;
-  use Psr\Log\LoggerInterface;
+  use Piwik\Log\LoggerInterface;
 
   class MyEntityDao
   {
@@ -115,7 +115,7 @@ The syntax used in those files is described in [PHP-DI's documentation](http://p
 
 ```php
 return array(
-    'Piwik\Translation\Loader\LoaderInterface' => DI\autowire('Piwik\Translation\Loader\LoaderCache')
+    'Piwik\Translation\Loader\LoaderInterface' => Piwik\DI::autowire('Piwik\Translation\Loader\LoaderCache')
 );
 ```
 
@@ -149,8 +149,8 @@ We configure to inject the `log.format` entry in the constructor:
 
 ```php
 return array(
-    'Piwik\Log\Formatter\LineMessageFormatter' => DI\autowire()
-        ->constructor(DI\link('log.format')),
+    'Piwik\Log\Formatter\LineMessageFormatter' => Piwik\DI::autowire()
+        ->constructor(Piwik\DI::link('log.format')),
 );
 ```
 
@@ -158,8 +158,8 @@ or
 
 ```php
 return array(
-    'Piwik\Log\Formatter\LineMessageFormatter' => DI\autowire()
-        ->constructorParameter('logFormat', DI\link('log.format')),
+    'Piwik\Log\Formatter\LineMessageFormatter' => Piwik\DI::autowire()
+        ->constructorParameter('logFormat', Piwik\DI::link('log.format')),
 );
 ```
 
@@ -167,7 +167,7 @@ return array(
 
 ```php
 return array(
-    'foo.bar' => DI\factory(function (ContainerInterface $c) {
+    'foo.bar' => Piwik\DI::factory(function (\Piwik\Container\Container $c) {
         $bar = // ...
         return Foo::createSomething($bar);
     }),
@@ -177,12 +177,12 @@ return array(
 ### Adding new event listeners
 
 It's also possible to add additional event listeners for any Matomo event using Dependency Injection. As most events are
-using references to make manipulation possible it's required to wrap the event listener functions into `DI\value`.
+using references to make manipulation possible it's required to wrap the event listener functions into `Piwik\DI::value`.
 
 ```php
 return [
     'observers.global' => [
-        ['AssetManager.getStylesheetFiles', DI\value(function (&$stylesheets) {
+        ['AssetManager.getStylesheetFiles', Piwik\DI::value(function (&$stylesheets) {
             $stylesheets[] = 'my\custom.css';
         })],
     ],
@@ -199,7 +199,7 @@ When writing integration or system tests you can inject your own classes (such a
   ```php
   <?php
   return array(
-      'Piwik\Plugins\MyPlugin\MyRESTClient' => DI\autowire('Piwik\Plugins\MyPlugin\Test\MockRESTClient'),
+      'Piwik\Plugins\MyPlugin\MyRESTClient' => Piwik\DI::autowire('Piwik\Plugins\MyPlugin\Test\MockRESTClient'),
   );
   ```
 
@@ -215,7 +215,7 @@ When writing integration or system tests you can inject your own classes (such a
       public function provideContainerConfig()
       {
           return array(
-              'Piwik\Plugins\MyPlugin\Dao\MyEntityDao' => DI\autowire('Piwik\Plugins\MyPlugin\Test\Mock\MockMyEntityDao')
+              'Piwik\Plugins\MyPlugin\Dao\MyEntityDao' => Piwik\DI::autowire('Piwik\Plugins\MyPlugin\Test\Mock\MockMyEntityDao')
                   ->constructorParameter('tmpPath', '/my/test/tmp/path'),
           );
       }

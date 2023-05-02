@@ -19,12 +19,12 @@ The PSR-3 implementation that Piwik has chosen is [Monolog](https://github.com/S
 
 ## How to log messages
 
-To log messages, you need to get an instance of the logger. To do this, you can use dependency injection by injecting `Psr\Log\LoggerInterface`:
+To log messages, you need to get an instance of the logger. To do this, you can use dependency injection by injecting `Piwik\Log\LoggerInterface`:
 
 ```php
 private $logger;
 
-public function __construct(\Psr\Log\LoggerInterface $logger) {
+public function __construct(\Piwik\Log\LoggerInterface $logger) {
     $this->logger = $logger;
 }
 public function myMethod() {

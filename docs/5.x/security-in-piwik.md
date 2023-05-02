@@ -68,7 +68,7 @@ Or using dependency injection by creating a `plugins/MyPlugin/config/config.php`
 
 ```php
 return array(
-    \Piwik\View\SecurityPolicy::class => DI\decorate(function ($previous) {
+    \Piwik\View\SecurityPolicy::class => Piwik\DI::decorate(function ($previous) {
         /** @var \Piwik\View\SecurityPolicy $previous */
 
         if (!\Piwik\SettingsPiwik::isMatomoInstalled()) {
