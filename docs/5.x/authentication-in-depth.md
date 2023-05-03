@@ -46,7 +46,7 @@ For actions that change data we require this parameter to be posted for slightly
 
 #### Knowing if "force_api_session=1" needs to be set or not
 
-In Javascript there is a method `piwik.broadcast.isWidgetizeRequestWithoutSession()` that we usually use to decide if we need to append the "force_api_session" URL parameter or not [see example](https://github.com/matomo-org/matomo/blob/4.4.1-rc1/plugins/CoreHome/angularjs/common/services/piwik-api.js#L53).
+In Javascript there is a method `piwik.broadcast.isWidgetizeRequestWithoutSession()` that we usually use to decide if we need to append the "force_api_session" URL parameter or not [see example](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/vue/src/AjaxHelper/AjaxHelper.ts#L669).
 
 ## Session authentication
 
