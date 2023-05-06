@@ -103,7 +103,7 @@ To debug a failing UI test that also fails locally, these steps might be helpful
 1. In global.ini.php (temporarily) set `[Development] enabled = 1` and `[Development] disable_merged_assets = 1` (this allows the UI tests to use unmerged JS so you get better stack traces).
 2. Go into the UI test and put a return after the first test that fails (this speeds up the iteration cycle since you don't have to wait for the entire test to run to get a result).
 3. Run `./console tests:run` with `--persist-fixture-data --keep-symlinks`. When the test fails, there will be a 'URL to reproduce' link, open that in a browser.
-   * Note: if the test disables persist-fixture-data in the spec file (using `this.optionsOverride`), you may need to temporary comment out this code.
+   * Note: if the test disables persist-fixture-data in the spec file (using `this.optionsOverride`), you may need to temporary comment out this code and call the command with `--drop` also.
 4. Debug as if you were developing locally by changing files and reloading. You may have to run `vue:build --watch {Plugin}` for the vue changes.
 5. When finished, don't forget to revert the temporarily changed config values from step 1.
 
