@@ -4,7 +4,7 @@ title: Matomo Icon Font
 ---
 # Matomo Icon Font
 
-We use a custom Matomo font in our UI to show icons. You can [find the font in the repository as part of the Morpheus](https://github.com/matomo-org/matomo/tree/4.x-dev/plugins/Morpheus/fonts) theme.
+We use a custom Matomo font in our UI to show icons. You can [find the font in the repository as part of the Morpheus](https://github.com/matomo-org/matomo/tree/5.x-dev/plugins/Morpheus/fonts) theme.
 
 ## How to find the list of all available icons
 
@@ -33,7 +33,7 @@ To use an icon, simply add the name of class for the icon to an element like thi
 
 Follow below steps to add, change or remove an icon.
 
-* Download this file (use "File -> Save" in the browser): [selection.json](https://raw.githubusercontent.com/matomo-org/matomo/4.x-dev/plugins/Morpheus/fonts/selection.json).
+* Download this file (use "File -> Save" in the browser): [selection.json](https://raw.githubusercontent.com/matomo-org/matomo/5.x-dev/plugins/Morpheus/fonts/selection.json).
 * Go to [https://icomoon.io/app/](https://icomoon.io/app/).
 * Upload the downloaded file in icomoon by clicking on "Import Icons".
 * Confirm the question "Would you like to use all settings from the selected file" with "Yes".
@@ -51,7 +51,7 @@ Follow below steps to add, change or remove an icon.
   * get `woff2_compress` e.g. via the woff2 debian package or similar packages for other distributions or compile it yourself as explained on [https://github.com/google/woff2](https://github.com/google/woff2).
   * convert the .ttf file using `woff2_compress matomo.ttf`
   * there should now be a `matomo.woff2`
-* Update [plugins/Morpheus/stylesheets/base/icons.css](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Morpheus/stylesheets/base/icons.css) and add a new CSS class for this font. The style content in this class needs to mention the font, for example `\e609`. You find the correct value for this from the `style.css` file of the extracted zip file. Simply search for the icon name there to find the correct value.
-* Update [plugins/Morpheus/templates/demo.twig](https://github.com/matomo-org/matomo/blob/4.3.0-b3/plugins/Morpheus/templates/demo.twig#L613) by adding or removing the name of the changed icon in one of the available categories. If the icon is not appearing on the page, try clearing the cache `./console cache:clear`.
+* Update [plugins/Morpheus/stylesheets/base/icons.css](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Morpheus/stylesheets/base/icons.css) and add a new CSS class for this font. The style content in this class needs to mention the font, for example `\e609`. You find the correct value for this from the `style.css` file of the extracted zip file. Simply search for the icon name there to find the correct value.
+* Update [plugins/Morpheus/Controller.php](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Morpheus/Controller.php#L632) by adding or removing the name of the changed icon in one of the available categories. If the icon is not appearing on the page, try clearing the cache `./console cache:clear`.
 * Open `https://{REPLACE WITH YOUR MATOMO DOMAIN}/index.php?module=Morpheus&action=demo#icons` and check if the icon shows up correctly.
-* Update our [LEGALNOTICE](https://github.com/matomo-org/matomo/blob/4.x-dev/LEGALNOTICE) and mention or remove the name of the icon we added, changed or removed. You already find a list of icons we've been using so far in this file.
+* Update our [LEGALNOTICE](https://github.com/matomo-org/matomo/blob/5.x-dev/LEGALNOTICE) and mention or remove the name of the icon we added, changed or removed. You already find a list of icons we've been using so far in this file.
