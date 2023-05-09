@@ -119,13 +119,13 @@ To learn more about extending the class, see our [Visualizing Report Data](https
 
 Most of the widgets loading by AJAX are generated on server side which means the AJAX response is HTML, sometimes it contains javascript code as well. This is a very powerful yet simple pattern to load dynamic contents.
 
-There is an angularjs component that makes this possible easily, not only with widgets, but everytime, when we'd like to load the page before a time consuming process finished or we need a user interaction. The component shows a loading animation until it finishes the request.
+There is a Vue.js component that makes this possible easily, not only with widgets, but everytime, when we'd like to load the page before a time consuming process finished or we need a user interaction. The component shows a loading animation until it finishes the request.
 
 #### How does it work?
 
 1. create a method in your plugin's controller file
 1. return a rendered template (the template can contain javascript in script tag)
-1. include the `piwik-widget-loader` component in the main twig file that loads when the user opens the page
+1. include the `CoreHome.WidgetLoader` component in the main twig file that loads when the user opens the page
 
 ```php
 // MyPlugin/Controller.php
@@ -141,11 +141,10 @@ public function myWidget() {
 
 ```twig
 // add this to your main template file
-// the loading message is optional
-<div piwik-widget-loader='{"module":"MyPlugin","action":"myWidget"}' loading-message="Widget loading..."></div>
+<div vue-entry="CoreHome.WidgetLoader" widget-params="{&quot;module&quot;:&quot;MyPlugin&quot;,&quot;action&quot;:&quot;myWidget&quot;}"></div>
 ```
 
-For the angularjs component, see [widgetloader.directive.js](https://github.com/matomo-org/matomo/blob/master/plugins/CoreHome/angularjs/widget-loader/widgetloader.directive.js).
+For the Vue.js component, see [WidgetLoader.vue](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/vue/src/WidgetLoader/WidgetLoader.vue#L3).
 
 ## Learn more
 
