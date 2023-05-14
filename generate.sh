@@ -29,9 +29,8 @@ function generateDocs {
     sleep 3
     git submodule update --recursive --force
     php ../app/composer.phar self-update
-    php ../app/composer.phar install || true
+    php ../app/composer.phar install
     cd ..
-    sleep 10
     php generator/generate.php --branch=$1 --targetname=$2
 
     GENERATION_SUCCESS=$?
