@@ -151,6 +151,10 @@ Then you simply have to add the parameter **&token\_auth=YOUR\_TOKEN** at the en
 
 **You should never share a URL that includes a `token_auth` with another person as this person could use this same token to fetch and change data in Matomo.**
 
+For best security it is recommended to create tokens that are only valid for POST requests and make your API calls using the POST method with the token_auth in the body of the request: 
+
+    curl -X POST 'https://demo.matomo.cloud/?module=API&method=API.getMatomoVersion&format=xml' -d 'token_auth=YOUR\_TOKEN'
+
 ### Session tokens
 
 When you are logged in to Matomo and choose to export data, then you might notice a parameter `&force_api_session=1` parameter in the URL. When this URL parameter is present, then Matomo uses a special `token_auth` that is randomly generated every time you log in and this URL will only work while you are logged in and will no longer work once you're logged out. The next time you log in the token will change again. If you want the URL to work permanently, then you need to remove this URL parameter `&force_api_session` and replace the token with the value of a generated auth token see above. 
