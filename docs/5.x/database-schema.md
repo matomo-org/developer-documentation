@@ -146,6 +146,12 @@ Visit actions contain the following information:
 - `custom_var_k5`: the custom variable name of the  slot for page custom variables
 - `custom_var_v5`: the custom variable value of the  slot for page custom variables
 - `custom_float`: an unspecified float field, mainly used to store the [Custom Event](https://matomo.org/docs/event-tracking/) value, as well as store the [time it took the server](https://matomo.org/docs/page-speed/) to serve this action
+- `time_dom_completion`: (domComplete – domInteractive) How long it takes for the browser to load images/videos and execute any Javascript code listening for the DOMContentLoaded event after the webpage has loaded and a user can already interact with it.
+- `time_dom_processing`: (domInteractive – domLoading) How long the browser spends (in seconds) loading the webpage after the response has been fully received and until the user can start interacting with it.
+- `time_network`: (connectEnd – fetchStart) How long it takes (in seconds) to connect to server. This includes the time needed to lookup DNS and establish a TCP connection. This value might be 0 after the first request to a domain as the browser might cache the connection.
+- `time_on_load`: (loadEventEnd – loadEventStart) How long it takes (in seconds) for the browser to execute Javascript code waiting for the window.load event (when the DOM was completely rendered). 
+- `time_server`: (responseStart – requestStart) How long it takes the server (in seconds) to generate page. This is the time between the server receiving the request and starting to serve the response.
+- `time_transfer`: (responseEnd – responseStart) How long it takes the browser to download the response from the server. Technically speaking, this is the time between receiving the first byte until the response is complete. 
 
 #### Table details
 
