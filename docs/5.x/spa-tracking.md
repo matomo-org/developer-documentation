@@ -4,16 +4,29 @@ category: Integrate
 
 # Single-Page Application/Progressive Web App Tracking
 
-Single-page websites and Progressive Web Apps have become a standard over the last years. Getting the tracking of such websites and apps right is crucial to your success as you need to ensure the measured data is meaningful and correct.
+In the rapidly evolving digital landscape, single-page applications (SPAs) and Progressive Web Apps (PWAs) have emerged as a prevalent choice for developers, given their fast load times, smooth user experience, and offline capabilities. This document serves as a comprehensive guide to setting up accurate tracking within SPAs and PWAs using Matomo, an open-source analytics platform. We cover multiple solutions to ensure you gather meaningful and correct data, vital for optimising user experience and achieving your digital objectives.
 
-## If available, consider using an existing integration for your framework
+# Solution 1) Embed Matomo Tag Manager Container Code
 
-If you're using a popular framework such as Angular, Angular JS, Vue.js, React Native, etc. then we recommend to first check if an integration may be available for your framework: [see all available integrations for Matomo](https://matomo.org/integrate/#programming-language-platforms-and-frameworks).
+If you're using [Tag Manager](https://matomo.org/tag-manager/) to implement your Matomo Analytics Tracking, then in your Single Page Application,  whenever there is a new page loaded in your app you will need your [Matomo Tag](https://matomo.org/docs/tag-manager/#configuring-a-tag) to be triggered for the Page view to be tracked. 
 
-## Embedding the Tracking Code
+To trigger your Matomo tag (which calls `trackPageView`), you can either:
 
-First you need to embed your JavaScript tracking code into your single-page website or web application as usual. To do this go to “Administration” in the top right in your Matomo instance, click on “Tracking Code” and adjust the tracking code to your needs.
-You can find more information in our [JavaScript Tracking Client documentation](https://developer.matomo.org/guides/tracking-javascript-guide)
+1. use the "History change" [trigger](https://matomo.org/docs/tag-manager/#triggers) which would work in most cases,
+2. or in your Single Page App, if you are using the 'Pageview Trigger' to trigger a Pageview, you can trigger a Tag Manager Event `{event: 'mtm.PageView'}` by calling the following line in JavaScript: `window._mtm.push({'event': 'mtm.PageView'});`. 
+   - This would also work similarly when you use instead the 'DOM Ready Trigger' (call `window._mtm.push({'event': 'DOMReady'});`) or when you use the 'Window Loaded Trigger' (call `_mtm.push({'event': 'WindowLoad'});`
+
+# Solution 2) Embedding the Tracking Code manually
+
+If you're not using the Tag Manager, then you need to embed your Matomo JavaScript tracking code into your single-page website or web application as you would for a classic website. 
+
+To embed the tracking code manually, you have two options:
+
+1. either you can consider using an existing SDK that may be available for your framework: [see all available integrations for Matomo](https://matomo.org/integrate/#programming-language-platforms-and-frameworks).
+2. or you can simply embed the tracking code manually in your app. To find your tracking code, go to “Administration” in the top right in your Matomo instance, click on “Tracking Code” and adjust the tracking code to your needs. You can find more information in our [JavaScript Tracking Client documentation](https://developer.matomo.org/guides/tracking-javascript-guide)
+
+
+In the sections below you will learn how to setup Matomo tracking with single-page applications (SPAs). It addresses how to track page views, reset custom variables and dimensions, update referrer URLs, scan for new content, and implement Heatmap & Session Recording. A comprehensive example illustrates how these elements integrate within an SPA environment. Information on offline tracking and support resources are also provided.
 
 ## Tracking a New Page View
 
@@ -184,15 +197,6 @@ window.addEventListener('hashchange', function() {
 });
 ```
 
-## Using Matomo Tag Manager to track Single Page Application
-
-If you're using [Tag Manager](https://matomo.org/tag-manager/) to implement your Matomo Analytics Tracking, then in your Single Page Application,  whenever there is a new page loaded in your app you will need your [Matomo Tag](https://matomo.org/docs/tag-manager/#configuring-a-tag) to be triggered for the Page view to be tracked. 
-
-To trigger your Matomo tag (which calls `trackPageView`), you can either:
-
-1. use the "History change" [trigger](https://matomo.org/docs/tag-manager/#triggers) which would work in most cases,
-2. or in your Single Page App, if you are using the 'Pageview Trigger' to trigger a Pageview, you can trigger a Tag Manager Event `{event: 'mtm.PageView'}` by calling the following line in JavaScript: `window._mtm.push({'event': 'mtm.PageView'});`. 
-   - This would also work similarly when you use instead the 'DOM Ready Trigger' (call `window._mtm.push({'event': 'DOMReady'});`) or when you use the 'Window Loaded Trigger' (call `_mtm.push({'event': 'WindowLoad'});`
 
 ## Offline Tracking
 
