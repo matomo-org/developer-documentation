@@ -30,6 +30,7 @@ This class defines the following properties:
 - [`$gtm`](#$gtm)
 - [`$cms`](#$cms)
 - [`$cloudflare`](#$cloudflare)
+- [`$jsFramework`](#$jsframework)
 
 <a name="$consentmanagerid" id="$consentmanagerid"></a>
 <a name="consentManagerId" id="consentManagerId"></a>
@@ -112,6 +113,15 @@ This class defines the following properties:
 - Its type is not specified.
 
 
+<a name="$jsframework" id="$jsframework"></a>
+<a name="jsFramework" id="jsFramework"></a>
+### `$jsFramework`
+
+#### Signature
+
+- Its type is not specified.
+
+
 Methods
 -------
 
@@ -157,6 +167,10 @@ the details of the detected content
 
 Return an array of consent manager definitions which can be used to detect their presence on the site and show
 the associated guide links
+
+Note: This list is also used to display the known / supported consent managers on the "Ask for Consent" page
+For adding a new consent manager to this page, it needs to be added here. If a consent manager can't be detected
+automatically, simply leave the detections empty.
 
 #### Signature
 

@@ -25,6 +25,7 @@ This is a complete list of available classes:
 - [`Columns\Updater`](Piwik/Columns/Updater.md) &mdash; Class that handles dimension updates
 - [`Common`](Piwik/Common.md) &mdash; Contains helper methods used by both Piwik Core and the Piwik Tracking engine.
 - [`Config`](Piwik/Config.md) &mdash; Singleton that provides read & write access to Piwik's INI configuration.
+- [`Console`](Piwik/Console.md)
 - [`DataAccess\LogAggregator`](Piwik/DataAccess/LogAggregator.md) &mdash; Contains methods that calculate metrics by aggregating log data (visits, actions, conversions, ecommerce items).
 - [`DataTable`](Piwik/DataTable.md) &mdash; The primary data structure used to store analytics data in Piwik.
 - [`DataTable\BaseFilter`](Piwik/DataTable/BaseFilter.md) &mdash; A filter is set of logic that manipulates a DataTable.
@@ -182,6 +183,7 @@ This is a complete list of available classes:
 - [`Plugins\PagePerformance\Columns\Metrics\AverageTimeOnLoad`](Piwik/Plugins/PagePerformance/Columns/Metrics/AverageTimeOnLoad.md) &mdash; The average amount of time browser needs to execute javascript waiting for window.load event.
 - [`Plugins\PagePerformance\Columns\Metrics\AverageTimeServer`](Piwik/Plugins/PagePerformance/Columns/Metrics/AverageTimeServer.md) &mdash; The average amount of time the server needs to start serving a page.
 - [`Plugins\PagePerformance\Columns\Metrics\AverageTimeTransfer`](Piwik/Plugins/PagePerformance/Columns/Metrics/AverageTimeTransfer.md) &mdash; The average amount of time it takes to transfer a page.
+- [`Plugins\Referrers\Columns\Metrics\VisitorsFromReferrerPercent`](Piwik/Plugins/Referrers/Columns/Metrics/VisitorsFromReferrerPercent.md)
 - [`Plugins\TagManager\MenuTagManager`](Piwik/Plugins/TagManager/MenuTagManager.md) &mdash; Contains menu entries for the Tag Manager menu.
 - [`Plugins\TagManager\Template\BaseTemplate`](Piwik/Plugins/TagManager/Template/BaseTemplate.md)
 - [`Plugins\TagManager\Template\Tag\BaseTag`](Piwik/Plugins/TagManager/Template/Tag/BaseTag.md)

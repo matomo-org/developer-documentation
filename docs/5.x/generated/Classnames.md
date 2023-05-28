@@ -21,6 +21,7 @@
 ## Columns\Updater
 ## Common
 ## Config
+## DI
 ## DataAccess\LogAggregator
 ## DataTable
 ## DataTable\BaseFilter
@@ -178,6 +179,7 @@
 ## Plugins\PagePerformance\Columns\Metrics\AverageTimeOnLoad
 ## Plugins\PagePerformance\Columns\Metrics\AverageTimeServer
 ## Plugins\PagePerformance\Columns\Metrics\AverageTimeTransfer
+## Plugins\Referrers\Columns\Metrics\VisitorsFromReferrerPercent
 ## Plugins\TagManager\MenuTagManager
 ## Plugins\TagManager\Template\BaseTemplate
 ## Plugins\TagManager\Template\Tag\BaseTag

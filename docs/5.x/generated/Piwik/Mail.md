@@ -71,7 +71,7 @@ Sets the default sender
 
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - `DI\NotFoundException`
+    - `Piwik\Exception\DI\NotFoundException`
 
 <a name="getfrom" id="getfrom"></a>
 <a name="getFrom" id="getFrom"></a>
@@ -104,7 +104,8 @@ Returns the address the mail will be sent from
       
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - `DI\NotFoundException`
+    - `Piwik\Exception\DI\DependencyException`
+    - `Piwik\Exception\DI\NotFoundException`
 
 <a name="setbodyhtml" id="setbodyhtml"></a>
 <a name="setBodyHtml" id="setBodyHtml"></a>
@@ -314,7 +315,9 @@ Sends the mail
 - *Returns:*  `bool`|`null` &mdash;
     returns null if sending the mail was aborted by the Mail.send event
 - It throws one of the following exceptions:
-    - `DI\NotFoundException`
+    - `Piwik\Exception\DI\DependencyException`
+    - `Piwik\Exception\DI\NotFoundException`
+    - `PHPMailer\PHPMailer\Exception`
 
 <a name="safesend" id="safesend"></a>
 <a name="safeSend" id="safeSend"></a>
@@ -326,8 +329,8 @@ If the send email process throws an exception, we catch it and log it
 
 - It returns a `void` value.
 - It throws one of the following exceptions:
-    - `DI\NotFoundException`
-    - `DI\DependencyException`
+    - `Piwik\Exception\DI\NotFoundException`
+    - `Piwik\Exception\DI\DependencyException`
 
 <a name="setsmtpdebug" id="setsmtpdebug"></a>
 <a name="setSmtpDebug" id="setSmtpDebug"></a>

@@ -395,8 +395,8 @@ INI config value.
 
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
-    - `DI\DependencyException`
-    - `DI\NotFoundException`
+    - `Piwik\Exception\DI\DependencyException`
+    - `Piwik\Exception\DI\NotFoundException`
 
 <a name="getpluginnamefrombacktrace" id="getpluginnamefrombacktrace"></a>
 <a name="getPluginNameFromBacktrace" id="getPluginNameFromBacktrace"></a>

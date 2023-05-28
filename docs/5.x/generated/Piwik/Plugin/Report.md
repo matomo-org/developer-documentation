@@ -212,6 +212,7 @@ The class defines the following methods:
 - [`getProcessedMetricsById()`](#getprocessedmetricsbyid) &mdash; Returns an array mapping the ProcessedMetrics served by this report by their string names.
 - [`getMetricsForTable()`](#getmetricsfortable) &mdash; Returns the Metrics that are displayed by a DataTable of a certain Report type.
 - [`getProcessedMetricsForTable()`](#getprocessedmetricsfortable) &mdash; Returns the ProcessedMetrics that should be computed and formatted for a DataTable of a certain report.
+- [`getRowIdentifier()`](#getrowidentifier) &mdash; Returns the name of the column/metadata that uniquely identifies rows in this report.
 
 <a name="init" id="init"></a>
 <a name="init" id="init"></a>
@@ -662,4 +663,15 @@ as well as the DataTable metadata.
     - `$report` ([`Report`](../../Piwik/Plugin/Report.md)) &mdash;
       
 - It returns a [`ProcessedMetric[]`](../../Piwik/Plugin/ProcessedMetric.md) value.
+
+<a name="getrowidentifier" id="getrowidentifier"></a>
+<a name="getRowIdentifier" id="getRowIdentifier"></a>
+### `getRowIdentifier()`
+
+Returns the name of the column/metadata that uniquely identifies rows in this report. See
+self::$rowIdentifier for more information.
+
+#### Signature
+
+- It returns a `string` value.
 

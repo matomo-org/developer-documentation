@@ -9,6 +9,8 @@ Index
 - [`AuthResult`](Piwik/AuthResult.md) &mdash; *Class in namespace* `Piwik`- [`$acceptValues`](Piwik/Columns/Dimension.md#$acceptvalues) &mdash; *Property in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`$allowAnonymous`](Piwik/Columns/Dimension.md#$allowanonymous) &mdash; *Property in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`ActionNameJoin`](Piwik/Columns/Join/ActionNameJoin.md) &mdash; *Class in namespace* [`Piwik\Columns\Join`](Piwik/Columns/Join)- [`addMetric()`](Piwik/Columns/MetricsList.md#addmetric) &mdash; *Method in class* [`MetricsList`](Piwik/Columns/MetricsList.md)
+- [`autowire()`](Piwik/DI.md#autowire) &mdash; *Method in class* [`DI`](Piwik/DI.md)
+- [`add()`](Piwik/DI.md#add) &mdash; *Method in class* [`DI`](Piwik/DI.md)
 - [`applyQueuedFilters()`](Piwik/DataTable.md#applyqueuedfilters) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`addDataTable()`](Piwik/DataTable.md#adddatatable) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`addRow()`](Piwik/DataTable.md#addrow) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
@@ -112,7 +114,8 @@ Index
 - [`createComputedMetric()`](Piwik/Columns/DimensionMetricFactory.md#createcomputedmetric) &mdash; *Method in class* [`DimensionMetricFactory`](Piwik/Columns/DimensionMetricFactory.md)
 - [`createMetric()`](Piwik/Columns/DimensionMetricFactory.md#createmetric) &mdash; *Method in class* [`DimensionMetricFactory`](Piwik/Columns/DimensionMetricFactory.md)
 - [`createSegment()`](Piwik/Columns/DimensionSegmentFactory.md#createsegment) &mdash; *Method in class* [`DimensionSegmentFactory`](Piwik/Columns/DimensionSegmentFactory.md)
-- [`Common`](Piwik/Common.md) &mdash; *Class in namespace* `Piwik`- [`Config`](Piwik/Config.md) &mdash; *Class in namespace* `Piwik`- [`clearQueuedFilters()`](Piwik/DataTable.md#clearqueuedfilters) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
+- [`Common`](Piwik/Common.md) &mdash; *Class in namespace* `Piwik`- [`Config`](Piwik/Config.md) &mdash; *Class in namespace* `Piwik`- [`create()`](Piwik/DI.md#create) &mdash; *Method in class* [`DI`](Piwik/DI.md)
+- [`clearQueuedFilters()`](Piwik/DataTable.md#clearqueuedfilters) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`CalculateEvolutionFilter`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`calculate()`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md#calculate) &mdash; *Method in class* [`CalculateEvolutionFilter`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md)
 - [`ColumnCallbackAddColumn`](Piwik/DataTable/Filter/ColumnCallbackAddColumn.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`ColumnCallbackAddColumnPercentage`](Piwik/DataTable/Filter/ColumnCallbackAddColumnPercentage.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`ColumnCallbackAddColumnQuotient`](Piwik/DataTable/Filter/ColumnCallbackAddColumnQuotient.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`ColumnCallbackAddMetadata`](Piwik/DataTable/Filter/ColumnCallbackAddMetadata.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`ColumnCallbackDeleteMetadata`](Piwik/DataTable/Filter/ColumnCallbackDeleteMetadata.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`ColumnCallbackDeleteRow`](Piwik/DataTable/Filter/ColumnCallbackDeleteRow.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`ColumnCallbackReplace`](Piwik/DataTable/Filter/ColumnCallbackReplace.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`ColumnDelete`](Piwik/DataTable/Filter/ColumnDelete.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`compareWeek()`](Piwik/Date.md#compareweek) &mdash; *Method in class* [`Date`](Piwik/Date.md)
 - [`compareMonth()`](Piwik/Date.md#comparemonth) &mdash; *Method in class* [`Date`](Piwik/Date.md)
@@ -193,6 +196,7 @@ Index
 - [`doAsSuperUser()`](Piwik/Access.md#doassuperuser) &mdash; *Method in class* [`Access`](Piwik/Access.md)
 - [`Dimension`](Piwik/Columns/Dimension.md) &mdash; *Class in namespace* `Piwik\Columns`- [`$dbTableName`](Piwik/Columns/Dimension.md#$dbtablename) &mdash; *Property in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`DimensionMetricFactory`](Piwik/Columns/DimensionMetricFactory.md) &mdash; *Class in namespace* `Piwik\Columns`- [`DimensionSegmentFactory`](Piwik/Columns/DimensionSegmentFactory.md) &mdash; *Class in namespace* `Piwik\Columns`- [`Discriminator`](Piwik/Columns/Discriminator.md) &mdash; *Class in namespace* `Piwik\Columns`- [`destroy()`](Piwik/Common.md#destroy) &mdash; *Method in class* [`Common`](Piwik/Common.md)
+- [`DI`](Piwik/DI.md) &mdash; *Class in namespace* `Piwik`- [`decorate()`](Piwik/DI.md#decorate) &mdash; *Method in class* [`DI`](Piwik/DI.md)
 - [`DataTable`](Piwik/DataTable.md) &mdash; *Class in namespace* `Piwik`- [`deleteRowsMetadata()`](Piwik/DataTable.md#deleterowsmetadata) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`deleteColumn()`](Piwik/DataTable.md#deletecolumn) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`deleteColumns()`](Piwik/DataTable.md#deletecolumns) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
@@ -249,6 +253,7 @@ Index
 
 ## E
 
+- [`env()`](Piwik/DI.md#env) &mdash; *Method in class* [`DI`](Piwik/DI.md)
 - [`enableRecursiveSort()`](Piwik/DataTable.md#enablerecursivesort) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`enableRecursiveFilters()`](Piwik/DataTable.md#enablerecursivefilters) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`enableRecursive()`](Piwik/DataTable/BaseFilter.md#enablerecursive) &mdash; *Method in class* [`BaseFilter`](Piwik/DataTable/BaseFilter.md)
@@ -275,6 +280,7 @@ Index
 - [`forceFetchingWithoutLaunchingArchiving()`](Piwik/Archive.md#forcefetchingwithoutlaunchingarchiving) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
 - [`formatValue()`](Piwik/Columns/Dimension.md#formatvalue) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`forceSave()`](Piwik/Config.md#forcesave) &mdash; *Method in class* [`Config`](Piwik/Config.md)
+- [`factory()`](Piwik/DI.md#factory) &mdash; *Method in class* [`DI`](Piwik/DI.md)
 - [`filter()`](Piwik/DataTable.md#filter) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`filterSubtables()`](Piwik/DataTable.md#filtersubtables) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`fromSerializedArray()`](Piwik/DataTable.md#fromserializedarray) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
@@ -411,6 +417,7 @@ Index
 - [`getFromGlobalConfig()`](Piwik/Config.md#getfromglobalconfig) &mdash; *Method in class* [`Config`](Piwik/Config.md)
 - [`getFromCommonConfig()`](Piwik/Config.md#getfromcommonconfig) &mdash; *Method in class* [`Config`](Piwik/Config.md)
 - [`getFromLocalConfig()`](Piwik/Config.md#getfromlocalconfig) &mdash; *Method in class* [`Config`](Piwik/Config.md)
+- [`get()`](Piwik/DI.md#get) &mdash; *Method in class* [`DI`](Piwik/DI.md)
 - [`getSelectsFromRangedColumn()`](Piwik/DataAccess/LogAggregator.md#getselectsfromrangedcolumn) &mdash; *Method in class* [`LogAggregator`](Piwik/DataAccess/LogAggregator.md)
 - [`getTotalsRow()`](Piwik/DataTable.md#gettotalsrow) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`getSummaryRow()`](Piwik/DataTable.md#getsummaryrow) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
@@ -605,6 +612,7 @@ Index
 - [`getProcessedMetricsById()`](Piwik/Plugin/Report.md#getprocessedmetricsbyid) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getMetricsForTable()`](Piwik/Plugin/Report.md#getmetricsfortable) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getProcessedMetricsForTable()`](Piwik/Plugin/Report.md#getprocessedmetricsfortable) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
+- [`getRowIdentifier()`](Piwik/Plugin/Report.md#getrowidentifier) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getAllReports()`](Piwik/Plugin/ReportsProvider.md#getallreports) &mdash; *Method in class* [`ReportsProvider`](Piwik/Plugin/ReportsProvider.md)
 - [`getAllReportClasses()`](Piwik/Plugin/ReportsProvider.md#getallreportclasses) &mdash; *Method in class* [`ReportsProvider`](Piwik/Plugin/ReportsProvider.md)
 - [`getSegment()`](Piwik/Plugin/Segment.md#getsegment) &mdash; *Method in class* [`Segment`](Piwik/Plugin/Segment.md)
@@ -914,6 +922,7 @@ Index
 
 - [`Join`](Piwik/Columns/Join.md) &mdash; *Class in namespace* `Piwik\Columns`- [`jsonSerialize()`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md#jsonserialize) &mdash; *Method in class* [`DiagnosticResult`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md)
 - [`jsonSerialize()`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResultItem.md#jsonserialize) &mdash; *Method in class* [`DiagnosticResultItem`](Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResultItem.md)
+- [`$jsFramework`](Piwik/SiteContentDetector.md#$jsframework) &mdash; *Property in class* [`SiteContentDetector`](Piwik/SiteContentDetector.md)
 - [`$jsClass`](Piwik/View/UIControl.md#$jsclass) &mdash; *Property in class* [`UIControl`](Piwik/View/UIControl.md)
 - [`$jsNamespace`](Piwik/View/UIControl.md#$jsnamespace) &mdash; *Property in class* [`UIControl`](Piwik/View/UIControl.md)
 
@@ -1091,6 +1100,7 @@ Index
 - [`setSqlSegment()`](Piwik/Columns/Dimension.md#setsqlsegment) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`setType()`](Piwik/Columns/Dimension.md#settype) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`SiteNameJoin`](Piwik/Columns/Join/SiteNameJoin.md) &mdash; *Class in namespace* [`Piwik\Columns\Join`](Piwik/Columns/Join)- [`sanitizeInputValues()`](Piwik/Common.md#sanitizeinputvalues) &mdash; *Method in class* [`Common`](Piwik/Common.md)
+- [`string()`](Piwik/DI.md#string) &mdash; *Method in class* [`DI`](Piwik/DI.md)
 - [`setLabelsHaveChanged()`](Piwik/DataTable.md#setlabelshavechanged) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`sort()`](Piwik/DataTable.md#sort) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`setTotalsRow()`](Piwik/DataTable.md#settotalsrow) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
@@ -1301,11 +1311,12 @@ Index
 ## V
 
 - [`verify()`](Piwik/Auth/Password.md#verify) &mdash; *Method in class* [`Password`](Piwik/Auth/Password.md)
+- [`value()`](Piwik/DI.md#value) &mdash; *Method in class* [`DI`](Piwik/DI.md)
 - [`verbose()`](Piwik/Log.md#verbose) &mdash; *Method in class* [`Log`](Piwik/Log.md)
 - [`verifyNonce()`](Piwik/Nonce.md#verifynonce) &mdash; *Method in class* [`Nonce`](Piwik/Nonce.md)
 - [`verifyNonceWithErrorMessage()`](Piwik/Nonce.md#verifynoncewitherrormessage) &mdash; *Method in class* [`Nonce`](Piwik/Nonce.md)
 - [`VisitDimension`](Piwik/Plugin/Dimension/VisitDimension.md) &mdash; *Class in namespace* `Piwik\Plugin\Dimension`- [`ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`Visualization`](Piwik/Plugin/Visualization.md) &mdash; *Class in namespace* [`Piwik\Plugin`](Piwik/Plugin)- [`VisitsPercent`](Piwik/Plugins/CoreHome/Columns/Metrics/VisitsPercent.md) &mdash; *Class in namespace* `Piwik\Plugins\CoreHome\Columns\Metrics`- [`Visitor`](Piwik/Plugins/Live/Visitor.md) &mdash; *Class in namespace* `Piwik\Plugins\Live`- [`VisitorDetailsAbstract`](Piwik/Plugins/Live/VisitorDetailsAbstract.md) &mdash; *Class in namespace* `Piwik\Plugins\Live`- [`verifyCredential()`](Piwik/Plugins/MobileMessaging/SMSProvider.md#verifycredential) &mdash; *Method in class* [`SMSProvider`](Piwik/Plugins/MobileMessaging/SMSProvider.md)
-- [`$validate`](Piwik/Settings/FieldConfig.md#$validate) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
+- [`VisitorsFromReferrerPercent`](Piwik/Plugins/Referrers/Columns/Metrics/VisitorsFromReferrerPercent.md) &mdash; *Class in namespace* `Piwik\Plugins\Referrers\Columns\Metrics`- [`$validate`](Piwik/Settings/FieldConfig.md#$validate) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
 - [`$validators`](Piwik/Settings/FieldConfig.md#$validators) &mdash; *Property in class* [`FieldConfig`](Piwik/Settings/FieldConfig.md)
 - [`Version`](Piwik/Version.md) &mdash; *Class in namespace* `Piwik`- [`View`](Piwik/View.md) &mdash; *Class in namespace* `Piwik`- [`ViewInterface`](Piwik/View/ViewInterface.md) &mdash; *Class in namespace* [`Piwik\View`](Piwik/View)
 ## W
