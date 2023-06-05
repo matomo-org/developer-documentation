@@ -597,6 +597,7 @@ Index
 - [`getProcessedMetricsById()`](Piwik/Plugin/Report.md#getprocessedmetricsbyid) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getMetricsForTable()`](Piwik/Plugin/Report.md#getmetricsfortable) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getProcessedMetricsForTable()`](Piwik/Plugin/Report.md#getprocessedmetricsfortable) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
+- [`getRowIdentifier()`](Piwik/Plugin/Report.md#getrowidentifier) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getAllReports()`](Piwik/Plugin/ReportsProvider.md#getallreports) &mdash; *Method in class* [`ReportsProvider`](Piwik/Plugin/ReportsProvider.md)
 - [`getAllReportClasses()`](Piwik/Plugin/ReportsProvider.md#getallreportclasses) &mdash; *Method in class* [`ReportsProvider`](Piwik/Plugin/ReportsProvider.md)
 - [`getSegment()`](Piwik/Plugin/Segment.md#getsegment) &mdash; *Method in class* [`Segment`](Piwik/Plugin/Segment.md)
