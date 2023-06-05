@@ -27,7 +27,7 @@ It is up to each plugin's archiver to respect the setting.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$archiveOnlyReport` (`string`) &mdash;
+    - `$archiveOnlyReport` (`string`|`string[]`) &mdash;
       
 - It does not return anything or a mixed result.
 

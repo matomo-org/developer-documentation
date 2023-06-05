@@ -139,10 +139,10 @@ as metrics for the current period.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$columns` (`array`|`string`) &mdash;
-       Array of metric names to aggregate.
-    - `$operationToApply` (`bool`|`string`) &mdash;
-       The operation to apply to the metric. Either `'sum'`, `'max'` or `'min'`.
+    - `$columns`
+      
+    - `$operationsToApply`
+      
 
 - *Returns:*  `array`|`int` &mdash;
     Returns the array of aggregate values. If only one metric was aggregated,

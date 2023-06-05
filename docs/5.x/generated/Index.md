@@ -375,6 +375,12 @@ Index
 - [`getPeriod()`](Piwik/ArchiveProcessor/Parameters.md#getperiod) &mdash; *Method in class* [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getSite()`](Piwik/ArchiveProcessor/Parameters.md#getsite) &mdash; *Method in class* [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
 - [`getSegment()`](Piwik/ArchiveProcessor/Parameters.md#getsegment) &mdash; *Method in class* [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
+- [`getPlugin()`](Piwik/ArchiveProcessor/Record.md#getplugin) &mdash; *Method in class* [`Record`](Piwik/ArchiveProcessor/Record.md)
+- [`getName()`](Piwik/ArchiveProcessor/Record.md#getname) &mdash; *Method in class* [`Record`](Piwik/ArchiveProcessor/Record.md)
+- [`getColumnToSortByBeforeTruncation()`](Piwik/ArchiveProcessor/Record.md#getcolumntosortbybeforetruncation) &mdash; *Method in class* [`Record`](Piwik/ArchiveProcessor/Record.md)
+- [`getMaxRowsInTable()`](Piwik/ArchiveProcessor/Record.md#getmaxrowsintable) &mdash; *Method in class* [`Record`](Piwik/ArchiveProcessor/Record.md)
+- [`getMaxRowsInSubtable()`](Piwik/ArchiveProcessor/Record.md#getmaxrowsinsubtable) &mdash; *Method in class* [`Record`](Piwik/ArchiveProcessor/Record.md)
+- [`getType()`](Piwik/ArchiveProcessor/Record.md#gettype) &mdash; *Method in class* [`Record`](Piwik/ArchiveProcessor/Record.md)
 - [`getName()`](Piwik/Auth.md#getname) &mdash; *Method in class* [`Auth`](Piwik/Auth.md)
 - [`getLogin()`](Piwik/Auth.md#getlogin) &mdash; *Method in class* [`Auth`](Piwik/Auth.md)
 - [`getTokenAuthSecret()`](Piwik/Auth.md#gettokenauthsecret) &mdash; *Method in class* [`Auth`](Piwik/Auth.md)
@@ -943,6 +949,7 @@ Index
 
 ## M
 
+- [`make()`](Piwik/ArchiveProcessor/Record.md#make) &mdash; *Method in class* [`Record`](Piwik/ArchiveProcessor/Record.md)
 - [`$metricId`](Piwik/Columns/Dimension.md#$metricid) &mdash; *Property in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`MetricsList`](Piwik/Columns/MetricsList.md) &mdash; *Class in namespace* `Piwik\Columns`- [`multiFilter()`](Piwik/DataTable.md#multifilter) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`makeFromIndexedArray()`](Piwik/DataTable.md#makefromindexedarray) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
@@ -1032,7 +1039,7 @@ Index
 
 ## R
 
-- [`Request`](Piwik/API/Request.md) &mdash; *Class in namespace* `Piwik\API`- [`reArchiveReport()`](Piwik/Archive/ArchiveInvalidator.md#rearchivereport) &mdash; *Method in class* [`ArchiveInvalidator`](Piwik/Archive/ArchiveInvalidator.md)
+- [`Request`](Piwik/API/Request.md) &mdash; *Class in namespace* `Piwik\API`- [`Record`](Piwik/ArchiveProcessor/Record.md) &mdash; *Class in namespace* [`Piwik\ArchiveProcessor`](Piwik/ArchiveProcessor)- [`reArchiveReport()`](Piwik/Archive/ArchiveInvalidator.md#rearchivereport) &mdash; *Method in class* [`ArchiveInvalidator`](Piwik/Archive/ArchiveInvalidator.md)
 - [`remove()`](Piwik/Columns/MetricsList.md#remove) &mdash; *Method in class* [`MetricsList`](Piwik/Columns/MetricsList.md)
 - [`renameColumn()`](Piwik/DataTable.md#renamecolumn) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`RemoveSubtables`](Piwik/DataTable/Filter/RemoveSubtables.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`ReplaceColumnNames`](Piwik/DataTable/Filter/ReplaceColumnNames.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`ReplaceSummaryRowLabel`](Piwik/DataTable/Filter/ReplaceSummaryRowLabel.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`renameColumn()`](Piwik/DataTable/Map.md#renamecolumn) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
@@ -1084,6 +1091,12 @@ Index
 - [`shouldLoadFlatten()`](Piwik/API/Request.md#shouldloadflatten) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
 - [`shouldSkipArchiveIfSkippingSegmentArchiveForToday()`](Piwik/Archive.md#shouldskiparchiveifskippingsegmentarchivefortoday) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
 - [`setArchiveOnlyReport()`](Piwik/ArchiveProcessor/Parameters.md#setarchiveonlyreport) &mdash; *Method in class* [`Parameters`](Piwik/ArchiveProcessor/Parameters.md)
+- [`setPlugin()`](Piwik/ArchiveProcessor/Record.md#setplugin) &mdash; *Method in class* [`Record`](Piwik/ArchiveProcessor/Record.md)
+- [`setName()`](Piwik/ArchiveProcessor/Record.md#setname) &mdash; *Method in class* [`Record`](Piwik/ArchiveProcessor/Record.md)
+- [`setColumnToSortByBeforeTruncation()`](Piwik/ArchiveProcessor/Record.md#setcolumntosortbybeforetruncation) &mdash; *Method in class* [`Record`](Piwik/ArchiveProcessor/Record.md)
+- [`setMaxRowsInTable()`](Piwik/ArchiveProcessor/Record.md#setmaxrowsintable) &mdash; *Method in class* [`Record`](Piwik/ArchiveProcessor/Record.md)
+- [`setMaxRowsInSubtable()`](Piwik/ArchiveProcessor/Record.md#setmaxrowsinsubtable) &mdash; *Method in class* [`Record`](Piwik/ArchiveProcessor/Record.md)
+- [`setType()`](Piwik/ArchiveProcessor/Record.md#settype) &mdash; *Method in class* [`Record`](Piwik/ArchiveProcessor/Record.md)
 - [`setTokenAuth()`](Piwik/Auth.md#settokenauth) &mdash; *Method in class* [`Auth`](Piwik/Auth.md)
 - [`setLogin()`](Piwik/Auth.md#setlogin) &mdash; *Method in class* [`Auth`](Piwik/Auth.md)
 - [`setPassword()`](Piwik/Auth.md#setpassword) &mdash; *Method in class* [`Auth`](Piwik/Auth.md)
