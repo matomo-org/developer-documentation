@@ -130,9 +130,15 @@ Typically, at this stage the RC phase isn't far away and a first RC will follow 
 
 * After triggering the first beta release, edit `config.ini.php` and point the path of the latest release beta channel to the correct latest beta file. For example, if Matomo 5 beta is released, then change  `'path_latest_5x_beta' => __DIR__ . '/../LATEST_BETA'` to `'path_latest_5x_beta' => __DIR__ . '/../LATEST_5X_BETA'`.
 
+#### Product Team
+
+- Publish a [forum post](https://forum.matomo.org/t/piwik-2-2-0-release-candidate-help-us-test-the-latest-and-greatest-piwik/11982) to announce the beta release and explain how to install it & welcome feedback!
+
 #### Marketing
 
-* Inform marketing team we're working on a new major release and that it is coming and in case they want to plan a blog and a newsletter just so they are aware of we will ping them at some point
+* Inform marketing team we're working on a new major release and so they are aware that it is coming and in case they want to plan: 
+  * a blog 
+  * and a newsletter 
 
 ### When releasing a first RC
 
