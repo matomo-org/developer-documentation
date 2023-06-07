@@ -13,6 +13,8 @@ The class defines the following methods:
 - [`__construct()`](#__construct)
 - [`clean()`](#clean) &mdash; Clean a string that may contain HTML special chars, single/double quotes, HTML entities, leading/trailing whitespace
 - [`translate()`](#translate) &mdash; Returns an internationalized string using a translation ID.
+- [`createAndListing()`](#createandlisting) &mdash; Converts the given list of items into a listing (e.g.
+- [`createOrListing()`](#createorlisting) &mdash; Converts the given list of items into a or listing (e.g.
 - [`getCurrentLanguage()`](#getcurrentlanguage)
 - [`setCurrentLanguage()`](#setcurrentlanguage)
 - [`getDefaultLanguage()`](#getdefaultlanguage)
@@ -66,6 +68,36 @@ cannot be found for the ID, the ID is returned.
 
 - *Returns:*  `string` &mdash;
     The translated string or `$translationId`.
+
+<a name="createandlisting" id="createandlisting"></a>
+<a name="createAndListing" id="createAndListing"></a>
+### `createAndListing()`
+
+Converts the given list of items into a listing (e.g. One, Two, and Three)
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$items` (`array`) &mdash;
+      
+    - `$language` (`string`) &mdash;
+      
+- It returns a `string` value.
+
+<a name="createorlisting" id="createorlisting"></a>
+<a name="createOrListing" id="createOrListing"></a>
+### `createOrListing()`
+
+Converts the given list of items into a or listing (e.g. One, Two, or Three)
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$items` (`array`) &mdash;
+      
+    - `$language` (`string`) &mdash;
+      
+- It returns a `string` value.
 
 <a name="getcurrentlanguage" id="getcurrentlanguage"></a>
 <a name="getCurrentLanguage" id="getCurrentLanguage"></a>

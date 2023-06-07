@@ -172,6 +172,8 @@ Index
 - [`$cms`](Piwik/SiteContentDetector.md#$cms) &mdash; *Property in class* [`SiteContentDetector`](Piwik/SiteContentDetector.md)
 - [`$cloudflare`](Piwik/SiteContentDetector.md#$cloudflare) &mdash; *Property in class* [`SiteContentDetector`](Piwik/SiteContentDetector.md)
 - [`clean()`](Piwik/Translation/Translator.md#clean) &mdash; *Method in class* [`Translator`](Piwik/Translation/Translator.md)
+- [`createAndListing()`](Piwik/Translation/Translator.md#createandlisting) &mdash; *Method in class* [`Translator`](Piwik/Translation/Translator.md)
+- [`createOrListing()`](Piwik/Translation/Translator.md#createorlisting) &mdash; *Method in class* [`Translator`](Piwik/Translation/Translator.md)
 - [`Custom`](Piwik/Updater/Migration/Custom.md) &mdash; *Class in namespace* [`Piwik\Updater\Migration`](Piwik/Updater/Migration)- [`createTable()`](Piwik/Updater/Migration/Db/Factory.md#createtable) &mdash; *Method in class* [`Factory`](Piwik/Updater/Migration/Db/Factory.md)
 - [`changeColumn()`](Piwik/Updater/Migration/Db/Factory.md#changecolumn) &mdash; *Method in class* [`Factory`](Piwik/Updater/Migration/Db/Factory.md)
 - [`changeColumnType()`](Piwik/Updater/Migration/Db/Factory.md#changecolumntype) &mdash; *Method in class* [`Factory`](Piwik/Updater/Migration/Db/Factory.md)
