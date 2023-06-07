@@ -126,10 +126,6 @@ Now that we have made all our plugins (including premium features) compatible wi
 
 Typically, at this stage the RC phase isn't far away and a first RC will follow within a couple of weeks. Again, this is because we want to have ideally a few third party plugins compatible with this new version.
 
-#### api.matomo.org
-
-* After triggering the first beta release, edit `config.ini.php` and point the path of the latest release beta channel to the correct latest beta file. For example, if Matomo 5 beta is released, then change  `'path_latest_5x_beta' => __DIR__ . '/../LATEST_BETA'` to `'path_latest_5x_beta' => __DIR__ . '/../LATEST_5X_BETA'`.
-
 #### Product Team
 
 - Publish a [forum post](https://forum.matomo.org/t/piwik-2-2-0-release-candidate-help-us-test-the-latest-and-greatest-piwik/11982) to announce the beta release and explain how to install it & welcome feedback!
