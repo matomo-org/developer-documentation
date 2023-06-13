@@ -39,6 +39,22 @@ returned by [getLogAggregator()](/api-reference/Piwik/Plugin/Archiver#getlogaggr
         }
     }
 
+Properties
+----------
+
+This abstract class defines the following properties:
+
+- [`$ARCHIVE_DEPENDENT`](#$archive_dependent)
+
+<a name="$archive_dependent" id="$archive_dependent"></a>
+<a name="ARCHIVE_DEPENDENT" id="ARCHIVE_DEPENDENT"></a>
+### `$ARCHIVE_DEPENDENT`
+
+#### Signature
+
+- Its type is not specified.
+
+
 Methods
 -------
 
@@ -52,6 +68,7 @@ The abstract class defines the following methods:
 - [`disable()`](#disable)
 - [`isEnabled()`](#isenabled) &mdash; Whether this Archiver should be used or not.
 - [`shouldRunEvenWhenNoVisits()`](#shouldrunevenwhennovisits) &mdash; By overwriting this method and returning true, a plugin archiver can force the archiving to run even when there was no visit for the website/date/period/segment combination (by default, archivers are skipped when there is no visit).
+- [`getDependentSegmentsToArchive()`](#getdependentsegmentstoarchive) &mdash; Returns a list of segments that should be pre-archived along with the segment currently being archived.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -152,4 +169,29 @@ was no visit for the website/date/period/segment combination
 #### Signature
 
 - It returns a `bool` value.
+
+<a name="getdependentsegmentstoarchive" id="getdependentsegmentstoarchive"></a>
+<a name="getDependentSegmentsToArchive" id="getDependentSegmentsToArchive"></a>
+### `getDependentSegmentsToArchive()`
+
+Returns a list of segments that should be pre-archived along with the segment currently being archived.
+
+The segments in this list will be added to the current segment via an AND condition and archiving
+for the current plugin will be launched. This process will not recurse further.
+
+If your plugin's API appends conditions to the requested segment when fetching data, you will want to
+use this method to make sure those segments get pre-archived. Otherwise, if browser archiving is disabled,
+the modified segments will appear to have no data.
+
+To archive another plugin, use an array instead of a string segment, for example:
+
+```
+['plugin' => 'VisitsSummary', 'segment' => '...']
+```
+
+See the Goals and VisitFrequency plugins for examples.
+
+#### Signature
+
+- It returns a `array` value.
 
