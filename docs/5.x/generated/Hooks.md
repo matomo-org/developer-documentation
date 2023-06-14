@@ -1533,7 +1533,7 @@ Usages:
 
 ### Installation.defaultSettingsForm.init
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php) in line [468](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php#L468)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php) in line [467](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php#L467)*
 
 Triggered on initialization of the form to customize default Matomo settings (at the end of the installation process).
 
@@ -1549,7 +1549,7 @@ Usages:
 
 ### Installation.defaultSettingsForm.submit
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php) in line [479](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php#L479)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php) in line [478](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php#L478)*
 
 Triggered on submission of the form to customize default Matomo settings (at the end of the installation process).
 
@@ -3219,7 +3219,7 @@ Callback Signature:
 
 ### SitesManager.showMatomoLinksInTrackingCodeEmail
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php) in line [400](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php#L400)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php) in line [399](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php#L399)*
 
 
 
