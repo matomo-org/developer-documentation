@@ -12,9 +12,20 @@ If you're using [Tag Manager](https://matomo.org/tag-manager/) to implement your
 
 To trigger your Matomo tag (which calls `trackPageView`), you can either:
 
-1. use the "History change" [trigger](https://matomo.org/docs/tag-manager/#triggers) which would work in most cases,
-2. or in your Single Page App, if you are using the 'Pageview Trigger' to trigger a Pageview, you can trigger a Tag Manager Event `{event: 'mtm.PageView'}` by calling the following line in JavaScript: `window._mtm.push({'event': 'mtm.PageView'});`. 
-   - This would also work similarly when you use instead the 'DOM Ready Trigger' (call `window._mtm.push({'event': 'DOMReady'});`) or when you use the 'Window Loaded Trigger' (call `_mtm.push({'event': 'WindowLoad'});`
+1. In your [Matomo Tag Manager container](https://matomo.org/faq/tag-manager/create-a-container-in-matomo-tag-manager/), navigate to [Triggers](https://matomo.org/guide/tag-manager/triggers/) and click “Create new Trigger”.
+2. Select the “History Change” trigger under the “User Engagement” section.
+3. Give your trigger a name, and click “Create New Trigger”.
+4. Create another trigger, this time selecting “Pageview” for the trigger type.
+5. Next, navigate to [Tags](https://matomo.org/guide/tag-manager/tags/) and click “Create New Tag” and select “Matomo Analytics” as the Tag type.
+6. Select your Matomo Configuration Variable and set the Tracking type to “Pageview”:
+7. Set the Custom URL to `{{PageUrl}}` and the Custom Title to `{{PageTitle}}`.
+8. Under the option “Execute this tag when any of these triggers are triggered”, select the “History Change” and “Pageview” triggers that we created.
+9. Use the Preview/Debug mode to test and ensure that your Triggers & Tag are working as expected.
+10. Once you’ve confirmed that the Trigger and Tag are working as expected, publish the changes so that they’re deployed to your website.
+
+
+# How to Trigger Matomo PageView, DOMReadt and WindowLoad using javascript. 
+- In your Single Page App, if you are using the 'Pageview Trigger' to trigger a Pageview, you can trigger a Tag Manager Event `{event: 'mtm.PageView'}` by calling the following line in JavaScript: `window._mtm.push({'event': 'mtm.PageView'});`. This would also work similarly when you use instead the 'DOM Ready Trigger' (call `window._mtm.push({'event': 'DOMReady'});`) or when you use the 'Window Loaded Trigger' (call `_mtm.push({'event': 'WindowLoad'});`.
 
 # Solution 2) Embedding the Tracking Code manually
 
