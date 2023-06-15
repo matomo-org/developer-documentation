@@ -20,7 +20,7 @@ To trigger your Matomo tag (which calls `trackPageView`), you can either:
 6. Select your Matomo Configuration Variable and set the Tracking type to “Pageview”:
 7. Set the Custom URL to `{{PageUrl}}` and the Custom Title to `{{PageTitle}}`.
 8. Under the option “Execute this tag when any of these triggers are triggered”, select the “History Change” and “Pageview” triggers that we created.
-9. Use the Preview/Debug mode to test and ensure that your Triggers & Tag are working as expected.
+9. Use the [Preview/Debug](https://matomo.org/faq/tag-manager/preview-debug-a-tag-manager-container/) mode to test and ensure that your Triggers & Tag are working as expected.
 10. Once you’ve confirmed that the Trigger and Tag are working as expected, publish the changes so that they’re deployed to your website.
 
 
