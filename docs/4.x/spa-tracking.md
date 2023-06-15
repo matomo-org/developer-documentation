@@ -24,7 +24,7 @@ To trigger your Matomo tag (which calls `trackPageView`), you can either:
 10. Once you’ve confirmed that the Trigger and Tag are working as expected, publish the changes so that they’re deployed to your website.
 
 
-# How to Trigger Matomo PageView, DOMReadt and WindowLoad using javascript.
+## How to Trigger Matomo PageView, DOMReady and WindowLoad event using javascript.
 - In your Single Page App, if you are using the 'Pageview Trigger' to trigger a Pageview, you can trigger a Tag Manager Event `{event: 'mtm.PageView'}` by calling the following line in JavaScript: `window._mtm.push({'event': 'mtm.PageView'});`. This would also work similarly when you use instead the 'DOM Ready Trigger' (call `window._mtm.push({'event': 'DOMReady'});`) or when you use the 'Window Loaded Trigger' (call `_mtm.push({'event': 'WindowLoad'});`.
 
 # Solution 2) Embedding the Tracking Code manually
