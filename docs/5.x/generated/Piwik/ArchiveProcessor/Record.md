@@ -23,6 +23,13 @@ The class defines the following methods:
 - [`getMaxRowsInSubtable()`](#getmaxrowsinsubtable)
 - [`setType()`](#settype)
 - [`getType()`](#gettype)
+- [`setIsCountOfBlobRecordRows()`](#setiscountofblobrecordrows)
+- [`getCountOfRecordName()`](#getcountofrecordname)
+- [`getCountOfRecordNameIsRecursive()`](#getcountofrecordnameisrecursive)
+- [`setColumnToRenameAfterAggregation()`](#setcolumntorenameafteraggregation)
+- [`getColumnToRenameAfterAggregation()`](#getcolumntorenameafteraggregation)
+- [`setBlobColumnAggregationOps()`](#setblobcolumnaggregationops)
+- [`getBlobColumnAggregationOps()`](#getblobcolumnaggregationops)
 
 <a name="make" id="make"></a>
 <a name="make" id="make"></a>
@@ -158,4 +165,77 @@ The class defines the following methods:
 #### Signature
 
 - It returns a `string` value.
+
+<a name="setiscountofblobrecordrows" id="setiscountofblobrecordrows"></a>
+<a name="setIsCountOfBlobRecordRows" id="setIsCountOfBlobRecordRows"></a>
+### `setIsCountOfBlobRecordRows()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$dependentRecordName` (`string`) &mdash;
+      
+    - `$isRecursive` (`bool`) &mdash;
+      
+- It returns a [`Record`](../../Piwik/ArchiveProcessor/Record.md) value.
+
+<a name="getcountofrecordname" id="getcountofrecordname"></a>
+<a name="getCountOfRecordName" id="getCountOfRecordName"></a>
+### `getCountOfRecordName()`
+
+#### Signature
+
+
+- *Returns:*  `string`|`null` &mdash;
+    
+
+<a name="getcountofrecordnameisrecursive" id="getcountofrecordnameisrecursive"></a>
+<a name="getCountOfRecordNameIsRecursive" id="getCountOfRecordNameIsRecursive"></a>
+### `getCountOfRecordNameIsRecursive()`
+
+#### Signature
+
+- It returns a `bool` value.
+
+<a name="setcolumntorenameafteraggregation" id="setcolumntorenameafteraggregation"></a>
+<a name="setColumnToRenameAfterAggregation" id="setColumnToRenameAfterAggregation"></a>
+### `setColumnToRenameAfterAggregation()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$columnToRenameAfterAggregation` (`array`|`null`) &mdash;
+      
+- It returns a [`Record`](../../Piwik/ArchiveProcessor/Record.md) value.
+
+<a name="getcolumntorenameafteraggregation" id="getcolumntorenameafteraggregation"></a>
+<a name="getColumnToRenameAfterAggregation" id="getColumnToRenameAfterAggregation"></a>
+### `getColumnToRenameAfterAggregation()`
+
+#### Signature
+
+
+- *Returns:*  `array`|`null` &mdash;
+    
+
+<a name="setblobcolumnaggregationops" id="setblobcolumnaggregationops"></a>
+<a name="setBlobColumnAggregationOps" id="setBlobColumnAggregationOps"></a>
+### `setBlobColumnAggregationOps()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$blobColumnAggregationOps` (`array`|`null`) &mdash;
+      
+- It returns a [`Record`](../../Piwik/ArchiveProcessor/Record.md) value.
+
+<a name="getblobcolumnaggregationops" id="getblobcolumnaggregationops"></a>
+<a name="getBlobColumnAggregationOps" id="getBlobColumnAggregationOps"></a>
+### `getBlobColumnAggregationOps()`
+
+#### Signature
+
+
+- *Returns:*  `array`|`null` &mdash;
+    
 
