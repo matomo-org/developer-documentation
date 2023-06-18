@@ -31,7 +31,7 @@ This guide describes how to do that.
 
 Log aggregation queries are expensive (especially with segmentation) and Matomo wants to be able to run as few of them
 as possible at a time. A `RecordBuilder` is meant to encapsulate the smallest amount of archiving logic possible, allowing Matomo
-can run just what it needs to.
+to run just what it needs to.
 
 Many times this will either be running a single log aggregation query to generate a single `DataTable` or running a single
 log aggregation query to generate multiple numeric metrics. Sometimes it will mean running multiple log aggregation queries
