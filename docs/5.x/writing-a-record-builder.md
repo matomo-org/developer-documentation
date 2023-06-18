@@ -38,7 +38,7 @@ log aggregation query to generate multiple numeric metrics. Sometimes it will me
 to generate a single `DataTable` or running multiple log aggregation queries to generate multiple `DataTable`s and multiple metrics.
 
 It is up to you as a developer to find the balance between efficiency (executing the fewest log aggregation queries overall)
-and modularity (having `RecordBuilders` that individually do as little as possible).
+and modularity (having `RecordBuilder`s that individually do as little as possible).
 
 Once you've identified the `RecordBuilder`s you'll need, create empty classes for them in a `RecordBuilders` subfolder of your plugin. For example,
 `/path/to/matomo/plugins/MyPlugin/RecordBuilders/MyRecordBuilder`.
