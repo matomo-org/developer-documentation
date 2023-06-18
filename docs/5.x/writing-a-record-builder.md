@@ -11,9 +11,9 @@ and subject to change. Please be aware it could potentially change between minor
 
 # Writing a RecordBuilder
 
-RecordBuilders encapsulate the smallest units of log aggregation logic required to generate records for a plugin.
+RecordBuilders encapsulate the smallest units of aggregation logic required to generate records for a plugin.
 
-They define two methods: `aggregate()` which builds the actual `DataTable` and numeric records to insert into archive tables
+They define two methods: `aggregate()` which builds the actual `DataTable` & numeric records to insert into archive tables,
 and `getRecordMetadata()` which returns information about what records the `RecordBuilder` builds.
 
 `aggregate()` will generally aggregate data from log tables to create records, but it does not have to. An example of a use case
@@ -22,7 +22,7 @@ without aggregation would be importing analytics data from another service.
 `getRecordMetadata()` is used when aggregating records for non-day periods. In this case, Matomo will find the record values
 for the subperiods of the non-day period and aggregate them together.
 
-If your plugin needs to insert data into the archive tables during archiving, then you'll want to create your own `RecordBuilders`.
+If your plugin needs to insert data into the archive tables during archiving, then you'll want to create your own `RecordBuilder` classes.
 This guide describes how to do that.
 
 ## How to create one
@@ -30,17 +30,17 @@ This guide describes how to do that.
 ### Step one: identify the list of records and log aggregation queries you want to bundle together
 
 Log aggregation queries are expensive (especially with segmentation) and Matomo wants to be able to run as few of them
-as necessary at a time. A `RecordBuilder` is meant to encapsulate the smallest amount of archiving logic possible so Matomo
-can run just one bit at a time if it needs to.
+as possible at a time. A `RecordBuilder` is meant to encapsulate the smallest amount of archiving logic possible, allowing Matomo
+can run just what it needs to.
 
 Many times this will either be running a single log aggregation query to generate a single `DataTable` or running a single
 log aggregation query to generate multiple numeric metrics. Sometimes it will mean running multiple log aggregation queries
-to generate a single `DataTable` or multiple log aggregation queries to generate multiple `DataTable`s and multiple metrics.
+to generate a single `DataTable` or running multiple log aggregation queries to generate multiple `DataTable`s and multiple metrics.
 
 It is up to you as a developer to find the balance between efficiency (executing the fewest log aggregation queries overall)
 and modularity (having `RecordBuilders` that individually do as little as possible).
 
-Once you've done this, create the new `RecordBuilder` class in a `RecordBuilders` subfolder of your plugin. For example,
+Once you've identified the `RecordBuilder`s you'll need, create empty classes for them in a `RecordBuilders` subfolder of your plugin. For example,
 `/path/to/matomo/plugins/MyPlugin/RecordBuilders/MyRecordBuilder`.
 
 **A note about Parameterized RecordBuilders**
@@ -51,7 +51,7 @@ parameters. These `RecordBuilder`s are added via the `Archiver.addRecordBuilders
 
 The ability to create parameterized `RecordBuilder`s may not be necessary in most cases, but if your plugin
 manages entities and provides reports about those entities, it can be used to avoid having to run a query for
-every entity in the database in one `RecordBuilder`.
+every entity in the database within a single `RecordBuilder`.
 
 Examples of plugins that use this feature are the Custom Reports premium feature and the A/B Testing premium feature.
 Each of these plugins use a `RecordBuilder` that takes an ID. For Custom Reports this is the ID of the specific custom
@@ -59,7 +59,7 @@ report and for A/B Testing this is the ID of the experiment.
 
 ### Step two: implement `getRecordMetadata()`
 
-Once you know what queries the `RecordBuilder`s you are going to create will execute, you can start writing some code.
+Once you know what queries the `RecordBuilder`s you are going to create will execute, you can start coding.
 The first thing to do is implement the `getRecordMetadata()` method.
 
 All this method does is return a list of `Record` entries describing the records the builder will create:
@@ -77,9 +77,9 @@ public function getRecordMetadata(ArchiveProcessor $archiveProcessor): array
 }
 ```
 
-The code in this method will usually look like the above, but it doesn't have to just be a hard-coded array.
+The above is a typical example of how this method would be implemented, but it doesn't have to just be a hard-coded array.
 You can use the `ArchiveProcessor` to get the current site/period/segment or fetch system settings or measurable
-settings and vary the result based on that. The only requirement is that every `Record` returns is matches
+settings and vary the result based on that information. The only requirement is that every `Record` returned matches
 what can be returned by the `aggregate()` method, which we'll look at next.
 
 ### Step three: implement `aggregate()`
@@ -92,7 +92,7 @@ As for how they are created, well, there is no straightforward way to define how
 
 The current pattern in Matomo is to use the core `LogAggregator` class to query log data and loop through the result.
 If your plugin provides its own additional log tables, then the pattern is to define your own `Aggregator` classes
-to build and execute log aggregation SQL queries, and use those in `RecordBuilders`.
+to build and execute log aggregation SQL queries, and use those classes in your `RecordBuilders`.
 
 An example of this might look like:
 
@@ -126,7 +126,7 @@ public function aggregate(ArchiveProcessor $archiveProcessor): array
 ```
 
 This example queries the `log_visit` table, grouping by the `config_browser_name` column and aggregating visit metrics.
-Then for each row of that query, adds the metrics to a `DataTable` which is eventually returned.
+Then, for each row of that query, it adds the metrics to a `DataTable` which is eventually returned.
 
 Most `aggregate()` methods will be more complicated than this, but hopefully it provides you with a general understanding
 of how they should work. We recommend looking at existing `RecordBuilder`s in Matomo as well to see what is possible.
@@ -136,8 +136,8 @@ of how they should work. We recommend looking at existing `RecordBuilder`s in Ma
 At this point, the hard parts are over. The last two steps are just finishing touches.
 
 By default, Matomo does not limit the data that is inserted into archive tables. For reports that have a limited number
-of rows, like the `VisitorInterest.getVisitsByVisitCount` and `UserCountry.getCountry`, this is fine. But for reports
-with a variable number of rows, it is good practice to make sure the number of rows is capped.
+of rows, like the `VisitorInterest.getVisitsByVisitCount` and `UserCountry.getCountry`, this is acceptable. But for reports
+with a variable number of rows, it's good practice to make sure the number of rows is capped.
 
 To set a limit, set the `maxRowsInTable` and `maxRowsInSubtable` properties in the constructor of your `RecordBuilder`.
 This can be hard-coded or it can come from configuration:
@@ -185,13 +185,13 @@ class MyRecordBuilder extends RecordBuilder
 ```
 
 Note that each of these settings can also be overridden for specific records by setting the relevant property
-on `Record`s in your `getRecordMetadata()` method.
+on `Record` instances in your `getRecordMetadata()` method.
 
 ### Step five: if your RecordBuilder is parameterized, implement the relevant event
 
 If your `RecordBuilder` is not parameterized then there's nothing else to do. You're done and Matomo will detect and use it.
 
-If it is parameterized, then there's still one thing to do. Matomo will not be able to automatically create a `RecordBuilder`
+If it is parameterized, then there's still one thing left to do. Matomo will not be able to automatically create a `RecordBuilder`
 that takes parameters, so it must be added manually in the `Archiver.addRecordBuilders` event like so:
 
 ```
