@@ -25,7 +25,7 @@ To trigger your Matomo tag (which calls `trackPageView`), you can either:
 
 
 ## How to Trigger Matomo Tag Manager PageView, DOMReady and WindowLoad event using javascript.
-- In your Single Page App, if you are using the 'Pageview Trigger' to trigger a Pageview, you can trigger a Tag Manager Event `{event: 'mtm.PageView'}` by calling the following line in JavaScript: `window._mtm.push({'event': 'mtm.PageView'});`. This would also work similarly when you use instead the 'DOM Ready Trigger' (call `window._mtm.push({'event': 'DOMReady'});`) or when you use the 'Window Loaded Trigger' (call `_mtm.push({'event': 'WindowLoad'});`.
+- In your Single Page App, if you are using the 'Pageview Trigger' to trigger a Pageview, you can trigger a Tag Manager Event `{event: 'mtm.PageView'}` by calling the following line in JavaScript: `window._mtm.push({'event': 'mtm.PageView'});`. This would also work similarly when you use the 'DOM Ready Trigger' (call `window._mtm.push({'event': 'DOMReady'});`) or when you use the 'Window Loaded Trigger' (call `_mtm.push({'event': 'WindowLoad'});`.
 
 # Solution 2) Embedding the Tracking Code manually
 
@@ -156,7 +156,7 @@ Where `documentOrElement` points either to `document` or an element similar to t
 
 ### Heatmap & Session Recording
 
-To support single-page websites and web applications out of the box, [Heatmap](https://matomo.org/docs/heatmaps/) & [Session Recording](https://matomo.org/docs/session-recording/) will automatically detect a new page view when you call the `trackPageView` method. This applies if you call `trackPageView` several times without an actual page reload. Matomo will after each call of `trackPageView` stop the recording of any activities and re-evaluate based on the new URL whether if it should record activities for the new page or not. 
+To support single-page websites and web applications out of the box, [Heatmap](https://matomo.org/docs/heatmaps/) & [Session Recording](https://matomo.org/docs/session-recording/) will automatically detect a new page view when you call the `trackPageView` method. This applies if you call `trackPageView` several times without an actual page reload. Matomo will stop the recording of any activities after each call of `trackPageView` and re-evaluate whether it should record activities for the new page based on the new URL. 
 
 If you have a single-page website and you use `trackPageView` for any other purposes than an actual page view, it is recommended to disable the default behaviour using this method and let Heatmap & Session Recording explicitly know when there is a new page view by calling the two methods `disableAutoDetectNewPageView` and `setNewPageView`.
 
