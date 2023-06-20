@@ -245,6 +245,7 @@ The class defines the following methods:
 - [`offsetGet()`](#offsetget)
 - [`offsetSet()`](#offsetset)
 - [`offsetUnset()`](#offsetunset)
+- [`sumRowWithLabel()`](#sumrowwithlabel)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -1310,4 +1311,19 @@ Unsets all queued filters.
     - `$offset`
       
 - It returns a `void` value.
+
+<a name="sumrowwithlabel" id="sumrowwithlabel"></a>
+<a name="sumRowWithLabel" id="sumRowWithLabel"></a>
+### `sumRowWithLabel()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$label`
+      
+    - `$columns` (`array`) &mdash;
+      
+    - `$aggregationOps` (`array`|`null`) &mdash;
+      
+- It returns a [`Row`](../Piwik/DataTable/Row.md) value.
 

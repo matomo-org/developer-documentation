@@ -68,6 +68,7 @@ The class defines the following methods:
 - [`getComparisons()`](#getcomparisons) &mdash; Returns the associated comparisons DataTable, if any.
 - [`setComparisons()`](#setcomparisons) &mdash; Associates the supplied table with this row as the comparisons table.
 - [`isEqual()`](#isequal) &mdash; Helper function that tests if two rows are equal.
+- [`sumRowWithLabelToSubtable()`](#sumrowwithlabeltosubtable)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -485,4 +486,19 @@ Column order is not important.
     - `$row2` ([`Row`](../../Piwik/DataTable/Row.md)) &mdash;
        second to compare
 - It returns a `bool` value.
+
+<a name="sumrowwithlabeltosubtable" id="sumrowwithlabeltosubtable"></a>
+<a name="sumRowWithLabelToSubtable" id="sumRowWithLabelToSubtable"></a>
+### `sumRowWithLabelToSubtable()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$label` (`string`) &mdash;
+      
+    - `$columns` (`array`) &mdash;
+      
+    - `$aggregationOps` (`array`|`null`) &mdash;
+      
+- It returns a [`Row`](../../Piwik/DataTable/Row.md) value.
 
