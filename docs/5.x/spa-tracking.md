@@ -14,15 +14,19 @@ To trigger your Matomo tag (which calls `trackPageView`), you can either:
 
 1. In your [Matomo Tag Manager container](https://matomo.org/faq/tag-manager/create-a-container-in-matomo-tag-manager/), navigate to [Triggers](https://matomo.org/guide/tag-manager/triggers/) and click “Create new Trigger”.
 2. Select the “History Change” trigger under the “User Engagement” section.
-3. Give your trigger a name, and click “Create New Trigger”.
-4. Create another trigger, this time selecting “Pageview” for the trigger type.
-5. Next, navigate to [Tags](https://matomo.org/guide/tag-manager/tags/) and click “Create New Tag” and select “Matomo Analytics” as the Tag type.
-6. Select your Matomo Configuration Variable and set the Tracking type to “Pageview”.
-7. Set the Custom Title to `{{PageTitle}}`.
-8. Set the Custom URL to `{{PageOrigin}}/{{PageHash}}` if your SPA or PWA has a `#` in the URL to navigate to different pages. Otherwise, set it as `{{PageUrl}}`
-9. Under the option “Execute this tag when any of these triggers are triggered”, select the “History Change” and “Pageview” triggers that we created.
-10. Use the [Preview/Debug](https://matomo.org/faq/tag-manager/preview-debug-a-tag-manager-container/) mode to test and ensure that your Triggers & Tag are working as expected.
-11. Once you’ve confirmed that the Trigger and Tag are working as expected, publish the changes so that they’re deployed to your website.
+3. Give your trigger a name, for example "History Change".
+4. Click "Create New Trigger".
+5. Create another trigger, this time selecting "Pageview" for the trigger type.
+6. Select the "Pageview" trigger under the "Pageview" section.
+7. Give your trigger a name, for example "Pageview".
+8. Click "Create New Trigger".
+9. Next, navigate to [Tags](https://matomo.org/guide/tag-manager/tags/) and click "Create New Tag” and select “Matomo Analytics" as the Tag type.
+10. Select your Matomo Configuration Variable and set the Tracking type to "Pageview".
+11. Set the Custom Title to `{{PageTitle}}`.
+12. Set the Custom URL to `{{PageOrigin}}/{{PageHash}}` if your SPA or PWA has a `#` in the URL to navigate to different pages. Otherwise, set it as `{{PageUrl}}`
+13. Under the option "Execute this tag when any of these triggers are triggered", select the "History Change" and "Pageview" triggers that we created.
+14. Use the [Preview/Debug](https://matomo.org/faq/tag-manager/preview-debug-a-tag-manager-container/) mode to test and ensure that your Triggers & Tag are working as expected.
+15. Once you’ve confirmed that the Trigger and Tag are working as expected, publish the changes so that they’re deployed to your website.
 
 
 ## How to Trigger Matomo Tag Manager PageView, DOMReady and WindowLoad event using javascript.
