@@ -4,7 +4,7 @@ category: Integrate
 
 # Single-Page Application/Progressive Web App Tracking
 
-In the rapidly evolving digital landscape, single-page applications (SPAs) and Progressive Web Apps (PWAs) have emerged as a prevalent choice for developers, given their fast load times, smooth user experience, and offline capabilities. This document serves as a comprehensive guide to setting up accurate tracking within SPAs and PWAs using Matomo, an open-source analytics platform. We cover multiple solutions to ensure you gather meaningful and correct data, vital for optimising user experience and achieving your digital objectives.
+It is easy to start tracking your Single Page Application (SPA) or Progressive Web App (PWA) using Matomo Analytics. The easiest way to do this is using the Matomo Tag Manager ([learn more](https://matomo.org/guide/tag-manager/) using the steps below, alternatively you can use the JavaScript Tracking code ([following this guide](https://developer.matomo.org/guides/spa-tracking)).
 
 # Solution 1) Embed Matomo Tag Manager Container Code
 
@@ -19,7 +19,7 @@ To trigger your Matomo tag (which calls `trackPageView`), you can either:
 5. Next, navigate to [Tags](https://matomo.org/guide/tag-manager/tags/) and click “Create New Tag” and select “Matomo Analytics” as the Tag type.
 6. Select your Matomo Configuration Variable and set the Tracking type to “Pageview”.
 7. Set the Custom Title to `{{PageTitle}}`.
-8. Set the Custom URL to `{{PageOrigin}}/{{PageHash}}` if your SPA or PWA app updates only the `#` part of the URL. Otherwise, set it as `{{PageUrl}}`.
+8. Set the Custom URL to `{{PageOrigin}}/{{PageHash}}` if your SPA or PWA has a `#` in the URL to navigate to different pages. Otherwise, set it as `{{PageUrl}}`
 9. Under the option “Execute this tag when any of these triggers are triggered”, select the “History Change” and “Pageview” triggers that we created.
 10. Use the [Preview/Debug](https://matomo.org/faq/tag-manager/preview-debug-a-tag-manager-container/) mode to test and ensure that your Triggers & Tag are working as expected.
 11. Once you’ve confirmed that the Trigger and Tag are working as expected, publish the changes so that they’re deployed to your website.
