@@ -45,6 +45,7 @@ The class defines the following methods:
 - [`filter()`](#filter) &mdash; Adds the processed metrics.
 - [`enableRecursive()`](#enablerecursive) &mdash; Enables/Disables recursive filtering. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
 - [`filterSubTable()`](#filtersubtable) &mdash; Filters a row's subtable, if one exists and is loaded in memory. Inherited from [`BaseFilter`](../../../Piwik/DataTable/BaseFilter.md)
+- [`getProcessOnlyIdGoalToUseForReport()`](#getprocessonlyidgoaltouseforreport) &mdash; Returns an idGoal override to use for the processOnlyIdGoal parameter of this filter if $requestMethod is for a Actions page report or an Actions entry page report.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -104,4 +105,22 @@ Filters a row's subtable, if one exists and is loaded in memory.
     - `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
        The row whose subtable should be filter.
 - It does not return anything or a mixed result.
+
+<a name="getprocessonlyidgoaltouseforreport" id="getprocessonlyidgoaltouseforreport"></a>
+<a name="getProcessOnlyIdGoalToUseForReport" id="getProcessOnlyIdGoalToUseForReport"></a>
+### `getProcessOnlyIdGoalToUseForReport()`
+
+Returns an idGoal override to use for the processOnlyIdGoal parameter of this filter if $requestMethod
+is for a Actions page report or an Actions entry page report.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$idGoal`
+      
+    - `$requestMethod` (`string`) &mdash;
+      
+
+- *Returns:*  `int`|`string`|`null` &mdash;
+    
 

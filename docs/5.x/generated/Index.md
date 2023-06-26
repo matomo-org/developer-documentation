@@ -455,6 +455,7 @@ Index
 - [`getAllTableMetadata()`](Piwik/DataTable.md#getalltablemetadata) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`getQueuedFilters()`](Piwik/DataTable.md#getqueuedfilters) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`getIterator()`](Piwik/DataTable.md#getiterator) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
+- [`getProcessOnlyIdGoalToUseForReport()`](Piwik/DataTable/Filter/AddColumnsProcessedMetricsGoal.md#getprocessonlyidgoaltouseforreport) &mdash; *Method in class* [`AddColumnsProcessedMetricsGoal`](Piwik/DataTable/Filter/AddColumnsProcessedMetricsGoal.md)
 - [`getSingleUnitLabel()`](Piwik/DataTable/Filter/BeautifyRangeLabels.md#getsingleunitlabel) &mdash; *Method in class* [`BeautifyRangeLabels`](Piwik/DataTable/Filter/BeautifyRangeLabels.md)
 - [`getRangeLabel()`](Piwik/DataTable/Filter/BeautifyRangeLabels.md#getrangelabel) &mdash; *Method in class* [`BeautifyRangeLabels`](Piwik/DataTable/Filter/BeautifyRangeLabels.md)
 - [`getUnboundedLabel()`](Piwik/DataTable/Filter/BeautifyRangeLabels.md#getunboundedlabel) &mdash; *Method in class* [`BeautifyRangeLabels`](Piwik/DataTable/Filter/BeautifyRangeLabels.md)
