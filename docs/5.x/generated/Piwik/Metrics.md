@@ -52,6 +52,7 @@ The class defines the following methods:
 - [`getMetricIdsToProcessReportTotal()`](#getmetricidstoprocessreporttotal)
 - [`getDefaultMetricsDocumentation()`](#getdefaultmetricsdocumentation)
 - [`getPercentVisitColumn()`](#getpercentvisitcolumn)
+- [`makeGoalColumnsRow()`](#makegoalcolumnsrow) &mdash; This is a utility method used when building records through log aggregation.
 
 <a name="getmappingfromidtoname" id="getmappingfromidtoname"></a>
 <a name="getMappingFromIdToName" id="getMappingFromIdToName"></a>
@@ -151,4 +152,39 @@ The class defines the following methods:
 #### Signature
 
 - It does not return anything or a mixed result.
+
+<a name="makegoalcolumnsrow" id="makegoalcolumnsrow"></a>
+<a name="makeGoalColumnsRow" id="makeGoalColumnsRow"></a>
+### `makeGoalColumnsRow()`
+
+This is a utility method used when building records through log aggregation.
+
+In records with per-goal conversion metrics the metrics are stored within DataTable Rows
+as a column with an array a value. The array is indexed by the goal ID and the column name
+is set to `Metrics::INDEX_GOALS`, for example:
+
+```
+$columns = [
+    Metrics::INDEX_GOALS = [
+        $idGoal => [
+            // ... conversion metrics ...
+        ],
+    ],
+];
+$row = new Row([DataTable::COLUMNS => $columns]);
+```
+
+This methods returns an array like `$columns` above based on a goal ID and a row of
+metric values for the goal. The result can be added directly to a DataTable record via `sumRowWithLabel()`.
+
+The goal metrics returned will differ based on whether the goal is user defined or an ecommerce goal.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$idGoal` (`int`) &mdash;
+      
+    - `$goalsMetrics` (`array`) &mdash;
+      
+- It returns a `array` value.
 
