@@ -79,8 +79,10 @@ Logs a message using the ERROR log level.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$message`
-      
+    - `$message` (`string`) &mdash;
+       The log message. This can be a sprintf format string.
+    - `$printFparams` (`mixed`) &mdash;
+       Optional sprintf params.
 - It does not return anything or a mixed result.
 
 <a name="warning" id="warning"></a>
@@ -96,8 +98,10 @@ Logs a message using the WARNING log level.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$message`
-      
+    - `$message` (`string`) &mdash;
+       The log message. This can be a sprintf format string.
+    - `$printFparams` (`mixed`) &mdash;
+       Optional sprintf params.
 - It does not return anything or a mixed result.
 
 <a name="info" id="info"></a>
@@ -113,8 +117,10 @@ Logs a message using the INFO log level.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$message`
-      
+    - `$message` (`string`) &mdash;
+       The log message. This can be a sprintf format string.
+    - `$printFparams` (`mixed`) &mdash;
+       Optional sprintf params.
 - It does not return anything or a mixed result.
 
 <a name="debug" id="debug"></a>
@@ -130,8 +136,10 @@ Logs a message using the DEBUG log level.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$message`
-      
+    - `$message` (`string`) &mdash;
+       The log message. This can be a sprintf format string.
+    - `$printFparams` (`mixed`) &mdash;
+       Optional sprintf params.
 - It does not return anything or a mixed result.
 
 <a name="verbose" id="verbose"></a>
@@ -147,7 +155,9 @@ Logs a message using the VERBOSE log level.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$message`
-      
+    - `$message` (`string`) &mdash;
+       The log message. This can be a sprintf format string.
+    - `$printFparams` (`mixed`) &mdash;
+       Optional sprintf params.
 - It does not return anything or a mixed result.
 
