@@ -227,6 +227,7 @@ Index
 - [`deleteLike()`](Piwik/Option.md#deletelike) &mdash; *Method in class* [`Option`](Piwik/Option.md)
 - [`deactivate()`](Piwik/Plugin.md#deactivate) &mdash; *Method in class* [`Plugin`](Piwik/Plugin.md)
 - [`disable()`](Piwik/Plugin/Archiver.md#disable) &mdash; *Method in class* [`Archiver`](Piwik/Plugin/Archiver.md)
+- [`doesPluginHaveRecordBuilders()`](Piwik/Plugin/Archiver.md#doespluginhaverecordbuilders) &mdash; *Method in class* [`Archiver`](Piwik/Plugin/Archiver.md)
 - [`$date`](Piwik/Plugin/Controller.md#$date) &mdash; *Property in class* [`Controller`](Piwik/Plugin/Controller.md)
 - [`$dimension`](Piwik/Plugin/Segment.md#$dimension) &mdash; *Property in class* [`Segment`](Piwik/Plugin/Segment.md)
 - [`daily()`](Piwik/Plugin/Tasks.md#daily) &mdash; *Method in class* [`Tasks`](Piwik/Plugin/Tasks.md)

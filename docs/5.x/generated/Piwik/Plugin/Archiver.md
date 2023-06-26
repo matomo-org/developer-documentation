@@ -42,7 +42,7 @@ returned by [getLogAggregator()](/api-reference/Piwik/Plugin/Archiver#getlogaggr
 Properties
 ----------
 
-This abstract class defines the following properties:
+This class defines the following properties:
 
 - [`$ARCHIVE_DEPENDENT`](#$archive_dependent)
 
@@ -58,7 +58,7 @@ This abstract class defines the following properties:
 Methods
 -------
 
-The abstract class defines the following methods:
+The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
 - [`aggregateDayReport()`](#aggregatedayreport) &mdash; Archives data for a day period.
@@ -69,6 +69,7 @@ The abstract class defines the following methods:
 - [`isEnabled()`](#isenabled) &mdash; Whether this Archiver should be used or not.
 - [`shouldRunEvenWhenNoVisits()`](#shouldrunevenwhennovisits) &mdash; By overwriting this method and returning true, a plugin archiver can force the archiving to run even when there was no visit for the website/date/period/segment combination (by default, archivers are skipped when there is no visit).
 - [`getDependentSegmentsToArchive()`](#getdependentsegmentstoarchive) &mdash; Returns a list of segments that should be pre-archived along with the segment currently being archived.
+- [`doesPluginHaveRecordBuilders()`](#doespluginhaverecordbuilders)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -80,7 +81,9 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$processor` ([`ArchiveProcessor`](../../Piwik/ArchiveProcessor.md)) &mdash;
-       The ArchiveProcessor instance to use when persisting archive data.
+      
+    - `$pluginName` (`string`|`null`) &mdash;
+      
 
 <a name="aggregatedayreport" id="aggregatedayreport"></a>
 <a name="aggregateDayReport" id="aggregateDayReport"></a>
@@ -194,4 +197,15 @@ See the Goals and VisitFrequency plugins for examples.
 #### Signature
 
 - It returns a `array` value.
+
+<a name="doespluginhaverecordbuilders" id="doespluginhaverecordbuilders"></a>
+<a name="doesPluginHaveRecordBuilders" id="doesPluginHaveRecordBuilders"></a>
+### `doesPluginHaveRecordBuilders()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$pluginName` (`string`) &mdash;
+      
+- It returns a `bool` value.
 
