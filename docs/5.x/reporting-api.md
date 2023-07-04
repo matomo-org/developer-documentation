@@ -155,6 +155,8 @@ For best security it is recommended to create tokens that are only valid for POS
 
     curl -X POST 'https://demo.matomo.cloud/?module=API&method=API.getMatomoVersion&format=xml' -d 'token_auth=YOUR\_TOKEN'
 
+**Note:** Some of the example URLs provided on this page may fail due to the use of the "anonymous" **token_auth**. To see an example using a valid **token_auth** you can view the examples in your Matomo instance under _Administration_ => _Platform_ => _API_.
+
 ### Session tokens
 
 When you are logged in to Matomo and choose to export data, then you might notice a parameter `&force_api_session=1` parameter in the URL. When this URL parameter is present, then Matomo uses a special `token_auth` that is randomly generated every time you log in and this URL will only work while you are logged in and will no longer work once you're logged out. The next time you log in the token will change again. If you want the URL to work permanently, then you need to remove this URL parameter `&force_api_session` and replace the token with the value of a generated auth token see above. 
