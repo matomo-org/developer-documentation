@@ -155,7 +155,7 @@ For best security it is recommended to create tokens that are only valid for POS
 
     curl -X POST 'https://demo.matomo.cloud/?module=API&method=API.getMatomoVersion&format=xml' -d 'token_auth=YOUR\_TOKEN'
 
-**Note:** Some of the example URLs generated on this page may fail due to the use of the "anonymous" **token_auth**. To see an example using a valid **token_auth** you can view the examples in your Matomo instance under Administration (Cog icon) -> Platform -> API
+**Note:** Some of the example URLs provided on this page may fail due to the use of the "anonymous" **token_auth**. To see an example using a valid **token_auth** you can view the examples in your Matomo instance under _Administration_ => _Platform_ => _API_.
 
 ### Session tokens
 
