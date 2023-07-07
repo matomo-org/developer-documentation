@@ -23,10 +23,12 @@ The code looks as follows:
 ```html
 <!-- Matomo Tag Manager -->
 <script type="text/javascript">
-    window._mtm = window._mtm || [];
-    window._mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+  window._mtm = window._mtm || [];
+  window._mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+  (function() {
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.src='https://{$MATOMO_URL}/js/container_{$CONTAINER}.js'; s.parentNode.insertBefore(g,s);
+    g.type='text/javascript'; g.async=true; g.src='${MATOMOURL}/js/container_${CONTAINERID}.js'; s.parentNode.insertBefore(g,s);
+  })();
 </script>
 <!-- End Matomo Tag Manager -->
 ```
