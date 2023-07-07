@@ -6,7 +6,7 @@ category: Integrate
 
 It is easy to start tracking your Single Page Application (SPA) or Progressive Web App (PWA) using Matomo Analytics. The easiest way to do this is using the Matomo Tag Manager ([learn more](https://matomo.org/guide/tag-manager/) using the steps below, alternatively you can use the JavaScript Tracking code ([following this guide](https://developer.matomo.org/guides/spa-tracking)).
 
-# Solution 1) Embed Matomo Tag Manager Container Code
+## Solution 1) Embed Matomo Tag Manager Container Code
 
 If you're using [Tag Manager](https://matomo.org/tag-manager/) to implement your Matomo Analytics Tracking, then in your Single Page Application,  whenever there is a new page loaded in your app you will need your [Matomo Tag](https://matomo.org/docs/tag-manager/#configuring-a-tag) to be triggered for the Page view to be tracked. 
 
@@ -29,10 +29,10 @@ To trigger your Matomo tag (which calls `trackPageView`), you can either:
 15. Once you’ve confirmed that the Trigger and Tag are working as expected, publish the changes so that they’re deployed to your website.
 
 
-## How to Trigger Matomo Tag Manager PageView, DOMReady and WindowLoad event using javascript.
+### How to Trigger Matomo Tag Manager PageView, DOMReady and WindowLoad event using javascript.
 - In your Single Page App, if you are using the 'Pageview Trigger' to trigger a Pageview, you can trigger a Tag Manager Event `{event: 'mtm.PageView'}` by calling the following line in JavaScript: `window._mtm.push({'event': 'mtm.PageView'});`. This would also work similarly when you use the 'DOM Ready Trigger' (call `window._mtm.push({'event': 'DOMReady'});`) or when you use the 'Window Loaded Trigger' (call `_mtm.push({'event': 'WindowLoad'});`.
 
-# Solution 2) Embedding the Tracking Code manually
+## Solution 2) Embedding the Tracking Code manually
 
 If you're not using the Tag Manager, then you need to embed your Matomo JavaScript tracking code into your single-page website or web application as you would for a classic website. 
 
@@ -44,7 +44,7 @@ To embed the tracking code manually, you have two options:
 
 In the sections below you will learn how to setup Matomo tracking with single-page applications (SPAs). It addresses how to track page views, reset custom variables and dimensions, update referrer URLs, scan for new content, and implement Heatmap & Session Recording. A comprehensive example illustrates how these elements integrate within an SPA environment. Information on offline tracking and support resources are also provided.
 
-## Tracking a New Page View
+### Tracking a New Page View
 
 The challenge begins when you need to track a new page view. A single-page application is different from a usual website as there is no regular new page load and Matomo cannot detect automatically when a new page is viewed. This means you need to let Matomo know whenever the URL and the page title changes. You can do
 this using the methods `setCustomUrl` and `setDocumentTitle` like this:
@@ -56,7 +56,7 @@ window.addEventListener('hashchange', function() {
         _paq.push(['trackPageView']);
 });
 ```
-### Resetting previously set custom variables
+#### Resetting previously set custom variables
 
 If you have set any [Custom Variables](https://matomo.org/docs/custom-variables/) in scope “page”, you need to make sure to delete these custom variables again as they would be attributed to the new page view as well otherwise:
 
@@ -67,7 +67,7 @@ _paq.push(['trackPageView']);
 
 Note: we recommend you use [Custom Dimensions](https://matomo.org/docs/custom-dimensions/) instead of Custom Variables as they will be deprecated in the future.
 
-### Resetting previously set custom dimensions
+#### Resetting previously set custom dimensions
 
 Similar to Custom Variables, you also need to unset [Custom Dimensions](https://matomo.org/docs/custom-dimensions/) when changing the page as they would otherwise be tracked again.
 
@@ -76,7 +76,7 @@ _paq.push(['deleteCustomDimension', 1]);
 _paq.push(['trackPageView']);
 ```
 
-### Updating the referrer
+#### Updating the referrer
 
 Depending on whether you want to track the previous page as a referrer for the new page view, you should update the referrer URL by setting it to the previous page URL:
 
@@ -85,11 +85,11 @@ _paq.push(['setReferrerUrl', previousPageUrl]);
 _paq.push(['trackPageView']);
 ```
 
-## Making Matomo Aware of New Content
+### Making Matomo Aware of New Content
 
 When you show a new page, your single-page DOM might change as well. For example, you might replace parts of your page with new content that you loaded from your server via Ajax. This means you need to instruct Matomo to scan the DOM for new content. We'll now go over various content types (Videos & Audio, Forms, Links and Downloads, Content tracking).
 
-### Video and Audio tracking
+#### Video and Audio tracking
 
 If you use the [Media Analytics](https://matomo.org/docs/media-analytics/) feature to track your videos and audios, whenever a new page is displayed you need to call the following method:
 
@@ -98,7 +98,7 @@ _paq.push(['MediaAnalytics::scanForMedia', documentOrElement]);
 ```
 When you don’t pass any parameter, it will scan the entire DOM for new media. Alternatively, you can pass an element to scan only a certain area of your website or app for new media.
 
-### Form tracking
+#### Form tracking
 
 If you use the [Form Analytics](https://matomo.org/docs/form-analytics/) feature to measure the performance of your online forms, whenever a new page is displayed you need to call the following method:
 
@@ -110,7 +110,7 @@ Where `documentOrElement` points either to `document` to re-scan the entire
 DOM (the default when no parameter is set) or you can pass an element to
 restrict the re-scan to a specific area.
 
-### A/B testing
+#### A/B testing
 
 If you use the [A/B Testing](https://matomo.org/docs/ab-testing/) feature to test your experiments, whenever a new page is displayed you need to embed the js code again before tracking a new pageview as explained below:
 
@@ -142,7 +142,7 @@ window.addEventListener('pathchange', function() {
 });
 ```
 
-### Link tracking
+#### Link tracking
 
 Supposing that you use the link tracking feature to measure [outlinks](https://matomo.org/faq/new-to-piwik/faq_71/) and [downloads](https://matomo.org/faq/new-to-piwik/faq_47/), Matomo needs to re-scan the entire DOM for newly added links whenever your DOM changes. To make sure Matomo will track such links, call this method:
 
@@ -150,7 +150,7 @@ Supposing that you use the link tracking feature to measure [outlinks](https://m
 _paq.push(['enableLinkTracking']);
 ```
 
-### Content tracking
+#### Content tracking
 
 If you use the [Content Tracking](https://matomo.org/docs/content-tracking/) feature, whenever a new page is displayed and some parts of your DOM changes, you need to call this method :
 
@@ -159,7 +159,7 @@ _paq.push(['trackContentImpressionsWithinNode', documentOrElement]);
 ```
 Where `documentOrElement` points either to `document` or an element similar to the other methods. Matomo will then scan the page for newly added content blocks.
 
-### Heatmap & Session Recording
+#### Heatmap & Session Recording
 
 To support single-page websites and web applications out of the box, [Heatmap](https://matomo.org/docs/heatmaps/) & [Session Recording](https://matomo.org/docs/session-recording/) will automatically detect a new page view when you call the `trackPageView` method. This applies if you call `trackPageView` several times without an actual page reload. Matomo will stop the recording of any activities after each call of `trackPageView` and re-evaluate whether it should record activities for the new page based on the new URL. 
 
@@ -169,7 +169,7 @@ If you're setting a Custom URL in the single-page website, you may need to use t
 
 Learn more in the [JS Tracker API reference for Heatmaps & Session Recording](https://developer.matomo.org/guides/heatmap-session-recording/reference#disableautodetectnewpageview).
 
-## Measuring Single-Page Apps: Complete Example
+### Measuring Single-Page Apps: Complete Example
 
 In this example we show how everything works together assuming you want to track a new page whenever a hash changes:
 
@@ -214,11 +214,11 @@ window.addEventListener('hashchange', function() {
 ```
 
 
-## Offline Tracking
+### Offline Tracking
 
 If your web application requires offline tracking, please refer to the [Matomo offline tracking](https://matomo.org/faq/how-to/how-do-i-set-up-matomo-offline-tracking/) guide.
 
 
-## Questions?
+### Questions?
 
 If you have any questions or need help, please [get in touch with our support team](https://matomo.org/support/) or for free support: [ask on the forum](https://forum.matomo.org).
