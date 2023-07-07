@@ -6,7 +6,7 @@ category: Integrate
 
 It is easy to start tracking your Single Page Application (SPA) or Progressive Web App (PWA) using Matomo Analytics. The easiest way to do this is using the Matomo Tag Manager ([learn more](https://matomo.org/guide/tag-manager/) using the steps below, alternatively you can use the JavaScript Tracking code ([following this guide](https://developer.matomo.org/guides/spa-tracking)).
 
-## Solution 1) Embed Matomo Tag Manager Container Code
+## Solution 1: Embed Matomo Tag Manager Container Code
 
 If you're using [Tag Manager](https://matomo.org/tag-manager/) to implement your Matomo Analytics Tracking, then in your Single Page Application,  whenever there is a new page loaded in your app you will need your [Matomo Tag](https://matomo.org/docs/tag-manager/#configuring-a-tag) to be triggered for the Page view to be tracked. 
 
@@ -32,7 +32,7 @@ To trigger your Matomo tag (which calls `trackPageView`), you can either:
 ### How to Trigger Matomo Tag Manager PageView, DOMReady and WindowLoad event using javascript.
 - In your Single Page App, if you are using the 'Pageview Trigger' to trigger a Pageview, you can trigger a Tag Manager Event `{event: 'mtm.PageView'}` by calling the following line in JavaScript: `window._mtm.push({'event': 'mtm.PageView'});`. This would also work similarly when you use the 'DOM Ready Trigger' (call `window._mtm.push({'event': 'DOMReady'});`) or when you use the 'Window Loaded Trigger' (call `_mtm.push({'event': 'WindowLoad'});`.
 
-## Solution 2) Embedding the Tracking Code manually
+## Solution 2: Embedding the Tracking Code manually
 
 If you're not using the Tag Manager, then you need to embed your Matomo JavaScript tracking code into your single-page website or web application as you would for a classic website. 
 
