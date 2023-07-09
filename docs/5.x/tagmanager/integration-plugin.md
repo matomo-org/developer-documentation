@@ -25,7 +25,7 @@ The easiest way to embed a container without needing any authentication is to as
 <!-- End Matomo Tag Manager -->
 ```
 
-Where you replace the `${MATOMOURL}` with the configured URL and `${CONTAINERID}` with the configured Container ID.
+Where you replace the `{$MATOMO_URL}` with the configured URL and `{$CONTAINER_ID}` with the configured Container ID.
 
 Alternatively, you could also simply add this to the `<head>` (preferred) or `<body>` directly:
 
@@ -34,7 +34,7 @@ Alternatively, you could also simply add this to the `<head>` (preferred) or `<b
 window._mtm = window._mtm || [];
 window._mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
 </script>
-<script type="text/javascript" src="${MATOMOURL}/js/container_${CONTAINERID}.js" async="true" defer="true"></script>
+<script type="text/javascript" src="{$MATOMO_URL}/js/container_{$CONTAINER_ID}.js" async="true" defer="true"></script>
 ```
 
 If possible, we recommend offering this simple way as users won't need to configure an API token which increases the security. Also, it is an easy way for an integration developer to implement it.

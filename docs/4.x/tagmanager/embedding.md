@@ -33,7 +33,7 @@ The code looks as follows:
 <!-- End Matomo Tag Manager -->
 ```
 
-In your code, `{$MATOMO_URL}` will be replaced by your Matomo URL, and `{$CONTAINER}` by a combination of containerId and possibly other factors.
+In your code, `{$MATOMO_URL}` will be replaced by your Matomo URL, and `{$CONTAINER_ID}` by a combination of containerId and possibly other factors.
 
 We recommend to embed this HTML block as early as possible within the `<head>` element of your website.
 
@@ -51,7 +51,7 @@ Matomo Tag Managers supports using the same container in multiple websites. The 
 
 When a user is visiting your website, the container will be loaded through your Matomo URL. Sometimes, a Matomo URL may be blocked for example by privacy or ad blockers causing the container to not load. If you want to reduce the likelihood of this, you may want to download the JavaScript file and upload it onto the server of your website. The disadvantage is, that the debug/preview feature won't work out of the box and you always need to update the JavaScript file whenever you publish a new version to an environment.
 
-To download the JavaScript of a container, simply open the URL in `g.src='https://{$MATOMO_URL}/js/{$CONTAINER}.js'` and save the file by clicking on "File => Save As" in your browser.
+To download the JavaScript of a container, simply open the URL in `g.src='https://{$MATOMO_URL}/js/{$CONTAINER_ID}.js'` and save the file by clicking on "File => Save As" in your browser.
 
 ## Accessing the Matomo Tag Manager directly
 
