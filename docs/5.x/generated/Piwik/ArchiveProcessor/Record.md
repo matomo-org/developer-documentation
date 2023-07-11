@@ -30,6 +30,8 @@ The class defines the following methods:
 - [`getColumnToRenameAfterAggregation()`](#getcolumntorenameafteraggregation)
 - [`setBlobColumnAggregationOps()`](#setblobcolumnaggregationops)
 - [`getBlobColumnAggregationOps()`](#getblobcolumnaggregationops)
+- [`setMultiplePeriodTransform()`](#setmultipleperiodtransform)
+- [`getMultiplePeriodTransform()`](#getmultipleperiodtransform)
 
 <a name="make" id="make"></a>
 <a name="make" id="make"></a>
@@ -237,5 +239,26 @@ The class defines the following methods:
 
 
 - *Returns:*  `array`|`null` &mdash;
+    
+
+<a name="setmultipleperiodtransform" id="setmultipleperiodtransform"></a>
+<a name="setMultiplePeriodTransform" id="setMultiplePeriodTransform"></a>
+### `setMultiplePeriodTransform()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$multiplePeriodTransform` (`callable`|`null`) &mdash;
+      
+- It returns a [`Record`](../../Piwik/ArchiveProcessor/Record.md) value.
+
+<a name="getmultipleperiodtransform" id="getmultipleperiodtransform"></a>
+<a name="getMultiplePeriodTransform" id="getMultiplePeriodTransform"></a>
+### `getMultiplePeriodTransform()`
+
+#### Signature
+
+
+- *Returns:*  `callable`|`null` &mdash;
     
 
