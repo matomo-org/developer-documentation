@@ -3516,6 +3516,7 @@ Usages:
 ## Template
 
 - [Template.afterCustomVariablesReport](#templateaftercustomvariablesreport)
+- [Template.afterGDPROverviewIntro](#templateaftergdproverviewintro)
 - [Template.afterReferrerTypeReport](#templateafterreferrertypereport)
 - [Template.beforeGoalListActionsBody](#templatebeforegoallistactionsbody)
 - [Template.beforeGoalListActionsHead](#templatebeforegoallistactionshead)
@@ -3537,6 +3538,16 @@ Callback Signature:
 Usages:
 
 [ProfessionalServices::getCustomVariablesPromo](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ProfessionalServices/ProfessionalServices.php#L96)
+
+
+### Template.afterGDPROverviewIntro
+
+*Defined in [Piwik/Plugins/PrivacyManager/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/Controller.php) in line [128](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/Controller.php#L128)*
+
+
+
+Callback Signature:
+<pre><code>function(&amp;$afterGDPROverviewIntroContent]</code></pre>
 
 
 ### Template.afterReferrerTypeReport
