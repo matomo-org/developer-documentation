@@ -4245,6 +4245,10 @@ Callback Signature:
 
 - string `$email` The new user's e-mail.
 
+Usages:
+
+[Tour::onUserInvited](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Tour/Tour.php#L115)
+
 
 ### UsersManager.inviteUser.generateInviteLinkToken
 
