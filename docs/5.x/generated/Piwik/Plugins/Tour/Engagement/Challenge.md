@@ -65,6 +65,9 @@ way.
 
 #### Signature
 
+-  It accepts the following parameter(s):
+    - `$login` (`string`) &mdash;
+      
 - It returns a `bool` value.
 
 <a name="isdisabled" id="isdisabled"></a>
@@ -118,5 +121,8 @@ Set this challenge was completed successfully by the current user. Only works fo
 
 #### Signature
 
+-  It accepts the following parameter(s):
+    - `$login` (`string`) &mdash;
+      
 - It returns a `bool` value.
 
