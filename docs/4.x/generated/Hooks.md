@@ -520,6 +520,7 @@ Callback Signature:
 
 - [Archiving.getIdSitesToArchiveWhenNoVisits](#archivinggetidsitestoarchivewhennovisits)
 - [Archiving.getIdSitesToMarkArchivesAsInvalidated](#archivinggetidsitestomarkarchivesasinvalidated)
+- [Archiving.getIdSitesToMarkArchivesAsInvalidated](#archivinggetidsitestomarkarchivesasinvalidated)
 - [Archiving.makeNewArchiverObject](#archivingmakenewarchiverobject)
 
 ### Archiving.getIdSitesToArchiveWhenNoVisits
@@ -534,7 +535,17 @@ Callback Signature:
 
 ### Archiving.getIdSitesToMarkArchivesAsInvalidated
 
-*Defined in [Piwik/Archive/ArchiveInvalidator](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Archive/ArchiveInvalidator.php) in line [313](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Archive/ArchiveInvalidator.php#L313)*
+*Defined in [Piwik/Plugins/PrivacyManager/Model/DataSubjects](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/Model/DataSubjects.php) in line [139](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/Model/DataSubjects.php#L139)*
+
+
+
+Callback Signature:
+<pre><code>function(&amp;$idSites, $visitDates, null, null, null, $isPrivacyDeleteData = true)</code></pre>
+
+
+### Archiving.getIdSitesToMarkArchivesAsInvalidated
+
+*Defined in [Piwik/Archive/ArchiveInvalidator](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Archive/ArchiveInvalidator.php) in line [318](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Archive/ArchiveInvalidator.php#L318)*
 
 Triggered when a Matomo user requested the invalidation of some reporting archives. Using this event, plugin
 developers can automatically invalidate another site, when a site is being invalidated. A plugin may even
@@ -549,9 +560,19 @@ invalidated. **Example**
     }
 
 Callback Signature:
-<pre><code>function(&amp;$idSites)</code></pre>
+<pre><code>function(&amp;$idSites, $dates, $period, $segment, $name, $isPrivacyDeleteData = false)</code></pre>
 
 - array &$idSites An array containing a list of site IDs which are requested to be invalidated.
+
+- array `$dates` An array containing the dates to invalidate.
+
+- string `$period` A string containing the period to be invalidated.
+
+- \Segment `$segment` A Segment Object containing segment to invalidate.
+
+- string `$name` A string containing the name of the archive to be invalidated.
+
+- bool `$isPrivacyDeleteData` A boolean value if event is triggered via Privacy delete visit action.
 
 
 ### Archiving.makeNewArchiverObject
@@ -2197,7 +2218,7 @@ Callback Signature:
 
 ### PrivacyManager.exportDataSubjects
 
-*Defined in [Piwik/Plugins/PrivacyManager/Model/DataSubjects](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/Model/DataSubjects.php) in line [456](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/Model/DataSubjects.php#L456)*
+*Defined in [Piwik/Plugins/PrivacyManager/Model/DataSubjects](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/Model/DataSubjects.php) in line [461](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/PrivacyManager/Model/DataSubjects.php#L461)*
 
 Lets you enrich the data export for one or multiple data subjects to make your plugin GDPR compliant. This can be useful if you have developed a plugin which stores any data for visits but doesn't
 use any core logic to store this data. If core API's are used, for example log tables, then the data may
