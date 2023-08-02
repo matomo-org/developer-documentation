@@ -12,9 +12,9 @@ and ensure the `[database_tests]` section in `yourmatomo/config/config.ini.php` 
 
 The tests will create a database named `tracker_tests` and store various tracking requests in this DB.
 
-## Running PHP tests
+## Running tests
 
-To run a test, either open `https://matomo.example.com/tests/javascript/` in a browser or execute `phantomjs testrunner.js` on the command line. You can download PhantomJS here: [http://phantomjs.org/](http://phantomjs.org/)
+To run a test, either open `https://matomo.example.com/tests/javascript/` in a browser or execute `./console tests:run-js` on the command line.
 
 ## Creating a test
 
