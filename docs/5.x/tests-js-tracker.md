@@ -14,7 +14,7 @@ The tests will create a database named `tracker_tests` and store several trackin
 
 ## Running tests
 
-Either open http://matomo.example.com/tests/javascript/ in a browser or execute `phantomjs testrunner.js` on the command line. You can [download PhantomJS here](https://phantomjs.org/).
+Either open http://matomo.example.com/tests/javascript/ in a browser or execute `./console tests:run-js` on the command line.
 
 To execute tests for a specific module use the `module` URL parameter, for example `&module=core`.
 
