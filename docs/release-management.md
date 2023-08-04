@@ -177,7 +177,12 @@ Please let us know if you have any question or if we can help in any way. We're 
 
 #### Marketing
 
-* Inform marketing team the release is coming and when in case they want to plan a blog and a newsletter
+* Inform marketing team the final release is coming, and that we're now in Release Candidate stage (RC). So they can:
+  *  publish a blog post (also as opportunity to remind developers to upgrade their plugins)
+  *  announce RC & cross-link the blog post in a newsletter to the community 
+  *  announce RC & cross-link the blog post on social media
+  *  cross-link the blog post in a Forum post
+  *  possibly updating the homepage banner message for up to 2-4 weeks
 
 #### Communication of breaking changes
 
