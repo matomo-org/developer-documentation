@@ -111,6 +111,7 @@ To be ready for the next step, the first beta release of core, we need to:
 * We need to have the migration guide ready on developer.matomo.org. This is needed for writing the blog post in the next step. For further instructions see the next section.
 * We publish a blog in the category `Development` on matomo.org for the developers we won't reach via email and also for people that don't publish the plugins on the Marketplace. We can reuse the content of https://matomo.org/blog/2020/08/matomo4-make-your-plugin-compatible-now/ .
 * Email plugin developers this first beta is coming and that we're working on a new major release. (see internal process `How to notify plugin developers about an upcoming new Matomo major release`)
+* Update the [premium plugin bundles](https://github.com/innocraft?q=bundle) to allow the new major version. Simply update the version number in the `plugin.json` file and update the maximum required Matomo version to include the new major release. Once that change is merged for each bundle, create a new release and upload it to Marketplace. 
 
 #### developer.matomo.org
 
