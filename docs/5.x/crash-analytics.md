@@ -2,8 +2,10 @@
 category: Integrate
 subGuides:
 - crash-analytics/setup
+- crash-analytics/options
 - crash-analytics/faq
 - crash-analytics/reference
+- crash-analytics/server
 ---
 # Crash Analytics
 
