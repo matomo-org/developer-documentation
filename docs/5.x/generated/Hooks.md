@@ -2650,7 +2650,7 @@ Usages:
 
 ### Request.shouldDisablePostProcessing
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php) in line [707](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php#L707)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php) in line [709](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php#L709)*
 
 After an API method returns a value, the value is post processed (eg, rows are sorted
 based on the `filter_sort_column` query parameter, rows are truncated based on the
@@ -4185,7 +4185,7 @@ Usages:
 
 ### UsersManager.deleteUser
 
-*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php) in line [722](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php#L722)*
+*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php) in line [723](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php#L723)*
 
 Triggered after a user has been deleted. This event should be used to clean up any data that is related to the now deleted user.
 The **Dashboard** plugin, for example, uses this event to remove the user's dashboards.
