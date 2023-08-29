@@ -145,6 +145,23 @@ Activity and consumption of your videos and audios can be measured via the param
 
 Learn more in the [Media Analytics HTTP Tracking API Reference](/guides/media-analytics/custom-player#media-analytics-http-tracking-api-reference).
 
+### Tracking HTTP API Reference
+
+If you want to track crashes in a language that does not have an official tracking SDK, then you will need to use the Crash Analytics HTTP API.
+
+A crash request consists of the following parameters:
+
+* `ca`: must always be included and always set to `1`
+* `cra`: the message of the error (required).
+* `cra_st`: the stack trace of the error (optional).
+* `cra_ct`: the category of the error (optional).
+* `cra_tp`: the error type (optional)
+* `cra_ru`: a URI for the source file that originated the error (optional)
+* `cra_rl`: the line of the source file where the error occurred (optional)
+* `cra_rc`: the column of the source file where the error occurred (optional)
+
+Note: the user of the HTTP API is responsible for determining the source location of an error, including file URI, line number and column number. The Crash Analytics HTTP tracker will not deduce this information from the stack trace.
+
 ### Queued Tracking parameters
 
 [Queued Tracking](https://plugins.matomo.org/QueuedTracking) can scale your large traffic Matomo (Piwik) service by queuing tracking requests in Redis or Mysql for better performance and reliability when you experience peaks.
