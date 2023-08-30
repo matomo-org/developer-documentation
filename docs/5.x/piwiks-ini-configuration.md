@@ -8,8 +8,8 @@ title: Configuration
 
 INI configuration options are stored in both the `config/config.ini.php` and `config/global.ini.php` files.
 
-- `global.ini.php` contains default option values and is a file distributed with Piwik's code
-- `config.ini.php` contains the *user configuration*: it lets users overrides the default values. This file is not distributed with Piwik's code as it is customized by every user.
+- `global.ini.php` contains default option values and is a file distributed with Matomo's code
+- `config.ini.php` contains the *user configuration*: it lets users override the default values. This file is not distributed with Matomo's code as it is customized by every user.
 
 Plugins and other code can access and modify INI config options using the [Piwik\Config](/api-reference/Piwik/Config) singleton.
 
@@ -32,6 +32,9 @@ myarray[] = 1
 myarray[] = 2
 myarray[] = 3
 ```
+
+**Note:** When overriding a global configuration value in your `config.ini.php` file, the option needs to go into the same section as in the global config file.  
+If you don't have the section in your config file yet, you need to add it as well. Only that way the custom option value will be picked up by the config system.
 
 ## Reading INI configuration
 
