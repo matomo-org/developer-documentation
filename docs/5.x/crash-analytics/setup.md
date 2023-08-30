@@ -4,7 +4,7 @@ title: Setting up
 ---
 # Setting up Crash Analytics
 
-In this guide you will learn how to get [Crash Analytics](https://www.crash-analytics.net/) to provide insights into what’s failing in your website or application.
+In this guide you will learn how to get **Crash Analytics** to provide insights into what’s failing in your website or application.
 
 ## Setup
 

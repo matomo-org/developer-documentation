@@ -4,7 +4,7 @@ title: JavaScript Tracker API Reference
 ---
 # Crash Analytics JavaScript Tracker API Reference
 
-This guide is the JavaScript Tracker API Reference for [Crash Analytics](https://www.crash-analytics.net/).
+This guide is the JavaScript Tracker API Reference for **Crash Analytics**
 
 You may also be interested in the Crash Analytics [Reporting HTTP API Reference](https://developer.matomo.org/api-reference/reporting-api#CrashAnalytics).
 
