@@ -849,7 +849,7 @@ We store one row for each children site within a roll-up.
 
 ### Crash Analytics
 
-Learn more about [Crash Analytics](https://matomo.org/docs/crash-analytics/).
+Learn more about [Crash Analytics](https://matomo.org/guide/reports/crash-analytics/).
 
 <a name="table-log_crash"></a>
 #### log_crash
