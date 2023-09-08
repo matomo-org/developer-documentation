@@ -55,6 +55,8 @@ the JavaScript code will automatically load synchronously. It is still recommend
 
 ## Embedding an experiment
 
+__Note:__ the embedded experiment code should be placed before your page view is tracked, for example before `_paq.push(['trackPageView']);`. This helps ensure that the A/B test is tracked before any page redirects.
+
 When creating an experiment in your Piwik, the A/B testing plugin will generate for you the JavaScript code that will run your experiment
 and that you need to embed in your pages. The code typically looks like this:
 
