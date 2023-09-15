@@ -5,13 +5,13 @@ SiteContentDetector
 
 This class provides detection functions for specific content on a site.
 
-Note: Calling the detect() method will create a HTTP request to the site to retrieve data, only the main site URL
+Note: Calling the `detectContent()` method will create a HTTP request to the site to retrieve data, only the main site URL
 will be checked
 
 Usage:
 
 $contentDetector = new SiteContentDetector();
-$contentDetector->detectContent([SiteContentDetector::GA3]);
+$contentDetector->detectContent([GoogleAnalytics3::getId()]);
 if ($contentDetector->ga3) {
      // site is using GA3
 }
@@ -21,101 +21,20 @@ Properties
 
 This class defines the following properties:
 
-- [`$consentManagerId`](#$consentmanagerid)
-- [`$consentManagerName`](#$consentmanagername)
-- [`$consentManagerUrl`](#$consentmanagerurl)
-- [`$isConnected`](#$isconnected)
-- [`$ga3`](#$ga3)
-- [`$ga4`](#$ga4)
-- [`$gtm`](#$gtm)
-- [`$cms`](#$cms)
-- [`$cloudflare`](#$cloudflare)
-- [`$jsFramework`](#$jsframework)
+- [`$detectedContent`](#$detectedcontent)
+- [`$connectedConsentManagers`](#$connectedconsentmanagers)
 
-<a name="$consentmanagerid" id="$consentmanagerid"></a>
-<a name="consentManagerId" id="consentManagerId"></a>
-### `$consentManagerId`
+<a name="$detectedcontent" id="$detectedcontent"></a>
+<a name="detectedContent" id="detectedContent"></a>
+### `$detectedContent`
 
 #### Signature
 
-- Its type is not specified.
+- It is a `Piwik\array&lt;string,` value.
 
-
-<a name="$consentmanagername" id="$consentmanagername"></a>
-<a name="consentManagerName" id="consentManagerName"></a>
-### `$consentManagerName`
-
-#### Signature
-
-- Its type is not specified.
-
-
-<a name="$consentmanagerurl" id="$consentmanagerurl"></a>
-<a name="consentManagerUrl" id="consentManagerUrl"></a>
-### `$consentManagerUrl`
-
-#### Signature
-
-- Its type is not specified.
-
-
-<a name="$isconnected" id="$isconnected"></a>
-<a name="isConnected" id="isConnected"></a>
-### `$isConnected`
-
-#### Signature
-
-- Its type is not specified.
-
-
-<a name="$ga3" id="$ga3"></a>
-<a name="ga3" id="ga3"></a>
-### `$ga3`
-
-#### Signature
-
-- Its type is not specified.
-
-
-<a name="$ga4" id="$ga4"></a>
-<a name="ga4" id="ga4"></a>
-### `$ga4`
-
-#### Signature
-
-- Its type is not specified.
-
-
-<a name="$gtm" id="$gtm"></a>
-<a name="gtm" id="gtm"></a>
-### `$gtm`
-
-#### Signature
-
-- Its type is not specified.
-
-
-<a name="$cms" id="$cms"></a>
-<a name="cms" id="cms"></a>
-### `$cms`
-
-#### Signature
-
-- Its type is not specified.
-
-
-<a name="$cloudflare" id="$cloudflare"></a>
-<a name="cloudflare" id="cloudflare"></a>
-### `$cloudflare`
-
-#### Signature
-
-- Its type is not specified.
-
-
-<a name="$jsframework" id="$jsframework"></a>
-<a name="jsFramework" id="jsFramework"></a>
-### `$jsFramework`
+<a name="$connectedconsentmanagers" id="$connectedconsentmanagers"></a>
+<a name="connectedConsentManagers" id="connectedConsentManagers"></a>
+### `$connectedConsentManagers`
 
 #### Signature
 
@@ -128,8 +47,12 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct)
+- [`getSiteContentDetectionsByType()`](#getsitecontentdetectionsbytype)
+- [`getSiteContentDetectionById()`](#getsitecontentdetectionbyid) &mdash; Returns the site content detection object with the provided id, or null if it can't be found
 - [`detectContent()`](#detectcontent) &mdash; This will query the site and populate the class properties with the details of the detected content
-- [`getConsentManagerDefinitions()`](#getconsentmanagerdefinitions) &mdash; Return an array of consent manager definitions which can be used to detect their presence on the site and show the associated guide links
+- [`wasDetected()`](#wasdetected) &mdash; Returns if the detection with the provided id was detected or not
+- [`getDetectsByType()`](#getdetectsbytype) &mdash; Returns an array containing ids of all detected detections of the given type
+- [`getKnownConsentManagers()`](#getknownconsentmanagers) &mdash; Return an array of consent manager definitions which can be used to detect their presence on the site and show the associated guide links
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -140,6 +63,31 @@ The class defines the following methods:
 -  It accepts the following parameter(s):
     - `$cache` (`Matomo\Cache\Lazy`|`null`) &mdash;
       
+
+<a name="getsitecontentdetectionsbytype" id="getsitecontentdetectionsbytype"></a>
+<a name="getSiteContentDetectionsByType" id="getSiteContentDetectionsByType"></a>
+### `getSiteContentDetectionsByType()`
+
+#### Signature
+
+
+- *Returns:*  `array` &mdash;
+    SiteContentDetectionAbstract[]>
+
+<a name="getsitecontentdetectionbyid" id="getsitecontentdetectionbyid"></a>
+<a name="getSiteContentDetectionById" id="getSiteContentDetectionById"></a>
+### `getSiteContentDetectionById()`
+
+Returns the site content detection object with the provided id, or null if it can't be found
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$id` (`string`) &mdash;
+      
+
+- *Returns:*  `Piwik\Piwik\Plugins\SitesManager\SiteContentDetection\SiteContentDetectionAbstract`|`null` &mdash;
+    
 
 <a name="detectcontent" id="detectcontent"></a>
 <a name="detectContent" id="detectContent"></a>
@@ -152,7 +100,7 @@ the details of the detected content
 
 -  It accepts the following parameter(s):
     - `$detectContent` (`array`) &mdash;
-       Array of content type for which to check, defaults to all, limiting this list will speed up the detection check
+       Array of content type for which to check, defaults to all, limiting this list will speed up the detection check. Allowed values are: * empty array - to run all detections * an array containing ids of detections, e.g. Wordpress::getId() or any of the type constants, e.g. SiteContentDetectionAbstract::TYPE_TRACKER
     - `$idSite` (`int`|`null`) &mdash;
        Override the site ID, will use the site from the current request if null
     - `$siteResponse` (`array`|`null`) &mdash;
@@ -161,9 +109,37 @@ the details of the detected content
        How long to wait for the site to response, defaults to 5 seconds
 - It returns a `void` value.
 
-<a name="getconsentmanagerdefinitions" id="getconsentmanagerdefinitions"></a>
-<a name="getConsentManagerDefinitions" id="getConsentManagerDefinitions"></a>
-### `getConsentManagerDefinitions()`
+<a name="wasdetected" id="wasdetected"></a>
+<a name="wasDetected" id="wasDetected"></a>
+### `wasDetected()`
+
+Returns if the detection with the provided id was detected or not
+
+Note: self::detectContent needs to be called before.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$detectionClassId` (`string`) &mdash;
+      
+- It returns a `bool` value.
+
+<a name="getdetectsbytype" id="getdetectsbytype"></a>
+<a name="getDetectsByType" id="getDetectsByType"></a>
+### `getDetectsByType()`
+
+Returns an array containing ids of all detected detections of the given type
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$type` (`string`) &mdash;
+       One of the SiteContentDetectionAbstract::TYPE_* constants
+- It returns a `array` value.
+
+<a name="getknownconsentmanagers" id="getknownconsentmanagers"></a>
+<a name="getKnownConsentManagers" id="getKnownConsentManagers"></a>
+### `getKnownConsentManagers()`
 
 Return an array of consent manager definitions which can be used to detect their presence on the site and show
 the associated guide links
