@@ -63,3 +63,11 @@ window.matomoTagManagerAsyncInit = function (MatomoTagManager) {
 
 }
 ```
+
+## Fix `_mtm.push` causing browser to freeze in some cases for AngularJS
+
+It has been observed that using _mtm.push with AngularJS can cause the browser to freeze in some cases. To address this issue, the code snippet below can be used:
+
+```js
+this.zone.runOutsideAngular(e => _mtm.push(t))
+```
