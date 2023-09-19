@@ -142,7 +142,7 @@ Piwik uses first party cookies to keep track of some user information over time.
 *   `disableCookies()` - Disable all first party cookies. Existing Piwik cookies for this website will be deleted on the next page view. Cookies will be even disabled if the user has given cookie consent using the method `rememberCookieConsentGiven()`.
 *   `deleteCookies()` - Delete the tracking cookies currently set (this is useful when [creating new visits](https://matomo.org/faq/how-to/#faq_187))
 *   `hasCookies()` - Return whether cookies are enabled and supported by this browser.
-*   `setCookieNamePrefix( prefix )` - the default prefix is '_pk_'.
+*   `setCookieNamePrefix( prefix )` - the default prefix is `_pk_`.
 *   `setCookieDomain( domain )` - the default is the document domain; if your website can be visited at both www.example.com and example.com, you would use: `tracker.setCookieDomain('.example.com');` or `tracker.setCookieDomain('*.example.com');`
 *   `setCookiePath( path )` - the default is '/'.
 *   `setSecureCookie( bool )` - set to true to enable the Secure cookie flag on all first party cookies. This should be used when your website is only available under HTTPS so that all tracking cookies are always sent over secure connection.
