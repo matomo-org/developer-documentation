@@ -60,6 +60,8 @@ Adds a new entry to the menu.
        Will add this string as a link attribute.
     - `$help` (`bool`|`string`) &mdash;
        Will display a help icon that will pop a notification with help information.
+    - `$badgeCount` (`int`) &mdash;
+       If non-zero then a badge will be overlaid on the icon showing the provided count
 - It does not return anything or a mixed result.
 
 <a name="remove" id="remove"></a>
