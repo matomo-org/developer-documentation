@@ -133,7 +133,7 @@ Returns an array containing ids of all detected detections of the given type
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$type` (`string`) &mdash;
+    - `$type` (`int`) &mdash;
        One of the SiteContentDetectionAbstract::TYPE_* constants
 - It returns a `array` value.
 
