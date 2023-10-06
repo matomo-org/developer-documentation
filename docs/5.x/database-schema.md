@@ -274,7 +274,7 @@ SQL queries that read the Log data across the tables above are provided [in the 
 
 Archive data consists of **metrics** and **reports**. Metrics are numeric values and are stored as such. Reports are stored in [DataTable](/guides/datatable) instances and persisted as compressed binary strings.
 
-Archive data is associated with the website ID, period and segment it is for along with the data's identifying name. All archive data will be queried many times by this information. Currently, the segment is hashed and attached to the end of the metric name. Archive data is also persisted with the current date and time so it is possible to know how old some data is.
+Archive data is associated with the website ID, the period, and the segment it is for, along with the data's identifying name. All archive data will be queried many times by this information. Currently, the segment is hashed and attached to the end of the metric name. Archive data is also persisted with the current date and time so it is possible to know how old some data is.
 
 All archive data will contain the following information:
 
