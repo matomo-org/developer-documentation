@@ -153,9 +153,10 @@ Now the teams can already start working on the next minor release because we wou
 
 We update the demo to run this release candidate version (we could optionally also update to a beta version if we wanted/needed).
 
-#### plugins.matomo.org
+#### plugins.matomo.org & shop.matomo.org
 
-* In `app.default.php` config adjust `OLDEST_MAJOR_PIWIK_VERSION` and `LATEST_MAJOR_PIWIK_VERSION` as needed. For example increase `LATEST_MAJOR_PIWIK_VERSION`.
+* On plugins staging and production in `$pluginsMatomoInstall/config/app.local.php` config adjust `OLDEST_MAJOR_PIWIK_VERSION` and `LATEST_MAJOR_PIWIK_VERSION` as needed. For example increase `LATEST_MAJOR_PIWIK_VERSION`. `DEFAULT_MAJOR_PIWIK_VERSION` should be changed when we release.
+* On shop staging and production in `$shopInstall/local.wp-config.php` config adjust `PIWIK_MIN_MAJOR_VERSION` and `PIWIK_MAX_MAJOR_VERSION` as needed. For example increase `LATEST_MAJOR_PIWIK_VERSION`. `PIWIK_DEFAULT_MAJOR_VERSION` should be changed when we release.
 * Send an email to all plugins developers (see internal process `How to notify plugin developers about an upcoming new Matomo major release`)
 * Check every plugin on plugins.matomo.org that hasn't been made compatible yet with the new release, and create an issue in their GitHub repository to make the plugin compatible.
   * Title: `Make plugin compatible with Matomo 5` (adjust version number)
@@ -202,6 +203,7 @@ Please let us know if you have any question or if we can help in any way. We're 
 
 * Release the new core version and go through the regular process
 * Marketing to release a blog post if there is one
+* On marketplace set `DEFAULT_MAJOR_PIWIK_VERSION` and shop set the `PIWIK_DEFAULT_MAJOR_VERSION` to the latest Matomo version. For instructions see "When releasing an RC".
 
 #### api.matomo.org
 
