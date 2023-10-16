@@ -1,3 +1,3 @@
 [submodule "piwik"]
 	path = piwik
-	url = git@github.com:piwik/piwik.git
+	url = https://github.com/matomo-org/matomo.git
