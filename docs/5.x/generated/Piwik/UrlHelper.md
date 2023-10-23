@@ -114,6 +114,10 @@ Returns the path and query string of a URL.
 -  It accepts the following parameter(s):
     - `$url` (`string`) &mdash;
        The URL.
+    - `$additionalParamsToAdd` (`array`) &mdash;
+       If not empty the given parameters will be added to the query.
+    - `$preserveAnchor` (`bool`) &mdash;
+       If true then do not remove any #anchor from the url, default false
 
 - *Returns:*  `string` &mdash;
     eg, `/test/index.php?module=CoreHome` if `$url` is `http://piwik.org/test/index.php?module=CoreHome`.
