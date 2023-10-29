@@ -3500,7 +3500,7 @@ Callback Signature:
 
 Usages:
 
-[ProfessionalServices::getCustomVariablesPromo](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/ProfessionalServices/ProfessionalServices.php#L96)
+[ProfessionalServices::getCustomVariablesPromo](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/ProfessionalServices/ProfessionalServices.php#L97)
 
 
 ### Template.afterReferrerTypeReport
@@ -3514,7 +3514,7 @@ Callback Signature:
 
 Usages:
 
-[ProfessionalServices::getReferrerTypePromo](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/ProfessionalServices/ProfessionalServices.php#L127)
+[ProfessionalServices::getReferrerTypePromo](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/ProfessionalServices/ProfessionalServices.php#L128)
 
 
 ### Template.beforeGoalListActionsBody
@@ -4384,7 +4384,7 @@ Usages:
 
 *Defined in [Piwik/Plugin/WidgetsProvider](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/WidgetsProvider.php) in line [62](https://github.com/matomo-org/matomo/blob/4.x-dev/core/Plugin/WidgetsProvider.php#L62)*
 
-Triggered to add custom widget configs. To filder widgets have a look at the [Widget.filterWidgets](/api-reference/events#widgetfilterwidgets)
+Triggered to add custom widget configs. To filter widgets have a look at the [Widget.filterWidgets](/api-reference/events#widgetfilterwidgets)
 event. **Example**
 
     public function addWidgetConfigs(&$configs)
