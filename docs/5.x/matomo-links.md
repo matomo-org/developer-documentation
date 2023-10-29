@@ -3,7 +3,7 @@ category: DevelopInDepth
 ---
 # External Links to Matomo Domains 
 
-All links to Matomo domains from with the Matomo application should include campaign 
+All links to Matomo domains from within the Matomo application should include campaign 
 parameters in the URL which will be used to track the source of in-app traffic to online
 documentation and help improve them. No personal or identifying information is tracked, just the
 install type and location in the application from which the link was followed. 
@@ -25,7 +25,7 @@ For a link on the Account Security page, on cloud, the format would be:
 
 ## Configuration ##
 
-By default campaign parameters will be appended to all links for Matomo domains. On-premise users
+By default, campaign parameters will be appended to all links for Matomo domains. On-premise users
 may disable campaign parameters on Matomo links globally by setting the following config option:
 
 ```
@@ -63,7 +63,7 @@ import { externalRawLink } from '../externalLink';
 const url = externalRawLink('https://matomo.org/docs/tracking-goals-web-analytics/'),
 ```
 
-Append campaign parameters to a link returning an HTML tag in the format:
+Append campaign parameters to a link while returning an opening HTML tag in the format:
 
 `<a target="_blank" rel="noreferrer noopener" href="[ link with campaign params ]">` 
 
@@ -107,13 +107,13 @@ $url = Url::addCampaignParametersToMatomoLink('https://matomo.org/url',
 In JavaScript:
 
 ```
-var link =  _pk_externalRawLink('https://matomo.org/faq/how-to/faq_54/')
+var link = _pk_externalRawLink('https://matomo.org/faq/new-to-piwik/faq_17/')
 ``` 
 
 With custom campaign parameters: 
 
 ```
-var link =  _pk_externalRawLink('https://matomo.org/faq/how-to/faq_54/',
+var link = _pk_externalRawLink('https://matomo.org/faq/new-to-piwik/faq_17/',
                 'MyCampaign', 'MySource', 'MyMedium');
 ``` 
 
