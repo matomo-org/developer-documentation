@@ -157,6 +157,7 @@ We update the demo to run this release candidate version (we could optionally al
 
 * On plugins staging and production in `$pluginsMatomoInstall/config/app.local.php` config adjust `OLDEST_MAJOR_PIWIK_VERSION` and `LATEST_MAJOR_PIWIK_VERSION` as needed. For example increase `LATEST_MAJOR_PIWIK_VERSION`. `DEFAULT_MAJOR_PIWIK_VERSION` should be changed when we release.
 * On shop staging and production in `$shopInstall/local.wp-config.php` config adjust `PIWIK_MIN_MAJOR_VERSION` and `PIWIK_MAX_MAJOR_VERSION` as needed. For example increase `LATEST_MAJOR_PIWIK_VERSION`. `PIWIK_DEFAULT_MAJOR_VERSION` should be changed when we release.
+* On our marketplace, create a PR similar to [this PR](https://github.com/innocraft/matomo-marketplace/pull/243/files) where we specify the min supported PHP and MySQL version for that release. This is important to not show incompatible plugins for that Matomo version.
 * Send an email to all plugins developers (see internal process `How to notify plugin developers about an upcoming new Matomo major release`)
 * Check every plugin on plugins.matomo.org that hasn't been made compatible yet with the new release, and create an issue in their GitHub repository to make the plugin compatible.
   * Title: `Make plugin compatible with Matomo 5` (adjust version number)
