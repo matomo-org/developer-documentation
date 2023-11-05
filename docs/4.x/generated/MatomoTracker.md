@@ -126,6 +126,8 @@ The class defines the following methods:
 - [`disableCookieSupport()`](#disablecookiesupport) &mdash; By default, MatomoTracker will read first party cookies from the request and write updated cookies in the response (using setrawcookie).
 - [`getRequestTimeout()`](#getrequesttimeout) &mdash; Returns the maximum number of seconds the tracker will spend waiting for a response from Matomo.
 - [`setRequestTimeout()`](#setrequesttimeout) &mdash; Sets the maximum number of seconds that the tracker will spend waiting for a response from Matomo.
+- [`getRequestConnectTimeout()`](#getrequestconnecttimeout) &mdash; Returns the maximum number of seconds the tracker will spend trying to connect to Matomo.
+- [`setRequestConnectTimeout()`](#setrequestconnecttimeout) &mdash; Sets the maximum number of seconds that the tracker will spend tryint to connect to Matomo.
 - [`setRequestMethodNonBulk()`](#setrequestmethodnonbulk) &mdash; Sets the request method to POST, which is recommended when using setTokenAuth() to prevent the token from being recorded in server logs.
 - [`setProxy()`](#setproxy) &mdash; If a proxy is needed to look up the address of the Matomo site, set it with this
 - [`setOutgoingTrackerCookie()`](#setoutgoingtrackercookie) &mdash; Sets a cookie to be sent to the tracking server.
@@ -1436,6 +1438,33 @@ from Matomo. Defaults to 600 seconds.
 
 Sets the maximum number of seconds that the tracker will spend waiting for a response
 from Matomo.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$timeout` (`int`) &mdash;
+      
+- It returns a `$this` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
+
+<a name="getrequestconnecttimeout" id="getrequestconnecttimeout"></a>
+<a name="getRequestConnectTimeout" id="getRequestConnectTimeout"></a>
+### `getRequestConnectTimeout()`
+
+Returns the maximum number of seconds the tracker will spend trying to connect to Matomo.
+
+Defaults to 300 seconds.
+
+#### Signature
+
+- It does not return anything or a mixed result.
+
+<a name="setrequestconnecttimeout" id="setrequestconnecttimeout"></a>
+<a name="setRequestConnectTimeout" id="setRequestConnectTimeout"></a>
+### `setRequestConnectTimeout()`
+
+Sets the maximum number of seconds that the tracker will spend tryint to connect to Matomo.
 
 #### Signature
 

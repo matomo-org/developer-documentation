@@ -15,20 +15,31 @@
 
 Copyright Matomo team. Do not republish, or copy, or distribute this code or content. Thank you!
 
+## Prerequisites
+
+You need the following to build and run the developer documentation:
+
+- PHP 7.1+
+- PHP extensions: `gd`
+- The most recent version of [PHP Composer](https://getcomposer.org/)
+- [Node.js](https://nodejs.org/en/) (for the API reference generator)
+- A bash shell to run the scripts
+
 ## Run locally
 
-```bash
-$ cd app/
-$ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-$ php -r "if (hash_file('sha384', 'composer-setup.php') === '906a84df04cea2aa72f40b5f787e49f22d4c2f19492ac310e8cba5b96ac8b64115ac402c8cd292b8a03482574915d1a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-$ php composer-setup.php
-$ php -r "unlink('composer-setup.php');"
-$ composer install
-$ mkdir tmp/cache
-$ mkdir tmp/templates
-$ cd public/
-$ php -S 0.0.0.0:8000
-```
+Initialize the project by installing the dependencies and creating the cache and template directories:
+
+    cd app/
+    composer install
+    mkdir tmp/cache
+    mkdir tmp/templates
+
+Now you can run the website locally using the PHP built-in web server:
+
+    cd public/
+    php -S 0.0.0.0:8000
+
+Open http://localhost:8000/ in your browser to see the website.
 
 To disable caching and enable debugging, create a `app/config/local.php` file with the following:
 
@@ -47,25 +58,30 @@ define('DISABLE_INCLUDE', true);
 
 ## Automatic documentation generation (API-Reference)
 
-### The first time
-```
-# Clone Matomo repository the first time
-git clone git@github.com:matomo-org/piwik.git piwik
-# Download the dependencies for our generator 
-cd generator/
-composer install
-cd ../piwik/
-# Now set up composer according to https://getcomposer.org/download/
-```
+To generate the API reference docs for the first time, you need to have a Matomo checkout. The generator will use it to
+parse the PHP code and extract the documentation. So you need to clone the Matomo repository and install the dependencies
+for the generator.
 
-### Generate the API reference docs
-- Execute `./generate.sh`
-- Commit
-- Push
+Clone Matomo repository into the subdirectory `piwik`:
 
-or just execute `./generateAndPush.sh`.
+    git clone git@github.com:matomo-org/matomo.git piwik
+
+Download the dependencies for our generator:
+
+    cd generator/
+    composer install
+
+To generate the API reference docs execute
+
+    ./generate.sh
+
+The script checks out the latest stable version of Matomo and generates the API reference docs for it. This takes some time.
 
 The documents will be generated into the [docs/generated](docs/generated) directory. It will always generate the documentation for the latest stable version.
+
+To generate, commit and push the API reference docs to the `live` branch execute
+
+    ./generateAndPush.sh
 
 ## How to add docs for a new Matomo version
 
