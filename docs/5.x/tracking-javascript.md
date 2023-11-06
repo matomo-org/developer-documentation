@@ -82,6 +82,8 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `getUserId()` - Return the User ID string if it was set.
 *   `setUserId( userId )` -  Sets a [User ID](https://matomo.org/docs/user-id/) to this user (such as an email address or a username).
 *   `resetUserId` - Clears (un-set) the User ID.
+*   `setPageViewId( pageView )` - Override PageView id for every use of logPageView(). Do not use this if you call trackPageView() multiple times during tracking (e.g. when tracking a single page application)
+*   `getPageViewId()` - Returns the PageView id. If not set manually using `setPageViewId`, this method will return the dynamic PageView id, used in the last tracked page view, or undefined if no page view was tracked yet.
 *   `setCustomVariable (index, name, value, scope)` - Set a custom variable.
 *   `deleteCustomVariable (index, scope)` - Delete a custom variable.
 *   `getCustomVariable (index, scope)` - Retrieve a custom variable.
