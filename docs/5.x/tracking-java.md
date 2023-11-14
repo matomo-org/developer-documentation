@@ -19,14 +19,14 @@ To use the Matomo Java Tracker in your Java application, you need to add the dep
 <dependency>
     <groupId>org.piwik.java.tracking</groupId>
     <artifactId>matomo-java-tracker</artifactId>
-    <version>3.0.0</version>
+    <version>3.x.x</version>
 </dependency>
 ```
 
 Gradle users add the following dependency to their `build.gradle` file:
 
 ```groovy
-implementation 'org.piwik.java.tracking:matomo-java-tracker:3.0.0'
+implementation 'org.piwik.java.tracking:matomo-java-tracker:3.x.x'
 ```
 
 ## TrackerConfiguration
