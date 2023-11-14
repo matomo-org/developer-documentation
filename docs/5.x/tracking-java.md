@@ -9,7 +9,7 @@ Due to the nature of Java applications, the API is different from the JavaScript
 
 The primary source to look for an API documentation is the [JavaDoc](https://matomo-org.github.io/matomo-java-tracker/javadoc/index.html). This guide provides a quick overview of the most important classes and methods of the library.
 
-If you experience any problems or have any questions, please [create an issue](https://github.com/matomo-org/matomo-java-tracker/issues/new) in the [Matomo Java Tracker repository]. We are happy to help you.
+If you experience any problems or have any questions, please [create an issue](https://github.com/matomo-org/matomo-java-tracker/issues/new) in the [Matomo Java Tracker repository](https://github.com/matomo-org/matomo-java-tracker). We are happy to help you.
 
 ## Adding the dependency
 
@@ -160,10 +160,10 @@ To create a custom variables object use the constructor `new CustomVariables()` 
 
 ```java
 CustomVariables customVariables = new CustomVariables()
-    .add("Type", "Customer")
-    .add("Status", "Logged In");
+    .add(new CustomVariable("Type", "Customer"), 1)
+    .add(new CustomVariable("Status", "Logged In"), 3);
 ```
 
-The variables get the index in the order of their addition. The first variable has the index 1, the second variable has the index 2, and so on. The index is used to identify the variable in the Matomo user interface. You can find the custom variables in the Matomo user interface under "Visitors" -> "Custom Variables". The index is the number in the URL of the custom variables page.
+The first parameter contains the custom variable consisting of the key and the value. The second parameter contains the index of the custom variable. The index is used to identify the variable in the Matomo user interface. You can find the custom variables in the Matomo user interface under "Visitors" -> "Custom Variables". The index is the number in the URL of the custom variables page.
 
 The class `MatomoRequest` has two different custom variables attributes: `visitCustomVariables` and `pageCustomVariables`. The `visitCustomVariables` attribute contains the custom variables for the visit. The `pageCustomVariables` attribute contains the custom variables for the page. The difference is that the `visitCustomVariables` attribute is set in the visit scope and the `pageCustomVariables` attribute is set in the page scope. The visit scope means that the custom variables are valid for the whole visit. The page scope means that the custom variables are valid for the current page only.
