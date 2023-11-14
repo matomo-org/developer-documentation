@@ -28,7 +28,6 @@ function generateDocs {
     git pull origin $1
     sleep 3
     git submodule update --init --recursive --force
-    composer update
     composer install
     cd ..
     sleep 10
