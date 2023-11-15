@@ -1189,6 +1189,7 @@ Index
 - [`$show_footer`](Piwik/ViewDataTable/Config.md#$show_footer) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_footer_icons`](Piwik/ViewDataTable/Config.md#$show_footer_icons) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_all_views_icons`](Piwik/ViewDataTable/Config.md#$show_all_views_icons) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
+- [`$selectable_columns`](Piwik/ViewDataTable/Config.md#$selectable_columns) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_related_reports`](Piwik/ViewDataTable/Config.md#$show_related_reports) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_limit_control`](Piwik/ViewDataTable/Config.md#$show_limit_control) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_search`](Piwik/ViewDataTable/Config.md#$show_search) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
