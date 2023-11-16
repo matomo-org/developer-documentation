@@ -55,6 +55,8 @@ MatomoTracker tracker = new MatomoTracker(configuration);
 
 In this example the tracker sends a bulk request asynchronously. The tracker will send the requests in the background and return immediately. The tracker will use the configuration set in the constructor to send the requests via HTTP POST.
 
+Don't create the `MatomoTracker` on each tracking request, since it's thread-safe and stateless. Create it once and reuse it for multiple tracking requests.
+
 We recommend to use the method `MatomoTracker.sendBulkRequestAsync(Collection<MatomoRequest>)` to send tracking requests asynchronously. If you want to send requests synchronously, you can use the method `MatomoTracker.sendBulkRequest(Collection<MatomoRequest>)`. Both methods will send the requests in a single HTTP request. If you want to send the requests in multiple HTTP GET requests, you can use the method `MatomoTracker.sendRequest(MatomoRequest)` or `MatomoTracker.sendRequestAsync(MatomoRequest)` to send a single request.
 
 ## MatomoRequest
@@ -65,6 +67,41 @@ The class `MatomoRequest` represents a single tracking request. It is the main c
 MatomoRequest request = MatomoRequest.request()
         .url("https://example.com")
         .actionName("My Action")
+        .build();
+```
+
+Nevertheless we strongly recommend you to use one of the methods of the class `MatomoRequests` to track:
+
+1. **action(@NonNull String url, @NonNull ActionType type):**
+    - Creates a `MatomoRequest` object for a download or a link action.
+2. **contentImpression(@NonNull String name, String piece, String target):**
+    - Creates a `MatomoRequest` object for a content impression.
+3. **contentInteraction(@NonNull String interaction, @NonNull String name, String piece, String target):**
+    - Creates a `MatomoRequest` object for a content interaction.
+4. **crash(@NonNull String message, String type, String category, String stackTrace, String location, Integer line, Integer column):**
+    - Creates a `MatomoRequest` object for a crash with specified details.
+5. **crash(@NonNull Throwable throwable, String category):**
+    - Creates a `MatomoRequest` object for a crash with information extracted from a `Throwable` object.
+6. **ecommerceCartUpdate(@NonNull Double revenue):**
+    - Creates a `MatomoRequest` object for an ecommerce cart update (add item, remove item, update item).
+7. **ecommerceOrder(@NonNull String id, @NonNull Double revenue, Double subtotal, Double tax, Double shippingCost, Double discount):**
+    - Creates a `MatomoRequest` object for an ecommerce order.
+8. **event(@NonNull String category, @NonNull String action, String name, Double value):**
+    - Creates a `MatomoRequest` object for an event.
+9. **goal(int id, Double revenue):**
+    - Creates a `MatomoRequest` object for a conversion of a goal on the website.
+10. **pageView(@NonNull String name):**
+    - Creates a `MatomoRequest` object for a page view.
+11. **ping():**
+    - Creates a `MatomoRequest` object for a ping.
+12. **siteSearch(@NonNull String query, String category, Long resultsCount):**
+    - Creates a `MatomoRequest` object for a search.
+
+Example:
+
+```java
+MatomoRequest request = MatomoRequests
+        .pageView("My Page")
         .build();
 ```
 
@@ -80,22 +117,18 @@ TrackerConfiguration configuration = TrackerConfiguration.builder()
         .build();
 
 // Prepare the tracker (stateless - can be used for multiple requests)
-        MatomoTracker tracker = new MatomoTracker(configuration);
+MatomoTracker tracker = new MatomoTracker(configuration);
 
-        MatomoRequest request = MatomoRequest
-        .builder()
-        .actionName("User Profile / Upload Profile Picture")
-        .actionUrl("https://your-domain.net/user/profile/picture")
+MatomoRequest request = MatomoRequests
+        .event("Training", "Workout completed", "Bench press", 60.0)
         .visitorId(VisitorId.fromString("some@email-adress.org"))
         // ...
         .build();
 
 // Send the request asynchronously (non-blocking) as an HTTP POST request (payload is JSON and contains the
 // tracking parameters)
-        CompletableFuture<Void> future = tracker.sendBulkRequestAsync(request);
+tracker.sendBulkRequestAsync(request);
 
-// If you want to ensure the request was sent without exceptions (not necessarily needed)
-        future.join(); // throws an unchecked exception if the request failed
 ```
 
 This example configures the tracker to send the tracking requests to the Matomo server at `https://example.com/matomo.php` and use the site id `42`. The tracker will use the default values for all other configuration properties. The request sets the action name and action URL. It also sets a custom visitor id. The tracker will send the request asynchronously and return immediately. The tracker will use the configuration set in the constructor to send the requests via HTTP POST. Using the method `CompletableFuture.join()` you can wait for the request to be sent. If the request fails, the method will throw an unchecked exception.
@@ -131,7 +164,9 @@ Ecommerce items can be added to a request using the method `MatomoRequest.reques
 To create an ecommerce items object, you can use the builder `EcommerceItems.builder()`:
 
 ```java
-EcommerceItems ecommerceItems = EcommerceItems
+MatomoRequests
+        .ecommerceCartUpdate(50.0)
+        .ecommerceItems(EcommerceItems
         .builder()
         .item(EcommerceItem
         .builder()

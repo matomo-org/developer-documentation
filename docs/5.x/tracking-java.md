@@ -17,9 +17,9 @@ To use the Matomo Java Tracker in your Java application, you need to add the dep
 
 ```xml
 <dependency>
-    <groupId>org.piwik.java.tracking</groupId>
-    <artifactId>matomo-java-tracker</artifactId>
-    <version>3.x.x</version>
+  <groupId>org.piwik.java.tracking</groupId>
+  <artifactId>matomo-java-tracker</artifactId>
+  <version>3.x.x</version>
 </dependency>
 ```
 
@@ -37,9 +37,9 @@ To create a tracker configuration fluently you can use the `TrackerConfiguration
 
 ```java
 TrackerConfiguration configuration = TrackerConfiguration.builder()
-    .apiEndpoint(URI.create("https://your-domain.net/matomo/matomo.php"))
-    .defaultSiteId(42) // if not explicitly specified by the request
-    .build();
+        .apiEndpoint(URI.create("https://your-domain.net/matomo/matomo.php"))
+        .defaultSiteId(42) // if not explicitly specified by the request
+        .build();
 ```
 
 In this example the tracker will send the tracking requests to the Matomo server at `https://your-domain.net/matomo/matomo.php` and use the site id `42`. The tracker will use the default values for all other configuration properties.
@@ -55,6 +55,8 @@ tracker.sendBulkRequestAsync(requests);
 
 In this example the tracker sends a bulk request asynchronously. The tracker will send the requests in the background and return immediately. The tracker will use the configuration set in the constructor to send the requests via HTTP POST.
 
+Don't create the `MatomoTracker` on each tracking request, since it's thread-safe and stateless. Create it once and reuse it for multiple tracking requests.
+
 We recommend to use the method `MatomoTracker.sendBulkRequestAsync(Collection<MatomoRequest>)` to send tracking requests asynchronously. If you want to send requests synchronously, you can use the method `MatomoTracker.sendBulkRequest(Collection<MatomoRequest>)`. Both methods will send the requests in a single HTTP request. If you want to send the requests in multiple HTTP GET requests, you can use the method `MatomoTracker.sendRequest(MatomoRequest)` or `MatomoTracker.sendRequestAsync(MatomoRequest)` to send a single request.
 
 ## MatomoRequest
@@ -63,9 +65,44 @@ The class `MatomoRequest` represents a single tracking request. It is the main c
 
 ```java
 MatomoRequest request = MatomoRequest.request()
-    .url("https://example.com")
-    .actionName("My Action")
-    .build();
+        .url("https://example.com")
+        .actionName("My Action")
+        .build();
+```
+
+Nevertheless we strongly recommend you to use one of the methods of the class `MatomoRequests` to track:
+
+1. **action(@NonNull String url, @NonNull ActionType type):**
+    - Creates a `MatomoRequest` object for a download or a link action.
+2. **contentImpression(@NonNull String name, String piece, String target):**
+    - Creates a `MatomoRequest` object for a content impression.
+3. **contentInteraction(@NonNull String interaction, @NonNull String name, String piece, String target):**
+    - Creates a `MatomoRequest` object for a content interaction.
+4. **crash(@NonNull String message, String type, String category, String stackTrace, String location, Integer line, Integer column):**
+    - Creates a `MatomoRequest` object for a crash with specified details.
+5. **crash(@NonNull Throwable throwable, String category):**
+    - Creates a `MatomoRequest` object for a crash with information extracted from a `Throwable` object.
+6. **ecommerceCartUpdate(@NonNull Double revenue):**
+    - Creates a `MatomoRequest` object for an ecommerce cart update (add item, remove item, update item).
+7. **ecommerceOrder(@NonNull String id, @NonNull Double revenue, Double subtotal, Double tax, Double shippingCost, Double discount):**
+    - Creates a `MatomoRequest` object for an ecommerce order.
+8. **event(@NonNull String category, @NonNull String action, String name, Double value):**
+    - Creates a `MatomoRequest` object for an event.
+9. **goal(int id, Double revenue):**
+    - Creates a `MatomoRequest` object for a conversion of a goal on the website.
+10. **pageView(@NonNull String name):**
+    - Creates a `MatomoRequest` object for a page view.
+11. **ping():**
+    - Creates a `MatomoRequest` object for a ping.
+12. **siteSearch(@NonNull String query, String category, Long resultsCount):**
+    - Creates a `MatomoRequest` object for a search.
+
+Example:
+
+```java
+MatomoRequest request = MatomoRequests
+        .pageView("My Page")
+        .build();
 ```
 
 Please mind that the ecommerce parameters can only be set if a goal id is also set. Search results count requires a search query. The visitor location parameters (like longitude, latitude, city, country, etc.) require an authentication token.
@@ -75,27 +112,23 @@ Here is complete example that shows how to create a tracker configuration, insta
 ```java
 // Create the tracker configuration
 TrackerConfiguration configuration = TrackerConfiguration.builder()
-    .apiEndpoint(URI.create("https://your-domain.net/matomo/matomo.php"))
-    .defaultSiteId(42) // if not explicitly specified by action
-    .build();
+        .apiEndpoint(URI.create("https://your-domain.net/matomo/matomo.php"))
+        .defaultSiteId(42) // if not explicitly specified by action
+        .build();
 
 // Prepare the tracker (stateless - can be used for multiple requests)
 MatomoTracker tracker = new MatomoTracker(configuration);
 
-MatomoRequest request = MatomoRequest
-    .builder()
-    .actionName("User Profile / Upload Profile Picture")
-    .actionUrl("https://your-domain.net/user/profile/picture")
-    .visitorId(VisitorId.fromString("some@email-adress.org"))
-    // ...
-    .build();
+MatomoRequest request = MatomoRequests
+        .event("Training", "Workout completed", "Bench press", 60.0)
+        .visitorId(VisitorId.fromString("some@email-adress.org"))
+        // ...
+        .build();
 
 // Send the request asynchronously (non-blocking) as an HTTP POST request (payload is JSON and contains the
 // tracking parameters)
-CompletableFuture<Void> future = tracker.sendBulkRequestAsync(request);
+tracker.sendBulkRequestAsync(request);
 
-// If you want to ensure the request was sent without exceptions (not necessarily needed)
-future.join(); // throws an unchecked exception if the request failed
 ```
 
 This example configures the tracker to send the tracking requests to the Matomo server at `https://example.com/matomo.php` and use the site id `42`. The tracker will use the default values for all other configuration properties. The request sets the action name and action URL. It also sets a custom visitor id. The tracker will send the request asynchronously and return immediately. The tracker will use the configuration set in the constructor to send the requests via HTTP POST. Using the method `CompletableFuture.join()` you can wait for the request to be sent. If the request fails, the method will throw an unchecked exception.
@@ -114,7 +147,7 @@ Using the Matomo Java Tracker are three different ways to set the authentication
 
 The tracker uses primarily the authentication set via method parameter, then the authentication set in the request, and finally the authentication set in the tracker configuration. If no authentication token is set, the tracker won't set the parameter `token_auth` in the tracking request. This can lead to problems if you use parameters that require an authentication token. In this case, the tracker will throw an exception on sending the request.
 
-Please mind that the token should be transmitted securely, for example using HTTPS. 
+Please mind that the token should be transmitted securely, for example using HTTPS.
 
 ## Custom Tracking Parameters
 
@@ -131,25 +164,27 @@ Ecommerce items can be added to a request using the method `MatomoRequest.reques
 To create an ecommerce items object, you can use the builder `EcommerceItems.builder()`:
 
 ```java
-EcommerceItems ecommerceItems = EcommerceItems
-    .builder()
-    .item(EcommerceItem
-        .builder()
-        .sku("XYZ12345")
-        .name("Matomo - The big book about web analytics")
-        .category("Education & Teaching")
-        .price(23.1)
-        .quantity(2)
-        .build())
-    .item(EcommerceItem
-        .builder()
-        .sku("B0C2WV3MRJ")
-        .name("Matomo for data visualization")
-        .category("Education & Teaching")
-        .price(15.0)
-        .quantity(1)
-        .build())
-    .build();
+MatomoRequests
+        .ecommerceCartUpdate(50.0)
+        .ecommerceItems(EcommerceItems
+            .builder()
+            .item(EcommerceItem
+                .builder()
+                .sku("XYZ12345")
+                .name("Matomo - The big book about web analytics")
+                .category("Education & Teaching")
+                .price(23.1)
+                .quantity(2)
+                .build())
+            .item(EcommerceItem
+                .builder()
+                .sku("B0C2WV3MRJ")
+                .name("Matomo for data visualization")
+                .category("Education & Teaching")
+                .price(15.0)
+                .quantity(1)
+                .build())
+            .build();
 ```
 
 ## Custom Variables
@@ -160,8 +195,8 @@ To create a custom variables object use the constructor `new CustomVariables()` 
 
 ```java
 CustomVariables customVariables = new CustomVariables()
-    .add(new CustomVariable("Type", "Customer"), 1)
-    .add(new CustomVariable("Status", "Logged In"), 3);
+        .add(new CustomVariable("Type", "Customer"), 1)
+        .add(new CustomVariable("Status", "Logged In"), 3);
 ```
 
 The first parameter contains the custom variable consisting of the key and the value. The second parameter contains the index of the custom variable. The index is used to identify the variable in the Matomo user interface. You can find the custom variables in the Matomo user interface under "Visitors" -> "Custom Variables". The index is the number in the URL of the custom variables page.
