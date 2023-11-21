@@ -56,9 +56,7 @@ TrackerConfiguration configuration=TrackerConfiguration.builder()
         .build();
 ```
 
-In this example the tracker will send the tracking requests to the Matomo server
-at `https://your-domain.net/matomo/matomo.php` and use the site id `42`. The tracker will use the default values for all
-other configuration properties.
+In this example the tracker will send the tracking requests to the Matomo server at `https://your-domain.net/matomo/matomo.php` and use the site id `42`. The tracker will use the default values for all other configuration properties.
 
 ## MatomoTracker
 
