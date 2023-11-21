@@ -6,16 +6,15 @@ category: API Reference
 
 The Matomo Java Tracker is a comprehensive Java library designed for sending tracking data to Matomo servers.
 It is compatible with Java 1.8 and later versions. Whether you're working with Java web applications, desktop
-applications, command line applications, batch
-applications, microservices, or other Java-based projects, the Matomo Java Tracker has you covered.
+applications, command line applications, batch applications, microservices, or other Java-based projects,
+the Matomo Java Tracker has you covered.
 
 It differs from the JavaScript Tracker API due to the unique characteristics of Java applications. This library offers
 robust support for both synchronous and asynchronous tracking. It facilitates the tracking of custom dimensions, custom
 variables, custom events, content, ecommerce activities, goals, site searches, campaign efforts, and more.
 
-For detailed API documentation, refer to the [JavaDoc](https://javadoc.io/doc/org.piwik.java.tracking/matomo-java-tracker-core/latest/index.html). This
-documentation provides a swift and informative
-overview of the essential classes and methods within the library.
+For detailed API documentation, refer to the [JavaDoc](https://javadoc.io/doc/org.piwik.java.tracking/matomo-java-tracker-core/latest/index.html).
+This documentation provides a swift and informative overview of the essential classes and methods within the library.
 
 If you encounter any challenges or have inquiries, feel free to [create an issue](https://github.com/matomo-org/matomo-java-tracker/issues/new) in
 the [Matomo Java Tracker repository](https://github.com/matomo-org/matomo-java-tracker). Our team is dedicated to
@@ -43,24 +42,25 @@ implementation 'org.piwik.java.tracking:matomo-java-tracker:3.x.x'
 ## TrackerConfiguration
 
 The class `TrackerConfiguration` configures the tracker and can be built in a fluent way. See the configuration
-properties in
-the [JavaDoc of TrackerConfiguration](https://javadoc.io/doc/org.piwik.java.tracking/matomo-java-tracker-core/latest/org/matomo/java/tracking/TrackerConfiguration.html).
+properties in the [JavaDoc of TrackerConfiguration](https://javadoc.io/doc/org.piwik.java.tracking/matomo-java-tracker-core/latest/org/matomo/java/tracking/TrackerConfiguration.html).
 
 To create a tracker configuration fluently you can use the `TrackerConfiguration.builder()` method:
 
 ```java
-TrackerConfiguration configuration = TrackerConfiguration.builder()
+TrackerConfiguration configuration=TrackerConfiguration.builder()
         .apiEndpoint(URI.create("https://your-domain.net/matomo/matomo.php"))
         .defaultSiteId(42) // if not explicitly specified by the request
         .build();
 ```
 
-In this example the tracker will send the tracking requests to the Matomo server at `https://your-domain.net/matomo/matomo.php` and use the site id `42`. The tracker will use the default values for all other configuration properties.
+In this example the tracker will send the tracking requests to the Matomo server at `https://your-domain.net/matomo/matomo.php`
+and use the site id `42`. The tracker will use the default values for all other configuration properties.
 
 ## MatomoTracker
 
 The class [`MatomoTracker`](https://javadoc.io/doc/org.piwik.java.tracking/matomo-java-tracker-core/latest/org/matomo/java/tracking/MatomoTracker.html)
-is the main class to use for sending tracking requests. It contains methods to send tracking requests synchronously and asynchronously.
+is the main class to use for sending tracking requests. It contains methods to send tracking requests synchronously and
+asynchronously.
 
 ```java
 MatomoTracker tracker = new MatomoTracker(configuration);
@@ -75,9 +75,8 @@ Avoid creating a new `MatomoTracker` for each tracking request, as it is thread-
 reuse it for multiple tracking requests.
 
 We recommend to use the method `MatomoTracker.sendBulkRequestAsync(Collection<MatomoRequest>)` to send tracking requests
-asynchronously. If you want to send requests synchronously, you can use the
-method `MatomoTracker.sendBulkRequest(Collection<MatomoRequest>)`. Both methods will send the requests in a single HTTP
-request. If you want to send the requests in multiple HTTP GET requests, you can use the
+asynchronously. If you want to send requests synchronously, you can use the method `MatomoTracker.sendBulkRequest(Collection<MatomoRequest>)`.
+Both methods will send the requests in a single HTTP request. If you want to send the requests in multiple HTTP GET requests, you can use the
 method `MatomoTracker.sendRequest(MatomoRequest)` or `MatomoTracker.sendRequestAsync(MatomoRequest)` to send a single
 request.
 
@@ -95,32 +94,20 @@ Nevertheless we strongly recommend you to use one of the methods of the
 class [`MatomoRequests`](https://javadoc.io/doc/org.piwik.java.tracking/matomo-java-tracker-core/latest/org/matomo/java/tracking/MatomoRequests.html)
 to track:
 
-1. **action(@NonNull String url, @NonNull ActionType type):**
-    - Creates a `MatomoRequest` object for a download or a link action.
-2. **contentImpression(@NonNull String name, String piece, String target):**
-    - Creates a `MatomoRequest` object for a content impression.
-3. **contentInteraction(@NonNull String interaction, @NonNull String name, String piece, String target):**
-    - Creates a `MatomoRequest` object for a content interaction.
+1. **action(@NonNull String url, @NonNull ActionType type):** Creates a `MatomoRequest` object for a download or a link action.
+2. **contentImpression(@NonNull String name, String piece, String target):** Creates a `MatomoRequest` object for a content impression.
+3. **contentInteraction(@NonNull String interaction, @NonNull String name, String piece, String target):** Creates a `MatomoRequest` object for a content interaction.
 4. **crash(@NonNull String message, String type, String category, String stackTrace, String location, Integer line,
-   Integer column):**
-    - Creates a `MatomoRequest` object for a crash with specified details.
-5. **crash(@NonNull Throwable throwable, String category):**
-    - Creates a `MatomoRequest` object for a crash with information extracted from a `Throwable` object.
-6. **ecommerceCartUpdate(@NonNull Double revenue):**
-    - Creates a `MatomoRequest` object for an ecommerce cart update (add item, remove item, update item).
+   Integer column):** Creates a `MatomoRequest` object for a crash with specified details.
+5. **crash(@NonNull Throwable throwable, String category):** Creates a `MatomoRequest` object for a crash with information extracted from a `Throwable` object.
+6. **ecommerceCartUpdate(@NonNull Double revenue):** Creates a `MatomoRequest` object for an ecommerce cart update (add item, remove item, update item).
 7. **ecommerceOrder(@NonNull String id, @NonNull Double revenue, Double subtotal, Double tax, Double shippingCost,
-   Double discount):**
-    - Creates a `MatomoRequest` object for an ecommerce order.
-8. **event(@NonNull String category, @NonNull String action, String name, Double value):**
-    - Creates a `MatomoRequest` object for an event.
-9. **goal(int id, Double revenue):**
-    - Creates a `MatomoRequest` object for a conversion of a goal on the website.
-10. **pageView(@NonNull String name):**
-    - Creates a `MatomoRequest` object for a page view.
-11. **ping():**
-    - Creates a `MatomoRequest` object for a ping.
-12. **siteSearch(@NonNull String query, String category, Long resultsCount):**
-    - Creates a `MatomoRequest` object for a search.
+   Double discount):** Creates a `MatomoRequest` object for an ecommerce order.
+8. **event(@NonNull String category, @NonNull String action, String name, Double value):** Creates a `MatomoRequest` object for an event.
+9. **goal(int id, Double revenue):** Creates a `MatomoRequest` object for a conversion of a goal on the website.
+10. **pageView(@NonNull String name):** Creates a `MatomoRequest` object for a page view.
+11. **ping():** Creates a `MatomoRequest` object for a ping.
+12. **siteSearch(@NonNull String query, String category, Long resultsCount):** Creates a `MatomoRequest` object for a search.
 
 Example:
 
@@ -154,12 +141,12 @@ MatomoRequest request = MatomoRequests
 tracker.sendBulkRequestAsync(request);
 ```
 
-This example configures the tracker to send the tracking requests to the Matomo server
-at `https://example.com/matomo.php` and use the site id `42`. The tracker will use the default values for all other
-configuration properties. The request sets the action name and action URL. It also sets a custom visitor id. The tracker
-will send the request asynchronously and return immediately. The tracker will use the configuration set in the
-constructor to send the requests via HTTP POST. Using the method `CompletableFuture.join()` you can wait for the request
-to be sent. If the request fails, the method will throw an unchecked exception.
+This example configures the tracker to send the tracking requests to the Matomo server at `https://example.com/matomo.php` and 
+use the site id `42`. The tracker will use the default values for all other configuration properties. The request sets the action
+name and action URL. It also sets a custom visitor id.
+The tracker will send the request asynchronously and return immediately. The tracker will use the configuration set in 
+the constructor to send the requests via HTTP POST. Using the method `CompletableFuture.join()` you can wait for the request to 
+be sent. If the request fails, the method will throw an unchecked exception.
 
 ## Authentication Token
 
@@ -248,8 +235,8 @@ method `CustomVariables.add(String, String)`:
 
 ```java
 CustomVariables customVariables = new CustomVariables()
-  .add(new CustomVariable("Type", "Customer"), 1)
-  .add(new CustomVariable("Status", "Logged In"), 3);
+        .add(new CustomVariable("Type", "Customer"), 1)
+        .add(new CustomVariable("Status", "Logged In"), 3);
 ```
 
 The first parameter contains the custom variable consisting of the key and the value. The second parameter contains the
