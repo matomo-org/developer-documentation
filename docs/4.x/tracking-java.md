@@ -47,7 +47,7 @@ properties in the [JavaDoc of TrackerConfiguration](https://javadoc.io/doc/org.p
 To create a tracker configuration fluently you can use the `TrackerConfiguration.builder()` method:
 
 ```java
-TrackerConfiguration configuration=TrackerConfiguration.builder()
+TrackerConfiguration configuration = TrackerConfiguration.builder()
         .apiEndpoint(URI.create("https://your-domain.net/matomo/matomo.php"))
         .defaultSiteId(42) // if not explicitly specified by the request
         .build();
