@@ -63,8 +63,7 @@ other configuration properties.
 ## MatomoTracker
 
 The class [`MatomoTracker`](https://javadoc.io/doc/org.piwik.java.tracking/matomo-java-tracker-core/latest/org/matomo/java/tracking/MatomoTracker.html)
-is the main class to use for sending tracking requests. It contains methods to send tracking
-requests synchronously and asynchronously.
+is the main class to use for sending tracking requests. It contains methods to send tracking requests synchronously and asynchronously.
 
 ```java
 MatomoTracker tracker = new MatomoTracker(configuration);
