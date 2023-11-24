@@ -27,9 +27,9 @@ project. The library can be easily obtained from Maven Central:
 
 ```xml
 <dependency>
-    <groupId>org.piwik.java.tracking</groupId>
-    <artifactId>matomo-java-tracker</artifactId>
-    <version>3.x.x</version>
+   <groupId>org.piwik.java.tracking</groupId>
+   <artifactId>matomo-java-tracker</artifactId>
+   <version>3.x.x</version>
 </dependency>
 ```
 
@@ -64,7 +64,7 @@ asynchronously.
 
 ```java
 MatomoTracker tracker = new MatomoTracker(configuration);
-tracker.sendBulkRequestAsync(requests);
+        tracker.sendBulkRequestAsync(requests);
 ```
 
 In this example, the tracker executes an asynchronous bulk request, enabling the concurrent transmission of requests in
@@ -115,6 +115,8 @@ Example:
 MatomoRequest request = MatomoRequests.pageView("My Page").build();
 ```
 
+
+
 Search results count requires a search query. The visitor location parameters (like longitude, latitude, city, country,
 etc.) require an authentication token.
 
@@ -141,11 +143,11 @@ MatomoRequest request = MatomoRequests
 tracker.sendBulkRequestAsync(request);
 ```
 
-This example configures the tracker to send the tracking requests to the Matomo server at `https://example.com/matomo.php` and 
+This example configures the tracker to send the tracking requests to the Matomo server at `https://example.com/matomo.php` and
 use the site id `42`. The tracker will use the default values for all other configuration properties. The request sets the action
 name and action URL. It also sets a custom visitor id.
-The tracker will send the request asynchronously and return immediately. The tracker will use the configuration set in 
-the constructor to send the requests via HTTP POST. Using the method `CompletableFuture.join()` you can wait for the request to 
+The tracker will send the request asynchronously and return immediately. The tracker will use the configuration set in
+the constructor to send the requests via HTTP POST. Using the method `CompletableFuture.join()` you can wait for the request to
 be sent. If the request fails, the method will throw an unchecked exception.
 
 ## Authentication Token
@@ -173,6 +175,32 @@ the parameter `token_auth` in the tracking request. This can lead to problems if
 authentication token. In this case, the tracker will throw an exception on sending the request.
 
 Ensure that the token is transmitted securely, for example, using HTTPS.
+
+## Visitor ID
+
+The VisitorId class in your project is a utility class that provides methods to create a unique visitor ID for tracking
+purposes in Matomo. Here's how you can use it:
+
+1. **Create a visitor ID from a hash**: If you have a hash (for example, a hash code of a username), you can use the
+   `fromHash` method to create a visitor ID. This method always creates the same visitor ID for the same hash.
+   ```java
+   VisitorId visitorIdFromHash = VisitorId.fromHash(2389472398L);
+   ```
+2. **Create a visitor ID from a UUID**: If you have a UUID, you can use the `fromUUID` method to create a visitor ID.
+   This method uses the most significant bits of the UUID to create the visitor ID.
+   ```java
+   VisitorId visitorIdFromUUID = VisitorId.fromUUID(UUID.fromString("53e213f2-9a16-4e42-ac6f-5c8637db9fb0"));
+   ```
+3. **Create a visitor ID from a hexadecimal string**: If you have a hexadecimal string, you can use the `fromHex` method
+   to create a visitor ID. The input string must be a valid hexadecimal string with a maximum length of 16 characters.
+   ```java
+   VisitorId visitorIdFromHex = VisitorId.fromHex("0815badeaffe");
+   ```
+4. **Create a visitor ID from a string**: If you have a string, you can use the `fromString` method to create a visitor ID.
+   This method hashes the string to create the visitor ID.
+   ```java
+   VisitorId visitorIdFromHex = VisitorId.fromString("alice");
+   ```
 
 ## Custom Tracking Parameters
 
@@ -250,3 +278,79 @@ The `pageCustomVariables` attribute contains the custom variables for the page. 
 the `visitCustomVariables` attribute is set in the visit scope and the `pageCustomVariables` attribute is set in the
 page scope. The visit scope means that the custom variables are valid for the whole visit. The page scope means that the
 custom variables are valid for the current page only.
+
+## Servlet Functionality
+
+The Matomo Java Tracker provides functionality to track HTTP requests in servlets. It supports both the Jakarta and
+Javax servlet API.
+
+The `JakartaHttpServletWrapper` class is a utility class that provides a method to convert a Jakarta `HttpServletRequest`
+into a `HttpServletRequestWrapper`. To integrate the JakartaHttpServletWrapper in your controller class, you need to use
+it within a method that handles HTTP requests. Here's an example of how you can do this in a Spring controller:
+
+```java
+import jakarta.servlet.http.HttpServletRequest;
+import org.matomo.java.tracking.MatomoRequest;
+import org.matomo.java.tracking.MatomoTracker;
+import org.matomo.java.tracking.servlet.HttpServletRequestWrapper;
+import org.matomo.java.tracking.servlet.JakartaHttpServletWrapper;
+import org.matomo.java.tracking.servlet.ServletMatomoRequest;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class MyController {
+
+   private final MatomoTracker matomoTracker;
+
+   // Injected by your dependency injection framework
+   public MyController(MatomoTracker matomoTracker) {
+      this.matomoTracker = matomoTracker;
+   }
+
+   @GetMapping("/my-endpoint")
+   public void handleRequest(HttpServletRequest request) {
+      // send the request to the Matomo server
+      matomoTracker.sendRequest(
+              ServletMatomoRequest.fromServletRequest(
+                      JakartaHttpServletWrapper.fromHttpServletRequest(request))
+                      // add more request parameters if needed
+                      .build()
+      );
+   }
+}
+```
+
+Alternatively, if you already have a `MatomoRequestBuilder` and you want to add the headers from the `HttpServletRequestWrapper`
+to it, you can use the `addServletRequestHeaders` method.
+
+```java
+ServletMatomoRequest.addServletRequestHeaders(MatomoRequest.builder().actionName("action"), requestWrapper);
+```
+
+## Spring Boot Starter
+
+The Matomo Java Tracker Spring Boot Starter is a Maven artifact that provides Spring Boot integration for the Matomo
+Java Tracker. It is designed to make it easier to use the Matomo Java Tracker in a Spring Boot application. It likely provides
+auto-configuration for the Matomo Java Tracker and possibly some additional Spring-specific integration features.
+
+By including this artifact in your project, you can take advantage of Spring Boot's auto-configuration features to
+automatically set up and configure the Matomo Java Tracker, reducing the amount of manual configuration you need to do.
+
+To integrate the Matomo Java Tracker Spring Boot Starter into your Spring application, you need to add it as a dependency
+in your Maven `pom.xml` file. Here is an example of how to add it:
+
+```xml
+<dependencies>
+    <!-- other dependencies -->
+
+    <dependency>
+        <groupId>org.piwik.java.tracking</groupId>
+        <artifactId>matomo-java-tracker-spring-boot-starter</artifactId>
+        <version>3.x.x</version> <!-- replace with your desired version -->
+    </dependency>
+</dependencies>
+```
+
+Once the dependency is added, you can use the features provided by the matomo-java-tracker-spring-boot-starter in your
+Spring Boot application.
