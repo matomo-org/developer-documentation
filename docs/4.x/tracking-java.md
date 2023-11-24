@@ -64,7 +64,7 @@ asynchronously.
 
 ```java
 MatomoTracker tracker = new MatomoTracker(configuration);
-        tracker.sendBulkRequestAsync(requests);
+tracker.sendBulkRequestAsync(requests);
 ```
 
 In this example, the tracker executes an asynchronous bulk request, enabling the concurrent transmission of requests in
@@ -352,5 +352,28 @@ in your Maven `pom.xml` file. Here is an example of how to add it:
 </dependencies>
 ```
 
-Once the dependency is added, you can use the features provided by the matomo-java-tracker-spring-boot-starter in your
-Spring Boot application.
+Once the dependency is added, you can use the features provided by the Matomo Java Tracker Spring Boot Starter in your
+Spring Boot application. Set the appropriate properties in your `application.properties` or `application.yml` file.  
+Here's an example of how to do this in `application.properties`:
+
+```properties
+matomo.tracker.api-endpoint=https://your-matomo-domain.example/matomo.php
+matomo.tracker.default-site-id=1
+matomo.tracker.default-auth-token=1234567890abcdef1234567890abcdef
+matomo.tracker.enabled=true
+matomo.tracker.connect-timeout=10s
+matomo.tracker.socket-timeout=30s
+matomo.tracker.proxy-host=proxy.example.com
+matomo.tracker.proxy-port=8080
+matomo.tracker.proxy-username=proxyuser
+matomo.tracker.proxy-password=proxypassword
+matomo.tracker.user-agent=MatomoJavaClient
+matomo.tracker.log-failed-tracking=true
+matomo.tracker.disable-ssl-cert-validation=true
+matomo.tracker.disable-ssl-host-validation=true
+matomo.tracker.thread-pool-size=2
+```
+
+Replace the placeholders with your actual values. For example, replace https://your-matomo-domain.example/matomo.php
+with the URL of your Matomo server, and replace 1234567890abcdef1234567890abcdef with your Matomo auth token. Once
+you've done this, the MatomoTracker bean will be automatically configured and ready to use in your Spring Boot application.
