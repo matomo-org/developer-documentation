@@ -150,7 +150,7 @@ be sent. If the request fails, the method will throw an unchecked exception.
 
 ## Authentication Token
 
-The `token_auth` parameter contains the authentication token of the Matomo user. Some parameters require it. The
+The `token_auth` parameter contains the authentication token of the Matomo user. Some parameters require it.
 The authorization key can be found in the Matomo user interface under "Administration" -> "Personal" -> "Security" -> "Auth tokens"
 
 Using the Matomo Java Tracker are three different ways to set the authentication token:
