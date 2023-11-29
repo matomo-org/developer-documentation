@@ -58,8 +58,7 @@ and use the site id `42`. The tracker will use the default values for all other 
 ## MatomoTracker
 
 The class [`MatomoTracker`](https://javadoc.io/doc/org.piwik.java.tracking/matomo-java-tracker-core/latest/org/matomo/java/tracking/MatomoTracker.html)
-is the main class to use for sending tracking requests. It contains methods to send tracking requests synchronously and
-asynchronously.
+is the main class to use for sending tracking requests. It contains methods to send tracking requests synchronously and asynchronously.
 
 ```java
 MatomoTracker tracker = new MatomoTracker(configuration);
