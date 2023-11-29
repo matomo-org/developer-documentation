@@ -17,8 +17,7 @@ For detailed API documentation, refer to the [JavaDoc](https://javadoc.io/doc/or
 This documentation provides a swift and informative overview of the essential classes and methods within the library.
 
 If you encounter any challenges or have inquiries, feel free to [create an issue](https://github.com/matomo-org/matomo-java-tracker/issues/new) in
-the [Matomo Java Tracker repository](https://github.com/matomo-org/matomo-java-tracker). Our team is dedicated to
-assisting you promptly and ensuring a smooth experience with the Matomo Java Tracker.
+the [Matomo Java Tracker repository](https://github.com/matomo-org/matomo-java-tracker). Our team will be happy to help.
 
 ## Adding the dependency
 
