@@ -45,7 +45,7 @@ Learn more about our Piwik Tracking API PHP client on GitHub: [github.com/matomo
 
 ### Java client
 
-A Java client for the Piwik Tracking API is available on GitHub: [github.com/matomo-org/matomo-java-tracker](https://github.com/matomo-org/piwik-java-tracker#readme).
+A Java client for the Piwik Tracking API is available on GitHub: [github.com/matomo-org/matomo-java-tracker](https://github.com/matomo-org/matomo-java-tracker#readme).
 
 ### C# client
 

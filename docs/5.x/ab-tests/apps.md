@@ -7,7 +7,7 @@ title: Mobile & Desktop Apps
 You can run experiments in apps by using any A/B testing framework of your choice if you are tracking your users 
 via one of the Piwik SDKs (eg [Android SDK](https://github.com/matomo-org/matomo-sdk-android), 
 [iOS SDK](https://github.com/matomo-org/matomo-sdk-ios), [C#](https://github.com/matomo-org/piwik-dotnet-tracker), 
-[PHP](https://github.com/matomo-org/matomo-php-tracker), [Java](https://github.com/matomo-org/piwik-java-tracker)). 
+[PHP](https://github.com/matomo-org/matomo-php-tracker), [Java](https://github.com/matomo-org/matomo-java-tracker)). 
 
 This guide requires that you track your application via a [Piwik Tracking SDK](/guides/tracking-api-clients), 
 via the [Tracking HTTP API](/api-reference/tracking-api) or any other [Piwik Tracking Integration](https://matomo.org/integrate).
