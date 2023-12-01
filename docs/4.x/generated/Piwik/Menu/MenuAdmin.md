@@ -22,6 +22,7 @@ The class defines the following methods:
 - [`addDevelopmentItem()`](#adddevelopmentitem) &mdash; See add().
 - [`addDiagnosticItem()`](#adddiagnosticitem) &mdash; See add().
 - [`addPlatformItem()`](#addplatformitem) &mdash; See add().
+- [`addPluginItem()`](#addpluginitem) &mdash; See add().
 - [`addMeasurableItem()`](#addmeasurableitem) &mdash; See add().
 - [`addSystemItem()`](#addsystemitem) &mdash; See add().
 
@@ -188,6 +189,27 @@ See add(). Adds a new menu item to the diagnostic section of the admin menu.
 Since Matomo 2.5.0
 
 See add(). Adds a new menu item to the platform section of the admin menu.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$menuName` (`string`) &mdash;
+      
+    - `$url` (`array`) &mdash;
+      
+    - `$order` (`int`) &mdash;
+      
+    - `$tooltip` (`bool`|`string`) &mdash;
+      
+- It does not return anything or a mixed result.
+
+<a name="addpluginitem" id="addpluginitem"></a>
+<a name="addPluginItem" id="addPluginItem"></a>
+### `addPluginItem()`
+
+Since Matomo 5.0.0
+
+See add(). Adds a new menu item to the plugins section of the admin menu.
 
 #### Signature
 
