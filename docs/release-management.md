@@ -210,6 +210,12 @@ Please let us know if you have any question or if we can help in any way. We're 
 
 * After triggering the first stable release of a new major version, edit `config.ini.php` and point the path of the latest release channel to the correct latest file. For example, if Matomo 5.0 is released, then change `'path_latest_5x_stable' => __DIR__ . '/../LATEST',` to `'path_latest_5x_stable' => __DIR__ . '/../LATEST_5X',`.
 
+### After the release
+
+* Closely monitor the issue tracker and L3's and feedback from our support team around regressions or upgrade issues.
+  * We have to fix these in a timely manner to avoid other people running into the same problem. For every report we know there are many more with the same problem.
+  * If we can't fix an upgrade issue, check if we can improve some documentation to not run into the problem in the first place or create an FAQ so people quickly find a solution to their problem so they don't stop using Matomo. In some cases a clear explanation how to resolve the issue in a GitHub issue can help others too.
+
 ### Once a LTS version expires, we remove old plugins from the Marketplace
 
 From the Marketplace, we will remove all plugins incompatible with the LTS version or latest stable. So around 12 months after the release of a stable version (for example Matomo 5), when the LTS for Matomo 4 period ends, we start removing plugins that are no compatible with Matomo 4 or Matomo 5.
