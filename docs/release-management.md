@@ -212,9 +212,15 @@ Please let us know if you have any question or if we can help in any way. We're 
 
 ### After the release
 
-* Closely monitor the issue tracker and L3's and feedback from our support team around regressions or upgrade issues.
-  * We have to fix these in a timely manner to avoid other people running into the same problem. For every report we know there are many more with the same problem.
-  * If we can't fix an upgrade issue, check if we can improve some documentation to not run into the problem in the first place or create an FAQ so people quickly find a solution to their problem so they don't stop using Matomo. In some cases a clear explanation how to resolve the issue in a GitHub issue can help others too.
+As part of our release process, it's crucial to diligently monitor the issue tracker and pay close attention to feedback from our L3 team and support channels. This practice enables us to promptly address any identified regressions or upgrade-related issues. Swift action is essential to prevent widespread occurrences of identified problems. Recognize that for each reported issue, there may be numerous users facing similar challenges. Addressing these promptly helps prevent further disruptions for our users.
+
+Example resolution strategies:
+
+* Fixing identified issues. This helps mitigate potential problems for other users who might encounter the same issues.
+* Explore opportunities to enhance existing documentation. Providing clearer instructions prevents people from running into the issue in the first place. A
+* Adding an FAQ on how to resolve their problem allows for quick resolutions. Creating a clear and detailed explanation or workaround in the reported GitHub issue can work as well. This makes all the difference where people would otherwise stopping to use Matomo.
+  
+Our primary goal is to ensure a seamless user experience by promptly addressing any identified issues or upgrade-related challenges. By swiftly resolving problems or providing comprehensive guidance, we aim to prevent any disruption to our users' use of Matomo.
 
 ### Once a LTS version expires, we remove old plugins from the Marketplace
 
