@@ -210,6 +210,18 @@ Please let us know if you have any question or if we can help in any way. We're 
 
 * After triggering the first stable release of a new major version, edit `config.ini.php` and point the path of the latest release channel to the correct latest file. For example, if Matomo 5.0 is released, then change `'path_latest_5x_stable' => __DIR__ . '/../LATEST',` to `'path_latest_5x_stable' => __DIR__ . '/../LATEST_5X',`.
 
+### After the release
+
+As part of our release process, it's crucial to diligently monitor the issue tracker and pay close attention to feedback from our L3 team and support channels. This practice enables us to promptly address any identified regressions or upgrade-related issues. Swift action is essential to prevent widespread occurrences of identified problems. Recognize that for each reported issue, there may be numerous users facing similar challenges. Addressing these promptly helps prevent further disruptions for our users.
+
+Example resolution strategies:
+
+* Fixing identified issues. This helps mitigate potential problems for other users who might encounter the same issues.
+* Explore opportunities to enhance existing documentation. Providing clearer instructions prevents people from running into the issue in the first place.
+* Adding an FAQ on how to resolve their problem allows for quick resolutions. Creating a clear and detailed explanation or workaround in the reported GitHub issue can work as well. This makes all the difference where people would otherwise stop using Matomo.
+  
+Our primary goal is to ensure a seamless user experience by promptly addressing any identified issues or upgrade-related challenges. By swiftly resolving problems or providing comprehensive guidance, we aim to prevent any disruption to our users' use of Matomo.
+
 ### Once a LTS version expires, we remove old plugins from the Marketplace
 
 From the Marketplace, we will remove all plugins incompatible with the LTS version or latest stable. So around 12 months after the release of a stable version (for example Matomo 5), when the LTS for Matomo 4 period ends, we start removing plugins that are no compatible with Matomo 4 or Matomo 5.
