@@ -217,8 +217,8 @@ As part of our release process, it's crucial to diligently monitor the issue tra
 Example resolution strategies:
 
 * Fixing identified issues. This helps mitigate potential problems for other users who might encounter the same issues.
-* Explore opportunities to enhance existing documentation. Providing clearer instructions prevents people from running into the issue in the first place. A
-* Adding an FAQ on how to resolve their problem allows for quick resolutions. Creating a clear and detailed explanation or workaround in the reported GitHub issue can work as well. This makes all the difference where people would otherwise stopping to use Matomo.
+* Explore opportunities to enhance existing documentation. Providing clearer instructions prevents people from running into the issue in the first place.
+* Adding an FAQ on how to resolve their problem allows for quick resolutions. Creating a clear and detailed explanation or workaround in the reported GitHub issue can work as well. This makes all the difference where people would otherwise stop using Matomo.
   
 Our primary goal is to ensure a seamless user experience by promptly addressing any identified issues or upgrade-related challenges. By swiftly resolving problems or providing comprehensive guidance, we aim to prevent any disruption to our users' use of Matomo.
 
