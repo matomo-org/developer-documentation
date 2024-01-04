@@ -48,7 +48,9 @@ The translation key of the category the report belongs to.
 
 #### Signature
 
-- It is a `string` value.
+- It can be one of the following types:
+    - `string`
+    - `null`
 
 <a name="$subcategoryid" id="$subcategoryid"></a>
 <a name="subcategoryId" id="subcategoryId"></a>
@@ -58,7 +60,9 @@ The translation key of the subcategory the report belongs to.
 
 #### Signature
 
-- It is a `string` value.
+- It can be one of the following types:
+    - `string`
+    - `null`
 
 <a name="$metrics" id="$metrics"></a>
 <a name="metrics" id="metrics"></a>
