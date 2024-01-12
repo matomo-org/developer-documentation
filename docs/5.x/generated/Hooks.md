@@ -3391,7 +3391,7 @@ Callback Signature:
 
 ### TagManager.deleteContainer.end
 
-*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TagManager/API.php) in line [1149](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TagManager/API.php#L1149)*
+*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TagManager/API.php) in line [1159](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TagManager/API.php#L1159)*
 
 
 
@@ -3401,7 +3401,7 @@ Callback Signature:
 
 ### TagManager.deleteContainerTag.end
 
-*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TagManager/API.php) in line [546](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TagManager/API.php#L546)*
+*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TagManager/API.php) in line [548](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TagManager/API.php#L548)*
 
 
 
@@ -3411,7 +3411,7 @@ Callback Signature:
 
 ### TagManager.deleteContainerTrigger.end
 
-*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TagManager/API.php) in line [701](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TagManager/API.php#L701)*
+*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TagManager/API.php) in line [705](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TagManager/API.php#L705)*
 
 
 
@@ -3421,7 +3421,7 @@ Callback Signature:
 
 ### TagManager.deleteContainerVariable.end
 
-*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TagManager/API.php) in line [937](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TagManager/API.php#L937)*
+*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TagManager/API.php) in line [943](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TagManager/API.php#L943)*
 
 
 
@@ -3431,7 +3431,7 @@ Callback Signature:
 
 ### TagManager.deleteContainerVersion.end
 
-*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TagManager/API.php) in line [1104](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TagManager/API.php#L1104)*
+*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TagManager/API.php) in line [1114](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TagManager/API.php#L1114)*
 
 
 
