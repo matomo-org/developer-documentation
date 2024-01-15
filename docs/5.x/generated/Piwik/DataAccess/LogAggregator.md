@@ -133,8 +133,8 @@ _Note: The metrics returned by this query can be customized by the `$metrics` pa
        A pre-configured ranking query instance that will be used to limit the result. If set, the return value is the array returned by [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute).
     - `$orderBy` (`bool`|`string`) &mdash;
        Order By clause to add (e.g. user_id ASC)
-    - `$timeLimitInMs` (`int`) &mdash;
-       Adds a MAX_EXECUTION_TIME query hint to the query if $timeLimitInMs > 0
+    - `$timeLimit` (`int`) &mdash;
+       Adds a MAX_EXECUTION_TIME query hint to the query if $timeLimit > 0 for more details see DbHelper::addMaxExecutionTimeHintToQuery
     - `$rankingQueryGenerate` (`bool`) &mdash;
        if `true`, generates a SQL query / bind array pair and returns it. If false, the ranking query SQL will be immediately executed and the results returned.
 
@@ -221,8 +221,8 @@ _Note: The metrics calculated by this query can be customized by the `$metrics` 
        One or more columns from the **log_link_visit_action** table that log_action should be joined on. The table alias used for each join is `"log_action$i"` where `$i` is the index of the column in this array. If a string is used for this parameter, the table alias is not suffixed (since there is only one column).
     - `$secondaryOrderBy` (`string`) &mdash;
        A secondary order by clause for the ranking query
-    - `$timeLimitInMs` (`int`) &mdash;
-       Adds a MAX_EXECUTION_TIME hint to the query if $timeLimitInMs > 0
+    - `$timeLimit` (`int`) &mdash;
+       Adds a MAX_EXECUTION_TIME hint to the query if $timeLimit > 0 for more details see DbHelper::addMaxExecutionTimeHintToQuery
 
 - *Returns:*  `mixed` &mdash;
     A Zend_Db_Statement if `$rankingQuery` isn't supplied, otherwise the result of
