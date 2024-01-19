@@ -29,12 +29,14 @@ Schedule the given tasks/method to run once every hour.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$methodName` (`string`) &mdash;
-       The name of the method that will be called when the task is being executed. To make it work you need to create a public method having the given method name in your Tasks class.
-    - `$methodParameter` (`null`|`string`) &mdash;
-       Can be null if the task does not need any parameter or a string. It is not possible to specify multiple parameters as an array etc. If you need to pass multiple parameters separate them via any characters such as '###'. For instance '$param1###$param2###$param3'
-    - `$priority` (`int`) &mdash;
-       Can be any constant such as self::LOW_PRIORITY
+    - `$methodName`
+      
+    - `$methodParameter`
+      
+    - `$priority`
+      
+    - `$ttlInSeconds` (`int`) &mdash;
+      
 - It returns a [`Schedule`](../../Piwik/Scheduler/Schedule/Schedule.md) value.
 
 <a name="daily" id="daily"></a>
@@ -53,6 +55,8 @@ See [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
     - `$methodParameter`
       
     - `$priority`
+      
+    - `$ttlInSeconds` (`int`) &mdash;
       
 - It does not return anything or a mixed result.
 
@@ -73,6 +77,8 @@ See [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
       
     - `$priority`
       
+    - `$ttlInSeconds` (`int`) &mdash;
+      
 - It does not return anything or a mixed result.
 
 <a name="monthly" id="monthly"></a>
@@ -92,6 +98,8 @@ See [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
       
     - `$priority`
       
+    - `$ttlInSeconds` (`int`) &mdash;
+      
 - It does not return anything or a mixed result.
 
 <a name="custom" id="custom"></a>
@@ -105,15 +113,17 @@ either an instance of a class or a class name. For more information about these 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$objectOrClassName` (`string`|`object`) &mdash;
+    - `$objectOrClassName`
       
-    - `$methodName` (`string`) &mdash;
+    - `$methodName`
       
-    - `$methodParameter` (`null`|`string`) &mdash;
+    - `$methodParameter`
       
-    - `$time` (`string`|[`Schedule`](../../Piwik/Scheduler/Schedule/Schedule.md)) &mdash;
+    - `$time`
       
-    - `$priority` (`int`) &mdash;
+    - `$priority`
+      
+    - `$ttlInSeconds` (`int`) &mdash;
       
 - It returns a [`Schedule`](../../Piwik/Scheduler/Schedule/Schedule.md) value.
 - It throws one of the following exceptions:

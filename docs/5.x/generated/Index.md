@@ -717,6 +717,7 @@ Index
 - [`getScheduledTime()`](Piwik/Scheduler/Task.md#getscheduledtime) &mdash; *Method in class* [`Task`](Piwik/Scheduler/Task.md)
 - [`getRescheduledTime()`](Piwik/Scheduler/Task.md#getrescheduledtime) &mdash; *Method in class* [`Task`](Piwik/Scheduler/Task.md)
 - [`getPriority()`](Piwik/Scheduler/Task.md#getpriority) &mdash; *Method in class* [`Task`](Piwik/Scheduler/Task.md)
+- [`getTTL()`](Piwik/Scheduler/Task.md#getttl) &mdash; *Method in class* [`Task`](Piwik/Scheduler/Task.md)
 - [`getName()`](Piwik/Scheduler/Task.md#getname) &mdash; *Method in class* [`Task`](Piwik/Scheduler/Task.md)
 - [`getSegmentExpression()`](Piwik/Segment.md#getsegmentexpression) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
 - [`getString()`](Piwik/Segment.md#getstring) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)

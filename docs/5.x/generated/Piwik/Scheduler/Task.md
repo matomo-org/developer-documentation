@@ -20,6 +20,7 @@ The class defines the following methods:
 - [`getScheduledTime()`](#getscheduledtime) &mdash; Returns a Schedule instance that describes when the method should be executed and how long before the next execution.
 - [`getRescheduledTime()`](#getrescheduledtime) &mdash; Returns the time in milliseconds when this task will be executed next.
 - [`getPriority()`](#getpriority) &mdash; Returns the task priority.
+- [`getTTL()`](#getttl) &mdash; Returns the TTL for this task.
 - [`getName()`](#getname) &mdash; Returns a unique name for this scheduled task.
 
 <a name="__construct" id="__construct"></a>
@@ -39,6 +40,8 @@ The class defines the following methods:
        A Schedule instance that describes when the method should be executed and how long before the next execution.
     - `$priority` (`int`) &mdash;
        The priority of the task. Tasks with a higher priority will be executed first. Tasks with low priority will be executed last.
+    - `$ttlInSeconds` (`int`) &mdash;
+       TTL to use for this task. Defauts to 3600. See self::$ttlInSeconds
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -113,6 +116,18 @@ Returns the time in milliseconds when this task will be executed next.
 
 Returns the task priority. The priority will be an integer whose value is
 between HIGH\_PRIORITY and LOW\_PRIORITY.
+
+#### Signature
+
+- It returns a `int` value.
+
+<a name="getttl" id="getttl"></a>
+<a name="getTTL" id="getTTL"></a>
+### `getTTL()`
+
+Returns the TTL for this task.
+
+See self::$ttlInSeconds
 
 #### Signature
 
