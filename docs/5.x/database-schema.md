@@ -178,7 +178,7 @@ Action types are persisted in the `log_action` table and contain the following i
   - **Piwik\Tracker\Action::TYPE\_ECOMMERCE\_ITEM\_CATEGORY = 7**: the action is the name of an ecommerce item category that is used on the site.
   - **Piwik\Tracker\Action::TYPE_SITE_SEARCH = 8**: the action type is a site search action.
   - **Piwik\Tracker\Action::TYPE_EVENT_CATEGORY = 10**: the action is an event category (see [Tracking Events](https://matomo.org/docs/event-tracking/) user guide)
-  - **Piwik\Tracker\Action::TYPE_EVENT_ACTION = 11**: the action is an event category
+  - **Piwik\Tracker\Action::TYPE_EVENT_ACTION = 11**: the action is an event action
   - **Piwik\Tracker\Action::TYPE_EVENT_NAME = 12**: the action is an event name
   - **Piwik\Tracker\Action::TYPE_CONTENT_NAME = 13**:  the action is a content name (see [Content Tracking](https://matomo.org/docs/content-tracking/) user guide and [developer guide](https://developer.matomo.org/guides/content-tracking))
   - **Piwik\Tracker\Action::TYPE_CONTENT_PIECE = 14**: the action is a content piece
