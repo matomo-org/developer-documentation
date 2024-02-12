@@ -823,7 +823,7 @@ Usages:
 
 ### Changes.filterChanges
 
-*Defined in [Piwik/Changes/Model](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Changes/Model.php) in line [239](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Changes/Model.php#L239)*
+*Defined in [Piwik/Changes/Model](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Changes/Model.php) in line [229](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Changes/Model.php#L229)*
 
 Event triggered before changes are displayed Can be used to filter out unwanted changes
 
