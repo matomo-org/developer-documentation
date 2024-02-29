@@ -201,13 +201,6 @@ With release of Matomo v5.1.0, now you can check the usage of core dependencies 
 
 ```php
 <?php
-/**
- * Matomo - free/libre analytics platform
- *
- * @link https://matomo.org
- * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
- */
-namespace Piwik\Plugins\{YOUR_PLUGIN_NAME}\tests\System;
 
 use Piwik\Plugins\TestRunner\Commands\CheckDirectDependencyUse;
 use Piwik\Tests\Framework\TestCase\SystemTestCase;
