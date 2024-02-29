@@ -195,6 +195,51 @@ class ApiTest extends SystemTestCase
 }
 ```
 
+## How to write a test to scan for Matomo core dependencies being used directly in your plugins
+
+With release of Matomo v5.1.0, now you can check the usage of core dependencies in your plugin directly using the `tests:check-direct-dependency-use` command, you can also write a System test case to test the same by using below sample code.
+
+```php
+<?php
+/**
+ * Matomo - free/libre analytics platform
+ *
+ * @link https://matomo.org
+ * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
+ */
+namespace Piwik\Plugins\{YOUR_PLUGIN_NAME}\tests\System;
+
+use Piwik\Plugins\TestRunner\Commands\CheckDirectDependencyUse;
+use Piwik\Tests\Framework\TestCase\SystemTestCase;
+use Piwik\Version;
+use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Component\Console\Output\NullOutput;
+
+class CheckDirectDependencyUseCommandTest extends SystemTestCase
+{
+    public function testCommand()
+    {
+        if (version_compare(Version::VERSION, '5.0.2', '<=') && !\Piwik\file_exists(PIWIK_INCLUDE_PATH . '/plugins/TestRunner/Commands/CheckDirectDependencyUse.php')) {
+            $this->markTestSkipped('tests:check-direct-dependency-use is not available in this version');
+        }
+        $pluginName = '{YOUR_PLUGIN_NAME}';
+        $console = new \Piwik\Console(self::$fixture->piwikEnvironment);
+        $checkDirectDependencyUse = new CheckDirectDependencyUse();
+        $console->addCommands([$checkDirectDependencyUse]);
+        $command = $console->find('tests:check-direct-dependency-use');
+        $arguments = array(
+            'command'    => 'tests:check-direct-dependency-use',
+            '--plugin' => $pluginName,
+            '--grep-vendor'
+        );
+        $inputObject = new ArrayInput($arguments);
+        $command->run($inputObject, new NullOutput());
+
+        $this->assertEmpty($checkDirectDependencyUse->usesFoundList[$pluginName]);
+    }
+}
+```
+
 ## Writing tests for commands
 
 It is also possible to write system tests for console commands. These tests should extend `Piwik\Tests\Framework\TestCase\ConsoleCommandTestCase`. 
