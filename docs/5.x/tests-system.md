@@ -197,7 +197,7 @@ class ApiTest extends SystemTestCase
 
 ## How to write a test to scan for Matomo core dependencies being used directly in your plugins
 
-With release of Matomo v5.1.0, now you can check the usage of core dependencies in your plugin directly using the `tests:check-direct-dependency-use` command, you can also write a System test case to test the same by using below sample code.
+With the release of Matomo `v5.1.0`, you can now check the usage of core dependencies in your plugin directly using the `tests:check-direct-dependency-use` command. With the release of Matomo 5, plugins should not use core dependencies directly but instead [prefix](https://developer.matomo.org/guides/migrate-matomo-4-to-5#vendor-proxies) them. You can also write a system test case to test the same by using the sample code below
 
 ```php
 <?php
