@@ -442,7 +442,13 @@ variations: [
 ```
 
 Make sure to embed the experiment as early as possible in the HTML `<head>`. Please note that the A/B Testing framework will 
-add two URL parameters `pk_abe` and `pk_abv` to the redirect URL so Piwik knows which experiment was activated. 
+add two URL parameters `pk_abe` and `pk_abv` to the redirect URL so Piwik knows which experiment was activated. As of version 5.1.0 of the AbTesting plugin, there is an option to forward utm campaign URL parameters when redirecting. If you enable that option in the Redirects section, here is an example of what the option would look like in the JavaScript:
+
+```js
+startDateTime: '2023/12/06 01:59:53 UTC',
+forwardUtmParams: true,
+variations: [ ... ],
+```
 
 ### How do I force a specific variation to be activated?
 
