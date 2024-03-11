@@ -197,11 +197,9 @@ class ApiTest extends SystemTestCase
 
 ## How to write a test to scan for Matomo core dependencies being used directly in your plugins
 
-With the release of Matomo `v5.1.0`, you can now check the usage of core dependencies in your plugin directly using the `tests:check-direct-dependency-use` command. With the release of Matomo 5, plugins should not use core dependencies directly but instead [prefix](https://developer.matomo.org/guides/migrate-matomo-4-to-5#vendor-proxies) them. You can also write a system test case to test the same by using the sample code below
+With the release of Matomo `5.1.0`, you can now easily check if your plugin is using any core dependencies by running the `tests:check-direct-dependency-use` command. With the release of Matomo 5, plugins should not use core dependencies directly but instead use them via [proxies](https://developer.matomo.org/guides/migrate-matomo-4-to-5#vendor-proxies). To have a check for this in your test suite and run it automatically, you can also write a system test case by using the sample code below:
 
 ```php
-<?php
-
 use Piwik\Plugins\TestRunner\Commands\CheckDirectDependencyUse;
 use Piwik\Tests\Framework\TestCase\SystemTestCase;
 use Piwik\Version;
@@ -212,19 +210,22 @@ class CheckDirectDependencyUseCommandTest extends SystemTestCase
 {
     public function testCommand()
     {
-        if (version_compare(Version::VERSION, '5.0.2', '<=') && !\Piwik\file_exists(PIWIK_INCLUDE_PATH . '/plugins/TestRunner/Commands/CheckDirectDependencyUse.php')) {
+        if (version_compare(Version::VERSION, '5.1.0', '<=') || !file_exists(PIWIK_INCLUDE_PATH . '/plugins/TestRunner/Commands/CheckDirectDependencyUse.php')) {
             $this->markTestSkipped('tests:check-direct-dependency-use is not available in this version');
-        }
+          }
+        
         $pluginName = '{YOUR_PLUGIN_NAME}';
-        $console = new \Piwik\Console(self::$fixture->piwikEnvironment);
+        
         $checkDirectDependencyUse = new CheckDirectDependencyUse();
+        $console = new \Piwik\Console(self::$fixture->piwikEnvironment);
         $console->addCommands([$checkDirectDependencyUse]);
+        
         $command = $console->find('tests:check-direct-dependency-use');
-        $arguments = array(
-            'command'    => 'tests:check-direct-dependency-use',
+        $arguments = [
+            'command'  => 'tests:check-direct-dependency-use',
             '--plugin' => $pluginName,
-            '--grep-vendor'
-        );
+            '--grep-vendor',
+        ];
         $inputObject = new ArrayInput($arguments);
         $command->run($inputObject, new NullOutput());
 
