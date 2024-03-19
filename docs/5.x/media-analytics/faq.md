@@ -103,6 +103,20 @@ window.matomoAsyncInit = function () {
 It is important to define these methods before the Piwik tracker file is loaded. Otherwise, your `matomoAsyncInit` 
 or `matomoMediaAnalyticsAsyncInit` method will never be called.
 
+In order to use your additional tracker(s) outside the `matomoAsyncInit` function, you will need to declare the tracker name as a Global variable. For example:
+
+```js
+  var matomoTracker1;
+  window.matomoAsyncInit = function () {
+  matomoTracker1 = Matomo.getTracker('https://example.com/matomo.php', 1);
+  }
+```
+This will then allow the added tracker to be used for tracking events, such as link clicks:
+
+```js
+onclick="matomoTracker1.trackEvent('Test Events', 'Click', 'Clicked X', 0);"
+```
+
 ## Is it possible to not use the "paq.push" methods and instead call the MediaAnalytics tracker methods directly?
 
 Yes. To initialize the Media tracker you need to define a callback method `window.matomoMediaAnalyticsAsyncInit`
