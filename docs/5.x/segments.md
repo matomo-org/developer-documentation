@@ -44,6 +44,8 @@ Segments are typically encoded three times:
 
 This means the value needs to be triple encoded for values like plus signs to be used properly in the segment. For more details see [#13481](https://github.com/matomo-org/matomo/pull/13481).
 
+**Please note if you are a user of the API, read the Segment in Matomo API Reference [here](https://developer.matomo.org/api-reference/reporting-api-segmentation#segment-values-must-be-url-encoded) instead**
+
 ## How do I know if a segment is available for all sites?
 
 A segment can be either available for one site (for example `enable_only_idsite=1`) or for all sites in which case the column value for `enable_only_idsite` is `0` (zero).
