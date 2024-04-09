@@ -3907,7 +3907,7 @@ Usages:
 
 ### Tracker.Request.getIdSite
 
-*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/Request.php) in line [593](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/Request.php#L593)*
+*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/Request.php) in line [594](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/Request.php#L594)*
 
 Triggered when obtaining the ID of the site we are tracking a visit for. This event can be used to change the site ID so data is tracked for a different
 website.
