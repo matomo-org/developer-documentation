@@ -205,6 +205,7 @@ Please let us know if you have any question or if we can help in any way. We're 
 * Release the new core version and go through the regular process
 * Marketing to release a blog post if there is one
 * On marketplace set `DEFAULT_MAJOR_PIWIK_VERSION` and shop set the `PIWIK_DEFAULT_MAJOR_VERSION` to the latest Matomo version. For instructions see "When releasing an RC".
+* On developer website stop generating docs for the previous major Matomo version by removing the `generateDocs` command for that version in `generate.sh` see [example PR](https://github.com/matomo-org/developer-documentation/pull/785).
 
 #### api.matomo.org
 
