@@ -103,7 +103,6 @@ class MyHookVisitor extends \PHPParser\NodeVisitorAbstract
             $docComment = $this->getDocComment($node);
             if (!empty($docComment)) {
                 $event['comment'] = $docComment;
-                echo sprintf("- Hook %s has documentation\n", $event['name']);
             } else {
                 echo sprintf("Hook %s has no documentation\n", $event['name']);
             }
