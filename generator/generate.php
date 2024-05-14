@@ -80,7 +80,7 @@ try {
         /** @var Twig_Environment $twig */
         $twig = $sami->offsetGet('twig');
 
-        $twig->addFilter(new Twig_SimpleFilter('inlinelinkparser', function ($description, ClassReflection $class) use ($sami) {
+        $twig->addFilter(new Twig\TwigFilter('inlinelinkparser', function ($description, ClassReflection $class) use ($sami) {
             $scope = new Scope();
             $scope->class     = $class;
             $scope->classes   = $sami->offsetGet('project')->getProjectClasses();
@@ -90,7 +90,7 @@ try {
             return $linkConverter->parse($description);
         }));
 
-        $twig->addFilter(new Twig_SimpleFilter('linkparser', function ($description, ClassReflection $class) use ($sami) {
+        $twig->addFilter(new Twig\TwigFilter('linkparser', function ($description, ClassReflection $class) use ($sami) {
             $scope = new Scope();
             $scope->class     = $class;
             $scope->classes   = $sami->offsetGet('project')->getProjectClasses();
@@ -99,18 +99,18 @@ try {
             $linkConverter = new LinkParser($scope);
             return $linkConverter->parse($description);
         }));
-        $twig->addFilter(new Twig_SimpleFilter('removeNewLine', function ($content) {
+        $twig->addFilter(new Twig\TwigFilter('removeNewLine', function ($content) {
             $content = preg_replace("/(\n)+/", ' ', $content);
             $content = preg_replace("/(\s)+/", ' ', $content);
             return $content;
         }));
-        $twig->addFilter(new Twig_SimpleFilter('string', function ($content) {
+        $twig->addFilter(new Twig\TwigFilter('string', function ($content) {
             if (is_object($content) && $content instanceof NodeAbstract && property_exists($content, 'name')) {
                 return $content->name;
             } 
             return (string) $content;
         }));
-        $twig->addFilter(new Twig_SimpleFilter('shortDescription', function ($content) {
+        $twig->addFilter(new Twig\TwigFilter('shortDescription', function ($content) {
 
             $pos = strpos($content, '. ');
             if ($pos > 1) {

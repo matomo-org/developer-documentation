@@ -11,20 +11,20 @@ use Twig\TwigFilter;
 
 class Twig {
 
-    public static function registerFilter(\Twig\Environment $environment)
+    public static function registerFilter(\Twig\Environment $environment): void
     {
         $environment->addFilter(static::getCompleteUrlFilter());
         $environment->addFilter(static::getCompleteUrlForPiwikVersionFilter());
     }
 
-    private static function getCompleteUrlFilter()
+    private static function getCompleteUrlFilter(): TwigFilter
     {
         return new TwigFilter('completeUrl', function ($value) {
             return Environment::completeUrl($value);
         });
     }
 
-    private static function getCompleteUrlForPiwikVersionFilter()
+    private static function getCompleteUrlForPiwikVersionFilter(): TwigFilter
     {
         return new TwigFilter('completeUrlForPiwikVersion', function ($value, $piwikVersion) {
 

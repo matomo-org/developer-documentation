@@ -127,15 +127,15 @@ class Parser {
 
     public function generateDocumentation($viewVariables, $target)
     {
-        $loader = new \Twig_Loader_Filesystem(__DIR__ . '/../template');
-        $twig   = new \Twig_Environment($loader, array());
-        $filter = new \Twig_SimpleFilter('onlyalnum', function ($string) {
+        $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/../template');
+        $twig   = new \Twig\Environment($loader, array());
+        $filter = new \Twig\TwigFilter('onlyalnum', function ($string) {
             return preg_replace("/[^a-zA-Z0-9]+/", "", $string);
         });
         $twig->addFilter($filter);
 
         $self = $this;
-        $twig->addFilter(new \Twig_SimpleFilter('linkparser', function ($text, $hook) use ($self) {
+        $twig->addFilter(new \Twig\TwigFilter('linkparser', function ($text, $hook) use ($self) {
 
             $scope = $self->generateScope($hook);
 
@@ -145,7 +145,7 @@ class Parser {
             return $parsedText;
         }));
 
-        $twig->addFilter(new \Twig_SimpleFilter('inlinelinkparser', function ($description, $hook) use ($self) {
+        $twig->addFilter(new \Twig\TwigFilter('inlinelinkparser', function ($description, $hook) use ($self) {
 
             $scope = $self->generateScope($hook);
 

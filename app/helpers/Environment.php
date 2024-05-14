@@ -55,7 +55,7 @@ class Environment
         $lowestPos = false;
         $patternToReplace = false;
         foreach ($patternsToTest as $patternToTest) {
-            $pos = strpos($content, $patternToTest);
+            $pos = $content ? strpos($content, $patternToTest) : false;
             if ($pos !== false && ($lowestPos === false || $pos < $lowestPos)) {
                 $lowestPos = $pos;
                 $patternToReplace = $patternToTest;
@@ -75,17 +75,23 @@ class Environment
 
     public static function completeUrl($path)
     {
-        if (strpos($path, '://') !== false) {
-            return $path; // we only rewrite internal links
-        }
 
         if(empty($path)) {
             $path = '/';
         }
 
-        $urlPrefix = self::getCurrentUrlPrefix();
+        $external = $path ? strpos($path, '://') : false;
+        if ($external !== false) {
+            return $path; // we only rewrite internal links
+        }
+        //if (strpos($path, '://') !== false) {
+        //    return $path; // we only rewrite internal links
+        //}
 
-        if ($urlPrefix && strpos($path, $urlPrefix) === 0) {
+        $urlPrefix = self::getCurrentUrlPrefix();
+        $internal = $path ? strpos($path, $urlPrefix) : false;
+
+        if ($urlPrefix && $internal === 0) {
             return $path;
         } elseif ($urlPrefix) {
             return $urlPrefix . $path;

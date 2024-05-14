@@ -70,7 +70,7 @@ class IncludeFilePostprocessor implements MarkdownParserInterface
         try {
 			$content = @file_get_contents($url);
 			if ($content) {
-				$content = mb_convert_encoding($content, 'HTML-ENTITIES', 'utf-8');
+                $content = htmlspecialchars_decode(htmlentities($content));
 			}
         } catch (\Exception $e) {
             Log::error(sprintf("Error while retrieving %s\n%s", $url, $e->getMessage()));
