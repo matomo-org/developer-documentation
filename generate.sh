@@ -33,6 +33,7 @@ function generateDocs {
     cd ..
     sleep 10
     php generator/generate.php --branch=$1 --targetname=$2
+
     GENERATION_SUCCESS=$?
 
     if [ $GENERATION_SUCCESS -ne 0 ]; then

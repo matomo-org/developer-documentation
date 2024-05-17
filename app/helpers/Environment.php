@@ -84,9 +84,6 @@ class Environment
         if ($external !== false) {
             return $path; // we only rewrite internal links
         }
-        //if (strpos($path, '://') !== false) {
-        //    return $path; // we only rewrite internal links
-        //}
 
         $urlPrefix = self::getCurrentUrlPrefix();
         $internal = $path ? strpos($path, $urlPrefix) : false;
