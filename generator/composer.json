@@ -13,14 +13,14 @@
     ],
     "autoload": {
         "psr-4": {
-            "Piwik\\Plugins\\": "../piwik/plugins/",
-            "Piwik\\": "../piwik/core/"
+            "Piwik\\Plugins\\": "../piwik-old/plugins/",
+            "Piwik\\": "../piwik-old/core/"
         },
         "psr-0": {
-            "Zend_": "../piwik/libs/",
-            "HTML_": "../piwik/libs/",
-            "PEAR_": "../piwik/libs/",
-            "Archive_": "../piwik/libs/"
+            "Zend_": "../piwik-old/libs/",
+            "HTML_": "../piwik-old/libs/",
+            "PEAR_": "../piwik-old/libs/",
+            "Archive_": "../piwik-old/libs/"
         }
     },
     "repositories": [
