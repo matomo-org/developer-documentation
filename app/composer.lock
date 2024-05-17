@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8609dc0a6ab390775b99b2bde915ed5e",
+    "content-hash": "3e6a0c3d7dd23a80fd0ca4a2d043e2db",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -387,23 +387,26 @@
         },
         {
             "name": "michelf/php-markdown",
-            "version": "1.9.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/michelf/php-markdown.git",
-                "reference": "c83178d49e372ca967d1a8c77ae4e051b3a3c75c"
+                "reference": "eb176f173fbac58a045aff78e55f833264b34e71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/c83178d49e372ca967d1a8c77ae4e051b3a3c75c",
-                "reference": "c83178d49e372ca967d1a8c77ae4e051b3a3c75c",
+                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/eb176f173fbac58a045aff78e55f833264b34e71",
+                "reference": "eb176f173fbac58a045aff78e55f833264b34e71",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=7.4"
             },
             "require-dev": {
-                "phpunit/phpunit": ">=4.3 <5.8"
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "phpstan/phpstan": ">=1.0",
+                "phpstan/phpstan-phpunit": ">=1.0",
+                "phpunit/phpunit": "^9.5"
             },
             "type": "library",
             "autoload": {
@@ -434,9 +437,9 @@
             ],
             "support": {
                 "issues": "https://github.com/michelf/php-markdown/issues",
-                "source": "https://github.com/michelf/php-markdown/tree/1.9.0"
+                "source": "https://github.com/michelf/php-markdown/tree/2.0.0"
             },
-            "time": "2019-12-02T02:32:27+00:00"
+            "time": "2022-09-26T12:21:08+00:00"
         },
         {
             "name": "mnapoli/front-yaml",
@@ -730,39 +733,36 @@
         },
         {
             "name": "php-di/php-di",
-            "version": "6.4.0",
+            "version": "7.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-DI/PHP-DI.git",
-                "reference": "ae0f1b3b03d8b29dff81747063cbfd6276246cc4"
+                "reference": "8097948a89f6ec782839b3e958432f427cac37fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-DI/PHP-DI/zipball/ae0f1b3b03d8b29dff81747063cbfd6276246cc4",
-                "reference": "ae0f1b3b03d8b29dff81747063cbfd6276246cc4",
+                "url": "https://api.github.com/repos/PHP-DI/PHP-DI/zipball/8097948a89f6ec782839b3e958432f427cac37fd",
+                "reference": "8097948a89f6ec782839b3e958432f427cac37fd",
                 "shasum": ""
             },
             "require": {
                 "laravel/serializable-closure": "^1.0",
-                "php": ">=7.4.0",
+                "php": ">=8.0",
                 "php-di/invoker": "^2.0",
-                "php-di/phpdoc-reader": "^2.0.1",
-                "psr/container": "^1.0"
+                "psr/container": "^1.1 || ^2.0"
             },
             "provide": {
                 "psr/container-implementation": "^1.0"
             },
             "require-dev": {
-                "doctrine/annotations": "~1.10",
-                "friendsofphp/php-cs-fixer": "^2.4",
-                "mnapoli/phpunit-easymock": "^1.2",
-                "ocramius/proxy-manager": "^2.11.2",
-                "phpstan/phpstan": "^0.12",
-                "phpunit/phpunit": "^9.5"
+                "friendsofphp/php-cs-fixer": "^3",
+                "friendsofphp/proxy-manager-lts": "^1",
+                "mnapoli/phpunit-easymock": "^1.3",
+                "phpunit/phpunit": "^9.5",
+                "vimeo/psalm": "^4.6"
             },
             "suggest": {
-                "doctrine/annotations": "Install it if you want to use annotations (version ~1.2)",
-                "ocramius/proxy-manager": "Install it if you want to use lazy injection (version ~2.0)"
+                "friendsofphp/proxy-manager-lts": "Install it if you want to use lazy injection (version ^1)"
             },
             "type": "library",
             "autoload": {
@@ -790,7 +790,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-DI/PHP-DI/issues",
-                "source": "https://github.com/PHP-DI/PHP-DI/tree/6.4.0"
+                "source": "https://github.com/PHP-DI/PHP-DI/tree/7.0.6"
             },
             "funding": [
                 {
@@ -802,68 +802,31 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-09T16:46:38+00:00"
-        },
-        {
-            "name": "php-di/phpdoc-reader",
-            "version": "2.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHP-DI/PhpDocReader.git",
-                "reference": "66daff34cbd2627740ffec9469ffbac9f8c8185c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PHP-DI/PhpDocReader/zipball/66daff34cbd2627740ffec9469ffbac9f8c8185c",
-                "reference": "66daff34cbd2627740ffec9469ffbac9f8c8185c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2.0"
-            },
-            "require-dev": {
-                "mnapoli/hard-mode": "~0.3.0",
-                "phpunit/phpunit": "^8.5|^9.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "PhpDocReader\\": "src/PhpDocReader"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "PhpDocReader parses @var and @param values in PHP docblocks (supports namespaced class names with the same resolution rules as PHP)",
-            "keywords": [
-                "phpdoc",
-                "reflection"
-            ],
-            "support": {
-                "issues": "https://github.com/PHP-DI/PhpDocReader/issues",
-                "source": "https://github.com/PHP-DI/PhpDocReader/tree/2.2.1"
-            },
-            "time": "2020-10-12T12:39:22+00:00"
+            "time": "2023-11-02T10:04:50+00:00"
         },
         {
             "name": "psr/container",
-            "version": "1.1.2",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/container.git",
-                "reference": "513e0666f7216c7459170d56df27dfcefe1689ea"
+                "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/container/zipball/513e0666f7216c7459170d56df27dfcefe1689ea",
-                "reference": "513e0666f7216c7459170d56df27dfcefe1689ea",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/c71ecc56dfe541dbd90c5360474fbc405f8d5963",
+                "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.4.0"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Psr\\Container\\": "src/"
@@ -890,9 +853,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-fig/container/issues",
-                "source": "https://github.com/php-fig/container/tree/1.1.2"
+                "source": "https://github.com/php-fig/container/tree/2.0.2"
             },
-            "time": "2021-11-05T16:50:12+00:00"
+            "time": "2021-11-05T16:47:00+00:00"
         },
         {
             "name": "psr/event-dispatcher",
@@ -1976,16 +1939,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v3.10.2",
+            "version": "v3.10.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "7aaed0b8311a557cc8c4047a71fd03153a00e755"
+                "reference": "67f29781ffafa520b0bbfbd8384674b42db04572"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/7aaed0b8311a557cc8c4047a71fd03153a00e755",
-                "reference": "7aaed0b8311a557cc8c4047a71fd03153a00e755",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/67f29781ffafa520b0bbfbd8384674b42db04572",
+                "reference": "67f29781ffafa520b0bbfbd8384674b42db04572",
                 "shasum": ""
             },
             "require": {
@@ -2039,7 +2002,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.10.2"
+                "source": "https://github.com/twigphp/Twig/tree/v3.10.3"
             },
             "funding": [
                 {
@@ -2051,7 +2014,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-05-14T06:04:16+00:00"
+            "time": "2024-05-16T10:04:27+00:00"
         }
     ],
     "packages-dev": [],
