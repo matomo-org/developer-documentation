@@ -1637,7 +1637,7 @@ Callback Signature:
 
 ### Live.API.getIdSitesString
 
-*Defined in [Piwik/Plugins/Live/Model](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Live/Model.php) in line [488](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Live/Model.php#L488)*
+*Defined in [Piwik/Plugins/Live/Model](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Live/Model.php) in line [490](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Live/Model.php#L490)*
 
 
 
@@ -4206,7 +4206,7 @@ Usages:
 
 ### UsersManager.deleteUser
 
-*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php) in line [744](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php#L744)*
+*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php) in line [749](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php#L749)*
 
 Triggered after a user has been deleted. This event should be used to clean up any data that is related to the now deleted user.
 The **Dashboard** plugin, for example, uses this event to remove the user's dashboards.
