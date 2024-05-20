@@ -5,14 +5,15 @@
         }
     },
     "require": {
-        "php": ">=8.0.0",
+        "php": ">=8.1.0",
         "slim/slim": "4.*",
-        "michelf/php-markdown": "1.9.0",
-        "mnapoli/front-yaml": "~1.2",
+        "michelf/php-markdown": "2.0.0",
+        "mnapoli/front-yaml": "^2.0",
         "slim/psr7": "^1.0",
         "slim/twig-view": "^3.0.0",
-        "php-di/php-di": "^6.0",
-        "ext-json": "*"
+        "php-di/php-di": "^7.0",
+        "ext-json": "*",
+        "symfony/yaml": "^6.4.7"
     },
     "require-dev": {}
 }

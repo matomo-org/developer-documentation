@@ -3,17 +3,17 @@
 {%- endmacro -%}
 
 {% macro class_name(class, short = false, suffix = "", replacePiwik = false) -%}
-{% spaceless -%}
+{% apply spaceless -%}
 {% if class.projectclass or class.phpclass %}
 [`{{ (short ? class.shortname : class)|replace({'Piwik\\': (replacePiwik ? '' : 'Piwik\\')}) }}{{ suffix }}`]({% if class.projectclass %}{{ _self.markdown_path(class_path(class)) }}{% else %}http://php.net/class.{{ class }}{% endif %})
 {% else %}
 `{{ class }}`
 {% endif %}
-{%- endspaceless %}
+{%- endapply %}
 {%- endmacro -%}
 
 {% macro class_type(class, sentence = false) -%}
-{% spaceless %}
+{% apply spaceless %}
 {% if class.interface %}
 {% if sentence %}an {% endif %}
 interface
@@ -22,23 +22,23 @@ interface
 {% if class.abstract %}abstract {% endif %}
 class
 {%- endif -%}
-{% endspaceless %}
+{% endapply %}
 {%- endmacro -%}
 
 {% macro hint(hint) -%}
-{% spaceless %}
+{% apply spaceless %}
 {% if hint.class -%}
 {{ _self.class_name(hint.name, true, hint.array ? "[]" : "") }}
 {%- elseif hint.name -%}
 `{{ hint.name }}{% if hint.array %}[]{% endif %}`
 {%- endif %}
-{% endspaceless %}
+{% endapply %}
 {%- endmacro -%}
 
 {% macro markdown_path(path) -%}
-{% spaceless %}
+{% apply spaceless %}
 {{- path|replace({".html": ".md"}) -}}
-{% endspaceless %}
+{% endapply %}
 {%- endmacro -%}
 
 {% macro member_signature(type, member, class) -%}
@@ -89,8 +89,8 @@ class
 {%- endmacro -%}
 
 {% macro member_visibility(member) -%}
-{% spaceless %}
+{% apply spaceless %}
 {% if member.private %}private{% elseif member.protected %}protected{% else %}public{% endif %}
 {% if member.static %} static{% endif %}
-{% endspaceless %}
+{% endapply %}
 {%- endmacro -%}

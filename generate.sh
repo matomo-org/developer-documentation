@@ -12,7 +12,7 @@ function generateDocs {
 
     cd piwik
     git rm --cached -r . > /dev/null 
-    git reset --hard > /dev/null 
+    git reset --hard > /dev/null
     git submodule foreach --recursive git reset --hard
     git clean -f -d
     git submodule foreach git clean -f
@@ -44,4 +44,3 @@ function generateDocs {
 cd $DIR
 generateDocs "5.x-dev" "5.x"
 rm -rf app/tmp/cache/*
-

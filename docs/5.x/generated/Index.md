@@ -927,6 +927,7 @@ Index
 - [`isLookLikeUrl()`](Piwik/UrlHelper.md#islooklikeurl) &mdash; *Method in class* [`UrlHelper`](Piwik/UrlHelper.md)
 - [`isStableVersion()`](Piwik/Version.md#isstableversion) &mdash; *Method in class* [`Version`](Piwik/Version.md)
 - [`isVersionNumber()`](Piwik/Version.md#isversionnumber) &mdash; *Method in class* [`Version`](Piwik/Version.md)
+- [`isPreviewVersion()`](Piwik/Version.md#ispreviewversion) &mdash; *Method in class* [`Version`](Piwik/Version.md)
 - [`$idSubtable`](Piwik/ViewDataTable/RequestConfig.md#$idsubtable) &mdash; *Property in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`isEnabled()`](Piwik/Widget/WidgetConfig.md#isenabled) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)
 - [`isWidgetizeable()`](Piwik/Widget/WidgetConfig.md#iswidgetizeable) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)

@@ -24,8 +24,10 @@ Since Matomo {{ since[0] }}
 {{ class.longdesc|inlinelinkparser(class)|raw }}
 {% endif %}
 {% set found = false %}
-{% for constant in constants if constant.longdesc %}
+{% for constant in constants %}
+{% if constant.longdesc %}
 {% set found = true %}
+{% endif %}
 {% endfor %}
 {% if found and constants %}
 
@@ -34,11 +36,14 @@ Constants
 
 This {{ class_type(class) }} defines the following constants:
 
-{% for constant in constants if constant.longdesc %}
+{% for constant in constants %}
+{% if constant.longdesc %}
 - [`{{ constant.name }}`](#{{ constant.name|lower }}){% if constant.shortdesc %} — {{ constant.shortdesc|inlinelinkparser(class)|raw }}{% endif %}{% if class.constants[constant.name|string] is not defined %} Inherited from {{ class_name(constant.getClass, true, "", true) }}{%endif%}
+{% endif %}
 {% endfor %}
 
-{% for constant in constants if constant.longdesc %}
+{% for constant in constants %}
+{% if constant.longdesc %}
 <a name="{{ constant.name|lower }}" id="{{ constant.name|lower }}"></a>
 <a name="{{ constant.name }}" id="{{ constant.name }}"></a>
 ### `{{ constant.name }}`
@@ -49,6 +54,7 @@ This {{ class_type(class) }} defines the following constants:
 
 Since Matomo {{ since[0] }}
 {% endfor %}
+{% endif %}
 {% endif %}
 {% endfor %}
 {% endif %}
