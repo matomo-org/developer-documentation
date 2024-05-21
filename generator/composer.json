@@ -31,7 +31,6 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "tsteur/sami": "dev-dev-4.x-devphp8-twig-update",
-        "psr/container": "1.1.2"
+        "tsteur/sami": "dev-4.x-devphp8"
     }
 }
