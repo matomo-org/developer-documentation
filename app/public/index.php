@@ -19,6 +19,9 @@ use Slim\Middleware\ContentLengthMiddleware;
 use Slim\Psr7\Response;
 use Slim\Views\Twig;
 
+// temporary - while php update is happening
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
+
 require '../vendor/autoload.php';
 if (file_exists('../config/local.php')) {
     require '../config/local.php';
