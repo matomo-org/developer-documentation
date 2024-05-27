@@ -12,6 +12,68 @@ This class defines the following properties:
 
 - [`$URL`](#$url) &mdash; Matomo base URL, for example http://example.org/matomo/ Must be set before using the class by calling MatomoTracker::$URL = 'http://yourwebsite.org/matomo/';
 - [`$DEBUG_APPEND_URL`](#$debug_append_url)
+- [`$ecommerceItems`](#$ecommerceitems)
+- [`$attributionInfo`](#$attributioninfo)
+- [`$eventCustomVar`](#$eventcustomvar)
+- [`$forcedDatetime`](#$forceddatetime)
+- [`$forcedNewVisit`](#$forcednewvisit)
+- [`$networkTime`](#$networktime)
+- [`$serverTime`](#$servertime)
+- [`$transferTime`](#$transfertime)
+- [`$domProcessingTime`](#$domprocessingtime)
+- [`$domCompletionTime`](#$domcompletiontime)
+- [`$onLoadTime`](#$onloadtime)
+- [`$pageCustomVar`](#$pagecustomvar)
+- [`$ecommerceView`](#$ecommerceview)
+- [`$customParameters`](#$customparameters)
+- [`$customDimensions`](#$customdimensions)
+- [`$customData`](#$customdata)
+- [`$hasCookies`](#$hascookies)
+- [`$token_auth`](#$token_auth)
+- [`$userAgent`](#$useragent)
+- [`$country`](#$country)
+- [`$region`](#$region)
+- [`$city`](#$city)
+- [`$lat`](#$lat)
+- [`$long`](#$long)
+- [`$width`](#$width)
+- [`$height`](#$height)
+- [`$plugins`](#$plugins)
+- [`$localHour`](#$localhour)
+- [`$localMinute`](#$localminute)
+- [`$localSecond`](#$localsecond)
+- [`$idPageview`](#$idpageview)
+- [`$idPageviewSetManually`](#$idpageviewsetmanually)
+- [`$idSite`](#$idsite)
+- [`$urlReferrer`](#$urlreferrer)
+- [`$pageCharset`](#$pagecharset)
+- [`$pageUrl`](#$pageurl)
+- [`$ip`](#$ip)
+- [`$acceptLanguage`](#$acceptlanguage)
+- [`$clientHints`](#$clienthints)
+- [`$configVisitorCookieTimeout`](#$configvisitorcookietimeout)
+- [`$configSessionCookieTimeout`](#$configsessioncookietimeout)
+- [`$configReferralCookieTimeout`](#$configreferralcookietimeout)
+- [`$userId`](#$userid)
+- [`$forcedVisitorId`](#$forcedvisitorid)
+- [`$cookieVisitorId`](#$cookievisitorid)
+- [`$randomVisitorId`](#$randomvisitorid)
+- [`$configCookiesDisabled`](#$configcookiesdisabled)
+- [`$configCookiePath`](#$configcookiepath)
+- [`$configCookieDomain`](#$configcookiedomain)
+- [`$configCookieSameSite`](#$configcookiesamesite)
+- [`$configCookieSecure`](#$configcookiesecure)
+- [`$configCookieHTTPOnly`](#$configcookiehttponly)
+- [`$currentTs`](#$currentts)
+- [`$createTs`](#$createts)
+- [`$requestTimeout`](#$requesttimeout)
+- [`$requestConnectTimeout`](#$requestconnecttimeout)
+- [`$doBulkRequests`](#$dobulkrequests)
+- [`$storedTrackingActions`](#$storedtrackingactions)
+- [`$sendImageResponse`](#$sendimageresponse)
+- [`$outgoingTrackerCookies`](#$outgoingtrackercookies)
+- [`$incomingTrackerCookies`](#$incomingtrackercookies)
+- [`$visitorCustomVar`](#$visitorcustomvar)
 - [`$DEBUG_LAST_REQUESTED_URL`](#$debug_last_requested_url) &mdash; Used in tests to output useful error messages.
 
 <a name="$url" id="$url"></a>
@@ -29,6 +91,564 @@ MatomoTracker::$URL = 'http://yourwebsite.org/matomo/';
 <a name="$debug_append_url" id="$debug_append_url"></a>
 <a name="DEBUG_APPEND_URL" id="DEBUG_APPEND_URL"></a>
 ### `$DEBUG_APPEND_URL`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$ecommerceitems" id="$ecommerceitems"></a>
+<a name="ecommerceItems" id="ecommerceItems"></a>
+### `$ecommerceItems`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$attributioninfo" id="$attributioninfo"></a>
+<a name="attributionInfo" id="attributionInfo"></a>
+### `$attributionInfo`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$eventcustomvar" id="$eventcustomvar"></a>
+<a name="eventCustomVar" id="eventCustomVar"></a>
+### `$eventCustomVar`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$forceddatetime" id="$forceddatetime"></a>
+<a name="forcedDatetime" id="forcedDatetime"></a>
+### `$forcedDatetime`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$forcednewvisit" id="$forcednewvisit"></a>
+<a name="forcedNewVisit" id="forcedNewVisit"></a>
+### `$forcedNewVisit`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$networktime" id="$networktime"></a>
+<a name="networkTime" id="networkTime"></a>
+### `$networkTime`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$servertime" id="$servertime"></a>
+<a name="serverTime" id="serverTime"></a>
+### `$serverTime`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$transfertime" id="$transfertime"></a>
+<a name="transferTime" id="transferTime"></a>
+### `$transferTime`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$domprocessingtime" id="$domprocessingtime"></a>
+<a name="domProcessingTime" id="domProcessingTime"></a>
+### `$domProcessingTime`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$domcompletiontime" id="$domcompletiontime"></a>
+<a name="domCompletionTime" id="domCompletionTime"></a>
+### `$domCompletionTime`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$onloadtime" id="$onloadtime"></a>
+<a name="onLoadTime" id="onLoadTime"></a>
+### `$onLoadTime`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$pagecustomvar" id="$pagecustomvar"></a>
+<a name="pageCustomVar" id="pageCustomVar"></a>
+### `$pageCustomVar`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$ecommerceview" id="$ecommerceview"></a>
+<a name="ecommerceView" id="ecommerceView"></a>
+### `$ecommerceView`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$customparameters" id="$customparameters"></a>
+<a name="customParameters" id="customParameters"></a>
+### `$customParameters`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$customdimensions" id="$customdimensions"></a>
+<a name="customDimensions" id="customDimensions"></a>
+### `$customDimensions`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$customdata" id="$customdata"></a>
+<a name="customData" id="customData"></a>
+### `$customData`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$hascookies" id="$hascookies"></a>
+<a name="hasCookies" id="hasCookies"></a>
+### `$hasCookies`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$token_auth" id="$token_auth"></a>
+<a name="token_auth" id="token_auth"></a>
+### `$token_auth`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$useragent" id="$useragent"></a>
+<a name="userAgent" id="userAgent"></a>
+### `$userAgent`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$country" id="$country"></a>
+<a name="country" id="country"></a>
+### `$country`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$region" id="$region"></a>
+<a name="region" id="region"></a>
+### `$region`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$city" id="$city"></a>
+<a name="city" id="city"></a>
+### `$city`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$lat" id="$lat"></a>
+<a name="lat" id="lat"></a>
+### `$lat`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$long" id="$long"></a>
+<a name="long" id="long"></a>
+### `$long`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$width" id="$width"></a>
+<a name="width" id="width"></a>
+### `$width`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$height" id="$height"></a>
+<a name="height" id="height"></a>
+### `$height`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$plugins" id="$plugins"></a>
+<a name="plugins" id="plugins"></a>
+### `$plugins`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$localhour" id="$localhour"></a>
+<a name="localHour" id="localHour"></a>
+### `$localHour`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$localminute" id="$localminute"></a>
+<a name="localMinute" id="localMinute"></a>
+### `$localMinute`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$localsecond" id="$localsecond"></a>
+<a name="localSecond" id="localSecond"></a>
+### `$localSecond`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$idpageview" id="$idpageview"></a>
+<a name="idPageview" id="idPageview"></a>
+### `$idPageview`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$idpageviewsetmanually" id="$idpageviewsetmanually"></a>
+<a name="idPageviewSetManually" id="idPageviewSetManually"></a>
+### `$idPageviewSetManually`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$idsite" id="$idsite"></a>
+<a name="idSite" id="idSite"></a>
+### `$idSite`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$urlreferrer" id="$urlreferrer"></a>
+<a name="urlReferrer" id="urlReferrer"></a>
+### `$urlReferrer`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$pagecharset" id="$pagecharset"></a>
+<a name="pageCharset" id="pageCharset"></a>
+### `$pageCharset`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$pageurl" id="$pageurl"></a>
+<a name="pageUrl" id="pageUrl"></a>
+### `$pageUrl`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$ip" id="$ip"></a>
+<a name="ip" id="ip"></a>
+### `$ip`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$acceptlanguage" id="$acceptlanguage"></a>
+<a name="acceptLanguage" id="acceptLanguage"></a>
+### `$acceptLanguage`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$clienthints" id="$clienthints"></a>
+<a name="clientHints" id="clientHints"></a>
+### `$clientHints`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$configvisitorcookietimeout" id="$configvisitorcookietimeout"></a>
+<a name="configVisitorCookieTimeout" id="configVisitorCookieTimeout"></a>
+### `$configVisitorCookieTimeout`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$configsessioncookietimeout" id="$configsessioncookietimeout"></a>
+<a name="configSessionCookieTimeout" id="configSessionCookieTimeout"></a>
+### `$configSessionCookieTimeout`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$configreferralcookietimeout" id="$configreferralcookietimeout"></a>
+<a name="configReferralCookieTimeout" id="configReferralCookieTimeout"></a>
+### `$configReferralCookieTimeout`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$userid" id="$userid"></a>
+<a name="userId" id="userId"></a>
+### `$userId`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$forcedvisitorid" id="$forcedvisitorid"></a>
+<a name="forcedVisitorId" id="forcedVisitorId"></a>
+### `$forcedVisitorId`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$cookievisitorid" id="$cookievisitorid"></a>
+<a name="cookieVisitorId" id="cookieVisitorId"></a>
+### `$cookieVisitorId`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$randomvisitorid" id="$randomvisitorid"></a>
+<a name="randomVisitorId" id="randomVisitorId"></a>
+### `$randomVisitorId`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$configcookiesdisabled" id="$configcookiesdisabled"></a>
+<a name="configCookiesDisabled" id="configCookiesDisabled"></a>
+### `$configCookiesDisabled`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$configcookiepath" id="$configcookiepath"></a>
+<a name="configCookiePath" id="configCookiePath"></a>
+### `$configCookiePath`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$configcookiedomain" id="$configcookiedomain"></a>
+<a name="configCookieDomain" id="configCookieDomain"></a>
+### `$configCookieDomain`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$configcookiesamesite" id="$configcookiesamesite"></a>
+<a name="configCookieSameSite" id="configCookieSameSite"></a>
+### `$configCookieSameSite`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$configcookiesecure" id="$configcookiesecure"></a>
+<a name="configCookieSecure" id="configCookieSecure"></a>
+### `$configCookieSecure`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$configcookiehttponly" id="$configcookiehttponly"></a>
+<a name="configCookieHTTPOnly" id="configCookieHTTPOnly"></a>
+### `$configCookieHTTPOnly`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$currentts" id="$currentts"></a>
+<a name="currentTs" id="currentTs"></a>
+### `$currentTs`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$createts" id="$createts"></a>
+<a name="createTs" id="createTs"></a>
+### `$createTs`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$requesttimeout" id="$requesttimeout"></a>
+<a name="requestTimeout" id="requestTimeout"></a>
+### `$requestTimeout`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$requestconnecttimeout" id="$requestconnecttimeout"></a>
+<a name="requestConnectTimeout" id="requestConnectTimeout"></a>
+### `$requestConnectTimeout`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$dobulkrequests" id="$dobulkrequests"></a>
+<a name="doBulkRequests" id="doBulkRequests"></a>
+### `$doBulkRequests`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$storedtrackingactions" id="$storedtrackingactions"></a>
+<a name="storedTrackingActions" id="storedTrackingActions"></a>
+### `$storedTrackingActions`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$sendimageresponse" id="$sendimageresponse"></a>
+<a name="sendImageResponse" id="sendImageResponse"></a>
+### `$sendImageResponse`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$outgoingtrackercookies" id="$outgoingtrackercookies"></a>
+<a name="outgoingTrackerCookies" id="outgoingTrackerCookies"></a>
+### `$outgoingTrackerCookies`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$incomingtrackercookies" id="$incomingtrackercookies"></a>
+<a name="incomingTrackerCookies" id="incomingTrackerCookies"></a>
+### `$incomingTrackerCookies`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$visitorcustomvar" id="$visitorcustomvar"></a>
+<a name="visitorCustomVar" id="visitorCustomVar"></a>
+### `$visitorCustomVar`
 
 #### Signature
 
@@ -83,6 +703,8 @@ The class defines the following methods:
 - [`enableCookies()`](#enablecookies) &mdash; Enable Cookie Creation - this will cause a first party VisitorId cookie to be set when the VisitorId is set or reset
 - [`disableSendImageResponse()`](#disablesendimageresponse) &mdash; If image response is disabled Matomo will respond with a HTTP 204 header instead of responding with a gif.
 - [`doTrackPageView()`](#dotrackpageview) &mdash; Tracks a page view
+- [`setPageviewId()`](#setpageviewid) &mdash; Override PageView id for every use of `doTrackPageView()`.
+- [`getPageviewId()`](#getpageviewid) &mdash; Returns the PageView id.
 - [`doTrackEvent()`](#dotrackevent) &mdash; Tracks an event
 - [`doTrackContentImpression()`](#dotrackcontentimpression) &mdash; Tracks a content impression
 - [`doTrackContentInteraction()`](#dotrackcontentinteraction) &mdash; Tracks a content interaction.
@@ -100,7 +722,7 @@ The class defines the following methods:
 - [`getUrlTrackPageView()`](#geturltrackpageview) &mdash; Builds URL to track a page view.
 - [`getUrlTrackEvent()`](#geturltrackevent) &mdash; Builds URL to track a custom event.
 - [`getUrlTrackContentImpression()`](#geturltrackcontentimpression) &mdash; Builds URL to track a content impression.
-- [`getUrlTrackContentInteraction()`](#geturltrackcontentinteraction) &mdash; Builds URL to track a content impression.
+- [`getUrlTrackContentInteraction()`](#geturltrackcontentinteraction) &mdash; Builds URL to track a content interaction.
 - [`getUrlTrackSiteSearch()`](#geturltracksitesearch) &mdash; Builds URL to track a site search.
 - [`getUrlTrackGoal()`](#geturltrackgoal) &mdash; Builds URL to track a goal with idGoal and revenue.
 - [`getUrlTrackAction()`](#geturltrackaction) &mdash; Builds URL to track a new action.
@@ -637,6 +1259,35 @@ Tracks a page view
 - *Returns:*  `mixed` &mdash;
     Response string or true if using bulk requests.
 
+<a name="setpageviewid" id="setpageviewid"></a>
+<a name="setPageviewId" id="setPageviewId"></a>
+### `setPageviewId()`
+
+Override PageView id for every use of `doTrackPageView()`. Do not use this if you call `doTrackPageView()`
+multiple times during tracking (if, for example, you are tracking a single page application).
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$idPageview` (`string`) &mdash;
+      
+- It does not return anything or a mixed result.
+
+<a name="getpageviewid" id="getpageviewid"></a>
+<a name="getPageviewId" id="getPageviewId"></a>
+### `getPageviewId()`
+
+Returns the PageView id. If the id was manually set using `setPageViewId()`, that id will be returned.
+
+If the id was not set manually, the id that was automatically generated in last `doTrackPageView()` will
+be returned. If there was no last page view, this will be false.
+
+#### Signature
+
+
+- *Returns:*  `mixed` &mdash;
+    The PageView id as string or false if there is none yet.
+
 <a name="dotrackevent" id="dotrackevent"></a>
 <a name="doTrackEvent" id="doTrackEvent"></a>
 ### `doTrackEvent()`
@@ -1007,7 +1658,7 @@ Builds URL to track a content impression.
 <a name="getUrlTrackContentInteraction" id="getUrlTrackContentInteraction"></a>
 ### `getUrlTrackContentInteraction()`
 
-Builds URL to track a content impression.
+Builds URL to track a content interaction.
 
 #### See Also
 
