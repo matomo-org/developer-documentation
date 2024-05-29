@@ -225,3 +225,26 @@ Here we create a `RecordBuilder` instance for every entity our plugin manages.
 ---
 
 And that's it, your `RecordBuilder` is done.
+
+## Advanced
+
+### Overriding non-day period aggregation
+
+Archiving for non-day periods is handled by the `buildForNonDayPeriod()` method, which
+will use record metadata to query and aggregate records for the requested period's subperiods.
+
+Normally, when creating a `RecordBuilder`, you will not need to interact with it. But, in
+some rare cases, the default behavior of aggregating subperiods will not be enough.
+
+In this case, it is perfectly acceptable to override the `buildForNonDayPeriod()` method
+and implement your own logic.
+
+If doing so, keep the following in mind:
+
+* when querying for records of subperiods, do not query fetch all of them in memory at once.
+  Record data can take up a significant amount of memory, and querying all the data at once here
+  can cause out of memory errors for the archiving process. Instead, use a method like
+  `Archive::querySingleBlob()` which uses a cursor.
+
+* insert blob records via the `RecordBuilder::insertBlobRecord()` method. For numeric records,
+  use `ArchiveProcessor::insertNumericRecords()`.
