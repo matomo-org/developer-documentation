@@ -176,7 +176,7 @@ class MyRecordBuilder extends RecordBuilder
         $this->columnAggregationOps = [
             'my_max_metric' => 'max',
             'my_min_metric' => 'min',
-            'my_other_metric' => function ($thisValue, $otherValue) {
+            'my_other_metric' => function ($thisValue, $otherValue, $thisRow, $otherRow) {
                 // custom aggregation logic here
             },
         ];
