@@ -2081,10 +2081,11 @@ Usages:
 ## MultiSites
 
 - [MultiSites.filterRowsForTotalsCalculation](#multisitesfilterrowsfortotalscalculation)
+- [MultiSites.filterSites](#multisitesfiltersites)
 
 ### MultiSites.filterRowsForTotalsCalculation
 
-*Defined in [Piwik/Plugins/MultiSites/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/MultiSites/API.php) in line [567](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/MultiSites/API.php#L567)*
+*Defined in [Piwik/Plugins/MultiSites/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/MultiSites/API.php) in line [581](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/MultiSites/API.php#L581)*
 
 Triggered to filter / restrict which rows should be included in the MultiSites (All Websites Dashboard)
 totals calculation **Example**
@@ -2102,6 +2103,24 @@ Callback Signature:
 <pre><code>function(&amp;$rows)</code></pre>
 
 - \Row &$rows An array containing rows, one row for each site. The label columns equals the idSite.
+
+
+### MultiSites.filterSites
+
+*Defined in [Piwik/Plugins/MultiSites/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/MultiSites/API.php) in line [109](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/MultiSites/API.php#L109)*
+
+This event can be used to manipulate the sites being displayed on all websites dashboard. **Example**
+
+    Piwik::addAction('MultiSites.filterSites', function (&$idSites) {
+        $idSites = array_filter($idSites, function($idSite) {
+            return $idSite !== 1
+        });
+    });
+
+Callback Signature:
+<pre><code>function(&amp;$idSites]</code></pre>
+
+- array &$idSites List of idSites that the current user would be allowed to see in all websites dashboard.
 
 ## Platform
 
