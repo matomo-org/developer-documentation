@@ -54,20 +54,25 @@ Rarely, we may have to break an API for example for security reasons. We mention
 
 When we need to change an API, or remove an API, before removing or changing the API, we deprecate it:
 this can usually be done by adding `@deprecated` tag in the API, event name, etc.
-we announce the deprecation in the Developer Changelog at least 3-6 months early. With the deprecated annotation we also mention when it was deprecated (which Matomo version) and provide recommendations what to use instead.
+We announce the deprecation in the Developer Changelog at least 3-6 months early. With the deprecated annotation, we also mention when it was deprecated (which Matomo version) and provide recommendations of what to use instead.
 
 Example:
 
 ```php
 /**
- * @deprecated since Matomo 4.2.1. Use Xyz instead.
+ * @api 
+ * @deprecated since Matomo 4.2.1. Use {@link NewClass::newMethod()} instead.
  */
 public function getMyReport() {
 
 }
 ```
 
-When we release a new Major version (eg. Matomo 5.0.0) then we are will remove all `@deprecated` code and therefore break BC. We announce the details of code removed in the [developer changelog](/changelog) (see [instructions](#developer-changelog)) and we also document to developers how they can convert their code to the new way.
+Assuming we completely remove the deprecated API in the next major version, then we remove the `@deprecated` code and therefore break BC as part of the next new major version and not before that. We announce the details in the [developer changelog](/changelog) (see [instructions](#developer-changelog)) and we also document how developers can convert their code to the new way as part of a migration guide similar to [this example](https://developer.matomo.org/guides/migrate-matomo-3-to-4). 
+
+Sometimes, deprecated APIs may still be in the code base for many new major releases. In that case, we review before each major release if a deprecated method can be safely removed or not. If in doubt, we rather keep it for another major release.
+
+In most case, we should be able to remove the `@api` tag starting from the next major release so it no longer appears in the developer documentation. 
 
 ## Developer changelog
 
