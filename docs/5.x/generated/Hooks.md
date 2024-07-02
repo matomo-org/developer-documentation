@@ -180,7 +180,7 @@ Usages:
 
 ### API.$pluginName.$methodName
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [228](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L228)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [229](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L229)*
 
 Triggered before an API request is dispatched. This event exists for convenience and is triggered directly after the [API.Request.dispatch](/api-reference/events#apirequestdispatch)
 event is triggered. It can be used to modify the arguments passed to a **single** API method.
@@ -203,7 +203,7 @@ Callback Signature:
 
 ### API.$pluginName.$methodName.end
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [303](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L303)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [304](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L304)*
 
 Triggered directly after an API request is dispatched. This event exists for convenience and is triggered immediately before the
 [API.Request.dispatch.end](/api-reference/events#apirequestdispatchend) event. It can be used to modify the output of a **single**
@@ -272,7 +272,7 @@ Usages:
 
 ### API.DocumentationGenerator.$token
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [648](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L648)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [649](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L649)*
 
 This event exists for checking whether a Plugin API class or a Plugin API method tagged
 with a `@hideXYZ` should be hidden in the API listing.
@@ -359,7 +359,7 @@ Usages:
 
 ### API.Request.dispatch
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [208](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L208)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [209](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L209)*
 
 Triggered before an API request is dispatched. This event can be used to modify the arguments passed to one or more API methods.
 
@@ -391,7 +391,7 @@ Usages:
 
 ### API.Request.dispatch.end
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [343](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L343)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [344](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L344)*
 
 Triggered directly after an API request is dispatched. This event can be used to modify the output of any API method.
 
@@ -439,7 +439,7 @@ Usages:
 
 ### API.Request.intercept
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [243](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L243)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [244](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L244)*
 
 Triggered before an API request is dispatched. Use this event to intercept an API request and execute your own code instead. If you set
 `$returnedValue` in a handler for this event, the original API method will not be executed,
