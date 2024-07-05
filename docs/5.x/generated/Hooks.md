@@ -1315,7 +1315,7 @@ Callback Signature:
 
 ### Db.getDatabaseConfig
 
-*Defined in [Piwik/Db](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Db.php) in line [128](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Db.php#L128)*
+*Defined in [Piwik/Db](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Db.php) in line [129](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Db.php#L129)*
 
 Triggered before a database connection is established. This event can be used to change the settings used to establish a connection.
 
@@ -1338,7 +1338,7 @@ Callback Signature:
 
 ### Db.getTablesInstalled
 
-*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Db/Schema/Mysql.php) in line [480](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Db/Schema/Mysql.php#L480)*
+*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Db/Schema/Mysql.php) in line [481](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Db/Schema/Mysql.php#L481)*
 
 
 
