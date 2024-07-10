@@ -467,7 +467,7 @@ Callback Signature:
 
 ### ArchiveProcessor.ComputeNbUniques.getIdSites
 
-*Defined in [Piwik/ArchiveProcessor](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor.php) in line [596](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor.php#L596)*
+*Defined in [Piwik/ArchiveProcessor](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor.php) in line [598](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor.php#L598)*
 
 Triggered to change which site ids should be looked at when processing unique visitors and users.
 
@@ -485,7 +485,7 @@ Callback Signature:
 
 ### ArchiveProcessor.getArchive
 
-*Defined in [Piwik/ArchiveProcessor](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor.php) in line [131](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor.php#L131)*
+*Defined in [Piwik/ArchiveProcessor](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor.php) in line [133](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor.php#L133)*
 
 
 
@@ -596,7 +596,7 @@ Callback Signature:
 
 ### Archiving.getIdSitesToMarkArchivesAsInvalidated
 
-*Defined in [Piwik/Archive/ArchiveInvalidator](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Archive/ArchiveInvalidator.php) in line [320](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Archive/ArchiveInvalidator.php#L320)*
+*Defined in [Piwik/Archive/ArchiveInvalidator](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Archive/ArchiveInvalidator.php) in line [324](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Archive/ArchiveInvalidator.php#L324)*
 
 Triggered when a Matomo user requested the invalidation of some reporting archives. Using this event, plugin
 developers can automatically invalidate another site, when a site is being invalidated. A plugin may even
