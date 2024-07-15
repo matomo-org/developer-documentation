@@ -140,7 +140,7 @@ Usages:
 
 ### Actions.Archiving.addActionMetrics
 
-*Defined in [Piwik/Plugins/Actions/Metrics](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Actions/Metrics.php) in line [90](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Actions/Metrics.php#L90)*
+*Defined in [Piwik/Plugins/Actions/Metrics](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Actions/Metrics.php) in line [99](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Actions/Metrics.php#L99)*
 
 
 
