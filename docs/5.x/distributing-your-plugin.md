@@ -42,7 +42,7 @@ To make your plugin shine on the Piwik marketplace, include screenshots in your 
 Prepare a few screenshots of your plugin in action and place them in a `screenshots/` directory in your plugin's folder.
 Give them descriptive names because the file names will be used as the legends shown below each screenshot. Only alphanumeric characters, underscores and dashes are allowed in the file name. The file name must end with `.png`, `.jpg` or `.jpeg`.
 
-To add a cover image, it must be 880x480 pixels and named `_cover.png`. It can then be added to the `screenshots/` directory with the rest of the plugin screenshots. If the cover image does not fit the recommended dimensions, it may not display correctly.
+To add a cover image, it must be **880x480** pixels and named `_cover.png`. It can then be added to the `screenshots/` directory with the rest of the plugin screenshots. If the cover image does not fit the recommended dimensions, it may not display correctly.
 
 See the result for the [CustomAlerts plugin's screenshots](https://plugins.piwik.org/CustomAlerts) (click on the Screenshots link).
 These screenshots are stored [in git: CustomAlerts/screenshots](https://github.com/matomo-org/plugin-CustomAlerts/tree/master/screenshots).
