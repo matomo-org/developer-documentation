@@ -93,10 +93,10 @@ All page performance metrics expect a value in milliseconds.
 Note: Trailing and leading whitespaces will be trimmed from parameter values for `e_c`, `e_a` and `e_n`. Strings filled with whitespaces will be considered as (invalid) empty values.
 
 ### Optional [Content Tracking](https://matomo.org/docs/content-tracking/) info
-* `c_n` &mdash; The name of the content. For instance 'Ad Foo Bar'
-* `c_p` &mdash; The actual content piece. For instance the path to an image, video, audio, any text
-* `c_t` &mdash; The target of the content. For instance the URL of a landing page
-* `c_i` &mdash; The name of the interaction with the content. For instance a 'click'
+* `c_n` &mdash; The name of the content. For instance 'Ad Foo Bar'.
+* `c_p` &mdash; The actual content piece. For instance the path to an image, video, audio, any text.
+* `c_t` &mdash; The target of the content. For instance the URL of a landing page.
+* `c_i` &mdash; The name of the interaction with the content. For instance a 'click'.
 
 To track a content impression set `c_n` and optionally `c_p` and `c_t`. To track a content interaction set `c_i` and `c_n` and optionally `c_p` and `c_t`. To map an interaction to an impression make sure to set the same value for `c_n` and `c_p`. It is recommended to set a value for `c_p`.
 
@@ -105,7 +105,7 @@ To track a content impression set `c_n` and optionally `c_p` and `c_t`. To track
 Use the following values to record a cart and/or an ecommerce order.
 
 * you must set `&idgoal=0` in the request to track an ecommerce interaction: cart update or an ecommerce order.
-* `ec_id` &mdash; The unique string identifier for the ecommerce order (required when tracking an ecommerce order)
+* `ec_id` &mdash; The unique string identifier for the ecommerce order (required when tracking an ecommerce order).
 * `ec_items` &mdash; Items in the Ecommerce order. This is a JSON encoded array of items. Each item is an array with the following info in this order: 
   * item sku (required), 
   * item name (or if not applicable, set it to an empty string), 
@@ -116,9 +116,15 @@ Use the following values to record a cart and/or an ecommerce order.
  An example value of `ec_items` would be: `%5B%5B%22item1%20SKU%22%2C%22item1%20name%22%2C%22item1%20category%22%2C11.1111%2C2%5D%2C%5B%22item2%20SKU%22%2C%22item2%20name%22%2C%22%22%2C0%2C1%5D%5D` (URL decoded version is: `[["item1 SKU","item1 name","item1 category",11.1111,2],["item2 SKU","item2 name","",0,1]]`).
 * `revenue` &mdash; The grand total for the ecommerce order (required when tracking an ecommerce order)
 * `ec_st` &mdash; The sub total of the order; excludes shipping.
-* `ec_tx` &mdash; Tax Amount of the order
-* `ec_sh` &mdash; Shipping cost of the Order
-* `ec_dt` &mdash; Discount offered
+* `ec_tx` &mdash; Tax Amount of the order.
+* `ec_sh` &mdash; Shipping cost of the order.
+* `ec_dt` &mdash; Discount offered.
+
+#### Ecommerce Product View Tracking
+* `_pkc` &mdash; The category of the product being viewed.
+* `_pkp` &mdash; The price of the product being viewed.
+* `_pks` &mdash; The SKU (stock keeping unit) of the product being viewed.
+* `_pkn` &mdash; The name of the product being viewed.
 
 ### Other parameters (require authentication via `token_auth`)
 
