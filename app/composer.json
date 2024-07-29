@@ -15,5 +15,10 @@
         "ext-json": "*",
         "symfony/yaml": "^6.4.7"
     },
-    "require-dev": {}
+    "require-dev": {},
+    "scripts": {
+        "serve": [
+            "php -S 0.0.0.0:8000 -t public"
+        ]
+    }
 }

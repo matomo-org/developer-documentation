@@ -30,6 +30,13 @@ $ cd public/
 $ php -S 0.0.0.0:8000
 ```
 
+After the initial composer installation, you should be able to test locally by simply running the following:
+
+```bash
+$ cd app/
+$ composer serve
+```
+
 To disable caching and enable debugging, create a `app/config/local.php` file with the following:
 
 ```php
