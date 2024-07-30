@@ -17,6 +17,10 @@ Piwik also persists other simpler forms of data including:
 
 Did you know? You can [extend the database](/guides/extending-database) with a plugin.
 
+## ER diagram
+
+<img src="/img/e-r-index-open.png"/>
+
 ## Log data
 
 There are five types of log data:
@@ -927,7 +931,3 @@ Each crash stack contains the following information:
 * To learn **about Piwik's logging utility** see this section in our [Getting started extending Piwik](/guides/getting-started-part-1) guide.
 * To learn **about database backed sessions** read [this FAQ entry](https://matomo.org/faq/how-to-install/faq_133/).
 * To learn **how plugins can persist data** read the [Extending the Database](/guides/extending-database) guide.
-
-## ER diagram
-
-<img src="/img/e-r-index-open.png"/>
