@@ -17,9 +17,11 @@ Piwik also persists other simpler forms of data including:
 
 Did you know? You can [extend the database](/guides/extending-database) with a plugin.
 
-## ER diagram
+## Entity diagram
 
-<img src="/img/e-r-index-open.png"/>
+<img src="/img/e-r-archive.png"/>
+
+**Note:** This Entity diagram was created from Matomo core version - 5.2.0-alpha.
 
 ## Log data
 
