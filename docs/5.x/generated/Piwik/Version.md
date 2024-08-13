@@ -13,6 +13,7 @@ The class defines the following methods:
 - [`isStableVersion()`](#isstableversion)
 - [`isVersionNumber()`](#isversionnumber)
 - [`isPreviewVersion()`](#ispreviewversion)
+- [`nextPreviewVersion()`](#nextpreviewversion)
 
 <a name="isstableversion" id="isstableversion"></a>
 <a name="isStableVersion" id="isStableVersion"></a>
@@ -46,4 +47,15 @@ The class defines the following methods:
     - `$version`
       
 - It returns a `bool` value.
+
+<a name="nextpreviewversion" id="nextpreviewversion"></a>
+<a name="nextPreviewVersion" id="nextPreviewVersion"></a>
+### `nextPreviewVersion()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$version`
+      
+- It returns a `string` value.
 
