@@ -103,7 +103,7 @@ window.matomoAsyncInit = function () {
 It is important to define these methods before the Piwik tracker file is loaded. Otherwise, your `matomoAsyncInit` 
 or `matomoMediaAnalyticsAsyncInit` method will never be called.
 
-In order to use your additional tracker(s) outside the `matomoAsyncInit` function, you will need to declare the tracker name as a Global variable. For example:
+In order to use your additional tracker(s) outside the `matomoAsyncInit` function, you will need to declare the tracker name as a global variable. For example:
 
 ```js
   var matomoTracker1;
