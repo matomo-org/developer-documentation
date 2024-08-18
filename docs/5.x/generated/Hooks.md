@@ -525,7 +525,7 @@ Callback Signature:
 
 ### Archiver.addRecordBuilders
 
-*Defined in [Piwik/Plugin/Archiver](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Archiver.php) in line [143](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Archiver.php#L143)*
+*Defined in [Piwik/Plugin/Archiver](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Archiver.php) in line [144](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Archiver.php#L144)*
 
 Triggered to add new RecordBuilders that cannot be picked up automatically by the platform. If you define RecordBuilders that take a parameter, for example, an ID to an entity your plugin
 manages, use this event to add instances of that RecordBuilder to the global list.
@@ -549,7 +549,7 @@ Usages:
 
 ### Archiver.filterRecordBuilders
 
-*Defined in [Piwik/Plugin/Archiver](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Archiver.php) in line [165](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Archiver.php#L165)*
+*Defined in [Piwik/Plugin/Archiver](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Archiver.php) in line [166](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Archiver.php#L166)*
 
 Triggered to filter / restrict reports. **Example**
 
