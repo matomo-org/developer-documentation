@@ -85,6 +85,7 @@ This is the list of filters in the order in which they are applied:
         - `AddColumnsProcessedMetricsGoal::GOALS_OVERVIEW` (default): adds metrics for the goals overview and not individual goals
         - `AddColumnsProcessedMetricsGoal::GOALS_MINIMAL_REPORT`: add just one metric: `revenue_per_visit` (no per-goal metrics will be added)
         - `AddColumnsProcessedMetricsGoal::GOALS_FULL_TABLE`: displays per-goal metrics for every goal of the site including the ecommerce goal
+    - `filter_show_goal_columns_process_goals`: Includes process goals using goal identifiers. Metrics are exported to additional columns for the specified goals and in the respective order listed.
 7. **[Sort](/api-reference/Piwik/DataTable/Filter/Sort)**: Sorts the rows.
     - `filter_sort_column`: column to sort (the filter is applied if set)
     - `filter_sort_order`: `'desc'` or `'asc'`
