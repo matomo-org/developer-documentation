@@ -56,7 +56,7 @@ _referrerName==Google,referrerName==Bing;country==IN_
         *   see [segmentation documentation](/api-reference/segmentation) for the list of available dimensions & metrics, example values for each, and more information about the custom segment parameter
 
 
-*   **format**; defines the format of the output
+*   **format**; defines the format of the output.
 
     *   xml
     *   json (if you want to do [cross domain request in ajax](https://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/) and get json data, you can wrap the json data around a function call by using the **jsoncallback** parameter)
@@ -65,7 +65,9 @@ _referrerName==Google,referrerName==Bing;country==IN_
     *   html
     *   rss (when **date** is a range for example date=last10 or date=previous15)
     *   original; to fetch the original PHP data structure. This is useful when you call the Piwik API [internally using the PHP code](/guides/querying-the-reporting-api)
-    
+
+*   **format_metrics**; defines the output format of the metrics' values.
+    *   By appending `&format_metrics=0`, the metrics' values are displayed as numerical values in the output instead of the default percent rate.
     
 *   **filter\_limit**; defines the number of rows to be returned. 
     * By default, only the top **100 rows** are returned.
