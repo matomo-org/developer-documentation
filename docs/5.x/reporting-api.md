@@ -67,7 +67,9 @@ _referrerName==Google,referrerName==Bing;country==IN_
     *   original; to fetch the original PHP data structure. This is useful when you call the Piwik API [internally using the PHP code](/guides/querying-the-reporting-api)
 
 *   **format_metrics**; defines the output format of the metrics' values.
-    *   By appending `&format_metrics=0`, the metrics' values are displayed as numerical values in the output instead of the default percent rate.
+    *   `format_metrics=0`: metrics will not be formatted at all. Percent values are returned as rates. This can be applied if the numbers should be used for further processing.
+    *   `format_metrics=1`: All metrics returned are formatted (this also includes appending percent or money signs). This can be applied if the data should be used for direct presentation.
+    *   `format_metrics=bc`: In this case, only percent values are formatted, while all other values are not. This behaviour is deprecated but still exists as the Matomo UI requires it in specific instances. It is the default behaviour if nothing is provided. In the future, this option will be removed and `format_metrics=0` will become the new default.
     
 *   **filter\_limit**; defines the number of rows to be returned. 
     * By default, only the top **100 rows** are returned.
