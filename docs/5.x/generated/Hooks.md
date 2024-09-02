@@ -851,7 +851,7 @@ Callback Signature:
 
 ### CliMulti.supportsAsync
 
-*Defined in [Piwik/CliMulti](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CliMulti.php) in line [315](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CliMulti.php#L315)*
+*Defined in [Piwik/CliMulti](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CliMulti.php) in line [368](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CliMulti.php#L368)*
 
 Triggered to allow plugins to force the usage of async cli multi execution or to disable it. **Example**
 
