@@ -24,17 +24,7 @@ Properties
 
 This class defines the following properties:
 
-- [`$supportsUncommitted`](#$supportsuncommitted)
 - [`$lockPrivilegeGranted`](#$lockprivilegegranted) &mdash; Cached result of isLockprivilegeGranted function.
-
-<a name="$supportsuncommitted" id="$supportsuncommitted"></a>
-<a name="supportsUncommitted" id="supportsUncommitted"></a>
-### `$supportsUncommitted`
-
-#### Signature
-
-- Its type is not specified.
-
 
 <a name="$lockprivilegegranted" id="$lockprivilegegranted"></a>
 <a name="lockPrivilegeGranted" id="lockPrivilegeGranted"></a>
