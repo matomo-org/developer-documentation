@@ -563,6 +563,7 @@ Index
 - [`getRangeString()`](Piwik/Period/Range.md#getrangestring) &mdash; *Method in class* [`Range`](Piwik/Period/Range.md)
 - [`getImmediateChildPeriodLabel()`](Piwik/Period/Range.md#getimmediatechildperiodlabel) &mdash; *Method in class* [`Range`](Piwik/Period/Range.md)
 - [`getParentPeriodLabel()`](Piwik/Period/Range.md#getparentperiodlabel) &mdash; *Method in class* [`Range`](Piwik/Period/Range.md)
+- [`getMaxAllowedEndTimestamp()`](Piwik/Period/Range.md#getmaxallowedendtimestamp) &mdash; *Method in class* [`Range`](Piwik/Period/Range.md)
 - [`getCurrentUserEmail()`](Piwik/Piwik.md#getcurrentuseremail) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
 - [`getCurrentUserLastSeen()`](Piwik/Piwik.md#getcurrentuserlastseen) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)
 - [`getCurrentUserLogin()`](Piwik/Piwik.md#getcurrentuserlogin) &mdash; *Method in class* [`Piwik`](Piwik/Piwik.md)

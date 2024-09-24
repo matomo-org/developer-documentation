@@ -48,6 +48,7 @@ The class defines the following methods:
 - [`getRelativeToEndDate()`](#getrelativetoenddate) &mdash; Returns a date range string given a period type, end date and number of periods the range spans over.
 - [`getImmediateChildPeriodLabel()`](#getimmediatechildperiodlabel)
 - [`getParentPeriodLabel()`](#getparentperiodlabel)
+- [`getMaxAllowedEndTimestamp()`](#getmaxallowedendtimestamp) &mdash; Returns the max allowed end timestamp for a range.
 
 <a name="__sleep" id="__sleep"></a>
 <a name="__sleep" id="__sleep"></a>
@@ -437,4 +438,17 @@ the range spans over.
 #### Signature
 
 - It does not return anything or a mixed result.
+
+<a name="getmaxallowedendtimestamp" id="getmaxallowedendtimestamp"></a>
+<a name="getMaxAllowedEndTimestamp" id="getMaxAllowedEndTimestamp"></a>
+### `getMaxAllowedEndTimestamp()`
+
+Returns the max allowed end timestamp for a range. If an enddate after this timestamp is provided, Matomo will
+automatically lower the end date to the date returned by this method.
+
+The max supported timestamp is always set to end of the current year plus 10 years.
+
+#### Signature
+
+- It returns a `int` value.
 
