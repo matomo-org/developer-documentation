@@ -1109,6 +1109,8 @@ Supported as of Matomo 4.12.0
        Value of header 'HTTP_SEC_CH_UA_FULL_VERSION_LIST' or an array containing all brands with the structure [['brand' => 'Chrome', 'version' => '10.0.2'], ['brand' => '...]
     - `$uaFullVersion` (`string`) &mdash;
        Value of the header 'HTTP_SEC_CH_UA_FULL_VERSION'
+    - `$formFactors` (`string`|`array&lt;string&gt;`) &mdash;
+       Value of the header 'HTTP_SEC_CH_UA_FORM_FACTORS' or an array containing all form factors with structure ["Desktop", "XR"]
 - It returns a `$this` value.
 
 <a name="setcountry" id="setcountry"></a>
