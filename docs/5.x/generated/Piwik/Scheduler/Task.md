@@ -40,7 +40,7 @@ The class defines the following methods:
        A Schedule instance that describes when the method should be executed and how long before the next execution.
     - `$priority` (`int`) &mdash;
        The priority of the task. Tasks with a higher priority will be executed first. Tasks with low priority will be executed last.
-    - `$ttlInSeconds` (`int`) &mdash;
+    - `$ttlInSeconds` (`int`|`null`) &mdash;
        TTL to use for this task. Defauts to 3600. See self::$ttlInSeconds
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)

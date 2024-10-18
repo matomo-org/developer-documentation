@@ -685,7 +685,7 @@ campaign information for the current action is different from the last.
        The current tracker request information.
     - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
        The information for the currently recognized visitor.
-    - `$action` (`Piwik\Tracker\Action`) &mdash;
+    - `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
        The current action information (if any).
 
 - *Returns:*  `bool` &mdash;

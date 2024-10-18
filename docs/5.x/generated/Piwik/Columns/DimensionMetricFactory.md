@@ -42,7 +42,7 @@ Generates a new dimension metric factory.
       
     - `$documentation`
       
-    - `$semanticType` (`string`) &mdash;
+    - `$semanticType` (`string`|`null`) &mdash;
       
 - It returns a `Piwik\Plugin\ArchivedMetric` value.
 

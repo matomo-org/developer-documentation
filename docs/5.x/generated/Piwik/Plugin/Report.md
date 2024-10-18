@@ -645,7 +645,7 @@ Includes ProcessedMetrics and Metrics.
 -  It accepts the following parameter(s):
     - `$dataTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
       
-    - `$report` ([`Report`](../../Piwik/Plugin/Report.md)) &mdash;
+    - `$report` ([`Report`](../../Piwik/Plugin/Report.md)|`null`) &mdash;
       
     - `$baseType` (`string`) &mdash;
        The base type each metric class needs to be of.
@@ -664,7 +664,7 @@ as well as the DataTable metadata.
 -  It accepts the following parameter(s):
     - `$dataTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
       
-    - `$report` ([`Report`](../../Piwik/Plugin/Report.md)) &mdash;
+    - `$report` ([`Report`](../../Piwik/Plugin/Report.md)|`null`) &mdash;
       
 - It returns a [`ProcessedMetric[]`](../../Piwik/Plugin/ProcessedMetric.md) value.
 

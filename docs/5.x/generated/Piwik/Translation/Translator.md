@@ -33,7 +33,7 @@ The class defines the following methods:
 -  It accepts the following parameter(s):
     - `$loader` (`Piwik\Translation\Loader\LoaderInterface`) &mdash;
       
-    - `$directories` (`array`) &mdash;
+    - `$directories` (`array`|`null`) &mdash;
       
 
 <a name="clean" id="clean"></a>
@@ -80,7 +80,7 @@ Converts the given list of items into a listing (e.g. One, Two, and Three)
 -  It accepts the following parameter(s):
     - `$items` (`array`) &mdash;
       
-    - `$language` (`string`) &mdash;
+    - `$language` (`string`|`null`) &mdash;
       
 - It returns a `string` value.
 
@@ -95,7 +95,7 @@ Converts the given list of items into a or listing (e.g. One, Two, or Three)
 -  It accepts the following parameter(s):
     - `$items` (`array`) &mdash;
       
-    - `$language` (`string`) &mdash;
+    - `$language` (`string`|`null`) &mdash;
       
 - It returns a `string` value.
 

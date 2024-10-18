@@ -42,7 +42,7 @@ The class defines the following methods:
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$className` (`string`) &mdash;
+    - `$className` (`string`|`null`) &mdash;
       
 - It returns a `DI\Definition\Helper\CreateDefinitionHelper` value.
 
@@ -57,7 +57,7 @@ The class defines the following methods:
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$className` (`string`) &mdash;
+    - `$className` (`string`|`null`) &mdash;
       
 - It returns a `DI\Definition\Helper\AutowireDefinitionHelper` value.
 

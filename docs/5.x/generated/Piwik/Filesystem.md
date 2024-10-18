@@ -66,7 +66,7 @@ Recursively deletes a directory.
        Path of the directory to delete.
     - `$deleteRootToo` (`boolean`) &mdash;
        If true, `$dir` is deleted, otherwise just its contents.
-    - `$beforeUnlink` ([`Closure`](http://php.net/class.Closure)) &mdash;
+    - `$beforeUnlink` ([`Closure`](http://php.net/class.Closure)|`null`) &mdash;
        An optional closure to execute on a file path before unlinking.
 - It does not return anything or a mixed result.
 

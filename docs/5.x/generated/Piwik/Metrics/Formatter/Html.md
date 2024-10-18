@@ -111,7 +111,7 @@ are found through report metadata and DataTable metadata.
 -  It accepts the following parameter(s):
     - `$dataTable` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
        The table to format metrics for.
-    - `$report` ([`Report`](../../../Piwik/Plugin/Report.md)) &mdash;
+    - `$report` ([`Report`](../../../Piwik/Plugin/Report.md)|`null`) &mdash;
        The report the table belongs to.
     - `$metricsToFormat` (`string[]`|`null`) &mdash;
        Allow a list of names of metrics to format.

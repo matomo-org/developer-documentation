@@ -43,13 +43,13 @@ core:archive is run, they will be processed.
 -  It accepts the following parameter(s):
     - `$idSites`
       
-    - `$plugin` (`string`) &mdash;
+    - `$plugin` (`string`|`null`) &mdash;
       
-    - `$report` (`string`) &mdash;
+    - `$report` (`string`|`null`) &mdash;
       
-    - `$startDate` ([`Date`](../../Piwik/Date.md)) &mdash;
+    - `$startDate` ([`Date`](../../Piwik/Date.md)|`null`) &mdash;
       
-    - `$segment` ([`Segment`](../../Piwik/Segment.md)) &mdash;
+    - `$segment` ([`Segment`](../../Piwik/Segment.md)|`null`) &mdash;
       
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:

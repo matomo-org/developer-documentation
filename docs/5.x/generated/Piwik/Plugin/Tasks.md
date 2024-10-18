@@ -35,7 +35,7 @@ Schedule the given tasks/method to run once every hour.
       
     - `$priority`
       
-    - `$ttlInSeconds` (`int`) &mdash;
+    - `$ttlInSeconds` (`int`|`null`) &mdash;
       
 - It returns a [`Schedule`](../../Piwik/Scheduler/Schedule/Schedule.md) value.
 
@@ -56,7 +56,7 @@ See [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
       
     - `$priority`
       
-    - `$ttlInSeconds` (`int`) &mdash;
+    - `$ttlInSeconds` (`int`|`null`) &mdash;
       
 - It does not return anything or a mixed result.
 
@@ -77,7 +77,7 @@ See [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
       
     - `$priority`
       
-    - `$ttlInSeconds` (`int`) &mdash;
+    - `$ttlInSeconds` (`int`|`null`) &mdash;
       
 - It does not return anything or a mixed result.
 
@@ -98,7 +98,7 @@ See [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
       
     - `$priority`
       
-    - `$ttlInSeconds` (`int`) &mdash;
+    - `$ttlInSeconds` (`int`|`null`) &mdash;
       
 - It does not return anything or a mixed result.
 
@@ -123,7 +123,7 @@ either an instance of a class or a class name. For more information about these 
       
     - `$priority`
       
-    - `$ttlInSeconds` (`int`) &mdash;
+    - `$ttlInSeconds` (`int`|`null`) &mdash;
       
 - It returns a [`Schedule`](../../Piwik/Scheduler/Schedule/Schedule.md) value.
 - It throws one of the following exceptions:

@@ -74,9 +74,9 @@ joins the according tables, but trigger a php warning as results might be incorr
        The segment condition, eg, `'browserCode=ff;countryCode=CA'`.
     - `$idSites` (`array`) &mdash;
        The list of sites the segment will be used with. Some segments are dependent on the site, such as goal segments.
-    - `$startDate` ([`Date`](../Piwik/Date.md)) &mdash;
+    - `$startDate` ([`Date`](../Piwik/Date.md)|`null`) &mdash;
        start date used to limit subqueries
-    - `$endDate` ([`Date`](../Piwik/Date.md)) &mdash;
+    - `$endDate` ([`Date`](../Piwik/Date.md)|`null`) &mdash;
        end date used to limit subqueries
 - It throws one of the following exceptions:
     - ``
