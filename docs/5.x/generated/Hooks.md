@@ -619,7 +619,7 @@ Callback Signature:
 
 - string `$period` A string containing the period to be invalidated.
 
-- \Segment `$segment` A Segment Object containing segment to invalidate.
+- null `$segment` A Segment Object containing segment to invalidate.
 
 - string `$name` A string containing the name of the archive to be invalidated.
 
