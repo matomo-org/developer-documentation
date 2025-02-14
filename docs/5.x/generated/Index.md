@@ -905,6 +905,7 @@ Index
 - [`isCompleted()`](Piwik/Plugins/Tour/Engagement/Challenge.md#iscompleted) &mdash; *Method in class* [`Challenge`](Piwik/Plugins/Tour/Engagement/Challenge.md)
 - [`isDisabled()`](Piwik/Plugins/Tour/Engagement/Challenge.md#isdisabled) &mdash; *Method in class* [`Challenge`](Piwik/Plugins/Tour/Engagement/Challenge.md)
 - [`isViewDataTableForced()`](Piwik/Report/ReportWidgetConfig.md#isviewdatatableforced) &mdash; *Method in class* [`ReportWidgetConfig`](Piwik/Report/ReportWidgetConfig.md)
+- [`isAvailable()`](Piwik/Segment.md#isavailable) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
 - [`isEmpty()`](Piwik/Segment.md#isempty) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
 - [`isSegmentationEnabled()`](Piwik/SettingsPiwik.md#issegmentationenabled) &mdash; *Method in class* [`SettingsPiwik`](Piwik/SettingsPiwik.md)
 - [`isUniqueVisitorsEnabled()`](Piwik/SettingsPiwik.md#isuniquevisitorsenabled) &mdash; *Method in class* [`SettingsPiwik`](Piwik/SettingsPiwik.md)

@@ -43,6 +43,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
+- [`isAvailable()`](#isavailable) &mdash; Checks if the provided segmentCondition is valid and available for the given idSites
 - [`getSegmentExpression()`](#getsegmentexpression) &mdash; Returns the segment expression.
 - [`isEmpty()`](#isempty) &mdash; Returns `true` if the segment is empty, `false` if otherwise.
 - [`willBeArchived()`](#willbearchived) &mdash; Detects whether the Piwik instance is configured to be able to archive this segment.
@@ -80,6 +81,21 @@ joins the according tables, but trigger a php warning as results might be incorr
        end date used to limit subqueries
 - It throws one of the following exceptions:
     - ``
+
+<a name="isavailable" id="isavailable"></a>
+<a name="isAvailable" id="isAvailable"></a>
+### `isAvailable()`
+
+Checks if the provided segmentCondition is valid and available for the given idSites
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$segmentCondition` (`string`) &mdash;
+      
+    - `$idSites` (`array`) &mdash;
+      
+- It returns a `bool` value.
 
 <a name="getsegmentexpression" id="getsegmentexpression"></a>
 <a name="getSegmentExpression" id="getSegmentExpression"></a>
