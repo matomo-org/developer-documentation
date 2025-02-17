@@ -36,6 +36,8 @@ The class defines the following methods:
 Executes a callback with superuser privileges, making sure those privileges are rescinded
 before this method exits. Privileges will be rescinded even if an exception is thrown.
 
+Use this method with care, as it might open up attack vectors
+
 #### Signature
 
 -  It accepts the following parameter(s):
