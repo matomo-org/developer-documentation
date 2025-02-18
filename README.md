@@ -52,6 +52,26 @@ locally by adding this to your `local.php`:
 define('DISABLE_INCLUDE', true);
 ```
 
+## DDEV environment for Developer documentation
+
+DDEV container for the Matomo Developer Documentation site
+
+To start this on your local machine using ddev run the command below.
+
+```bash
+ bash ddev-developer-docs.sh 
+```
+
+The local DDEV url for this container will be https://devdocs.ddev.site/
+
+### Rebuilding
+
+If you want to completely clear the existing setup and start again the following command will reset everything
+
+```bash
+ddev stop --unlist devdocs && rm -rf .ddev && bash ddev-developer-docs.sh 
+```
+
 ## Automatic documentation generation (API-Reference)
 
 ### The first time
