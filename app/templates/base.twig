@@ -14,6 +14,7 @@
     <link href="/css/font-awesome.min.css?{{ revision|e('html_attr') }}" rel="stylesheet">
     <link href="/css/highlight.obsidian.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
     <link href="/css/app.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
+    <link href="/css/jquery-ui.min.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
     <link href="/css/sidebar.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
     <link href="/css/documentation.css?{{ revision|e('html_attr') }}" rel="stylesheet" media="screen">
     <!--[if lt IE 9]>
@@ -59,7 +60,7 @@
                 <li>
                     <div id="quick-search-typeahead">
                         <input type="text"
-                               data-action="{{ '/data/documents'|completeUrl }}"
+                                id="autocomplete-input"
                                placeholder="Quick search..."/>
                         {% if availablePiwikVersions|length > 1 %}
                         <select title="Select your Matomo version"
@@ -123,7 +124,7 @@
 
 <script src="/js/jquery.js?{{ revision|e('html_attr') }}"></script>
 <script src="/js/bootstrap.min.js?{{ revision|e('html_attr') }}"></script>
-<script src="/js/bootstrap3-typeahead.min.js?{{ revision|e('html_attr') }}"></script>
+<script src="/js/jquery-ui.min.js?{{ revision|e('html_attr') }}"></script>
 <script src="/js/app.js?{{ revision|e('html_attr') }}"></script>
 <script src="/js/highlight.8.2.min.js?{{ revision|e('html_attr') }}"></script>
 <script type="text/javascript">
