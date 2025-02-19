@@ -33,6 +33,7 @@ $(function () {
         $( "#autocomplete-input" ).autocomplete({
             source: quickSearchData,
             minLength: 2,
+            position: { my: 'left+5 top+10' }, // default styling overlapped first menu item
             select: function (event, ui) {
                 _paq.push(['trackSiteSearch', ui.item, false, false]);
                 $('#autocomplete-input').val(ui.item.label);
