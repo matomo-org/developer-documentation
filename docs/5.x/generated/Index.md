@@ -624,6 +624,7 @@ Index
 - [`getParameters()`](Piwik/Plugin/Report.md#getparameters) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getSubtableDimension()`](Piwik/Plugin/Report.md#getsubtabledimension) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getThirdLeveltableDimension()`](Piwik/Plugin/Report.md#getthirdleveltabledimension) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
+- [`getNthLevelTableDimension()`](Piwik/Plugin/Report.md#getnthleveltabledimension) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getForDimension()`](Piwik/Plugin/Report.md#getfordimension) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getProcessedMetricsById()`](Piwik/Plugin/Report.md#getprocessedmetricsbyid) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)
 - [`getMetricsForTable()`](Piwik/Plugin/Report.md#getmetricsfortable) &mdash; *Method in class* [`Report`](Piwik/Plugin/Report.md)

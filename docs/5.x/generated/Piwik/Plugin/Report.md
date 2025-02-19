@@ -209,6 +209,7 @@ The class defines the following methods:
 - [`getParameters()`](#getparameters)
 - [`getSubtableDimension()`](#getsubtabledimension) &mdash; Returns the Dimension instance of this report's subtable report.
 - [`getThirdLeveltableDimension()`](#getthirdleveltabledimension) &mdash; Returns the Dimension instance of the subtable report of this report's subtable report.
+- [`getNthLevelTableDimension()`](#getnthleveltabledimension) &mdash; Returns the Dimension instance of the subtable report of this report's subtable report based on level.
 - [`isSubtableReport()`](#issubtablereport) &mdash; Returns true if the report is for another report's subtable, false if otherwise.
 - [`fetch()`](#fetch) &mdash; Fetches the report represented by this instance.
 - [`fetchSubtable()`](#fetchsubtable) &mdash; Fetches a subtable for the report represented by this instance.
@@ -566,6 +567,22 @@ Returns the Dimension instance of the subtable report of this report's subtable 
 
 
 - *Returns:*  [`Dimension`](../../Piwik/Columns/Dimension.md)|`null` &mdash;
+    The subtable report's dimension or null if there is no subtable report or
+                       no dimension for the subtable report.
+
+<a name="getnthleveltabledimension" id="getnthleveltabledimension"></a>
+<a name="getNthLevelTableDimension" id="getNthLevelTableDimension"></a>
+### `getNthLevelTableDimension()`
+
+Returns the Dimension instance of the subtable report of this report's subtable report based on level.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$level` (`int`) &mdash;
+       The subTable level for which dimension is to be determined, zero-based
+
+- *Returns:*  `Piwik\Plugin\Piwik\Columns\Dimension`|`null` &mdash;
     The subtable report's dimension or null if there is no subtable report or
                        no dimension for the subtable report.
 
