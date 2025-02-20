@@ -285,7 +285,7 @@ Requests all needed data and renders the view.
 #### Signature
 
 
-- *Returns:*  `string` &mdash;
+- *Returns:*  `Piwik\View\?string` &mdash;
     Serialized data, eg, (image, array, html...).
 
 <a name="isrequestingsingledatatable" id="isrequestingsingledatatable"></a>

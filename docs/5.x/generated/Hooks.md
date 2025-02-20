@@ -75,7 +75,7 @@ Callback Signature:
 
 ### Access.modifyUserAccess
 
-*Defined in [Piwik/Access](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Access.php) in line [304](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Access.php#L304)*
+*Defined in [Piwik/Access](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Access.php) in line [302](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Access.php#L302)*
 
 Triggered after the initial access levels and permissions for the current user are loaded. Use this
 event to modify the current user's permissions (for example, making sure every user has view access
@@ -1356,7 +1356,7 @@ Usages:
 
 ### Dimension.addDimensions
 
-*Defined in [Piwik/Columns/Dimension](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/Dimension.php) in line [728](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/Dimension.php#L728)*
+*Defined in [Piwik/Columns/Dimension](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/Dimension.php) in line [730](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/Dimension.php#L730)*
 
 Triggered to add new dimensions that cannot be picked up automatically by the platform. This is useful if the plugin allows a user to create reports / dimensions dynamically. For example
 CustomDimensions or CustomVariables. There are a variable number of dimensions in this case and it
@@ -1382,7 +1382,7 @@ Usages:
 
 ### Dimension.filterDimensions
 
-*Defined in [Piwik/Columns/Dimension](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/Dimension.php) in line [752](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/Dimension.php#L752)*
+*Defined in [Piwik/Columns/Dimension](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/Dimension.php) in line [754](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/Dimension.php#L754)*
 
 Triggered to filter / restrict dimensions. **Example**
 
@@ -2006,7 +2006,7 @@ Usages:
 
 ### Login.logout
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [608](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L608)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [607](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L607)*
 
 
 
@@ -2334,7 +2334,7 @@ Usages:
 
 ### MultiSites.filterRowsForTotalsCalculation
 
-*Defined in [Piwik/Plugins/MultiSites/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/MultiSites/API.php) in line [614](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/MultiSites/API.php#L614)*
+*Defined in [Piwik/Plugins/MultiSites/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/MultiSites/API.php) in line [612](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/MultiSites/API.php#L612)*
 
 Triggered to filter / restrict which rows should be included in the MultiSites (All Websites Dashboard)
 totals calculation **Example**
@@ -2422,7 +2422,7 @@ Usages:
 
 ### PluginManager.pluginActivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [763](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L763)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [762](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L762)*
 
 Event triggered after a plugin has been activated.
 
@@ -2454,7 +2454,7 @@ Usages:
 
 ### PluginManager.pluginInstalled
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [1445](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L1445)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [1444](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L1444)*
 
 Event triggered after a new plugin has been installed. Note: Might be triggered more than once if the config file is not writable
 
@@ -3976,7 +3976,7 @@ Usages:
 
 ### Template.loginCancelResetPasswordContent
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [508](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L508)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [507](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L507)*
 
 Overwrite the content displayed on the "reset password process cancelled page". Will display default content if no event content returned.
 
@@ -4566,7 +4566,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.accepted
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [720](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L720)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [719](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L719)*
 
 Triggered after a user accepted an invite
 
@@ -4582,7 +4582,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.declined
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [790](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L790)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [789](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L789)*
 
 Triggered after a user accepted an invite
 
@@ -4776,7 +4776,7 @@ Usages:
 
 ### Visualization.beforeRender
 
-*Defined in [Piwik/Plugin/Visualization](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Visualization.php) in line [826](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Visualization.php#L826)*
+*Defined in [Piwik/Plugin/Visualization](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Visualization.php) in line [824](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Visualization.php#L824)*
 
 Posted immediately before rendering the view. Plugins can use this event to perform last minute
 configuration of the view based on it's data or the report being viewed.
