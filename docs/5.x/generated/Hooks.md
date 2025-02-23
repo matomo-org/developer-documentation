@@ -3423,7 +3423,7 @@ Usages:
 
 ### SEO.getMetricsProviders
 
-*Defined in [Piwik/Plugins/SEO/Metric/Aggregator](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SEO/Metric/Aggregator.php) in line [59](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SEO/Metric/Aggregator.php#L59)*
+*Defined in [Piwik/Plugins/SEO/Metric/Aggregator](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SEO/Metric/Aggregator.php) in line [58](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SEO/Metric/Aggregator.php#L58)*
 
 Use this event to register new SEO metrics providers.
 
