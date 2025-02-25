@@ -185,7 +185,7 @@ Numeric values are not inserted if they equal `0`.
 -  It accepts the following parameter(s):
     - `$name` (`string`) &mdash;
        The name of the numeric value, eg, `'Referrers_distinctKeywords'`.
-    - `$value` (`float`) &mdash;
+    - `$value` (`float`|`null`) &mdash;
        The numeric value.
 - It does not return anything or a mixed result.
 
