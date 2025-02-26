@@ -851,7 +851,7 @@ Callback Signature:
 
 ### CliMulti.supportsAsync
 
-*Defined in [Piwik/CliMulti](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CliMulti.php) in line [368](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CliMulti.php#L368)*
+*Defined in [Piwik/CliMulti](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CliMulti.php) in line [401](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CliMulti.php#L401)*
 
 Triggered to allow plugins to force the usage of async cli multi execution or to disable it. **Example**
 
@@ -1119,7 +1119,7 @@ Callback Signature:
 
 ### CronArchive.end
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php) in line [635](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php#L635)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php) in line [711](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php#L711)*
 
 This event is triggered after archiving.
 
@@ -1131,7 +1131,7 @@ Callback Signature:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php) in line [815](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php#L815)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php) in line [897](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php#L897)*
 
 Triggered by the **core:archive** console command so plugins can modify the priority of
 websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
@@ -1161,7 +1161,7 @@ Callback Signature:
 
 ### CronArchive.init.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php) in line [343](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php#L343)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php) in line [400](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php#L400)*
 
 This event is triggered after a CronArchive instance is initialized.
 
@@ -1175,7 +1175,7 @@ Callback Signature:
 
 ### CronArchive.init.start
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php) in line [299](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php#L299)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php) in line [356](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php#L356)*
 
 This event is triggered during initializing archiving.
 
@@ -3215,7 +3215,7 @@ Usages:
 
 ### ScheduledTasks.execute
 
-*Defined in [Piwik/Scheduler/Scheduler](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Scheduler/Scheduler.php) in line [347](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Scheduler/Scheduler.php#L347)*
+*Defined in [Piwik/Scheduler/Scheduler](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Scheduler/Scheduler.php) in line [362](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Scheduler/Scheduler.php#L362)*
 
 Triggered directly before a scheduled task is executed
 
@@ -3231,7 +3231,7 @@ Usages:
 
 ### ScheduledTasks.execute.end
 
-*Defined in [Piwik/Scheduler/Scheduler](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Scheduler/Scheduler.php) in line [376](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Scheduler/Scheduler.php#L376)*
+*Defined in [Piwik/Scheduler/Scheduler](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Scheduler/Scheduler.php) in line [391](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Scheduler/Scheduler.php#L391)*
 
 Triggered after a scheduled task is successfully executed. You can use the event to execute for example another task whenever a specific task is executed or to clean up
 certain resources.
@@ -3248,7 +3248,7 @@ Usages:
 
 ### ScheduledTasks.shouldExecuteTask
 
-*Defined in [Piwik/Scheduler/Scheduler](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Scheduler/Scheduler.php) in line [166](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Scheduler/Scheduler.php#L166)*
+*Defined in [Piwik/Scheduler/Scheduler](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Scheduler/Scheduler.php) in line [181](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Scheduler/Scheduler.php#L181)*
 
 Triggered before a task is executed. A plugin can listen to it and modify whether a specific task should be executed or not. This way
 you can force certain tasks to be executed more often or for example to be never executed.
