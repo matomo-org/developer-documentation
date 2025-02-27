@@ -241,7 +241,7 @@ See [setContentType()](/api-reference/Piwik/View#setcontenttype).
 #### Signature
 
 
-- *Returns:*  `string` &mdash;
+- *Returns:*  `Piwik\View\?string` &mdash;
     Serialized data, eg, (image, array, html...).
 
 <a name="setcontenttype" id="setcontenttype"></a>

@@ -21,6 +21,6 @@ Returns data.
 #### Signature
 
 
-- *Returns:*  `string` &mdash;
+- *Returns:*  `Piwik\View\?string` &mdash;
     Serialized data, eg, (image, array, html...).
 

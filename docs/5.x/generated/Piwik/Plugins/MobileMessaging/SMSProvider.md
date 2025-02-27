@@ -87,9 +87,7 @@ any notifications etc.
       
     - `$from` (`string`) &mdash;
       
-
-- *Returns:*  `bool` &mdash;
-    true
+- It does not return anything or a mixed result.
 
 <a name="getcredentialfields" id="getcredentialfields"></a>
 <a name="getCredentialFields" id="getCredentialFields"></a>

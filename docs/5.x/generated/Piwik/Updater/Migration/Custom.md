@@ -60,4 +60,6 @@ Decides whether an error should be ignored or not.
       
     - `$toString`
       
+    - `$args` (`array`) &mdash;
+      
 

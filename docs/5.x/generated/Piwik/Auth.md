@@ -58,7 +58,7 @@ Must return the Authentication module's name, e.g., `"Login"`.
 
 #### Signature
 
-- It returns a `string` value.
+- It returns a `Piwik\?string` value.
 
 <a name="settokenauth" id="settokenauth"></a>
 <a name="setTokenAuth" id="setTokenAuth"></a>
@@ -81,7 +81,7 @@ Returns the login of the user being authenticated.
 
 #### Signature
 
-- It returns a `string` value.
+- It returns a `Piwik\?string` value.
 
 <a name="gettokenauthsecret" id="gettokenauthsecret"></a>
 <a name="getTokenAuthSecret" id="getTokenAuthSecret"></a>
@@ -95,7 +95,7 @@ uses an MD5 hash of a user's password.
 
 #### Signature
 
-- It returns a `string` value.
+- It returns a `Piwik\?string` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the token auth secret does not exist or cannot be obtained.
 

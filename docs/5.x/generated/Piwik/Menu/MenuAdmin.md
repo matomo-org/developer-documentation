@@ -50,7 +50,7 @@ Adds a new entry to the menu.
 -  It accepts the following parameter(s):
     - `$menuName` (`string`) &mdash;
        The menu's category name. Can be a translation token.
-    - `$subMenuName` (`string`) &mdash;
+    - `$subMenuName` (`null`|`string`) &mdash;
        The menu item's name. Can be a translation token.
     - `$url` (`string`|`array`) &mdash;
        The URL the admin menu entry should link to, or an array of query parameters that can be used to build the URL.

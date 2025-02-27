@@ -124,5 +124,5 @@ Set this challenge was completed successfully by the current user. Only works fo
 -  It accepts the following parameter(s):
     - `$login` (`string`) &mdash;
       
-- It returns a `bool` value.
+- It does not return anything or a mixed result.
 
