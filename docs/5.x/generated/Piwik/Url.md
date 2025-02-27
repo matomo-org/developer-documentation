@@ -69,7 +69,7 @@ Returns the current URL.
 
 
 - *Returns:*  `string` &mdash;
-    eg, `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
+    eg, `"https://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
 
 <a name="getcurrenturlwithoutquerystring" id="getcurrenturlwithoutquerystring"></a>
 <a name="getCurrentUrlWithoutQueryString" id="getCurrentUrlWithoutQueryString"></a>
@@ -84,8 +84,8 @@ Returns the current URL without the query string.
        Whether to do trusted host check. Should ALWAYS be true, except in [Controller](/api-reference/Piwik/Plugin/Controller).
 
 - *Returns:*  `string` &mdash;
-    eg, `"http://example.org/dir1/dir2/index.php"` if the current URL is
-               `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`.
+    eg, `"https://example.org/dir1/dir2/index.php"` if the current URL is
+               `"https://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`.
 
 <a name="getcurrenturlwithoutfilename" id="getcurrenturlwithoutfilename"></a>
 <a name="getCurrentUrlWithoutFileName" id="getCurrentUrlWithoutFileName"></a>
@@ -98,8 +98,8 @@ being executed.
 
 
 - *Returns:*  `string` &mdash;
-    eg, `"http://example.org/dir1/dir2/"` if the current URL is
-               `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`.
+    eg, `"https://example.org/dir1/dir2/"` if the current URL is
+               `"https://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`.
 
 <a name="getcurrentscriptpath" id="getcurrentscriptpath"></a>
 <a name="getCurrentScriptPath" id="getCurrentScriptPath"></a>
@@ -112,7 +112,7 @@ Returns the path to the script being executed. The script file name is not inclu
 
 - *Returns:*  `string` &mdash;
     eg, `"/dir1/dir2/"` if the current URL is
-               `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
+               `"https://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
 
 <a name="getcurrentscriptname" id="getcurrentscriptname"></a>
 <a name="getCurrentScriptName" id="getCurrentScriptName"></a>
@@ -128,7 +128,7 @@ Returns the path to the script being executed. Includes the script file name.
 
 - *Returns:*  `string` &mdash;
     eg, `"/dir1/dir2/index.php"` if the current URL is
-               `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
+               `"https://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
 
 <a name="getcurrentscheme" id="getcurrentscheme"></a>
 <a name="getCurrentScheme" id="getCurrentScheme"></a>
@@ -158,7 +158,7 @@ Returns the current host.
 
 - *Returns:*  `string` &mdash;
     eg, `"example.org"` if the current URL is
-               `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
+               `"https://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
 
 <a name="getcurrentquerystring" id="getcurrentquerystring"></a>
 <a name="getCurrentQueryString" id="getCurrentQueryString"></a>
@@ -171,7 +171,7 @@ Returns the query string of the current URL.
 
 - *Returns:*  `string` &mdash;
     eg, `"?param1=value1&param2=value2"` if the current URL is
-               `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
+               `"https://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
 
 <a name="getarrayfromcurrentquerystring" id="getarrayfromcurrentquerystring"></a>
 <a name="getArrayFromCurrentQueryString" id="getArrayFromCurrentQueryString"></a>
@@ -184,7 +184,7 @@ the current URL.
 
 
 - *Returns:*  `array` &mdash;
-    If current URL is `"http://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
+    If current URL is `"https://example.org/dir1/dir2/index.php?param1=value1&param2=value2"`
               this will return:
 
                   array(

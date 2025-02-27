@@ -5,7 +5,7 @@ Sort
 
 Sorts a DataTable based on the value of a specific column.
 
-It is possible to specify a natural sorting (see [php.net/natsort](http://php.net/natsort) for details).
+It is possible to specify a natural sorting (see [php.net/natsort](https://php.net/natsort) for details).
 
 Methods
 -------
@@ -33,7 +33,7 @@ Constructor.
     - `$order` (`string`) &mdash;
        order `'asc'` or `'desc'`.
     - `$naturalSort` (`bool`) &mdash;
-       Whether to use a natural sort or not (see [http://php.net/natsort](http://php.net/natsort)).
+       Whether to use a natural sort or not (see [https://php.net/natsort](https://php.net/natsort)).
     - `$recursiveSort` (`bool`) &mdash;
        Whether to sort all subtables or not.
     - `$doSortBySecondaryColumn` (`bool`|`Piwik\DataTable\Filter\callback`) &mdash;

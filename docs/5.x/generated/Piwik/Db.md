@@ -50,7 +50,7 @@ The class defines the following methods:
 - [`createReaderDatabaseObject()`](#createreaderdatabaseobject) &mdash; Connects to the reader database.
 - [`destroyDatabaseObject()`](#destroydatabaseobject) &mdash; Disconnects and destroys the database connection.
 - [`exec()`](#exec) &mdash; Executes an unprepared SQL query.
-- [`query()`](#query) &mdash; Executes an SQL query and returns the [Zend_Db_Statement](http://framework.zend.com/manual/1.12/en/zend.db.statement.html) for the query.
+- [`query()`](#query) &mdash; Executes an SQL query and returns the [Zend_Db_Statement](https://framework.zend.com/manual/1.12/en/zend.db.statement.html) for the query.
 - [`fetchAll()`](#fetchall) &mdash; Executes an SQL `SELECT` statement and returns all fetched rows from the result set.
 - [`fetchRow()`](#fetchrow) &mdash; Executes an SQL `SELECT` statement and returns the first row of the result set.
 - [`fetchOne()`](#fetchone) &mdash; Executes an SQL `SELECT` statement and returns the first column value of the first row in the result set.
@@ -163,7 +163,7 @@ For tests.
 Executes an unprepared SQL query. Recommended for DDL statements like `CREATE`,
 `DROP` and `ALTER`. The return value is DBMS-specific. For MySQLI, it returns the
 number of rows affected. For PDO, it returns a
-[Zend_Db_Statement](http://framework.zend.com/manual/1.12/en/zend.db.statement.html) object.
+[Zend_Db_Statement](https://framework.zend.com/manual/1.12/en/zend.db.statement.html) object.
 
 #### Signature
 
@@ -180,7 +180,7 @@ number of rows affected. For PDO, it returns a
 <a name="query" id="query"></a>
 ### `query()`
 
-Executes an SQL query and returns the [Zend_Db_Statement](http://framework.zend.com/manual/1.12/en/zend.db.statement.html)
+Executes an SQL query and returns the [Zend_Db_Statement](https://framework.zend.com/manual/1.12/en/zend.db.statement.html)
 for the query.
 
 This method is meant for non-query SQL statements like `INSERT` and `UPDATE. If you want to fetch

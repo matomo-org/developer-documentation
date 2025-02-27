@@ -292,7 +292,7 @@ Returns `true` if the current year is a leap year, false otherwise.
 <a name="toString" id="toString"></a>
 ### `toString()`
 
-Converts this date to the requested string format. See [http://php.net/date](http://php.net/date)
+Converts this date to the requested string format. See [https://php.net/date](https://php.net/date)
 for the list of format strings.
 
 #### Signature

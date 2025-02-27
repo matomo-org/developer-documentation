@@ -34,7 +34,7 @@ use it to call controller actions of other plugins.
         return $realtimeMap->render();
     }
 
-For a detailed explanation, see the documentation [here](https://developer.piwik.org/guides/how-piwik-works).
+For a detailed explanation, see the documentation [here](https://developer.matomo.org/guides/how-piwik-works).
 
 Methods
 -------

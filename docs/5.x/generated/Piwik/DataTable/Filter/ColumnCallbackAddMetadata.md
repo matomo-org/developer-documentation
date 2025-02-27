@@ -37,7 +37,7 @@ Constructor.
     - `$functionToApply` (`callable`) &mdash;
        The callback to apply for each row.
     - `$functionParameters` (`array`) &mdash;
-       deprecated - use an [anonymous function](http://php.net/manual/en/functions.anonymous.php) instead.
+       deprecated - use an [anonymous function](https://php.net/manual/en/functions.anonymous.php) instead.
     - `$applyToSummaryRow` (`bool`) &mdash;
        Whether the callback should be applied to the summary row or not.
 

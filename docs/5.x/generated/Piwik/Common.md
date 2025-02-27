@@ -74,7 +74,7 @@ should still be used._
 
 **Implementation Details**
 
-- [htmlspecialchars](http://php.net/manual/en/function.htmlspecialchars.php) is used to escape text.
+- [htmlspecialchars](https://php.net/manual/en/function.htmlspecialchars.php) is used to escape text.
 - Single quotes are not escaped so **Piwik's amazing community** will still be
   **Piwik's amazing community**.
 - Use of the `magic_quotes` setting will not break this method.

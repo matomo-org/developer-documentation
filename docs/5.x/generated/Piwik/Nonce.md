@@ -11,7 +11,7 @@ class provides static methods that create and manage nonce values.
 
 Nonces in Piwik are stored as a session variable and have a configurable expiration.
 
-Learn more about nonces [here](http://en.wikipedia.org/wiki/Cryptographic_nonce).
+Learn more about nonces [here](https://en.wikipedia.org/wiki/Cryptographic_nonce).
 
 Methods
 -------

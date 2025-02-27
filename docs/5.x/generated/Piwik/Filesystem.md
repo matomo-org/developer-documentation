@@ -38,7 +38,7 @@ _Note: This function does **not** create directories recursively._
 
 Recursively find pathnames that match a pattern.
 
-See [glob](http://php.net/manual/en/function.glob.php) for more info.
+See [glob](https://php.net/manual/en/function.glob.php) for more info.
 
 #### Signature
 
@@ -48,7 +48,7 @@ See [glob](http://php.net/manual/en/function.glob.php) for more info.
     - `$sPattern` (`string`) &mdash;
        pattern The pattern to match paths against.
     - `$nFlags` (`int`) &mdash;
-       `glob()` . See [glob()](http://php.net/manual/en/function.glob.php).
+       `glob()` . See [glob()](https://php.net/manual/en/function.glob.php).
 
 - *Returns:*  `array` &mdash;
     The list of paths that match the pattern.

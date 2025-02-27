@@ -37,7 +37,7 @@ Constructor.
     - `$functionToApply` (`callable`) &mdash;
        The function to execute. Must take the column value as a parameter and return a value that will be used to replace the original.
     - `$functionParameters` (`array`|`null`) &mdash;
-       deprecated - use an [anonymous function](http://php.net/manual/en/functions.anonymous.php) instead.
+       deprecated - use an [anonymous function](https://php.net/manual/en/functions.anonymous.php) instead.
     - `$extraColumnParameters` (`array`) &mdash;
        Extra column values that should be passed to the callback, but shouldn't be replaced.
 
