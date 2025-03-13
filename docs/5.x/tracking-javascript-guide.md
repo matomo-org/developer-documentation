@@ -348,7 +348,7 @@ _paq.push(['trackPageView']);
 
 ### Tracking a Custom Dimension for one specific action only
 
-It is possible to set a Custom Dimension for one specific action at the visit scope level only. If you want to track a Page view, you can send one or more specific Custom Dimension values along with this tracking request as follows:
+It is possible to set a Custom Dimension for one specific action only. However, for goal tracking, Custom Dimensions only apply at the visit scope and cannot be assigned at the action level. If you want to track a Page view, you can send one or more specific Custom Dimension values along with this tracking request as follows:
 
 `_paq.push(['trackPageView', pageTitle, {dimension1: 'DimensionValue'}]);`
 
