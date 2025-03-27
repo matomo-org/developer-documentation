@@ -2201,7 +2201,7 @@ Callback Signature:
 
 ### Metrics.getDefaultMetricDocumentationTranslations
 
-*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php) in line [580](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php#L580)*
+*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php) in line [581](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php#L581)*
 
 Use this event to register translations for metrics documentation processed by your plugin.
 
