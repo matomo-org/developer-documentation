@@ -269,6 +269,8 @@ By no means is below a complete checklist. You'll always be required to still th
   * Also see eg [phpdangerousfuncs.md](https://gist.github.com/mccabe615/b0907514d34b2de088c4996933ea1720)
 * Think of other ways such as RCE etc
 * **Password confirmation** for critical actions related to login credentials, tokens, 2FA etc and ideally also other critical/sensitive changes like installing/activating plugins etc.
+* **Branch name check** to prevent potential remote code execution via GitHub actions.
+* **Approve and run workflows** only after validating the changes introduced in pull request are free from any malicious code.
 
 
 ### Component specific checklist
