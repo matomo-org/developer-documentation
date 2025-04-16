@@ -3442,7 +3442,7 @@ Callback Signature:
 
 ### SitesManager.addSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [788](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L788)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [790](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L790)*
 
 Triggered after a site has been added.
 
@@ -3458,7 +3458,7 @@ Usages:
 
 ### SitesManager.deleteSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [901](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L901)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [906](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L906)*
 
 Triggered after a site has been deleted. Plugins can use this event to remove site specific values or settings, such as removing all
 goals that belong to a specific website. If you store any data related to a website you
@@ -3476,7 +3476,7 @@ Usages:
 
 ### SitesManager.getImageTrackingCode
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [236](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L236)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [238](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L238)*
 
 Triggered when generating image link tracking code server side. Plugins can use
 this event to customise the image tracking code that is displayed to the
@@ -3494,7 +3494,7 @@ Callback Signature:
 
 ### SitesManager.getMessagesToWarnOnSiteRemoval
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [431](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L431)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [433](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L433)*
 
 Triggered before a modal to delete a measurable is displayed A plugin can listen to it and add additional information to be displayed in the measurable delete modal body
 
