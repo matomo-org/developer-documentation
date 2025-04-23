@@ -75,9 +75,9 @@ _referrerName==Google,referrerName==Bing;country==IN_
     * By default, only the top **100 rows** are returned.
     * Set to -1 to return all rows.
  
-*   **showMetadata**; defines if the response should include additional metadata (available since Matomo 5.4.0)
-    * By default metadata will be included
-    * Set to 0 to hide metadata
+*   **showMetadata**; defines if the response should include additional metadata (available since Matomo 5.4.0).
+    * By default, metadata will be included.
+    * Set to 0 to hide metadata.
 
 
 ### Optional API parameters
