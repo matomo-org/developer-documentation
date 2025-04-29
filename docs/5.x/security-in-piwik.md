@@ -56,6 +56,13 @@ var safeString = piwikHelper.escape( userInputUnsafeString );
 $('#someLabel').text( safeString );
 ```
 
+### Vue.js
+
+- **Avoid `v-html`** unless absolutely necessary. Sanitize input with libraries like [DOMPurify](https://github.com/cure53/DOMPurify).
+- Do not bind unsanitized data to HTML attributes (e.g., `v-bind:src`, `v-bind:href`).
+- Use scoped styles to limit CSS injection risks.
+- Validate props and enforce strict typing with TypeScript or Vue PropTypes.
+
 ### Use a restrictive Content Security Policy header
 
 [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) is set by default in Matomo (since Matomo 4.6.0) and plugins can modify the CSP as needed using `$this->securityPolicy` methods in the controller, for example:
@@ -199,9 +206,26 @@ if ($clientToUse == 'mySeoProvider') {
 // ... use $client ...
 ```
 
+## 🔍 Dependency and Package Security
+
+- Lock versions in `composer.json` and `package.json`.
+- Regularly audit dependencies:
+  - PHP: `composer audit`
+  - JS: `npm audit`, `yarn audit`
+  - Use third-party tools like [Snyk](https://snyk.io/) or [Dependabot](https://docs.github.com/en/code-security) for automated scanning.
+- Remove unused packages to reduce attack surface.
+
 ## Other Coding Guidelines
 
 Here are some other coding guidelines that will help make your code more secure:
+
+- Identify threats early in the design phase (use frameworks like STRIDE or DREAD).
+
+- Ensure pull requests are reviewed before merging.
+
+- Perform regular penetration tests or dynamic scanning (DAST).
+
+- Use static analysis tools like Psalm or PHPStan for security testing.
 
 - **PHP files should start with a `<?php` tag that is never closed.**
 
@@ -216,6 +240,13 @@ Here are some other coding guidelines that will help make your code more secure:
 - **For timing attack safe equal comparisons use `Common::hashEquals()` method**
 
 - **If your plugin has admin functionality (functionality only an administrator or the super user can use) then your plugin's Controller must extend [Piwik\Plugin\ControllerAdmin](/api-reference/Piwik/Plugin/ControllerAdmin).**
+
+- Use `.gitignore` to prevent committing sensitive configuration.
+  
+- Don’t hardcode credentials or secrets in your plugin.
+  
+- Never log sensitive data (tokens, passwords, emails) to PHP logs or the browser console.
+
 
 ## Checklist
 
@@ -238,6 +269,9 @@ By no means is below a complete checklist. You'll always be required to still th
   * Also see eg [phpdangerousfuncs.md](https://gist.github.com/mccabe615/b0907514d34b2de088c4996933ea1720)
 * Think of other ways such as RCE etc
 * **Password confirmation** for critical actions related to login credentials, tokens, 2FA etc and ideally also other critical/sensitive changes like installing/activating plugins etc.
+* **Branch name check** to prevent potential remote code execution via GitHub actions.
+* **Approve and run workflows** only after validating the changes introduced in pull request are free from any malicious code.
+
 
 ### Component specific checklist
 

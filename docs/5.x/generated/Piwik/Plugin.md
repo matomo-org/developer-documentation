@@ -408,7 +408,7 @@ Extracts the plugin name from a backtrace array. Returns `false` if we can't fin
 
 -  It accepts the following parameter(s):
     - `$backtrace` (`array`) &mdash;
-       The result of [debug_backtrace()](http://php.net/function.debug_backtrace()) or [Exception::getTrace()](http://www.php.net/manual/en/exception.gettrace.php).
+       The result of [debug_backtrace()](http://php.net/function.debug_backtrace()) or [Exception::getTrace()](https://www.php.net/manual/en/exception.gettrace.php).
 
 - *Returns:*  `string`|`false` &mdash;
     

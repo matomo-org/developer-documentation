@@ -124,7 +124,7 @@ public function myAction()
 {
     $outputPath = PIWIK_INCLUDE_PATH . '/tmp/averybigfile.zip';
     $isStart = Common::getRequestVar('isStart', 1, 'int');
-    Http::downloadChunk("http://bigfiles.com/averybigfile.zip", $outputPath, $isStart == 1);
+    Http::downloadChunk("https://bigfiles.com/averybigfile.zip", $outputPath, $isStart == 1);
 }
 ```
 

@@ -12,7 +12,7 @@ The class defines the following methods:
 
 - [`getQueryStringWithExcludedParameters()`](#getquerystringwithexcludedparameters) &mdash; Converts an array of query parameter name/value mappings into a query string.
 - [`isLookLikeUrl()`](#islooklikeurl) &mdash; Returns true if the string passed may be a URL ie.
-- [`getParseUrlReverse()`](#getparseurlreverse) &mdash; Returns a URL created from the result of the [parse_url](http://php.net/manual/en/function.parse-url.php) function.
+- [`getParseUrlReverse()`](#getparseurlreverse) &mdash; Returns a URL created from the result of the [parse_url](https://php.net/manual/en/function.parse-url.php) function.
 - [`getArrayFromQueryString()`](#getarrayfromquerystring) &mdash; Returns a URL query string as an array.
 - [`getParameterFromQueryString()`](#getparameterfromquerystring) &mdash; Returns the value of a single query parameter from the supplied query string.
 - [`getPathAndQueryFromUrl()`](#getpathandqueryfromurl) &mdash; Returns the path and query string of a URL.
@@ -57,16 +57,16 @@ tracked source code and the URLs may look very strange.
 <a name="getParseUrlReverse" id="getParseUrlReverse"></a>
 ### `getParseUrlReverse()`
 
-Returns a URL created from the result of the [parse_url](http://php.net/manual/en/function.parse-url.php)
+Returns a URL created from the result of the [parse_url](https://php.net/manual/en/function.parse-url.php)
 function.
 
-Copied from the PHP comments at [http://php.net/parse_url](http://php.net/parse_url).
+Copied from the PHP comments at [https://php.net/parse_url](https://php.net/parse_url).
 
 #### Signature
 
 -  It accepts the following parameter(s):
     - `$parsed` (`array`) &mdash;
-       Result of [parse_url](http://php.net/manual/en/function.parse-url.php).
+       Result of [parse_url](https://php.net/manual/en/function.parse-url.php).
 
 - *Returns:*  `false`|`string` &mdash;
     The URL or `false` if `$parsed` isn't an array.
@@ -120,7 +120,7 @@ Returns the path and query string of a URL.
        If true then do not remove any #anchor from the url, default false
 
 - *Returns:*  `string` &mdash;
-    eg, `/test/index.php?module=CoreHome` if `$url` is `http://piwik.org/test/index.php?module=CoreHome`.
+    eg, `/test/index.php?module=CoreHome` if `$url` is `https://piwik.org/test/index.php?module=CoreHome`.
 
 <a name="getqueryfromurl" id="getqueryfromurl"></a>
 <a name="getQueryFromUrl" id="getQueryFromUrl"></a>
@@ -132,7 +132,7 @@ Returns the query part from any valid url and adds additional parameters to the 
 
 -  It accepts the following parameter(s):
     - `$url` (`string`) &mdash;
-       Any url eg `"http://example.com/piwik/?foo=bar"`
+       Any url eg `"https://example.com/piwik/?foo=bar"`
     - `$additionalParamsToAdd` (`array`) &mdash;
        If not empty the given parameters will be added to the query.
 

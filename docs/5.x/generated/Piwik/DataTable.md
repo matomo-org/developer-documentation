@@ -62,7 +62,7 @@ without having to write a recursive visiting function.
 
 All predefined filters exist in the **Piwik\DataTable\BaseFilter** namespace.
 
-_Note: For convenience, [anonymous functions](http://www.php.net/manual/en/functions.anonymous.php)
+_Note: For convenience, [anonymous functions](https://www.php.net/manual/en/functions.anonymous.php)
 can be used as DataTable filters._
 
 ### Applying Filters
@@ -1175,7 +1175,7 @@ If `$missingRowColumns` is supplied, the specified path is created. When
 a subtable is encountered w/o the required label, a new row is created
 with the label, and a new subtable is added to the row.
 
-Read [http://en.wikipedia.org/wiki/Tree_(data_structure)#Traversal_methods](http://en.wikipedia.org/wiki/Tree_(data_structure)#Traversal_methods)
+Read [https://en.wikipedia.org/wiki/Tree_(data_structure)#Traversal_methods](https://en.wikipedia.org/wiki/Tree_(data_structure)#Traversal_methods)
 for more information about tree walking.
 
 #### Signature

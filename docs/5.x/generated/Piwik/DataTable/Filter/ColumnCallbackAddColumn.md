@@ -41,7 +41,7 @@ Constructor.
     - `$functionToApply` (`callable`) &mdash;
        The callback to apply to each row of a DataTable. The columns specified in `$columns` are passed to this callback.
     - `$functionParameters` (`array`) &mdash;
-       deprecated - use an [anonymous function](http://php.net/manual/en/functions.anonymous.php) instead.
+       deprecated - use an [anonymous function](https://php.net/manual/en/functions.anonymous.php) instead.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>

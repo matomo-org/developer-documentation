@@ -89,7 +89,6 @@ The following fields are not required for publishing a plugin, but you may want 
 
 - `donate` - An object containing information on how to donate to the plugin author (you!). The object can contain any of the following fields:
     - `paypal` - Your paypal email address.
-    - `flattr` - The URL to your [Flattr](https://flattr.com/) page.
     - `bitcoin` - Your Bitcoin address.
 
     For example:
@@ -97,7 +96,6 @@ The following fields are not required for publishing a plugin, but you may want 
     ```json
     "donate": {
         "paypal": "supporters@matomo.org",
-        "flattr": "https://flattr.com/thing/131552/Piwik-Web-Analytics-Open-Source",
         "bitcoin": "1NdftZmgb8V9PgbFDYjC5PRJ2QDLyyzCU9"
     }
     ```

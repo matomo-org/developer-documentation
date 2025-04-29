@@ -18,7 +18,7 @@ The class defines the following methods:
 - [`daily()`](#daily) &mdash; Schedule the given tasks/method to run once every day.
 - [`weekly()`](#weekly) &mdash; Schedule the given tasks/method to run once every week.
 - [`monthly()`](#monthly) &mdash; Schedule the given tasks/method to run once every month.
-- [`custom()`](#custom) &mdash; Schedules the given tasks/method to run depending at the given scheduled time.
+- [`custom()`](#custom) &mdash; Schedules the given tasks/method to run depending on the given scheduled time.
 
 <a name="hourly" id="hourly"></a>
 <a name="hourly" id="hourly"></a>
@@ -106,7 +106,7 @@ See [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
 <a name="custom" id="custom"></a>
 ### `custom()`
 
-Schedules the given tasks/method to run depending at the given scheduled time. Unlike the convenient methods
+Schedules the given tasks/method to run depending on the given scheduled time. Unlike the convenient methods
 such as [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly) you need to specify the object on which the given method should be called. This can be
 either an instance of a class or a class name. For more information about these parameters see [hourly()](/api-reference/Piwik/Plugin/Tasks#hourly)
 

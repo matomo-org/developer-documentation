@@ -102,6 +102,8 @@ To track a content impression set `c_n` and optionally `c_p` and `c_t`. To track
 
 ### Optional [Ecommerce](https://matomo.org/docs/ecommerce-analytics/) info
 
+There are no methods to add or remove individual cart items. For ecommerce orders (with an order id) and cart updates, always send the full list of items currently in the cart. If fewer items are included in an update request, Matomo will automatically mark the missing ones as removed in the cart update.
+
 Use the following values to record a cart and/or an ecommerce order.
 
 * you must set `&idgoal=0` in the request to track an ecommerce interaction: cart update or an ecommerce order.

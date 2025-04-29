@@ -1044,7 +1044,7 @@ If `$missingRowColumns` is supplied, the specified path is created. When
 a subtable is encountered w/o the required label, a new row is created
 with the label, and a new subtable is added to the row.
 
-Read [http://en.wikipedia.org/wiki/Tree_(data_structure)#Traversal_methods](http://en.wikipedia.org/wiki/Tree_(data_structure)#Traversal_methods)
+Read [https://en.wikipedia.org/wiki/Tree_(data_structure)#Traversal_methods](https://en.wikipedia.org/wiki/Tree_(data_structure)#Traversal_methods)
 for more information about tree walking.
 
 #### Signature
