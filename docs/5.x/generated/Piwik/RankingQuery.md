@@ -200,6 +200,8 @@ yourself, use this method.
 -  It accepts the following parameter(s):
     - `$innerQuery`
        string The "payload" query that does the actual data aggregation. The ordering has to be specified in this query. [RankingQuery](/api-reference/Piwik/RankingQuery) cannot apply ordering itself.
+    - `$withRollup` (`bool`) &mdash;
+       bool A flag which determines whether to generate the SQL query using ROLLUP
 
 - *Returns:*  `string` &mdash;
     The entire ranking query SQL.
