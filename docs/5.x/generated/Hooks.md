@@ -246,7 +246,7 @@ Callback Signature:
 
 ### API.addGlossaryItems
 
-*Defined in [Piwik/Plugins/API/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/Controller.php) in line [199](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/Controller.php#L199)*
+*Defined in [Piwik/Plugins/API/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/Controller.php) in line [200](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/Controller.php#L200)*
 
 Triggered to add or modify glossary items. You can either modify one of the existing core categories
 'reports' and 'metrics' or add your own category. **Example**
