@@ -2006,7 +2006,7 @@ Usages:
 
 ### Login.logout
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [607](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L607)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [613](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L613)*
 
 
 
@@ -2028,7 +2028,7 @@ Callback Signature:
 
 ### Login.resetPassword.confirmed
 
-*Defined in [Piwik/Plugins/Login/PasswordResetter](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/PasswordResetter.php) in line [309](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/PasswordResetter.php#L309)*
+*Defined in [Piwik/Plugins/Login/PasswordResetter](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/PasswordResetter.php) in line [310](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/PasswordResetter.php#L310)*
 
 Triggered after a user confirmed/completed a password reset process.
 
@@ -2040,7 +2040,7 @@ Callback Signature:
 
 ### Login.resetPassword.initiated
 
-*Defined in [Piwik/Plugins/Login/PasswordResetter](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/PasswordResetter.php) in line [246](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/PasswordResetter.php#L246)*
+*Defined in [Piwik/Plugins/Login/PasswordResetter](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/PasswordResetter.php) in line [247](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/PasswordResetter.php#L247)*
 
 Triggered after a user initiated a password reset process.
 
@@ -3976,7 +3976,7 @@ Usages:
 
 ### Template.loginCancelResetPasswordContent
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [507](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L507)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [513](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L513)*
 
 Overwrite the content displayed on the "reset password process cancelled page". Will display default content if no event content returned.
 
@@ -4566,7 +4566,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.accepted
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [719](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L719)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [725](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L725)*
 
 Triggered after a user accepted an invite
 
@@ -4582,7 +4582,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.declined
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [789](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L789)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [795](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L795)*
 
 Triggered after a user accepted an invite
 
