@@ -89,12 +89,13 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `deleteCustomVariable (index, scope)` - Delete a custom variable.
 *   `getCustomVariable (index, scope)` - Retrieve a custom variable.
 *   `storeCustomVariablesInCookie()` -  When called then the Custom Variables of scope "visit" will be stored (persisted) in a first party cookie for the duration of the visit. This is useful if you want to call `getCustomVariable` later in the visit. (by default custom variables are not stored on the visitor's computer.)
-*   `setCustomDimension (customDimensionId, customDimensionValue)` - Set a custom dimension. (requires [Custom Dimensions plugin](https://plugins.matomo.org/CustomDimensions))
-*   `deleteCustomDimension (customDimensionId)` - Delete a custom dimension. (requires [Custom Dimensions plugin](https://plugins.matomo.org/CustomDimensions))
-*   `getCustomDimension (customDimensionId)` - Retrieve a custom dimension. (requires [Custom Dimensions plugin](https://plugins.matomo.org/CustomDimensions))
-*   `setCampaignNameKey(name)` - Set campaign name parameter(s). (Help: [Customize Campaign name parameter names](https://matomo.org/faq/how-to/#faq_120))
-*   `setCampaignKeywordKey(keyword)` - Set campaign keyword parameter(s). (Help: [Customize Campaign keyword parameter names](https://matomo.org/faq/how-to/#faq_120))
+*   `setCustomDimension( customDimensionId, customDimensionValue )` - Set a custom dimension. (requires [Custom Dimensions plugin](https://plugins.matomo.org/CustomDimensions))
+*   `deleteCustomDimension( customDimensionId )` - Delete a custom dimension. (requires [Custom Dimensions plugin](https://plugins.matomo.org/CustomDimensions))
+*   `getCustomDimension( customDimensionId )` - Retrieve a custom dimension. (requires [Custom Dimensions plugin](https://plugins.matomo.org/CustomDimensions))
+*   `setCampaignNameKey( name )` - Set campaign name parameter(s). (Help: [Customize Campaign name parameter names](https://matomo.org/faq/how-to/#faq_120))
+*   `setCampaignKeywordKey( keyword )` - Set campaign keyword parameter(s). (Help: [Customize Campaign keyword parameter names](https://matomo.org/faq/how-to/#faq_120))
 *   `setConversionAttributionFirstReferrer( bool )` - Set to true to attribute a conversion to the first referrer. By default, conversion is attributed to the most recent referrer.
+*   `setIgnoreCampaignsForReferrers( string | array )` - Set array with hostnames or domains for referrers where campaign parameters should be ignored. For wildcard subdomains, you can use: `setIgnoreCampaignsForReferrers('.referrer.com');` or `setIgnoreCampaignsForReferrers('*.referrer.com');`. You can also specify a path along a domain: `setIgnoreCampaignsForReferrers('*.referrer.com/subsite1');`. This method is available as of Matomo 5.4.
 
 ### Ecommerce
 
