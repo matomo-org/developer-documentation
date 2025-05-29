@@ -20,6 +20,8 @@ Matomo has guides available for setting up consent tracking with the following p
 * [Klaro Consent Manager](https://matomo.org/faq/how-to/using-klaro-consent-manager-with-matomo/)
 * [Complianz for WordPress Consent Manager](https://matomo.org/faq/how-to/using-complianz-for-wordpress-consent-manager-with-matomo/)
 
+Using Matomo Tag Manager? See [our integration guides](https://matomo.org/subcategory/consent-managers-cmp-getting-started-with-tag-manager/) for supported consent manager platforms.
+
 If you're not using one of these consent managers, you can follow the steps below to ask your users for tracking and cookie consent before their data is processed within Matomo.
 
 ## Step 1: require consent
