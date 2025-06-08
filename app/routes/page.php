@@ -17,6 +17,7 @@ use helpers\Content\Category\DevelopCategory;
 use helpers\Content\Category\DevelopInDepthCategory;
 use helpers\Content\Category\IntegrateCategory;
 use helpers\Content\Category\SupportCategory;
+use helpers\Content\Category\TracTicketArchiveCategory;
 use helpers\Content\Guide;
 use helpers\Content\PhpDoc;
 use helpers\DocumentNotExistException;
@@ -163,6 +164,14 @@ $app->get('/support', function (Request $request, Response $response, $args) {
     return renderGuide($this->get("view"), $response, $request->getUri(), $category->getIntroGuide(), $category);
 });
 
+$app->get('/trac-ticket-archive', function (Request $request, Response $response, $args) {
+    $category = new TracTicketArchiveCategory();
+    return renderGuide($this->get("view"), $response, $request->getUri(), $category->getIntroGuide(), $category);
+});
+
+$app->get('/trac/ticket/{id}', function (Request $request, Response $response, $args) {
+    return $response->withStatus(301)->withHeader('Location', '/trac-ticket-archive');
+});
 
 $app->get('/changelog', function (Request $request, Response $response, $args) {
     $fetchContent = false;
