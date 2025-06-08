@@ -4,7 +4,8 @@ category: TracTicketArchiveCategory
 # Legacy ticket archive
 
 
-##Trac – Legacy Issue Tracker
+## Trac – Legacy issue tracker
+
 
 The ticket you tried to access (e.g., /trac/ticket/1647) is no longer available.
 We’ve migrated away from Trac and now use GitHub for improved collaboration and transparency.
