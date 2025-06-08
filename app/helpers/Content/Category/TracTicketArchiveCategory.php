@@ -14,7 +14,8 @@ class TracTicketArchiveCategory extends Category
 {
     public function getName()
     {
-        return 'Legacy Ticket Archive';
+        return 'Legacy ticket archive';
+
     }
 
     public function getUrl()
