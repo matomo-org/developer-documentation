@@ -15,4 +15,4 @@ The old Trac system has been permanently shut down, and direct access to individ
 ## GitHub – Current issue tracker
 
 
-You can [create a bug report](https://github.com/matomo-org/matomo/issues) or check the status of an existing issue in our current tracking system.
+We now use [GitHub](https://github.com/matomo-org/matomo/issues) to track issues. You can [create a new issue](https://github.com/matomo-org/matomo/issues/new/choose) or check the status of an existing issue in our current tracking system.
