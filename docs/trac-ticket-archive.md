@@ -1,7 +1,8 @@
 ---
 category: TracTicketArchiveCategory
 ---
-#Legacy Ticket Archive
+# Legacy ticket archive
+
 
 ##Trac – Legacy Issue Tracker
 
