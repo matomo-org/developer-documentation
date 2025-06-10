@@ -78,6 +78,7 @@ This class defines the following properties:
 - [`$filter_sort_order`](#$filter_sort_order) &mdash; Controls the sort order.
 - [`$filter_limit`](#$filter_limit) &mdash; The number of items to truncate the data set to before rendering the DataTable view.
 - [`$flat`](#$flat) &mdash; If set to true, the returned data will contain the flattened view of the table data set.
+- [`$show_dimensions`](#$show_dimensions) &mdash; If true, dimensions in flattened reports will be added as separate columns
 - [`$totals`](#$totals) &mdash; If set to true or "1", the report may calculate totals information and show percentage values for each row in relative to the total value.
 - [`$expanded`](#$expanded) &mdash; If set to true, the returned data will contain the first level results, as well as all sub-tables.
 - [`$filter_offset`](#$filter_offset) &mdash; The number of items from the start of the data set that should be ignored.
@@ -167,6 +168,19 @@ Default value: false
 If set to true, the returned data will contain the flattened view of the table data set.
 
 The children of all first level rows will be aggregated under one row.
+
+Default value: false
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$show_dimensions" id="$show_dimensions"></a>
+<a name="show_dimensions" id="show_dimensions"></a>
+### `$show_dimensions`
+
+If true, dimensions in flattened reports will be added as separate columns
 
 Default value: false
 
