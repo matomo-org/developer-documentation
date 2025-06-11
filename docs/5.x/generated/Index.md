@@ -394,6 +394,7 @@ Index
 - [`getIdentity()`](Piwik/AuthResult.md#getidentity) &mdash; *Method in class* [`AuthResult`](Piwik/AuthResult.md)
 - [`getTokenAuth()`](Piwik/AuthResult.md#gettokenauth) &mdash; *Method in class* [`AuthResult`](Piwik/AuthResult.md)
 - [`getCode()`](Piwik/AuthResult.md#getcode) &mdash; *Method in class* [`AuthResult`](Piwik/AuthResult.md)
+- [`getRules()`](Piwik/Auth/PasswordStrength.md#getrules) &mdash; *Method in class* [`PasswordStrength`](Piwik/Auth/PasswordStrength.md)
 - [`getId()`](Piwik/Category/Subcategory.md#getid) &mdash; *Method in class* [`Subcategory`](Piwik/Category/Subcategory.md)
 - [`getCategoryId()`](Piwik/Category/Subcategory.md#getcategoryid) &mdash; *Method in class* [`Subcategory`](Piwik/Category/Subcategory.md)
 - [`getName()`](Piwik/Category/Subcategory.md#getname) &mdash; *Method in class* [`Subcategory`](Piwik/Category/Subcategory.md)
@@ -1019,7 +1020,7 @@ Index
 
 - [`process()`](Piwik/API/Request.md#process) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
 - [`processRequest()`](Piwik/API/Request.md#processrequest) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
-- [`Parameters`](Piwik/ArchiveProcessor/Parameters.md) &mdash; *Class in namespace* [`Piwik\ArchiveProcessor`](Piwik/ArchiveProcessor)- [`Password`](Piwik/Auth/Password.md) &mdash; *Class in namespace* [`Piwik\Auth`](Piwik/Auth)- [`prefixTable()`](Piwik/Common.md#prefixtable) &mdash; *Method in class* [`Common`](Piwik/Common.md)
+- [`Parameters`](Piwik/ArchiveProcessor/Parameters.md) &mdash; *Class in namespace* [`Piwik\ArchiveProcessor`](Piwik/ArchiveProcessor)- [`Password`](Piwik/Auth/Password.md) &mdash; *Class in namespace* [`Piwik\Auth`](Piwik/Auth)- [`PasswordStrength`](Piwik/Auth/PasswordStrength.md) &mdash; *Class in namespace* [`Piwik\Auth`](Piwik/Auth)- [`prefixTable()`](Piwik/Common.md#prefixtable) &mdash; *Method in class* [`Common`](Piwik/Common.md)
 - [`prependPlusSignToNumber()`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md#prependplussigntonumber) &mdash; *Method in class* [`CalculateEvolutionFilter`](Piwik/DataTable/Filter/CalculateEvolutionFilter.md)
 - [`Pattern`](Piwik/DataTable/Filter/Pattern.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`PatternRecursive`](Piwik/DataTable/Filter/PatternRecursive.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`PrependSegment`](Piwik/DataTable/Filter/PrependSegment.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`PrependValueToMetadata`](Piwik/DataTable/Filter/PrependValueToMetadata.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`$priority`](Piwik/Notification.md#$priority) &mdash; *Property in class* [`Notification`](Piwik/Notification.md)
 - [`Period`](Piwik/Period.md) &mdash; *Class in namespace* `Piwik`- [`parseDateRange()`](Piwik/Period/Range.md#parsedaterange) &mdash; *Method in class* [`Range`](Piwik/Period/Range.md)
@@ -1345,6 +1346,7 @@ Index
 ## V
 
 - [`verify()`](Piwik/Auth/Password.md#verify) &mdash; *Method in class* [`Password`](Piwik/Auth/Password.md)
+- [`validatePasswordStrength()`](Piwik/Auth/PasswordStrength.md#validatepasswordstrength) &mdash; *Method in class* [`PasswordStrength`](Piwik/Auth/PasswordStrength.md)
 - [`value()`](Piwik/DI.md#value) &mdash; *Method in class* [`DI`](Piwik/DI.md)
 - [`verbose()`](Piwik/Log.md#verbose) &mdash; *Method in class* [`Log`](Piwik/Log.md)
 - [`verifyNonce()`](Piwik/Nonce.md#verifynonce) &mdash; *Method in class* [`Nonce`](Piwik/Nonce.md)
@@ -1373,6 +1375,7 @@ Index
 - [`__construct()`](Piwik/API/Request.md#__construct) &mdash; *Method in class* [`Request`](Piwik/API/Request.md)
 - [`__construct()`](Piwik/Archive.md#__construct) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
 - [`__construct()`](Piwik/AuthResult.md#__construct) &mdash; *Method in class* [`AuthResult`](Piwik/AuthResult.md)
+- [`__construct()`](Piwik/Auth/PasswordStrength.md#__construct) &mdash; *Method in class* [`PasswordStrength`](Piwik/Auth/PasswordStrength.md)
 - [`__construct()`](Piwik/Columns/DimensionMetricFactory.md#__construct) &mdash; *Method in class* [`DimensionMetricFactory`](Piwik/Columns/DimensionMetricFactory.md)
 - [`__construct()`](Piwik/Columns/DimensionSegmentFactory.md#__construct) &mdash; *Method in class* [`DimensionSegmentFactory`](Piwik/Columns/DimensionSegmentFactory.md)
 - [`__construct()`](Piwik/Columns/Discriminator.md#__construct) &mdash; *Method in class* [`Discriminator`](Piwik/Columns/Discriminator.md)

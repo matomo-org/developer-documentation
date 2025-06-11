@@ -12,6 +12,7 @@ This is a complete list of available classes:
 - [`Archive\ArchiveInvalidator`](Piwik/Archive/ArchiveInvalidator.md) &mdash; Service that can be used to invalidate archives or add archive references to a list so they will be invalidated later.
 - [`AuthResult`](Piwik/AuthResult.md) &mdash; Authentication result.
 - [`Auth\Password`](Piwik/Auth/Password.md) &mdash; Main class to handle actions related to password hashing and verification.
+- [`Auth\PasswordStrength`](Piwik/Auth/PasswordStrength.md) &mdash; Main class to handle actions related to password strength rules and verification of those rules.
 - [`Category\Subcategory`](Piwik/Category/Subcategory.md) &mdash; Base type for subcategories.
 - [`Columns\ComputedMetricFactory`](Piwik/Columns/ComputedMetricFactory.md) &mdash; A factory to create computed metrics.
 - [`Columns\Dimension`](Piwik/Columns/Dimension.md)

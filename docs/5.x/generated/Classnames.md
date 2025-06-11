@@ -8,6 +8,7 @@
 ## Archive\ArchiveInvalidator
 ## AuthResult
 ## Auth\Password
+## Auth\PasswordStrength
 ## Category\Subcategory
 ## Columns\ComputedMetricFactory
 ## Columns\Dimension
