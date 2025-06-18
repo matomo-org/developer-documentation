@@ -534,7 +534,9 @@ recommended related report.
 
 #### Signature
 
-- It returns a [`Report[]`](../../Piwik/Plugin/Report.md) value.
+
+- *Returns:*  `Piwik\Plugin\(Report`|`Piwik\Plugin\null)` &mdash;
+    
 
 <a name="getparameters" id="getparameters"></a>
 <a name="getParameters" id="getParameters"></a>

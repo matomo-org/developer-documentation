@@ -144,7 +144,7 @@ for that parameter.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$otherTables` ([`Map[]`](../../Piwik/DataTable/Map.md)) &mdash;
+    - `$otherTables` (`Piwik\DataTable\(Map`|`Piwik\DataTable\null)`) &mdash;
        Other tables to invoke $filter with.
     - `$filter` (`callable`) &mdash;
        A function like `function (DataTable $thisTable, $otherTable1, $otherTable2, ...) {}`.

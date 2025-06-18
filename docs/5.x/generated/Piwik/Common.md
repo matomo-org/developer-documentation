@@ -102,7 +102,7 @@ Unsanitizes a single input value and returns the result.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$value` (`string`) &mdash;
+    - `$value` (`string`|`null`) &mdash;
       
 
 - *Returns:*  `string` &mdash;

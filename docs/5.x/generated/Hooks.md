@@ -340,7 +340,7 @@ Usages:
 
 ### API.Request.authenticate
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php) in line [454](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php#L454)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php) in line [456](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php#L456)*
 
 Triggered when authenticating an API request, but only if the **token_auth**
 query parameter is found in the request. Plugins that provide authentication capabilities should subscribe to this event
@@ -890,7 +890,7 @@ Usages:
 
 ### Config.beforeSave
 
-*Defined in [Piwik/Config/IniFileChain](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config/IniFileChain.php) in line [549](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config/IniFileChain.php#L549)*
+*Defined in [Piwik/Config/IniFileChain](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config/IniFileChain.php) in line [547](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config/IniFileChain.php#L547)*
 
 Triggered before a config is being written / saved on the local file system. A plugin can listen to it and modify which settings will be saved on the file system. This allows you
 to prevent saving config values that a plugin sets on demand. Say you configure the database password in the
@@ -2920,7 +2920,7 @@ Usages:
 
 ### Request.shouldDisablePostProcessing
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php) in line [732](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php#L732)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php) in line [734](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php#L734)*
 
 After an API method returns a value, the value is post processed (eg, rows are sorted
 based on the `filter_sort_column` query parameter, rows are truncated based on the
