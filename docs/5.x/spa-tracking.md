@@ -4,7 +4,7 @@ category: Integrate
 
 # Single-Page Application/Progressive Web App Tracking
 
-It is easy to start tracking your Single Page Application (SPA) or Progressive Web App (PWA) using Matomo Analytics. The easiest way to do this is using the Matomo Tag Manager ([learn more](https://matomo.org/guide/tag-manager/) using the steps below, alternatively you can use the JavaScript Tracking code ([following this guide](https://developer.matomo.org/guides/spa-tracking)).
+It is easy to start tracking your Single Page Application (SPA) or Progressive Web App (PWA) using Matomo Analytics. The easiest way to do this is using the Matomo Tag Manager ([learn more](https://matomo.org/faq/how-to/faq_23636/) using the steps below, alternatively you can use the JavaScript Tracking code ([following this guide](https://developer.matomo.org/guides/spa-tracking)).
 
 ## Solution 1: Embed Matomo Tag Manager Container Code
 
@@ -213,6 +213,9 @@ window.addEventListener('hashchange', function() {
 });
 ```
 
+### Tracking file:// downloads in mobile apps
+
+If you're tracking a Single Page Application within a mobile app framework such as Cordova, you can optionally track downloads using the `file://` protocol. This is a common use case in mobile app environments where content is loaded locally. See [how to enable file protocol tracking](https://matomo.org/faq/how-to/enable-file-protocol-tracking/) for setup instructions.
 
 ### Offline Tracking
 
