@@ -48,6 +48,7 @@ Visits are stored in the `log_visit` table.
 
 Each visit contains the following information:
 
+- `idvisit`: Unique ID for this visit.
 - `idsite`: the ID of the website it was tracked for
 - `idvisitor`: a visitor ID (an 8 byte binary string)
 - `user_id`: the [User ID](https://matomo.org/docs/user-id/) (if set)
@@ -133,6 +134,7 @@ Visits also contain a list of actions, one for each action the visitor makes dur
 
 Visit actions contain the following information:
 
+- `idlink_va`: Unique ID for this record.
 - `server_time`: the datetime the action was tracked in the UTC timezone
 - `idaction_url`: the ID of the URL action type for this action
 - `idaction_url_ref`: the ID of the URL action type for the previous action in the visit
@@ -172,6 +174,7 @@ When Piwik encounters a new action type, a new action type entity is persisted.
 
 Action types are persisted in the `log_action` table and contain the following information:
 
+- `idaction`: Unique ID for this record.
 - `name`: a string describing the action type. Can be a URL, a page title, campaign name or anything else. The meaning is determined by the `type` field.
 - `hash`: a hash value calculated using the name.
 - `type`: the action type's category. Can be one of the following values:
