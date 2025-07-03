@@ -13,6 +13,7 @@ The class defines the following methods:
 - [`__construct()`](#__construct)
 - [`getRules()`](#getrules) &mdash; Provides the rules for defining a strong password.
 - [`validatePasswordStrength()`](#validatepasswordstrength) &mdash; Determines which rules a password candidate breaks with regards to password strength.
+- [`formatValidationFailedMessage()`](#formatvalidationfailedmessage)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -53,4 +54,15 @@ password strength.
 
 - *Returns:*  `array` &mdash;
     of rules which the password breaks.
+
+<a name="formatvalidationfailedmessage" id="formatvalidationfailedmessage"></a>
+<a name="formatValidationFailedMessage" id="formatValidationFailedMessage"></a>
+### `formatValidationFailedMessage()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$brokenRules` (`array`) &mdash;
+      
+- It returns a `string` value.
 

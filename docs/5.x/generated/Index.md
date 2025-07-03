@@ -280,6 +280,7 @@ Index
 
 - [`factory()`](Piwik/Archive.md#factory) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
 - [`forceFetchingWithoutLaunchingArchiving()`](Piwik/Archive.md#forcefetchingwithoutlaunchingarchiving) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
+- [`formatValidationFailedMessage()`](Piwik/Auth/PasswordStrength.md#formatvalidationfailedmessage) &mdash; *Method in class* [`PasswordStrength`](Piwik/Auth/PasswordStrength.md)
 - [`formatValue()`](Piwik/Columns/Dimension.md#formatvalue) &mdash; *Method in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`forceSave()`](Piwik/Config.md#forcesave) &mdash; *Method in class* [`Config`](Piwik/Config.md)
 - [`factory()`](Piwik/DI.md#factory) &mdash; *Method in class* [`DI`](Piwik/DI.md)
