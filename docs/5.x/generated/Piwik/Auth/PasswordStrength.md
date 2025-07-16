@@ -14,6 +14,7 @@ The class defines the following methods:
 - [`getRules()`](#getrules) &mdash; Provides the rules for defining a strong password.
 - [`validatePasswordStrength()`](#validatepasswordstrength) &mdash; Determines which rules a password candidate breaks with regards to password strength.
 - [`formatValidationFailedMessage()`](#formatvalidationfailedmessage)
+- [`getRulesAsHtmlList()`](#getrulesashtmllist)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -64,5 +65,13 @@ password strength.
 -  It accepts the following parameter(s):
     - `$brokenRules` (`array`) &mdash;
       
+- It returns a `string` value.
+
+<a name="getrulesashtmllist" id="getrulesashtmllist"></a>
+<a name="getRulesAsHtmlList" id="getRulesAsHtmlList"></a>
+### `getRulesAsHtmlList()`
+
+#### Signature
+
 - It returns a `string` value.
 

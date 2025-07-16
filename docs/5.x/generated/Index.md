@@ -396,6 +396,7 @@ Index
 - [`getTokenAuth()`](Piwik/AuthResult.md#gettokenauth) &mdash; *Method in class* [`AuthResult`](Piwik/AuthResult.md)
 - [`getCode()`](Piwik/AuthResult.md#getcode) &mdash; *Method in class* [`AuthResult`](Piwik/AuthResult.md)
 - [`getRules()`](Piwik/Auth/PasswordStrength.md#getrules) &mdash; *Method in class* [`PasswordStrength`](Piwik/Auth/PasswordStrength.md)
+- [`getRulesAsHtmlList()`](Piwik/Auth/PasswordStrength.md#getrulesashtmllist) &mdash; *Method in class* [`PasswordStrength`](Piwik/Auth/PasswordStrength.md)
 - [`getId()`](Piwik/Category/Subcategory.md#getid) &mdash; *Method in class* [`Subcategory`](Piwik/Category/Subcategory.md)
 - [`getCategoryId()`](Piwik/Category/Subcategory.md#getcategoryid) &mdash; *Method in class* [`Subcategory`](Piwik/Category/Subcategory.md)
 - [`getName()`](Piwik/Category/Subcategory.md#getname) &mdash; *Method in class* [`Subcategory`](Piwik/Category/Subcategory.md)
