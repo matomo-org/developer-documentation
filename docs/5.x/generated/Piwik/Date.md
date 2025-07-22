@@ -25,16 +25,19 @@ Properties
 
 This class defines the following properties:
 
-- [`$now`](#$now)
+- [`$now`](#$now) &mdash; for tests
 
 <a name="$now" id="$now"></a>
 <a name="now" id="now"></a>
 ### `$now`
 
+for tests
+
 #### Signature
 
-- Its type is not specified.
-
+- It can be one of the following types:
+    - `null`
+    - `int`
 
 Methods
 -------
