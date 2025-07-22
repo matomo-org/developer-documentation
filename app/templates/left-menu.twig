@@ -64,7 +64,7 @@
 
                                     {% for subsection in section.children %}
                                         {% if subsection.id in links %}
-                                            <li><a title="{{ subsection.title }}" href="#{{ subsection.id }}-{{ section.id }}">{{ subsection.title|striptags|raw }}</a></li>
+                                            <li><a title="{{ subsection.title }}" href="#{{ section.id }}-{{ subsection.id }}">{{ subsection.title|striptags|raw }}</a></li>
                                         {% else %}
                                             {% set links = links|merge([subsection.id]) %}
                                             <li><a title="{{ subsection.title }}" href="#{{ subsection.id }}">{{ subsection.title|striptags|raw }}</a></li>
