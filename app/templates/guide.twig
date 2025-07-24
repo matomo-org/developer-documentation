@@ -1,5 +1,6 @@
 {% set title = guide.seoTitle %}
 {% set setPageHeader = false %}
+{% set anchorLinks = [] %}
 {% extends 'base.twig' %}
 
 {% block content %}
@@ -18,7 +19,22 @@
                 </div>
             {% endif %}
 
-            {{ guide.renderedContent|raw }}
+            {% if guide.sections|length %}
+                {% set links = [] %}
+                {% for section in guide.sections %}
+                    {% if section.children|length %}
+                        {% for subsection in section.children %}
+                            {% if subsection.id in links %}
+                                {% set anchorLinks = anchorLinks|merge([{ parent: section.id, sub: subsection.id,  }]) %}
+                            {% else %}
+                                {% set links = links|merge([subsection.id]) %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+
+            {{ guide.validatedRenderedContent(anchorLinks)|raw }}
 
             {% if guide.subItems is not empty %}
                 <h2>What's next?</h2>
