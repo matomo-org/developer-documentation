@@ -59,11 +59,11 @@ Returns an array of Matomo tracker instances that are used by the Crash Analytic
 
 Allows you to set the tracker instances the tracker should use when tracking crashes. Can be either a single tracker instance, or an array of Matomo tracker instances. This is useful when you are working with multiple Matomo tracker instances using `Matomo.getTracker` instead of `Piwik.addTracker`.
 
-### `enable()`
+### `disable()`
 
 Allows you to completely disable the tracking of any crashes. This is useful if you for example manage multiple websites in your Matomo and there are some sites where you do not want to track crashes.
 
-### `disable()`
+### `enable()`
 
 If you have disabled the tracking of crashes via `disable()` you can enable it at a later point via this method.
 
