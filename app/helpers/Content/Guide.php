@@ -228,14 +228,23 @@ class Guide implements MenuItem
             $anchorList[$anchor['sub']][] = $anchor['parent'];
         }
         $dom = new \DomDocument();
+        // Will probably be duplicate ID warnings so suppress them
         @$dom->loadHtml($content);
         $anchors = $dom->getElementsByTagName('*');
         $ids=[];
+        $duplicateId = 0;
         foreach ($anchors as $anchor) {
             $id = $anchor->getAttribute('id');
             if ($id && isset($anchorList[$id]) && in_array($id, $ids)) {
-                $parent = array_shift($anchorList[$id]);
-                $anchor->setAttribute('id', "$parent-$id");
+                // should only amend the ID via $anchorList if it is a h3
+                if ($anchor->tagName == 'h3') {
+                    $parent = array_shift($anchorList[$id]);
+                    $anchor->setAttribute('id', "$parent-$id");
+                } else {
+                    // if it is not a h3 amend so the ID is not duplicated
+                    $duplicateId++;
+                    $anchor->setAttribute('id', "$id-$duplicateId");
+                }
             }
             $ids[] = $id;
         }
