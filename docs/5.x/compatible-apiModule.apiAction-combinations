@@ -6,7 +6,7 @@ category: API Reference
 With the [Matomo Reporting API](https://developer.matomo.org/api-reference/reporting-api), you can query specific reports using a valid combination of an `apiModule` and `apiAction` parameter to identify the exact dataset to retrieve. The `apiModule` specifies the plugin or area of functionality (such as Actions, Goals, 
 or Referrers), while apiAction refers to the specific method exposed by that module (such as `getPageUrls`, `getConversions`, or `getCountry`). Together, these define the API method you want to call. 
 
-Four Matomo API methods support the combined used of `apiModule` and `apiAction` parameters:
+Four Matomo API methods support the combined use of `apiModule` and `apiAction` parameters:
 
 * `API.getMetadata` returns metadata about a report, including available dimensions, metrics, and display options.
 * `API.getProcessedReport` returns the full report data, including calculated metrics and formatted values.
