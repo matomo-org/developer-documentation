@@ -1,7 +1,7 @@
 ---
 category: API Reference
-title: Compatible apiModule and apiAction combinations
 ---
+# Compatible apiModule and apiAction combinations
 
 With the [Matomo Reporting API](https://developer.matomo.org/api-reference/reporting-api), you can query specific reports using a valid combination of an `apiModule` and `apiAction` parameter to identify the exact dataset to retrieve. The `apiModule` specifies the plugin or area of functionality (such as Actions, Goals, 
 or Referrers), while apiAction refers to the specific method exposed by that module (such as `getPageUrls`, `getConversions`, or `getCountry`). Together, these define the API method you want to call. 
