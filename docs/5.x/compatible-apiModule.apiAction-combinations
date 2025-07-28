@@ -25,14 +25,14 @@ To be compatible with one or more of the four API methods, the apiModule.apiActi
 
 The next sections will cover valid combinations for each of the four API methods listed above.
 
-# API.getMetadata
+## API.getMetadata
 
 This returns structural information about a specific report. It includes the report's name, category, available dimensions, returned metrics (e.g. `nb_visits`, `bounce_rate`), descriptions of each metric, and the image graph URL (`imageGraphUrl`) if supported. For example, you can retrieve metadata for the Page URLs report via:
 `?module=API&method=API.getMetadata&idSite=1&apiModule=Actions&apiAction=getPageUrls`
 
-## Valid `apiModule.apiAction` combinations
+### Valid `apiModule.apiAction` combinations
 
-### Actions  
+#### Actions  
 
 - `Actions.get`: Returns metadata for the Actions report over the selected period (overview of actions taken on the website).  
 - `Actions.getPageUrls`: Returns metadata on the Page URLs report.  
@@ -51,12 +51,12 @@ This returns structural information about a specific report. It includes the rep
 
 These methods are **not compatible** with `API.getMetadata` as they are single-row, detail-level reports that return metrics for a specific URL or name and do not return rows with labels: `Actions.getPageUrl`, `Actions.getPageTitle`, `Actions.getDownload` and `Actions.getOutlink`.
 
-### Contents
+#### Contents
 
 - `Contents.getContentNames`: Returns metadata for content impression tracking by name (e.g. banner names).
 - `Contents.getContentPieces`: Returns metadata for individual content pieces viewed or interacted with.
 
-### Crash Analytics
+#### Crash Analytics
 
 This module is part of the [Crash Analytics premium feature](https://plugins.matomo.org/CrashAnalytics). If the plugin is not installed and activated, these methods will not work.
 
@@ -76,15 +76,15 @@ This module is part of the [Crash Analytics premium feature](https://plugins.mat
 
 These methods are **not compatible** with `API.getMetadata` as they return configuration data, internal state, or entity-specific information rather than structured reports with dimensions and metrics, for example, `CrashAnalytics.mergeCrashes`, `CrashAnalytics.getIgnoredCrashes`, `CrashAnalytics.getCrashGroups`, `CrashAnalytics.getCrashSummary`, `CrashAnalytics.getLastCrashesOverview`, `CrashAnalytics.getLastTopCrashes`, `CrashAnalytics.getCrashesForPageUrl`, `CrashAnalytics.getCrashesForSource`, and `CrashAnalytics.getCrashesForCategory`.
 
-### Custom Variables
+#### Custom Variables
 
 - `CustomVariables.getCustomVariables`: Returns metadata for custom variables configured on your site.
 
-### DevicePlugins
+#### DevicePlugins
 
 - `DevicePlugins.getPlugin`: Returns metadata on the report showing the browser plugins (such as Java, PDF, etc.) detected among your visitors.
 
-### Devices Detection
+#### Devices Detection
 
 - `DevicesDetection.getType`: Returns metadata about the report that shows device types used by visitors (e.g. desktop, smartphone, tablet).
 - `DevicesDetection.getBrand`: Returns metadata about the report showing the brand of the visitor's device (e.g. Apple, Samsung).
@@ -95,7 +95,7 @@ These methods are **not compatible** with `API.getMetadata` as they return confi
 - `DevicesDetection.getBrowserVersions`: Returns metadata about the report listing exact versions of browsers used by visitors.
 - `DevicesDetection.getBrowserEngines`: Returns metadata about the report that shows the browser rendering engine (e.g. Blink, WebKit).
 
-### Events
+#### Events
 
 - `Events.getCategory`: Returns metadata about the report displaying event categories triggered by website visitors (e.g., Video, Form, Button).
 - `Events.getAction`: Returns metadata about the report showing actions associated with events (e.g., Play, Submit, Click).
@@ -103,13 +103,13 @@ These methods are **not compatible** with `API.getMetadata` as they return confi
 
 All other `Events.apiAction` parameters are not compatible with `API.getMetadata` because they rely on `idSubtable` rather than top-level report metadata.
 
-### Form Analytics
+#### Form Analytics
 
 This module is part of the [Form Analytics premium feature](https://plugins.matomo.org/FormAnalytics). If the plugin is not installed and activated, the method will not work.
 
 - `FormAnalytics.get`: Returns metadata about the Form Analytics Overview report showing metrics such as number of form views, form starters, form submissions, and form conversions.
 
-### Goals
+#### Goals
 
 - `Goals.get`: Returns metadata about the report overview showing how well your visitors convert a specific goal.
 - `Goals.getItemsSku`: Returns metadata about the report for Ecommerce conversions grouped by product SKU, including quantity and revenue metrics.
@@ -118,7 +118,7 @@ This module is part of the [Form Analytics premium feature](https://plugins.mato
 - `Goals.getDaysToConversion`: Returns metadata about the report on how many days it took for conversions to occur.
 - `Goals.getVisitsUntilConversion`: Returns metadata about the report showing the number of visits made before a visitor converts a goal.
 
-### MarketingCampaignsReporting
+#### MarketingCampaignsReporting
 
 - `MarketingCampaignsReporting.getId`: Returns metadata about the report showing tracked campaign IDs.
 - `MarketingCampaignsReporting.getName`: Returns metadata about the report showing tracked marketing campaign names (e.g. using mtm_campaign).
@@ -130,7 +130,7 @@ This module is part of the [Form Analytics premium feature](https://plugins.mato
 - `MarketingCampaignsReporting.getPlacement`: Returns metadata about the report showing tracked campaign placements (e.g. using mtm_placement).
 - `MarketingCampaignsReporting.getSourceMedium`: Returns metadata about the report combining source and medium dimensions to help distinguish traffic origins.
 
-### MediaAnalytics
+#### MediaAnalytics
 
 This module is part of the [Media Analytics premium feature](https://plugins.matomo.org/MediaAnalytics). If the plugin is not installed and activated, these methods will not work.
 
@@ -146,16 +146,16 @@ This module is part of the [Media Analytics premium feature](https://plugins.mat
 - `MediaAnalytics.getVideoResolutions`: Returns metadata about the report showing the resolution (e.g. 720p, 1080p) of played video files.
 - `MediaAnalytics.getPlayers`: Returns metadata about the report showing the media players used (e.g. HTML5, YouTube embed).
 
-### MultiSites
+#### MultiSites
 
 - `MultiSites.getAll`: Returns metadata on the report providing an informational overview for All Websites, containing the most general metrics about your visitors.
 - `MultiSites.getOne`: Returns metadata on the report providing an informational overview for a specific website, containing the most general metrics about your visitors.
 
-### PagePerformance
+#### PagePerformance
 
 - `PagePerformance.get`: Returns metadata for page load performance metrics such as load time, server response time, and page render time.
 
-### Referrers
+#### Referrers
 
 - `Referrers.get`: Returns metadata about the report showing all referral sources, including search engines, campaigns, and websites.
 - `Referrers.getReferrerType`: Returns metadata about the report that categorises referral traffic by type (search, direct, website, campaign).
@@ -165,12 +165,12 @@ This module is part of the [Media Analytics premium feature](https://plugins.mat
 - `Referrers.getSocials`: Returns metadata for social network referrals.
 - `Referrers.getWebsites`: Returns metadata about referral websites that linked to your site.
 
-### Resolution
+#### Resolution
 
 - `Resolution.getResolution`: Returns metadata about the report showing the screen resolutions used by visitors.
 - `Resolution.getConfiguration`: Returns metadata about the report showing combinations of screen resolution, browser, and operating system used by your visitors.
 
-### SearchEngineKeywordsPerformance
+#### SearchEngineKeywordsPerformance
 
 This module is part of the [Search Engine Keywords Performance premium feature](https://plugins.matomo.org/SearchEngineKeywordsPerformance). If the plugin is not installed and activated, these methods will not work.
 
@@ -182,56 +182,56 @@ This module is part of the [Search Engine Keywords Performance premium feature](
 - `SearchEngineKeywordsPerformance.getKeywordsGoogleVideo`: Returns metadata about video search keyword data from Google.
 - `SearchEngineKeywordsPerformance.getCrawlingOverview`: Returns metadata on the Crawl overview for Bing and Yahoo! with information such as errors encountered by the search bot, items blocked by your robots.txt file and URLs potentially affected by malware.
 
-### UserCountry
+#### UserCountry
 
 - `UserCountry.getCountry`: Returns metadata about the report showing the countries your visitors came from.
 - `UserCountry.getContinent`: Returns metadata about the report showing the continents your visitors came from.
 - `UserCountry.getRegion`: Returns metadata about the report showing the regions your visitors came from.
 - `UserCountry.getCity`: Returns metadata about the report showing the cities your visitors came from.
 
-### UserId
+#### UserId
 
 - `UserId.getUsers`: Returns metadata about the report showing visits grouped by User IDs.
 
-### UserLanguage
+#### UserLanguage
 
 - `UserLanguage.getLanguage`: Returns metadata about the report showing the languages configured in visitors’ browsers.
 - `UserLanguage.getLanguageCode`: Returns metadata about the report showing language codes (e.g. en-us, fr-fr) detected from visitors’ browsers.
 
-### UsersFlow
+#### UsersFlow
 
 This module is part of the [UsersFlow premium feature](https://plugins.matomo.org/UsersFlow). If the plugin is not installed and activated, the method will not work.
 
 - `UsersFlow.getUsersFlowPretty`: Returns metadata about the report showing the flow of user navigation through your site.
 
-### VisitFrequency
+#### VisitFrequency
 
 - `VisitFrequency.get`: Returns metadata about the report comparing visit frequency metrics for new and returning visitors, bounce rate, and actions per visit.
 
-### VisitTime
+#### VisitTime
 
 - `VisitTime.getVisitInformationPerLocalTime`: Returns metadata about the report showing visits by local time of the visitor.
 - `VisitTime.getVisitInformationPerServerTime`: Returns metadata about the report showing visits by your server’s time zone.
 - `VisitTime.getByDayOfWeek`: Returns metadata about the report showing visits grouped by day of the week.
 
-### VisitorInterest
+#### VisitorInterest
 
 - `VisitorInterest.getNumberOfVisitsPerVisitDuration`: Returns metadata about the report showing how long visitors spent on the site.
 - `VisitorInterest.getNumberOfVisitsPerPage`: Returns metadata about the report showing how many pages visitors viewed per session.
 - `VisitorInterest.getNumberOfVisitsByDaysSinceLast`: Returns metadata about the report showing how recently returning visitors last visited.
 - `VisitorInterest.getNumberOfVisitsByVisitCount`: Returns metadata about the report showing how many times visitors have returned.
 
-### VisitsSummary
+#### VisitsSummary
 
 - `VisitsSummary.get`: Returns metadata about the report showing general visit metrics including visits, unique visitors, and bounce rate.
 
-# API.getProcessedReport 
+## API.getProcessedReport 
 
 This method returns the full dataset for a report, including calculated (processed) metrics, percentages, dimension labels, totals, and subtotals. Most `apiModule.apiAction` combinations that are valid for `API.getMetadata` are also compatible with `API.getProcessedReport`.
 
-## Valid `apiModule.apiAction` combinations
+### Valid `apiModule.apiAction` combinations
 
-### Actions
+#### Actions
 
 - `Actions.get`: Returns a summary of all user actions (page views, downloads, outlinks) with aggregated metrics like visits and bounce rate.
 - `Actions.getPageUrls`: Shows metrics per page URL visited, helping you analyse the performance of each webpage.
@@ -250,12 +250,12 @@ This method returns the full dataset for a report, including calculated (process
 
 These methods are **not compatible** with `API.getProcessedReport` as they are single-row, detail-level reports that return metrics for a specific URL or name, and do not return rows with labels: `Actions.getPageUrl`, `Actions.getPageTitle`, `Actions.getDownload`, and `Actions.getOutlink`.
 
-### Contents
+#### Contents
 
 - `Contents.getContentNames`: Returns the names of tracked content blocks (e.g. banners), including impressions, interactions, and interaction rate.
 - `Contents.getContentPieces`: Returns data on specific pieces of content (e.g. images or text), including how often each piece was viewed or clicked.
 
-### Crash Analytics
+#### Crash Analytics
 
 This module is part of the [Crash Analytics premium feature](https://plugins.matomo.org/CrashAnalytics). If the plugin is not installed and activated, these methods will not work.
 
@@ -275,15 +275,15 @@ This module is part of the [Crash Analytics premium feature](https://plugins.mat
 
 These methods are **not compatible** with `API.getProcessedReport` as they return configuration data, internal state, or entity-specific information rather than structured reports with dimensions and metrics, for example, `CrashAnalytics.mergeCrashes`, `CrashAnalytics.getIgnoredCrashes`, `CrashAnalytics.getCrashGroups`, `CrashAnalytics.getCrashSummary`, `CrashAnalytics.getLastCrashesOverview`, `CrashAnalytics.getLastTopCrashes`, `CrashAnalytics.getCrashesForPageUrl`, `CrashAnalytics.getCrashesForSource`, and `CrashAnalytics.getCrashesForCategory`.
 
-### Custom Variables
+#### Custom Variables
 
 - `CustomVariables.getCustomVariables`: Returns all tracked Custom Variable names and their values, including metrics like visits, actions, conversions, and more.
 
-### DevicePlugins
+#### DevicePlugins
 
 - `DevicePlugins.getPlugin`: Shows the type of browser plugins (such as Java, PDF, etc.) detected among your visitors.
 
-### Devices Detection
+#### Devices Detection
 
 - `DevicesDetection.getType`: Shows device types used by visitors (e.g. desktop, smartphone).
 - `DevicesDetection.getBrand`: Shows the brand of the visitor's device (e.g. Apple, Samsung).
@@ -294,7 +294,7 @@ These methods are **not compatible** with `API.getProcessedReport` as they retur
 - `DevicesDetection.getBrowserVersions`: Lists the exact versions of browsers used by visitors.
 - `DevicesDetection.getBrowserEngines`: Shows the browser rendering engine (e.g. Blink, WebKit) used by visitors.
 
-### Events
+#### Events
 
 - `Events.getCategory`: Returns event data grouped by event category. Useful for understanding the high-level types of interactions that your visitors perform (e.g. video, downloads, buttons).
 - `Events.getAction`: Returns event data grouped by action name, which reflects what users are doing (e.g. play, pause, click).
@@ -302,13 +302,13 @@ These methods are **not compatible** with `API.getProcessedReport` as they retur
 
 All other `Events.apiAction` methods return subtables, not top-level rows, and are not compatible with `API.getProcessedReport`.
 
-### FormAnalytics
+#### FormAnalytics
 
 This module is part of the [Form Analytics premium feature](https://plugins.matomo.org/FormAnalytics). If the plugin is not installed and activated, the method will not work.
 
 - `FormAnalytics.get`: Returns key performance metrics for individual forms such as views, starts, submits, abandonments, and conversion rate. This provides an overview of form effectiveness over time.
 
-### Goals
+#### Goals
 
 Ecommerce metrics are only available if Ecommerce tracking is enabled.
 
@@ -319,7 +319,7 @@ Ecommerce metrics are only available if Ecommerce tracking is enabled.
 - `Goals.getDaysToConversion`: Shows the total number of goal conversions that occurred within different time ranges and shows how many days passed between a visitor's first interaction and conversion.
 - `Goals.getVisitsUntilConversion`: Shows how many visits it takes on average for users to convert, grouped by count of visits.
 
-### MarketingCampaignsReporting
+#### MarketingCampaignsReporting
 
 - `MarketingCampaignsReporting.getId`: Returns metrics on tracked campaigns grouped by campaign ID.
 - `MarketingCampaignsReporting.getName`: Returns metrics on tracked campaigns grouped by campaign name (e.g. using mtm_campaign).
@@ -331,7 +331,7 @@ Ecommerce metrics are only available if Ecommerce tracking is enabled.
 - `MarketingCampaignsReporting.getPlacement`: Returns metrics on tracked campaigns grouped by campaign placement (e.g. using mtm_placement).
 - `MarketingCampaignsReporting.getSourceMedium`: Returns metrics on tracked campaigns grouped by campaign source-medium.
 
-### MediaAnalytics
+#### MediaAnalytics
 
 This module is part of the [Media Analytics premium feature](https://plugins.matomo.org/MediaAnalytics). If the plugin is not installed and activated, these methods will not work.
 
@@ -347,16 +347,16 @@ This module is part of the [Media Analytics premium feature](https://plugins.mat
 - `MediaAnalytics.getVideoResolutions`: Shows the resolution (width and height) at which your videos were watched.
 - `MediaAnalytics.getPlayers`: Lists the media players used by your visitors to play the media on your website.
 
-### MultiSites
+#### MultiSites
 
 - `MultiSites.getAll`: Returns an informational overview for All Websites, containing the most general metrics about your visitors.
 - `MultiSites.getOne`: Returns an informational overview for a specific website, containing the most general metrics about your visitors.
 
-### PagePerformance
+#### PagePerformance
 
 - `PagePerformance.get`: Returns page performance metrics such as load time, server response time, and page render time to evaluate if performance impacts user experience.
 
-### Referrers
+#### Referrers
 
 - `Referrers.get`: Returns an overview of all referrer types (e.g., search engines, websites, campaigns, and direct entries), including visit counts and engagement metrics.
 - `Referrers.getReferrerType`: Displays grouped traffic sources by type: direct entry, websites, search engines, and campaigns. Offers a high-level categorisation of incoming traffic and supports processed report generation.
@@ -367,12 +367,12 @@ This module is part of the [Media Analytics premium feature](https://plugins.mat
 - `Referrers.getSocials`: Returns traffic data originating from social networks.
 - `Referrers.getUrlsForSocial`: Displays the exact URLs from social networks that referred traffic. Not compatible with `API.getMetadata`.
 
-### Resolution
+#### Resolution
 
 - `Resolution.getResolution`: Returns the number of visits grouped by screen resolution (e.g., 1920x1080, 1366x768).
 - `Resolution.getConfiguration`: Returns the number of visits grouped by the combination of operating system, browser, and screen resolution.
 
-### SearchEngineKeywordsPerformance
+#### SearchEngineKeywordsPerformance
 
 This module is part of the [Search Engine Keywords Performance premium feature](https://plugins.matomo.org/SearchEngineKeywordsPerformance). If the plugin is not installed and activated, these methods will not work.
 
@@ -384,57 +384,57 @@ This module is part of the [Search Engine Keywords Performance premium feature](
 - `SearchEngineKeywordsPerformance.getKeywordsGoogleVideo`: Returns video search keyword data from Google.
 - `SearchEngineKeywordsPerformance.getCrawlingOverview`: Returns the Crawl overview for Bing and Yahoo! with information such as errors encountered by the search bot, items blocked by your robots.txt file and URLs potentially affected by malware.
 
-### UserCountry
+#### UserCountry
 
 - `UserCountry.getCountry`: Shows visitor metrics by the country your visitors originated from.
 - `UserCountry.getContinent`: Shows visitor metrics by the continent your visitors originated from.
 - `UserCountry.getRegion`: Shows visitor metrics by the region your visitors originated from.
 - `UserCountry.getCity`: Shows visitor metrics by the city your visitors originated from.
 
-### UserId
+#### UserId
 
 - `UserId.getUsers`: Shows visits and other general metrics for every individual User ID.
 
-### UserLanguage
+##### UserLanguage
 
 - `UserLanguage.getLanguage`: Shows visit metrics by the language set in the visitor's browser.
 - `UserLanguage.getLanguageCode`: Shows visit metrics by the language code set in the visitor's browser.
 
-### UsersFlow
+#### UsersFlow
 
 This module is part of the [UsersFlow premium feature](https://plugins.matomo.org/UsersFlow). If the plugin is not installed and activated, the method will not work.
 
 - `UsersFlow.getUsersFlowPretty`: Shows the flow of user navigation through your site even though its visualisation differs from standard tables.
 
-### VisitFrequency
+#### VisitFrequency
 
 - `VisitFrequency.get`: Compares visit frequency metrics for new and returning visitors, bounce rate, and actions per visit.
 
-### VisitTime
+#### VisitTime
 
 - `VisitTime.getVisitInformationPerLocalTime`: Shows what times visitors engaged with your website (in their local time zone).
 - `VisitTime.getVisitInformationPerServerTime`: Shows what times visitors engaged with your website (in your server’s local time zone).
 - `VisitTime.getByDayOfWeek`: Shows visits grouped by day of the week.
 
-### VisitorInterest
+#### VisitorInterest
 
 - `VisitorInterest.getNumberOfVisitsPerVisitDuration`: Reports on how long visitors spent on the site.
 - `VisitorInterest.getNumberOfVisitsPerPage`: Reports on how many pages visitors viewed per session.
 - `VisitorInterest.getNumberOfVisitsByDaysSinceLast`: Reports on how recently returning visitors last visited.
 - `VisitorInterest.getNumberOfVisitsByVisitCount`: Reports on how many times visitors have returned.
 
-### VisitsSummary
+#### VisitsSummary
 
 - `VisitsSummary.get`: Returns general visit metrics including visits, unique visitors, and bounce rate.
 
-# API.getRowEvolution 
+## API.getRowEvolution 
 
 `API.getRowEvolution` requires a valid period (e.g. day, week, month) and a selected row label from a report that returns dimensioned tabular data. Reports that return only aggregate values such as `Actions.get` or `CrashAnalytics.get` are not supported, as they do not contain rows that can be evolved over time.
 Only reports that return a primary dimension with identifiable labels (e.g. URL, title, keyword, campaign name, etc.) support `API.getRowEvolution`. `
 
-## Valid `apiModule.apiAction` combinations
+### Valid `apiModule.apiAction` combinations
 
-### Actions
+#### Actions
 
 - `Actions.getPageUrls`: The Page URLs report.
 - `Actions.getPageUrlsFollowingSiteSearch`: The Site Search report for page URLs viewed after a site search.
@@ -452,12 +452,12 @@ Only reports that return a primary dimension with identifiable labels (e.g. URL,
 
 These methods are **not compatible** with `API.getRowEvolution`: `Actions.getPageUrl`, `Actions.getPageTitle`, `Actions.getDownload`, and `Actions.getOutlink`.
 
-### Contents
+#### Contents
 
 - `Contents.getContentNames`: Returns content impression tracking by name (e.g. banner names).
 - `Contents.getContentPieces`: Returns individual content pieces viewed or interacted with.
 
-### Crash Analytics
+#### Crash Analytics
 
 This module is part of the [Crash Analytics premium feature](https://plugins.matomo.org/CrashAnalytics). If the plugin is not installed and activated, these methods will not work.
 
@@ -476,15 +476,15 @@ This module is part of the [Crash Analytics premium feature](https://plugins.mat
 
 These methods are **not compatible** with `API.getRowEvolution` as they return configuration data, internal state, or entity-specific information rather than structured reports with dimensions and metrics, for example, `CrashAnalytics.mergeCrashes`, `CrashAnalytics.getIgnoredCrashes`, `CrashAnalytics.getCrashGroups`, `CrashAnalytics.getCrashSummary`, `CrashAnalytics.getLastCrashesOverview`, `CrashAnalytics.getLastTopCrashes`, `CrashAnalytics.getCrashesForPageUrl`, `CrashAnalytics.getCrashesForSource`, and `CrashAnalytics.getCrashesForCategory`.
 
-### Custom Variables
+#### Custom Variables
 
 - `CustomVariables.getCustomVariables`: Returns custom variables configured on your site.
 
-### DevicePlugins
+#### DevicePlugins
 
 - `DevicePlugins.getPlugin`: Shows the type browser plugins (such as Java, PDF, etc.) detected among your visitors.
 
-### Devices Detection
+#### Devices Detection
 
 - `DevicesDetection.getType`: Shows device types used by visitors (e.g. desktop, smartphone).
 - `DevicesDetection.getBrand`: Shows the brand of the visitor's device (e.g. Apple, Samsung).
@@ -495,13 +495,13 @@ These methods are **not compatible** with `API.getRowEvolution` as they return c
 - `DevicesDetection.getBrowserVersions`: Lists the exact versions of browsers used by visitors.
 - `DevicesDetection.getBrowserEngines`: Shows the browser rendering engine (e.g. Blink, WebKit) used by visitors.
 
-### Events
+#### Events
 
 - `Events.getCategory`: Returns event data grouped by event category. Useful for understanding the high-level types of interactions that your visitors perform (e.g. video, downloads, buttons).
 - `Events.getAction`: Returns event data grouped by action name, which reflects what users are doing (e.g. play, pause, click).
 - `Events.getName`: Returns event data grouped by event name (e.g. Newsletter signup, Download Invest-PDF).
 
-### Goals
+#### Goals
 
 Ecommerce metrics are only available if Ecommerce tracking is enabled.
 
@@ -511,7 +511,7 @@ Ecommerce metrics are only available if Ecommerce tracking is enabled.
 - `Goals.getDaysToConversion`: Shows the total number of goal conversions that occurred within different time ranges and shows how many days passed between a visitor's first interaction and conversion.
 - `Goals.getVisitsUntilConversion`: Shows how many visits it takes on average for users to convert, grouped by count of visits.
 
-### MarketingCampaignsReporting
+#### MarketingCampaignsReporting
 
 - `MarketingCampaignsReporting.getId`: Returns metrics on tracked campaigns grouped by campaign ID.
 - `MarketingCampaignsReporting.getName`: Returns metrics on tracked campaigns grouped by campaign name (e.g. using mtm_campaign).
@@ -523,7 +523,7 @@ Ecommerce metrics are only available if Ecommerce tracking is enabled.
 - `MarketingCampaignsReporting.getPlacement`: Returns metrics on tracked campaigns grouped by campaign placement (e.g. using mtm_placement).
 - `MarketingCampaignsReporting.getSourceMedium`: Returns metrics on tracked campaigns grouped by campaign source-medium.
 
-### MediaAnalytics
+#### MediaAnalytics
 
 This module is part of the [Media Analytics premium feature](https://plugins.matomo.org/MediaAnalytics). If the plugin is not installed and activated, these methods will not work.
 
@@ -538,12 +538,12 @@ This module is part of the [Media Analytics premium feature](https://plugins.mat
 - `MediaAnalytics.getVideoResolutions`: Shows the resolution (width and height) at which your videos were watched.
 - `MediaAnalytics.getPlayers`: Lists the media players used by your visitors to play the media on your website.
 
-### MultiSites
+#### MultiSites
 
 - `MultiSites.getAll`: Returns an informational overview for All Websites, containing the most general metrics about your visitors.
 - `MultiSites.getOne`: Returns an informational overview for a specific website, containing the most general metrics about your visitors.
 
-### Referrers
+#### Referrers
 
 - `Referrers.getReferrerType`: Displays grouped traffic sources by type: direct entry, websites, search engines, and campaigns. Offers a high-level categorisation of incoming traffic and supports processed report generation.
 - `Referrers.getKeywords`: Lists the keywords used by visitors in search engines to find your website. Aggregated metrics are shown per keyword.
@@ -552,12 +552,12 @@ This module is part of the [Media Analytics premium feature](https://plugins.mat
 - `Referrers.getSocials`: Returns traffic data originating from social networks.
 - `Referrers.getUrlsForSocial`: Displays the exact URLs from social networks that referred traffic.
 
-### Resolution
+#### Resolution
 
 - `Resolution.getResolution`: Returns the number of visits grouped by screen resolution (e.g., 1920x1080, 1366x768).
 - `Resolution.getConfiguration`: Returns the number of visits grouped by the combination of operating system, browser, and screen resolution.
 
-### SearchEngineKeywordsPerformance
+#### SearchEngineKeywordsPerformance
 
 This module is part of the [Search Engine Keywords Performance premium feature](https://plugins.matomo.org/SearchEngineKeywordsPerformance). If the plugin is not installed and activated, these methods will not work.
 
@@ -568,47 +568,47 @@ This module is part of the [Search Engine Keywords Performance premium feature](
 - `SearchEngineKeywordsPerformance.getKeywordsGoogleImage`: Returns image search keyword data from Google.
 - `SearchEngineKeywordsPerformance.getKeywordsGoogleVideo`: Returns video search keyword data from Google.
 
-### UserCountry
+#### UserCountry
 
 - `UserCountry.getCountry`: Shows visitor metrics by the country your visitors originated from.
 - `UserCountry.getContinent`: Shows visitor metrics by the continent your visitors originated from.
 - `UserCountry.getRegion`: Shows visitor metrics by the region your visitors originated from.
 - `UserCountry.getCity`: Shows visitor metrics by the city your visitors originated from.
 
-### UserId
+#### UserId
 
 - `UserId.getUsers`: Shows visits and other general metrics for every individual User ID.
 
-### UserLanguage
+#### UserLanguage
 
 - `UserLanguage.getLanguage`: Shows visit metrics by the language set in the visitor's browser.
 - `UserLanguage.getLanguageCode`: Shows visit metrics by the language code set in the visitor's browser.
 
-### UsersFlow
+#### UsersFlow
 
 This module is part of the [UsersFlow premium feature](https://plugins.matomo.org/UsersFlow). If the plugin is not installed and activated, the method will not work.
 
 - `UsersFlow.getUsersFlowPretty`: Shows the flow of user navigation through your site. Although `getUsersFlowPretty` is primarily used for visualisation, it returns dimension rows suitable for time-based row evolution.
 
-### VisitTime
+#### VisitTime
 
 - `VisitTime.getVisitInformationPerLocalTime`: Shows what times visitors engaged with your website (in their local time zone).
 - `VisitTime.getVisitInformationPerServerTime`: Shows what times visitors engaged with your website (in your server’s local time zone).
 
-### VisitorInterest
+#### VisitorInterest
 
 - `VisitorInterest.getNumberOfVisitsPerVisitDuration`: Reports on how long visitors spent on the site.
 - `VisitorInterest.getNumberOfVisitsPerPage`: Reports on how many pages visitors viewed per session.
 - `VisitorInterest.getNumberOfVisitsByDaysSinceLast`: Reports on how recently returning visitors last visited.
 - `VisitorInterest.getNumberOfVisitsByVisitCount`: Reports on how many times visitors have returned.
 
-# ImageGraph.get
+## ImageGraph.get
 
 `ImageGraph.get` generates a static PNG chart based on the selected report and time period. It provides a graphical summary of time-series metrics, including rows and aggregated values where applicable. This method is commonly used to export graphs for reporting, dashboards, or embedding in external systems.
 
-## Valid `apiModule.apiAction` combinations
+### Valid `apiModule.apiAction` combinations
 
-### Actions
+#### Actions
 
 - `Actions.get`: Displays a graph for the Actions report over the selected period (overview of actions taken on the website).
 - `Actions.getPageUrls`: Displays a graph on the Page URLs report.
@@ -625,12 +625,12 @@ This module is part of the [UsersFlow premium feature](https://plugins.matomo.or
 - `Actions.getSiteSearchNoResultKeywords`: Displays a graph for internal search keywords that returned no results.
 - `Actions.getSiteSearchCategories`: Displays a graph for site search categories.
 
-### Contents
+#### Contents
 
 - `Contents.getContentNames`: Displays a graph for content impression tracking by name (e.g. banner names).
 - `Contents.getContentPieces`: Displays a graph for individual content pieces viewed or interacted with.
 
-### Crash Analytics
+#### Crash Analytics
 
 This module is part of the [Crash Analytics premium feature](https://plugins.matomo.org/CrashAnalytics). If the plugin is not installed and activated, these methods will not work.
 
@@ -648,15 +648,15 @@ This module is part of the [Crash Analytics premium feature](https://plugins.mat
 
 These methods are **not compatible** with `API.ImageGraph.get` as they return configuration data, internal state, or entity-specific information rather than structured reports with dimensions and metrics, for example, `CrashAnalytics.mergeCrashes`, `CrashAnalytics.getIgnoredCrashes`, `CrashAnalytics.getCrashGroups`, `CrashAnalytics.getCrashSummary`, `CrashAnalytics.getLastCrashesOverview`, `CrashAnalytics.getLastTopCrashes`, `CrashAnalytics.getCrashesForPageUrl`, `CrashAnalytics.getCrashesForSource`, and `CrashAnalytics.getCrashesForCategory`.
 
-### Custom Variables
+#### Custom Variables
 
 - `CustomVariables.getCustomVariables`: Displays a graph for custom variables configured on your site.
 
-### DevicePlugins
+#### DevicePlugins
 
 - `DevicePlugins.getPlugin`: Displays a graph on the report showing the browser plugins (such as Java, PDF, etc.) detected among your visitors.
 
-### Devices Detection
+#### Devices Detection
 
 - `DevicesDetection.getType`: Displays a graph about the report that shows device types used by visitors (e.g. desktop, smartphone, tablet).
 - `DevicesDetection.getBrand`: Displays a graph about the report showing the brand of the visitor's device (e.g. Apple, Samsung).
@@ -667,7 +667,7 @@ These methods are **not compatible** with `API.ImageGraph.get` as they return co
 - `DevicesDetection.getBrowserVersions`: Displays a graph about the report listing exact versions of browsers used by visitors.
 - `DevicesDetection.getBrowserEngines`: Displays a graph about the report that shows the browser rendering engine (e.g. Blink, WebKit).
 
-### Events
+#### Events
 
 - `Events.getCategory`: Displays a graph about the report displaying event categories triggered by website visitors (e.g., Video, Form, Button).
 - `Events.getAction`: Displays a graph about the report showing actions associated with events (e.g., Play, Submit, Click).
@@ -675,13 +675,13 @@ These methods are **not compatible** with `API.ImageGraph.get` as they return co
 
 All other `Events.apiAction` methods are not compatible with `API.ImageGraph.get` as they rely on `idSubtable` and do not return top-level rows.
 
-### FormAnalytics
+#### FormAnalytics
 
 This module is part of the [Form Analytics premium feature](https://plugins.matomo.org/FormAnalytics). If the plugin is not installed and activated, the method will not work.
 
 - `FormAnalytics.get`: Displays a graph about the Form Analytics Overview report showing metrics such as number of form views, form starters, form submissions, and form conversions.
 
-### Goals
+#### Goals
 
 Ecommerce metrics are only available if Ecommerce tracking is enabled.
 
@@ -692,7 +692,7 @@ Ecommerce metrics are only available if Ecommerce tracking is enabled.
 - `Goals.getDaysToConversion`: Displays a graph about the report on how many days it took for conversions to occur.
 - `Goals.getVisitsUntilConversion`: Displays a graph about the report showing the number of visits made before a visitor converts a goal.
 
-### MarketingCampaignsReporting
+#### MarketingCampaignsReporting
 
 - `MarketingCampaignsReporting.getName`: Displays a graph about the report showing tracked marketing campaign names (e.g. using mtm_campaign).
 - `MarketingCampaignsReporting.getKeyword`: Displays a graph about the report showing tracked campaign keywords (e.g. using mtm_kwd).
@@ -703,7 +703,7 @@ Ecommerce metrics are only available if Ecommerce tracking is enabled.
 - `MarketingCampaignsReporting.getPlacement`: Displays a graph about the report showing tracked campaign placements (e.g. using mtm_placement).
 - `MarketingCampaignsReporting.getSourceMedium`: Displays a graph about the report combining source and medium dimensions to help distinguish traffic origins.
 
-### MediaAnalytics
+#### MediaAnalytics
 
 This module is part of the [Media Analytics premium feature](https://plugins.matomo.org/MediaAnalytics). If the plugin is not installed and activated, these methods will not work.
 
@@ -719,16 +719,16 @@ This module is part of the [Media Analytics premium feature](https://plugins.mat
 - `MediaAnalytics.getVideoResolutions`: Displays a graph about the report showing the resolution (e.g. 720p, 1080p) of played video files.
 - `MediaAnalytics.getPlayers`: Displays a graph about the report showing the media players used (e.g. HTML5, YouTube embed).
 
-### MultiSites
+#### MultiSites
 
 - `MultiSites.getAll`: Returns a graph showing All Websites most general metrics about your visitors.
 - `MultiSites.getOne`: Returns a graph for a specific website, containing the most general metrics about your visitors.
 
-### PagePerformance
+#### PagePerformance
 
 - `PagePerformance.get`: Displays a graph for page load performance metrics such as load time, server response time, and page render time.
 
-### Referrers
+#### Referrers
 
 - `Referrers.get`: Displays a graph about the report showing all referral sources, including search engines, campaigns, and websites.
 - `Referrers.getReferrerType`: Displays a graph about the report that categorises referral traffic by type (search, direct, website, campaign).
@@ -739,12 +739,12 @@ This module is part of the [Media Analytics premium feature](https://plugins.mat
 - `Referrers.getSocials`: Displays a graph for social network referrals.
 - `Referrers.getUrlsForSocials`: Displays the exact URLs from social networks that referred traffic.
 
-### Resolution
+#### Resolution
 
 - `Resolution.getResolution`: Displays a graph about the report showing the screen resolutions used by visitors.
 - `Resolution.getConfiguration`: Displays a graph about the report showing combinations of screen resolution, browser, and operating system used by your visitors.
 
-### SearchEngineKeywordsPerformance
+#### SearchEngineKeywordsPerformance
 
 This module is part of the [Search Engine Keywords Performance premium feature](https://plugins.matomo.org/SearchEngineKeywordsPerformance). If the plugin is not installed and activated, these methods will not work.
 
@@ -755,45 +755,45 @@ This module is part of the [Search Engine Keywords Performance premium feature](
 - `SearchEngineKeywordsPerformance.getKeywordsGoogleImage`: Displays a graph about image search keyword data from Google.
 - `SearchEngineKeywordsPerformance.getKeywordsGoogleVideo`: Displays a graph about video search keyword data from Google.
 
-### UserCountry
+#### UserCountry
 
 - `UserCountry.getCountry`: Displays a graph about the report showing the countries your visitors came from.
 - `UserCountry.getContinent`: Displays a graph about the report showing the continents your visitors came from.
 - `UserCountry.getRegion`: Displays a graph about the report showing the regions your visitors came from.
 - `UserCountry.getCity`: Displays a graph about the report showing the cities your visitors came from.
 
-### UserId
+#### UserId
 
 - `UserId.getUsers`: Displays a graph about the report showing visits grouped by User IDs.
 
-### UserLanguage
+#### UserLanguage
 
 - `UserLanguage.getLanguage`: Displays a graph about the report showing the languages configured in visitors’ browsers.
 - `UserLanguage.getLanguageCode`: Displays a graph about the report showing language codes (e.g. en-us, fr-fr) detected from visitors’ browsers.
 
-### UsersFlow
+#### UsersFlow
 
 This module is part of the [UsersFlow premium feature](https://plugins.matomo.org/UsersFlow). If the plugin is not installed and activated, the method will not work.
 
 - `UsersFlow.getUsersFlowPretty`: Displays a graph about the report showing the flow of user navigation through your site.
 
-### VisitFrequency
+#### VisitFrequency
 
 - `VisitFrequency.get`: Displays a graph about the report comparing visit frequency metrics for new and returning visitors, bounce rate, and actions per visit.
 
-### VisitTime
+#### VisitTime
 
 - `VisitTime.getVisitInformationPerLocalTime`: Displays a graph about the report showing visits by local time of the visitor.
 - `VisitTime.getVisitInformationPerServerTime`: Displays a graph about the report showing visits by your server’s time zone.
 - `VisitTime.getByDayOfWeek`: Displays a graph about the report showing visits grouped by day of the week.
 
-### VisitorInterest
+#### VisitorInterest
 
 - `VisitorInterest.getNumberOfVisitsPerVisitDuration`: Displays a graph about the report showing how long visitors spent on the site.
 - `VisitorInterest.getNumberOfVisitsPerPage`: Displays a graph about the report showing how many pages visitors viewed per session.
 - `VisitorInterest.getNumberOfVisitsByDaysSinceLast`: Displays a graph about the report showing how recently returning visitors last visited.
 - `VisitorInterest.getNumberOfVisitsByVisitCount`: Displays a graph about the report showing how many times visitors have returned.
 
-### VisitsSummary
+#### VisitsSummary
 
 - `VisitsSummary.get`: Displays a graph about the report showing general visit metrics including visits, unique visitors, and bounce rate.
