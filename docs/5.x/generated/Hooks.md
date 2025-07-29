@@ -3442,7 +3442,7 @@ Callback Signature:
 
 ### SitesManager.addSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [790](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L790)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [837](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L837)*
 
 Triggered after a site has been added.
 
@@ -3458,7 +3458,7 @@ Usages:
 
 ### SitesManager.deleteSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [909](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L909)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [956](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L956)*
 
 Triggered after a site has been deleted. Plugins can use this event to remove site specific values or settings, such as removing all
 goals that belong to a specific website. If you store any data related to a website you
@@ -3494,7 +3494,7 @@ Callback Signature:
 
 ### SitesManager.getMessagesToWarnOnSiteRemoval
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [433](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L433)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [479](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L479)*
 
 Triggered before a modal to delete a measurable is displayed A plugin can listen to it and add additional information to be displayed in the measurable delete modal body
 
