@@ -225,7 +225,7 @@ class Guide implements MenuItem
     {
         $anchorList = [];
         foreach ($anchors as $anchor) {
-            $anchorList[$anchor['sub']][] = $anchor['parent'];
+            $anchorList[$anchor['subsectionId']][] = $anchor['sectionId'];
         }
         $dom = new \DomDocument();
         // Will probably be duplicate ID warnings so suppress them

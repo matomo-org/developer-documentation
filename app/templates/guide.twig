@@ -25,7 +25,7 @@
                     {% if section.children|length %}
                         {% for subsection in section.children %}
                             {% if subsection.id in links %}
-                                {% set anchorLinks = anchorLinks|merge([{ parent: section.id, sub: subsection.id,  }]) %}
+                                {% set anchorLinks = anchorLinks|merge([{ sectionId: section.id, subsectionId: subsection.id,  }]) %}
                             {% else %}
                                 {% set links = links|merge([subsection.id]) %}
                             {% endif %}
