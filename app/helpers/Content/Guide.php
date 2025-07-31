@@ -43,6 +43,16 @@ class Guide implements MenuItem
     /**
      * @return string
      */
+    public function getValidatedRenderedContent($anchors = [])
+    {
+        $content = $this->getRenderedcontent();
+        $content = self::fixDuplicateAnchorIds($content, $anchors);
+        return $content;
+    }
+
+    /**
+     * @return string
+     */
     public function getTitle()
     {
         if (isset($this->document->metadata['title'])) {
@@ -206,5 +216,39 @@ class Guide implements MenuItem
 
             return $this->getTitle();
         }
+    }
+
+    /**
+     * @return string
+     */
+    public static function fixDuplicateAnchorIDs($content, $anchors)
+    {
+        $anchorList = [];
+        foreach ($anchors as $anchor) {
+            $anchorList[$anchor['subsectionId']][] = $anchor['sectionId'];
+        }
+        $dom = new \DomDocument();
+        // Will probably be duplicate ID warnings so suppress them
+        @$dom->loadHtml($content);
+        $anchors = $dom->getElementsByTagName('*');
+        $ids=[];
+        $duplicateId = 0;
+        foreach ($anchors as $anchor) {
+            $id = $anchor->getAttribute('id');
+            if ($id && isset($anchorList[$id]) && in_array($id, $ids)) {
+                // should only amend the ID via $anchorList if it is a h3
+                if ($anchor->tagName == 'h3') {
+                    $parent = array_shift($anchorList[$id]);
+                    $anchor->setAttribute('id', "$parent-$id");
+                } else {
+                    // if it is not a h3 amend so the ID is not duplicated
+                    $duplicateId++;
+                    $anchor->setAttribute('id', "$id-$duplicateId");
+                }
+            }
+            $ids[] = $id;
+        }
+
+        return $dom->saveHTML();
     }
 }
