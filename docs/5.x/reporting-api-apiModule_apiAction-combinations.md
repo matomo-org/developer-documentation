@@ -3,8 +3,8 @@ category: API Reference
 ---
 # Compatible apiModule and apiAction combinations
 
-With the [Matomo Reporting API](https://developer.matomo.org/api-reference/reporting-api), you can query specific reports using a valid combination of an `apiModule` and `apiAction` parameter to identify the exact dataset to retrieve. The `apiModule` specifies the plugin or area of functionality (such as Actions, Goals, 
-or Referrers), while apiAction refers to the specific method exposed by that module (such as `getPageUrls`, `getConversions`, or `getCountry`). Together, these define the API method you want to call. 
+With the [Matomo Reporting API](https://developer.matomo.org/api-reference/reporting-api), you can query specific reports using a valid combination of an `apiModule` and `apiAction` parameter to identify the exact dataset to retrieve. The `apiModule` specifies the plugin or area of functionality (such as Actions, Goals,
+or Referrers), while apiAction refers to the specific method exposed by that module (such as `getPageUrls`, `getConversions`, or `getCountry`). Together, these define the API method you want to call.
 
 Four Matomo API methods support the combined use of `apiModule` and `apiAction` parameters:
 
@@ -30,24 +30,24 @@ The next sections will cover valid combinations for each of the four API methods
 This returns structural information about a specific report. It includes the report's name, category, available dimensions, returned metrics (e.g. `nb_visits`, `bounce_rate`), descriptions of each metric, and the image graph URL (`imageGraphUrl`) if supported. For example, you can retrieve metadata for the Page URLs report via:
 `?module=API&method=API.getMetadata&idSite=1&apiModule=Actions&apiAction=getPageUrls`
 
-### Valid `apiModule.apiAction` combinations
+### Valid `apiModule.apiAction` combinations for API.getMetadata
 
-#### Actions  
+#### Actions
 
-- `Actions.get`: Returns metadata for the Actions report over the selected period (overview of actions taken on the website).  
-- `Actions.getPageUrls`: Returns metadata on the Page URLs report.  
-- `Actions.getPageUrlsFollowingSiteSearch`: Returns metadata on the Site Search report for page URLs viewed after a site search.  
-- `Actions.getPageTitlesFollowingSiteSearch`: Returns metadata on the Site Search report for page titles viewed after a site search.  
-- `Actions.getEntryPageUrls`: Returns metadata on the Entry pages report (first page viewed in a visit) by URL.  
-- `Actions.getExitPageUrls`: Returns metadata on the Exit pages report (last page viewed in a visit) by URL.  
-- `Actions.getPageTitles`: Returns metadata on all page titles viewed by users.  
-- `Actions.getEntryPageTitles`: Returns metadata for entry pages by title.  
-- `Actions.getExitPageTitles`: Returns metadata for exit pages by title.  
-- `Actions.getDownloads`: Returns metadata for files downloaded by users.  
-- `Actions.getOutlinks`: Returns metadata for external link clicks.  
-- `Actions.getSiteSearchKeywords`: Returns metadata for internal search keywords.  
-- `Actions.getSiteSearchNoResultKeywords`: Returns metadata for internal search keywords that returned no results.  
-- `Actions.getSiteSearchCategories`: Returns metadata for site search categories.  
+- `Actions.get`: Returns metadata for the Actions report over the selected period (overview of actions taken on the website).
+- `Actions.getPageUrls`: Returns metadata on the Page URLs report.
+- `Actions.getPageUrlsFollowingSiteSearch`: Returns metadata on the Site Search report for page URLs viewed after a site search.
+- `Actions.getPageTitlesFollowingSiteSearch`: Returns metadata on the Site Search report for page titles viewed after a site search.
+- `Actions.getEntryPageUrls`: Returns metadata on the Entry pages report (first page viewed in a visit) by URL.
+- `Actions.getExitPageUrls`: Returns metadata on the Exit pages report (last page viewed in a visit) by URL.
+- `Actions.getPageTitles`: Returns metadata on all page titles viewed by users.
+- `Actions.getEntryPageTitles`: Returns metadata for entry pages by title.
+- `Actions.getExitPageTitles`: Returns metadata for exit pages by title.
+- `Actions.getDownloads`: Returns metadata for files downloaded by users.
+- `Actions.getOutlinks`: Returns metadata for external link clicks.
+- `Actions.getSiteSearchKeywords`: Returns metadata for internal search keywords.
+- `Actions.getSiteSearchNoResultKeywords`: Returns metadata for internal search keywords that returned no results.
+- `Actions.getSiteSearchCategories`: Returns metadata for site search categories.
 
 These methods are **not compatible** with `API.getMetadata` as they are single-row, detail-level reports that return metrics for a specific URL or name and do not return rows with labels: `Actions.getPageUrl`, `Actions.getPageTitle`, `Actions.getDownload` and `Actions.getOutlink`.
 
@@ -225,11 +225,11 @@ This module is part of the [UsersFlow premium feature](https://plugins.matomo.or
 
 - `VisitsSummary.get`: Returns metadata about the report showing general visit metrics including visits, unique visitors, and bounce rate.
 
-## API.getProcessedReport 
+## API.getProcessedReport
 
 This method returns the full dataset for a report, including calculated (processed) metrics, percentages, dimension labels, totals, and subtotals. Most `apiModule.apiAction` combinations that are valid for `API.getMetadata` are also compatible with `API.getProcessedReport`.
 
-### Valid `apiModule.apiAction` combinations
+### Valid `apiModule.apiAction` combinations for API.getProcessedReport
 
 #### Actions
 
@@ -427,12 +427,12 @@ This module is part of the [UsersFlow premium feature](https://plugins.matomo.or
 
 - `VisitsSummary.get`: Returns general visit metrics including visits, unique visitors, and bounce rate.
 
-## API.getRowEvolution 
+## API.getRowEvolution
 
 `API.getRowEvolution` requires a valid period (e.g. day, week, month) and a selected row label from a report that returns dimensioned tabular data. Reports that return only aggregate values such as `Actions.get` or `CrashAnalytics.get` are not supported, as they do not contain rows that can be evolved over time.
 Only reports that return a primary dimension with identifiable labels (e.g. URL, title, keyword, campaign name, etc.) support `API.getRowEvolution`. `
 
-### Valid `apiModule.apiAction` combinations
+### Valid `apiModule.apiAction` combinations for API.getRowEvolution
 
 #### Actions
 
@@ -606,7 +606,7 @@ This module is part of the [UsersFlow premium feature](https://plugins.matomo.or
 
 `ImageGraph.get` generates a static PNG chart based on the selected report and time period. It provides a graphical summary of time-series metrics, including rows and aggregated values where applicable. This method is commonly used to export graphs for reporting, dashboards, or embedding in external systems.
 
-### Valid `apiModule.apiAction` combinations
+### Valid `apiModule.apiAction` combinations for ImageGraph.get
 
 #### Actions
 

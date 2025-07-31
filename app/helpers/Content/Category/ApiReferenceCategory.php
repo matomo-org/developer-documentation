@@ -53,7 +53,8 @@ class ApiReferenceCategory extends Category
             new EmptySubCategory('Reporting HTTP API', [
                 new ApiReferenceGuide('reporting-api'),
                 new ApiReferenceGuide('reporting-api-metadata'),
-                new ApiReferenceGuide('reporting-api-segmentation')
+                new ApiReferenceGuide('reporting-api-segmentation'),
+                new ApiReferenceGuide('reporting-api-apiModule_apiAction-combinations')
             ]),
             new EmptySubCategory('PHP Plugins API', [
                 new PhpDoc('Classes', 'classes'),
