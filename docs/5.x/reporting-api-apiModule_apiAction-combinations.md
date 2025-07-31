@@ -30,7 +30,7 @@ The next sections will cover valid combinations for each of the four API methods
 This returns structural information about a specific report. It includes the report's name, category, available dimensions, returned metrics (e.g. `nb_visits`, `bounce_rate`), descriptions of each metric, and the image graph URL (`imageGraphUrl`) if supported. For example, you can retrieve metadata for the Page URLs report via:
 `?module=API&method=API.getMetadata&idSite=1&apiModule=Actions&apiAction=getPageUrls`
 
-### Valid `apiModule.apiAction` combinations
+### Valid `apiModule.apiAction` combinations for API.getMetadata
 
 #### Actions  
 
@@ -229,7 +229,7 @@ This module is part of the [UsersFlow premium feature](https://plugins.matomo.or
 
 This method returns the full dataset for a report, including calculated (processed) metrics, percentages, dimension labels, totals, and subtotals. Most `apiModule.apiAction` combinations that are valid for `API.getMetadata` are also compatible with `API.getProcessedReport`.
 
-### Valid `apiModule.apiAction` combinations
+### Valid `apiModule.apiAction` combinations for API.getProcessedReport
 
 #### Actions
 
@@ -432,7 +432,7 @@ This module is part of the [UsersFlow premium feature](https://plugins.matomo.or
 `API.getRowEvolution` requires a valid period (e.g. day, week, month) and a selected row label from a report that returns dimensioned tabular data. Reports that return only aggregate values such as `Actions.get` or `CrashAnalytics.get` are not supported, as they do not contain rows that can be evolved over time.
 Only reports that return a primary dimension with identifiable labels (e.g. URL, title, keyword, campaign name, etc.) support `API.getRowEvolution`. `
 
-### Valid `apiModule.apiAction` combinations
+### Valid `apiModule.apiAction` combinations for API.getRowEvolution
 
 #### Actions
 
@@ -606,7 +606,7 @@ This module is part of the [UsersFlow premium feature](https://plugins.matomo.or
 
 `ImageGraph.get` generates a static PNG chart based on the selected report and time period. It provides a graphical summary of time-series metrics, including rows and aggregated values where applicable. This method is commonly used to export graphs for reporting, dashboards, or embedding in external systems.
 
-### Valid `apiModule.apiAction` combinations
+### Valid `apiModule.apiAction` combinations for ImageGraph.get
 
 #### Actions
 
