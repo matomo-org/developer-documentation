@@ -46,6 +46,8 @@ The class defines the following methods:
 - [`getMetadataIntersectArray()`](#getmetadataintersectarray) &mdash; Returns the intersection of children's metadata arrays (what they all have in common).
 - [`deleteRowsMetadata()`](#deleterowsmetadata) &mdash; Delete row metadata by name in every row.
 - [`getColumns()`](#getcolumns) &mdash; See DataTable::getColumns().
+- [`setAsBuiltWithoutArchives()`](#setasbuiltwithoutarchives)
+- [`wasBuiltWithoutArchives()`](#wasbuiltwithoutarchives)
 
 <a name="getkeyname" id="getkeyname"></a>
 <a name="getKeyName" id="getKeyName"></a>
@@ -517,4 +519,23 @@ See DataTable::getColumns().
 #### Signature
 
 - It returns a `array` value.
+
+<a name="setasbuiltwithoutarchives" id="setasbuiltwithoutarchives"></a>
+<a name="setAsBuiltWithoutArchives" id="setAsBuiltWithoutArchives"></a>
+### `setAsBuiltWithoutArchives()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$flag` (`bool`) &mdash;
+      
+- It returns a `void` value.
+
+<a name="wasbuiltwithoutarchives" id="wasbuiltwithoutarchives"></a>
+<a name="wasBuiltWithoutArchives" id="wasBuiltWithoutArchives"></a>
+### `wasBuiltWithoutArchives()`
+
+#### Signature
+
+- It returns a `bool` value.
 

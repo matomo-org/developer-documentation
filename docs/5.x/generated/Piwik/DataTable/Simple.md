@@ -116,6 +116,8 @@ The class defines the following methods:
 - [`offsetSet()`](#offsetset) Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`offsetUnset()`](#offsetunset) Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`sumRowWithLabel()`](#sumrowwithlabel) Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`setAsBuiltWithoutArchives()`](#setasbuiltwithoutarchives) Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`wasBuiltWithoutArchives()`](#wasbuiltwithoutarchives) Inherited from [`DataTable`](../../Piwik/DataTable.md)
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -1195,4 +1197,23 @@ Unsets all queued filters.
     - `$aggregationOps` (`array`|`null`) &mdash;
       
 - It returns a [`Row`](../../Piwik/DataTable/Row.md) value.
+
+<a name="setasbuiltwithoutarchives" id="setasbuiltwithoutarchives"></a>
+<a name="setAsBuiltWithoutArchives" id="setAsBuiltWithoutArchives"></a>
+### `setAsBuiltWithoutArchives()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$flag` (`bool`) &mdash;
+      
+- It returns a `void` value.
+
+<a name="wasbuiltwithoutarchives" id="wasbuiltwithoutarchives"></a>
+<a name="wasBuiltWithoutArchives" id="wasBuiltWithoutArchives"></a>
+### `wasBuiltWithoutArchives()`
+
+#### Signature
+
+- It returns a `bool` value.
 

@@ -1144,7 +1144,9 @@ Index
 - [`setAllTableMetadata()`](Piwik/DataTable.md#setalltablemetadata) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`setMaximumAllowedRows()`](Piwik/DataTable.md#setmaximumallowedrows) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`sumRowWithLabel()`](Piwik/DataTable.md#sumrowwithlabel) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
+- [`setAsBuiltWithoutArchives()`](Piwik/DataTable.md#setasbuiltwithoutarchives) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
 - [`Sort`](Piwik/DataTable/Filter/Sort.md) &mdash; *Class in namespace* `Piwik\DataTable\Filter`- [`setKeyName()`](Piwik/DataTable/Map.md#setkeyname) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
+- [`setAsBuiltWithoutArchives()`](Piwik/DataTable/Map.md#setasbuiltwithoutarchives) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
 - [`$subtableId`](Piwik/DataTable/Row.md#$subtableid) &mdash; *Property in class* [`Row`](Piwik/DataTable/Row.md)
 - [`sumSubtable()`](Piwik/DataTable/Row.md#sumsubtable) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
 - [`setSubtable()`](Piwik/DataTable/Row.md#setsubtable) &mdash; *Method in class* [`Row`](Piwik/DataTable/Row.md)
@@ -1361,6 +1363,8 @@ Index
 
 - [`wasAuthenticationSuccessful()`](Piwik/AuthResult.md#wasauthenticationsuccessful) &mdash; *Method in class* [`AuthResult`](Piwik/AuthResult.md)
 - [`walkPath()`](Piwik/DataTable.md#walkpath) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
+- [`wasBuiltWithoutArchives()`](Piwik/DataTable.md#wasbuiltwithoutarchives) &mdash; *Method in class* [`DataTable`](Piwik/DataTable.md)
+- [`wasBuiltWithoutArchives()`](Piwik/DataTable/Map.md#wasbuiltwithoutarchives) &mdash; *Method in class* [`Map`](Piwik/DataTable/Map.md)
 - [`warning()`](Piwik/Log.md#warning) &mdash; *Method in class* [`Log`](Piwik/Log.md)
 - [`weekly()`](Piwik/Plugin/Tasks.md#weekly) &mdash; *Method in class* [`Tasks`](Piwik/Plugin/Tasks.md)
 - [`Weekly`](Piwik/Scheduler/Schedule/Weekly.md) &mdash; *Class in namespace* `Piwik\Scheduler\Schedule`- [`willBeArchived()`](Piwik/Segment.md#willbearchived) &mdash; *Method in class* [`Segment`](Piwik/Segment.md)
