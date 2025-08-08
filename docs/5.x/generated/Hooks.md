@@ -1260,7 +1260,7 @@ Usages:
 
 ### CustomJsTracker.updateTracker
 
-*Defined in [Piwik/Plugins/PrivacyManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/API.php) in line [265](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/API.php#L265)*
+*Defined in [Piwik/Plugins/PrivacyManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/API.php) in line [275](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/API.php#L275)*
 
 
 
