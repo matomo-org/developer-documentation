@@ -225,6 +225,27 @@ Matomo Core only defines the main processes and behaviours. Plugins can extend a
 
 You can read more about this topic in the ["Matomo's Extensibility Points" guide](/guides/piwiks-extensibility-points).
 
+## Fine grained plugin directory and download control
+
+Matomo allows for a fair amount of control over where plugins are downloaded, installed, and discovered, beyond the standard `./plugins` directory. This is particularly handy in non-standard deployment configurations, such as when Matomo is deployed in containerized or read-only deployments where the core code is immutable, but you want to allow users the ability to download and install additional plugins.
+
+This is achieved through the use of the environment variables `MATOMO_PLUGIN_DIRS` and `MATOMO_PLUGIN_COPY_DIR`.
+
+### MATOMO_PLUGIN_DIRS
+
+Setting this environment variable allows you to register additional plugin locations beyond the default. It describes the plugin locations through a colon-separated list of entries, where each entry has the form `ABSOLUTE_PATH;RELATIVE_WEBROOT_PATH`. The _absolute path_ is where the plugin code lives on disk; the relative path is how that same location is exposed under the Matomo webroot (so plugin assets resolve correctly). Both parts are required, and Matomo normalizes trailing slashes.
+
+*Example:*
+`MATOMO_PLUGIN_DIRS="/var/www/html/plugins;plugins:/srv/matomo-plugins;plugins`
+
+You can declare this via environment variables, or alternatively by setting $GLOBALS['MATOMO_PLUGIN_DIRS'] in bootstrap.php.
+
+### MATOMO_PLUGIN_COPY_DIR
+
+To control where Marketplace or ZIP installs are written, set `MATOMO_PLUGIN_COPY_DIR` to one of the absolute paths already listed in MATOMO_PLUGIN_DIRS. 
+
+**Warning:** The directory must be writable by the web server user, otherwise plugin installation will fail. If the specified path is invalid or not writable, Matomo will either display an error message or fallback to installing plugins in the core `./plugins` directory, depending on the situation.
+
 
 ## Other valuable resources
 
