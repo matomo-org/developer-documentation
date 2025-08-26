@@ -33,7 +33,7 @@ Callback Signature:
 
 ### Access.Capability.addCapabilities
 
-*Defined in [Piwik/Access/CapabilitiesProvider](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Access/CapabilitiesProvider.php) in line [44](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Access/CapabilitiesProvider.php#L44)*
+*Defined in [Piwik/Access/CapabilitiesProvider](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Access/CapabilitiesProvider.php) in line [45](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Access/CapabilitiesProvider.php#L45)*
 
 Triggered to add new capabilities. **Example**
 
@@ -54,7 +54,7 @@ Usages:
 
 ### Access.Capability.filterCapabilities
 
-*Defined in [Piwik/Access/CapabilitiesProvider](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Access/CapabilitiesProvider.php) in line [63](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Access/CapabilitiesProvider.php#L63)*
+*Defined in [Piwik/Access/CapabilitiesProvider](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Access/CapabilitiesProvider.php) in line [64](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Access/CapabilitiesProvider.php#L64)*
 
 Triggered to filter / restrict capabilities. **Example**
 
