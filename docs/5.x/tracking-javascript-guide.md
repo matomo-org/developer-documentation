@@ -887,7 +887,7 @@ When you need to duplicate data into another website, or consolidate several web
 
 #### Alternative solution: duplicate the tracking data
 
-Alternatively to using the RollUp Reporting plugin you can duplicate the tracking data. To duplicate the data you can call `addTracker` with a Piwik URL and your website ID where to duplicate the data:
+Alternative to using the RollUp Reporting plugin, you can duplicate the tracking data. To duplicate the data you can call `addTracker` with a Piwik URL and your website ID where to duplicate the data. This method is simpler than adding the JavaScript tracking code twice on the page.
 
 ```js
   var u="//matomo.example.org/";
