@@ -48,7 +48,7 @@ Sends an HTTP request using best available transport method.
        If supplied, the HTTP response will be saved to the file specified by this path.
     - `$followDepth` (`int`|`null`) &mdash;
        Internal redirect count. Should always pass `null` for this parameter.
-    - `$acceptLanguage` (`bool`) &mdash;
+    - `$acceptLanguage` (`bool`|`string`) &mdash;
        The value to use for the `'Accept-Language'` HTTP request header.
     - `$byteRange` (`array`|`bool`) &mdash;
        For `Range:` header. Should be two element array of bytes, eg, `array(0, 1024)` Doesn't work w/ `fopen` transport method.
