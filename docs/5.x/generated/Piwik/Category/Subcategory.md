@@ -130,5 +130,7 @@ Get the help text (if any) for this category.
 
 #### Signature
 
-- It returns a `null` value.
+
+- *Returns:*  `null`|`string` &mdash;
+    
 
