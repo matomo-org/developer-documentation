@@ -89,8 +89,8 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `setCustomDimension (customDimensionId, customDimensionValue)` - Set a custom dimension. (requires [Custom Dimensions plugin](https://plugins.matomo.org/CustomDimensions))
 *   `deleteCustomDimension (customDimensionId)` - Delete a custom dimension. (requires [Custom Dimensions plugin](https://plugins.matomo.org/CustomDimensions))
 *   `getCustomDimension (customDimensionId)` - Retrieve a custom dimension. (requires [Custom Dimensions plugin](https://plugins.matomo.org/CustomDimensions))
-*   `setCampaignNameKey(name)` - Set campaign name parameter(s). (Help: [Customize Campaign name parameter names](https://matomo.org/faq/how-to/#faq_120))
-*   `setCampaignKeywordKey(keyword)` - Set campaign keyword parameter(s). (Help: [Customize Campaign keyword parameter names](https://matomo.org/faq/how-to/#faq_120))
+*   `setCampaignNameKey(name)` - Set campaign name parameter(s). (Help: [Customize Campaign name parameter names](https://matomo.org/faq/how-to/faq_120))
+*   `setCampaignKeywordKey(keyword)` - Set campaign keyword parameter(s). (Help: [Customize Campaign keyword parameter names](https://matomo.org/faq/how-to/faq_120))
 *   `setConversionAttributionFirstReferrer( bool )` - Set to true to attribute a conversion to the first referrer. By default, conversion is attributed to the most recent referrer.
 
 ### Ecommerce
@@ -140,7 +140,7 @@ You can use these methods to build your own consent form/pages. [Learn more abou
 Piwik uses first party cookies to keep track of some user information over time. Consideration must be given to retention times and avoiding conflicts with other cookies, trackers, and apps.
 
 *   `disableCookies()` - Disable all first party cookies. Existing Piwik cookies for this websites will be deleted on the next page view. Cookies will be even disabled if the user has given cookie consent using the method `rememberCookieConsentGiven()`.
-*   `deleteCookies()` - Delete the tracking cookies currently currently set (this is useful when [creating new visits](https://matomo.org/faq/how-to/#faq_187))
+*   `deleteCookies()` - Delete the tracking cookies currently currently set (this is useful when [creating new visits](https://matomo.org/faq/how-to/faq_187))
 *   `hasCookies()` - Return whether cookies are enabled and supported by this browser.
 *   `setCookieNamePrefix( prefix )` - the default prefix is '_pk_'.
 *   `setCookieDomain( domain )` - the default is the document domain; if your website can be visited at both www.example.com and example.com, you would use: `tracker.setCookieDomain('.example.com');` or `tracker.setCookieDomain('*.example.com');`
