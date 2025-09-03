@@ -1,4 +1,8 @@
 html {
+    @media screen and (min-width: 1024px) {
+        /* CSS styles for desktop screens */
+        scroll-padding-top: 65px;
+    }
     position: relative;
     min-height: 100%;
 }
