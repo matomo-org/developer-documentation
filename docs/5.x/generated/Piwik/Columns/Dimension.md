@@ -134,6 +134,7 @@ If the closure returns NULL, then Piwik assumes the segment sub-string will not 
 - It can be one of the following types:
     - `string`
     - [`Closure`](http://php.net/class.Closure)
+    - `callable`
 
 <a name="$sqlfiltervalue" id="$sqlfiltervalue"></a>
 <a name="sqlFilterValue" id="sqlFilterValue"></a>
