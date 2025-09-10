@@ -236,7 +236,7 @@ This is achieved through the use of the environment variables `MATOMO_PLUGIN_DIR
 Setting this environment variable allows you to register additional plugin locations beyond the default. It describes the plugin locations through a colon-separated list of entries, where each entry has the form `ABSOLUTE_PATH;RELATIVE_WEBROOT_PATH`. The _absolute path_ is where the plugin code lives on disk; the relative path is how that same location is exposed under the Matomo webroot (so plugin assets resolve correctly). Both parts are required, and Matomo normalizes trailing slashes.
 
 *Example:*
-`MATOMO_PLUGIN_DIRS="/var/www/html/plugins;plugins:/srv/matomo-plugins;plugins`
+`MATOMO_PLUGIN_DIRS="/var/www/html/plugins;plugins:/srv/matomo-plugins;matomo-plugins"`
 
 You can declare this via environment variables, or alternatively by setting $GLOBALS['MATOMO_PLUGIN_DIRS'] in bootstrap.php.
 
