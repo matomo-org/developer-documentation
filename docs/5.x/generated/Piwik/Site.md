@@ -284,7 +284,7 @@ Checks the given string for valid site IDs and returns them as an array.
     - `$_restrictSitesToLogin` (`bool`|`string`) &mdash;
        Implementation detail. Used only when running as a scheduled task.
 
-- *Returns:*  `array` &mdash;
+- *Returns:*  `Piwik\array&lt;string&gt;`|`Piwik\array&lt;int&gt;` &mdash;
     An array of valid, unique integers.
 
 <a name="clearcache" id="clearcache"></a>

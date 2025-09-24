@@ -294,7 +294,7 @@ Checks that the current user has view access to the requested list of sites
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$idSites` (`int`|`array`) &mdash;
+    - `$idSites` (`int`|`array`|`string`) &mdash;
        The list of site IDs to check access for.
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
