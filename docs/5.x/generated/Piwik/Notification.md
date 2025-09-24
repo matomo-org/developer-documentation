@@ -136,7 +136,7 @@ constants in [Notification](/api-reference/Piwik/Notification) to see possible p
 
 #### Signature
 
-- It is a `int` value.
+- It is a `Piwik\?int` value.
 
 <a name="$raw" id="$raw"></a>
 <a name="raw" id="raw"></a>
