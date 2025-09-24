@@ -234,6 +234,7 @@ Here is a list of metrics returned by the API and their definition.
 
 All the commonly used terms in Piwik Analytics are documented in the [Glossary](https://glossary.matomo.org) including all metrics and reports.
 
-## API Method List
+<br>
+# OpenAPI Documentation
 
-{@include https://demo.matomo.cloud/?module=API&action=listAllMethods&prefixUrl=https://demo.matomo.cloud/&idSite=1&date=yesterday}
+{@include http://127.0.0.1/openapi/docs}
