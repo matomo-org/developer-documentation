@@ -13,4 +13,3 @@
 /docs/changelog-*.md
 /docs/cache/
 /docs/*/cache/
-/app/public/swagger-ui/
