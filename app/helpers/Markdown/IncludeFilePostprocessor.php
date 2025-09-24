@@ -72,6 +72,11 @@ class IncludeFilePostprocessor implements MarkdownParserInterface
             $url = str_replace('[DOCS_DOMAIN]', DOCS_DOMAIN, $url);
         }
 
+        // When necessary, convert to http for local development environments
+        if (empty($_SERVER['HTTPS'])) {
+            $url = str_replace('https://', 'http://', $url);
+        }
+
         try {
 			$content = @file_get_contents($url);
 			if ($content) {
