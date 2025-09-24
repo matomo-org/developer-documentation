@@ -154,6 +154,7 @@ Piwik uses first party cookies to keep track of some user information over time.
 *   `setVisitorCookieTimeout( seconds )` - the default is 13 months
 *   `setReferralCookieTimeout( seconds )` - the default is 6 months
 *   `setSessionCookieTimeout( seconds )` - the default is 30 minutes
+*   `setReferrerUrlMaxLength( length )` - Allows to adjust the length limit used for storing the referrer url in tracking cookie. Defaults to 1024 chars.
 
 ### Advanced uses
 
