@@ -237,4 +237,4 @@ All the commonly used terms in Piwik Analytics are documented in the [Glossary](
 <br>
 # OpenAPI Documentation
 
-{@include http://127.0.0.1/openapi/docs}
+{@include https://[DOCS_DOMAIN]/openapi/docs}

@@ -67,6 +67,11 @@ class IncludeFilePostprocessor implements MarkdownParserInterface
             return 'remote file inclusion disabled';
         }
 
+        // Replace the placeholder with the actual domain
+        if (str_contains($url, '[DOCS_DOMAIN]')) {
+            $url = str_replace('[DOCS_DOMAIN]', DOCS_DOMAIN, $url);
+        }
+
         try {
 			$content = @file_get_contents($url);
 			if ($content) {
