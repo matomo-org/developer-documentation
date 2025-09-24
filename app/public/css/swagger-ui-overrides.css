@@ -1,0 +1,9 @@
+#swagger-ui {
+    pre {
+        background: unset; /* wipe inherited bootstrap style */
+    }
+
+    h2, a {
+        border-bottom: unset; /* wipe inherited bootstrap style */
+    }
+}

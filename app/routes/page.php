@@ -136,6 +136,37 @@ $app->get('/api-reference/PHP-Matomo-Tracker', function (Request $request, Respo
     return renderGuide($this->get("view"), $response, $request->getUri(), new PhpDoc($matomoTracker, 'PHP-Matomo-Tracker'), new ApiReferenceCategory());
 });
 
+$app->get('/openapi/{file}', function (Request $request, Response $response, $args) {
+    // Only allow this endpoint for Matomo 5 or greater
+    if (Environment::getPiwikVersion() < 5) {
+        throw new \Slim\Exception\HttpNotFoundException($request);
+    }
+
+    if ($args['file'] === 'docs') {
+        return $this->get('view')->render($response, 'swagger-ui.twig', []);
+    }
+
+    // Allow only whitelisted source files from the swagger-ui dist/ directory
+    if (in_array($args['file'], ['swagger-ui.css', 'swagger-ui-bundle.js', 'swagger-ui-standalone-preset.js'])) {
+        $json = file_get_contents(__DIR__ . '/../vendor/swagger-api/swagger-ui/dist/' . $args['file']);
+        $response->getBody()->write($json);
+        $contentType = pathinfo($args['file'], PATHINFO_EXTENSION) === 'js' ? 'text/javascript' : 'text/css';
+        return $response->withHeader('Content-Type', $contentType)
+            ->withStatus(200);
+    }
+
+    // Load the JSON OpenAPI spec file
+    if ($args['file'] === 'json') {
+        $json = file_get_contents(__DIR__ . '/../openapi/demo_matomo_spec_v1.0.0.json');
+        $response->getBody()->write($json);
+        return $response->withHeader('Content-Type', 'application/json')
+            ->withStatus(200);
+    }
+
+    // If nothing matched, return a 404 response
+    throw new \Slim\Exception\HttpNotFoundException($request);
+});
+
 $app->get('/api-reference/{reference1}/{reference2}', function (Request $request, Response $response, $args) {
     try {
         $guide = new ApiReferenceGuide($args["reference1"] . '/' . $args["reference2"]);
