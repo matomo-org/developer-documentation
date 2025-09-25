@@ -1,11 +1,18 @@
+{# Don't extend base template when embedding inside another page #}
+{% extends embedded == 0 ? 'base.twig' : 'empty-base.twig' %}
+
+{% block content %}
+
 {# Load the stock SwaggerUI CSS #}
-<link rel="stylesheet" href="/openapi/swagger-ui.css">
+<link rel="stylesheet" href="/openapi/source/swagger-ui.css">
 {# Load our custom CSS, mainly to unset some conflicting Boostrap styles inside #swagger-ui div #}
 <link rel="stylesheet" href="/css/swagger-ui-overrides.css">
 
 <div id="swagger-ui"></div>
 
 {# Load the stock SwaggerUI JS #}
-<script src="/openapi/swagger-ui-bundle.js"></script>
-{# Load our custom JS file to override some behaviour and initialise SwaggerUI #}
+<script src="/openapi/source/swagger-ui-bundle.js"></script>
+{# Load our custom JS to override some behaviour and initialise SwaggerUI #}
 <script src="/js/swagger-ui-init.js"></script>
+
+{% endblock %}

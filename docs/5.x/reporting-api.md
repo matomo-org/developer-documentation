@@ -240,4 +240,4 @@ For a quick reference, see the [list of API methods](https://demo.matomo.cloud/?
 <br>
 # OpenAPI Documentation
 
-{@include https://[DOCS_DOMAIN]/openapi/docs}
+{@include https://[DOCS_DOMAIN]/openapi/docs?embedded=1}

@@ -89,7 +89,7 @@
 
     // Initialise the SwaggerUI class
     SwaggerUIBundle({
-        url: "/openapi/json",
+        url: "/openapi/spec",
         dom_id: "#swagger-ui",
         layout: "BaseLayout",
         deepLinking: false,
