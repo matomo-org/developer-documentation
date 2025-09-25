@@ -164,8 +164,8 @@ $app->group('/openapi', function (\Slim\Routing\RouteCollectorProxy $group) {
             throw new HttpNotFoundException($request);
         }
 
-        $json = file_get_contents(__DIR__ . '/../vendor/swagger-api/swagger-ui/dist/' . $fileName);
-        $response->getBody()->write($json);
+        $fileContent = file_get_contents(__DIR__ . '/../vendor/swagger-api/swagger-ui/dist/' . $fileName);
+        $response->getBody()->write($fileContent);
         $contentType = pathinfo($fileName, PATHINFO_EXTENSION) === 'js' ? 'text/javascript' : 'text/css';
         return $response->withHeader('Content-Type', $contentType)
             ->withStatus(200);
@@ -247,7 +247,7 @@ $app->get('/data/documents', function (Request $request, Response $response, $ar
     $index = $searchIndex->buildIndex();
     $response->getBody()->write(json_encode([
         'urls' => array_keys($index),
-        'names' => array_values($index),
+        'names' => array_values($index)
     ]));
     return $response->withHeader('Content-Type', 'application/json')
         ->withStatus(200);
