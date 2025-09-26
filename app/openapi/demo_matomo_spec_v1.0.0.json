@@ -23,17 +23,12 @@
             "$ref": "#\/components\/parameters\/formatOptional"
           },
           {
-            "name": "idSite",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
+            "$ref": "#\/components\/parameters\/idSiteRequired"
           },
           {
             "name": "idCustomReport",
             "in": "query",
-            "description": "ID of the custom report to duplicate.",
+            "description": "The ID of the custom report to duplicate.",
             "required": true,
             "schema": {
               "type": "integer"
@@ -55,7 +50,73 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#\/components\/responses\/GenericArray"
+            "description": "Response indicating success and containing the ID of the newly created report.",
+            "content": {
+              "text\/xml": {
+                "schema": {
+                  "properties": {
+                    "additionalData": {
+                      "type": "object"
+                    }
+                  },
+                  "type": "object",
+                  "xml": {
+                    "name": "result"
+                  }
+                },
+                "example": {
+                  "success": "1",
+                  "message": "The custom report has been successfully copied.",
+                  "additionalData": {
+                    "idSite": "1",
+                    "idDestinationSites": "",
+                    "idCustomReport": "1",
+                    "newIds": "9"
+                  }
+                }
+              },
+              "application\/json": {
+                "schema": {
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "additionalData": {
+                      "properties": {
+                        "idSite": {
+                          "type": "integer"
+                        },
+                        "idDestinationSites": {
+                          "type": "array",
+                          "items": []
+                        },
+                        "idCustomReport": {
+                          "type": "integer"
+                        },
+                        "newIds": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "example": {
+                  "success": true,
+                  "message": "The custom report has been successfully copied.",
+                  "additionalData": {
+                    "idSite": 1,
+                    "idDestinationSites": [],
+                    "idCustomReport": 1,
+                    "newIds": 9
+                  }
+                }
+              }
+            }
           },
           "400": {
             "$ref": "#\/components\/responses\/BadRequest"
@@ -90,12 +151,7 @@
             "$ref": "#\/components\/parameters\/formatOptional"
           },
           {
-            "name": "idSite",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
+            "$ref": "#\/components\/parameters\/idSiteRequired"
           },
           {
             "name": "name",
@@ -155,15 +211,7 @@
             "description": "By default, a new reporting page will be created for this report unless you specifiy a specific name or subcategoryID. For a list of available subcategories call 'CustomReports.getAvailableCategories'.",
             "required": false,
             "schema": {
-              "oneOf": [
-                {
-                  "type": "boolean",
-                  "default": false
-                },
-                {
-                  "type": "string"
-                }
-              ]
+              "type": "string"
             }
           },
           {
@@ -237,16 +285,12 @@
             "$ref": "#\/components\/parameters\/formatOptional"
           },
           {
-            "name": "idSite",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
+            "$ref": "#\/components\/parameters\/idSiteRequired"
           },
           {
             "name": "idCustomReport",
             "in": "query",
+            "description": "The ID of the custom report to update.",
             "required": true,
             "schema": {
               "type": "integer"
@@ -310,15 +354,7 @@
             "description": "By default, a new reporting page will be created for this report unless you specifiy a specific name or subcategoryID. For a list of available subcategories call 'CustomReports.getAvailableCategories'.",
             "required": false,
             "schema": {
-              "oneOf": [
-                {
-                  "type": "boolean",
-                  "default": false
-                },
-                {
-                  "type": "string"
-                }
-              ]
+              "type": "string"
             }
           },
           {
@@ -405,16 +441,12 @@
             "$ref": "#\/components\/parameters\/formatOptional"
           },
           {
-            "name": "idSite",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
+            "$ref": "#\/components\/parameters\/idSiteRequired"
           },
           {
             "name": "skipCategoryMetadata",
             "in": "query",
+            "description": "Optional flag indicating whether to omit metadata for the category.",
             "required": false,
             "schema": {
               "type": "boolean",
@@ -640,46 +672,30 @@
                       "": {
                         "properties": {
                           "idcustomreport": {
-                            "type": [
-                              "integer"
-                            ]
+                            "type": "integer"
                           },
                           "idsite": {
-                            "type": [
-                              "integer"
-                            ]
+                            "type": "integer"
                           },
                           "revision": {
-                            "type": [
-                              "integer"
-                            ]
+                            "type": "integer"
                           },
                           "report_type": {
-                            "type": [
-                              "string"
-                            ]
+                            "type": "string"
                           },
                           "name": {
-                            "type": [
-                              "string"
-                            ]
+                            "type": "string"
                           },
                           "description": {
-                            "type": [
-                              "string"
-                            ]
+                            "type": "string"
                           },
                           "site": {
                             "properties": {
                               "id": {
-                                "type": [
-                                  "integer"
-                                ]
+                                "type": "integer"
                               },
                               "name": {
-                                "type": [
-                                  "string"
-                                ]
+                                "type": "string"
                               }
                             },
                             "type": "object"
@@ -696,29 +712,19 @@
                             ]
                           },
                           "subcategory_order": {
-                            "type": [
-                              "integer"
-                            ]
+                            "type": "integer"
                           },
                           "segment_filter": {
-                            "type": [
-                              "string"
-                            ]
+                            "type": "string"
                           },
                           "created_date": {
-                            "type": [
-                              "string"
-                            ]
+                            "type": "string"
                           },
                           "updated_date": {
-                            "type": [
-                              "string"
-                            ]
+                            "type": "string"
                           },
                           "status": {
-                            "type": [
-                              "string"
-                            ]
+                            "type": "string"
                           },
                           "multiple_idsites": {
                             "type": [
@@ -732,9 +738,7 @@
                             ]
                           },
                           "allowedToEdit": {
-                            "type": [
-                              "boolean"
-                            ]
+                            "type": "boolean"
                           }
                         },
                         "type": "object"
@@ -920,12 +924,7 @@
             "$ref": "#\/components\/parameters\/formatOptional"
           },
           {
-            "name": "idSite",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
+            "$ref": "#\/components\/parameters\/idSiteRequired"
           },
           {
             "name": "idCustomReport",
@@ -1025,34 +1024,22 @@
                 "schema": {
                   "properties": {
                     "idcustomreport": {
-                      "type": [
-                        "integer"
-                      ]
+                      "type": "integer"
                     },
                     "idsite": {
-                      "type": [
-                        "integer"
-                      ]
+                      "type": "integer"
                     },
                     "revision": {
-                      "type": [
-                        "integer"
-                      ]
+                      "type": "integer"
                     },
                     "report_type": {
-                      "type": [
-                        "string"
-                      ]
+                      "type": "string"
                     },
                     "name": {
-                      "type": [
-                        "string"
-                      ]
+                      "type": "string"
                     },
                     "description": {
-                      "type": [
-                        "string"
-                      ]
+                      "type": "string"
                     },
                     "multipleIdSites": {
                       "type": "array",
@@ -1070,29 +1057,19 @@
                       ]
                     },
                     "subcategory_order": {
-                      "type": [
-                        "integer"
-                      ]
+                      "type": "integer"
                     },
                     "segment_filter": {
-                      "type": [
-                        "string"
-                      ]
+                      "type": "string"
                     },
                     "created_date": {
-                      "type": [
-                        "string"
-                      ]
+                      "type": "string"
                     },
                     "updated_date": {
-                      "type": [
-                        "string"
-                      ]
+                      "type": "string"
                     },
                     "status": {
-                      "type": [
-                        "string"
-                      ]
+                      "type": "string"
                     },
                     "multiple_idsites": {
                       "type": [
@@ -1106,9 +1083,7 @@
                       ]
                     },
                     "allowedToEdit": {
-                      "type": [
-                        "boolean"
-                      ]
+                      "type": "boolean"
                     }
                   },
                   "type": "object"
@@ -1187,16 +1162,12 @@
             "$ref": "#\/components\/parameters\/formatOptional"
           },
           {
-            "name": "idSite",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
+            "$ref": "#\/components\/parameters\/idSiteRequired"
           },
           {
             "name": "idCustomReport",
             "in": "query",
+            "description": "The ID of the custom report to duplicate.",
             "required": true,
             "schema": {
               "type": "string"
@@ -1205,7 +1176,37 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#\/components\/responses\/GenericSuccessNoBody"
+            "description": "",
+            "content": {
+              "text\/xml": {
+                "schema": {
+                  "type": "object",
+                  "xml": {
+                    "name": "result"
+                  }
+                },
+                "example": {
+                  "success": ""
+                }
+              },
+              "application\/json": {
+                "schema": {
+                  "properties": {
+                    "result": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "example": {
+                  "result": "success",
+                  "message": "ok"
+                }
+              }
+            }
           },
           "400": {
             "$ref": "#\/components\/responses\/BadRequest"
@@ -1241,16 +1242,12 @@
             "$ref": "#\/components\/parameters\/formatOptional"
           },
           {
-            "name": "idSite",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
+            "$ref": "#\/components\/parameters\/idSiteRequired"
           },
           {
             "name": "idCustomReport",
             "in": "query",
+            "description": "The ID of the custom report to pause.",
             "required": true,
             "schema": {
               "type": "integer"
@@ -1295,16 +1292,12 @@
             "$ref": "#\/components\/parameters\/formatOptional"
           },
           {
-            "name": "idSite",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
+            "$ref": "#\/components\/parameters\/idSiteRequired"
           },
           {
             "name": "idCustomReport",
             "in": "query",
+            "description": "The ID of the custom report to resume.",
             "required": true,
             "schema": {
               "type": "integer"
@@ -1348,12 +1341,7 @@
             "$ref": "#\/components\/parameters\/formatOptional"
           },
           {
-            "name": "idSite",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
+            "$ref": "#\/components\/parameters\/idSiteRequired"
           }
         ],
         "responses": {
@@ -1629,14 +1617,10 @@
                       "": {
                         "properties": {
                           "uniqueId": {
-                            "type": [
-                              "string"
-                            ]
+                            "type": "string"
                           },
                           "name": {
-                            "type": [
-                              "string"
-                            ]
+                            "type": "string"
                           },
                           "subcategories": {
                             "type": "array",
@@ -1645,14 +1629,10 @@
                                 "": {
                                   "properties": {
                                     "uniqueId": {
-                                      "type": [
-                                        "string"
-                                      ]
+                                      "type": "string"
                                     },
                                     "name": {
-                                      "type": [
-                                        "string"
-                                      ]
+                                      "type": "string"
                                     }
                                   },
                                   "type": "object"
@@ -1964,14 +1944,10 @@
                       "": {
                         "properties": {
                           "key": {
-                            "type": [
-                              "string"
-                            ]
+                            "type": "string"
                           },
                           "value": {
-                            "type": [
-                              "string"
-                            ]
+                            "type": "string"
                           }
                         },
                         "type": "object"
@@ -2030,12 +2006,7 @@
             "$ref": "#\/components\/parameters\/formatOptional"
           },
           {
-            "name": "idSite",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
+            "$ref": "#\/components\/parameters\/idSiteRequired"
           }
         ],
         "responses": {
@@ -2245,9 +2216,7 @@
                       "": {
                         "properties": {
                           "category": {
-                            "type": [
-                              "string"
-                            ]
+                            "type": "string"
                           },
                           "dimensions": {
                             "type": "array",
@@ -2256,19 +2225,13 @@
                                 "": {
                                   "properties": {
                                     "uniqueId": {
-                                      "type": [
-                                        "string"
-                                      ]
+                                      "type": "string"
                                     },
                                     "name": {
-                                      "type": [
-                                        "string"
-                                      ]
+                                      "type": "string"
                                     },
                                     "sqlSegment": {
-                                      "type": [
-                                        "string"
-                                      ]
+                                      "type": "string"
                                     }
                                   },
                                   "type": "object"
@@ -2279,9 +2242,7 @@
                             }
                           },
                           "orderId": {
-                            "type": [
-                              "integer"
-                            ]
+                            "type": "integer"
                           }
                         },
                         "type": "object"
@@ -2477,12 +2438,7 @@
             "$ref": "#\/components\/parameters\/formatOptional"
           },
           {
-            "name": "idSite",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
+            "$ref": "#\/components\/parameters\/idSiteRequired"
           }
         ],
         "responses": {
@@ -2581,9 +2537,7 @@
                       "": {
                         "properties": {
                           "category": {
-                            "type": [
-                              "string"
-                            ]
+                            "type": "string"
                           },
                           "metrics": {
                             "type": "array",
@@ -2592,19 +2546,13 @@
                                 "": {
                                   "properties": {
                                     "uniqueId": {
-                                      "type": [
-                                        "string"
-                                      ]
+                                      "type": "string"
                                     },
                                     "name": {
-                                      "type": [
-                                        "string"
-                                      ]
+                                      "type": "string"
                                     },
                                     "description": {
-                                      "type": [
-                                        "string"
-                                      ]
+                                      "type": "string"
                                     }
                                   },
                                   "type": "object"
@@ -2615,9 +2563,7 @@
                             }
                           },
                           "orderId": {
-                            "type": [
-                              "integer"
-                            ]
+                            "type": "integer"
                           }
                         },
                         "type": "object"
@@ -2706,16 +2652,12 @@
             "$ref": "#\/components\/parameters\/formatOptional"
           },
           {
-            "name": "idSite",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
+            "$ref": "#\/components\/parameters\/idSiteRequired"
           },
           {
             "name": "period",
             "in": "query",
+            "description": "The ID of the custom report to look up data for.",
             "required": true,
             "schema": {
               "type": "string"
@@ -2732,6 +2674,7 @@
           {
             "name": "idCustomReport",
             "in": "query",
+            "description": "The ID of the custom report to look up data for.",
             "required": true,
             "schema": {
               "type": "integer"
@@ -2742,15 +2685,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "oneOf": [
-                {
-                  "type": "boolean",
-                  "default": false
-                },
-                {
-                  "type": "string"
-                }
-              ]
+              "type": "string"
             }
           },
           {
@@ -2776,15 +2711,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "oneOf": [
-                {
-                  "type": "integer"
-                },
-                {
-                  "type": "boolean",
-                  "default": false
-                }
-              ]
+              "type": "integer"
             }
           },
           {
@@ -2792,15 +2719,7 @@
             "in": "query",
             "required": false,
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "boolean",
-                  "default": false
-                }
-              ]
+              "type": "string"
             }
           }
         ],
@@ -2856,34 +2775,22 @@
                       "": {
                         "properties": {
                           "label": {
-                            "type": [
-                              "string"
-                            ]
+                            "type": "string"
                           },
                           "nb_uniq_visitors": {
-                            "type": [
-                              "integer"
-                            ]
+                            "type": "integer"
                           },
                           "goal_7_conversion": {
-                            "type": [
-                              "integer"
-                            ]
+                            "type": "integer"
                           },
                           "level": {
-                            "type": [
-                              "integer"
-                            ]
+                            "type": "integer"
                           },
                           "goal_7_conversion_uniq_visitors_rate": {
-                            "type": [
-                              "integer"
-                            ]
+                            "type": "integer"
                           },
                           "segment": {
-                            "type": [
-                              "string"
-                            ]
+                            "type": "string"
                           }
                         },
                         "type": "object"
@@ -3827,6 +3734,7 @@
           {
             "name": "step",
             "in": "query",
+            "description": "Optional name of a step in the funnel to filter the results by.",
             "required": false,
             "schema": {
               "type": "string"
@@ -4056,6 +3964,7 @@
           {
             "name": "step",
             "in": "query",
+            "description": "Optional name of a step in the funnel to filter the results by.",
             "required": false,
             "schema": {
               "type": "string"
@@ -5576,6 +5485,7 @@
           {
             "name": "idFunnel",
             "in": "query",
+            "description": "The ID of the funnel to delete.",
             "required": true,
             "schema": {
               "type": "integer"
@@ -12209,19 +12119,19 @@
   "tags": [
     {
       "name": "CustomReports",
-      "description": "Custom Reports: Create unique reports that adapt to your unique goals and projects. Choose from over 250 metrics and dimensions and analyse your data for unparalleled visitor insights."
+      "description": "The <a href='https:\/\/plugins.matomo.org\/CustomReports' target='_blank'>Custom Reports<\/a> API lets you 1) create custom\nreports within Matomo and 2) view the created reports in the Matomo Reporting UI or consume them via the API.\n<br\/><br\/>\nYou can choose between different visualizations (eg table or evolution graph) and combine hundreds of dimensions\nand metrics to get the data you need."
     },
     {
       "name": "Funnels",
-      "description": "Funnels. Identify and understand where your visitors drop off to increase your conversions, sales and revenue with your existing traffic."
+      "description": "API for plugin Funnels"
     },
     {
       "name": "HeatmapSessionRecording",
-      "description": "Heatmap & Session Recording: Truly understand your visitors by seeing where they click, hover, type and scroll. Replay their actions in a video and ultimately increase conversions."
+      "description": "API for plugin Heatmap & Session Recording.\n\nWhen you request activity data for a heatmap or a recorded session, please note that any X or Y coordinate,\nscroll reach position, and above the fold is relative and not absolute. X and Y coordinate are between 0 and 2000\nand are relative to the selector where 2000 means the position is at 100% of the element, 1000 means the position\nis at 50% and 0 means the position is actually 0 pixel from the element.\n\nScroll and above the fold positions are between 0 and 1000. If for example a web page is 3000 pixel high, and scroll\nreach is 100, it means the user has seen the content up to 300 pixels (10%, or 100 of 1000).\n\nWe differentiate between two different IDs here:\n* idSiteHsr represents the ID of a heatmap or session recording configuration\n* idLogHsr represents the ID of an actually recorded \/ tracked session or heatmap activity"
     },
     {
       "name": "UsersFlow",
-      "description": "Users Flow: Users Flow is a visual representation of the most popular paths your users take through your website & app which lets you understand your users needs."
+      "description": "API for Users Flow. The API lets you explore details about how your users or visitors navigate through your\nwebsite."
     }
   ],
   "externalDocs": {
