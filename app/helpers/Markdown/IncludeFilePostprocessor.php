@@ -73,8 +73,9 @@ class IncludeFilePostprocessor implements MarkdownParserInterface
         }
 
         // When necessary, convert to http for local development environments
-        if (DISABLE_LOCAL_HTTPS) {
-            $url = str_replace('https://', 'http://', $url);
+        if (str_contains($url, '[HTTPS]')) {
+            $protocol = DISABLE_INCLUDE_HTTPS ? 'http://' : 'https://';
+            $url = str_replace('[HTTPS]', $protocol, $url);
         }
 
         try {
