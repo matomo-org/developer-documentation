@@ -24,3 +24,7 @@ if (! defined('DOCS_DOMAIN')) {
 if (! defined('WEBHOOK_TOKEN')) {
     define('WEBHOOK_TOKEN', '$2y$10$7StRWWP4gYyuhLIOAWD1Cuw.jOsMWuTwi9DTENPUVakrNN4/H31Gq'); // "changeme"
 }
+
+if (! defined('DISABLE_LOCAL_HTTPS')) {
+    define('DISABLE_LOCAL_HTTPS', false); // This is mainly to change local URLs to http if not using https in development
+}
