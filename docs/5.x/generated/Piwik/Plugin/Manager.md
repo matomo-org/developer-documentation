@@ -42,7 +42,7 @@ Returns `true` if plugin is loaded (in memory).
 
 -  It accepts the following parameter(s):
     - `$name` (`string`) &mdash;
-       Name of plugin, eg, `'Acions'`.
+       Name of plugin, eg, `'Actions'`.
 - It returns a `bool` value.
 
 <a name="getpluginsdirectories" id="getpluginsdirectories"></a>
