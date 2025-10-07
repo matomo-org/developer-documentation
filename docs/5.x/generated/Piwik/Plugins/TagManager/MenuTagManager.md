@@ -43,7 +43,7 @@ Adds a new entry to the menu.
 -  It accepts the following parameter(s):
     - `$menuName` (`string`) &mdash;
        The menu's category name. Can be a translation token.
-    - `$subMenuName` (`null`|`string`) &mdash;
+    - `$subMenuName` (`string`|`null`) &mdash;
        The menu item's name. Can be a translation token.
     - `$url` (`string`|`array`) &mdash;
        The URL the admin menu entry should link to, or an array of query parameters that can be used to build the URL.
@@ -55,12 +55,14 @@ Adds a new entry to the menu.
        An icon classname, such as "icon-add". Only supported by admin menu
     - `$onclick` (`bool`|`string`) &mdash;
        Will execute the on click handler instead of executing the link. Only supported by admin menu.
-    - `$attribute` (`string`) &mdash;
+    - `$attribute` (`bool`|`string`) &mdash;
        Will add this string as a link attribute.
     - `$help` (`bool`|`string`) &mdash;
        Will display a help icon that will pop a notification with help information.
     - `$badgeCount` (`int`) &mdash;
        If non-zero then a badge will be overlaid on the icon showing the provided count
+    - `$cssClass` (`string`) &mdash;
+       If a string is provided, it will be added as an extra CSS class to the menu item
 - It does not return anything or a mixed result.
 
 <a name="remove" id="remove"></a>
