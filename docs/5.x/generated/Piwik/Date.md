@@ -611,8 +611,8 @@ Adds `$n` hours to `$this` date and returns the result in a new Date.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$n` (`int`) &mdash;
-       Number of hours to add. Can be less than 0.
+    - `$n` (`int`|`float`) &mdash;
+       Number of hours to add. Can be less than 0, can be decimal (will get converted to minutes)
 - It returns a [`Date`](../Piwik/Date.md) value.
 
 <a name="addhourto" id="addhourto"></a>
@@ -626,7 +626,7 @@ Date instance does not have to be created.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$timestamp` (`int`) &mdash;
+    - `$timestamp` (`int`|`float`) &mdash;
        The timestamp to add to.
     - `$n` (`Piwik\number`) &mdash;
        Number of hours to add, must be > 0.
