@@ -150,7 +150,7 @@ _See [sanitizeInputValues()](/api-reference/Piwik/Common#sanitizeinputvalues) to
 -  It accepts the following parameter(s):
     - `$varName` (`string`) &mdash;
        Name of the request parameter to get. By default, we look in `$_GET[$varName]` and `$_POST[$varName]` for the value.
-    - `$varDefault` (`string`|`null`) &mdash;
+    - `$varDefault` (`mixed`) &mdash;
        The value to return if the request parameter cannot be found or has an empty value.
     - `$varType` (`string`|`null`) &mdash;
        Expected type of the request variable. This parameters value must be one of the following: `'array'`, `'int'`, `'integer'`, `'string'`, `'json'`. If `'json'`, the string value will be `json_decode`-d and then sanitized.
