@@ -25,6 +25,8 @@ For example, you can request the "Best Keywords" report processed for all visits
 
 Example URL of top countries used by visits landing on the page: [virtual-drums.com/](https://www.virtual-drums.com/): [demo.matomo.org/?module=API&method=**UserCountry.getCountry**&idSite=3&date=yesterday&period=day&format=xml&filter_truncate=5&language=en**&segment=entryPageUrl==http%3A%2F%2Fwww.virtual-drums.com%2F**](https://demo.matomo.org/?module=API&method=UserCountry.getCountry&idSite=3&date=yesterday&period=day&format=xml&filter_truncate=5&language=en&segment=entryPageUrl==http%3A%2F%2Fwww.virtual-drums.com%2F)
 
+**Note**: Many segment parameter names are case-sensitive, such as `userId` and `idSite`. Always use the exact naming shown in the reference list below to prevent errors or no data.
+
 Let's take a look at the segment string.
 
 ## Segment operators
