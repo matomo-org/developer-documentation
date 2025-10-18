@@ -134,7 +134,7 @@ Returns a column by name.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$name` (`string`) &mdash;
+    - `$name` (`string`|`int`) &mdash;
        The column name.
 
 - *Returns:*  `mixed`|`false` &mdash;
