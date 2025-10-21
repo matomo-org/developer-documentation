@@ -1428,6 +1428,19 @@ Callback Signature:
 
 - [Dimension](/api-reference/Piwik/Columns/Dimension) `$dimensions` An array of dimensions
 
+## EntityDuplicator
+
+- [EntityDuplicator.DuplicationSuccessful](#entityduplicatorduplicationsuccessful)
+
+### EntityDuplicator.DuplicationSuccessful
+
+*Defined in [Piwik/Plugins/CoreHome/EntityDuplicator/DuplicateRequestResponse](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/EntityDuplicator/DuplicateRequestResponse.php) in line [151](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/EntityDuplicator/DuplicateRequestResponse.php#L151)*
+
+
+
+Callback Signature:
+<pre><code>$this-&gt;eventDataToPost</code></pre>
+
 ## Environment
 
 - [Environment.bootstrapped](#environmentbootstrapped)
