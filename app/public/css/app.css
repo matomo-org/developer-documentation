@@ -216,8 +216,8 @@ footer {
     font-weight: bold;
 }
 .jumbotron-categories .category.integrate .fa {
-        background-color: #8ab844;
-        border-color: #8ab844;
+    background-color: #8ab844;
+    border-color: #8ab844;
 }
 .jumbotron-categories .category {
     border: solid 2px #ecf0f2;
@@ -228,16 +228,16 @@ footer {
     min-width: 420px;
 }
 .jumbotron-categories h2 {
-font-size: 62px;
-line-height: 78px;
+    font-size: 62px;
+    line-height: 78px;
 }
 .jumbotron-categories p {
-font-weight: 300;
-font-size: 17px;
+    font-weight: 300;
+    font-size: 17px;
 }
 .jumbotron-categories .category a.btn {
-background-color: #3152A0;
+    background-color: #3152A0;
 }
 .jumbotron-categories .category.integrate a.btn {
-background-color: #8ab844;
+    background-color: #8ab844;
 }
