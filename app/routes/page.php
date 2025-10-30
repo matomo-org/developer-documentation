@@ -169,7 +169,7 @@ $app->get('/trac-ticket-archive', function (Request $request, Response $response
     return renderGuide($this->get("view"), $response, $request->getUri(), $category->getIntroGuide(), $category);
 });
 
-$app->get('/trac/ticket/{id}', function (Request $request, Response $response, $args) {
+$app->any('/trac[/{path:.*}]', function (Request $request, Response $response, $args) {
     return $response->withStatus(301)->withHeader('Location', '/trac-ticket-archive');
 });
 
