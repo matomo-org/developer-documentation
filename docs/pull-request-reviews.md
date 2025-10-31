@@ -194,7 +194,21 @@ but for smaller changes, developers might be expected to make those themselves.
 
 We should also think about whether new faqs should be created or if we need to modify existing ones.
 
-If a screenshot changes significantly, then we should also update screenshots on our website. If only a wording changes, then usually it's not needed to update the screenshot. There are no hard rules when or when not to update a screenshot. If basically depends on if the screenshot is still clear in the context of the content. 
+If a screenshot changes significantly, then we should also update screenshots on our website. If only a wording changes, then usually it's not needed to update the screenshot. There are no hard rules when or when not to update a screenshot. If basically depends on if the screenshot is still clear in the context of the content.
+
+### Understand, Review, and Test Any AI Output
+
+- You must **fully understand** any AI-generated code you use.
+- You must **review it line by line** and take full responsibility for it.
+
+### Respect Security, Privacy, and Intellectual Property
+
+- **Never include** secrets, access tokens, or production data in prompts.
+- Do **not paste third-party code, assets, or documentation** into prompts.
+- Do **not ask AI** to reproduce or imitate **third-party code, brands, styles, or franchises**.
+- Do **not reference specific individuals** in prompts.
+- Only use **internal** or **open source** materials that the project is **licensed** to use.
+
 
 ### Reviewing External Contributors' PRs
 
