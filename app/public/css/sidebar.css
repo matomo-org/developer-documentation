@@ -35,7 +35,6 @@
     border-bottom: 0;
 }
 .panel-primary li.active > a, .panel-primary li.active > a:hover, .panel-primary li.active > a:focus {
-    font-weight: bold !important;
     color: #246998;
     background-color: transparent;
 }
@@ -74,7 +73,6 @@
     padding-top:    4px;
     padding-bottom: 4px;
     padding-left: 25px;
-    font-size: 90%;
     font-weight: normal;
 }
 
