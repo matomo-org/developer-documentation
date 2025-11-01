@@ -1,5 +1,7 @@
 {% extends 'base.twig' %}
-
+{% block meta %}
+    <meta name="description" content="Explore the Matomo Developer Zone: integrate analytics, extend the platform with plugins, and dive into the HTTP, JavaScript &amp; PHP APIs for Matomo.">
+{% endblock %}
 {% block headline %}
     <div class="jumbotron">
         <div class="container">
@@ -31,7 +33,7 @@
                         <i class="fa fa-code"></i></br>Develop
                     </h2>
                     <p>
-                        Extend and customize Matomo by <br/> contributing or developing plugins.
+                        Extend and customize Matomo by contributing or developing plugins.
                     </p>
                     <p>
                         <a class="btn btn-primary btn-lg" href="{{ '/develop'|completeUrl }}">Develop Matomo Plugins</a>

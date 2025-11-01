@@ -4,6 +4,7 @@
     <title>{% if title|default is not empty %}{{ title|striptags|raw }} - {% endif %}Matomo Analytics (formerly Piwik Analytics) - Developer Docs - v{{ selectedPiwikVersion }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block meta %}{% endblock %}
     {% if urlIfAvailableInNewerVersion %}
         <link rel="canonical" href="https://{{ constant('DOCS_DOMAIN') }}{{ urlIfAvailableInNewerVersion }}">
     {% endif %}
@@ -28,14 +29,14 @@
 <div id="menu" class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <button type="button" class="navbar-toggle" aria-label="Toggle Navigation" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand hidden-sm" href="{{ '/'|completeUrl }}"><img height="20" width="136" src="/img/logo.png"/></a>
+            <a class="navbar-brand hidden-sm" href="{{ '/'|completeUrl }}"><img fetchpriority="high" alt="Go to Matomo Developer Home" height="20" width="136" src="/img/logo.png"/></a>
         </div>
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" role="navigation">
             <ul class="nav navbar-nav">
                 <li {% if activeMenu == 'Integrate' %}class="active"{% endif %}>
                     <a href="{{ '/integration'|completeUrl }}">Integrate</a>
@@ -90,7 +91,7 @@
 {% endblock %}
 
 {% if noContainer is not defined %}
-<div class="container">
+<div class="container" role="main">
 {% endif %}
     {% block content %}
         {{ content|raw }}
@@ -100,7 +101,7 @@
 {% endif %}
 
 {% block footer %}
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <p class="pull-left">
                 Copyright &copy; <a href="https://matomo.org">Matomo.org</a>
@@ -120,7 +121,7 @@
     </footer>
 {% endblock %}
 
-<script src="/js/jquery.js?{{ revision|e('html_attr') }}"></script>
+<script src="/js/jquery.min.js?{{ revision|e('html_attr') }}"></script>
 <script src="/js/bootstrap.min.js?{{ revision|e('html_attr') }}"></script>
 <script src="/js/jquery-ui.min.js?{{ revision|e('html_attr') }}"></script>
 <script src="/js/app.js?{{ revision|e('html_attr') }}"></script>

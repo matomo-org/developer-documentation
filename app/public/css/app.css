@@ -52,6 +52,10 @@ a {
 .navbar-inverse .navbar-nav>li>a {
     color:  #333;
 }
+
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: #333;
+}
 code {
     color: #A93552;
     background-color: #f5f5f5;
@@ -216,8 +220,8 @@ footer {
     font-weight: bold;
 }
 .jumbotron-categories .category.integrate .fa {
-    background-color: #8ab844;
-    border-color: #8ab844;
+    background-color: #7aaa30;
+    border-color: #7aaa30;
 }
 .jumbotron-categories .category {
     border: solid 2px #ecf0f2;
@@ -225,7 +229,17 @@ footer {
     padding: 16px 40px;
     margin: 20px;
     display: inline-block;
-    min-width: 420px;
+    width: 90%
+}
+@media (max-width: 499px) {
+    .jumbotron-categories .category {
+        padding: 16px;
+    }
+}
+@media (min-width: 1000px) {
+    .jumbotron-categories .category {
+        width: 420px;
+    }
 }
 .jumbotron-categories h2 {
     font-size: 62px;
@@ -239,5 +253,5 @@ footer {
     background-color: #3152A0;
 }
 .jumbotron-categories .category.integrate a.btn {
-    background-color: #8ab844;
+    background-color: #7aaa30;
 }
