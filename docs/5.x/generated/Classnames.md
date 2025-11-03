@@ -109,6 +109,7 @@
 ## Plugin\Tasks
 ## Plugin\ViewDataTable
 ## Plugin\Visualization
+## Plugins\AIAgents\Columns\Metrics\AIAgentMetric
 ## Plugins\Actions\Columns\Metrics\AveragePageGenerationTime
 ## Plugins\Actions\Columns\Metrics\AverageTimeOnPage
 ## Plugins\Actions\Columns\Metrics\BounceRate

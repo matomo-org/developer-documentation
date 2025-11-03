@@ -113,6 +113,7 @@ This is a complete list of available classes:
 - [`Plugin\Tasks`](Piwik/Plugin/Tasks.md) &mdash; Base class for all Tasks declarations.
 - [`Plugin\ViewDataTable`](Piwik/Plugin/ViewDataTable.md) &mdash; The base class of all report visualizations.
 - [`Plugin\Visualization`](Piwik/Plugin/Visualization.md) &mdash; The base class for report visualizations that output HTML and use JavaScript.
+- [`Plugins\AIAgents\Columns\Metrics\AIAgentMetric`](Piwik/Plugins/AIAgents/Columns/Metrics/AIAgentMetric.md) &mdash; Processed metric for AIAgents.get API method which just copies VisitsSummary.get metrics as differently named metrics.
 - [`Plugins\Actions\Columns\Metrics\AveragePageGenerationTime`](Piwik/Plugins/Actions/Columns/Metrics/AveragePageGenerationTime.md) &mdash; The average amount of time it takes to generate a page.
 - [`Plugins\Actions\Columns\Metrics\AverageTimeOnPage`](Piwik/Plugins/Actions/Columns/Metrics/AverageTimeOnPage.md) &mdash; The average amount of time spent on a page.
 - [`Plugins\Actions\Columns\Metrics\BounceRate`](Piwik/Plugins/Actions/Columns/Metrics/BounceRate.md) &mdash; The bounce rate for individual pages.
