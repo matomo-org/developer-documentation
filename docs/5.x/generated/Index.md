@@ -1285,6 +1285,7 @@ Index
 - [`$show_pagination_control`](Piwik/ViewDataTable/Config.md#$show_pagination_control) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_offset_information`](Piwik/ViewDataTable/Config.md#$show_offset_information) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$segmented_visitor_log_segment_suffix`](Piwik/ViewDataTable/Config.md#$segmented_visitor_log_segment_suffix) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
+- [`setSecondaryDimensions()`](Piwik/ViewDataTable/Config.md#setsecondarydimensions) &mdash; *Method in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_dimensions`](Piwik/ViewDataTable/RequestConfig.md#$show_dimensions) &mdash; *Property in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`setDefaultSort()`](Piwik/ViewDataTable/RequestConfig.md#setdefaultsort) &mdash; *Method in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`SecurityPolicy`](Piwik/View/SecurityPolicy.md) &mdash; *Class in namespace* [`Piwik\View`](Piwik/View)- [`setCategoryId()`](Piwik/Widget/WidgetConfig.md#setcategoryid) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)

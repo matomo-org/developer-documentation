@@ -963,6 +963,7 @@ The class defines the following methods:
 - [`removeColumnToDisplay()`](#removecolumntodisplay)
 - [`getPriorityFilters()`](#getpriorityfilters)
 - [`getPresentationFilters()`](#getpresentationfilters)
+- [`setSecondaryDimensions()`](#setsecondarydimensions) &mdash; Sets secondary dimensions for the current report.
 - [`addRelatedReport()`](#addrelatedreport) &mdash; Adds a related report to the [$related_reports](/api-reference/Piwik/ViewDataTable/Config#$related_reports) property.
 - [`addRelatedReports()`](#addrelatedreports) &mdash; Adds several related reports to the [$related_reports](/api-reference/Piwik/ViewDataTable/Config#$related_reports) property.
 - [`addTranslation()`](#addtranslation) &mdash; Associates internationalized text with a metric.
@@ -1045,6 +1046,24 @@ by name.
 #### Signature
 
 - It does not return anything or a mixed result.
+
+<a name="setsecondarydimensions" id="setsecondarydimensions"></a>
+<a name="setSecondaryDimensions" id="setSecondaryDimensions"></a>
+### `setSecondaryDimensions()`
+
+Sets secondary dimensions for the current report. This will make the related reports to display secondary dimension reports.
+
+This requires the API to be able to handle the `secondaryDimension` parameter.
+The properties [$related_reports](/api-reference/Piwik/ViewDataTable/Config#$related_reports) and [$related_reports_title](/api-reference/Piwik/ViewDataTable/Config#$related_reports_title) will be overwritten for this purpose.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$dimensions` (`array`) &mdash;
+      
+    - `$defaultDimension` (`string`) &mdash;
+      
+- It returns a `void` value.
 
 <a name="addrelatedreport" id="addrelatedreport"></a>
 <a name="addRelatedReport" id="addRelatedReport"></a>

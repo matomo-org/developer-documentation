@@ -542,7 +542,7 @@ Returns an array containing all column values for the requested column.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$name` (`string`) &mdash;
+    - `$name` (`string`|`int`) &mdash;
        The column name.
 
 - *Returns:*  `array` &mdash;
