@@ -2972,7 +2972,7 @@ Usages:
 
 ### Request.shouldDisablePostProcessing
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php) in line [735](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php#L735)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php) in line [734](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php#L734)*
 
 After an API method returns a value, the value is post processed (eg, rows are sorted
 based on the `filter_sort_column` query parameter, rows are truncated based on the
