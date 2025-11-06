@@ -865,6 +865,19 @@ Callback Signature:
 
 - bool &$supportsAsync Whether async is supported or not.
 
+## CompliancePolicy
+
+- [CompliancePolicy.updatePolicyDescription](#compliancepolicyupdatepolicydescription)
+
+### CompliancePolicy.updatePolicyDescription
+
+*Defined in [Piwik/Policy/CompliancePolicy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Policy/CompliancePolicy.php) in line [51](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Policy/CompliancePolicy.php#L51)*
+
+
+
+Callback Signature:
+<pre><code>function(&amp;$description, static::class]</code></pre>
+
 ## Config
 
 - [Config.badConfigurationFile](#configbadconfigurationfile)
