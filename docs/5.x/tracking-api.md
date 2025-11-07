@@ -183,7 +183,52 @@ Note: the user of the HTTP API is responsible for determining the source locatio
 
 ## Tracking Bots
 
-By default Piwik does not track bots. If you use the Tracking HTTP API directly, you may be interested in tracking bot requests. To enable Bot Tracking in Piwik, set the parameter `&bots=1` in your requests to `matomo.php`.
+As of Matomo 5.6.0, Matomo can record requests from automated agents so you can analyze bot activity separately from normal visits. The tracking distinguishes between **visit/action tracking** and **bot tracking**, depending on the `recMode` and detection results.
+
+_Note: Currently the bot activity tracking is limited to user triggered AI Assistants, such as ChatGPT-User, Perplexity-User and others. Other bot requests will be detected, but discarded._
+
+### How Matomo decides how to process a request
+
+Matomo uses the optional `recMode` parameter to control how incoming requests are handled:
+
+* **(not set)** – *Visit only*
+  This is the default behavior for all tracking requests. Only normal visits and actions are recorded.
+  Requests detected as bots are ignored unless explicitly overridden with `bots=1`.
+
+* **`recMode=1`** – *Bot only*
+  Only bot tracking is performed. If the request is not detected as a bot, it will be discarded.
+
+* **`recMode=2`** – *Auto mode*
+  Matomo automatically decides whether to treat the request as a bot or a normal visit based on detection.
+
+### The `bots` parameter
+
+`bots=1` can be used to **force a request to be tracked as a normal visit/action**, even if Matomo’s detection classifies it as a bot.
+This allows preserving visit data from known bots in special cases, such as when using automated testing or controlled monitoring tools.
+
+_Note: This parameter exclusively works in *Visit only mode*, so with `recMode` not set_
+
+### Parameters processed during bot tracking
+
+When a request is processed as a bot (either via `recMode=1` or automatically detected in `recMode=2`), **only** the following parameters are evaluated.
+All other Tracking API parameters are ignored for bot requests.
+
+* `url`: The page URL that the bot accessed.
+* `download`: The document URL if the request represents a download. To be sent instead of `url`.
+* `http_status`: The HTTP status code returned by your server.
+* `bw_bytes`: Bytes transfered to the client.
+* `pf_srv`: Server processing time in milliseconds.
+* `ua`: Full user agent string of the bot.
+* `source`: Source label for the bot request (for example `Cloudflare`, `Cloudfront`, `Wordpress` or a system tag).
+* `cdt`: Request date/time (if sending an explicit timestamp).
+
+These fields are stored in Matomo’s bot tracking logs and used for analysis of AI crawlers and similar automated agents.
+
+### Behavior summary
+
+* Default (no `recMode`): only visit tracking is performed; bots are ignored unless `bots=1` is set.
+* `recMode=1`: only bot tracking is performed; non-bots are discarded.
+* `recMode=2`: automatic detection determines whether the request is tracked as bot or visit.
 
 ## Example Tracking Request
 
