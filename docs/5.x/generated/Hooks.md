@@ -4144,7 +4144,7 @@ Usages:
 
 ### Tracker.detectReferrerAIAssistant
 
-*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Referrers/Columns/Base.php) in line [421](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Referrers/Columns/Base.php#L421)*
+*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Referrers/Columns/Base.php) in line [418](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Referrers/Columns/Base.php#L418)*
 
 Triggered when detecting the AI of a referrer URL. Plugins can use this event to provide custom AI detection logic.
 
