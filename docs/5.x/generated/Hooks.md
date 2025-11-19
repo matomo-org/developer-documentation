@@ -1379,7 +1379,7 @@ Callback Signature:
 
 ### Db.getTablesInstalled
 
-*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Db/Schema/Mysql.php) in line [503](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Db/Schema/Mysql.php#L503)*
+*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Db/Schema/Mysql.php) in line [508](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Db/Schema/Mysql.php#L508)*
 
 
 
@@ -1602,7 +1602,7 @@ Usages:
 
 ### Installation.defaultSettingsForm.init
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php) in line [443](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php#L443)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php) in line [441](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php#L441)*
 
 Triggered on initialization of the form to customize default Matomo settings (at the end of the installation process).
 
@@ -1618,7 +1618,7 @@ Usages:
 
 ### Installation.defaultSettingsForm.submit
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php) in line [454](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php#L454)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php) in line [452](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Installation/Controller.php#L452)*
 
 Triggered on submission of the form to customize default Matomo settings (at the end of the installation process).
 
