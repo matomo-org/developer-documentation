@@ -586,7 +586,7 @@ Callback Signature:
 
 ### Archiving.getIdSitesToMarkArchivesAsInvalidated
 
-*Defined in [Piwik/Plugins/PrivacyManager/Model/DataSubjects](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/Model/DataSubjects.php) in line [138](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/Model/DataSubjects.php#L138)*
+*Defined in [Piwik/Plugins/PrivacyManager/Model/DataSubjects](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/Model/DataSubjects.php) in line [155](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/Model/DataSubjects.php#L155)*
 
 
 
@@ -2540,13 +2540,14 @@ Usages:
 ## PrivacyManager
 
 - [PrivacyManager.deleteDataSubjects](#privacymanagerdeletedatasubjects)
+- [PrivacyManager.deleteDataSubjectsForDeletedSites](#privacymanagerdeletedatasubjectsfordeletedsites)
 - [PrivacyManager.deleteLogsOlderThan](#privacymanagerdeletelogsolderthan)
 - [PrivacyManager.exportDataSubjects](#privacymanagerexportdatasubjects)
 - [PrivacyManager.shouldIgnoreDnt](#privacymanagershouldignorednt)
 
 ### PrivacyManager.deleteDataSubjects
 
-*Defined in [Piwik/Plugins/PrivacyManager/Model/DataSubjects](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/Model/DataSubjects.php) in line [119](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/Model/DataSubjects.php#L119)*
+*Defined in [Piwik/Plugins/PrivacyManager/Model/DataSubjects](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/Model/DataSubjects.php) in line [136](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/Model/DataSubjects.php#L136)*
 
 Lets you delete data subjects to make your plugin GDPR compliant. This can be useful if you have developed a plugin which stores any data for visits but doesn't
 use any core logic to store this data. If core API's are used, for example log tables, then the data may
@@ -2569,6 +2570,35 @@ Callback Signature:
                       for these visits is requested to be deleted.
 
 
+### PrivacyManager.deleteDataSubjectsForDeletedSites
+
+*Defined in [Piwik/Plugins/PrivacyManager/Model/DataSubjects](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/Model/DataSubjects.php) in line [104](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/Model/DataSubjects.php#L104)*
+
+Lets you delete data subjects to make your plugin GDPR compliant. This can be useful if you have developed a plugin which stores any data for specific sites, not bound to a visit but doesn't
+use any core logic to store this data. If core API's are used, for example log tables, then the data may
+be deleted automatically.
+
+**Example**
+
+    public function deleteDataSubjectsForDeletedSites(&$result)
+    {
+        $existingSiteIds = SitesManager\API::getInstance()->getAllSitesId();
+        $idSitesInTable = $this->>getAllSiteIdsInLogTable();
+        $idSitesNoLongerExisting = array_diff($existingSiteIds, $idSitesInTable);
+        $numDeletes = $this->deleteDataForSites($idSitesNoLongerExisting);
+        $result['myplugin'] = $numDeletes;
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$results]</code></pre>
+
+- array &$results An array storing the result of how much data was deleted for.
+
+Usages:
+
+[BotTracking::deleteDataSubjectsForDeletedSites](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/BotTracking/BotTracking.php#L73)
+
+
 ### PrivacyManager.deleteLogsOlderThan
 
 *Defined in [Piwik/Plugins/PrivacyManager/LogDataPurger](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/LogDataPurger.php) in line [105](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/LogDataPurger.php#L105)*
@@ -2588,10 +2618,14 @@ Callback Signature:
 - int `$deleteLogsOlderThan` The number of days after which log entries are considered old.
                                 Visits and related data whose age is greater than this number will be purged.
 
+Usages:
+
+[BotTracking::deleteLogsOlderThan](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/BotTracking/BotTracking.php#L65)
+
 
 ### PrivacyManager.exportDataSubjects
 
-*Defined in [Piwik/Plugins/PrivacyManager/Model/DataSubjects](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/Model/DataSubjects.php) in line [459](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/Model/DataSubjects.php#L459)*
+*Defined in [Piwik/Plugins/PrivacyManager/Model/DataSubjects](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/Model/DataSubjects.php) in line [476](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/Model/DataSubjects.php#L476)*
 
 Lets you enrich the data export for one or multiple data subjects to make your plugin GDPR compliant. This can be useful if you have developed a plugin which stores any data for visits but doesn't
 use any core logic to store this data. If core API's are used, for example log tables, then the data may
@@ -4114,6 +4148,7 @@ Callback Signature:
 - [Tracker.end](#trackerend)
 - [Tracker.getDatabaseConfig](#trackergetdatabaseconfig)
 - [Tracker.getJavascriptCode](#trackergetjavascriptcode)
+- [Tracker.isBotRequest](#trackerisbotrequest)
 - [Tracker.isExcludedVisit](#trackerisexcludedvisit)
 - [Tracker.makeNewVisitObject](#trackermakenewvisitobject)
 - [Tracker.PageUrl.getQueryParametersToExclude](#trackerpageurlgetqueryparameterstoexclude)
@@ -4209,7 +4244,7 @@ Callback Signature:
 
 ### Tracker.end
 
-*Defined in [Piwik/Tracker](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker.php) in line [133](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker.php#L133)*
+*Defined in [Piwik/Tracker](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker.php) in line [135](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker.php#L135)*
 
 
 
@@ -4272,6 +4307,25 @@ Callback Signature:
                         domain is different from the normal domain.
 
 - array `$parameters` The parameters supplied to `TrackerCodeGenerator::generate()`.
+
+
+### Tracker.isBotRequest
+
+*Defined in [Piwik/Tracker](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker.php) in line [180](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker.php#L180)*
+
+Allows overwriting the Bot detection done using Device Detector
+Use this event if you want to have a request handled as bot request instead of a normal visit
+
+Callback Signature:
+<pre><code>function(&amp;$isBot, $request]</code></pre>
+
+- bool &$isBot Indicates if the request should be handled as Bot
+
+- [Request](/api-reference/Piwik/Request) `$request` current tracking request
+
+Usages:
+
+[BotTracking::isBotRequest](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/BotTracking/BotTracking.php#L95)
 
 
 ### Tracker.isExcludedVisit
