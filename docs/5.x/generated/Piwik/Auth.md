@@ -69,7 +69,7 @@ Sets the authentication token to authenticate with.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$token_auth` (`string`) &mdash;
+    - `$token_auth` (`string`|`null`) &mdash;
        authentication token
 - It does not return anything or a mixed result.
 

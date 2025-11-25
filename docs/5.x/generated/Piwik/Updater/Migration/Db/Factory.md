@@ -297,7 +297,7 @@ Drops an existing index from a database table.
 -  It accepts the following parameter(s):
     - `$table` (`string`) &mdash;
        Unprefixed database table name, eg 'log_visit'.
-- It returns a `Piwik\Updater\Migration\Db\DropIndex` value.
+- It returns a `Piwik\Updater\Migration\Db\DropPrimaryKey` value.
 
 <a name="addprimarykey" id="addprimarykey"></a>
 <a name="addPrimaryKey" id="addPrimaryKey"></a>
