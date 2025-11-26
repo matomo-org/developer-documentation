@@ -183,7 +183,7 @@ Note: the user of the HTTP API is responsible for determining the source locatio
 
 ## Tracking Bots
 
-As of Matomo 5.7.0, Matomo can record requests from automated agents so you can analyze bot activity separately from normal visits. The tracking distinguishes between **visit/action tracking** and **bot tracking**, depending on the `recMode` and detection results.
+As of Matomo 5.7.0, Matomo can record requests from automated agents, allowing you to analyse bot activity separately from normal visits. Tracking distinguishes between **visit/action tracking** and **bot tracking**, depending on the `recMode` parameter and detection results.
 
 _Note: Currently the bot activity tracking is limited to user triggered AI Assistants, such as ChatGPT-User, Perplexity-User and others. Other bot requests will be detected, but discarded._
 
@@ -216,7 +216,7 @@ All other Tracking API parameters are ignored for bot requests.
 * `url`: The page URL that the bot accessed.
 * `download`: The document URL if the request represents a download. To be sent instead of `url`.
 * `http_status`: The HTTP status code returned by your server.
-* `bw_bytes`: Bytes transfered to the client.
+* `bw_bytes`: Bytes transferred to the client.
 * `pf_srv`: Server processing time in milliseconds.
 * `ua`: Full user agent string of the bot.
 * `source`: Source label for the bot request (for example `Cloudflare`, `Cloudfront`, `Wordpress` or a system tag).
