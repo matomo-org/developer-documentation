@@ -867,7 +867,25 @@ Callback Signature:
 
 ## CompliancePolicy
 
+- [CompliancePolicy.setActiveStatus](#compliancepolicysetactivestatus)
 - [CompliancePolicy.updatePolicyDescription](#compliancepolicyupdatepolicydescription)
+
+### CompliancePolicy.setActiveStatus
+
+*Defined in [Piwik/Policy/CompliancePolicy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Policy/CompliancePolicy.php) in line [143](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Policy/CompliancePolicy.php#L143)*
+
+This event is triggered when the status of a compliance policy changes, and
+is to be used to perform extra actions when a policy is activated/deactivated. The status of a policy cannot be changed via this event.
+
+Callback Signature:
+<pre><code>function($isActive, $idSite, static::class]</code></pre>
+
+- bool `$isActive` Whether the policy is being activated or deactivated
+
+- int `$idSite`
+
+- \class-string<CompliancePolicy> The compliance policy in question
+
 
 ### CompliancePolicy.updatePolicyDescription
 
