@@ -1047,7 +1047,7 @@ eg `Notification\Manager::cancel($notificationId)`.
 
 ### Core.configFileChanged
 
-*Defined in [Piwik/Config](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config.php) in line [430](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config.php#L430)*
+*Defined in [Piwik/Config](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config.php) in line [431](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config.php#L431)*
 
 Triggered when a INI config file is changed on disk.
 
@@ -1069,7 +1069,7 @@ Callback Signature:
 
 ### Core.configFileSanityCheckFailed
 
-*Defined in [Piwik/Config](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config.php) in line [504](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config.php#L504)*
+*Defined in [Piwik/Config](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config.php) in line [505](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config.php#L505)*
 
 Triggered when the INI config file was not written correctly with the expected content.
 
@@ -4711,7 +4711,7 @@ Callback Signature:
 
 Usages:
 
-[CoreAdminHome::cleanupUser](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L52), [CoreVisualizations::deleteUser](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L35), [CustomAlerts::deleteAlertsForLogin](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/CustomAlerts.php#L108), [Dashboard::deleteDashboardLayout](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Dashboard/Dashboard.php#L305), [LanguagesManager::deleteUserLanguage](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/LanguagesManager/LanguagesManager.php#L129), [LoginLdap::onUserDeleted](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/LoginLdap/LoginLdap.php#L289), [ScheduledReports::deleteUserReport](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ScheduledReports/ScheduledReports.php#L597), [SegmentEditor::onDeleteUser](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/SegmentEditor.php#L402)
+[CoreAdminHome::cleanupUser](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L52), [CoreVisualizations::deleteUser](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L35), [CustomAlerts::deleteAlertsForLogin](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/CustomAlerts.php#L108), [Dashboard::deleteDashboardLayout](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Dashboard/Dashboard.php#L305), [LanguagesManager::deleteUserLanguage](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/LanguagesManager/LanguagesManager.php#L129), [LoginLdap::onUserDeleted](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/LoginLdap/LoginLdap.php#L289), [ScheduledReports::deleteUserReport](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ScheduledReports/ScheduledReports.php#L597), [SegmentEditor::onDeleteUser](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/SegmentEditor.php#L403)
 
 
 ### UsersManager.getDefaultDates
