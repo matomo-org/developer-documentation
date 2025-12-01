@@ -564,8 +564,8 @@ The template should contain tags that will be replaced with localized date strin
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$template` (`string`) &mdash;
-       eg. `"MMM y"`
+    - `$template` (`string`|`int`) &mdash;
+       eg. `"MMM y"` or any format constant defined in DateTimeFormatProvider
     - `$ucfirst` (`bool`) &mdash;
        whether the first letter should be upper-cased
 
