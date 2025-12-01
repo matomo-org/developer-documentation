@@ -218,10 +218,10 @@ Convenience method that creates and renders a ViewDataTable for a API method.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$apiAction`
-      
-    - `$controllerAction`
-      
+    - `$apiAction` (`string`|[`Report`](../../Piwik/Plugin/Report.md)) &mdash;
+       The name of the API action (eg, `'getResolution'`) or an instance of an report.
+    - `$controllerAction` (`bool`) &mdash;
+       The name of the Controller action name that is rendering the report. Defaults to the `$apiAction`.
 
 - *Returns:*  `string`|`void` &mdash;
     See `$fetch`.
@@ -351,7 +351,7 @@ Will exit on error.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$view`
+    - `$view` ([`View`](../../Piwik/View.md)) &mdash;
       
 - It returns a `void` value.
 
@@ -379,7 +379,7 @@ Also calls [setHostValidationVariablesView()](/api-reference/Piwik/Plugin/Contro
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$view`
+    - `$view` ([`View`](../../Piwik/View.md)) &mdash;
       
 - It does not return anything or a mixed result.
 

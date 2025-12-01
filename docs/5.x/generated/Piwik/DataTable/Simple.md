@@ -1015,8 +1015,8 @@ Sets metadata, erasing existing values.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$metadata`
-      
+    - `$metadata` (`array`) &mdash;
+       Array mapping metadata names with metadata values.
 - It does not return anything or a mixed result.
 
 <a name="setmaximumallowedrows" id="setmaximumallowedrows"></a>

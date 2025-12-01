@@ -162,10 +162,10 @@ Drops an existing database table column.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$table`
-      
-    - `$columnNames`
-      
+    - `$table` (`string`) &mdash;
+       Unprefixed database table name, eg 'log_visit'.
+    - `$columnNames` (`array`) &mdash;
+       An array of column names that should be dropped eg ['column1', 'column2'].
 - It returns a `Piwik\Updater\Migration\Db\DropColumns` value.
 
 <a name="changecolumn" id="changecolumn"></a>

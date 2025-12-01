@@ -76,12 +76,12 @@ Sets an option value by name.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$name`
-      
-    - `$value`
-      
-    - `$autoload`
-      
+    - `$name` (`string`) &mdash;
+       The option name.
+    - `$value` (`string`) &mdash;
+       The value to set the option to.
+    - `$autoload` (`int`|`bool`) &mdash;
+       If set to 1, this option value will be automatically loaded when Piwik is initialized; should be set to 1 for options that will be used in every Piwik request.
 - It does not return anything or a mixed result.
 
 <a name="delete" id="delete"></a>
