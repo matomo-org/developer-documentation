@@ -63,17 +63,17 @@ Sends an HTTP request using best available transport method.
     - `$checkHostIsAllowed` (`bool`) &mdash;
        whether we should check if the target host is allowed or not. This should only be set to false when using a hardcoded URL.
 
-- *Returns:*  `bool`|`string` &mdash;
+- *Returns:*  `string`|`array`|`bool` &mdash;
     If `$destinationPath` is not specified the HTTP response is returned on success. `false`
-                    is returned on failure.
-                    If `$getExtendedInfo` is `true` and `$destinationPath` is not specified an array with
-                    the following information is returned on success:
+                           is returned on failure.
+                           If `$getExtendedInfo` is `true` and `$destinationPath` is not specified an array with
+                           the following information is returned on success:
 
-                    - **status**: the HTTP status code
-                    - **headers**: the HTTP headers
-                    - **data**: the HTTP response data
+                           - **status**: the HTTP status code
+                           - **headers**: the HTTP headers
+                           - **data**: the HTTP response data
 
-                    `false` is still returned on failure.
+                           `false` is still returned on failure.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the response cannot be saved to `$destinationPath`, if the HTTP response cannot be sent,
                   if there are more than 5 redirects or if the request times out.
@@ -160,8 +160,8 @@ Fetches a file located at `$url` and saves it to `$destinationPath`.
     - `$timeout` (`int`) &mdash;
        The amount of seconds to wait before aborting the HTTP request.
 
-- *Returns:*  `bool` &mdash;
-    `true` on success, throws Exception on failure
+- *Returns:*  `string`|`bool` &mdash;
+    
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the response cannot be saved to `$destinationPath`, if the HTTP response cannot be sent,
                   if there are more than 5 redirects or if the request times out.

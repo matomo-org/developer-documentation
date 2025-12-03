@@ -1531,7 +1531,7 @@ Callback Signature:
 
 ### Http.sendHttpRequest
 
-*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Http.php) in line [338](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Http.php#L338)*
+*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Http.php) in line [339](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Http.php#L339)*
 
 Triggered to send an HTTP request. Allows plugins to resolve the HTTP request themselves or to find out
 when an HTTP request is triggered to log this information for example to a monitoring tool.
@@ -1552,14 +1552,14 @@ Callback Signature:
 
 - string &$response A plugin listening to this event should assign the HTTP response it received to this variable, for example "{value: true}"
 
-- string &$status A plugin listening to this event should assign the HTTP status code it received to this variable, for example "200"
+- int &$status A plugin listening to this event should assign the HTTP status code it received to this variable, for example "200"
 
 - array &$headers A plugin listening to this event should assign the HTTP headers it received to this variable, eg array('Content-Length' => '5')
 
 
 ### Http.sendHttpRequest.end
 
-*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Http.php) in line [830](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Http.php#L830)*
+*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Http.php) in line [831](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Http.php#L831)*
 
 Triggered when an HTTP request finished. A plugin can for example listen to this and alter the response,
 status code, or finish a timer in case the plugin is measuring how long it took to execute the request
@@ -1580,7 +1580,7 @@ Callback Signature:
 
 - string &$response The response of the HTTP request, for example "{value: true}"
 
-- string &$status The returned HTTP status code, for example "200"
+- int &$status The returned HTTP status code, for example "200"
 
 - array &$headers The returned headers, eg array('Content-Length' => '5')
 
