@@ -229,7 +229,8 @@ class Guide implements MenuItem
         }
         $dom = new \DomDocument();
         // Will probably be duplicate ID warnings so suppress them
-        @$dom->loadHtml($content);
+        // Explicitly convert to HTML entities so DOMDocument keeps UTF-8 characters intact (eg smart quotes).
+        @$dom->loadHtml(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8'));
         $anchors = $dom->getElementsByTagName('*');
         $ids=[];
         $duplicateId = 0;
