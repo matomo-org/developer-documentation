@@ -112,6 +112,10 @@ Allows you to re-disable browser extension crash tracking if you have previously
 
 Note: by default browser extension crashes are not tracked.
 
+### `customizeResourceUri(customizeCallback)`
+
+Allows you to customize a crash resource URI via a callback before the crash is tracked. The `customizeCallback` function must have a signature of `function (resourceUri)` and must return the updated URI.
+
 ### `customizeStackTraces(customizeCallback)`
 
 Allows you to customize a crash stack trace (for instance, by referencing source maps) via a callback before the crash is tracked. The `customizeCallback` must have a signature of `function (stackTrace, callback)` and must provide the updated stack trace with the `callback` parameter. Note that because you must provide the updated trace via another callback, you can use asynchronous code here.
