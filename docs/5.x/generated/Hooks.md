@@ -3439,7 +3439,7 @@ Triggered before a segment is deleted or made invisible. This event can be used 
 or do something else.
 
 Callback Signature:
-<pre><code>function($idSegment)</code></pre>
+<pre><code>function($idSegment]</code></pre>
 
 - int `$idSegment` The ID of the segment being deleted.
 
@@ -3456,7 +3456,7 @@ Triggered before a segment is modified. This event can be used by plugins to thr
 or do something else.
 
 Callback Signature:
-<pre><code>function($idSegment, $bind)</code></pre>
+<pre><code>function($idSegment, $bind]</code></pre>
 
 - int `$idSegment` The ID of the segment which visibility is reduced.
 
