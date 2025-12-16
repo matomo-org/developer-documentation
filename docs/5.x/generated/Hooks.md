@@ -3424,7 +3424,7 @@ Callback Signature:
 
 Usages:
 
-[CoreHome::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/CoreHome.php#L442), [DevicesDetection::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/DevicesDetection/DevicesDetection.php#L93), [Ecommerce::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Ecommerce/Ecommerce.php#L93), [Goals::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Goals/Goals.php#L541), [Resolution::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Resolution/Resolution.php#L53), [VisitTime::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/VisitTime/VisitTime.php#L28)
+[CoreHome::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/CoreHome.php#L442), [DevicesDetection::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/DevicesDetection/DevicesDetection.php#L93), [Ecommerce::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Ecommerce/Ecommerce.php#L93), [Goals::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Goals/Goals.php#L544), [Resolution::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Resolution/Resolution.php#L53), [VisitTime::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/VisitTime/VisitTime.php#L28)
 
 ## SegmentEditor
 
