@@ -82,6 +82,7 @@ The class defines the following methods:
 - [`getFirstRow()`](#getfirstrow) &mdash; Returns the first row of the DataTable. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getLastRow()`](#getlastrow) &mdash; Returns the last row of the DataTable. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getRowsCountRecursive()`](#getrowscountrecursive) &mdash; Returns the number of rows in the entire DataTable hierarchy. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`getLeafRowsCount()`](#getleafrowscount) &mdash; Returns the number of leaf rows in the entire DataTable hierarchy. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`deleteColumn()`](#deletecolumn) &mdash; Delete a column by name in every row. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`__sleep()`](#__sleep) Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`renameColumn()`](#renamecolumn) &mdash; Rename a column in every row. Inherited from [`DataTable`](../../Piwik/DataTable.md)
@@ -653,6 +654,16 @@ summed with the row count of each descendant subtable.
 
 - It returns a `int` value.
 
+<a name="getleafrowscount" id="getleafrowscount"></a>
+<a name="getLeafRowsCount" id="getLeafRowsCount"></a>
+### `getLeafRowsCount()`
+
+Returns the number of leaf rows in the entire DataTable hierarchy. Only rows that do not contain a subtables are counted
+
+#### Signature
+
+- It returns a `int` value.
+
 <a name="deletecolumn" id="deletecolumn"></a>
 <a name="deleteColumn" id="deleteColumn"></a>
 ### `deleteColumn()`
@@ -1059,11 +1070,11 @@ for more information about tree walking.
     - `$maxSubtableRows` (`int`) &mdash;
        The maximum number of allowed rows in new subtables. New subtables are only created if `$missingRowColumns` is provided.
 
-- *Returns:*  `array` &mdash;
-    First element is the found row or `false`. Second element is
-              the number of path segments walked. If a row is found, this
-              will be == to `count($path)`. Otherwise, it will be the index
-              of the path segment that we could not find.
+- *Returns:*  `Piwik\array{0:` &mdash;
+    false|Row, 1: int} First element is the found row or `false`. Second element is
+                                    the number of path segments walked. If a row is found, this
+                                    will be == to `count($path)`. Otherwise, it will be the index
+                                    of the path segment that we could not find.
 
 <a name="mergesubtables" id="mergesubtables"></a>
 <a name="mergeSubtables" id="mergeSubtables"></a>

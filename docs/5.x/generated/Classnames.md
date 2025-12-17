@@ -123,6 +123,11 @@
 ## Plugins\Bandwidth\Columns\Metrics\OverallBandwidth
 ## Plugins\Bandwidth\Columns\Metrics\PageviewBandwidth
 ## Plugins\Bandwidth\Columns\Metrics\SumBandwidth
+## Plugins\BotTracking\Columns\Metrics\AcquiredVisits
+## Plugins\BotTracking\Columns\Metrics\ClickThroughRate
+## Plugins\BotTracking\Columns\Metrics\DocumentRequests
+## Plugins\BotTracking\Columns\Metrics\PageRequests
+## Plugins\BotTracking\Columns\Metrics\Requests
 ## Plugins\Contents\Columns\Metrics\InteractionRate
 ## Plugins\CoreHome\Columns\Metrics\ActionsPerVisit
 ## Plugins\CoreHome\Columns\Metrics\AverageTimeOnSite

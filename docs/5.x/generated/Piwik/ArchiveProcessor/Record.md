@@ -24,8 +24,10 @@ The class defines the following methods:
 - [`setType()`](#settype)
 - [`getType()`](#gettype)
 - [`setIsCountOfBlobRecordRows()`](#setiscountofblobrecordrows)
+- [`setIsCountOfBlobRecordLeafRows()`](#setiscountofblobrecordleafrows)
 - [`getCountOfRecordName()`](#getcountofrecordname)
 - [`getCountOfRecordNameIsRecursive()`](#getcountofrecordnameisrecursive)
+- [`getCountOfRecordNameIsForLeafs()`](#getcountofrecordnameisforleafs)
 - [`setColumnToRenameAfterAggregation()`](#setcolumntorenameafteraggregation)
 - [`getColumnToRenameAfterAggregation()`](#getcolumntorenameafteraggregation)
 - [`setBlobColumnAggregationOps()`](#setblobcolumnaggregationops)
@@ -181,6 +183,17 @@ The class defines the following methods:
       
 - It returns a [`Record`](../../Piwik/ArchiveProcessor/Record.md) value.
 
+<a name="setiscountofblobrecordleafrows" id="setiscountofblobrecordleafrows"></a>
+<a name="setIsCountOfBlobRecordLeafRows" id="setIsCountOfBlobRecordLeafRows"></a>
+### `setIsCountOfBlobRecordLeafRows()`
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$dependentRecordName` (`string`) &mdash;
+      
+- It returns a [`Record`](../../Piwik/ArchiveProcessor/Record.md) value.
+
 <a name="getcountofrecordname" id="getcountofrecordname"></a>
 <a name="getCountOfRecordName" id="getCountOfRecordName"></a>
 ### `getCountOfRecordName()`
@@ -194,6 +207,14 @@ The class defines the following methods:
 <a name="getcountofrecordnameisrecursive" id="getcountofrecordnameisrecursive"></a>
 <a name="getCountOfRecordNameIsRecursive" id="getCountOfRecordNameIsRecursive"></a>
 ### `getCountOfRecordNameIsRecursive()`
+
+#### Signature
+
+- It returns a `bool` value.
+
+<a name="getcountofrecordnameisforleafs" id="getcountofrecordnameisforleafs"></a>
+<a name="getCountOfRecordNameIsForLeafs" id="getCountOfRecordNameIsForLeafs"></a>
+### `getCountOfRecordNameIsForLeafs()`
 
 #### Signature
 
