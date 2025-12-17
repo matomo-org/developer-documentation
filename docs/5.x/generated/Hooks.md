@@ -1709,7 +1709,7 @@ Callback Signature:
 
 ### Live.API.getIdSitesString
 
-*Defined in [Piwik/Plugins/Live/Model](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Live/Model.php) in line [490](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Live/Model.php#L490)*
+*Defined in [Piwik/Plugins/Live/Model](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Live/Model.php) in line [548](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Live/Model.php#L548)*
 
 
 
