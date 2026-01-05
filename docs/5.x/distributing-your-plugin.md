@@ -59,14 +59,14 @@ The `plugin.json` file must contain the following information:
 - `license`: The name of the license your plugin uses. The license must be compatible with the [GPL-3.0](https://www.gnu.org/licenses/gpl.html) or later. We recommend using [GPL-3.0+](https://www.gnu.org/licenses/gpl-3.0.html) or later. Supported values are currently: "GPL-3.0+","GPL-3.0", "BSD AND GPL-3.0+", "GPL-2.0-only", "GPL-2.0+", "MIT". Please get in touch with us in case you want to release a plugin under a different license.
 - `homepage`: The URL to the plugin's homepage.
 - `authors`: An array of objects, each describing someone who helped create the plugin. The objects must contain a **name** field and can optionally contain an email and homepage field. You must define at least one author.
-- `require` - Defines packages required by this plugin. The plugin will not be installed unless those requirements can be met. Two packages are supported at the moment: `matomo` and `php`. Plugins that support Matomo 3.X or older, should use `piwik` instead of `matomo`.
+- `require` - Defines packages required by this plugin. The plugin will not be installed unless those requirements can be met. Two packages are supported at the moment: `matomo` and `php`. 
 
     For example:
 
     ```json
     "require": {
-        "matomo": ">=4.0.3,<5.0.0-b1", // requires at least Matomo 4.0.3 but lower than Matomo 5.0.0
-        "php": ">=7.3.5" // requires at least PHP 7.3.5
+        "matomo": ">=5.0.3,<6.0.0-b1", // requires at least Matomo 5.0.3 but lower than Matomo 6.0.0
+        "php": ">=8.0.21" // requires at least PHP 8.0.21
     }
     ```
 
@@ -76,8 +76,8 @@ The `plugin.json` file must contain the following information:
 
     ```json
     "require": {
-        "matomo": ">=4.0.3,<5.0.0-b1", // requires at least Matomo 4.0.3 but lower than Matomo 5.0.0
-        "php": ">7.3.5" // requires at least PHP 7.3.6
+        "matomo": ">=5.0.3,<6.0.0-b1", // requires at least Matomo 5.0.3 but lower than Matomo 6.0.0
+        "php": ">8.0.21" // requires at least PHP 8.0.22
     }
     ```
 
@@ -201,7 +201,7 @@ Here is a complete example to get you started:
         "rss": "https://piwik.org/feed/"
     },
     "require": {
-        "piwik": ">=2.9.0"
+        "matomo": ">=5.0.0"
     }
 }
 ```
