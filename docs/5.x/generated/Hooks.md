@@ -868,11 +868,12 @@ Callback Signature:
 ## CompliancePolicy
 
 - [CompliancePolicy.setActiveStatus](#compliancepolicysetactivestatus)
+- [CompliancePolicy.shouldShowWarnings](#compliancepolicyshouldshowwarnings)
 - [CompliancePolicy.updatePolicyDescription](#compliancepolicyupdatepolicydescription)
 
 ### CompliancePolicy.setActiveStatus
 
-*Defined in [Piwik/Policy/CompliancePolicy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Policy/CompliancePolicy.php) in line [143](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Policy/CompliancePolicy.php#L143)*
+*Defined in [Piwik/Policy/CompliancePolicy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Policy/CompliancePolicy.php) in line [168](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Policy/CompliancePolicy.php#L168)*
 
 This event is triggered when the status of a compliance policy changes, and
 is to be used to perform extra actions when a policy is activated/deactivated. The status of a policy cannot be changed via this event.
@@ -887,14 +888,31 @@ Callback Signature:
 - \class-string<CompliancePolicy> The compliance policy in question
 
 
+### CompliancePolicy.shouldShowWarnings
+
+*Defined in [Piwik/Policy/CompliancePolicy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Policy/CompliancePolicy.php) in line [69](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Policy/CompliancePolicy.php#L69)*
+
+This event is triggered while the description of a compliance policy is
+being generated, and controls whether any warnings specific to the policy
+are displayed at the end of the description.
+
+Callback Signature:
+<pre><code>function(&amp;$shouldShowWarnings, static::class]</code></pre>
+
+- bool &$shouldShowWarnings set to false if the warnings should be hidden
+
+
 ### CompliancePolicy.updatePolicyDescription
 
-*Defined in [Piwik/Policy/CompliancePolicy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Policy/CompliancePolicy.php) in line [51](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Policy/CompliancePolicy.php#L51)*
+*Defined in [Piwik/Policy/CompliancePolicy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Policy/CompliancePolicy.php) in line [58](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Policy/CompliancePolicy.php#L58)*
 
-
+This event is triggered while the description of a compliance policy is
+being generated. The policy description can be modified via this event.
 
 Callback Signature:
 <pre><code>function(&amp;$description, static::class]</code></pre>
+
+- string &$description of the policy.
 
 ## Config
 
