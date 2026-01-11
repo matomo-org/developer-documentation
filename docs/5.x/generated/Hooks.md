@@ -1241,7 +1241,7 @@ Callback Signature:
 
 Usages:
 
-[CustomAlerts::validateReportParameters](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/CustomAlerts.php#L284)
+[CustomAlerts::validateReportParameters](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/CustomAlerts.php#L287)
 
 ## CustomJsTracker
 
