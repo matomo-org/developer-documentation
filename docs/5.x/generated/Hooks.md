@@ -340,7 +340,7 @@ Usages:
 
 ### API.Request.authenticate
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php) in line [457](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php#L457)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php) in line [465](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php#L465)*
 
 Triggered when authenticating an API request, but only if the **token_auth**
 query parameter is found in the request. Plugins that provide authentication capabilities should subscribe to this event
@@ -922,7 +922,7 @@ Callback Signature:
 
 ### Config.badConfigurationFile
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [372](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L372)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [380](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L380)*
 
 Triggered when Piwik cannot access database data. This event can be used to start the installation process or to display a custom error
 message.
@@ -1005,7 +1005,7 @@ Callback Signature:
 
 ### Controller.$module.$action
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [644](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L644)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [656](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L656)*
 
 Triggered directly before controller actions are dispatched. This event exists for convenience and is triggered directly after the [Request.dispatch](/api-reference/events#requestdispatch)
 event is triggered.
@@ -1021,7 +1021,7 @@ Callback Signature:
 
 ### Controller.$module.$action.end
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [661](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L661)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [673](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L673)*
 
 Triggered after a controller action is successfully called. This event exists for convenience and is triggered immediately before the [Request.dispatch.end](/api-reference/events#requestdispatchend)
 event is triggered.
@@ -1354,7 +1354,7 @@ Usages:
 
 ### Db.cannotConnectToDb
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [349](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L349)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [357](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L357)*
 
 Triggered when Piwik cannot connect to the database. This event can be used to start the installation process or to display a custom error
 message.
@@ -2479,7 +2479,7 @@ Usages:
 
 ### Platform.initialized
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [466](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L466)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [474](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L474)*
 
 Triggered after the platform is initialized and after the user has been authenticated, but
 before the platform has handled the request. Piwik uses this event to check for updates to Piwik.
@@ -2512,7 +2512,7 @@ Usages:
 
 ### PluginManager.pluginActivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [768](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L768)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [772](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L772)*
 
 Event triggered after a plugin has been activated.
 
@@ -2528,7 +2528,7 @@ Usages:
 
 ### PluginManager.pluginDeactivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [583](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L583)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [587](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L587)*
 
 Event triggered after a plugin has been deactivated.
 
@@ -2544,7 +2544,7 @@ Usages:
 
 ### PluginManager.pluginInstalled
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [1450](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L1450)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [1454](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L1454)*
 
 Event triggered after a new plugin has been installed. Note: Might be triggered more than once if the config file is not writable
 
@@ -2560,7 +2560,7 @@ Usages:
 
 ### PluginManager.pluginUninstalled
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [678](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L678)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [682](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L682)*
 
 Event triggered after a plugin has been uninstalled.
 
@@ -2915,7 +2915,7 @@ Usages:
 
 ### Request.dispatch
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [626](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L626)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [638](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L638)*
 
 Triggered directly before controller actions are dispatched. This event can be used to modify the parameters passed to one or more controller actions
 and can be used to change the controller action being dispatched to.
@@ -2946,7 +2946,7 @@ Callback Signature:
 
 ### Request.dispatch.end
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [671](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L671)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [683](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L683)*
 
 Triggered after a controller action is successfully called. This event can be used to modify controller action output (if any) before the output is returned.
 
@@ -2960,7 +2960,7 @@ Callback Signature:
 
 ### Request.dispatchCoreAndPluginUpdatesScreen
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [387](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L387)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [395](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L395)*
 
 Triggered just after the platform is initialized and plugins are loaded. This event can be used to do early initialization.
 
@@ -2973,7 +2973,7 @@ Usages:
 
 ### Request.getRenamedModuleAndAction
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php) in line [175](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php#L175)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php) in line [176](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php#L176)*
 
 This event is posted in the Request dispatcher and can be used
 to overwrite the Module and Action to dispatch. This is useful when some Controller methods or API methods have been renamed or moved to another plugin.
@@ -3036,7 +3036,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [757](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L757)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [769](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L769)*
 
 Triggered before the user is authenticated, when the global authentication object
 should be created. Plugins that provide their own authentication implementation should use this event
@@ -3055,7 +3055,7 @@ Usages:
 
 ### Request.shouldDisablePostProcessing
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php) in line [734](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php#L734)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php) in line [742](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php#L742)*
 
 After an API method returns a value, the value is post processed (eg, rows are sorted
 based on the `filter_sort_column` query parameter, rows are truncated based on the
@@ -4622,7 +4622,7 @@ Usages:
 
 ### User.isNotAuthorized
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [183](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L183)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [191](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L191)*
 
 Triggered when a user with insufficient access permissions tries to view some resource. This event can be used to customize the error that occurs when a user is denied access
 (for example, displaying an error message, redirecting to a page other than login, etc.).
