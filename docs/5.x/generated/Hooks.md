@@ -3468,7 +3468,7 @@ Usages:
 
 ### SegmentEditor.update
 
-*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php) in line [283](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php#L283)*
+*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php) in line [287](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php#L287)*
 
 Triggered before a segment is modified. This event can be used by plugins to throw an exception
 or do something else.
