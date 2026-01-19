@@ -576,7 +576,7 @@ Callback Signature:
 
 ### Archiving.getIdSitesToArchiveWhenNoVisits
 
-*Defined in [Piwik/ArchiveProcessor/Loader](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor/Loader.php) in line [430](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor/Loader.php#L430)*
+*Defined in [Piwik/ArchiveProcessor/Loader](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor/Loader.php) in line [444](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor/Loader.php#L444)*
 
 
 
@@ -1098,7 +1098,39 @@ Callback Signature:
 
 ## CoreAdminHome
 
+- [CoreAdminHome.archiveReports.complete](#coreadminhomearchivereportscomplete)
+- [CoreAdminHome.archiveReports.start](#coreadminhomearchivereportsstart)
 - [CoreAdminHome.customLogoChanged](#coreadminhomecustomlogochanged)
+
+### CoreAdminHome.archiveReports.complete
+
+*Defined in [Piwik/Plugins/CoreAdminHome/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreAdminHome/API.php) in line [356](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreAdminHome/API.php#L356)*
+
+Triggered after a full archiveReports run completes. Usage example:
+Piwik::addAction('CoreAdminHome.archiveReports.complete', function ($idSite, $period, $segment, $plugin, $report, $isArchivePhpTriggered, $idArchives, $wasCached) { ... });
+
+Callback Signature:
+<pre><code>function($idSite, $period, $segmentObj, (string) $plugin, $report, $isArchivePhpTriggered, $idArchives, $wasCached]</code></pre>
+
+Usages:
+
+[ArchivingMetrics::onArchiveReportsComplete](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ArchivingMetrics/ArchivingMetrics.php#L44)
+
+
+### CoreAdminHome.archiveReports.start
+
+*Defined in [Piwik/Plugins/CoreAdminHome/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreAdminHome/API.php) in line [325](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreAdminHome/API.php#L325)*
+
+Triggered before a full archiveReports run starts. Usage example:
+Piwik::addAction('CoreAdminHome.archiveReports.start', function ($idSite, $period, $segment, $plugin, $report, $isArchivePhpTriggered) { ... });
+
+Callback Signature:
+<pre><code>function($idSite, $period, $segmentObj, (string) $plugin, $report, $isArchivePhpTriggered]</code></pre>
+
+Usages:
+
+[ArchivingMetrics::onArchiveReportsStart](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ArchivingMetrics/ArchivingMetrics.php#L27)
+
 
 ### CoreAdminHome.customLogoChanged
 
@@ -1194,7 +1226,7 @@ Callback Signature:
 
 ### CronArchive.getIdSitesNotUsingTracker
 
-*Defined in [Piwik/ArchiveProcessor/Loader](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor/Loader.php) in line [653](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor/Loader.php#L653)*
+*Defined in [Piwik/ArchiveProcessor/Loader](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor/Loader.php) in line [672](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor/Loader.php#L672)*
 
 This event is triggered when detecting whether there are sites that do not use the tracker. By default we only archive a site when there was actually any visit since the last archiving.
 However, some plugins do import data from another source instead of using the tracker and therefore
@@ -1415,7 +1447,7 @@ Callback Signature:
 
 ### Db.getTablesInstalled
 
-*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Db/Schema/Mysql.php) in line [508](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Db/Schema/Mysql.php#L508)*
+*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Db/Schema/Mysql.php) in line [527](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Db/Schema/Mysql.php#L527)*
 
 
 
