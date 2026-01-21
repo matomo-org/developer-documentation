@@ -75,7 +75,7 @@ Callback Signature:
 
 ### Access.modifyUserAccess
 
-*Defined in [Piwik/Access](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Access.php) in line [302](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Access.php#L302)*
+*Defined in [Piwik/Access](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Access.php) in line [308](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Access.php#L308)*
 
 Triggered after the initial access levels and permissions for the current user are loaded. Use this
 event to modify the current user's permissions (for example, making sure every user has view access
@@ -922,7 +922,7 @@ Callback Signature:
 
 ### Config.badConfigurationFile
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [380](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L380)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [381](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L381)*
 
 Triggered when Piwik cannot access database data. This event can be used to start the installation process or to display a custom error
 message.
@@ -1005,7 +1005,7 @@ Callback Signature:
 
 ### Controller.$module.$action
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [656](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L656)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [661](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L661)*
 
 Triggered directly before controller actions are dispatched. This event exists for convenience and is triggered directly after the [Request.dispatch](/api-reference/events#requestdispatch)
 event is triggered.
@@ -1021,7 +1021,7 @@ Callback Signature:
 
 ### Controller.$module.$action.end
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [673](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L673)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [678](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L678)*
 
 Triggered after a controller action is successfully called. This event exists for convenience and is triggered immediately before the [Request.dispatch.end](/api-reference/events#requestdispatchend)
 event is triggered.
@@ -1386,7 +1386,7 @@ Usages:
 
 ### Db.cannotConnectToDb
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [357](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L357)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [358](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L358)*
 
 Triggered when Piwik cannot connect to the database. This event can be used to start the installation process or to display a custom error
 message.
@@ -2128,7 +2128,7 @@ Usages:
 
 ### Login.logout
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [669](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L669)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [670](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L670)*
 
 
 
@@ -2511,7 +2511,7 @@ Usages:
 
 ### Platform.initialized
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [474](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L474)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [479](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L479)*
 
 Triggered after the platform is initialized and after the user has been authenticated, but
 before the platform has handled the request. Piwik uses this event to check for updates to Piwik.
@@ -2947,7 +2947,7 @@ Usages:
 
 ### Request.dispatch
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [638](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L638)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [643](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L643)*
 
 Triggered directly before controller actions are dispatched. This event can be used to modify the parameters passed to one or more controller actions
 and can be used to change the controller action being dispatched to.
@@ -2978,7 +2978,7 @@ Callback Signature:
 
 ### Request.dispatch.end
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [683](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L683)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [688](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L688)*
 
 Triggered after a controller action is successfully called. This event can be used to modify controller action output (if any) before the output is returned.
 
@@ -2992,7 +2992,7 @@ Callback Signature:
 
 ### Request.dispatchCoreAndPluginUpdatesScreen
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [395](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L395)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [396](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L396)*
 
 Triggered just after the platform is initialized and plugins are loaded. This event can be used to do early initialization.
 
@@ -3068,7 +3068,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [769](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L769)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [774](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L774)*
 
 Triggered before the user is authenticated, when the global authentication object
 should be created. Plugins that provide their own authentication implementation should use this event
@@ -4149,7 +4149,7 @@ Usages:
 
 ### Template.loginCancelResetPasswordContent
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [569](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L569)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [570](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L570)*
 
 Overwrite the content displayed on the "reset password process cancelled page". Will display default content if no event content returned.
 
@@ -4654,7 +4654,7 @@ Usages:
 
 ### User.isNotAuthorized
 
-*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [191](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L191)*
+*Defined in [Piwik/FrontController](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php) in line [192](https://github.com/matomo-org/matomo/blob/5.x-dev/core/FrontController.php#L192)*
 
 Triggered when a user with insufficient access permissions tries to view some resource. This event can be used to customize the error that occurs when a user is denied access
 (for example, displaying an error message, redirecting to a page other than login, etc.).
@@ -4789,7 +4789,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.accepted
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [789](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L789)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [790](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L790)*
 
 Triggered after a user accepted an invite
 
@@ -4805,7 +4805,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.declined
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [860](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L860)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [861](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L861)*
 
 Triggered after a user accepted an invite
 
