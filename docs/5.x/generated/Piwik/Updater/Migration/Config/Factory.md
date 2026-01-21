@@ -25,7 +25,7 @@ Sets a configuration to the Matomo config file
       
     - `$key` (`string`) &mdash;
       
-    - `$value` (`string`) &mdash;
+    - `$value` (`scalar`|`scalar[]`) &mdash;
       
 - It returns a `Piwik\Updater\Migration\Config\Set` value.
 
