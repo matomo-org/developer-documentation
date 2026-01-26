@@ -287,7 +287,7 @@ If we do not increase tableId it can result in segmentation faults when destruct
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="sort" id="sort"></a>
 <a name="sort" id="sort"></a>
@@ -298,11 +298,11 @@ Sorts the DataTable rows using the supplied callback function.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$functionCallback` (`string`) &mdash;
+    - `$functionCallback` (`callable`) &mdash;
        A comparison callback compatible with usort.
     - `$columnSortedBy` (`string`) &mdash;
        The column name `$functionCallback` sorts by. This is stored so we can determine how the DataTable was sorted in the future.
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="settotalsrow" id="settotalsrow"></a>
 <a name="setTotalsRow" id="setTotalsRow"></a>
@@ -313,7 +313,7 @@ Sorts the DataTable rows using the supplied callback function.
 -  It accepts the following parameter(s):
     - `$totalsRow` ([`Row`](../Piwik/DataTable/Row.md)) &mdash;
       
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="gettotalsrow" id="gettotalsrow"></a>
 <a name="getTotalsRow" id="getTotalsRow"></a>
@@ -321,7 +321,9 @@ Sorts the DataTable rows using the supplied callback function.
 
 #### Signature
 
-- It does not return anything or a mixed result.
+
+- *Returns:*  [`Row`](../Piwik/DataTable/Row.md)|`null` &mdash;
+    
 
 <a name="getsummaryrow" id="getsummaryrow"></a>
 <a name="getSummaryRow" id="getSummaryRow"></a>
@@ -329,7 +331,9 @@ Sorts the DataTable rows using the supplied callback function.
 
 #### Signature
 
-- It does not return anything or a mixed result.
+
+- *Returns:*  [`Row`](../Piwik/DataTable/Row.md)|`null` &mdash;
+    
 
 <a name="getsortedbycolumnname" id="getsortedbycolumnname"></a>
 <a name="getSortedByColumnName" id="getSortedByColumnName"></a>
@@ -354,7 +358,7 @@ subtables.
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="enablerecursivefilters" id="enablerecursivefilters"></a>
 <a name="enableRecursiveFilters" id="enableRecursiveFilters"></a>
@@ -365,7 +369,7 @@ will apply filters to every subtable in addition to this instance.
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="filter" id="filter"></a>
 <a name="filter" id="filter"></a>
@@ -379,11 +383,11 @@ to all subtables as well.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
-       Class name, eg. `"Sort"` or "Piwik\DataTable\Filters\Sort"`. If no namespace is supplied, `Piwik\DataTable\BaseFilter` is assumed. This parameter can also be a closure that takes a DataTable as its first parameter.
+    - `$className` (`string`|`callable`) &mdash;
+       Class name, eg. `"Sort"` or "Piwik\DataTable\Filters\Sort"`. If no namespace is supplied, `Piwik\DataTable\Filter` is assumed. This parameter can also be a closure that takes a DataTable as its first parameter.
     - `$parameters` (`array`) &mdash;
        Array of extra parameters to pass to the filter.
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="multifilter" id="multifilter"></a>
 <a name="multiFilter" id="multiFilter"></a>
@@ -393,7 +397,7 @@ Invokes `$filter` with this table and every table in `$otherTables`. The result 
 
 This method is used to iterate over multiple DataTable\Map's concurrently.
 
-See [Map::multiFilter()](/api-reference/Piwik/DataTable/Map#multifilter) for more information.
+See Map::multiFilter() for more information.
 
 #### Signature
 
@@ -401,7 +405,7 @@ See [Map::multiFilter()](/api-reference/Piwik/DataTable/Map#multifilter) for mor
     - `$otherTables` ([`DataTable[]`](../Piwik/DataTable.md)) &mdash;
       
     - `$filter` (`callable`) &mdash;
-       filter A function like `function (DataTable $thisTable, $otherTable1, $otherTable2) {}`.
+       A function like `function (DataTable $thisTable, $otherTable1, $otherTable2) {}`.
 
 - *Returns:*  `mixed` &mdash;
     The result of $filter.
@@ -415,11 +419,11 @@ Applies a filter to all subtables but not to this datatable.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
+    - `$className` (`string`|`callable`) &mdash;
        Class name, eg. `"Sort"` or "Piwik\DataTable\Filters\Sort"`. If no namespace is supplied, `Piwik\DataTable\BaseFilter` is assumed. This parameter can also be a closure that takes a DataTable as its first parameter.
     - `$parameters` (`array`) &mdash;
        Array of extra parameters to pass to the filter.
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="queuefiltersubtables" id="queuefiltersubtables"></a>
 <a name="queueFilterSubtables" id="queueFilterSubtables"></a>
@@ -434,11 +438,11 @@ way they will be run after the table is truncated which will result in better pe
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
+    - `$className` (`string`|`callable`) &mdash;
        The class name of the filter, eg. `'Limit'`.
     - `$parameters` (`array`) &mdash;
        The parameters to give to the filter, eg. `array($offset, $limit)` for the Limit filter.
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="queuefilter" id="queuefilter"></a>
 <a name="queueFilter" id="queueFilter"></a>
@@ -453,11 +457,11 @@ way they will be run after the table is truncated which will result in better pe
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$className` (`string`|[`Closure`](http://php.net/class.Closure)) &mdash;
+    - `$className` (`string`|`callable`) &mdash;
        The class name of the filter, eg. `'Limit'`.
     - `$parameters` (`array`) &mdash;
        The parameters to give to the filter, eg. `array($offset, $limit)` for the Limit filter.
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="applyqueuedfilters" id="applyqueuedfilters"></a>
 <a name="applyQueuedFilters" id="applyQueuedFilters"></a>
@@ -468,7 +472,7 @@ for more information.
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="adddatatable" id="adddatatable"></a>
 <a name="addDataTable" id="addDataTable"></a>
@@ -491,7 +495,7 @@ metadata can be used to specify a different type of operation.
 -  It accepts the following parameter(s):
     - `$tableToSum` ([`DataTable`](../Piwik/DataTable.md)) &mdash;
       
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -528,7 +532,7 @@ label => row ID mappings.
     - `$label` (`string`) &mdash;
        `'label'` column value to look for.
 
-- *Returns:*  `int` &mdash;
+- *Returns:*  `int`|`false` &mdash;
     The row ID.
 
 <a name="getemptyclone" id="getemptyclone"></a>
@@ -633,7 +637,7 @@ You can add row metadata with this method.
 -  It accepts the following parameter(s):
     - `$row` (`array`) &mdash;
        eg. `array(Row::COLUMNS => array('visits' => 13, 'test' => 'toto'), Row::METADATA => array('mymetadata' => 'myvalue'))`
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="addrowfromsimplearray" id="addrowfromsimplearray"></a>
 <a name="addRowFromSimpleArray" id="addRowFromSimpleArray"></a>
@@ -648,7 +652,7 @@ Row metadata cannot be added with this method.
 -  It accepts the following parameter(s):
     - `$row` (`array`) &mdash;
        eg. `array('name' => 'google analytics', 'license' => 'commercial')`
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="getrows" id="getrows"></a>
 <a name="getRows" id="getRows"></a>
@@ -732,11 +736,11 @@ Delete row metadata by name in every row.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$name`
+    - `$name` (`string`) &mdash;
       
     - `$deleteRecursiveInSubtables` (`bool`) &mdash;
       
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="getrowscount" id="getrowscount"></a>
 <a name="getRowsCount" id="getRowsCount"></a>
@@ -806,7 +810,7 @@ subtables.
 -  It accepts the following parameter(s):
     - `$name` (`string`) &mdash;
        Column name to delete.
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="__sleep" id="__sleep"></a>
 <a name="__sleep" id="__sleep"></a>
@@ -829,7 +833,7 @@ Rename a column in every row. This change is applied recursively to all subtable
        Old column name.
     - `$newName` (`string`) &mdash;
        New column name.
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="deletecolumns" id="deletecolumns"></a>
 <a name="deleteColumns" id="deleteColumns"></a>
@@ -844,7 +848,7 @@ Deletes several columns by name in every row.
        List of column names to delete.
     - `$deleteRecursiveInSubtables` (`bool`) &mdash;
        Whether to apply this change to all subtables or not.
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="deleterow" id="deleterow"></a>
 <a name="deleteRow" id="deleteRow"></a>
@@ -857,7 +861,7 @@ Deletes a row by ID.
 -  It accepts the following parameter(s):
     - `$id` (`int`) &mdash;
        The row ID.
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If the row `$id` cannot be found.
 
@@ -889,7 +893,7 @@ Deletes a set of rows by ID.
 -  It accepts the following parameter(s):
     - `$rowIds` (`array`) &mdash;
        The list of row IDs to delete.
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If a row ID cannot be found.
 
@@ -985,7 +989,7 @@ _Note: This function will successfully load DataTables serialized by Piwik 1.X._
 -  It accepts the following parameter(s):
     - `$serialized` (`string`) &mdash;
        A string with the format of a string in the array returned by [serialize()](http://php.net/function.serialize()).
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if `$serialized` is invalid.
 
@@ -1002,7 +1006,7 @@ You can add row metadata with this method.
 -  It accepts the following parameter(s):
     - `$array` (`array`) &mdash;
        Array with the following structure array( // row1 array( Row::COLUMNS => array( col1_name => value1, col2_name => value2, ...), Row::METADATA => array( metadata1_name => value1, ...), // see Row ), // row2 array( ... ), )
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="addrowsfromsimplearray" id="addrowsfromsimplearray"></a>
 <a name="addRowsFromSimpleArray" id="addRowsFromSimpleArray"></a>
@@ -1017,7 +1021,7 @@ Row metadata cannot be added with this method.
 -  It accepts the following parameter(s):
     - `$array` (`array`) &mdash;
        Array with the following structure: array( array( col1_name => valueA, col2_name => valueC, ...), array( col1_name => valueB, col2_name => valueD, ...), )
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if `$array` is in an incorrect format.
 
@@ -1078,7 +1082,7 @@ have subtables, but the subtables are not.
 -  It accepts the following parameter(s):
     - `$atLeastLevel` (`int`) &mdash;
       
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="getmetadata" id="getmetadata"></a>
 <a name="getMetadata" id="getMetadata"></a>
@@ -1108,7 +1112,7 @@ Sets a metadata value by name.
        The metadata name.
     - `$value` (`mixed`) &mdash;
       
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="deletemetadata" id="deletemetadata"></a>
 <a name="deleteMetadata" id="deleteMetadata"></a>
@@ -1133,7 +1137,9 @@ Returns all table metadata.
 
 #### Signature
 
-- It returns a `array` value.
+
+- *Returns:*  `Piwik\array&lt;string,` &mdash;
+    mixed>
 
 <a name="setmetadatavalues" id="setmetadatavalues"></a>
 <a name="setMetadataValues" id="setMetadataValues"></a>
@@ -1144,9 +1150,9 @@ Sets several metadata values by name.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$values` (`array`) &mdash;
-       Array mapping metadata names with metadata values.
-- It does not return anything or a mixed result.
+    - `$values` (`Piwik\array&lt;string,`) &mdash;
+       mixed> $values Array mapping metadata names with metadata values.
+- It returns a `void` value.
 
 <a name="setalltablemetadata" id="setalltablemetadata"></a>
 <a name="setAllTableMetadata" id="setAllTableMetadata"></a>
@@ -1159,7 +1165,7 @@ Sets metadata, erasing existing values.
 -  It accepts the following parameter(s):
     - `$metadata` (`array`) &mdash;
        Array mapping metadata names with metadata values.
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="setmaximumallowedrows" id="setmaximumallowedrows"></a>
 <a name="setMaximumAllowedRows" id="setMaximumAllowedRows"></a>
@@ -1174,7 +1180,7 @@ rows are summed to the summary row.
 -  It accepts the following parameter(s):
     - `$maximumAllowedRows` (`int`) &mdash;
        If `0`, the maximum number of rows is unset.
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="walkpath" id="walkpath"></a>
 <a name="walkPath" id="walkPath"></a>
@@ -1196,7 +1202,7 @@ for more information about tree walking.
 -  It accepts the following parameter(s):
     - `$path` (`array`) &mdash;
        The path to walk. An array of label values. The first element refers to a row in this DataTable, the second in a subtable of the first row, the third a subtable of the second row, etc.
-    - `$missingRowColumns` (`array`|`bool`) &mdash;
+    - `$missingRowColumns` (`array`|`false`) &mdash;
        The default columns to use when creating new rows. If this parameter is supplied, new rows will be created for path labels that cannot be found.
     - `$maxSubtableRows` (`int`) &mdash;
        The maximum number of allowed rows in new subtables. New subtables are only created if `$missingRowColumns` is provided.
@@ -1216,7 +1222,7 @@ Returns a new DataTable in which the rows of this table are replaced with the ag
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$labelColumn` (`string`|`bool`) &mdash;
+    - `$labelColumn` (`string`|`false`) &mdash;
        If supplied the label of the parent row will be added to a new column in each subtable row. If set to, `'label'` each subtable row's label will be prepended w/ the parent row's label. So `'child_label'` becomes `'parent_label - child_label'`.
     - `$useMetadataColumn` (`bool`) &mdash;
        If true and if `$labelColumn` is supplied, the parent row's label will be added as metadata and not a new column.
@@ -1261,7 +1267,7 @@ Unsets all queued filters.
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="getqueuedfilters" id="getqueuedfilters"></a>
 <a name="getQueuedFilters" id="getQueuedFilters"></a>
@@ -1269,7 +1275,7 @@ Unsets all queued filters.
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `array` value.
 
 <a name="getiterator" id="getiterator"></a>
 <a name="getIterator" id="getIterator"></a>
@@ -1277,7 +1283,9 @@ Unsets all queued filters.
 
 #### Signature
 
-- It returns a [`ArrayIterator`](http://php.net/class.ArrayIterator) value.
+
+- *Returns:*  [`ArrayIterator`](http://php.net/class.ArrayIterator) &mdash;
+    Row>
 
 <a name="offsetexists" id="offsetexists"></a>
 <a name="offsetExists" id="offsetExists"></a>
@@ -1286,7 +1294,7 @@ Unsets all queued filters.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$offset`
+    - `$offset` (`int`) &mdash;
       
 - It returns a `bool` value.
 
@@ -1297,7 +1305,7 @@ Unsets all queued filters.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$offset`
+    - `$offset` (`int`) &mdash;
       
 - It returns a [`Row`](../Piwik/DataTable/Row.md) value.
 
@@ -1308,9 +1316,9 @@ Unsets all queued filters.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$offset`
+    - `$offset` (`int`) &mdash;
       
-    - `$value`
+    - `$value` ([`Row`](../Piwik/DataTable/Row.md)) &mdash;
       
 - It returns a `void` value.
 
@@ -1321,9 +1329,11 @@ Unsets all queued filters.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$offset`
+    - `$offset` (`int`) &mdash;
       
 - It returns a `void` value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="sumrowwithlabel" id="sumrowwithlabel"></a>
 <a name="sumRowWithLabel" id="sumRowWithLabel"></a>
@@ -1332,13 +1342,15 @@ Unsets all queued filters.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$label`
+    - `$label` (`string`|`int`|`null`) &mdash;
       
     - `$columns` (`array`) &mdash;
       
     - `$aggregationOps` (`array`|`null`) &mdash;
-      
+       string>|null $aggregationOps
 - It returns a [`Row`](../Piwik/DataTable/Row.md) value.
+- It throws one of the following exceptions:
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="setasbuiltwithoutarchives" id="setasbuiltwithoutarchives"></a>
 <a name="setAsBuiltWithoutArchives" id="setAsBuiltWithoutArchives"></a>

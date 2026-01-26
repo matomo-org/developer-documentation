@@ -208,7 +208,7 @@ Returns the associated subtable, if one exists. Returns `false` if none exists.
 #### Signature
 
 
-- *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|`bool` &mdash;
+- *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|`false` &mdash;
     
 
 <a name="sumsubtable" id="sumsubtable"></a>
@@ -401,7 +401,7 @@ Columns in `$rowToSum` that don't exist in `$this` are added to `$this`.
        The row to sum to this row.
     - `$enableCopyMetadata` (`bool`) &mdash;
        Whether metadata should be copied or not.
-    - `$aggregationOperations` (`array`|`bool`) &mdash;
+    - `$aggregationOperations` (`array`|`bool`|`null`) &mdash;
        for columns that should not be summed, determine which aggregation should be used (min, max). format: `array('column name' => 'function name')`
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
