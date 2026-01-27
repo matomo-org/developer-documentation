@@ -102,7 +102,7 @@ result will be in UTC.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$dateString` (`string`|`int`) &mdash;
+    - `$dateString` (`string`|`int`|[`Date`](../Piwik/Date.md)) &mdash;
        `'today'`, `'yesterday'`, `'now'`, `'yesterdaySameTime'`, a string with `'YYYY-MM-DD HH:MM:SS'` format or a unix timestamp.
     - `$timezone` (`string`) &mdash;
        The timezone of the result. If specified, `$dateString` will be converted from UTC to this timezone before being used in the Date return value.
