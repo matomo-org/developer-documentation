@@ -18,5 +18,5 @@ Returns class names of all VisitorDetails classes.
 
 #### Signature
 
-- It returns a `string[]` value.
+- It returns a `Piwik\Plugins\Live\array&lt;class-string&lt;VisitorDetailsAbstract&gt;&gt;` value.
 

@@ -254,9 +254,9 @@ Tries to find a component such as a Menu or Tasks within this plugin.
     - `$expectedSubclass` (`string`) &mdash;
        If not empty, a check will be performed whether a found file extends the given subclass. If the requested file exists but does not extend this class a warning will be shown to advice a developer to extend this certain class.
 
-- *Returns:*  `string`|`null` &mdash;
-    Null if the requested component does not exist or an instance of the found
-                        component.
+- *Returns:*  `Piwik\class-string&lt;T&gt;`|`null` &mdash;
+    Null if the requested component does not exist,
+                              or the class string of the found component.
 
 <a name="findmultiplecomponents" id="findmultiplecomponents"></a>
 <a name="findMultipleComponents" id="findMultipleComponents"></a>
@@ -269,7 +269,7 @@ Tries to find a component such as a Menu or Tasks within this plugin.
       
     - `$expectedSubclass`
       
-- It does not return anything or a mixed result.
+- It returns a `Piwik\array&lt;class-string&lt;T&gt;&gt;` value.
 
 <a name="hasmissingdependencies" id="hasmissingdependencies"></a>
 <a name="hasMissingDependencies" id="hasMissingDependencies"></a>

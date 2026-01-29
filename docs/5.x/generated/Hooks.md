@@ -2544,7 +2544,7 @@ Usages:
 
 ### PluginManager.pluginActivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [772](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L772)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [775](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L775)*
 
 Event triggered after a plugin has been activated.
 
@@ -2576,7 +2576,7 @@ Usages:
 
 ### PluginManager.pluginInstalled
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [1454](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L1454)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [1457](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L1457)*
 
 Event triggered after a new plugin has been installed. Note: Might be triggered more than once if the config file is not writable
 
@@ -2592,7 +2592,7 @@ Usages:
 
 ### PluginManager.pluginUninstalled
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [682](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L682)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [685](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L685)*
 
 Event triggered after a plugin has been uninstalled.
 
@@ -4996,7 +4996,7 @@ Callback Signature:
 
 ### ViewDataTable.filterViewDataTable
 
-*Defined in [Piwik/ViewDataTable/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ViewDataTable/Manager.php) in line [118](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ViewDataTable/Manager.php#L118)*
+*Defined in [Piwik/ViewDataTable/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ViewDataTable/Manager.php) in line [117](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ViewDataTable/Manager.php#L117)*
 
 Triggered to filter available DataTable visualizations. Plugins that want to disable certain visualizations should subscribe to
 this event and remove visualizations from the incoming array.
