@@ -217,7 +217,7 @@ _Note: The metrics calculated by this query can be customized by the `$metrics` 
        The set of metrics to calculate and return. If `false`, the query will select all of them. The following values can be used: - Piwik\Metrics::INDEX\_NB\_UNIQ\_VISITORS - Piwik\Metrics::INDEX\_NB\_VISITS - Piwik\Metrics::INDEX\_NB\_ACTIONS
     - `$rankingQuery` (`bool`|[`RankingQuery`](../../Piwik/RankingQuery.md)) &mdash;
        A pre-configured ranking query instance that will be used to limit the result. If set, the return value is the array returned by [RankingQuery::execute()](/api-reference/Piwik/RankingQuery#execute).
-    - `$joinLogActionOnColumn` (`bool`|`string`) &mdash;
+    - `$joinLogActionOnColumn` (`false`|`string`|`Piwik\DataAccess\array&lt;string&gt;`) &mdash;
        One or more columns from the **log_link_visit_action** table that log_action should be joined on. The table alias used for each join is `"log_action$i"` where `$i` is the index of the column in this array. If a string is used for this parameter, the table alias is not suffixed (since there is only one column).
     - `$secondaryOrderBy` (`string`) &mdash;
        A secondary order by clause for the ranking query

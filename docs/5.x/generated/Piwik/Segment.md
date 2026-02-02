@@ -194,8 +194,8 @@ Extend an SQL query that aggregates data over one of the 'log_' tables with segm
     - `$withRollup` (`bool`) &mdash;
        If set to value >= 1 then the Select query (and All inner queries) will be LIMIT'ed by this value. Use only when you're not aggregating or it will sample the data.
 
-- *Returns:*  `array` &mdash;
-    The entire select query.
+- *Returns:*  `Piwik\array{sql:` &mdash;
+    string, bind: array<scalar>} The entire select query.
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>
