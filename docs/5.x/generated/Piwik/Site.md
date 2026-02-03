@@ -283,8 +283,10 @@ Checks the given string for valid site IDs and returns them as an array.
        Comma separated idSite list, eg, `'1,2,3,4'` or an array of IDs, eg, `array(1, 2, 3, 4)`.
     - `$_restrictSitesToLogin` (`bool`|`string`) &mdash;
        Implementation detail. Used only when running as a scheduled task.
+    - `$throwOnInvalid` (`bool`) &mdash;
+       If true, throw when an invalid id is supplied.
 
-- *Returns:*  `Piwik\array&lt;string&gt;`|`Piwik\array&lt;int&gt;` &mdash;
+- *Returns:*  `array` &mdash;
     An array of valid, unique integers.
 
 <a name="clearcache" id="clearcache"></a>
