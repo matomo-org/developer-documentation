@@ -301,6 +301,6 @@ Returns the segment query parameter from the original request, without modificat
 #### Signature
 
 
-- *Returns:*  `array`|`bool` &mdash;
+- *Returns:*  `string`|`false` &mdash;
     
 

@@ -272,7 +272,7 @@ It won't be loaded from the API in this case.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$dataTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
+    - `$dataTable` ([`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md)) &mdash;
        The DataTable to use.
 - It returns a `void` value.
 
