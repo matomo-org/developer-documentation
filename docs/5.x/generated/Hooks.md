@@ -310,7 +310,7 @@ Usages:
 
 ### API.getReportMetadata.end
 
-*Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/ProcessedReport.php) in line [232](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/ProcessedReport.php#L232)*
+*Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/ProcessedReport.php) in line [242](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/ProcessedReport.php#L242)*
 
 Triggered after all available reports are collected. This event can be used to modify the report metadata of reports in other plugins. You
 could, for example, add custom metrics to every report or remove reports from the list
