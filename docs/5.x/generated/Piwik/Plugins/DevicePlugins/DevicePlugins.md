@@ -140,7 +140,7 @@ Useful for initialization code that uses translated strings.
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="requiresinternetconnection" id="requiresinternetconnection"></a>
 <a name="requiresInternetConnection" id="requiresInternetConnection"></a>
@@ -167,7 +167,7 @@ needs to:
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if installation of fails for some reason.
 
@@ -183,7 +183,7 @@ an [uninstall()](/api-reference/Piwik/Plugins/DevicePlugins/DevicePlugins#uninst
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if uninstallation of fails for some reason.
 
@@ -195,7 +195,7 @@ Executed every time the plugin is enabled.
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="deactivate" id="deactivate"></a>
 <a name="deactivate" id="deactivate"></a>
@@ -205,7 +205,7 @@ Executed every time the plugin is disabled.
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="getversion" id="getversion"></a>
 <a name="getVersion" id="getVersion"></a>

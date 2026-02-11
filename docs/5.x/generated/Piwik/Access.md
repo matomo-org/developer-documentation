@@ -41,7 +41,7 @@ Use this method with care, as it might open up attack vectors
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$function` (`Piwik\callback`) &mdash;
+    - `$function` (`callable`) &mdash;
        The callback to execute. Should accept no arguments.
 
 - *Returns:*  `mixed` &mdash;
