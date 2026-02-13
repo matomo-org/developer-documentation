@@ -27,8 +27,15 @@ The value returned by Request will be serialized to a certain format before bein
 
 **Basic Usage**
 
-    $request = new Request('method=UserLanguage.getLanguage&idSite=1&date=yesterday&period=week'
-                         . '&format=xml&filter_limit=5&filter_offset=0')
+    $request = new Request([
+        'method' => 'UserLanguage.getLanguage',
+        'idSite' => 1,
+        'date' => 'yesterday',
+        'period' => 'week',
+        'format' => 'xml',
+        'filter_limit' => 5,
+        'filter_offset' => 0,
+    ])
     $result = $request->process();
     echo $result;
 
