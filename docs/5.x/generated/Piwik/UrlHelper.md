@@ -29,9 +29,9 @@ Parameters that are in `$parametersToExclude` will not appear in the result.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$queryParameters`
-       Array of query parameters, eg, `array('site' => '0', 'date' => '2012-01-01')`.
-    - `$parametersToExclude`
+    - `$queryParameters` (`Piwik\array&lt;string,`) &mdash;
+       string|false|array<string|false>> $queryParameters Array of query parameters, eg, `array('site' => '0', 'date' => '2012-01-01')`.
+    - `$parametersToExclude` (`string[]`) &mdash;
        Array of query parameter names that shouldn't be in the result query string, eg, `array('date', 'period')`.
 
 - *Returns:*  `string` &mdash;
