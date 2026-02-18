@@ -83,15 +83,15 @@ fetched from current logged-in user's preferences.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$websiteId` (`bool`) &mdash;
+    - `$websiteId` (`int`|`string`|`false`) &mdash;
       
-    - `$defaultPeriod` (`bool`) &mdash;
+    - `$defaultPeriod` (`string`|`false`) &mdash;
       
-    - `$defaultDate` (`bool`) &mdash;
+    - `$defaultDate` (`string`|`false`) &mdash;
       
 
-- *Returns:*  `array` &mdash;
-    eg ['idSite' => 1, 'period' => 'day', 'date' => '2012-02-03']
+- *Returns:*  `Piwik\Plugin\array{idSite:` &mdash;
+    int|string, period: string, date: string}
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; in case a website was not specified and a default website id could not be found
 
