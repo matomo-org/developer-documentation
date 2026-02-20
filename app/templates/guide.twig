@@ -1,6 +1,4 @@
-{% if title is not defined %}
-    {% set title = guide.seoTitle %}
-{% endif %}
+{% set title = guide.seoTitle %}
 {% set setPageHeader = false %}
 {% set anchorLinks = [] %}
 {% extends 'base.twig' %}

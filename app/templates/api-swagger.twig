@@ -1,5 +1,4 @@
 {% extends 'guide.twig' %}
-{% set title = 'HTTP API' %}
 
 {% block meta %}
     <link href="/vendor/swagger-ui/swagger-ui.css?{{ revision|e('html_attr') }}" rel="stylesheet">
@@ -7,6 +6,7 @@
 {% endblock %}
 
 {% block guideContent %}
+    {{ guide.validatedRenderedContent(anchorLinks)|raw }}
     <div id="swagger-ui"></div>
 {% endblock %}
 

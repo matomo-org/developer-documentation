@@ -101,7 +101,7 @@ $app->get('/piwik-in-depth', function (Request $request, Response $response, $ar
 
 $app->get('/api-reference-swagger', function (Request $request, Response $response, $args) {
     $category = new ApiReferenceCategory();
-    $guide = new Guide('http-api');
+    $guide = new Guide('swagger-api');
 
     return renderGuide($this->get("view"), $response, $request->getUri(), $guide, $category, 'api-swagger.twig');
 });
