@@ -99,6 +99,21 @@ $app->get('/piwik-in-depth', function (Request $request, Response $response, $ar
     return renderGuide($this->get("view"), $response, $request->getUri(), $category->getIntroGuide(), $category);
 });
 
+$app->get('/api', function (Request $request, Response $response, $args) {
+    $category = new ApiReferenceCategory();
+    $guide = new Guide('http-api');
+
+    return $this->get("view")->render($response, 'api-swagger.twig', [
+        'category' => $category,
+        'guide' => $guide,
+        'linkToEditDocument' => $guide->linkToEdit(),
+        'activeMenu' => $category->getName(),
+        'currentPath' => $request->getUri()->getPath(),
+        'selectedPiwikVersion' => Environment::getPiwikVersion(),
+        'urlIfAvailableInNewerVersion' => (Environment::isLatestPiwikVersion() ? false : Url::getUrlIfDocumentIsAvailableInPiwikVersion($request->getUri()->getPath(), LATEST_PIWIK_DOCS_VERSION))
+    ]);
+});
+
 
 $app->get('/api-reference/Piwik/[{params:.*}]', function (Request $request, Response $response, $args) {
     $paramArray = explode("/", $request->getAttribute('params'));

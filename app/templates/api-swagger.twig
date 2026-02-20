@@ -1,0 +1,35 @@
+{% extends 'guide.twig' %}
+{% set title = 'HTTP API' %}
+
+{% block meta %}
+    <link href="/vendor/swagger-ui/swagger-ui.css?{{ revision|e('html_attr') }}" rel="stylesheet">
+    <link href="/css/swagger-ui-overrides.css?{{ revision|e('html_attr') }}" rel="stylesheet">
+{% endblock %}
+
+{% block guideContent %}
+    <div id="swagger-ui"></div>
+{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
+    <script src="/vendor/swagger-ui/swagger-ui-bundle.js?{{ revision|e('html_attr') }}"></script>
+    <script src="/vendor/swagger-ui/swagger-ui-standalone-preset.js?{{ revision|e('html_attr') }}"></script>
+    <script type="text/javascript">
+    window.onload = function () {
+        if (typeof SwaggerUIBundle === 'function') {
+            SwaggerUIBundle({
+                dom_id: '#swagger-ui',
+                url: 'openapi/matomo_openapi_spec_v1.0.0.json',
+                docExpansion: 'none',
+                filter: true,
+                presets: [
+                    SwaggerUIBundle.presets.apis,
+                    SwaggerUIStandalonePreset
+                ],
+                layout: 'BaseLayout'
+            });
+            return;
+        }
+    };
+    </script>
+{% endblock %}
