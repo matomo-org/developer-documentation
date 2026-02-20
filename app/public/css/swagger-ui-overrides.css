@@ -19,12 +19,11 @@
     order: 3;
 }
 
-/* Neutralize Bootstrap global `pre` styles for Swagger version badges only. */
+/* Revert bootstrap global <pre> styles for Swagger version badges only. */
 .swagger-ui .info .title small pre.version {
     background-color: transparent;
     border: 0;
     border-radius: 0;
-    color: inherit;
     display: inline;
     font-size: inherit;
     line-height: inherit;

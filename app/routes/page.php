@@ -30,9 +30,9 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Exception\HttpNotFoundException;
 
 
-function renderGuide(Slim\Views\Twig $view, Response $response, Psr\Http\Message\UriInterface $uri, Guide $guide, Category $category)
+function renderGuide(Slim\Views\Twig $view, Response $response, Psr\Http\Message\UriInterface $uri, Guide $guide, Category $category, string $template = 'guide.twig')
 {
-    return $view->render($response, 'guide.twig', [
+    return $view->render($response, $template, [
         'category' => $category,
         'guide' => $guide,
         'linkToEditDocument' => $guide->linkToEdit(),
@@ -99,19 +99,11 @@ $app->get('/piwik-in-depth', function (Request $request, Response $response, $ar
     return renderGuide($this->get("view"), $response, $request->getUri(), $category->getIntroGuide(), $category);
 });
 
-$app->get('/api', function (Request $request, Response $response, $args) {
+$app->get('/api-reference-swagger', function (Request $request, Response $response, $args) {
     $category = new ApiReferenceCategory();
     $guide = new Guide('http-api');
 
-    return $this->get("view")->render($response, 'api-swagger.twig', [
-        'category' => $category,
-        'guide' => $guide,
-        'linkToEditDocument' => $guide->linkToEdit(),
-        'activeMenu' => $category->getName(),
-        'currentPath' => $request->getUri()->getPath(),
-        'selectedPiwikVersion' => Environment::getPiwikVersion(),
-        'urlIfAvailableInNewerVersion' => (Environment::isLatestPiwikVersion() ? false : Url::getUrlIfDocumentIsAvailableInPiwikVersion($request->getUri()->getPath(), LATEST_PIWIK_DOCS_VERSION))
-    ]);
+    return renderGuide($this->get("view"), $response, $request->getUri(), $guide, $category, 'api-swagger.twig');
 });
 
 
