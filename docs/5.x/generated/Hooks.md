@@ -1114,7 +1114,7 @@ Callback Signature:
 
 Usages:
 
-[ArchivingMetrics::onArchiveReportsComplete](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ArchivingMetrics/ArchivingMetrics.php#L44)
+[ArchivingMetrics::onArchiveReportsComplete](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ArchivingMetrics/ArchivingMetrics.php#L45)
 
 
 ### CoreAdminHome.archiveReports.start
@@ -1129,7 +1129,7 @@ Callback Signature:
 
 Usages:
 
-[ArchivingMetrics::onArchiveReportsStart](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ArchivingMetrics/ArchivingMetrics.php#L27)
+[ArchivingMetrics::onArchiveReportsStart](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ArchivingMetrics/ArchivingMetrics.php#L28)
 
 
 ### CoreAdminHome.customLogoChanged
@@ -1447,7 +1447,7 @@ Callback Signature:
 
 ### Db.getTablesInstalled
 
-*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Db/Schema/Mysql.php) in line [527](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Db/Schema/Mysql.php#L527)*
+*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Db/Schema/Mysql.php) in line [528](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Db/Schema/Mysql.php#L528)*
 
 
 
