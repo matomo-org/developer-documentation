@@ -3498,7 +3498,7 @@ Callback Signature:
 
 Usages:
 
-[CoreHome::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/CoreHome.php#L444), [DevicesDetection::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/DevicesDetection/DevicesDetection.php#L92), [Ecommerce::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Ecommerce/Ecommerce.php#L93), [Goals::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Goals/Goals.php#L544), [Resolution::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Resolution/Resolution.php#L53), [VisitTime::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/VisitTime/VisitTime.php#L28)
+[CoreHome::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/CoreHome.php#L444), [DevicesDetection::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/DevicesDetection/DevicesDetection.php#L92), [Ecommerce::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Ecommerce/Ecommerce.php#L93), [Goals::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Goals/Goals.php#L544), [Resolution::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Resolution/Resolution.php#L52), [VisitTime::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/VisitTime/VisitTime.php#L28)
 
 ## SegmentEditor
 
@@ -3507,7 +3507,7 @@ Usages:
 
 ### SegmentEditor.deactivate
 
-*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php) in line [222](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php#L222)*
+*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php) in line [221](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php#L221)*
 
 Triggered before a segment is deleted or made invisible. This event can be used by plugins to throw an exception
 or do something else.
@@ -3524,7 +3524,7 @@ Usages:
 
 ### SegmentEditor.update
 
-*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php) in line [291](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php#L291)*
+*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php) in line [290](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php#L290)*
 
 Triggered before a segment is modified. This event can be used by plugins to throw an exception
 or do something else.
@@ -3639,7 +3639,7 @@ Callback Signature:
 
 ### SitesManager.addSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [840](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L840)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [826](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L826)*
 
 Triggered after a site has been added.
 
@@ -3655,7 +3655,7 @@ Usages:
 
 ### SitesManager.deleteSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [956](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L956)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [941](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L941)*
 
 Triggered after a site has been deleted. Plugins can use this event to remove site specific values or settings, such as removing all
 goals that belong to a specific website. If you store any data related to a website you
@@ -3673,7 +3673,7 @@ Usages:
 
 ### SitesManager.getImageTrackingCode
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [241](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L241)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [230](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L230)*
 
 Triggered when generating image link tracking code server side. Plugins can use
 this event to customise the image tracking code that is displayed to the
@@ -3691,7 +3691,7 @@ Callback Signature:
 
 ### SitesManager.getMessagesToWarnOnSiteRemoval
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [482](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L482)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php) in line [468](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/API.php#L468)*
 
 Triggered before a modal to delete a measurable is displayed A plugin can listen to it and add additional information to be displayed in the measurable delete modal body
 
@@ -4734,7 +4734,7 @@ Callback Signature:
 
 ### UsersManager.addUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [787](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L787)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [786](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L786)*
 
 Triggered after a new user is created.
 
@@ -4775,7 +4775,7 @@ Usages:
 
 ### UsersManager.deleteUser
 
-*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php) in line [791](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php#L791)*
+*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php) in line [790](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php#L790)*
 
 Triggered after a user has been deleted. This event should be used to clean up any data that is related to the now deleted user.
 The **Dashboard** plugin, for example, uses this event to remove the user's dashboards.
@@ -4847,7 +4847,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [828](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L828)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [827](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L827)*
 
 Triggered after a new user was invited.
 
@@ -4865,7 +4865,7 @@ Usages:
 
 ### UsersManager.inviteUser.generateInviteLinkToken
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1718](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1718)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1717](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1717)*
 
 Triggered after a new user invite token was generate.
 
@@ -4877,7 +4877,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.resendInvite
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1673](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1673)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1672](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1672)*
 
 Triggered after a new user was invited.
 
@@ -4931,7 +4931,7 @@ Usages:
 
 ### UsersManager.removeSiteAccess
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1201](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1201)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1200](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1200)*
 
 
 
@@ -4945,7 +4945,7 @@ Usages:
 
 ### UsersManager.updateUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1003](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1003)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1002](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1002)*
 
 Triggered after an existing user has been updated. Event notify about password change.
 
