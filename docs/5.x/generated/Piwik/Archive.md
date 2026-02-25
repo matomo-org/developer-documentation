@@ -117,10 +117,10 @@ The class defines the following methods:
 -  It accepts the following parameter(s):
     - `$params` (`Piwik\Archive\Parameters`) &mdash;
       
-    - `$forceIndexedBySite` (`bool`) &mdash;
-       Whether to force index the result of a query by site ID.
-    - `$forceIndexedByDate` (`bool`) &mdash;
-       Whether to force index the result of a query by period.
+    - `$forceIndexedBySite`
+      
+    - `$forceIndexedByDate`
+      
 
 <a name="build" id="build"></a>
 <a name="build" id="build"></a>

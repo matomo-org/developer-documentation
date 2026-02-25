@@ -409,9 +409,9 @@ Formats the dimension value. By default, the dimension is formatted based on the
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$value` (`mixed`) &mdash;
+    - `$value`
       
-    - `$idSite` (`int`) &mdash;
+    - `$idSite`
       
     - `$formatter` ([`Formatter`](../../../Piwik/Metrics/Formatter.md)) &mdash;
       

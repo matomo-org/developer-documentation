@@ -596,7 +596,7 @@ Callback Signature:
 
 ### Archiving.getIdSitesToMarkArchivesAsInvalidated
 
-*Defined in [Piwik/Archive/ArchiveInvalidator](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Archive/ArchiveInvalidator.php) in line [324](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Archive/ArchiveInvalidator.php#L324)*
+*Defined in [Piwik/Archive/ArchiveInvalidator](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Archive/ArchiveInvalidator.php) in line [321](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Archive/ArchiveInvalidator.php#L321)*
 
 Triggered when a Matomo user requested the invalidation of some reporting archives. Using this event, plugin
 developers can automatically invalidate another site, when a site is being invalidated. A plugin may even
@@ -825,7 +825,7 @@ Usages:
 
 ### Changes.filterChanges
 
-*Defined in [Piwik/Changes/Model](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Changes/Model.php) in line [231](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Changes/Model.php#L231)*
+*Defined in [Piwik/Changes/Model](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Changes/Model.php) in line [228](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Changes/Model.php#L228)*
 
 Event triggered before changes are displayed Can be used to filter out unwanted changes
 
@@ -979,7 +979,7 @@ Usages:
 
 ### Console.filterCommands
 
-*Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Console.php) in line [218](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Console.php#L218)*
+*Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Console.php) in line [216](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Console.php#L216)*
 
 Triggered to filter / restrict console commands. Plugins that want to restrict commands
 should subscribe to this event and remove commands from the existing list. **Example**
@@ -1087,7 +1087,7 @@ Callback Signature:
 
 ### Core.configFileSanityCheckFailed
 
-*Defined in [Piwik/Config](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config.php) in line [505](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config.php#L505)*
+*Defined in [Piwik/Config](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config.php) in line [502](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config.php#L502)*
 
 Triggered when the INI config file was not written correctly with the expected content.
 
@@ -1465,7 +1465,7 @@ Usages:
 
 ### Dimension.addDimensions
 
-*Defined in [Piwik/Columns/Dimension](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/Dimension.php) in line [734](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/Dimension.php#L734)*
+*Defined in [Piwik/Columns/Dimension](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/Dimension.php) in line [729](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/Dimension.php#L729)*
 
 Triggered to add new dimensions that cannot be picked up automatically by the platform. This is useful if the plugin allows a user to create reports / dimensions dynamically. For example
 CustomDimensions or CustomVariables. There are a variable number of dimensions in this case and it
@@ -1491,7 +1491,7 @@ Usages:
 
 ### Dimension.filterDimensions
 
-*Defined in [Piwik/Columns/Dimension](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/Dimension.php) in line [758](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/Dimension.php#L758)*
+*Defined in [Piwik/Columns/Dimension](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/Dimension.php) in line [753](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/Dimension.php#L753)*
 
 Triggered to filter / restrict dimensions. **Example**
 
@@ -2251,7 +2251,7 @@ Callback Signature:
 
 ### Metric.addComputedMetrics
 
-*Defined in [Piwik/Columns/MetricsList](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/MetricsList.php) in line [153](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/MetricsList.php#L153)*
+*Defined in [Piwik/Columns/MetricsList](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/MetricsList.php) in line [150](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/MetricsList.php#L150)*
 
 Triggered to add new metrics that cannot be picked up automatically by the platform. This is useful if the plugin allows a user to create metrics dynamically. For example
 CustomDimensions or CustomVariables.
@@ -2275,7 +2275,7 @@ Usages:
 
 ### Metric.addMetrics
 
-*Defined in [Piwik/Columns/MetricsList](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/MetricsList.php) in line [129](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/MetricsList.php#L129)*
+*Defined in [Piwik/Columns/MetricsList](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/MetricsList.php) in line [126](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/MetricsList.php#L126)*
 
 Triggered to add new metrics that cannot be picked up automatically by the platform. This is useful if the plugin allows a user to create metrics dynamically. For example
 CustomDimensions or CustomVariables.
@@ -2299,7 +2299,7 @@ Usages:
 
 ### Metric.filterMetrics
 
-*Defined in [Piwik/Columns/MetricsList](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/MetricsList.php) in line [167](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/MetricsList.php#L167)*
+*Defined in [Piwik/Columns/MetricsList](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/MetricsList.php) in line [164](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Columns/MetricsList.php#L164)*
 
 Triggered to filter metrics. **Example**
 
@@ -3059,17 +3059,6 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/Request.php) in line [244](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/Request.php#L244)*
-
-
-
-Usages:
-
-[Login::onInitAuthenticationObject](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Login.php#L104), [LoginLdap::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/LoginLdap/LoginLdap.php#L216)
-
-
-### Request.initAuthenticationObject
-
 *Defined in [Piwik/Plugins/API/tests/Integration/APITest](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/tests/Integration/APITest.php) in line [244](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/tests/Integration/APITest.php#L244)*
 
 
@@ -3081,7 +3070,18 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Console.php) in line [324](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Console.php#L324)*
+*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/Request.php) in line [244](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/Request.php#L244)*
+
+
+
+Usages:
+
+[Login::onInitAuthenticationObject](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Login.php#L104), [LoginLdap::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/LoginLdap/LoginLdap.php#L216)
+
+
+### Request.initAuthenticationObject
+
+*Defined in [Piwik/Console](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Console.php) in line [322](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Console.php#L322)*
 
 
 
