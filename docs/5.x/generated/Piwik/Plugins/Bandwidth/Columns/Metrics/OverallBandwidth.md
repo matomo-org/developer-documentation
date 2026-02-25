@@ -130,7 +130,7 @@ formatting (for example, the site ID).
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$report` ([`Report`](../../../../../Piwik/Plugin/Report.md)) &mdash;
+    - `$report`
       
     - `$table` ([`DataTable`](../../../../../Piwik/DataTable.md)) &mdash;
       
@@ -170,10 +170,10 @@ Helper method that will determine the actual column name for a metric in a
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../../../Piwik/DataTable.md)) &mdash;
       
-    - `$columnName` (`string`) &mdash;
+    - `$columnName`
       
-    - `$mappingNameToId` (`int[]`|`null`) &mdash;
-       A custom mapping of metric names to special index values. By default Metrics::getMappingFromNameToId() is used.
+    - `$mappingNameToId`
+      
 - It returns a `array` value.
 
 <a name="getactualmetriccolumn" id="getactualmetriccolumn"></a>
@@ -187,10 +187,10 @@ Helper method that determines the actual column for a metric in a [DataTable](/a
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../../../Piwik/DataTable.md)) &mdash;
       
-    - `$columnName` (`string`) &mdash;
+    - `$columnName`
       
-    - `$mappingNameToId` (`int[]`|`null`) &mdash;
-       A custom mapping of metric names to special index values. By default Metrics::getMappingFromNameToId() is used.
+    - `$mappingNameToId`
+      
 - It returns a `string` value.
 
 <a name="compute" id="compute"></a>
@@ -243,7 +243,7 @@ to skip computing this metric.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$report` ([`Report`](../../../../../Piwik/Plugin/Report.md)) &mdash;
+    - `$report`
       
     - `$table` ([`DataTable`](../../../../../Piwik/DataTable.md)) &mdash;
       

@@ -106,7 +106,7 @@ Note: It's recommend to use one of type-safe methods instead, if a certain type 
 -  It accepts the following parameter(s):
     - `$name` (`string`) &mdash;
       
-    - `$default` (`mixed`) &mdash;
+    - `$default`
       
 - It returns a `mixed` value.
 - It throws one of the following exceptions:
@@ -230,7 +230,7 @@ exception will be thrown
 -  It accepts the following parameter(s):
     - `$name` (`string`) &mdash;
       
-    - `$default` (`mixed`) &mdash;
+    - `$default`
       
 - It returns a `mixed` value.
 - It throws one of the following exceptions:

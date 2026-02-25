@@ -2544,7 +2544,7 @@ Usages:
 
 ### PluginManager.pluginActivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [775](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L775)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [774](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L774)*
 
 Event triggered after a plugin has been activated.
 
@@ -2560,7 +2560,7 @@ Usages:
 
 ### PluginManager.pluginDeactivated
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [587](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L587)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [586](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L586)*
 
 Event triggered after a plugin has been deactivated.
 
@@ -2576,7 +2576,7 @@ Usages:
 
 ### PluginManager.pluginInstalled
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [1457](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L1457)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [1453](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L1453)*
 
 Event triggered after a new plugin has been installed. Note: Might be triggered more than once if the config file is not writable
 
@@ -2592,7 +2592,7 @@ Usages:
 
 ### PluginManager.pluginUninstalled
 
-*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [685](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L685)*
+*Defined in [Piwik/Plugin/Manager](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php) in line [684](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/Manager.php#L684)*
 
 Event triggered after a plugin has been uninstalled.
 
@@ -3458,7 +3458,7 @@ Callback Signature:
 
 ### Segment.addSegments
 
-*Defined in [Piwik/Segment/SegmentsList](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Segment/SegmentsList.php) in line [131](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Segment/SegmentsList.php#L131)*
+*Defined in [Piwik/Segment/SegmentsList](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Segment/SegmentsList.php) in line [128](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Segment/SegmentsList.php#L128)*
 
 Triggered to add custom segment definitions. **Example**
 
@@ -3480,7 +3480,7 @@ Callback Signature:
 
 ### Segment.filterSegments
 
-*Defined in [Piwik/Segment/SegmentsList](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Segment/SegmentsList.php) in line [150](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Segment/SegmentsList.php#L150)*
+*Defined in [Piwik/Segment/SegmentsList](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Segment/SegmentsList.php) in line [147](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Segment/SegmentsList.php#L147)*
 
 Triggered to filter segment definitions. **Example**
 
@@ -4403,7 +4403,7 @@ Callback Signature:
 
 ### Tracker.isBotRequest
 
-*Defined in [Piwik/Tracker](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker.php) in line [180](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker.php#L180)*
+*Defined in [Piwik/Tracker](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker.php) in line [179](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker.php#L179)*
 
 Allows overwriting the Bot detection done using Device Detector
 Use this event if you want to have a request handled as bot request instead of a normal visit

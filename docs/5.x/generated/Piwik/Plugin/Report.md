@@ -666,8 +666,8 @@ Includes ProcessedMetrics and Metrics.
       
     - `$report` ([`Report`](../../Piwik/Plugin/Report.md)|`null`) &mdash;
       
-    - `$baseType` (`string`) &mdash;
-       The base type each metric class needs to be of.
+    - `$baseType`
+      
 - It returns a [`Metric[]`](../../Piwik/Plugin/Metric.md) value.
 
 <a name="getprocessedmetricsfortable" id="getprocessedmetricsfortable"></a>
