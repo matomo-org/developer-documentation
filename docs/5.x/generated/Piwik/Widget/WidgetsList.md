@@ -71,8 +71,8 @@ will not be recognized.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$containerId` (`string`) &mdash;
-       eg 'Products' or 'Contents'. See WidgetContainerConfig::setId
+    - `$containerId`
+      
     - `$widget` ([`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md)) &mdash;
       
 - It does not return anything or a mixed result.

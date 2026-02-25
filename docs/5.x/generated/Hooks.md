@@ -1150,7 +1150,7 @@ Callback Signature:
 
 ### CoreUpdater.update.end
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Updater.php) in line [533](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Updater.php#L533)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Updater.php) in line [532](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Updater.php#L532)*
 
 Triggered after Piwik has been updated.
 
@@ -3059,7 +3059,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/Request.php) in line [244](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/Request.php#L244)*
+*Defined in [Piwik/Plugins/API/tests/Integration/APITest](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/tests/Integration/APITest.php) in line [244](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/tests/Integration/APITest.php#L244)*
 
 
 
@@ -3070,7 +3070,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/Plugins/API/tests/Integration/APITest](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/tests/Integration/APITest.php) in line [244](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/tests/Integration/APITest.php#L244)*
+*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/Request.php) in line [244](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/Request.php#L244)*
 
 
 
@@ -4422,7 +4422,7 @@ Usages:
 
 ### Tracker.isExcludedVisit
 
-*Defined in [Piwik/Tracker/VisitExcluded](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/VisitExcluded.php) in line [103](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/VisitExcluded.php#L103)*
+*Defined in [Piwik/Tracker/VisitExcluded](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/VisitExcluded.php) in line [100](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/VisitExcluded.php#L100)*
 
 Triggered on every tracking request. This event can be used to tell the Tracker not to record this particular action or visit.
 
@@ -4547,7 +4547,7 @@ Usages:
 
 ### Translate.getClientSideTranslationKeys
 
-*Defined in [Piwik/Translation/Translator](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Translation/Translator.php) in line [273](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Translation/Translator.php#L273)*
+*Defined in [Piwik/Translation/Translator](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Translation/Translator.php) in line [269](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Translation/Translator.php#L269)*
 
 Triggered before generating the JavaScript code that allows i18n strings to be used
 in the browser. Plugins should subscribe to this event to specify which translations
@@ -4618,7 +4618,7 @@ Usages:
 
 ### Updater.componentInstalled
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Updater.php) in line [112](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Updater.php#L112)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Updater.php) in line [111](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Updater.php#L111)*
 
 Event triggered after a new component has been installed.
 
@@ -4630,7 +4630,7 @@ Callback Signature:
 
 ### Updater.componentUninstalled
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Updater.php) in line [162](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Updater.php#L162)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Updater.php) in line [161](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Updater.php#L161)*
 
 Event triggered after a component has been uninstalled.
 
@@ -4642,7 +4642,7 @@ Callback Signature:
 
 ### Updater.componentUpdated
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Updater.php) in line [140](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Updater.php#L140)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Updater.php) in line [139](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Updater.php#L139)*
 
 Event triggered after a component has been updated. Can be used to handle logic that should be done after a component was updated
 
@@ -5101,7 +5101,7 @@ Usages:
 
 ### Widget.filterWidgets
 
-*Defined in [Piwik/Widget/WidgetsList](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Widget/WidgetsList.php) in line [215](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Widget/WidgetsList.php#L215)*
+*Defined in [Piwik/Widget/WidgetsList](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Widget/WidgetsList.php) in line [213](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Widget/WidgetsList.php#L213)*
 
 Triggered to filter widgets. **Example**
 
