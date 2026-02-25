@@ -1040,7 +1040,7 @@ Callback Signature:
 
 ### Controller.triggerAdminNotifications
 
-*Defined in [Piwik/Plugin/ControllerAdmin](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/ControllerAdmin.php) in line [424](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/ControllerAdmin.php#L424)*
+*Defined in [Piwik/Plugin/ControllerAdmin](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/ControllerAdmin.php) in line [423](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/ControllerAdmin.php#L423)*
 
 Posted when rendering an admin page and notifications about any warnings or errors should be triggered. You can use it for example when you have a plugin that needs to be configured in order to work and the
 plugin has not been configured yet. It can be also used to cancel / remove other notifications by calling
@@ -1200,7 +1200,7 @@ Callback Signature:
 
 ### CronArchive.end
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php) in line [719](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php#L719)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php) in line [718](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php#L718)*
 
 This event is triggered after archiving.
 
@@ -1212,7 +1212,7 @@ Callback Signature:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php) in line [905](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php#L905)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php) in line [904](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php#L904)*
 
 Triggered by the **core:archive** console command so plugins can modify the priority of
 websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
@@ -1242,7 +1242,7 @@ Callback Signature:
 
 ### CronArchive.init.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php) in line [399](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php#L399)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php) in line [398](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php#L398)*
 
 This event is triggered after a CronArchive instance is initialized.
 
@@ -1256,7 +1256,7 @@ Callback Signature:
 
 ### CronArchive.init.start
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php) in line [355](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php#L355)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php) in line [354](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php#L354)*
 
 This event is triggered during initializing archiving.
 
@@ -2174,7 +2174,7 @@ Callback Signature:
 
 ### Login.userRequiresPasswordConfirmation
 
-*Defined in [Piwik/Piwik](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Piwik.php) in line [312](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Piwik.php#L312)*
+*Defined in [Piwik/Piwik](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Piwik.php) in line [311](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Piwik.php#L311)*
 
 Triggered to check if a password confirmation for a user is required. This event can be used in custom login plugins to skip the password confirmation checks for certain users,
 where e.g. no password would be available.
@@ -3059,7 +3059,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/Plugins/API/tests/Integration/APITest](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/tests/Integration/APITest.php) in line [244](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/tests/Integration/APITest.php#L244)*
+*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/Request.php) in line [244](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/Request.php#L244)*
 
 
 
@@ -3070,7 +3070,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/Request.php) in line [244](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/Request.php#L244)*
+*Defined in [Piwik/Plugins/API/tests/Integration/APITest](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/tests/Integration/APITest.php) in line [244](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/tests/Integration/APITest.php#L244)*
 
 
 

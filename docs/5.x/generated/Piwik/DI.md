@@ -119,7 +119,7 @@ The class defines the following methods:
 -  It accepts the following parameter(s):
     - `$variableName` (`string`) &mdash;
       
-    - `$defaultValue` (`mixed`) &mdash;
+    - `$defaultValue`
       
 - It returns a `DI\Definition\EnvironmentVariableDefinition` value.
 

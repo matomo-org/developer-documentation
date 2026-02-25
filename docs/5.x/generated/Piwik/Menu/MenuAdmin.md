@@ -224,7 +224,7 @@ See add(). Adds a new menu item to the plugins section of the admin menu.
       
     - `$order` (`int`) &mdash;
       
-    - `$tooltip` (`bool`|`string`) &mdash;
+    - `$tooltip`
       
     - `$cssClass` (`string`) &mdash;
       

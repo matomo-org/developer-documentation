@@ -593,7 +593,7 @@ the event "onExistingVisit" is executed. Meaning for each visitor this method is
       
     - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
       
-    - `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
+    - `$action`
       
 
 - *Returns:*  `mixed`|`false` &mdash;
@@ -615,7 +615,7 @@ You can overwrite any previous value set by the event `onNewVisit` by implementi
       
     - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
       
-    - `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
+    - `$action`
       
 
 - *Returns:*  `mixed`|`false` &mdash;
@@ -638,7 +638,7 @@ current value.
       
     - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
       
-    - `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
+    - `$action`
       
 
 - *Returns:*  `mixed`|`false` &mdash;
@@ -662,7 +662,7 @@ created automatically.
       
     - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
       
-    - `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
+    - `$action`
       
 
 - *Returns:*  `mixed`|`false` &mdash;

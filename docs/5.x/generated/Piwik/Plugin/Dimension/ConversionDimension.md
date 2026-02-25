@@ -576,7 +576,7 @@ Return boolean `false` if you do not want to change the value in some cases.
       
     - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
       
-    - `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
+    - `$action`
       
     - `$goalManager` (`Piwik\Tracker\GoalManager`) &mdash;
       
@@ -598,7 +598,7 @@ database. Return boolean `false` if you do not want to change the value in some 
       
     - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
       
-    - `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
+    - `$action`
       
     - `$goalManager` (`Piwik\Tracker\GoalManager`) &mdash;
       
@@ -620,7 +620,7 @@ database. Return boolean `false` if you do not want to change the value in some 
       
     - `$visitor` (`Piwik\Tracker\Visitor`) &mdash;
       
-    - `$action` (`Piwik\Tracker\Action`|`null`) &mdash;
+    - `$action`
       
     - `$goalManager` (`Piwik\Tracker\GoalManager`) &mdash;
       
