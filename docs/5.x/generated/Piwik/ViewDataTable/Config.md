@@ -956,7 +956,7 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor.
+- [`__construct()`](#__construct)
 - [`addPropertiesThatShouldBeAvailableClientSide()`](#addpropertiesthatshouldbeavailableclientside) &mdash; Marks display properties as client side properties.
 - [`addPropertiesThatCanBeOverwrittenByQueryParams()`](#addpropertiesthatcanbeoverwrittenbyqueryparams) &mdash; Marks display properties as overridable.
 - [`getProperties()`](#getproperties) &mdash; Returns array of all property values in this config object.
@@ -973,8 +973,6 @@ The class defines the following methods:
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
-
-Constructor.
 
 #### Signature
 

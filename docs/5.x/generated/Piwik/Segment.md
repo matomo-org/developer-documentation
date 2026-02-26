@@ -42,7 +42,7 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor.
+- [`__construct()`](#__construct) &mdash; When using segments that contain a != or !@ condition on a non visit dimension (e.g.
 - [`isAvailable()`](#isavailable) &mdash; Checks if the provided segmentCondition is valid and available for the given idSites
 - [`getSegmentExpression()`](#getsegmentexpression) &mdash; Returns the segment expression.
 - [`isEmpty()`](#isempty) &mdash; Returns `true` if the segment is empty, `false` if otherwise.
@@ -60,9 +60,9 @@ The class defines the following methods:
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
 
-Constructor.
+When using segments that contain a != or !@ condition on a non visit dimension (e.g. action, conversion, .
 
-When using segments that contain a != or !@ condition on a non visit dimension (e.g. action, conversion, ...) it
+..) it
 is needed to use a subquery to get correct results. To avoid subqueries that fetch too many data it's required to
 set a startDate and/or an endDate in this case. That date will be used to limit the subquery (along with possibly
 given idSites). If no startDate and endDate is given for such a segment it will generate a query that directly
@@ -79,8 +79,6 @@ joins the according tables, but trigger a php warning as results might be incorr
        start date used to limit subqueries
     - `$endDate` ([`Date`](../Piwik/Date.md)|`null`) &mdash;
        end date used to limit subqueries
-- It throws one of the following exceptions:
-    - ``
 
 <a name="isavailable" id="isavailable"></a>
 <a name="isAvailable" id="isAvailable"></a>

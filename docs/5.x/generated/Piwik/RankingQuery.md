@@ -30,7 +30,7 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor.
+- [`__construct()`](#__construct)
 - [`setLimit()`](#setlimit) &mdash; Set the limit after which everything is grouped to "Others".
 - [`setOthersLabel()`](#setotherslabel) &mdash; Set the value to use for the label in the 'Others' row.
 - [`addLabelColumn()`](#addlabelcolumn) &mdash; Add a label column.
@@ -44,8 +44,6 @@ The class defines the following methods:
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
-
-Constructor.
 
 #### Signature
 

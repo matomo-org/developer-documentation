@@ -24,7 +24,7 @@ The class defines the following methods:
 - [`getDependentMetrics()`](#getdependentmetrics) &mdash; Returns the array of metrics that are necessary for computing this metric. Inherited from [`EvolutionMetric`](../../../../../Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md)
 - [`getTemporaryMetrics()`](#gettemporarymetrics) &mdash; Returns the array of metrics that are necessary for computing this metric, but should not be displayed to the user unless explicitly requested. Inherited from [`ProcessedMetric`](../../../../../Piwik/Plugin/ProcessedMetric.md)
 - [`beforeCompute()`](#beforecompute) &mdash; Executed before computing all processed metrics for a report. Inherited from [`ProcessedMetric`](../../../../../Piwik/Plugin/ProcessedMetric.md)
-- [`__construct()`](#__construct) &mdash; Constructor. Inherited from [`EvolutionMetric`](../../../../../Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md)
+- [`__construct()`](#__construct) Inherited from [`EvolutionMetric`](../../../../../Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md)
 - [`getTrendName()`](#gettrendname) Inherited from [`EvolutionMetric`](../../../../../Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md)
 - [`getTrendValue()`](#gettrendvalue) Inherited from [`EvolutionMetric`](../../../../../Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md)
 - [`beforeComputeSubtable()`](#beforecomputesubtable) Inherited from [`EvolutionMetric`](../../../../../Piwik/Plugins/CoreHome/Columns/Metrics/EvolutionMetric.md)
@@ -259,8 +259,6 @@ to skip computing this metric.
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
-
-Constructor.
 
 #### Signature
 

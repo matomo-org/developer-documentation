@@ -12,7 +12,7 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor.
+- [`__construct()`](#__construct)
 - [`getName()`](#getname) &mdash; Get the name of the setting. Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
 - [`getType()`](#gettype) &mdash; Get the PHP type of the setting. Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
 - [`getDefaultValue()`](#getdefaultvalue) Inherited from [`Setting`](../../../Piwik/Settings/Setting.md)
@@ -26,8 +26,6 @@ The class defines the following methods:
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
-
-Constructor.
 
 #### Signature
 

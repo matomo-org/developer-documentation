@@ -8,7 +8,7 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor. Inherited from [`Plugin`](../../../Piwik/Plugin.md)
+- [`__construct()`](#__construct) Inherited from [`Plugin`](../../../Piwik/Plugin.md)
 - [`reloadPluginInformation()`](#reloadplugininformation) Inherited from [`Plugin`](../../../Piwik/Plugin.md)
 - [`getInformation()`](#getinformation) &mdash; Returns plugin information, including: Inherited from [`Plugin`](../../../Piwik/Plugin.md)
 - [`isPremiumFeature()`](#ispremiumfeature) Inherited from [`Plugin`](../../../Piwik/Plugin.md)
@@ -39,8 +39,6 @@ The class defines the following methods:
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
-
-Constructor.
 
 #### Signature
 

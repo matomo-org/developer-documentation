@@ -30,7 +30,7 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor.
+- [`__construct()`](#__construct)
 - [`setSites()`](#setsites) &mdash; Sets the cached site data with an array that associates site IDs with individual site data.
 - [`__toString()`](#__tostring) &mdash; Returns a string representation of the site this instance references.
 - [`getName()`](#getname) &mdash; Returns the name of the site.
@@ -67,8 +67,6 @@ The class defines the following methods:
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
-
-Constructor.
 
 #### Signature
 

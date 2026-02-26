@@ -109,7 +109,7 @@ Methods
 
 The abstract class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor.
+- [`__construct()`](#__construct)
 - [`getDateParameterInTimezone()`](#getdateparameterintimezone) &mdash; Helper method that converts `"today"` or `"yesterday"` to the specified timezone.
 - [`setDate()`](#setdate) &mdash; Sets the date to be used by all other methods in the controller.
 - [`getDefaultAction()`](#getdefaultaction) &mdash; Returns the name of the default method that will be called when visiting: index.php?module=PluginName without the action parameter.
@@ -131,8 +131,6 @@ The abstract class defines the following methods:
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
-
-Constructor.
 
 #### Signature
 

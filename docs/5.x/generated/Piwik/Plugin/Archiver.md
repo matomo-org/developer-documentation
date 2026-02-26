@@ -60,7 +60,7 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor.
+- [`__construct()`](#__construct)
 - [`aggregateDayReport()`](#aggregatedayreport) &mdash; Archives data for a day period.
 - [`aggregateMultipleReports()`](#aggregatemultiplereports) &mdash; Archives data for a non-day period.
 - [`getProcessor()`](#getprocessor) &mdash; Returns a [ArchiveProcessor](/api-reference/Piwik/ArchiveProcessor) instance that can be used to insert archive data for the period, segment and site we are archiving data for.
@@ -74,8 +74,6 @@ The class defines the following methods:
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
-
-Constructor.
 
 #### Signature
 

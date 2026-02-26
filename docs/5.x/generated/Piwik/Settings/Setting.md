@@ -10,7 +10,7 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor.
+- [`__construct()`](#__construct)
 - [`getName()`](#getname) &mdash; Get the name of the setting.
 - [`getType()`](#gettype) &mdash; Get the PHP type of the setting.
 - [`getDefaultValue()`](#getdefaultvalue)
@@ -24,8 +24,6 @@ The class defines the following methods:
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
-
-Constructor.
 
 #### Signature
 

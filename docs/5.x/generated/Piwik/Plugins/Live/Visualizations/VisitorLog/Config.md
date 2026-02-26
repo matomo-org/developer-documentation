@@ -897,7 +897,7 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor. Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
+- [`__construct()`](#__construct) Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
 - [`addPropertiesThatShouldBeAvailableClientSide()`](#addpropertiesthatshouldbeavailableclientside) &mdash; Marks display properties as client side properties. Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
 - [`addPropertiesThatCanBeOverwrittenByQueryParams()`](#addpropertiesthatcanbeoverwrittenbyqueryparams) &mdash; Marks display properties as overridable. Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
 - [`getProperties()`](#getproperties) &mdash; Returns array of all property values in this config object. Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
@@ -914,8 +914,6 @@ The class defines the following methods:
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
-
-Constructor.
 
 #### Signature
 

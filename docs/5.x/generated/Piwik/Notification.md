@@ -154,15 +154,13 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor.
+- [`__construct()`](#__construct)
 - [`hasNoClear()`](#hasnoclear) &mdash; Returns `1` if the notification will be displayed without a close button, `0` if otherwise.
 - [`getPriority()`](#getpriority) &mdash; Returns the notification's priority.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
-
-Constructor.
 
 #### Signature
 

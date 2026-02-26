@@ -108,7 +108,7 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor.
+- [`__construct()`](#__construct)
 - [`disableCacheBuster()`](#disablecachebuster) &mdash; Disables the cache buster (adding of ?cb=.
 - [`getTemplateFile()`](#gettemplatefile) &mdash; Returns the template filename.
 - [`getTemplateVars()`](#gettemplatevars) &mdash; Returns the variables to bind to the template when rendering.
@@ -126,8 +126,6 @@ The class defines the following methods:
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
-
-Constructor.
 
 #### Signature
 

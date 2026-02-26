@@ -39,7 +39,7 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor.
+- [`__construct()`](#__construct)
 - [`__toString()`](#__tostring) &mdash; Applies a basic rendering to the Row and returns the output.
 - [`deleteColumn()`](#deletecolumn) &mdash; Deletes the given column.
 - [`renameColumn()`](#renamecolumn) &mdash; Renames a column.
@@ -73,8 +73,6 @@ The class defines the following methods:
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
-
-Constructor.
 
 #### Signature
 

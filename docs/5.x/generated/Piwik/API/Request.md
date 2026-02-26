@@ -59,7 +59,7 @@ Methods
 The class defines the following methods:
 
 - [`getRequestArrayFromString()`](#getrequestarrayfromstring) &mdash; Converts the supplied request string into an array of query parameter name/value mappings.
-- [`__construct()`](#__construct) &mdash; Constructor.
+- [`__construct()`](#__construct)
 - [`process()`](#process) &mdash; Dispatches the API request to the appropriate API method and returns the result after post-processing.
 - [`getClassNameAPI()`](#getclassnameapi) &mdash; Returns the name of a plugin's API class by plugin name.
 - [`isRootRequestApiRequest()`](#isrootrequestapirequest) &mdash; Detect if the root request (the actual request) is an API request or not.
@@ -94,8 +94,6 @@ forwarded to request array before it is returned.
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
-
-Constructor.
 
 #### Signature
 

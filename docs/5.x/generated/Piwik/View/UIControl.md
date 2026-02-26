@@ -103,7 +103,7 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor.
+- [`__construct()`](#__construct)
 - [`disableCacheBuster()`](#disablecachebuster) &mdash; Disables the cache buster (adding of ?cb=. Inherited from [`View`](../../Piwik/View.md)
 - [`getTemplateFile()`](#gettemplatefile) &mdash; Returns the template filename. Inherited from [`View`](../../Piwik/View.md)
 - [`getTemplateVars()`](#gettemplatevars) &mdash; See View::getTemplateVars().
@@ -123,8 +123,6 @@ The class defines the following methods:
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
-
-Constructor.
 
 #### Signature
 

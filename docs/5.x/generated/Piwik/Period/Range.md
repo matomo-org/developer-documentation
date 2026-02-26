@@ -39,7 +39,7 @@ The class defines the following methods:
 - [`getLocalizedShortString()`](#getlocalizedshortstring) &mdash; Returns the current period as a localized short string.
 - [`getLocalizedLongString()`](#getlocalizedlongstring) &mdash; Returns the current period as a localized long string.
 - [`getRangeString()`](#getrangestring) &mdash; Returns the date range string comprising two dates
-- [`__construct()`](#__construct) &mdash; Constructor.
+- [`__construct()`](#__construct)
 - [`setDefaultEndDate()`](#setdefaultenddate) &mdash; Sets the default end date of the period.
 - [`parseDateRange()`](#parsedaterange) &mdash; Given a date string, returns `false` if not a date range, or returns the array containing start and end dates.
 - [`getLastDate()`](#getlastdate) &mdash; Returns the date that is one period before the supplied date.
@@ -307,8 +307,6 @@ Returns the date range string comprising two dates
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
-
-Constructor.
 
 #### Signature
 

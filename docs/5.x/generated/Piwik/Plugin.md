@@ -77,7 +77,7 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Constructor.
+- [`__construct()`](#__construct)
 - [`reloadPluginInformation()`](#reloadplugininformation)
 - [`getInformation()`](#getinformation) &mdash; Returns plugin information, including:
 - [`isPremiumFeature()`](#ispremiumfeature)
@@ -107,8 +107,6 @@ The class defines the following methods:
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
 ### `__construct()`
-
-Constructor.
 
 #### Signature
 
