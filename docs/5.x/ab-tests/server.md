@@ -8,15 +8,21 @@ This guide covers how to run an A/B test for a website on the server instead of 
 you might want to redirect your users to entirely different versions of your website, 
 or test different fonts or different features that need to run a different code path on the server depending on which variation a visitor gets to see.
 
+**Important: Server-side experiments do not read configuration from Matomo**
+
+When running A/B tests server-side using the PHP Experiments framework (or any custom framework), Matomo does not expose experiment configuration to your backend. It does not provide experiment or variations names to your server, enforce traffic allocation rules or control server-side experiment execution.
+
+You must define variations, traffic distribution, targeting logic, and persistence entirely in your server-side code. In this setup, Matomo functions strictly as a [reporting layer](https://matomo.org/faq/ab-testing/faq_22499/) and records the activated variation after sending the corresponding tracking call.
+
 ## Creating an experiment
 
-First you need to create an A/B test experiment in Piwik: read the [A/B testing user guide](https://matomo.org/docs/ab-testing/) to learn more.
+First you need to create an A/B test experiment in Matomo: read the [A/B testing user guide](https://matomo.org/docs/ab-testing/) to learn more.
 
 When you are asked on which target pages the experiment should be activated, we recommend selecting "Visitors enter this experiment on any page".
 
 ## Embedding an experiment
 
-In most cases, nothing needs to be done as long as the regular [Piwik JavaScript Tracking Code](/guides/tracking-javascript-guide) 
+In most cases, nothing needs to be done as long as the regular [Matomo JavaScript Tracking Code](/guides/tracking-javascript-guide) 
 is embedded into your website. Learn more about this step in the [Embedding the A/B Testing framework](/guides/ab-tests/browser#embedding-the-ab-testing-javascript-framework).
  
 The generated experiment code (`_paq.push(['AbTesting::create', {...`) does not need to be embedded into your website.
@@ -28,7 +34,7 @@ To implement the actual experiment, you can use any A/B testing framework of you
 or [Vanity](https://github.com/assaf/vanity) (Ruby). For PHP we provide our own [PHP Experiments framework](https://github.com/innocraft/php-experiments).
 
 When you choose an A/B testing framework, it is important that the framework lets you know which variation was chosen for a user. 
-This will be important for the next step when you have to track in Piwik which variation's name was used when a user entered
+This will be important for the next step when you have to track in Matomo which variation's name was used when a user entered
 into an experiment. 
 
 Using an A/B testing framework could look as follows (the following example is in PHP using our InnoCraft PHP Experiments framework):
@@ -45,16 +51,16 @@ if ($activated->getName() == 'variation1') {
     /* do something variation2 */
 }
 
-// Important: let Piwik know that you have entered the current visitor into an experiment. 
+// Important: let Matomo know that you have entered the current visitor into an experiment. 
 // We recommend escaping the experiment name and variation name if needed to prevent possible XSS.
 $script = $experiment->getTrackingScript($experiment->getExperimentName(), $activated->getName());
 echo $script; // prints eg "<script ...>_paq.push(['AbTesting::enter', {experiment: 'theExperimentName', variation: 'variation1'}]);"
 ```
 
-### Sending the name of the activated variation to Piwik
+### Sending the name of the activated variation to Matomo
 
 So far you have created and implemented the experiment server-side, so your users get to see different variations of your website. 
-Now you need to let Piwik know which variation was activated for your current user by adding a JavaScript tracking code to your
+Now you need to let Matomo know which variation was activated for your current user by adding a JavaScript tracking code to your
 HTML:
 
 ```js
@@ -62,16 +68,16 @@ var _paq = window._paq = window._paq || [];
 _paq.push(['AbTesting::enter', {experiment: 'theExperimentNameOrId', variation: 'myVariation'}]);
 ```
 
-This tracking code lets Piwik know that you have entered the current visitor into an experiment. 
+This tracking code lets Matomo know that you have entered the current visitor into an experiment. 
 
 * `experiment` - The name of the experiment
- * If you prefer not to expose your experiment's name to your users in the DOM, you can alternatively use the experiment ID. You can find the ID of an experiment in the list of all experiments in your Piwik.
+ * If you prefer not to expose your experiment's name to your users in the DOM, you can alternatively use the experiment ID. You can find the ID of an experiment in the list of all experiments in your Matomo.
 * `variation` - The name of the variation you have entered the current visitor into. If you have shown the
   original version of your website, use `original`. 
  * You can alternatively use the variation ID. 
- The variation ID is shown when you edit your experiment in your Piwik and hover a variation (put your mouse over a variation form field). 
+ The variation ID is shown when you edit your experiment in your Matomo and hover a variation (put your mouse over a variation form field). 
   
-The Piwik JavaScript Tracker will pick up this information when the website is loaded and will send a tracking request to your Piwik Tracking API.
+The Matomo JavaScript Tracker will pick up this information when the website is loaded and will send a tracking request to your Matomo Tracking API.
 
 ### Redirects
 
@@ -79,7 +85,7 @@ Sometimes you might want to compare how entirely different pages or layouts perf
 
 For example you might have just implemented a new design for your website and want to make sure that your conversion rates 
 will be at least the same with the new design. To do this you can run an experiment and send some of your users 
-to the new layout before you use the new design permanently for all of your users. Piwik A/B tests lets you compare how your most 
+to the new layout before you use the new design permanently for all of your users. Matomo A/B tests lets you compare how your most 
 important metrics are impacted for the old and the new design. When you run such an experiment we usually 
 recommend to only send a few percentage of your users to the newly created layout or website just in case your new 
 layout performs significantly worse.
@@ -101,7 +107,7 @@ $activated = $experiment->getActivatedVariation();
 // sure to track the chosen variation on the next request.
 $activated->run();
 
-// if user was not redirected because the original version was chosen, we need to let Piwik know that 
+// if user was not redirected because the original version was chosen, we need to let Matomo know that 
 // the original version was activated.
 $script = $experiment->getTrackingScript($experiment->getExperimentName(), $activated->getName());
 echo $script; // prints eg "<script ...>_paq.push(['AbTesting::enter', {experiment: 'theExperimentName', variation: 'original'}]);"
@@ -121,7 +127,7 @@ $activated = $experiment->getActivatedVariation();
 
 if ($activated->getName() === 'newDesign') {
     // make sure to persist the selected variation so when newDesign.php is loaded you can
-    // let Piwik know which variation was activated
+    // let Matomo know which variation was activated
     header("Location: /newDesign.php", true, 302);
     exit;
 } else {
@@ -147,7 +153,7 @@ You can also implement a simple A/B testing framework yourself. An A/B test fram
   * read the persisted variation value to find out which variation the user is supposed to see.
 * Execute the server-side code for the randomly chosen, or previously activated variation: 
   * this is the code which implements the changes needed to display this variation in your website, for example displaying a different design.  
-* Output in your website the one-line JavaScript code that lets Piwik know which variation was activated:
+* Output in your website the one-line JavaScript code that lets Matomo know which variation was activated:
   * `window._paq = window._paq || [];window._paq.push(['AbTesting::enter', {experiment: 'theExperimentName', variation: 'variationNameOrIdActivatedForCurrentVisitor'}]);`
 
 ## Finishing an experiment
