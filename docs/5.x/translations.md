@@ -109,7 +109,7 @@ Did you know you can contribute [translations](https://matomo.org/translations/)
 
 ## Getting translations for your plugin
 
-As long as you are [developing an open source plugin](https://developer.matomo.org/develop) hosted on GitHub, you may get in touch with us ([translations@matomo.org](mailto:translations@matomo.org?subject=Getting my Matomo plugin translated in other languages)) in order to get your plugin translated by the Matomo translators community.
+As long as you are [developing an open source plugin](https://developer.matomo.org/develop) hosted on GitHub, you may get in touch with us at [translations@matomo.org](mailto:translations@matomo.org?subject=Getting%20my%20Matomo%20plugin%20translated%20in%20other%20languages) to get your plugin translated by the Matomo translators community.
 
 
 ### Importing your plugin's strings in the translation platform
