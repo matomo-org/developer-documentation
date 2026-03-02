@@ -62,7 +62,7 @@ class MyStore {
   increment() {
     this.myState.counter += 1;
   }
-  
+
   decrement() {
     this.myState.counter -= 1;
   }
@@ -156,7 +156,7 @@ class GoalsStore
   });
 
   readonly allGoals = computed(() => readonly(this.state).goals);
-  
+
   readonly currentGoal = computed(() => {
     const idGoal = MatomoUrl.parsed.value.idGoal;
     if (idGoal && this.state.goals[idGoal]) {
@@ -164,7 +164,7 @@ class GoalsStore
     }
     return undefined;
   });
-  
+
   changeGoal(idGoal: number): void {
     MatomoUrl.updateHash({
       // NOTE: updateHash will rewrite the entire hash, so it is important to include existing query parameters,
@@ -242,18 +242,18 @@ import { AjaxHelper } from 'CoreHome';
 AjaxHelper.fetch<[ResponseType1, ResponseType2]>([
   {
     method: 'MyPlugin.firstApiRequest',
-    // ... 
+    // ...
   },
   {
     method: 'MyPlugin.secondApiRequest',
-    // ... 
+    // ...
   },
 ]).then(([r1, r2]) => {
   // use r1, r2
 });
 ```
 
-### Using Vue components outside of Vue 
+### Using Vue components outside of Vue
 
 Sometimes it's necessary to initiate and use a Vue component from a different context, such as in
 a twig template or in raw HTML. This can be accomplished through the use of the `vue-entry` attribute
@@ -272,8 +272,8 @@ Add this attribute to your HTML like so:
 ```html
 <div
   vue-entry="MyPlugin.MyComponent"
-  prop-value="&quot;value for propValue property&quot;"
-  my-other-property="{&quot;name&quot;: &quot;the name&quot;}"
+  prop-value="value for propValue property"
+  my-other-property="{'name': 'the name'}"
 ></div>
 ```
 
