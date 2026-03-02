@@ -155,7 +155,7 @@ In the example above, the request works because the statistics are public (the _
 *   when you access your Piwik installation you are requested to log in
 *   when you call the API over http you need to authenticate yourself. This is done by adding a secret parameter called `token_auth` in the URL. This parameter is as secret as your login and password!
 
-You can create authentication tokens in the Administration area under _Administration_ => _Personal_ => _Security_ => _Auth tokens_.
+You can [create authentication tokens](https://matomo.org/faq/general/faq_114/) in the Administration area under _Administration_ => _Personal_ => _Security_ => _Auth tokens_.
 
 Then you simply have to add the parameter **&token\_auth=YOUR\_TOKEN** at the end of your API call URL.
 
