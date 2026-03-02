@@ -182,7 +182,18 @@ window.addEventListener('hashchange', function() {
     _paq.push(['setDocumentTitle', 'My New Title']);
 
     // remove all previously assigned custom variables, requires Piwik 3.0.2
+
+    _paq.push(['deleteCustomVariables', 'page']); 
+    
+    // remove any Custom Dimensions that may have been set in the previous pageview
+    // it's only necessary to remove Custom Dimensions of 'Action' scope when tracking a new Pageview
+    _paq.push(['deleteCustomDimension', customDimensionId]);
+    
+    // be sure to set any necessary Custom Dimensions before tracking the pageview
+    _paq.push(['setCustomDimension', customDimensionId = 1, customDimensionValue = 'Dimension_Value']);
+
     _paq.push(['deleteCustomVariables', 'page']);
+    
     _paq.push(['AbTesting::create', {
        name: 'theExperimentName',
        includedTargets: [{"attribute":"url","type":"starts_with","value":"http:\/\/www.example.org","inverted":"0"}],
@@ -202,6 +213,7 @@ window.addEventListener('hashchange', function() {
           }
        ]
     }]);
+
     _paq.push(['trackPageView']);
     
     // make Matomo aware of newly added content
