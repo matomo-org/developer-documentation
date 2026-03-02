@@ -40,9 +40,9 @@ The APIs let you programmatically request any analytics reports from Matomo, for
         *   _YYYY-MM-DD,YYYY-MM-DD_ for every period (day, week, month or year) in the date range
 
         *   Note: if you set 'period=range' to request data for a custom date range, the API will return the sum of data for the specified date range.
-When 'period=range', the following keywords are supported for the parameter 'date':
+When 'period=range', the implicit period unit is 'day' and following keywords are supported for the parameter 'date':
 
-        *   _lastX_
+        *   _lastX_  
         *   _previousX_
         *   _YYYY-MM-DD,YYYY-MM-DD_, both dates can be replaced with magic keywords (the first one does not support _today_ and _yesterday_). eg. _YYYY-MM-DD,today_, _lastMonth,YYYY-MM-DD_ or _lastYear,lastWeek_
 
