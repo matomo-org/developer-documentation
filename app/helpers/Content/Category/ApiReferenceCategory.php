@@ -44,6 +44,7 @@ class ApiReferenceCategory extends Category
             new EmptySubCategory('Tracking', [
                 new ApiReferenceGuide('tracking-api'),
                 new ApiReferenceGuide('tracking-javascript'),
+                new ApiReferenceGuide('tracking-java'),
                 new PhpDoc($matomoTracker, 'PHP-Matomo-Tracker', 'PHP Tracking Client'),
             ]),
             new EmptySubCategory('Tag Manager', [
@@ -52,7 +53,8 @@ class ApiReferenceCategory extends Category
             new EmptySubCategory('Reporting HTTP API', [
                 new ApiReferenceGuide('reporting-api'),
                 new ApiReferenceGuide('reporting-api-metadata'),
-                new ApiReferenceGuide('reporting-api-segmentation')
+                new ApiReferenceGuide('reporting-api-segmentation'),
+                new ApiReferenceGuide('reporting-api-apiModule_apiAction-combinations')
             ]),
             new EmptySubCategory('PHP Plugins API', [
                 new PhpDoc('Classes', 'classes'),

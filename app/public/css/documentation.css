@@ -1,13 +1,13 @@
 .documentation {
     line-height: 150%;
     margin-bottom: 50px;
+    margin-top: 12px;
+    padding-left: 30px;
 }
-
 .documentation h1 {
     font-weight: 300;
     padding-bottom: 9px;
     margin: 0 0 20px;
-    border-bottom: 1px solid #eeeeee;
 }
 
 .documentation a {
@@ -66,4 +66,10 @@
 }
 .documentation .guide-navigation-next {
     float:right;
+}
+.guide-sections.panel {
+    border: 0;
+}
+.guide-sections .panel-heading {
+    background: white;
 }

@@ -102,7 +102,7 @@ $myFancyMetric = // ... calculate the metric value ...
 $archiveProcessor->insertNumericRecord('MyPlugin_myFancyMetric', $myFancyMetric);
 
 // insert a record (with all of its subtables)
-$maxRowsInTable = Config::getInstance()->General['datatable_archiving_maximum_rows_standard'];j
+$maxRowsInTable = Config::getInstance()->General['datatable_archiving_maximum_rows_standard'];
 
 $dataTable = // ... build by aggregating visits ...
 $serializedData = $dataTable->getSerialized(

@@ -30,6 +30,13 @@ $ cd public/
 $ php -S 0.0.0.0:8000
 ```
 
+After the initial composer installation, you should be able to test locally by simply running the following:
+
+```bash
+$ cd app/
+$ composer serve
+```
+
 To disable caching and enable debugging, create a `app/config/local.php` file with the following:
 
 ```php
@@ -43,6 +50,26 @@ locally by adding this to your `local.php`:
 
 ```php
 define('DISABLE_INCLUDE', true);
+```
+
+## DDEV environment for Developer documentation
+
+DDEV container for the Matomo Developer Documentation site
+
+To start this on your local machine using ddev run the command below.
+
+```bash
+ bash ddev-developer-docs.sh 
+```
+
+The local DDEV url for this container will be https://devdocs.ddev.site/
+
+### Rebuilding
+
+If you want to completely clear the existing setup and start again the following command will reset everything
+
+```bash
+ddev stop --unlist devdocs && rm -rf .ddev && bash ddev-developer-docs.sh 
 ```
 
 ## Automatic documentation generation (API-Reference)
@@ -70,7 +97,8 @@ The documents will be generated into the [docs/generated](docs/generated) direct
 ## How to add docs for a new Matomo version
 
 * Increase version number for `LATEST_PIWIK_DOCS_VERSION` in `config/app.php`
-* Add a new line to `generate.sh` eg `php generator/generate.php --branch=4.x-dev --targetname=4.x` similar to the other ones. You might also want to copy the generation success detection.
+* Copy the previous documentation folder to the new one eg `cp docs/4.x docs/5.x -R`
+* Add a new line to `generate.sh` eg `generateDocs "4.x-dev" "4.x"` similar to the other ones. You might also want to copy the generation success detection.
 * Copy pictures from the previous version into latest version eg from `public/img/3.x` to `public/img/4.x` and update all needed pictures.
 * In `app/routes/page.php` we might need to update the branch for the latest `CHANGELOG` version in the `/changelog` route
   see eg https://github.com/matomo-org/developer-documentation/blob/0.1.0/app/routes/page.php#L156  . It will be important that

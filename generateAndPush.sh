@@ -2,10 +2,6 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
-cd piwik
-git checkout live
-git pull origin live
-cd ..
 git checkout docs/*/generated
 git pull
 ./generate.sh
@@ -15,6 +11,9 @@ if [ $GENERATION_SUCCESS -ne 0 ]; then
   exit 1;
 fi
 git add docs/*/generated
-git rm $(git ls-files --deleted docs/*/generated)
+DELETED_FILES=$(git ls-files --deleted docs/*/generated)
+if [ -n "$DELETED_FILES" ]; then
+  git rm $DELETED_FILES
+fi
 git commit -m 'updated plugins API documentation'
 git push origin live

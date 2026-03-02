@@ -4,12 +4,16 @@ Events
 This is a complete list of available hooks. If you are not familiar with this read our [Guide about events](/guides/events).
 
 {% set currentCategory = '' %}
-{% for hook in hooks if hook.name != '$eventName' %}
-{% if (hook.category) != (currentCategory) %}{% set currentCategory = hook.category %}
+{% for hook in hooks %}
+{% if hook.name != '$eventName' %}
+{% if (hook.category) != (currentCategory) %}
+{% set currentCategory = hook.category %}
 ## {{ hook.category }}
 
-{% for categoryHook in hooks if categoryHook.category == currentCategory %}
+{% for categoryHook in hooks %}
+{% if categoryHook.category == currentCategory %}
 - [{{ categoryHook.name }}](#{{ categoryHook.name|onlyalnum|lower }})
+{% endif %}
 {% endfor %}
 {% endif %}
 
@@ -41,6 +45,7 @@ Usages:
 [{{ usage.className }}::{{ usage.methodName }}](https://github.com/matomo-org/matomo/blob/{{ versionName }}{{ usage.file }}#L{{ usage.startLine }}){% if not loop.last%}, {% endif %}
 {% endfor %}
 
+{% endif %}
 {% endif %}
 
 {% endfor %}

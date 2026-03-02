@@ -30,7 +30,7 @@ Schedule the given tasks/method to run once every hour.
 
 -  It accepts the following parameter(s):
     - `$methodName` (`string`) &mdash;
-       The name of the method that will be called when the task is being exectuted. To make it work you need to create a public method having the given method name in your Tasks class.
+       The name of the method that will be called when the task is being executed. To make it work you need to create a public method having the given method name in your Tasks class.
     - `$methodParameter` (`null`|`string`) &mdash;
        Can be null if the task does not need any parameter or a string. It is not possible to specify multiple parameters as an array etc. If you need to pass multiple parameters separate them via any characters such as '###'. For instance '$param1###$param2###$param3'
     - `$priority` (`int`) &mdash;

@@ -78,7 +78,7 @@ When a user requests a new language we need to add the language.
 
 1. Pick a language code for the new language
    from [the List of ISO 639 codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). If a 639-1 two-letter code
-   exists that describes the language accurately,, we use it. Otherwise, a three-letter code like `tzm` will be used. For
+   exists that describes the language accurately, we use it. Otherwise, a three-letter code like `tzm` will be used. For
    country variants of languages like `es_AR` we format the language code using a dash and lowercase letters
    like `es-ar`.
    For language codes including a country variant, we need to configure the language alias in Weblate. Otherwise new files
@@ -129,7 +129,7 @@ This can be disabled as there should never be a reason to add new translation ke
 
 ##### Push on commit (`push_on_commit`)
 
-This is enabled, which means that whenever a change in Weblate is commited, a new pull request will be created or the existing one will be updated.
+This is enabled, which means that whenever a change in Weblate is committed, a new pull request will be created or the existing one will be updated.
 
 ##### Language code Style (`language_code_style`)
 

@@ -18,7 +18,7 @@ _Note: all parameters values that are strings (such as 'url', 'action\_name', et
 
 ### Recommended parameters
 
-* `action_name` **(recommended)** &mdash; The title of the action being tracked. It is possible to [use slashes / to set one or several](https://matomo.org/faq/how-to/#faq_62) [categories for this action](https://matomo.org/faq/how-to/#faq_62). For example, **Help / Feedback** will create the Action **Feedback** in the category **Help**.
+* `action_name` **(recommended)** &mdash; The title of the action being tracked. It is possible to [use slashes / to set one or several](https://matomo.org/faq/how-to/faq_62) [categories for this action](https://matomo.org/faq/how-to/faq_62). For example, **Help / Feedback** will create the Action **Feedback** in the category **Help**.
 * `url` **(recommended)** &mdash; The full URL for the current action.
 * `_id` **(recommended)** &mdash; The unique visitor ID, must be a 16 characters hexadecimal string. Every unique visitor must be assigned a different ID and this ID must not change after it is assigned. If this value is not set Piwik will still track visits, but the unique visitors metric might be less accurate.
 * `rand` **(recommended)** &mdash; Meant to hold a random value that is generated before each request. Using it helps avoid the tracking request being cached by the browser or a proxy.
@@ -30,9 +30,6 @@ _(We recommend that these parameters be used if the information is available and
 
 * `urlref` &mdash; The full HTTP Referrer URL. This value is used to determine how someone got to your website (ie, through a website, search engine or campaign).
 * `_cvar` &mdash; Visit scope [custom variables](https://matomo.org/docs/custom-variables/). This is a JSON encoded string of the custom variable array (see below for an example value).
-* `_idvc` &mdash; The current count of visits for this visitor. To set this value correctly, it would be required to store the value for each visitor in your application (using sessions or persisting in a database). Then you would manually increment the counts by one on each new visit or "session", depending on how you choose to define a visit. This value is used to populate the report _Visitors > Engagement > Visits by visit number_.
-* `_viewts` &mdash; The UNIX timestamp of this visitor's previous visit. This parameter is used to populate the report _Visitors > Engagement > Visits by days since last visit_.
-* `_idts` &mdash; The UNIX timestamp of this visitor's first visit. This could be set to the date where the user first started using your software/app, or when he/she created an account. This parameter is used to populate the _Goals > Days to Conversion_ report.
 * `_rcn` &mdash; The Campaign name (see [Tracking Campaigns](https://matomo.org/docs/tracking-campaigns/)). Used to populate the _Referrers > Campaigns_ report. _Note: this parameter will only be used for the first pageview of a visit._
 * `_rck` &mdash; The Campaign Keyword (see [Tracking Campaigns](https://matomo.org/docs/tracking-campaigns/)). Used to populate the _Referrers > Campaigns_ report (clicking on a campaign loads all keywords for this campaign). _Note: this parameter will only be used for the first pageview of a visit._
 * `res` &mdash; The resolution of the device the visitor is using, eg **1280x1024**.
@@ -47,7 +44,7 @@ _(We recommend that these parameters be used if the information is available and
 * `lang` &mdash; An override value for the **Accept-Language** HTTP header field. This value is used to detect the visitor's country if [GeoIP](https://matomo.org/faq/troubleshooting/#faq_65) is not enabled.
 * `uid` &mdash; defines the [User ID](https://matomo.org/docs/user-id/) for this request. User ID is any non-empty unique string identifying the user (such as an email address or an username). To access this value, users must be logged-in in your system so you can fetch this user ID from your system, and pass it to Piwik. The User ID appears in the visits log, the Visitor profile, and you can [Segment](https://developer.matomo.org/api-reference/segmentation) reports for one or several User ID (`userId` segment). When specified, the User ID will be "enforced". This means that if there is no recent visit with this User ID, a new one will be created. If a visit is found in the last 30 minutes with your specified User ID, then the new action will be recorded to this existing visit.
 * `cid` &mdash; defines the visitor ID for this request. You must set this value to exactly a 16 character hexadecimal string (containing only characters 01234567890abcdefABCDEF). We recommended setting the User ID via `uid` rather than use this `cid`.
-* `new_visit` &mdash; If set to 1, will force a new visit to be created for this action. This feature is also [available in JavaScript](https://matomo.org/faq/how-to/#faq_187).
+* `new_visit` &mdash; If set to 1, will force a new visit to be created for this action. This feature is also [available in JavaScript](https://matomo.org/faq/how-to/faq_187).
 * `dimension[0-999]` &mdash; A Custom Dimension value for a specific Custom Dimension ID (requires Piwik 2.15.1 + [Custom Dimensions plugin](https://plugins.matomo.org/CustomDimensions) see the [Custom Dimensions guide](https://matomo.org/docs/custom-dimensions/)). If Custom Dimension ID is `2` use `dimension2=dimensionValue` to send a value for this dimension. The configured Custom Dimension has to be in scope "Visit".
 
 ### Optional Action info (measure Page view, Outlink, Download, Site search)
@@ -114,7 +111,6 @@ Use the following values to record a cart and/or an ecommerce order.
 * `ec_tx` &mdash; Tax Amount of the order
 * `ec_sh` &mdash; Shipping cost of the Order
 * `ec_dt` &mdash; Discount offered
-* `_ects`  &mdash; The UNIX timestamp of this customer's last ecommerce order. This value is used to process the "Days since last order" report.
 
 ### Other parameters (require authentication via `token_auth`)
 
@@ -123,7 +119,7 @@ The following parameters require that you set `&token_auth=` to the token\_auth 
 * `token_auth` &mdash; 32 character authorization key used to authenticate the API request. We recommend to create a user specifically for accessing the Tracking API, and give the user only *write* permission on the website(s).
 * `cip` &mdash; Override value for the visitor IP (both IPv4 and IPv6 notations supported).
 * `cdt` &mdash; Override for the datetime of the request (normally the current time is used). This can be used to record visits and page views in the past. The expected format is either a datetime such as: `2011-04-05 00:11:42` (remember to URL encode the value!), or a valid UNIX timestamp such as `1301919102`. The datetime must be sent in UTC timezone.
- _Note: if you record data in the past, you will need to [force Piwik to re-process reports for the past dates](https://matomo.org/faq/how-to/#faq_59)._
+ _Note: if you record data in the past, you will need to [force Piwik to re-process reports for the past dates](https://matomo.org/faq/how-to/faq_59)._
  If you set `cdt` to a datetime older than 24 hours then `token_auth` must be set. If you set `cdt` with a datetime in the last 24 hours then you don't need to pass `token_auth`.
 * `country` &mdash; An override value for the country. Should be set to the two letter country code of the visitor (lowercase), eg **fr**, **de**, **us**.
 * `region` &mdash; An override value for the region. Should be set to a ISO 3166-2 region code, which are used by [MaxMind's](https://www.maxmind.com?rId=piwik) and [DB-IP's](https://db-ip.com/db/?refid=mtm) GeoIP2 databases. See [here](https://www.iso.org/obp/ui/#search/code/) for a list of them for every country.
@@ -140,6 +136,23 @@ Activity and consumption of your videos and audios can be measured via the param
 `ma_mt` , `ma_pn`, `ma_st`, `ma_le`, `ma_ps`, `ma_ttp`, `ma_w`, `ma_h`, `ma_fs`, `ma_se`.
 
 Learn more in the [Media Analytics HTTP Tracking API Reference](/guides/media-analytics/custom-player#media-analytics-http-tracking-api-reference).
+
+### Tracking HTTP API Reference
+
+If you want to track crashes in a language that does not have an official tracking SDK, then you will need to use the Crash Analytics HTTP API.
+
+A crash request consists of the following parameters:
+
+* `ca`: must always be included and always set to `1`
+* `cra`: the message of the error (required).
+* `cra_st`: the stack trace of the error (optional).
+* `cra_ct`: the category of the error (optional).
+* `cra_tp`: the error type (optional)
+* `cra_ru`: a URI for the source file that originated the error (optional)
+* `cra_rl`: the line of the source file where the error occurred (optional)
+* `cra_rc`: the column of the source file where the error occurred (optional)
+
+Note: the user of the HTTP API is responsible for determining the source location of an error, including file URI, line number and column number. The Crash Analytics HTTP tracker will not deduce this information from the stack trace.
 
 ### Queued Tracking parameters
 

@@ -274,7 +274,7 @@ Add this attribute to your HTML like so:
   vue-entry="MyPlugin.MyComponent"
   prop-value="&quot;value for propValue property&quot;"
   my-other-property="{&quot;name&quot;: &quot;the name&quot;}"
-/>
+></div>
 ```
 
 This would mount the `MyComponent` component exported by `MyPlugin` in the div. It would pass the attribute values

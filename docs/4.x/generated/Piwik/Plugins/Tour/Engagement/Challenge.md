@@ -14,13 +14,22 @@ Methods
 
 The abstract class defines the following methods:
 
+- [`__construct()`](#__construct)
 - [`getName()`](#getname) &mdash; The human readable name that will be shown in the onboarding widget.
 - [`getId()`](#getid) &mdash; A short unique ID that represents this challenge, for example "add_report".
 - [`isCompleted()`](#iscompleted) &mdash; By default, we attribute a challenge as soon as it was completed manually by calling `$challenge->setCompleted()`.
+- [`isDisabled()`](#isdisabled) &mdash; By default challenges are enabled, if is not appropriate to display a challenge at this time because some condition has not been met then the challenge can be set as disabled by overriding this method.
 - [`getDescription()`](#getdescription) &mdash; A detailed description that describes the value of the action the user needs to complete, or some tips on how to complete this challenge.
 - [`getUrl()`](#geturl) &mdash; A URL that has more information about how to complete the given event or a URL within the Matomo app to directly complete a challenge.
 - [`clearCache()`](#clearcache)
 - [`setCompleted()`](#setcompleted) &mdash; Set this challenge was completed successfully by the current user.
+
+<a name="__construct" id="__construct"></a>
+<a name="__construct" id="__construct"></a>
+### `__construct()`
+
+#### Signature
+
 
 <a name="getname" id="getname"></a>
 <a name="getName" id="getName"></a>
@@ -57,6 +66,19 @@ way.
 #### Signature
 
 - It returns a `bool` value.
+
+<a name="isdisabled" id="isdisabled"></a>
+<a name="isDisabled" id="isDisabled"></a>
+### `isDisabled()`
+
+By default challenges are enabled, if is not appropriate to display a challenge at this time because some condition
+has not been met then the challenge can be set as disabled by overriding this method. The constructor code will
+still be run every time the challenges are loaded. To disable a challenge based on plugin availablilty it is better
+to add a check to the Piwik\Plugins\Tour\Engagement::getChallenges() method
+
+#### Signature
+
+- It returns a `false` value.
 
 <a name="getdescription" id="getdescription"></a>
 <a name="getDescription" id="getDescription"></a>

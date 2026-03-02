@@ -16,11 +16,11 @@ Generally we try to keep the JS file smallish for fast performance.
 
 ## Making changes to the JS tracker
 
-To make changes to the JS tracker, you need to edit the raw/unminfied JS tracker itself which you can find in the [js/piwik.js](https://github.com/matomo-org/matomo/blob/4.x-dev/js/piwik.js) directory. When you create a pull request, you can then minify the JS tracker see below.
+To make changes to the JS tracker, you need to edit the raw/unminfied JS tracker itself which you can find in the [js/piwik.js](https://github.com/matomo-org/matomo/blob/5.x-dev/js/piwik.js) directory. When you create a pull request, you can then minify the JS tracker see below.
 
 ### Adding a new public JS tracker method
 
-Public tracker methods like `trackPageView` can be called eg using `_paq.push(['trackPageView', '...parameters'])`. Such methods are defined similiar to this [example](https://github.com/matomo-org/matomo/blob/4.4.1/js/piwik.js#L6260-L6275).
+Public tracker methods like `trackPageView` can be called eg using `_paq.push(['trackPageView', '...parameters'])`. Such methods are defined similar to this [example](https://github.com/matomo-org/matomo/blob/4.4.1/js/piwik.js#L6260-L6275).
 
 Any newly added method or changed parameters will be documented in the [developer changelog](https://developer.matomo.org/guides/apis#developer-changelog) and on the [JS tracking client](https://developer.matomo.org/api-reference/tracking-javascript) page.
 
@@ -40,7 +40,7 @@ The file containing all tests is located in `tests/javascript/index.php`.
 
 To execute tests for a specific module use the `module` URL parameter, for example `&module=core`.
 
-If you are developing multiple tracker plugins and want to only include tests for a specific tracker plugin (like Travis would do) use the URL parameter `plugin` as in `&plugin=MyPluginName`.
+If you are developing multiple tracker plugins and want to only include tests for a specific tracker plugin (like our CI would do) use the URL parameter `plugin` as in `&plugin=MyPluginName`.
 
 ### Testing private methods that aren't exposed
 
@@ -72,7 +72,7 @@ When you create a pull request for a JS tracker change you will notice that a te
 If you are reviewing a pull request from a community contributor and you are happy with the change, then follow these steps:
 
 * Click on `edit` PR in the top
-* Open the select field that says eg `base: 4.x-dev`. 
+* Open the select field that says eg `base: 5.x-dev`. 
 * Enter a new branch name and select this branch
 * Save the change
 * Merge the PR

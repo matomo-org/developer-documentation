@@ -38,7 +38,7 @@ request/process, and cannot find a recent, usable archive, we generate it, by la
   for archives for other periods.
 * `[General] time_before_week_archive_considered_outdated`, `[General time_before_month_archive_considered_outdated]`,
   `[General] time_before_year_archive_considered_outdated`, `[General] time_before_range_archive_considered_outdated`:
-  specific ttls for different period types. They each default to the 'today time to live' value if not specified
+  specific TTLs for different period types. They each default to the 'today time to live' value if not specified
 * custom date ranges to pre-process: there is an INI config setting and some user settings that allow users to specify that
   certain ranges should be pre-archived. The INI setting is `[General] archiving_custom_ranges`. The user setting is the
   setting that controls the default period to load in Matomo. These ranges will be processed in core:archive if specified.

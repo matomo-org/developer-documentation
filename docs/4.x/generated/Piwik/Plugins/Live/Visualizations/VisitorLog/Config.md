@@ -30,6 +30,7 @@ This class defines the following properties:
 - [`$show_footer_icons`](#$show_footer_icons) &mdash; Controls whether the row that contains all footer icons & the limit selector is shown. Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
 - [`$columns_to_display`](#$columns_to_display) &mdash; Array property that determines which columns will be shown. Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
 - [`$show_all_views_icons`](#$show_all_views_icons) &mdash; Controls whether graph and non core viewDataTable footer icons are shown or not. Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
+- [`$selectable_columns`](#$selectable_columns) &mdash; Array property that contains the names of columns that can be selected in the Series Picker. Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
 - [`$related_reports`](#$related_reports) &mdash; Related reports are listed below a datatable view. Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
 - [`$related_reports_title`](#$related_reports_title) &mdash; "Related Reports" is displayed by default before listing the Related reports, The string can be changed. Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
 - [`$title`](#$title) &mdash; The report title. Inherited from [`Config`](../../../../../Piwik/ViewDataTable/Config.md)
@@ -335,6 +336,19 @@ after data is loaded.
 ### `$show_all_views_icons`
 
 Controls whether graph and non core viewDataTable footer icons are shown or not.
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$selectable_columns" id="$selectable_columns"></a>
+<a name="selectable_columns" id="selectable_columns"></a>
+### `$selectable_columns`
+
+Array property that contains the names of columns that can be selected in the Series Picker.
+
+Default value: false
 
 #### Signature
 

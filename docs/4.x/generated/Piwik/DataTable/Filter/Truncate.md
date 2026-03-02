@@ -11,11 +11,11 @@ The [ReplaceSummaryRowLabel](/api-reference/Piwik/DataTable/Filter/ReplaceSummar
 
 **Basic usage**
 
-    $dataTable->filter('Truncate', array($truncateAfter = 500));
+    $dataTable->filter('Truncate', [$truncateAfter = 500]);
 
 **Using a custom summary row label**
 
-    $dataTable->filter('Truncate', array($truncateAfter = 500, $summaryRowLabel = Piwik::translate('General_Total')));
+    $dataTable->filter('Truncate', [$truncateAfter = 500, $summaryRowLabel = Piwik::translate('General_Total')]);
 
 Methods
 -------

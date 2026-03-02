@@ -185,7 +185,7 @@ Set (overwrite) the type of this segment which is usually either a 'dimension' o
 
 -  It accepts the following parameter(s):
     - `$type` (`string`) &mdash;
-       See constansts TYPE_*
+       See constants TYPE_*
 - It does not return anything or a mixed result.
 
 <a name="getsegment" id="getsegment"></a>

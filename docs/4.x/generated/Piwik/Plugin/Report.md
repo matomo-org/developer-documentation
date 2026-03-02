@@ -194,6 +194,7 @@ The class defines the following methods:
 - [`getMetrics()`](#getmetrics) &mdash; Returns an array of supported metrics and their corresponding translations.
 - [`getMetricsRequiredForReport()`](#getmetricsrequiredforreport) &mdash; Returns the list of metrics required at minimum for a report factoring in the columns requested by the report requester.
 - [`getProcessedMetrics()`](#getprocessedmetrics) &mdash; Returns an array of supported processed metrics and their corresponding translations.
+- [`getMetricSemanticTypes()`](#getmetricsemantictypes) &mdash; Returns the semantic types for metrics this report displays.
 - [`getAllMetrics()`](#getallmetrics) &mdash; Returns the array of all metrics displayed by this report.
 - [`getMetricNamesToProcessReportTotals()`](#getmetricnamestoprocessreporttotals) &mdash; Use this method to register metrics to process report totals.
 - [`getMetricsDocumentation()`](#getmetricsdocumentation) &mdash; Returns an array of metric documentations and their corresponding translations.
@@ -211,6 +212,7 @@ The class defines the following methods:
 - [`getProcessedMetricsById()`](#getprocessedmetricsbyid) &mdash; Returns an array mapping the ProcessedMetrics served by this report by their string names.
 - [`getMetricsForTable()`](#getmetricsfortable) &mdash; Returns the Metrics that are displayed by a DataTable of a certain Report type.
 - [`getProcessedMetricsForTable()`](#getprocessedmetricsfortable) &mdash; Returns the ProcessedMetrics that should be computed and formatted for a DataTable of a certain report.
+- [`getRowIdentifier()`](#getrowidentifier) &mdash; Returns the name of the column/metadata that uniquely identifies rows in this report.
 
 <a name="init" id="init"></a>
 <a name="init" id="init"></a>
@@ -399,6 +401,24 @@ get all default translations and overwrite any custom metric translations.
 
 - *Returns:*  `array`|`mixed` &mdash;
     
+
+<a name="getmetricsemantictypes" id="getmetricsemantictypes"></a>
+<a name="getMetricSemanticTypes" id="getMetricSemanticTypes"></a>
+### `getMetricSemanticTypes()`
+
+Returns the semantic types for metrics this report displays.
+
+If the semantic type is not defined by the derived Report class, it defaults to
+the value returned by Metrics::getDefaultMetricSemanticTypes() or
+[Metric::getSemanticType()](/api-reference/Piwik/Plugin/Metric#getsemantictype). If the semantic type cannot be found this way,
+this method tries to deduce it from the metric name, though this process will
+not identify the semantic type for most metrics.
+
+#### Signature
+
+
+- *Returns:*  `array` &mdash;
+    maps metric name => semantic type
 
 <a name="getallmetrics" id="getallmetrics"></a>
 <a name="getAllMetrics" id="getAllMetrics"></a>
@@ -643,4 +663,15 @@ as well as the DataTable metadata.
     - `$report` ([`Report`](../../Piwik/Plugin/Report.md)) &mdash;
       
 - It returns a [`ProcessedMetric[]`](../../Piwik/Plugin/ProcessedMetric.md) value.
+
+<a name="getrowidentifier" id="getrowidentifier"></a>
+<a name="getRowIdentifier" id="getRowIdentifier"></a>
+### `getRowIdentifier()`
+
+Returns the name of the column/metadata that uniquely identifies rows in this report. See
+self::$rowIdentifier for more information.
+
+#### Signature
+
+- It returns a `string` value.
 

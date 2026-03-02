@@ -42,7 +42,7 @@ class DevelopInDepthCategory extends Category
                 new Guide('core-components'),
                 new Guide('composer-dependencies'),
                 new Guide('release-management'),
-                new Guide('tests-github'),
+                new Guide('github-actions'),
                 new RemoteLink('Matomo\'s Roadmap', 'https://matomo.org/roadmap/'),
             ]),
             new EmptySubCategory('Matomo Plugin development', [
