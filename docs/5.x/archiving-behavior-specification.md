@@ -107,6 +107,10 @@ on archive TTLs.
   to a plugin's Archiver instance. If the archiver supports partial archiving, it will handle it and a partial archive will be
   created, with the report archive in it only. This must be set in combination with `plugin` and `pluginOnly`.
 
+  If the plugin provides RecordBuilders instead of archivers then partial archiving will automatically be supported. For non-day
+  periods only the requested reports will be archived together. For day periods log aggregation will run for just the RecordBuilders
+  that build the requested reports.
+
 ### PHP Classes
 
 The following classes are involved in the Core Archiving process:
@@ -123,11 +127,17 @@ The following classes are involved in the Core Archiving process:
   to initiate archiving for all plugins.
   
   Note: for some archives (where period=range or if using a custom segment), we will only initiate archiving for the requested plugin(s).
-- **Piwik\PluginsArchiver**: This class will loop through every plugin (or requested plugin), create the plugin's `Archiver` instance
+- **Piwik\ArchiveProcessor\PluginsArchiver**: This class will loop through every plugin (or requested plugin), create the plugin's `Archiver` instance
   and invoke it. Based on whether a day or non-day period is being archived, either the `aggregateDayReports()` or `aggregateMultipleReports()`
   method will be invoked.
-- **Piwik\Plugin\Archiver**: This is the base class for all plugin archivers. Plugins define their archiving logic within one of these
-  classes, which will then be invoked by PluginsArchiver.
+- **Piwik\ArchiveProcessor\RecordBuilder**: encapsulates log aggregation logic for one or more records (numeric or blob). Plugins define as many
+  of these as they need to capture their plugin's archiving logic.
+- **Piwik\Plugin\Archiver**: This class invokes archiving for a single plugin. Based on the requested reports (if any), site and period, it will
+  collect the RecordBuilders that need to be invoked, use them to get built record data, then insert those records. For non-day periods, it will
+  use the record metadata returned by those RecordBuilders to aggregate child periods together.
+
+  Plugins can also define their archiving logic entirely within an Archiver subclass, but this feature will be deprecated and removed sometime in
+  the future.
 - **Piwik\ArchiveProcessor**: This is a utility class that contains methods to easily query and aggregate metrics and reports for multiple periods.
   It is mostly used by `aggregateMultipleReports()` implementations to aggregate and insert archive data with a single method call, and by
   both `aggregateMultipleReports()` and `aggregateDayReports()` to insert archive data.
@@ -152,11 +162,19 @@ The entire code path for Core Archiving is as follows:
 - `CoreAdminHome.archiveReports` creates and invokes the `Loader` class.
 - `Loader` looks for a usable archive. If found, it returns that archive ID. Otherwise, it launches the archiving process, first aggregating
   core metrics like nb_visits. Then if we can't skip the archive, it invokes `PluginsArchiver`.
-- `PluginsArchiver` loops through every activated plugin and creates the plugin's `Archiver` instance if there is one. It invokes the appropriate
-  method on the `Archiver` instances.
-- `Archiver` instances define `aggregateDayReports()` and `aggregateMultipleReports()` methods. `aggregateDayReports()` methods will
-  generally use a `LogAggregator` instance to aggregate log data and then insert it using an `ArchiveProcessor` instance. `aggregateMultipleReports()`
-  methods will use an aggregation method in `ArchiveProcessor`.
+- `PluginsArchiver` loops through every activated plugin and creates the plugin's `Archiver` instance if there is one (if not it creates a generic `Archiver` instance).
+  It invokes the appropriate method on the `Archiver` instances.
+- **If a plugin defines a set of RecordBuilders:** the generic `Archiver` instance will collect the `RecordBuilder`s to invoke based on the
+  requested reports, if any. If the period being archived is a day period, the `RecordBuilder`s `buildFromLogs()` method will be called, which in turns
+  calls the abstract `aggregate()` method and inserts the results of that method as archive data. The `aggregate()` method will generally issue
+  aggregation queries on log data, possibly using a `LogAggregator` instance.
+
+  If the period being archived is a non-day period, `Archiver` will call the `buildForNonDayPeriod()` method. This method uses the record metadata
+  returned from `RecordBuilder::getRecordMetadata()` to create records for the non-day period, by aggregating the data of the period's subperiods
+  (so if the current period is a week, it will aggregate records for the days within that week).
+- **If a plugin defines a custom Archiver instance:** `Archiver` instances define `aggregateDayReports()` and `aggregateMultipleReports()` methods.
+  `aggregateDayReports()` methods will generally use a `LogAggregator` instance to aggregate log data and then insert it using an `ArchiveProcessor`
+  instance. `aggregateMultipleReports()` methods will use an aggregation method in `ArchiveProcessor`.
   - `ArchiveProcessor` aggregation methods will query data using an internal `Archive` instance created using the current period's subperiods
     (so if the current period is a week, this `Archive` will query for days within that week).
   - `ArchiveProcessor` will aggregate that data together and insert it into the archive tables.
