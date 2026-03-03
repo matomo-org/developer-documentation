@@ -120,6 +120,7 @@ Matomo provides a mechanism to manage your user's tracking consent. You can requ
 *   `hasRememberedConsent()` - Returns true or false depending on whether the current visitor has given consent previously or not.
 *   `getRememberedConsent()` - If consent was given, returns the timestamp when the visitor gave consent. Only works if `rememberConsentGiven` was used and not when `setConsentGiven` was used. The timestamp is the local timestamp which depends on the visitors time.
 *   `isConsentRequired()` - Returns true or false depending on whether `requireConsent` was called previously.
+*   `hasConsent()` - Returns true if tracking is enabled for the visitor (regardless of cookie consent), false if tracking is disbaled for the visitor via `forgetConsentGiven()` or another method.
 
 Matomo also provides a mechanism to manage your user's cookie consent. You can require that users consent to using cookies. Tracking requests will be always sent but depending on the consent cookies will be used or not used.
 
