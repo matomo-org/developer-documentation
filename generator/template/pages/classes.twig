@@ -11,8 +11,8 @@
 
 This is a complete list of available classes:
 
-{% for class in classes if not class.interface %}
-{% if 'PiwikTracker' != class.shortname and 'MatomoTracker' != class.shortname %}
+{% for class in classes %}
+{% if not class.interface and 'PiwikTracker' != class.shortname and 'MatomoTracker' != class.shortname %}
 {{ class_item(class, false, "", true) }}
 {% endif %}
 {% else %}

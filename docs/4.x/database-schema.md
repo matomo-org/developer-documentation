@@ -846,6 +846,79 @@ We store one row for each children site within a roll-up.
 - `parent_idsite`: The ID of a roll up site.
 - `idsite`: The ID of the children website.
 
+### Crash Analytics
+
+Learn more about [Crash Analytics](https://matomo.org/guide/reports/crash-analytics/).
+
+<a name="table-log_crash"></a>
+#### log_crash
+
+Crashes are stored in the `log_crash` table.
+
+Each crash contains the following information:
+
+- `idlogcrash`: The unique ID of this crash.
+- `idsite`: The ID of the website.
+- `crash_type`: The type of crash to record.
+- `message`: The crash message to record.
+- `resource_uri`: The URI of the crash.
+- `stack_trace`: The stack trace of a crash.
+- `resource_line`: The line number on the resource where crash was reported.
+- `resource_column`: The column on the resource where crash was reported.
+- `datetime_first_seen`: The timestamp when the crash was first seen.
+- `datetime_ignored_error`: The timestamp when the crash was added to ignored list.
+- `datetime_last_seen`: The timestamp when the crash was last seen.
+- `datetime_last_reappeared`: The timestamp when the last crash was seen.
+- `crc32_hash`: The hash of a crash message.
+- `group_idlogcrash`: The groupID of a crash.
+
+<a name="table-log_crash_event"></a>
+#### log_crash_event
+
+Crash events are stored in the `log_crash_event` table.
+
+Each crash event contains the following information:
+
+- `idlogcrashevent`: The unique ID of this crash event.
+- `idsite`: The ID of the website.
+- `idvisit`: The ID of the visit that caused this crash.
+- `idvisitor`: The ID of the visitor that caused this crash.
+- `idlogcrash`: The ID of the log present in `log_crash` table.
+- `idaction_resource_uri`: The URI of the crash event
+- `resource_line`: The line number on the resource where crash event was reported.
+- `resource_column`: The column on the resource where crash event was reported.
+- `server_time`: The server timestamp on which this crash event was reported.
+- `created_time`: The timestamp of this crash event.
+- `idpageview`:  The ID of the pageview entry matching the `log_link_visit_action.idpageview` column. Allows us to assign this interaction to a specific action.
+- `idaction_url`: A `log_action` ID referencing on what page URL this page view was recorded.
+- `idaction_name`: The ID of the page title action type for this action
+- `prev_last_seen`: The timestamp when this crash event was reported previously.
+- `category`: The category of this crash event.
+
+<a name="table-log_crash_group"></a>
+#### log_crash_group
+
+Crash groups are stored in the `log_crash_group` table.
+
+Each crash group contains the following information:
+
+- `idlogcrash`: The unique ID of this crash group.
+- `datetime_first_seen`: The timestamp when the crash for this group was first seen.
+- `datetime_last_seen`: The timestamp when the crash for this group was last seen.
+- `datetime_last_reappeared`: The timestamp when the crash for this group was last seen.
+
+<a name="table-log_crash_stack"></a>
+#### log_crash_stack
+
+Crash stack are stored in the `log_crash_stack` table.
+
+Each crash stack contains the following information:
+
+- `idlogcrashstack`: The unique ID of this crash stack.
+- `hash`: The hash of this crash stack.
+- `compressed`: A flag to indicate if the stack value is compressed and stored.
+- `value`: The stack of a crash.
+
 ## Learn more
 
 * To learn **how log data is aggregated** see our [Archiving](/guides/archiving) guide and take a look at the [LogAggregator](/api-reference/Piwik/DataAccess/LogAggregator) class.

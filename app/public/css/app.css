@@ -1,4 +1,8 @@
 html {
+    @media screen and (min-width: 1024px) {
+        /* CSS styles for desktop screens */
+        scroll-padding-top: 65px;
+    }
     position: relative;
     min-height: 100%;
 }
@@ -9,6 +13,7 @@ body {
     font-size: 15px;
     color: #333333;
 }
+
 h1, h2, h3, h4, h5, h6 {
     font-family: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Cantarell, "Helvetica Neue", sans-serif;
 }
@@ -16,7 +21,7 @@ a {
     color: #1976D2;
 }
 .panel-primary li.active > a, .panel-primary li.active > a:hover, .panel-primary li.active > a:focus {
-    color: #1976D2 !important;
+    color: #e57f19 !important;
 }
 .btn-primary {
     background: #1976D2;
@@ -28,8 +33,32 @@ a {
 .text-success {
     color: #0ea600;
 }
+.navbar-brand {
+    height: 60px;
+    padding: 18px 15px;
+}
+.navbar-nav>li>a {
+    line-height: 25px;
+}
+.navbar-inverse {
+    background-color: white;
+    border-color: #ecf0f2;
+    margin-bottom: 0;
+}
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
+    background: #fff;
+    color: #e57f19;
+}
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
-    color: #f77b00 !important;
+    background: #fff;
+    color: #e57f19 !important;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color:  #333;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: #333;
 }
 code {
     color: #A93552;
@@ -61,15 +90,26 @@ p {
 #quick-search-typeahead {
     margin-top:15px;
 }
+#quick-search-typeahead select {
+    border-color: #cfd6dc;
+    border-radius: 3px;
+    height: 24px;
+}
 #quick-search-typeahead input {
     font-size: 12px;
-    background-color: #131313;
-    color: #999999;
+    background-color: #c9c9c9;
+    color: #333;
     height: 24px;
     border: 0;
-    border-bottom: 1px solid #3f3f3f;
     padding: 0 10px;
+    border-radius: 3px;
 }
+
+#quick-search-typeahead input::placeholder {
+    color: #333;
+    opacity: 0.9;
+}
+
 .typeahead {
     min-width:256px;
     margin-top:-1px;
@@ -125,10 +165,18 @@ footer {
     bottom: 0;
     width: 100%;
     height: 60px;
-    background-color: #f7f7f7;
+    background-color: #fff;
     padding: 20px;
-    border-top: 1px solid #dfdfdf;
+    border-top: 1px solid #ecf0f2;
     font-size: 14px;
+}
+
+footer a {
+    color: #6D6359;
+}
+footer a:hover {
+    color: #e57f19;
+    text-decoration: none;
 }
 
 /* Menu navbar */
@@ -149,18 +197,61 @@ footer {
 
 /* Home page */
 .jumbotron {
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding-top: 58px;
+    padding-bottom: 24px;
     margin-top: -40px;
     margin-bottom: 0;
-    background-color: #f7f7f7;
+    background-color: white;
 }
+.jumbotron p {
+    color: #394e60;
+}
+.jumbotron h1, .jumbotron .h1 {
+    color: #333;
+}
+.jumbotron .container {
+     text-align: center;
+ }
 .jumbotron-categories {
-    background: #223d77;
-    padding: 50px 0;
-    color: white;
+    background: white;
+    padding: 0 0 40px 0;
     text-align: center;
-    margin-bottom: 30px;
+    color: #333;
+}
+.jumbotron-categories .category .fa {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    background-color: #3152A0;
+    border: 2px solid #3152A0;
+    border-radius: 50%;
+    font-size: 43px;
+    color: white;
+    font-weight: bold;
+}
+.jumbotron-categories .category.integrate .fa {
+    background-color: #7aaa30;
+    border-color: #7aaa30;
+}
+.jumbotron-categories .category {
+    border: solid 2px #ecf0f2;
+    border-radius: 10px;
+    padding: 16px 40px;
+    margin: 20px;
+    display: inline-block;
+    width: 90%
+}
+@media (max-width: 499px) {
+    .jumbotron-categories .category {
+        padding: 16px;
+    }
+}
+@media (min-width: 1000px) {
+    .jumbotron-categories .category {
+        width: 420px;
+    }
 }
 .jumbotron-categories h2 {
     font-size: 62px;
@@ -170,6 +261,9 @@ footer {
     font-weight: 300;
     font-size: 17px;
 }
-.jumbotron-categories li a {
-    color: #91aabf;
+.jumbotron-categories .category a.btn {
+    background-color: #3152A0;
+}
+.jumbotron-categories .category.integrate a.btn {
+    background-color: #7aaa30;
 }

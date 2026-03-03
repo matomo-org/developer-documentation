@@ -238,6 +238,7 @@ By no means is below a complete checklist. You'll always be required to still th
   * Also see eg [phpdangerousfuncs.md](https://gist.github.com/mccabe615/b0907514d34b2de088c4996933ea1720)
 * Think of other ways such as RCE etc
 * **Password confirmation** for critical actions related to login credentials, tokens, 2FA etc and ideally also other critical/sensitive changes like installing/activating plugins etc.
+* **Exception stack traces** should only be shown in the UI when it was specifically enabled (`Piwik_ShouldPrintBackTraceWithMessage()===true`). Be aware that echoing an `\Exception` or using it as a string when logging (`echo $exception`) can cause the exception to be indirectly appear with a stack trace.
 
 
 ## Learn more

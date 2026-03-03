@@ -109,8 +109,8 @@ DataTables are summed recursively so subtables will be summed as well.
        Maximum number of rows allowed in the top level DataTable.
     - `$maximumRowsInSubDataTable` (`int`) &mdash;
        Maximum number of rows allowed in each subtable.
-    - `$columnToSortByBeforeTruncation` (`string`) &mdash;
-       The name of the column to sort by before truncating a DataTable.
+    - `$defaultColumnToSortByBeforeTruncation` (`string`|`null`) &mdash;
+       The name of the column to sort by before truncating a DataTable. If not set, and the table contains nb_visits or INDEX_NB_VISITS, we will sort by visits.
     - `$columnsAggregationOperation` (`array`) &mdash;
        Operations for aggregating columns, see Row::sumRow().
     - `$columnsToRenameAfterAggregation` (`array`) &mdash;

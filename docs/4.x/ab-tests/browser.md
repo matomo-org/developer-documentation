@@ -55,6 +55,8 @@ the JavaScript code will automatically load synchronously. It is still recommend
 
 ## Embedding an experiment
 
+__Note:__ The embedded experiment code should be placed before your page view is tracked, for example before `_paq.push(['trackPageView']);`. This helps ensure that the A/B test is tracked before any page redirects.
+
 When creating an experiment in your Piwik, the A/B testing plugin will generate for you the JavaScript code that will run your experiment
 and that you need to embed in your pages. The code typically looks like this:
 
@@ -241,6 +243,42 @@ a problem where first the original color is shown for a few milliseconds before 
 variation. This is known as flickering or flashing of content.
 
 To prevent this flickering, it is important to place the experiment tracking code at the right position in your website source code. 
+
+## Single Page Applications
+
+Single-page websites and Progressive Web Apps have become a standard over the last years. Getting the tracking of such websites and apps right is crucial to your success as you need to ensure the measured data is meaningful and correct.
+
+### Tracking a New Page View and making sure A/B testing works
+
+The challenge begins when you need to track a new page view. A single-page application is different from a usual website as there is no regular new page load and Matomo cannot detect automatically when a new page is viewed. This means you need to let Matomo know whenever the URL and the page title changes and embed the A/B testing code again. You can do this using the methods `setCustomUrl`, `setDocumentTitle` and `AbTesting::create`  like this:
+
+```js
+window.addEventListener('pathchange', function() {
+    var _paq = window._paq = window._paq || [];
+    _paq.push(['setCustomUrl', window.location.pathname]);
+    _paq.push(['setDocumentTitle', document.title]);
+    _paq.push(['AbTesting::create', {
+        name: 'theExperimentName',
+        includedTargets: [{"attribute":"url","type":"starts_with","value":"http:\/\/www.example.org","inverted":"0"}],
+        excludedTargets: [],
+        variations: [
+            {
+                name: 'original',
+                activate: function (event) {
+                    // usually nothing needs to be done here
+                }
+            },
+            {
+                name: 'blue',
+                activate: function(event) {
+                    // eg $('#btn').attr('style', 'color: ' + this.name + ';');
+                }
+            }
+        ]
+    }]);
+    _paq.push(['trackPageView']);
+});
+```
 
 #### Load matomo.js synchronously
 

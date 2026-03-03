@@ -10,11 +10,11 @@ if (! defined('DISABLE_INCLUDE')) {
 }
 
 if (! defined('MIN_PIWIK_DOCS_VERSION')) {
-    define('MIN_PIWIK_DOCS_VERSION', 3);
+    define('MIN_PIWIK_DOCS_VERSION', 4);
 }
 
 if (! defined('LATEST_PIWIK_DOCS_VERSION')) {
-    define('LATEST_PIWIK_DOCS_VERSION', 4);
+    define('LATEST_PIWIK_DOCS_VERSION', 5);
 }
 
 if (! defined('DOCS_DOMAIN')) {

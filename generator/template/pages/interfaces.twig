@@ -11,8 +11,10 @@
 
 This is a complete list of available interfaces:
 
-{% for interface in classes if interface.interface %}
+{% for interface in classes %}
+{% if interface.interface %}
 {{ class_item(interface) }}
+{% endif %}
 {% else %}
 - There are no interfaces available.
 {% endfor %}

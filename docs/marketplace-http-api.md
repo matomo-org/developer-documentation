@@ -13,7 +13,7 @@ https://plugins.matomo.org/api/
 * Version 1: Initial version
 * Version 2: Also returns paid plugins and / or hidden plugins (when authenticated via access token)
 
-To set a version for an API call define the respecting verion right after the endpoint. For example:
+To set a version for an API call define the respecting version right after the endpoint. For example:
 
 * https://plugins.matomo.org/api/1.0
 * https://plugins.matomo.org/api/2.0

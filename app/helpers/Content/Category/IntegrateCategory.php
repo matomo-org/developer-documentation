@@ -33,6 +33,7 @@ class IntegrateCategory extends Category
             new Guide('tagmanager/introduction'),
             new Guide('ab-tests'),
             new Guide('heatmap-session-recording'),
+            new Guide('crash-analytics'),
             new Guide('media-analytics'),
             new Guide('form-analytics'),
         ];

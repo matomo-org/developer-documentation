@@ -34,6 +34,7 @@ class Scope {
      */
     public function findClass($className)
     {
+	    $className= (string) $className;
         if (empty($className)) {
             return;
         }

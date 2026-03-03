@@ -89,6 +89,7 @@ This class defines the following properties:
 - [`$show_footer_icons`](#$show_footer_icons) &mdash; Controls whether the row that contains all footer icons & the limit selector is shown.
 - [`$columns_to_display`](#$columns_to_display) &mdash; Array property that determines which columns will be shown.
 - [`$show_all_views_icons`](#$show_all_views_icons) &mdash; Controls whether graph and non core viewDataTable footer icons are shown or not.
+- [`$selectable_columns`](#$selectable_columns) &mdash; Array property that contains the names of columns that can be selected in the Series Picker.
 - [`$related_reports`](#$related_reports) &mdash; Related reports are listed below a datatable view.
 - [`$related_reports_title`](#$related_reports_title) &mdash; "Related Reports" is displayed by default before listing the Related reports, The string can be changed.
 - [`$title`](#$title) &mdash; The report title.
@@ -394,6 +395,19 @@ after data is loaded.
 ### `$show_all_views_icons`
 
 Controls whether graph and non core viewDataTable footer icons are shown or not.
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$selectable_columns" id="$selectable_columns"></a>
+<a name="selectable_columns" id="selectable_columns"></a>
+### `$selectable_columns`
+
+Array property that contains the names of columns that can be selected in the Series Picker.
+
+Default value: false
 
 #### Signature
 

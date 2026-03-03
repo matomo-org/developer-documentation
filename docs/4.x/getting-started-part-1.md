@@ -23,7 +23,7 @@ This guide will show you:
 
 This guide assumes that you can code in PHP and can set up your own local webserver. If you do not have these skills, you won't be able to understand this guide.
 
-There are many resources on the internet to help you learn PHP. We recommend reading [these tutorials](https://devzone.zend.com/6/). To learn how to set up a web server read the documentation for your preferred web server software (for example [Apache](https://www.apache.org/) or [Nginx](https://nginx.org/)).
+There are many resources on the internet to help you learn PHP. We recommend reading [these tutorials](https://phptherightway.com/). To learn how to set up a web server read the documentation for your preferred web server software (for example [Apache](https://www.apache.org/) or [Nginx](https://nginx.org/)).
 
 ## Piwik Plugins and Piwik Core
 

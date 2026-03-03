@@ -16,7 +16,7 @@ We follow [semantic versioning](https://semver.org/) where a version number look
   * Any regression fix or very important bug fixes that have a low risk for side effects can be merged into the `next_release` branch if this needs to be included in the next release. We then release another RC (which depends on things like time left to the release, whether other changes will be merged into `next_release` as well etc). The release manager should be notified to trigger a new release. It's not needed to create another PR for `*.x-dev` for the same change, as we merge the changes from `next_release` into `*.x-dev` after the release.
   * Any other change can be merged into `*.x-dev` as usual and won't be included in the upcoming release.
 * We usually run the RC for a minor release for at least a week, for major releases multiple weeks and for patch releases at least one day but better multiple days.
-* Once a new release has been released, we create a PR to merge the `next_release` branch into `*.x-dev` [see changes](https://github.com/matomo-org/matomo/compare/4.x-dev...next_release). The release manager will do this.
+* Once a new release has been released, we create a PR to merge the `next_release` branch into `*.x-dev` [see changes](https://github.com/matomo-org/matomo/compare/5.x-dev...next_release). The release manager will do this.
 * Should a patch release be needed, then we repeat this process. We create a branch `next_release` off the branch of the last release (not off `*.x-dev`). Any patch fix will need to be made against the `next_release` branch.
 
 ## New patch releases
@@ -76,10 +76,9 @@ Also, as soon as we start working on the next major version, we need to require 
   * Increase the required Matomo version to eg `"matomo": ">=5.0.0-b1,<6.0.0-b1"`
   * Set the version number to `5.0.0`
 * Adjust the min required PHP version in tests yml, so we no longer execute the tests on the previously required min PHP version.
-* Travis CI, see what we did for Matomo 3 in https://github.com/matomo-org/matomo/pull/8452#discussion-diff-35731015L93 and https://github.com/matomo-org/travis-scripts/pull/53 
-  * Other changes may be needed for github tests
+* GitHub test action: Update the scripts in the action, so the default branches to test against match the new one. e.g. in this file https://github.com/matomo-org/github-action-tests/blob/main/scripts/bash/checkout_test_against_branch.sh
 * Once the builds for `5.x-dev` branch succeeds, make it the default branch for Matomo core and all plugins
-* Update the [submodule github action](https://github.com/matomo-org/matomo/blob/4.x-dev/.github/workflows/submodules.yml), [composer update action](https://github.com/matomo-org/matomo/blob/4.x-dev/.github/workflows/composer-update.yml), and the [CLDR action](https://github.com/matomo-org/matomo/blob/4.x-dev/.github/workflows/update-intl.yml) to use the new main branch.
+* Update the [submodule GitHub action](https://github.com/matomo-org/matomo/blob/5.x-dev/.github/workflows/submodules.yml), [composer update action](https://github.com/matomo-org/matomo/blob/5.x-dev/.github/workflows/composer-update.yml), and the [CLDR action](https://github.com/matomo-org/matomo/blob/5.x-dev/.github/workflows/update-intl.yml) to use the new main branch.
 * We can now start working and merging PRs for the next major release
   * We first start working on the big issues that take a very long to make sure they are finished by the time we want to release the first RC, and so they won't delay the release
   * We look for all `@deprecated` APIs and review if we can remove the API now safely see also [Deprecating APIs](https://developer.matomo.org/guides/apis#deprecating-a-php-or-api-method). Removing an API now safely means
@@ -118,29 +117,41 @@ To be ready for the next step, the first beta release of core, we need to:
 * We need to have the migration guide ready on developer.matomo.org. This is needed for writing the blog post in the next step. For further instructions see the next section.
 * We publish a blog in the category `Development` on matomo.org for the developers we won't reach via email and also for people that don't publish the plugins on the Marketplace. We can reuse the content of https://matomo.org/blog/2020/08/matomo4-make-your-plugin-compatible-now/ .
 * Email plugin developers this first beta is coming and that we're working on a new major release. (see internal process `How to notify plugin developers about an upcoming new Matomo major release`)
+* Update the [premium plugin bundles](https://github.com/innocraft?q=bundle) to allow the new major version. Simply update the version number in the `plugin.json` file and update the maximum required Matomo version to include the new major release. Once that change is merged for each bundle, create a new release and upload it to Marketplace. 
 
 #### developer.matomo.org
 
 * Follow steps as described in [README.md](https://github.com/matomo-org/developer-documentation/#how-to-add-docs-for-a-new-matomo-version)
-* Replace all mentions of eg. `4.x-dev` by `5.x-dev` in the docs (for example [this page](https://github.com/matomo-org/developer-documentation/pull/233/files))
+* Replace all mentions of eg. `4.x-dev` by `5.x-dev` in the docs in  `docs/*.md` and `docs/5.x-dev/*.md` (for example [this page](https://github.com/matomo-org/developer-documentation/pull/233/files)). The files in `docs/4.x-dev` should remain unchanged.
 * Document new APIs if there are any
 * Create the new migration guide for plugins similar to [this migration guide](https://developer.matomo.org/guides/migrate-matomo-3-to-4). We create this guide even if there are no breaking changes for plugins.
+* Remove docs from the previous version. For example, if we are currently on Matomo 4 and are starting to work on Matomo 5, and we are still showing docs for Matomo 3, then we edit [config/app.php](https://github.com/matomo-org/developer-documentation/blob/live/app/config/app.php#L13) to remove the docs for Matomo 3 from the UI assuming Matomo 3 was released more than 12 months ago. We keep the docs for at least 12 months as then the LTS expires (see bottom of this page).
 
 ### When releasing a first beta
 
 Now that we have made all our plugins (including premium features) compatible with this version and have released a new version, we can release the first beta for core. This allows most people to upgrade smoothly. Users will run into problems though when they use third party plugins that aren't compatible with this new major version yet. This means features/plugins will be disabled for them, which can cause them issues. So we rather release a first beta bit later in the process in the hope that some plugins are already compatible.
 
-Typically, at this stage the RC phase isn't far away and a first RC will follow within a couple weeks. Again, this is because we want to have ideally a few third party plugins compatible with this new version.
+Typically, at this stage the RC phase isn't far away and a first RC will follow within a couple of weeks. Again, this is because we want to have ideally a few third party plugins compatible with this new version.
+
+#### Product Team
+
+- Publish a [forum post](https://forum.matomo.org/t/piwik-2-2-0-release-candidate-help-us-test-the-latest-and-greatest-piwik/11982) to announce the beta release and explain how to install it & welcome feedback!
 
 #### Marketing
 
-* Inform marketing team we're working on a new major release and that it is coming and in case they want to plan a blog and a newsletter just so they are aware of we will ping them at some point
+* Inform marketing team we're working on a new major release and so they are aware that it is coming and in case they want to plan: 
+  * a blog 
+  * and a newsletter 
 
 ### When releasing a first RC
 
 We can release an RC as soon as we have implemented all features (and all breaking changes were already completed before the first beta).
 
+#### Wait 4 weeks during RC cycle
+
 The RC phase will be at least 4 weeks, so plugin developers have some time to make the plugins compatible. This way the RC will be also tested for longer.
+
+#### The core team can then focus on the next minor release X.1.0
 
 Now the teams can already start working on the next minor release because we would only fix regressions and security issues etc in the `5.0` release. This means the team would then start working on the 5.1 release. Typically, this minor release will be  released shortly after the 5.0 release as the team would have had a month to work on this release while the RC is out.
 
@@ -148,9 +159,11 @@ Now the teams can already start working on the next minor release because we wou
 
 We update the demo to run this release candidate version (we could optionally also update to a beta version if we wanted/needed).
 
-#### plugins.matomo.org
+#### plugins.matomo.org & shop.matomo.org
 
-* In `app.default.php` config adjust `OLDEST_MAJOR_PIWIK_VERSION` and `LATEST_MAJOR_PIWIK_VERSION` as needed. For example increase `LATEST_MAJOR_PIWIK_VERSION`.
+* On plugins staging and production in `$pluginsMatomoInstall/config/app.local.php` config adjust `OLDEST_MAJOR_PIWIK_VERSION` and `LATEST_MAJOR_PIWIK_VERSION` as needed. For example increase `LATEST_MAJOR_PIWIK_VERSION`. `DEFAULT_MAJOR_PIWIK_VERSION` should be changed when we release.
+* On shop staging and production in `$shopInstall/local.wp-config.php` config adjust `PIWIK_MIN_MAJOR_VERSION` and `PIWIK_MAX_MAJOR_VERSION` as needed. For example increase `LATEST_MAJOR_PIWIK_VERSION`. `PIWIK_DEFAULT_MAJOR_VERSION` should be changed when we release.
+* On our marketplace, create a PR similar to [this PR](https://github.com/innocraft/matomo-marketplace/pull/243/files) where we specify the min supported PHP and MySQL version for that release. This is important to not show incompatible plugins for that Matomo version.
 * Send an email to all plugins developers (see internal process `How to notify plugin developers about an upcoming new Matomo major release`)
 * Check every plugin on plugins.matomo.org that hasn't been made compatible yet with the new release, and create an issue in their GitHub repository to make the plugin compatible.
   * Title: `Make plugin compatible with Matomo 5` (adjust version number)
@@ -163,7 +176,8 @@ Thank you for contributing to Matomo by creating this plugin.
 
 We wanted to let you know that we will release Matomo 5 in about one month.
 
-For making it easy for Matomo users to be able to upgrade to this new Matomo version, it would be great if you could make this plugin compatible with Matomo 5. If your plugin is not compatible with Matomo 5, your plugin will be automatically deactivated when someone upgrades to this new Matomo version. 
+For making it easy for Matomo users to be able to upgrade to this new Matomo version, it would be great if you could make this plugin compatible with Matomo 5 within the next 4 weeks. If your plugin is not compatible with Matomo 5, your plugin will be automatically deactivated when someone upgrades to this new Matomo version. 
+We really appreciate your contribution and we can help you release an update of your plugin for Matomo. 
 
 Learn more about how to get your plugin ready: $linkToOurBlog
 
@@ -172,21 +186,48 @@ Please let us know if you have any question or if we can help in any way. We're 
 
 #### Marketing
 
-* Inform marketing team the release is coming and when in case they want to plan a blog and a newsletter
+* Inform marketing team the final release is coming, and that we're now in Release Candidate stage (RC). So they can:
+  *  publish a blog post (also as opportunity to remind developers to upgrade their plugins)
+  *  announce RC & cross-link the blog post in a newsletter to the community 
+  *  announce RC & cross-link the blog post on social media
+  *  cross-link the blog post in a Forum post
+  *  possibly updating the homepage banner message for up to 2-4 weeks
 
 #### Communication of breaking changes
 
 * If there are any unexpected breaking changes that could cause many people problems, then we consider creating dedicated blog posts for these to inform people upfront. These could be short posts.
 
-### 1.5 weeks before the release
+### 2 weeks before the release
 
 * Send an email to all plugin developers again as a reminder (see internal process `How to notify plugin developers about an upcoming new Matomo major release`)
-* Look out for popular plugins on our Marketplace that aren't compatible yet and consider creating pull requests for these so the developer can merge and release it causing people less upgrade pain and causing users to lose less features and a better experience.
+* Look out for popular plugins on our Marketplace that aren't compatible yet 
+
+#### Consider creating Pull Request to help plugin developers maintain their plugins
+
+* Look out for popular plugins on our Marketplace that aren't compatible yet and consider creating pull requests for these so the developer can merge and release it causing people less upgrade pain and causing users to lose less features and a better experience. (In the future, we could consider using AI to help Matomo plugin developers maintain their plugins with the latest version of Matomo in a lot less time!)
 
 ### When releasing
 
 * Release the new core version and go through the regular process
 * Marketing to release a blog post if there is one
+* On marketplace set `DEFAULT_MAJOR_PIWIK_VERSION` and shop set the `PIWIK_DEFAULT_MAJOR_VERSION` to the latest Matomo version. For instructions see "When releasing an RC".
+* On developer website stop generating docs for the previous major Matomo version by removing the `generateDocs` command for that version in `generate.sh` see [example PR](https://github.com/matomo-org/developer-documentation/pull/785).
+
+#### api.matomo.org
+
+* After triggering the first stable release of a new major version, edit `config.ini.php` and point the path of the latest release channel to the correct latest file. For example, if Matomo 5.0 is released, then change `'path_latest_5x_stable' => __DIR__ . '/../LATEST',` to `'path_latest_5x_stable' => __DIR__ . '/../LATEST_5X',`.
+
+### After the release
+
+As part of our release process, it's crucial to diligently monitor the issue tracker and pay close attention to feedback from our L3 team and support channels. This practice enables us to promptly address any identified regressions or upgrade-related issues. Swift action is essential to prevent widespread occurrences of identified problems. Recognize that for each reported issue, there may be numerous users facing similar challenges. Addressing these promptly helps prevent further disruptions for our users.
+
+Example resolution strategies:
+
+* Fixing identified issues. This helps mitigate potential problems for other users who might encounter the same issues.
+* Explore opportunities to enhance existing documentation. Providing clearer instructions prevents people from running into the issue in the first place.
+* Adding an FAQ on how to resolve their problem allows for quick resolutions. Creating a clear and detailed explanation or workaround in the reported GitHub issue can work as well. This makes all the difference where people would otherwise stop using Matomo.
+  
+Our primary goal is to ensure a seamless user experience by promptly addressing any identified issues or upgrade-related challenges. By swiftly resolving problems or providing comprehensive guidance, we aim to prevent any disruption to our users' use of Matomo.
 
 ### Once a LTS version expires, we remove old plugins from the Marketplace
 

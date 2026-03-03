@@ -46,8 +46,8 @@ class Environment
         $replaceNew = array($newBrandOthers . ' ', ' ' . $newBrandOthers);
 
         // eg makes sure Piwik won't be replaced again
-        $keepWording = array('Matomo Developer Zone (formerly Piwik)', 'Piwik Developer Zone', 'Matomo (Piwik)', $newBrandFirst, 'Piwik.Media', 'Piwik.Form', 'Piwik.AbTest', 'Piwik.Heatmap', 'Piwik.get', 'PiwikTracker', 'typeof Piwik', '\Piwik', 'Piwik\\', 'Piwik::');
-        $keepWordingReplace = array('#_#MATOMODEVZONEFORMERLY#_#', '#_#MATOMODEVZONEFORMERLY#_#', '#_#MATOMOPIWIK#_#', '#_#saveReplace#_#', '#_#piwikmedia#_#', '#_#piwikform#_#', '#_#piwikabtest#_#', '#_#piwikheatmap#_#', '#_#piwikget#_#', '#_#piwiktracker#_#', '#_#typeofpiwik#_#', '#_#shlashpiwik#_#', '#_#piwikslash#_#','#_#piwikdoublecolon#_#');
+        $keepWording = array('Matomo Developer Zone (formerly Piwik)', 'Piwik Developer Zone', 'Matomo (Piwik)', $newBrandFirst, 'Piwik.Media', 'Piwik.Form', 'Piwik.AbTest', 'Piwik.Heatmap', 'Piwik.get', 'PiwikTracker', 'typeof Piwik', '\Piwik', 'Piwik\\', 'Piwik::', 'extends PiwikUpdates');
+        $keepWordingReplace = array('#_#MATOMODEVZONEFORMERLY#_#', '#_#MATOMODEVZONEFORMERLY#_#', '#_#MATOMOPIWIK#_#', '#_#saveReplace#_#', '#_#piwikmedia#_#', '#_#piwikform#_#', '#_#piwikabtest#_#', '#_#piwikheatmap#_#', '#_#piwikget#_#', '#_#piwiktracker#_#', '#_#typeofpiwik#_#', '#_#shlashpiwik#_#', '#_#piwikslash#_#','#_#piwikdoublecolon#_#', '#_#extendspiwikupdates#_#');
 
         $content = str_replace($keepWording, $keepWordingReplace, $content);
 
@@ -55,7 +55,7 @@ class Environment
         $lowestPos = false;
         $patternToReplace = false;
         foreach ($patternsToTest as $patternToTest) {
-            $pos = strpos($content, $patternToTest);
+            $pos = $content ? strpos($content, $patternToTest) : false;
             if ($pos !== false && ($lowestPos === false || $pos < $lowestPos)) {
                 $lowestPos = $pos;
                 $patternToReplace = $patternToTest;
@@ -75,17 +75,20 @@ class Environment
 
     public static function completeUrl($path)
     {
-        if (strpos($path, '://') !== false) {
-            return $path; // we only rewrite internal links
-        }
 
         if(empty($path)) {
             $path = '/';
         }
 
-        $urlPrefix = self::getCurrentUrlPrefix();
+        $external = $path ? strpos($path, '://') : false;
+        if ($external !== false) {
+            return $path; // we only rewrite internal links
+        }
 
-        if ($urlPrefix && strpos($path, $urlPrefix) === 0) {
+        $urlPrefix = self::getCurrentUrlPrefix();
+        $internal = $path ? strpos($path, $urlPrefix) : false;
+
+        if ($urlPrefix && $internal === 0) {
             return $path;
         } elseif ($urlPrefix) {
             return $urlPrefix . $path;

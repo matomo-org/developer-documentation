@@ -13,7 +13,7 @@ If you prefer using Git through your IDE like PHPStorm, or if you are more accus
 
 ## Cloning a repository
 
-Github supports cloning via HTTPS and SSH URLs. You will always want to use SSH URLs when cloning a repository, for example `git@github.com:matomo-org/matomo.git`.
+GitHub supports cloning via HTTPS and SSH URLs. You will always want to use SSH URLs when cloning a repository, for example `git@github.com:matomo-org/matomo.git`.
 
 To clone a repository, use for example:
 
@@ -35,7 +35,7 @@ We'll give our new branch a name. The branch name ideally always contains the Gi
 git checkout -b bugfix $MAIN_BRANCH
 ```
 
-Where you need to replace `$MAIN_BRANCH` with the current main branch. This is for example `*.x-dev` when working on Matomo On-Premise (`4.x-dev` is the main branch at the time of writing this). For Matomo for WordPress this would be `develop`. For example: `git checkout -b bugfix 4.x-dev`. This way it will create a new branch from the `4.x-dev` branch. Otherwise, if you don't specify the base branch and you are already in another branch that has changes, then it would copy all changes from the current branch into the new branch.
+Where you need to replace `$MAIN_BRANCH` with the current main branch. This is for example `*.x-dev` when working on Matomo On-Premise (`5.x-dev` is the main branch at the time of writing this). For Matomo for WordPress this would be `develop`. For example: `git checkout -b bugfix 5.x-dev`. This way it will create a new branch from the `5.x-dev` branch. Otherwise, if you don't specify the base branch and you are already in another branch that has changes, then it would copy all changes from the current branch into the new branch.
 
 The checkout command will create a new branch if the `-b` option is supplied, otherwise it will try to load an existing branch.
 
@@ -121,7 +121,8 @@ These hashes are useful for many things
 * You can use it to check out this commit similar to a branch `git checkout $COMMIT_HASH`
 * and much more.
 
-Some git operations may require such a commit hash. You find these history in many places like Github commit history or when executing `git log`.
+Some git operations may require such a commit hash. You find these in many places like GitHub commit history or when executing `git log`.
+
 ### Reviewing the last commit
 
 If you committed changes and want to see what the last commit looked like then you can execute `git show`.
@@ -153,9 +154,9 @@ While `git push --force` works too it overwrites the entire remote branch with y
 
 ## Submodules
 
-Various of out git repositories use submodules. From a git perspective a submodule within a repository is similar to work with as a file but its content includes a specific commit hash. This way git knows to which commit within a submodule it references.
+Various of our git repositories use submodules. From a git perspective a submodule within a repository is similar to work with as a file but its content includes a specific commit hash. This way git knows to which commit within a submodule it references.
 
-Submodules are configured in a `.gitmodules` file ([see this example](https://github.com/matomo-org/matomo/blob/4.x-dev/.gitmodules)) and its content look like this:
+Submodules are configured in a `.gitmodules` file ([see this example](https://github.com/matomo-org/matomo/blob/5.x-dev/.gitmodules)) and its content look like this:
 
 ``` 
 [submodule "plugins/SecurityInfo"]
@@ -179,7 +180,7 @@ The flow for updating a submodule is typically like below where we are assuming 
 * You add, commit and push changes within this repository like `git add Controller.php && git commit -m "Update" && git push origin mynewbranch`.
 * This commit will get a new unique commit hash.
 
-Your next steps depend whether you need those changes in your "Parent" repository right away or not.
+Your next steps depend on whether you need those changes in your "Parent" repository right away or not.
 
 #### Variation A - You don't need the submodule changes in your parent repository as part of your feature
 
@@ -267,7 +268,7 @@ Have you done some work on Matomo or another project and accidentally overridden
 
 Replace the following variables in the commands below:
 
-* `$MAIN_BRANCH` with the name of the main branch. Sometimes this is `live`, `develop` or `*.x-dev` (e.g. `4.x-dev`).
+* `$MAIN_BRANCH` with the name of the main branch. Sometimes this is `live`, `develop` or `*.x-dev` (e.g. `5.x-dev`).
 * `$FEATURE_BRANCH` with the name of your branch where you did the wrong commit.
 * `$SUBMODULE_DIR` with a path to the submodule you want to correct. For example "plugins/Morpheus/icons".
 
@@ -284,7 +285,7 @@ git commit -m 'revert git submodule' # commit the changes
 
 ### Merging the latest changes in the main branch into your feature branch
 
-You might be working on your branch for a few hours or days and meanwhile there were changes in the main branch that you would like to have in your feature branch. For example, this might be useful to resolve merge conflicts or if maybe in the main branch some tests were fixed that are failing in your branch. To do this, follow below steps and replace `$MAIN_BRANCH` with the main branch name of the repository you are working in (for example `4.x-dev`) and replace `$MY_FEATURE_BRANCH` with the name of your branch you are working in currently.
+You might be working on your branch for a few hours or days and meanwhile there were changes in the main branch that you would like to have in your feature branch. For example, this might be useful to resolve merge conflicts or if maybe in the main branch some tests were fixed that are failing in your branch. To do this, follow below steps and replace `$MAIN_BRANCH` with the main branch name of the repository you are working in (for example `5.x-dev`) and replace `$MY_FEATURE_BRANCH` with the name of your branch you are working in currently.
 
 ```bash
 git checkout $MAIN_BRANCH

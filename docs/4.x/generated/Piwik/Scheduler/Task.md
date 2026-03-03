@@ -112,7 +112,7 @@ Returns the time in milliseconds when this task will be executed next.
 ### `getPriority()`
 
 Returns the task priority. The priority will be an integer whose value is
-between `HIGH_PRIORITY` and `LOW_PRIORITY`.
+between HIGH\_PRIORITY and LOW\_PRIORITY.
 
 #### Signature
 

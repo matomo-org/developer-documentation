@@ -102,15 +102,15 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
         if (!empty($ignoreTags)) {
             return true;
         }
-        
+
         $ignoreTags = ($reflection->getTags('internal'));
-                
+
         if (!empty($ignoreTags)) {
             return true;
         }
 
         // fixes in some cases the tags are not recognoized
-        $docComment = $reflection->getDocComment();
+        $docComment = $reflection->getDocComment() ?? "";
 
         if (false !== strpos($docComment, ' @internal')) {
             return true;
@@ -122,7 +122,7 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
 
         return false;
     }
-    
+
     private function isSubclassOf(\ReflectionClass $rc, $subclass)
     {
         if (!class_exists($subclass)) {
@@ -139,15 +139,15 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
         if ($this->isSubclassOf($rc, 'Symfony\Component\Console\Command\Command')) {
             return true;
         }
-        
+
         if ($this->isSubclassOf($rc, 'Piwik\Plugin\Tasks')) {
             return true;
         }
 
         if ($this->isSubclassOf($rc, 'Piwik\Plugin\Widgets')
-           || $this->isSubclassOf($rc, 'Piwik\Widget\Widget')
-           || $this->isSubclassOf($rc, 'Piwik\Widget\WidgetContainerConfig')
-           || $this->isSubclassOf($rc, 'Piwik\Widget\ReportWidgetConfig')) {
+            || $this->isSubclassOf($rc, 'Piwik\Widget\Widget')
+            || $this->isSubclassOf($rc, 'Piwik\Widget\WidgetContainerConfig')
+            || $this->isSubclassOf($rc, 'Piwik\Widget\ReportWidgetConfig')) {
             return true;
         }
 
@@ -174,18 +174,18 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
         if ($this->isSubclassOf($rc, 'Piwik\Plugin\Visualization')) {
             return true;
         }
-        
-        if (class_exists('Piwik\Plugins\TagManager\Template\Tag\BaseTag') 
+
+        if (class_exists('Piwik\Plugins\TagManager\Template\Tag\BaseTag')
             && $this->isSubclassOf($rc, 'Piwik\Plugins\TagManager\Template\Tag\BaseTag')) {
             return true;
         }
 
-        if (class_exists('Piwik\Plugins\TagManager\Template\Trigger\BaseTrigger') 
+        if (class_exists('Piwik\Plugins\TagManager\Template\Trigger\BaseTrigger')
             && $this->isSubclassOf($rc, 'Piwik\Plugins\TagManager\Template\Trigger\BaseTrigger')) {
             return true;
         }
 
-        if (class_exists('Piwik\Plugins\TagManager\Template\Variable\BaseVariable') 
+        if (class_exists('Piwik\Plugins\TagManager\Template\Variable\BaseVariable')
             && $this->isSubclassOf($rc, 'Piwik\Plugins\TagManager\Template\Variable\BaseVariable')) {
             return true;
         }
@@ -225,7 +225,7 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
         }
 
         // fixes when using eg `@api since Piwik 3.0.0` the API tag is not recognized
-        $docComment = $reflection->getDocComment();
+        $docComment = $reflection->getDocComment() ?? "";
 
         if (false !== strpos($docComment, ' @api ')) {
             return true;
@@ -240,7 +240,7 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
 
         $methods = $rc->getMethods();
         foreach ($methods as $method) {
-            $docComment = $method->getDocComment();
+            $docComment = $method->getDocComment() ?? "";
 
             if (false !== strpos($docComment, '@api')) {
                 return true;
@@ -256,7 +256,7 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
 
         $props = $rc->getProperties();
         foreach ($props as $prop) {
-            $docComment = $prop->getDocComment();
+            $docComment = $prop->getDocComment() ?? "";
 
             if (false !== strpos($docComment, '@api')) {
                 return true;
