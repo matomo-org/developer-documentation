@@ -76,7 +76,7 @@ Archive data is calculated differently based on the period type:
 - "day" periods are aggregation of log data
 - "week", "month", "year" and custom date ranges are aggregation of "day" reports
 
-For example archive data for a week is created by aggregating archive data of the 7 days of the week. This is much faster than aggregating log data.
+For example archive data for a week is created by aggregating archive data of the 7 days of the week. This is much faster than aggregating the log data for seven days.
 
 ### Plugin Archivers
 
@@ -102,7 +102,7 @@ $myFancyMetric = // ... calculate the metric value ...
 $archiveProcessor->insertNumericRecord('MyPlugin_myFancyMetric', $myFancyMetric);
 
 // insert a record (with all of its subtables)
-$maxRowsInTable = Config::getInstance()->General['datatable_archiving_maximum_rows_standard'];j
+$maxRowsInTable = Config::getInstance()->General['datatable_archiving_maximum_rows_standard'];
 
 $dataTable = // ... build by aggregating visits ...
 $serializedData = $dataTable->getSerialized(

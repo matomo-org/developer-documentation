@@ -46,9 +46,7 @@ The class defines the following methods:
 <a name="getObjectInstance" id="getObjectInstance"></a>
 ### `getObjectInstance()`
 
-Returns the object instance that contains the method to execute.
-
-Returns a class
+Returns the object instance that contains the method to execute. Returns a class
 name if the method is static.
 
 #### Signature
@@ -79,7 +77,8 @@ Returns the name of the method that will be executed.
 <a name="getMethodParameter" id="getMethodParameter"></a>
 ### `getMethodParameter()`
 
-Returns the value that will be passed to the method when executed, or `null` if no value will be supplied.
+Returns the value that will be passed to the method when executed, or `null` if
+no value will be supplied.
 
 #### Signature
 
@@ -91,7 +90,8 @@ Returns the value that will be passed to the method when executed, or `null` if 
 <a name="getScheduledTime" id="getScheduledTime"></a>
 ### `getScheduledTime()`
 
-Returns a Schedule instance that describes when the method should be executed and how long before the next execution.
+Returns a Schedule instance that describes when the method should be executed
+and how long before the next execution.
 
 #### Signature
 
@@ -111,9 +111,7 @@ Returns the time in milliseconds when this task will be executed next.
 <a name="getPriority" id="getPriority"></a>
 ### `getPriority()`
 
-Returns the task priority.
-
-The priority will be an integer whose value is
+Returns the task priority. The priority will be an integer whose value is
 between `HIGH_PRIORITY` and `LOW_PRIORITY`.
 
 #### Signature
@@ -124,9 +122,7 @@ between `HIGH_PRIORITY` and `LOW_PRIORITY`.
 <a name="getName" id="getName"></a>
 ### `getName()`
 
-Returns a unique name for this scheduled task.
-
-The name is stored in the DB and is used
+Returns a unique name for this scheduled task. The name is stored in the DB and is used
 to store a task's previous execution time. The name is created using:
 
 - the name of the class that contains the method to execute,

@@ -5,10 +5,6 @@ Parameters
 
 Contains the analytics parameters for the reports that are currently being archived.
 
-The analytics
-parameters include the **website** the reports describe, the **period** of time the reports describe
-and the **segment** used to limit the visit set.
-
 Methods
 -------
 

@@ -90,7 +90,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`disableCacheBuster()`](#disablecachebuster) &mdash; Disables the cache buster (adding of ?cb=...) to JavaScript and stylesheet files Inherited from [`View`](../../Piwik/View.md)
+- [`disableCacheBuster()`](#disablecachebuster) &mdash; Disables the cache buster (adding of ?cb=. Inherited from [`View`](../../Piwik/View.md)
 - [`getTemplateFile()`](#gettemplatefile) &mdash; Returns the template filename. Inherited from [`View`](../../Piwik/View.md)
 - [`getTemplateVars()`](#gettemplatevars) &mdash; See View::getTemplateVars().
 - [`__set()`](#__set) &mdash; Sets a variable.
@@ -119,11 +119,13 @@ Constructor.
 <a name="disableCacheBuster" id="disableCacheBuster"></a>
 ### `disableCacheBuster()`
 
-Disables the cache buster (adding of ?cb=...) to JavaScript and stylesheet files
+Disables the cache buster (adding of ?cb=.
+
+..) to JavaScript and stylesheet files
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="gettemplatefile" id="gettemplatefile"></a>
 <a name="getTemplateFile" id="getTemplateFile"></a>
@@ -152,9 +154,7 @@ See View::getTemplateVars().
 <a name="__set" id="__set"></a>
 ### `__set()`
 
-Sets a variable.
-
-See View::\_\_set().
+Sets a variable. See View::\_\_set().
 
 #### Signature
 
@@ -163,15 +163,13 @@ See View::\_\_set().
        The variable name.
     - `$val` (`mixed`) &mdash;
        The variable value.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="__get" id="__get"></a>
 <a name="__get" id="__get"></a>
 ### `__get()`
 
-Gets a view variable.
-
-See View::\_\_get().
+Gets a view variable. See View::\_\_get().
 
 #### Signature
 
@@ -206,27 +204,26 @@ Unsets a template variable.
 -  It accepts the following parameter(s):
     - `$name` (`string`) &mdash;
        The name of the template variable.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="render" id="render"></a>
 <a name="render" id="render"></a>
 ### `render()`
 
-Renders the control view within a containing <div> that is used by the UIControl JavaScript class.
+Renders the control view within a containing <div> that is used by the UIControl JavaScript
+class.
 
 #### Signature
 
 
 - *Returns:*  `string` &mdash;
-    Generated template.
+    Serialized data, eg, (image, array, html...).
 
 <a name="setcontenttype" id="setcontenttype"></a>
 <a name="setContentType" id="setContentType"></a>
 ### `setContentType()`
 
-Set stored value used in the Content-Type HTTP header field.
-
-The header is
+Set stored value used in the Content-Type HTTP header field. The header is
 set just before rendering.
 
 #### Signature
@@ -234,15 +231,13 @@ set just before rendering.
 -  It accepts the following parameter(s):
     - `$contentType` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setxframeoptions" id="setxframeoptions"></a>
 <a name="setXFrameOptions" id="setXFrameOptions"></a>
 ### `setXFrameOptions()`
 
-Set X-Frame-Options field in the HTTP response.
-
-The header is set just
+Set X-Frame-Options field in the HTTP response. The header is set just
 before rendering.
 
 _Note: setting this allows you to make sure the View **cannot** be
@@ -253,7 +248,7 @@ embedded in iframes. Learn more [here](https://developer.mozilla.org/en-US/docs/
 -  It accepts the following parameter(s):
     - `$option` (`string`) &mdash;
        ('deny' or 'sameorigin')
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="singlereport" id="singlereport"></a>
 <a name="singleReport" id="singleReport"></a>
@@ -279,9 +274,7 @@ a new template.
 <a name="getUseStrictReferrerPolicy" id="getUseStrictReferrerPolicy"></a>
 ### `getUseStrictReferrerPolicy()`
 
-Returns whether a strict Referrer-Policy header will be sent.
-
-Generally this should be set to 'true'.
+Returns whether a strict Referrer-Policy header will be sent. Generally this should be set to 'true'.
 
 #### Signature
 
@@ -298,7 +291,7 @@ Sets whether a strict Referrer-Policy header will be sent (if not, nothing is se
 -  It accepts the following parameter(s):
     - `$useStrictReferrerPolicy` (`bool`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getclientsideproperties" id="getclientsideproperties"></a>
 <a name="getClientSideProperties" id="getClientSideProperties"></a>

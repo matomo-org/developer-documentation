@@ -1,5 +1,6 @@
 {% set title = guide.seoTitle %}
 {% set setPageHeader = false %}
+{% set anchorLinks = [] %}
 {% extends 'base.twig' %}
 
 {% block content %}
@@ -12,12 +13,28 @@
 
         <div class="col-sm-8 col-md-9 documentation">
             {% if urlIfAvailableInNewerVersion %}
-                <a href="{{ urlIfAvailableInNewerVersion }}">Click here if you want to read this article for the latest Matomo version</a>
-                <br />
-                <br />
+                <div class="alert alert-warning" role="alert">
+                    This documentation is for an outdated Matomo version.<br>
+                    <a href="{{ urlIfAvailableInNewerVersion }}" class="alert-link">Click here if you want to read this article for the latest version.</a>
+                </div>
             {% endif %}
 
-            {{ guide.renderedContent|raw }}
+            {% if guide.sections|length %}
+                {% set links = [] %}
+                {% for section in guide.sections %}
+                    {% if section.children|length %}
+                        {% for subsection in section.children %}
+                            {% if subsection.id in links %}
+                                {% set anchorLinks = anchorLinks|merge([{ sectionId: section.id, subsectionId: subsection.id,  }]) %}
+                            {% else %}
+                                {% set links = links|merge([subsection.id]) %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+
+            {{ guide.validatedRenderedContent(anchorLinks)|raw }}
 
             {% if guide.subItems is not empty %}
                 <h2>What's next?</h2>

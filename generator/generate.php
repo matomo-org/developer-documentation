@@ -10,6 +10,7 @@
 
 include_once 'bootstrap.php';
 
+use PhpParser\NodeAbstract;
 use Sami\Sami;
 use Symfony\Component\Finder\Finder;
 use Sami\Reflection\ClassReflection;
@@ -36,7 +37,7 @@ if (!empty($argv)) {
 }
 
 if (empty($branch) || empty($targetName)) {
-    echo "Missing branch or targetname. Make sure to specify eg '--branch=master --targetname=2.x'\n";
+    echo "Missing branch or targetname. Make sure to specify eg '--branch=4.x-dev --targetname=4.x'\n";
     echo "Branch defines which branch to check out, targetname defines the directory in docs the generated files should go to\n";
     exit(1);
 }
@@ -45,14 +46,22 @@ try {
 
     function generateApiClassesReference($rootDir, $versionName, $longVersionName)
     {
+        $trackerPath = '/vendor/matomo/matomo-php-tracker';
+        if ($longVersionName === '3.x') {
+            $trackerPath = '/vendor/piwik/piwik-php-tracker';
+        }
+		/*
+		 * The activity folders are excluded because they create a reference to the activityLog plugin
+		 * which is not embed as a submodule.
+		 */
         $iterator = Finder::create()
             ->files()
             ->name('*.php')
-            ->notName('tcpdf_config.php')
-            ->exclude(array('tests', 'config', 'ScheduledReports/config'))
+            ->notName(array('tcpdf_config.php'))
+            ->exclude(array('tests', 'config', 'ScheduledReports/config', 'Activity'))
             ->in(array(PIWIK_DOCUMENT_ROOT . '/core',
                        PIWIK_DOCUMENT_ROOT . '/plugins',
-                       PIWIK_DOCUMENT_ROOT . '/vendor/piwik/piwik-php-tracker'))
+                       PIWIK_DOCUMENT_ROOT . $trackerPath))
         ;
 
         $sami = new Sami($iterator, array(
@@ -62,6 +71,7 @@ try {
             'build_dir'            => $rootDir.'/docs/' . $longVersionName . '/generated/',
             'cache_dir'            => $rootDir.'/docs/' . $longVersionName . '/cache/',
             'template_dirs'        => array($rootDir.'/generator/template'),
+            'store'                => new \Sami\Store\ArrayStore(),
             'default_opened_level' => 5,
             'include_parent_data'  => true,
             'filter'               => new ApiClassFilter()
@@ -70,7 +80,7 @@ try {
         /** @var Twig_Environment $twig */
         $twig = $sami->offsetGet('twig');
 
-        $twig->addFilter(new Twig_SimpleFilter('inlinelinkparser', function ($description, ClassReflection $class) use ($sami) {
+        $twig->addFilter(new Twig\TwigFilter('inlinelinkparser', function ($description, ClassReflection $class) use ($sami) {
             $scope = new Scope();
             $scope->class     = $class;
             $scope->classes   = $sami->offsetGet('project')->getProjectClasses();
@@ -80,7 +90,7 @@ try {
             return $linkConverter->parse($description);
         }));
 
-        $twig->addFilter(new Twig_SimpleFilter('linkparser', function ($description, ClassReflection $class) use ($sami) {
+        $twig->addFilter(new Twig\TwigFilter('linkparser', function ($description, ClassReflection $class) use ($sami) {
             $scope = new Scope();
             $scope->class     = $class;
             $scope->classes   = $sami->offsetGet('project')->getProjectClasses();
@@ -88,6 +98,25 @@ try {
 
             $linkConverter = new LinkParser($scope);
             return $linkConverter->parse($description);
+        }));
+        $twig->addFilter(new Twig\TwigFilter('removeNewLine', function ($content) {
+            $content = preg_replace("/(\n)+/", ' ', $content);
+            $content = preg_replace("/(\s)+/", ' ', $content);
+            return $content;
+        }));
+        $twig->addFilter(new Twig\TwigFilter('string', function ($content) {
+            if (is_object($content) && $content instanceof NodeAbstract && property_exists($content, 'name')) {
+                return $content->name;
+            } 
+            return (string) $content;
+        }));
+        $twig->addFilter(new Twig\TwigFilter('shortDescription', function ($content) {
+
+            $pos = strpos($content, '. ');
+            if ($pos > 1) {
+                return substr($content, 0, $pos+1);
+            }
+            return $content;
         }));
 
         $sami['project']->update();
@@ -101,7 +130,9 @@ try {
         $files    = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(PIWIK_DOCUMENT_ROOT));
         $phpFiles = new RegexIterator($files, '/piwik\/(core|plugins)(.*)\.php$/');
 
-        $hooks = new HooksParser($sami);
+        $matomoMajorVersion = (int) $versionLongName;
+
+        $hooks = new HooksParser($sami, $matomoMajorVersion);
         $view  = array('hooks' => array(), 'versionName' => $versionName);
 
         foreach ($phpFiles as $phpFile) {

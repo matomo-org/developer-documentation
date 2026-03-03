@@ -19,6 +19,9 @@ use Slim\Middleware\ContentLengthMiddleware;
 use Slim\Psr7\Response;
 use Slim\Views\Twig;
 
+// temporary - while php update is happening
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
+
 require '../vendor/autoload.php';
 if (file_exists('../config/local.php')) {
     require '../config/local.php';
@@ -34,7 +37,22 @@ AppFactory::setContainer($container);
 
 // Set view in Container
 $container->set('view', function () {
-    $view = Twig::create('../templates', ['cache' => '../tmp/templates']);
+    foreach (['ORIG_PATH_INFO', 'PATH_INFO'] as $pathServer) {
+        if (!empty($_SERVER[$pathServer])) {
+            $matomoVersionFromUrl = MatomoVersionMiddleware::getMatmoVersionFromUrl($_SERVER[$pathServer]);
+            if (!empty($matomoVersionFromUrl)) {
+                Environment::setPiwikVersion($matomoVersionFromUrl);
+                break;
+            }
+        }
+    }
+
+    $params = [];
+    if (CACHING_ENABLED) {
+        $params['cache'] = '../tmp/templates';
+    }
+
+    $view = Twig::create('../templates', $params);
     $view->getEnvironment()->addGlobal('urlIfAvailableInNewerVersion', false);
     $view->getEnvironment()->addGlobal('availablePiwikVersions', Environment::getAvailablePiwikVersions());
     $view->getEnvironment()->addGlobal('selectedPiwikVersion', Environment::getPiwikVersion());
@@ -51,7 +69,9 @@ $app->add(new MatomoVersionMiddleware());
 $app->add(new CacheMiddleware());
 
 $routeCollector = $app->getRouteCollector();
-$routeCollector->setCacheFile('../tmp/cache/route_cache.php');
+if (CACHING_ENABLED) {
+    $routeCollector->setCacheFile('../tmp/cache/route_cache.php');
+}
 
 $contentLengthMiddleware = new ContentLengthMiddleware();
 $app->add($contentLengthMiddleware);

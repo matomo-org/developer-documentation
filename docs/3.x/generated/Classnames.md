@@ -19,7 +19,6 @@
 ## Columns\Updater
 ## Common
 ## Config
-## Console
 ## DataAccess\LogAggregator
 ## DataTable
 ## DataTable\BaseFilter
@@ -155,6 +154,7 @@
 ## Plugins\Live\Visitor
 ## Plugins\Live\VisitorDetailsAbstract
 ## Plugins\Live\Visualizations\VisitorLog\Config
+## Plugins\Login\SessionInitializer
 ## Plugins\MobileMessaging\SMSProvider
 ## Plugins\MultiSites\Columns\Metrics\EcommerceOnlyEvolutionMetric
 ## Plugins\Tour\Engagement\Challenge

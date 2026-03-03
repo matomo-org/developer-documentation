@@ -42,13 +42,11 @@ Constants
 
 This class defines the following constants:
 
-- [`FLAG_NO_CLEAR`](#flag_no_clear) — If this flag is applied, no close icon will be displayed.- [`FLAG_CLEAR`](#flag_clear) — If this flag is applied, a close icon will be displayed.- [`TYPE_PERSISTENT`](#type_persistent) — Notifications of this type will be displayed until the new user explicitly closes the notification.- [`TYPE_TRANSIENT`](#type_transient) — Notifications of this type will be displayed only once.
+- [`FLAG_NO_CLEAR`](#flag_no_clear) — If this flag is applied, no close icon will be displayed. _Note: persistent notifications always have a close
+icon._- [`FLAG_CLEAR`](#flag_clear) — If this flag is applied, a close icon will be displayed.- [`TYPE_PERSISTENT`](#type_persistent) — Notifications of this type will be displayed until the new user explicitly closes the notification.
 <a name="flag_no_clear" id="flag_no_clear"></a>
 <a name="FLAG_NO_CLEAR" id="FLAG_NO_CLEAR"></a>
 ### `FLAG_NO_CLEAR`
-
-_Note: persistent notifications always have a close
-icon._
 
 See [$flags](/api-reference/Piwik/Notification#$flags).
 <a name="flag_clear" id="flag_clear"></a>
@@ -61,12 +59,6 @@ See [$flags](/api-reference/Piwik/Notification#$flags).
 ### `TYPE_PERSISTENT`
 
 The notifications will display even if the user reloads the page.
-<a name="type_transient" id="type_transient"></a>
-<a name="TYPE_TRANSIENT" id="TYPE_TRANSIENT"></a>
-### `TYPE_TRANSIENT`
-
-They will disappear after a page reload or
-change.
 
 Properties
 ----------
@@ -85,9 +77,7 @@ This class defines the following properties:
 <a name="title" id="title"></a>
 ### `$title`
 
-The notification title.
-
-The title is optional and is displayed directly before the message content.
+The notification title. The title is optional and is displayed directly before the message content.
 
 #### Signature
 
@@ -97,9 +87,7 @@ The title is optional and is displayed directly before the message content.
 <a name="message" id="message"></a>
 ### `$message`
 
-The notification message.
-
-Must be set.
+The notification message. Must be set.
 
 #### Signature
 
@@ -121,9 +109,7 @@ Usage: `$notification->flags = Notification::FLAG_BAR | Notification::FLAG_FOO`.
 <a name="type" id="type"></a>
 ### `$type`
 
-The notification's display type.
-
-See `TYPE_*` constants in [Notification](/api-reference/Piwik/Notification).
+The notification's display type. See `TYPE_*` constants in [Notification](/api-reference/Piwik/Notification).
 
 #### Signature
 
@@ -133,9 +119,7 @@ See `TYPE_*` constants in [Notification](/api-reference/Piwik/Notification).
 <a name="context" id="context"></a>
 ### `$context`
 
-The notification's context (message type).
-
-See `CONTEXT_*` constants in [Notification](/api-reference/Piwik/Notification).
+The notification's context (message type). See `CONTEXT_*` constants in [Notification](/api-reference/Piwik/Notification).
 
 A notification's context determines how it will be styled.
 
@@ -147,9 +131,7 @@ A notification's context determines how it will be styled.
 <a name="priority" id="priority"></a>
 ### `$priority`
 
-The notification's priority.
-
-The higher the priority, the higher the order. See `PRIORITY_*`
+The notification's priority. The higher the priority, the higher the order. See `PRIORITY_*`
 constants in [Notification](/api-reference/Piwik/Notification) to see possible priority values.
 
 #### Signature
@@ -160,9 +142,7 @@ constants in [Notification](/api-reference/Piwik/Notification) to see possible p
 <a name="raw" id="raw"></a>
 ### `$raw`
 
-If true, the message will not be escaped before being outputted as HTML.
-
-If you set this to
+If true, the message will not be escaped before being outputted as HTML. If you set this to
 `true`, make sure you escape text yourself in order to avoid XSS vulnerabilities.
 
 #### Signature
@@ -208,9 +188,7 @@ Returns `1` if the notification will be displayed without a close button, `0` if
 <a name="getPriority" id="getPriority"></a>
 ### `getPriority()`
 
-Returns the notification's priority.
-
-If no priority has been set, a priority will be set based
+Returns the notification's priority. If no priority has been set, a priority will be set based
 on the notification's context.
 
 #### Signature

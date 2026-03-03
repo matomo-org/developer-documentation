@@ -89,7 +89,8 @@ Applies a basic rendering to the Row and returns the output.
 
 
 - *Returns:*  `string` &mdash;
-    describing the row. Example: "- 1 ['label' => 'piwik', 'nb_uniq_visitors' => 1685, 'nb_visits' => 1861] [] [idsubtable = 1375]"
+    describing the row. Example:
+               "- 1 ['label' => 'piwik', 'nb_uniq_visitors' => 1685, 'nb_visits' => 1861] [] [idsubtable = 1375]"
 
 <a name="deletecolumn" id="deletecolumn"></a>
 <a name="deleteColumn" id="deleteColumn"></a>
@@ -119,7 +120,7 @@ Renames a column.
        The current name of the column.
     - `$newName` (`string`) &mdash;
        The new name of the column.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getcolumn" id="getcolumn"></a>
 <a name="getColumn" id="getColumn"></a>
@@ -133,7 +134,7 @@ Returns a column by name.
     - `$name` (`string`) &mdash;
        The column name.
 
-- *Returns:*  `mixed`|`Piwik\DataTable\false` &mdash;
+- *Returns:*  `mixed`|`false` &mdash;
     The column value or false if it doesn't exist.
 
 <a name="getmetadata" id="getmetadata"></a>
@@ -153,9 +154,7 @@ Returns the array of all metadata, or one requested metadata value.
 <a name="hasColumn" id="hasColumn"></a>
 ### `hasColumn()`
 
-Returns true if a column having the given name is already registered.
-
-The value will not be evaluated, it will
+Returns true if a column having the given name is already registered. The value will not be evaluated, it will
 just check whether a column exists independent of its value.
 
 #### Signature
@@ -175,7 +174,13 @@ Returns the array containing all the columns.
 
 
 - *Returns:*  `array` &mdash;
-    Example: array( 'column1'   => VALUE, 'label'     => 'www.php.net' 'nb_visits' => 15894, )
+    Example:
+
+                   array(
+                       'column1'   => VALUE,
+                       'label'     => 'www.php.net'
+                       'nb_visits' => 15894,
+                   )
 
 <a name="getidsubdatatable" id="getidsubdatatable"></a>
 <a name="getIdSubDataTable" id="getIdSubDataTable"></a>
@@ -195,9 +200,7 @@ If there is no such a table, returns null.
 <a name="getSubtable" id="getSubtable"></a>
 ### `getSubtable()`
 
-Returns the associated subtable, if one exists.
-
-Returns `false` if none exists.
+Returns the associated subtable, if one exists. Returns `false` if none exists.
 
 #### Signature
 
@@ -209,9 +212,7 @@ Returns `false` if none exists.
 <a name="sumSubtable" id="sumSubtable"></a>
 ### `sumSubtable()`
 
-Sums a DataTable to this row's subtable.
-
-If this row has no subtable a new
+Sums a DataTable to this row's subtable. If this row has no subtable a new
 one is created.
 
 See [DataTable::addDataTable()](/api-reference/Piwik/DataTable#adddatatable) to learn how DataTables are summed.
@@ -221,13 +222,14 @@ See [DataTable::addDataTable()](/api-reference/Piwik/DataTable#adddatatable) to 
 -  It accepts the following parameter(s):
     - `$subTable` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
        Table to sum to this row's subtable.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setsubtable" id="setsubtable"></a>
 <a name="setSubtable" id="setSubtable"></a>
 ### `setSubtable()`
 
-Attaches a subtable to this row, overwriting the existing subtable, if any.
+Attaches a subtable to this row, overwriting the existing subtable,
+if any.
 
 #### Signature
 
@@ -256,22 +258,20 @@ Removes the subtable reference.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setcolumns" id="setcolumns"></a>
 <a name="setColumns" id="setColumns"></a>
 ### `setColumns()`
 
-Set all the columns at once.
-
-Overwrites **all** previously set columns.
+Set all the columns at once. Overwrites **all** previously set columns.
 
 #### Signature
 
 -  It accepts the following parameter(s):
     - `$columns` (`array`) &mdash;
        eg, `array('label' => 'www.php.net', 'nb_visits' => 15894)`
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setcolumn" id="setcolumn"></a>
 <a name="setColumn" id="setColumn"></a>
@@ -286,7 +286,7 @@ Set the value `$value` to the column called `$name`.
        name of the column to set.
     - `$value` (`mixed`) &mdash;
        value of the column to set.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setmetadata" id="setmetadata"></a>
 <a name="setMetadata" id="setMetadata"></a>
@@ -301,7 +301,7 @@ Set the value `$value` to the metadata called `$name`.
        name of the metadata to set.
     - `$value` (`mixed`) &mdash;
        value of the metadata to set.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="deletemetadata" id="deletemetadata"></a>
 <a name="deleteMetadata" id="deleteMetadata"></a>
@@ -322,9 +322,7 @@ Deletes one metadata value or all metadata values.
 <a name="addColumn" id="addColumn"></a>
 ### `addColumn()`
 
-Add a new column to the row.
-
-If the column already exists, throws an exception.
+Add a new column to the row. If the column already exists, throws an exception.
 
 #### Signature
 
@@ -333,7 +331,7 @@ If the column already exists, throws an exception.
        name of the column to add.
     - `$value` (`mixed`) &mdash;
        value of the column to set or a PHP callable.
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the column already exists.
 
@@ -356,9 +354,7 @@ Add many columns to this row.
 <a name="addMetadata" id="addMetadata"></a>
 ### `addMetadata()`
 
-Add a new metadata to the row.
-
-If the metadata already exists, throws an exception.
+Add a new metadata to the row. If the metadata already exists, throws an exception.
 
 #### Signature
 
@@ -367,7 +363,7 @@ If the metadata already exists, throws an exception.
        name of the metadata to add.
     - `$value` (`mixed`) &mdash;
        value of the metadata to set.
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if the metadata already exists.
 
@@ -391,7 +387,7 @@ Columns in `$rowToSum` that don't exist in `$this` are added to `$this`.
        Whether metadata should be copied or not.
     - `$aggregationOperations` (`array`|`bool`) &mdash;
        for columns that should not be summed, determine which aggregation should be used (min, max). format: `array('column name' => 'function name')`
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -408,15 +404,13 @@ Sums the metadata in `$rowToSum` with the metadata in `$this` row.
       
     - `$aggregationOperations` (`array`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="issummaryrow" id="issummaryrow"></a>
 <a name="isSummaryRow" id="isSummaryRow"></a>
 ### `isSummaryRow()`
 
-Returns `true` if this row is the summary row, `false` if otherwise.
-
-This function
+Returns `true` if this row is the summary row, `false` if otherwise. This function
 depends on the label of the row, and so, is not 100% accurate.
 
 #### Signature
@@ -446,7 +440,7 @@ Associates the supplied table with this row as the comparisons table.
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../Piwik/DataTable.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="isequal" id="isequal"></a>
 <a name="isEqual" id="isEqual"></a>

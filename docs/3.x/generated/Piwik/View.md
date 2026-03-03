@@ -3,7 +3,7 @@
 View
 ====
 
-Encapsulates and manages a [Twig](http://twig.sensiolabs.org/) template.
+Encapsulates and manages a [Twig](https://twig.symfony.com) template.
 
 View lets you set properties that will be passed on to a Twig template.
 View will also set several properties that will be available in all Twig
@@ -90,7 +90,7 @@ Methods
 The class defines the following methods:
 
 - [`__construct()`](#__construct) &mdash; Constructor.
-- [`disableCacheBuster()`](#disablecachebuster) &mdash; Disables the cache buster (adding of ?cb=...) to JavaScript and stylesheet files
+- [`disableCacheBuster()`](#disablecachebuster) &mdash; Disables the cache buster (adding of ?cb=.
 - [`getTemplateFile()`](#gettemplatefile) &mdash; Returns the template filename.
 - [`getTemplateVars()`](#gettemplatevars) &mdash; Returns the variables to bind to the template when rendering.
 - [`__set()`](#__set) &mdash; Directly assigns a variable to the view script.
@@ -120,11 +120,13 @@ Constructor.
 <a name="disableCacheBuster" id="disableCacheBuster"></a>
 ### `disableCacheBuster()`
 
-Disables the cache buster (adding of ?cb=...) to JavaScript and stylesheet files
+Disables the cache buster (adding of ?cb=.
+
+..) to JavaScript and stylesheet files
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="gettemplatefile" id="gettemplatefile"></a>
 <a name="getTemplateFile" id="getTemplateFile"></a>
@@ -164,7 +166,7 @@ Variable names may not be prefixed with '_'.
        The variable name.
     - `$val` (`mixed`) &mdash;
        The variable value.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="__get" id="__get"></a>
 <a name="__get" id="__get"></a>
@@ -207,46 +209,41 @@ Unsets a template variable.
 -  It accepts the following parameter(s):
     - `$name` (`string`) &mdash;
        The name of the template variable.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="render" id="render"></a>
 <a name="render" id="render"></a>
 ### `render()`
 
-Renders the current view.
+Renders the current view. Also sends the stored 'Content-Type' HTML header.
 
-Also sends the stored 'Content-Type' HTML header.
 See [setContentType()](/api-reference/Piwik/View#setcontenttype).
 
 #### Signature
 
 
 - *Returns:*  `string` &mdash;
-    Generated template.
+    Serialized data, eg, (image, array, html...).
 
 <a name="setcontenttype" id="setcontenttype"></a>
 <a name="setContentType" id="setContentType"></a>
 ### `setContentType()`
 
-Set stored value used in the Content-Type HTTP header field.
-
-The header is
+Set stored value used in the Content-Type HTTP header field. The header is
 set just before rendering.
 
 #### Signature
 
 -  It accepts the following parameter(s):
     - `$contentType` (`string`) &mdash;
-      
-- It does not return anything.
+
+- It does not return anything or a mixed result.
 
 <a name="setxframeoptions" id="setxframeoptions"></a>
 <a name="setXFrameOptions" id="setXFrameOptions"></a>
 ### `setXFrameOptions()`
 
-Set X-Frame-Options field in the HTTP response.
-
-The header is set just
+Set X-Frame-Options field in the HTTP response. The header is set just
 before rendering.
 
 _Note: setting this allows you to make sure the View **cannot** be
@@ -257,7 +254,7 @@ embedded in iframes. Learn more [here](https://developer.mozilla.org/en-US/docs/
 -  It accepts the following parameter(s):
     - `$option` (`string`) &mdash;
        ('deny' or 'sameorigin')
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="singlereport" id="singlereport"></a>
 <a name="singleReport" id="singleReport"></a>
@@ -283,9 +280,7 @@ a new template.
 <a name="getUseStrictReferrerPolicy" id="getUseStrictReferrerPolicy"></a>
 ### `getUseStrictReferrerPolicy()`
 
-Returns whether a strict Referrer-Policy header will be sent.
-
-Generally this should be set to 'true'.
+Returns whether a strict Referrer-Policy header will be sent. Generally this should be set to 'true'.
 
 #### Signature
 
@@ -301,6 +296,6 @@ Sets whether a strict Referrer-Policy header will be sent (if not, nothing is se
 
 -  It accepts the following parameter(s):
     - `$useStrictReferrerPolicy` (`bool`) &mdash;
-      
-- It does not return anything.
+
+- It does not return anything or a mixed result.
 

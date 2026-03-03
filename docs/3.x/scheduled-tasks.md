@@ -96,7 +96,7 @@ public function pingSite($siteMainUrl)
 To manually execute all scheduled tasks, you can run the following command:
 
 ```
-$ ./console core:run-scheduled-tasks --token-auth=YOUR_TOKEN_AUTH
+$ ./console core:run-scheduled-tasks 
 ```
 
 There is one problem with this though: Piwik makes sure the scheduled tasks are executed only once an hour, a day, etc. This means you can't simply run the command again and again as you would have to wait for the next hour or day.
@@ -104,7 +104,7 @@ There is one problem with this though: Piwik makes sure the scheduled tasks are 
 To solve this, the `--force` option will force to execute all tasks, even those that are not due to run at this time.
 
 ```
-$ ./console core:run-scheduled-tasks --force --token-auth=YOUR_TOKEN_AUTH
+$ ./console core:run-scheduled-tasks --force 
 ```
 
 Remember that manually testing your scheduled task is just the first step: adding [unit or integration tests](/guides/tests-php) is the best way to avoid regressions.

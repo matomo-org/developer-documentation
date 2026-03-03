@@ -55,9 +55,7 @@ The class defines the following methods:
 <a name="getInstance" id="getInstance"></a>
 ### `getInstance()`
 
-Returns the singleton instance for the derived class.
-
-If the singleton instance
+Returns the singleton instance for the derived class. If the singleton instance
 has not been created, this method will create it.
 
 #### Signature
@@ -79,7 +77,7 @@ Logs a message using the ERROR log level.
 -  It accepts the following parameter(s):
     - `$message`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="warning" id="warning"></a>
 <a name="warning" id="warning"></a>
@@ -96,7 +94,7 @@ Logs a message using the WARNING log level.
 -  It accepts the following parameter(s):
     - `$message`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="info" id="info"></a>
 <a name="info" id="info"></a>
@@ -113,7 +111,7 @@ Logs a message using the INFO log level.
 -  It accepts the following parameter(s):
     - `$message`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="debug" id="debug"></a>
 <a name="debug" id="debug"></a>
@@ -130,7 +128,7 @@ Logs a message using the DEBUG log level.
 -  It accepts the following parameter(s):
     - `$message`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="verbose" id="verbose"></a>
 <a name="verbose" id="verbose"></a>
@@ -147,5 +145,5 @@ Logs a message using the VERBOSE log level.
 -  It accepts the following parameter(s):
     - `$message`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 

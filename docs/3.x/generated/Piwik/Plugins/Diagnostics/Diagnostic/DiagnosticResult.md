@@ -70,7 +70,7 @@ The class defines the following methods:
 -  It accepts the following parameter(s):
     - `$item` ([`DiagnosticResultItem`](../../../../Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResultItem.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setitems" id="setitems"></a>
 <a name="setItems" id="setItems"></a>
@@ -81,7 +81,7 @@ The class defines the following methods:
 -  It accepts the following parameter(s):
     - `$items` (`array`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getlongerrormessage" id="getlongerrormessage"></a>
 <a name="getLongErrorMessage" id="getLongErrorMessage"></a>
@@ -100,7 +100,7 @@ The class defines the following methods:
 -  It accepts the following parameter(s):
     - `$longErrorMessage` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getstatus" id="getstatus"></a>
 <a name="getStatus" id="getStatus"></a>

@@ -5,8 +5,6 @@ Truncate
 
 Truncates a DataTable by merging all rows after a certain index into a new summary row.
 
-If the count of rows is less than the index, nothing happens.
-
 The [ReplaceSummaryRowLabel](/api-reference/Piwik/DataTable/Filter/ReplaceSummaryRowLabel) filter will be queued after the table is truncated.
 
 ### Examples
@@ -39,7 +37,7 @@ Constructor.
 
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
-       The table that will be filtered eventually.
+      
     - `$truncateAfter` (`int`) &mdash;
        The row index to truncate at. All rows passed this index will be removed.
     - `$labelSummaryRow` (`string`) &mdash;
@@ -60,15 +58,13 @@ Executes the filter, see [Truncate](/api-reference/Piwik/DataTable/Filter/Trunca
 -  It accepts the following parameter(s):
     - `$table` ([`DataTable`](../../../Piwik/DataTable.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="enablerecursive" id="enablerecursive"></a>
 <a name="enableRecursive" id="enableRecursive"></a>
 ### `enableRecursive()`
 
-Enables/Disables recursive filtering.
-
-Whether this property is actually used
+Enables/Disables recursive filtering. Whether this property is actually used
 is up to the derived BaseFilter class.
 
 #### Signature
@@ -76,7 +72,7 @@ is up to the derived BaseFilter class.
 -  It accepts the following parameter(s):
     - `$enable` (`bool`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="filtersubtable" id="filtersubtable"></a>
 <a name="filterSubTable" id="filterSubTable"></a>
@@ -89,5 +85,5 @@ Filters a row's subtable, if one exists and is loaded in memory.
 -  It accepts the following parameter(s):
     - `$row` ([`Row`](../../../Piwik/DataTable/Row.md)) &mdash;
        The row whose subtable should be filter.
-- It does not return anything.
+- It does not return anything or a mixed result.
 

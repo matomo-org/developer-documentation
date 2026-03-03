@@ -1,5 +1,4 @@
 <div class="bs-side panel-group">
-
     {% if category.items|length %}
         <div class="panel panel-primary">
 
@@ -30,7 +29,7 @@
                                     {% for subItem in item.subItems %}
                                         {% set menuClass = (subItem.getMenuUrl == currentPath) ? 'active' : '' %}
                                         <li class="{{ menuClass }}" title="{{ subItem.title|striptags|raw }}">
-                                            <a href="{{ subItem.menuUrl|completeUrl }}"> {{ subItem.menuTitle|raw }}</a>
+                                            <a href="{{ subItem.menuUrl|completeUrl }}"> {{ subItem.menuTitle|replace({'Piwik': 'Matomo'})|raw }}</a>
                                         </li>
                                     {% endfor %}
                                 </ul>
@@ -53,6 +52,7 @@
 
             <div class="panel-body bs-sidebar">
                 <ul class="nav nav-pills nav-stacked bs-sidenav">
+                    {% set links = [] %}
                     {% for section in guide.sections %}
                         <li>
                             <a href="#{{ section.id }}">
@@ -63,7 +63,12 @@
                                 <ul class="nav">
 
                                     {% for subsection in section.children %}
-                                        <li><a title="{{ subsection.title }}" href="#{{ subsection.id }}">{{ subsection.title|striptags|raw }}</a></li>
+                                        {% if subsection.id in links %}
+                                            <li><a title="{{ subsection.title }}" href="#{{ section.id }}-{{ subsection.id }}">{{ subsection.title|striptags|raw }}</a></li>
+                                        {% else %}
+                                            {% set links = links|merge([subsection.id]) %}
+                                            <li><a title="{{ subsection.title }}" href="#{{ subsection.id }}">{{ subsection.title|striptags|raw }}</a></li>
+                                        {% endif %}
                                     {% endfor %}
 
                                 </ul>

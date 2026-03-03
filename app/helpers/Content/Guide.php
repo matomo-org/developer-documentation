@@ -43,6 +43,16 @@ class Guide implements MenuItem
     /**
      * @return string
      */
+    public function getValidatedRenderedContent($anchors = [])
+    {
+        $content = $this->getRenderedcontent();
+        $content = self::fixDuplicateAnchorIds($content, $anchors);
+        return $content;
+    }
+
+    /**
+     * @return string
+     */
     public function getTitle()
     {
         if (isset($this->document->metadata['title'])) {
@@ -109,7 +119,7 @@ class Guide implements MenuItem
             $path = $piwikVersion . '/';
         }
 
-        return 'https://github.com/matomo-org/developer-documentation/tree/master/docs/' . $path . $this->name . '.md';
+        return 'https://github.com/matomo-org/developer-documentation/tree/live/docs/' . $path . $this->name . '.md';
     }
 
     public function getPrevious()
@@ -165,9 +175,16 @@ class Guide implements MenuItem
             throw new DocumentNotExistException('The requested documentation is not valid: ' . $this->name);
         }
 
-        if (!file_exists($this->getFilePath())) {
+        if (!file_exists($this->getFilePath()) && $this->doesFileNeedToExist()) {
             throw new DocumentNotExistException('The requested documentation does not exist: ' . $this->name);
         }
+    }
+
+    private function doesFileNeedToExist()
+    {
+        // we don't want to have to create files for older Matomo versions every time we create a new doc for the most
+        // recent Matomo version.
+        return Environment::getPiwikVersion() === LATEST_PIWIK_DOCS_VERSION;
     }
 
     private function getMarkdown()
@@ -175,7 +192,11 @@ class Guide implements MenuItem
         $path = $this->getFilePath();
 
         if (!file_exists($path)) {
-            throw new DocumentNotExistException('Requested documentation does not exist');
+            if ($this->doesFileNeedToExist()) {
+                throw new DocumentNotExistException('Requested documentation does not exist');
+            } else {
+                return '';
+            }
         }
 
         return file_get_contents($path);
@@ -195,5 +216,40 @@ class Guide implements MenuItem
 
             return $this->getTitle();
         }
+    }
+
+    /**
+     * @return string
+     */
+    public static function fixDuplicateAnchorIDs($content, $anchors)
+    {
+        $anchorList = [];
+        foreach ($anchors as $anchor) {
+            $anchorList[$anchor['subsectionId']][] = $anchor['sectionId'];
+        }
+        $dom = new \DomDocument();
+        // Will probably be duplicate ID warnings so suppress them
+        // Explicitly convert to HTML entities so DOMDocument keeps UTF-8 characters intact (eg smart quotes).
+        @$dom->loadHtml(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8'));
+        $anchors = $dom->getElementsByTagName('*');
+        $ids=[];
+        $duplicateId = 0;
+        foreach ($anchors as $anchor) {
+            $id = $anchor->getAttribute('id');
+            if ($id && isset($anchorList[$id]) && in_array($id, $ids)) {
+                // should only amend the ID via $anchorList if it is a h3
+                if ($anchor->tagName == 'h3') {
+                    $parent = array_shift($anchorList[$id]);
+                    $anchor->setAttribute('id', "$parent-$id");
+                } else {
+                    // if it is not a h3 amend so the ID is not duplicated
+                    $duplicateId++;
+                    $anchor->setAttribute('id', "$id-$duplicateId");
+                }
+            }
+            $ids[] = $id;
+        }
+
+        return $dom->saveHTML();
     }
 }

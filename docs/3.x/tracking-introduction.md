@@ -1,9 +1,10 @@
 ---
 category: Integrate
 subGuides:
-  - tracking-javascript-guide
   - tracking-api-clients
+  - tracking-javascript-guide
   - spa-tracking
+  - tracking-consent
   - content-tracking
 ---
 # Tracking your application

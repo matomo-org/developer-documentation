@@ -1,4 +1,5 @@
 .DS_Store
+.ddev
 /generator/vendor
 /generator/composer.phar
 /app/vendor
@@ -9,5 +10,6 @@
 /app/tmp/logs/*
 /app/tmp/templates/*
 /docs/changelog.md
+/docs/changelog-*.md
 /docs/cache/
 /docs/*/cache/

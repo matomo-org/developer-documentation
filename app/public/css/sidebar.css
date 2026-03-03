@@ -1,23 +1,40 @@
 .panel-group .panel {
     margin-bottom: 20px;
+    border-radius: 0;
 }
-
+.bs-side.panel-group {
+    margin-bottom: 20px;
+    /* margin-bottom:20px; */
+    margin-top: -20px;
+    padding-top: 20px;
+    border-right: 1px solid #ecf0f2;
+}
+.panel {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.panel-title {
+    color: #666;
+    text-transform: uppercase;
+}
+.panel-heading {
+    padding: 16px 15px;
+}
 /* Customize all "primary" panels */
 .panel-primary {
-    border: 1px solid #d0d0d0;
-    box-shadow: 0 0 5px #d0d0d0;
-    background-color: #f0f0f0;
+    border: 0;
+    background-color: white;
 }
 .panel-primary > .panel-heading {
-    background-color: #d0d0d0;
+    background-color: white;
     color: #8a8989;
-    text-align: center;
+    text-align: left;
     text-transform: uppercase;
     font-size: 14px;
     letter-spacing: 2px;
+    border-bottom: 0;
 }
 .panel-primary li.active > a, .panel-primary li.active > a:hover, .panel-primary li.active > a:focus {
-    font-weight: bold !important;
     color: #246998;
     background-color: transparent;
 }
@@ -43,15 +60,19 @@
     border-radius: 0;
 }
 
+.bs-sidebar .nav>li>a:hover, .bs-sidebar  .nav>li>a:focus {
+    background: #fff;
+    color: #e57f19 !important;
+}
+
 /* Nav: second level */
 .bs-sidebar .nav .nav {
     margin-bottom: 10px;
 }
 .bs-sidebar .nav .nav > li > a {
-    padding-top:    3px;
-    padding-bottom: 3px;
+    padding-top:    4px;
+    padding-bottom: 4px;
     padding-left: 25px;
-    font-size: 90%;
     font-weight: normal;
 }
 
@@ -59,5 +80,5 @@
     padding:0;
 }
 .panel-body a, .panel-body a:hover, .panel-body a:focus {
-    color: #2c3e50;
+    color: #333;
 }

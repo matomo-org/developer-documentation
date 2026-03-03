@@ -67,6 +67,7 @@ This is a complete list of available namespaces:
 - [`Piwik\Plugins\Live\ProfileSummary`](Piwik/Plugins/Live/ProfileSummary)
 - [`Piwik\Plugins\Live\Visualizations`](Piwik/Plugins/Live/Visualizations)
 - [`Piwik\Plugins\Live\Visualizations\VisitorLog`](Piwik/Plugins/Live/Visualizations/VisitorLog)
+- [`Piwik\Plugins\Login`](Piwik/Plugins/Login)
 - [`Piwik\Plugins\MobileMessaging`](Piwik/Plugins/MobileMessaging)
 - [`Piwik\Plugins\MultiSites`](Piwik/Plugins/MultiSites)
 - [`Piwik\Plugins\MultiSites\Columns`](Piwik/Plugins/MultiSites/Columns)

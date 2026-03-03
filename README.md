@@ -5,10 +5,10 @@
 
 ## Documentations
 
-- [Index](docs/generated/master/Index.md)
-- [Classes](docs/generated/master/Classes.md)
-- [Namespaces](docs/generated/master/Namespaces.md)
-- [Hooks](docs/generated/master/Hooks.md)
+- [Index](docs/generated/4.x-dev/Index.md)
+- [Classes](docs/generated/4.x-dev/Classes.md)
+- [Namespaces](docs/generated/4.x-dev/Namespaces.md)
+- [Hooks](docs/generated/4.x-dev/Hooks.md)
 - [Guides](docs)
 
 ## License
@@ -19,11 +19,22 @@ Copyright Matomo team. Do not republish, or copy, or distribute this code or con
 
 ```bash
 $ cd app/
+$ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+$ php -r "if (hash_file('sha384', 'composer-setup.php') === '906a84df04cea2aa72f40b5f787e49f22d4c2f19492ac310e8cba5b96ac8b64115ac402c8cd292b8a03482574915d1a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+$ php composer-setup.php
+$ php -r "unlink('composer-setup.php');"
 $ composer install
 $ mkdir tmp/cache
 $ mkdir tmp/templates
 $ cd public/
 $ php -S 0.0.0.0:8000
+```
+
+After the initial composer installation, you should be able to test locally by simply running the following:
+
+```bash
+$ cd app/
+$ composer serve
 ```
 
 To disable caching and enable debugging, create a `app/config/local.php` file with the following:
@@ -41,6 +52,26 @@ locally by adding this to your `local.php`:
 define('DISABLE_INCLUDE', true);
 ```
 
+## DDEV environment for Developer documentation
+
+DDEV container for the Matomo Developer Documentation site
+
+To start this on your local machine using ddev run the command below.
+
+```bash
+ bash ddev-developer-docs.sh 
+```
+
+The local DDEV url for this container will be https://devdocs.ddev.site/
+
+### Rebuilding
+
+If you want to completely clear the existing setup and start again the following command will reset everything
+
+```bash
+ddev stop --unlist devdocs && rm -rf .ddev && bash ddev-developer-docs.sh 
+```
+
 ## Automatic documentation generation (API-Reference)
 
 ### The first time
@@ -51,11 +82,7 @@ git clone git@github.com:matomo-org/piwik.git piwik
 cd generator/
 composer install
 cd ../piwik/
-# Now we download composer  https://getcomposer.org/download/
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php -r "if (hash_file('SHA384', 'composer-setup.php') === 'e115a8dc7871f15d853148a7fbac7da27d6c0030b848d9b3dc09e2a0388afed865e6a3d6b3c0fad45c48e2b5fc1196ae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-php composer-setup.php
-php -r "unlink('composer-setup.php');"
+# Now set up composer according to https://getcomposer.org/download/
 ```
 
 ### Generate the API reference docs
@@ -65,12 +92,13 @@ php -r "unlink('composer-setup.php');"
 
 or just execute `./generateAndPush.sh`.
 
-The documents will be generated into the [docs/generated](docs/generated) directory. It will always generate the documentation for the master as well as for the latest stable version.
+The documents will be generated into the [docs/generated](docs/generated) directory. It will always generate the documentation for the latest stable version.
 
 ## How to add docs for a new Matomo version
 
 * Increase version number for `LATEST_PIWIK_DOCS_VERSION` in `config/app.php`
-* Add a new line to `generate.sh` eg `php generator/generate.php --branch=4.x-dev --targetname=4.x` similar to the other ones. You might also want to copy the generation success detection.
+* Copy the previous documentation folder to the new one eg `cp docs/4.x docs/5.x -R`
+* Add a new line to `generate.sh` eg `generateDocs "4.x-dev" "4.x"` similar to the other ones. You might also want to copy the generation success detection.
 * Copy pictures from the previous version into latest version eg from `public/img/3.x` to `public/img/4.x` and update all needed pictures.
 * In `app/routes/page.php` we might need to update the branch for the latest `CHANGELOG` version in the `/changelog` route
   see eg https://github.com/matomo-org/developer-documentation/blob/0.1.0/app/routes/page.php#L156  . It will be important that
@@ -153,6 +181,16 @@ Lorem ipsum…
 A guide must be either added to a category menu or set as a "sub-guide" of another guide. It cannot be both (else it will appear twice in the left sidebar).
 
 To add a guide to a category (i.e. it will appear in the left sidebar) edit the PHP class for the category (in `app/helpers/Content/Category`).
+
+### Adding the new guide to a menu item
+
+Some menu items need to be added by adding the markdown filename without the `.md` in one of these [category classes](https://github.com/matomo-org/developer-documentation/tree/live/app/helpers/Content/Category).
+
+Some submenu items need to be added as a subguide [see for example this example](https://raw.githubusercontent.com/matomo-org/developer-documentation/live/docs/4.x/develop-plugin-basics.md).
+
+It really depends submenu item which one you need to edit. If the parent menu item defines it's submenu items in a category class, then you need a new entry there. Otherwise you need to edit the markdown file for the parent menu item and add a new entry to `subGuides`.
+
+Please note that also the `category:` in the beginning of your guide needs to match the name of the category this page should be in. The category name can be for example `Develop`, `DevelopInDepth`, `Integrate` or `API Reference`.
 
 ## Supported inline tags in PHP comments
 

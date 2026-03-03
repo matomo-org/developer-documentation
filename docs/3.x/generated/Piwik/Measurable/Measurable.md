@@ -57,20 +57,21 @@ Constructor.
     - `$idsite` (`int`) &mdash;
        The ID of the site we want data for.
 - It throws one of the following exceptions:
-    - `UnexpectedWebsiteFoundException`
+    - `Piwik\Exception\UnexpectedWebsiteFoundException`
 
 <a name="setsites" id="setsites"></a>
 <a name="setSites" id="setSites"></a>
 ### `setSites()`
 
-Sets the cached site data with an array that associates site IDs with individual site data.
+Sets the cached site data with an array that associates site IDs with
+individual site data.
 
 #### Signature
 
 -  It accepts the following parameter(s):
     - `$sites` (`array`) &mdash;
        The array of sites data. Indexed by site ID. eg, array('1' => array('name' => 'Site 1', ...), '2' => array('name' => 'Site 2', ...))`
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="__tostring" id="__tostring"></a>
 <a name="__toString" id="__toString"></a>
@@ -277,7 +278,7 @@ See also [setSites()](/api-reference/Piwik/Measurable/Measurable#setsites) and s
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="clearcacheforsite" id="clearcacheforsite"></a>
 <a name="clearCacheForSite" id="clearCacheForSite"></a>
@@ -292,7 +293,7 @@ See also [setSites()](/api-reference/Piwik/Measurable/Measurable#setsites) and s
 -  It accepts the following parameter(s):
     - `$idSite`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getnamefor" id="getnamefor"></a>
 <a name="getNameFor" id="getNameFor"></a>
@@ -342,7 +343,7 @@ Returns the type of the site with the specified ID.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$idsite` (`Piwik\$idsite`) &mdash;
+    - `$idsite`
       
 - It returns a `string` value.
 
@@ -438,7 +439,8 @@ Returns the list of all known currency symbols.
 
 
 - *Returns:*  `array` &mdash;
-    An array mapping currency codes to their respective currency symbols and a description, eg, `array('USD' => array('$', 'US dollar'))`.
+    An array mapping currency codes to their respective currency symbols
+              and a description, eg, `array('USD' => array('$', 'US dollar'))`.
 
 <a name="getexcludedipsfor" id="getexcludedipsfor"></a>
 <a name="getExcludedIpsFor" id="getExcludedIpsFor"></a>

@@ -77,7 +77,7 @@ Plugin controllers return a **view** (usually HTML content) which is sent in the
 
 #### User interface
 
-Piwik's user interface is built upon HTML and JavaScript. While some pages are HTML documents served by PHP controllers (built using the [Twig templating engine](http://twig.sensiolabs.org/)), some parts of the Piwik UI are built with AngularJS.
+Piwik's user interface is built upon HTML and JavaScript. While some pages are HTML documents served by PHP controllers (built using the [Twig templating engine](https://twig.symfony.com)), some parts of the Piwik UI are built with AngularJS.
 
 AngularJS is a front-end JavaScript framework, which means that the user interface is built on the client side and the data is fetched from the HTTP Reporting API (described in the next section) as JSON. That also means a better user experience as it lets Piwik developers build a more dynamic and reactive application.
 
@@ -158,7 +158,7 @@ Archive data can be:
 - **table records**: bidimensional data (can be numeric values as well as anything else), represented as [`Piwik\DataTable`](/api-reference/Piwik/DataTable) objects
 
     These are stored in the `archive_blob_*` tables. `DataTable` objects are serialized to string and compressed to be stored as `BLOB` in the table.
-    
+
     `DataTable` objects stored in the database are named *records* to differentiate them from `DataTable` objects manipulated and returned by Piwik's API that we name *reports*.
 
 Every numeric metric or table record is processed and stored at each aggregation level: day, week and month. For example, that means that the "Entry pages" report is processed and stored for every day of the month as well as for every week, month, year and custom date range. Such data is redundant, but that is essential to guarantee fast performances.

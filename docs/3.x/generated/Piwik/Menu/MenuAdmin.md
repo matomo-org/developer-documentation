@@ -13,6 +13,7 @@ Methods
 
 The class defines the following methods:
 
+- [`getInstance()`](#getinstance) &mdash; Returns the singleton instance for the derived class. Inherited from [`Singleton`](../../Piwik/Singleton.md)
 - [`addItem()`](#additem) &mdash; Adds a new entry to the menu. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`remove()`](#remove) &mdash; Removes an existing entry from the menu. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
 - [`rename()`](#rename) &mdash; Renames a single menu entry. Inherited from [`MenuAbstract`](../../Piwik/Menu/MenuAbstract.md)
@@ -24,11 +25,22 @@ The class defines the following methods:
 - [`addMeasurableItem()`](#addmeasurableitem) &mdash; See add().
 - [`addSystemItem()`](#addsystemitem) &mdash; See add().
 
+<a name="getinstance" id="getinstance"></a>
+<a name="getInstance" id="getInstance"></a>
+### `getInstance()`
+
+Returns the singleton instance for the derived class. If the singleton instance
+has not been created, this method will create it.
+
+#### Signature
+
+- It returns a [`Singleton`](../../Piwik/Singleton.md) value.
+
 <a name="additem" id="additem"></a>
 <a name="addItem" id="addItem"></a>
 ### `addItem()`
 
-Since Piwik 2.7.0
+Since Matomo 2.7.0
 
 Adds a new entry to the menu.
 
@@ -49,7 +61,7 @@ Adds a new entry to the menu.
        An icon classname, such as "icon-add". Only supported by admin menu
     - `$onclick` (`bool`|`string`) &mdash;
        Will execute the on click handler instead of executing the link. Only supported by admin menu.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="remove" id="remove"></a>
 <a name="remove" id="remove"></a>
@@ -64,7 +76,7 @@ Removes an existing entry from the menu.
        The menu's category name. Can be a translation token.
     - `$subMenuName` (`bool`|`string`) &mdash;
        The menu item's name. Can be a translation token.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="rename" id="rename"></a>
 <a name="rename" id="rename"></a>
@@ -75,15 +87,15 @@ Renames a single menu entry.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$mainMenuOriginal` (`Piwik\Menu\$mainMenuOriginal`) &mdash;
+    - `$mainMenuOriginal`
       
-    - `$subMenuOriginal` (`Piwik\Menu\$subMenuOriginal`) &mdash;
+    - `$subMenuOriginal`
       
-    - `$mainMenuRenamed` (`Piwik\Menu\$mainMenuRenamed`) &mdash;
+    - `$mainMenuRenamed`
       
-    - `$subMenuRenamed` (`Piwik\Menu\$subMenuRenamed`) &mdash;
+    - `$subMenuRenamed`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="editurl" id="editurl"></a>
 <a name="editUrl" id="editUrl"></a>
@@ -94,23 +106,21 @@ Edits a URL of an existing menu entry.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$mainMenuToEdit` (`Piwik\Menu\$mainMenuToEdit`) &mdash;
+    - `$mainMenuToEdit`
       
-    - `$subMenuToEdit` (`Piwik\Menu\$subMenuToEdit`) &mdash;
+    - `$subMenuToEdit`
       
-    - `$newUrl` (`Piwik\Menu\$newUrl`) &mdash;
+    - `$newUrl`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addpersonalitem" id="addpersonalitem"></a>
 <a name="addPersonalItem" id="addPersonalItem"></a>
 ### `addPersonalItem()`
 
-Since Piwik 2.5.0
+Since Matomo 2.5.0
 
-See add().
-
-Adds a new menu item to the manage section of the user menu.
+See add(). Adds a new menu item to the manage section of the user menu.
 
 #### Signature
 
@@ -123,17 +133,15 @@ Adds a new menu item to the manage section of the user menu.
       
     - `$tooltip` (`bool`|`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="adddevelopmentitem" id="adddevelopmentitem"></a>
 <a name="addDevelopmentItem" id="addDevelopmentItem"></a>
 ### `addDevelopmentItem()`
 
-Since Piwik 2.5.0
+Since Matomo 2.5.0
 
-See add().
-
-Adds a new menu item to the development section of the admin menu.
+See add(). Adds a new menu item to the development section of the admin menu.
 
 #### Signature
 
@@ -146,17 +154,15 @@ Adds a new menu item to the development section of the admin menu.
       
     - `$tooltip` (`bool`|`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="adddiagnosticitem" id="adddiagnosticitem"></a>
 <a name="addDiagnosticItem" id="addDiagnosticItem"></a>
 ### `addDiagnosticItem()`
 
-Since Piwik 2.5.0
+Since Matomo 2.5.0
 
-See add().
-
-Adds a new menu item to the diagnostic section of the admin menu.
+See add(). Adds a new menu item to the diagnostic section of the admin menu.
 
 #### Signature
 
@@ -169,17 +175,15 @@ Adds a new menu item to the diagnostic section of the admin menu.
       
     - `$tooltip` (`bool`|`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addplatformitem" id="addplatformitem"></a>
 <a name="addPlatformItem" id="addPlatformItem"></a>
 ### `addPlatformItem()`
 
-Since Piwik 2.5.0
+Since Matomo 2.5.0
 
-See add().
-
-Adds a new menu item to the platform section of the admin menu.
+See add(). Adds a new menu item to the platform section of the admin menu.
 
 #### Signature
 
@@ -192,17 +196,15 @@ Adds a new menu item to the platform section of the admin menu.
       
     - `$tooltip` (`bool`|`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addmeasurableitem" id="addmeasurableitem"></a>
 <a name="addMeasurableItem" id="addMeasurableItem"></a>
 ### `addMeasurableItem()`
 
-Since Piwik 3.0.0
+Since Matomo 3.0.0
 
-See add().
-
-Adds a new menu item to the measurable section of the admin menu.
+See add(). Adds a new menu item to the measurable section of the admin menu.
 
 #### Signature
 
@@ -215,17 +217,15 @@ Adds a new menu item to the measurable section of the admin menu.
       
     - `$tooltip` (`bool`|`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addsystemitem" id="addsystemitem"></a>
 <a name="addSystemItem" id="addSystemItem"></a>
 ### `addSystemItem()`
 
-Since Piwik 3.0.0
+Since Matomo 3.0.0
 
-See add().
-
-Adds a new menu item to the manage section of the admin menu.
+See add(). Adds a new menu item to the manage section of the admin menu.
 
 #### Signature
 
@@ -238,5 +238,5 @@ Adds a new menu item to the manage section of the admin menu.
       
     - `$tooltip` (`bool`|`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 

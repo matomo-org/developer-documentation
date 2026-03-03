@@ -24,9 +24,7 @@ The abstract class defines the following methods:
 <a name="getInstance" id="getInstance"></a>
 ### `getInstance()`
 
-Returns the singleton instance for the derived class.
-
-If the singleton instance
+Returns the singleton instance for the derived class. If the singleton instance
 has not been created, this method will create it.
 
 #### Signature
@@ -37,7 +35,7 @@ has not been created, this method will create it.
 <a name="addItem" id="addItem"></a>
 ### `addItem()`
 
-Since Piwik 2.7.0
+Since Matomo 2.7.0
 
 Adds a new entry to the menu.
 
@@ -58,7 +56,7 @@ Adds a new entry to the menu.
        An icon classname, such as "icon-add". Only supported by admin menu
     - `$onclick` (`bool`|`string`) &mdash;
        Will execute the on click handler instead of executing the link. Only supported by admin menu.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="remove" id="remove"></a>
 <a name="remove" id="remove"></a>
@@ -73,7 +71,7 @@ Removes an existing entry from the menu.
        The menu's category name. Can be a translation token.
     - `$subMenuName` (`bool`|`string`) &mdash;
        The menu item's name. Can be a translation token.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="rename" id="rename"></a>
 <a name="rename" id="rename"></a>
@@ -84,15 +82,15 @@ Renames a single menu entry.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$mainMenuOriginal` (`Piwik\Menu\$mainMenuOriginal`) &mdash;
+    - `$mainMenuOriginal`
       
-    - `$subMenuOriginal` (`Piwik\Menu\$subMenuOriginal`) &mdash;
+    - `$subMenuOriginal`
       
-    - `$mainMenuRenamed` (`Piwik\Menu\$mainMenuRenamed`) &mdash;
+    - `$mainMenuRenamed`
       
-    - `$subMenuRenamed` (`Piwik\Menu\$subMenuRenamed`) &mdash;
+    - `$subMenuRenamed`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="editurl" id="editurl"></a>
 <a name="editUrl" id="editUrl"></a>
@@ -103,11 +101,11 @@ Edits a URL of an existing menu entry.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$mainMenuToEdit` (`Piwik\Menu\$mainMenuToEdit`) &mdash;
+    - `$mainMenuToEdit`
       
-    - `$subMenuToEdit` (`Piwik\Menu\$subMenuToEdit`) &mdash;
+    - `$subMenuToEdit`
       
-    - `$newUrl` (`Piwik\Menu\$newUrl`) &mdash;
+    - `$newUrl`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 

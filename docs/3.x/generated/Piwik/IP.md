@@ -21,9 +21,8 @@ The class defines the following methods:
 <a name="getIpFromHeader" id="getIpFromHeader"></a>
 ### `getIpFromHeader()`
 
-Returns the most accurate IP address available for the current user, in IPv4 format.
-
-This could be the proxy client's IP address.
+Returns the most accurate IP address available for the current user, in
+IPv4 format. This could be the proxy client's IP address.
 
 #### Signature
 

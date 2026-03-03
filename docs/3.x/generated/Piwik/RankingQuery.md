@@ -5,10 +5,6 @@ RankingQuery
 
 The ranking query class wraps an arbitrary SQL query with more SQL that limits the number of results while aggregating the rest in an a new "Others" row.
 
-It also
-allows for some more fancy things that can be configured via method calls of this
-class. The advanced use cases are explained in the doc comments of the methods.
-
 The general use case looks like this:
 
     // limit to 500 rows + "Others"
@@ -54,7 +50,7 @@ Constructor.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$limit` (`int`|`Piwik\false`) &mdash;
+    - `$limit` (`int`|`false`) &mdash;
        The result row limit. See [setLimit()](/api-reference/Piwik/RankingQuery#setlimit).
 
 <a name="setlimit" id="setlimit"></a>
@@ -68,7 +64,7 @@ Set the limit after which everything is grouped to "Others".
 -  It accepts the following parameter(s):
     - `$limit` (`int`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setotherslabel" id="setotherslabel"></a>
 <a name="setOthersLabel" id="setOthersLabel"></a>
@@ -81,7 +77,7 @@ Set the value to use for the label in the 'Others' row.
 -  It accepts the following parameter(s):
     - `$value` (`string`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addlabelcolumn" id="addlabelcolumn"></a>
 <a name="addLabelColumn" id="addLabelColumn"></a>
@@ -96,7 +92,7 @@ Labels are the columns that are replaced with "Others" after the limit.
 -  It accepts the following parameter(s):
     - `$labelColumn` (`string`|`array`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getlabelcolumns" id="getlabelcolumns"></a>
 <a name="getLabelColumns" id="getLabelColumns"></a>
@@ -115,11 +111,11 @@ Add a column that has be added to the outer queries.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$column` (`Piwik\$column`) &mdash;
+    - `$column`
       
     - `$aggregationFunction` (`string`|`bool`) &mdash;
        If set, this function is used to aggregate the values of "Others", eg, `'min'`, `'max'` or `'sum'`.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setcolumntomarkexcludedrows" id="setcolumntomarkexcludedrows"></a>
 <a name="setColumnToMarkExcludedRows" id="setColumnToMarkExcludedRows"></a>
@@ -134,9 +130,9 @@ by [execute()](/api-reference/Piwik/RankingQuery#execute).
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$column` (`Piwik\$column`) &mdash;
+    - `$column`
        string Name of the column.
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if method is used more than once.
 
@@ -144,9 +140,8 @@ by [execute()](/api-reference/Piwik/RankingQuery#execute).
 <a name="partitionResultIntoMultipleGroups" id="partitionResultIntoMultipleGroups"></a>
 ### `partitionResultIntoMultipleGroups()`
 
-This method can be used to parition the result based on the possible values of one table column.
-
-This means the query will split the result set into other sets of rows
+This method can be used to parition the result based on the possible values of one
+table column. This means the query will split the result set into other sets of rows
 for each possible value you provide (where the rows of each set have a column value
 that equals a possible value). Each of these new sets of rows will be individually
 limited resulting in several limited result sets.
@@ -161,11 +156,11 @@ rows `log_action.type = TYPE_DOWNLOAD`.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$partitionColumn` (`Piwik\$partitionColumn`) &mdash;
+    - `$partitionColumn`
        string The column name to partion by.
-    - `$possibleValues` (`Piwik\$possibleValues`) &mdash;
+    - `$possibleValues`
        Array of possible column values.
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if method is used more than once.
 
@@ -180,15 +175,16 @@ The object has to be configured first using the other methods.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$innerQuery` (`Piwik\$innerQuery`) &mdash;
-       string  The "payload" query that does the actual data aggregation. The ordering has to be specified in this query. [RankingQuery](/api-reference/Piwik/RankingQuery) cannot apply ordering itself.
-    - `$bind` (`Piwik\$bind`) &mdash;
-       array         Bindings for the inner query.
+    - `$innerQuery`
+       string The "payload" query that does the actual data aggregation. The ordering has to be specified in this query. [RankingQuery](/api-reference/Piwik/RankingQuery) cannot apply ordering itself.
+    - `$bind`
+       array Bindings for the inner query.
     - `$timeLimitInMs` (`int`) &mdash;
        Adds a MAX_EXECUTION_TIME query hint to the query if $timeLimitInMs > 0
 
 - *Returns:*  `array` &mdash;
-    The format depends on which methods have been used to configure the ranking query.
+    The format depends on which methods have been used
+                           to configure the ranking query.
 
 <a name="generaterankingquery" id="generaterankingquery"></a>
 <a name="generateRankingQuery" id="generateRankingQuery"></a>
@@ -202,8 +198,8 @@ yourself, use this method.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$innerQuery` (`Piwik\$innerQuery`) &mdash;
-       string  The "payload" query that does the actual data aggregation. The ordering has to be specified in this query. [RankingQuery](/api-reference/Piwik/RankingQuery) cannot apply ordering itself.
+    - `$innerQuery`
+       string The "payload" query that does the actual data aggregation. The ordering has to be specified in this query. [RankingQuery](/api-reference/Piwik/RankingQuery) cannot apply ordering itself.
 
 - *Returns:*  `string` &mdash;
     The entire ranking query SQL.

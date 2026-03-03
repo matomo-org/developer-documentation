@@ -21,7 +21,7 @@ The tracking code looks as follows:
 ```html
 <!-- Matomo -->
 <script type="text/javascript">
-  var _paq = window._paq || [];
+  var _paq = window._paq = window._paq || [];
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
@@ -29,7 +29,7 @@ The tracking code looks as follows:
     _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', {$IDSITE}]);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    g.type='text/javascript'; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
 <!-- End Matomo Code -->
@@ -149,6 +149,7 @@ _paq.push(['enableHeartBeatTimer']);
 ```
 
 Piwik will then send requests to count the actual time spent on the page, when the user is actively viewing the page (i.e. when the tab is active and in focus). The heart beat request is executed when:
+
  * switching to another browser tab after the current tab was active for at least 15 seconds (can be configured see below)
  * navigating to another page within the same tab. 
 
@@ -379,7 +380,7 @@ Note: `USER_ID_HERE` must be a unique and persistent non-empty string that repre
 Let's take an example. Imagine that your website authenticate your users via a login form using a PHP script. Here is what your Piwik JavaScript snippet may look like:
 
 ```javascript
-var _paq = window._paq || [];
+var _paq = window._paq = window._paq || [];
 
 <?php
 // If user is logged-in then call 'setUserId'
@@ -764,90 +765,7 @@ If you want to ignore download or outlink tracking on a specific link, you can a
 
 ## Asking for consent
 
-In the context of the [GDPR privacy regulations](https://matomo.org/docs/gdpr/), when you are processing personal data, in some cases you will need to ask for your users' consent. To identify whether you need to ask for consent, you need to determine whether your lawful basis for processing personal data is "Consent" or "Legitimate interest", or whether you can avoid collecting personal data altogether. We recommend to learn more about the [lawful basis under the GDPR for Matomo](https://matomo.org/blog/2018/04/lawful-basis-for-processing-personal-data-under-gdpr-with-matomo/).
-           
-Follow the steps below to ask your user for their consents before their data is processed within Matomo.
-
-### Step 1: require consent
-
-To require consent, insert the following line at top of your existing Matomo Tracking code on all your pages:
-
-```js
-// require user consent before processing data
-_paq.push(['requireConsent']);
-_paq.push(['trackPageView']);
-[...]
-```
-
-Once this function `requireConsent` is executed then no tracking request will be sent to Matomo. Note that some [tracking cookies](https://matomo.org/faq/general/faq_146/) will be set during this page view but will be deleted as soon as the user navigates to a different page or closes the browser.
-
-### Step 2: asking for consent through your privacy notice
-
-Now you can ask the user for consent for example by displaying a clear privacy notice on your pages. Learn more about [privacy notices and asking for user consent](https://matomo.org/blog/2018/04/how-should-i-write-my-privacy-notice-for-matomo-analytics-under-gdpr/). Note that Matomo does not yet offer the feature to display a privacy notice, but may implement such a feature in the future to easily let you display the notice and gather user consent.
-
-### Step 3: user gives consent
-
-Once a user gives consent, you can either A) let Matomo remember the consent, or B) use your own consent tool to remember the consent. We present the two solutions below:
-
-**A) if you want to let Matomo remember the consent**
-
-Once a user gives their consent, you can let Matomo remember that the user has given consent by simply calling the following method once the user has given her or his consent:
-
-```js
-_paq.push(['rememberConsentGiven']);
-```
-
-Matomo will then remember on subsequent requests that the user has given her or his consent by setting a cookie named "consent". As long as this cookie exists, Matomo will know that consent has been given and will automatically process the data. This means that you only need to call `_paq.push(['rememberConsentGiven'])` once, and it is not needed to call `_paq.push(['setConsentGiven'])` on any page view.
-
-Notes:
-
-* By default, the cookie and consent will be remembered forever. It is possible to define an optional expiry period for your user consent by calling: `_paq.push(['rememberConsentGiven', optionallyExpireConsentInHours])`.
-* When you're tracking multiple sub-domains into the same website in Matomo, you want to ensure that when you ask for Consent, the user gives consent for all the sub-domains on which you are collecting data. If the user only gives consent for a particular domain or sub-domain(s), you may need to restrict or widen the scope of the consent cookie domain and path by using 'setCookieDomain' and ‘setCookiePath'. 
-* For the consent to work, it is required that user does not disable first party cookies.
-* When a user gives consent and is using the Safari browser, due to Safari ITP feature (Intelligent Tracking Prevention), the consent will be remembered for 7 days only for these Safari users. 
-
-**B) if you use your own consent tool to remember the consent**
-            
-In some cases, you record the information that the user has given consent to be tracked directly in your own system or CMS (for example when you use your own a cookie to remember user consent). Once you have the consent by the user to process their data, you need to call the `setConsentGiven` method:
-  
-```js
-// require user consent before processing data
-_paq.push(['requireConsent']);
-_paq.push(['trackPageview']);
-[...]
-
-// user has given consent to process their data
-_paq.push(['setConsentGiven']);
-```
-       
-This lets the JavaScript tracker know that the user has given consent and ensures the tracking is working as expected. This function needs to be called anytime after `_paq.push(['requireConsent'])`.
-     
-Notes:
-
-* when you call `_paq.push(['setConsentGiven'])`, Matomo will not remember on subsequent requests that this user has given consent: it is important that you call setConsentGiven on every page.
-* when the user has given consent, you could also avoid calling `_paq.push(['requireConsent'])` in the first place. 
-
-### Step 4: user removes consent
-
-In order to remove his consent the user needs to perform a specific action, for example: clicking on a button "I do not want to be tracked anymore".
-
-**A) if you want to let Matomo remember the consent**
-      
-When the user has expressed she or he no longer gives consent, you need to call the following method once:
-
-```js
-_paq.push(['forgetConsentGiven']);
-```
-
-This makes sure the cookie that remembered the given consent is deleted.
-
-**B) if you use your own consent tool to remember the consent**
-When the user has expressed she or he no longer gives consent, you shall not call the following method anymore:
-
-```js
-// do not call this once user has removed their consent
-_paq.push(['setConsentGiven']);
-```
+[View our integration guide for implementing tracking or cookie consent.](/guides/tracking-consent)
 
 ## Optional: creating a custom opt-out form
 
@@ -967,7 +885,7 @@ The example below shows how to use `addTracker`  method to track the same analyt
 
 ```html
 <script type="text/javascript">
-  var _paq = window._paq || [];
+  var _paq = window._paq = window._paq || [];
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
 
@@ -985,7 +903,7 @@ The example below shows how to use `addTracker`  method to track the same analyt
     // That's it!
 
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    g.type='text/javascript'; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
 ```

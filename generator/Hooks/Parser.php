@@ -3,6 +3,8 @@
 namespace Hooks;
 
 use Linkparser\LinkParser;
+use PhpParser\Parser\Php5;
+use PhpParser\Parser\Php7;
 use Sami\Sami;
 use Linkparser\InlineLinkParser;
 use Linkparser\Scope;
@@ -10,7 +12,7 @@ use Linkparser\Scope;
 class Parser {
 
     /**
-     * @var \PHPParser_Parser
+     * @var \PHPParser\Parser
      */
     private $parser;
 
@@ -19,10 +21,14 @@ class Parser {
      */
     private $sami;
 
-    public function __construct($sami)
+    public function __construct($sami, $matomoMajorVersion)
     {
         $this->sami    = $sami;
-        $this->parser  = new \PHPParser_Parser(new \PHPParser_Lexer);
+        if ($matomoMajorVersion <= 3) {
+            $this->parser  = new Php5(new \PHPParser\Lexer);
+        } else {
+            $this->parser  = new Php7(new \PHPParser\Lexer);
+        }
     }
 
     public function searchForHooksInFile($filename, $phpFile)
@@ -32,12 +38,11 @@ class Parser {
         if (false === strpos($code, 'postEvent')) {
             return array();
         }
-
         $stmts = $this->parser->parse($code);
 
-        $traverser = new \PHPParser_NodeTraverser();
+        $traverser = new \PHPParser\NodeTraverser();
         $traverser->addVisitor(new MyConstantVisitor());
-        $traverser->addVisitor(new MyHookVisitor($filename));
+        $traverser->addVisitor(new MyHookVisitor($filename, $this->sami));
         $hooks = $traverser->traverse($stmts);
 
         return $hooks;
@@ -76,7 +81,11 @@ class Parser {
 
         foreach ($pluginNames as $pluginName) {
             $plugin = \Piwik\Plugin\Manager::getInstance()->loadPlugin($pluginName);
-            $registeredHooks = $plugin->getListHooksRegistered();
+            if (method_exists($plugin, 'registerEvents')) {
+                $registeredHooks = $plugin->registerEvents();
+            } else {
+                $registeredHooks = $plugin->getListHooksRegistered();
+            }
 
             if (!array_key_exists($hookName, $registeredHooks)) {
                 continue;
@@ -118,15 +127,15 @@ class Parser {
 
     public function generateDocumentation($viewVariables, $target)
     {
-        $loader = new \Twig_Loader_Filesystem(__DIR__ . '/../template');
-        $twig   = new \Twig_Environment($loader, array());
-        $filter = new \Twig_SimpleFilter('onlyalnum', function ($string) {
+        $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/../template');
+        $twig   = new \Twig\Environment($loader, array());
+        $filter = new \Twig\TwigFilter('onlyalnum', function ($string) {
             return preg_replace("/[^a-zA-Z0-9]+/", "", $string);
         });
         $twig->addFilter($filter);
 
         $self = $this;
-        $twig->addFilter(new \Twig_SimpleFilter('linkparser', function ($text, $hook) use ($self) {
+        $twig->addFilter(new \Twig\TwigFilter('linkparser', function ($text, $hook) use ($self) {
 
             $scope = $self->generateScope($hook);
 
@@ -136,7 +145,7 @@ class Parser {
             return $parsedText;
         }));
 
-        $twig->addFilter(new \Twig_SimpleFilter('inlinelinkparser', function ($description, $hook) use ($self) {
+        $twig->addFilter(new \Twig\TwigFilter('inlinelinkparser', function ($description, $hook) use ($self) {
 
             $scope = $self->generateScope($hook);
 

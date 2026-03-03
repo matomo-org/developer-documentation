@@ -46,5 +46,5 @@ See \Piwik\Plugins\ExamplePlugin\Updates\Updates\_0\_0\_2 for an example.
 -  It accepts the following parameter(s):
     - `$updater` ([`Updater`](../../Piwik/Updater.md)) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 

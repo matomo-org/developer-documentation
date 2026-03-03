@@ -12,7 +12,7 @@ function generateDocs {
 
     cd piwik
     git rm --cached -r . > /dev/null 
-    git reset --hard > /dev/null 
+    git reset --hard > /dev/null
     git submodule foreach --recursive git reset --hard
     git clean -f -d
     git submodule foreach git clean -f
@@ -27,11 +27,11 @@ function generateDocs {
     git rev-parse --abbrev-ref HEAD
     git pull origin $1
     sleep 3
-    git submodule update --recursive --force
+    git submodule update --init --recursive --force
     php ../app/composer.phar self-update
-    php ../app/composer.phar install || true
+    php ../app/composer.phar install
     cd ..
-    sleep 4
+    sleep 10
     php generator/generate.php --branch=$1 --targetname=$2
 
     GENERATION_SUCCESS=$?
@@ -42,6 +42,5 @@ function generateDocs {
 }
 
 cd $DIR
-generateDocs "3.x-dev" "3.x"
+generateDocs "5.x-dev" "5.x"
 rm -rf app/tmp/cache/*
-

@@ -9,6 +9,7 @@ subGuides:
   - working-with-piwiks-ui
   - plugin-settings
   - scheduled-tasks
+  - visitor-log-and-profile
   - piwik-on-the-command-line
   - gdpr
 ---

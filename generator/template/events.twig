@@ -4,12 +4,16 @@ Events
 This is a complete list of available hooks. If you are not familiar with this read our [Guide about events](/guides/events).
 
 {% set currentCategory = '' %}
-{% for hook in hooks if hook.name != '$eventName' %}
-{% if (hook.category) != (currentCategory) %}{% set currentCategory = hook.category %}
+{% for hook in hooks %}
+{% if hook.name != '$eventName' %}
+{% if (hook.category) != (currentCategory) %}
+{% set currentCategory = hook.category %}
 ## {{ hook.category }}
 
-{% for categoryHook in hooks if categoryHook.category == currentCategory %}
+{% for categoryHook in hooks %}
+{% if categoryHook.category == currentCategory %}
 - [{{ categoryHook.name }}](#{{ categoryHook.name|onlyalnum|lower }})
+{% endif %}
 {% endfor %}
 {% endif %}
 
@@ -24,11 +28,11 @@ This is a complete list of available hooks. If you are not familiar with this re
 {% if hook.arguments %}
 
 Callback Signature:
-<pre><code>{{ hook.arguments|replace({'array(': 'function('}) }}</code></pre>
+<pre><code>{{ hook.arguments|replace({'array(': 'function('})|replace({'[': 'function('}) }}</code></pre>
 {% if hook.comment and hook.comment.params %}
 {% for param in hook.comment.params %}
 
-- {% if param[0] and param[0][0] and param[0][0][0] %}{{ param[0][0][0]|linkparser(hook)|raw }}{% endif %}{% if param[1] %} `{% if ('&$' ~ param[1]) in hook.arguments %}&{% endif %}${{ param[1] }}`{% endif %}{% if param[1] %} {{ param[2]|inlinelinkparser(hook)|raw }}{% endif %}
+- {% if param[0] and param[0][0] and param[0][0][0] %}{{ param[0][0][0]|linkparser(hook)|raw }}{% endif %}{% if param[1] %} `{% if ('&$' ~ param[1]) in hook.arguments %}&{% endif %}${{ param[1] }}`{% endif %}{% if param[1] %}{% endif %}{% if param[2] %} {{ param[2]|inlinelinkparser(hook)|raw }}{% endif %}
 
 {% endfor %}
 {% endif %}
@@ -41,6 +45,7 @@ Usages:
 [{{ usage.className }}::{{ usage.methodName }}](https://github.com/matomo-org/matomo/blob/{{ versionName }}{{ usage.file }}#L{{ usage.startLine }}){% if not loop.last%}, {% endif %}
 {% endfor %}
 
+{% endif %}
 {% endif %}
 
 {% endfor %}

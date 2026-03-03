@@ -29,7 +29,7 @@ Set profile information
 -  It accepts the following parameter(s):
     - `$profile` (`array`) &mdash;
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getid" id="getid"></a>
 <a name="getId" id="getId"></a>

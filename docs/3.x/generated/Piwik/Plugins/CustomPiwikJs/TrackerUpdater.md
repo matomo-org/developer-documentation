@@ -24,7 +24,7 @@ Checks whether the Piwik JavaScript tracker file "piwik.js" is writable.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; In case the piwik.js file is not writable.
 
@@ -40,5 +40,5 @@ an exception in such a case and instead just to nothing. To check if the update 
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 

@@ -1,19 +1,19 @@
 {% macro class_item(class, short = false, indent = "", replacePiwik = false) -%}
-{{ indent }}- {{ _self.class_name(class, short, "", replacePiwik) }}{% if class.shortdesc %} &mdash; {{ class.shortdesc|inlinelinkparser(class)|raw }}{% endif %}
+{{ indent }}- {{ _self.class_name(class, short, "", replacePiwik) }}{% if class.shortdesc %} &mdash; {{ class.shortdesc|removeNewLine|shortDescription|inlinelinkparser(class)|raw }}{% endif %}
 {%- endmacro -%}
 
 {% macro class_name(class, short = false, suffix = "", replacePiwik = false) -%}
-{% spaceless -%}
+{% apply spaceless -%}
 {% if class.projectclass or class.phpclass %}
 [`{{ (short ? class.shortname : class)|replace({'Piwik\\': (replacePiwik ? '' : 'Piwik\\')}) }}{{ suffix }}`]({% if class.projectclass %}{{ _self.markdown_path(class_path(class)) }}{% else %}http://php.net/class.{{ class }}{% endif %})
 {% else %}
 `{{ class }}`
 {% endif %}
-{%- endspaceless %}
+{%- endapply %}
 {%- endmacro -%}
 
 {% macro class_type(class, sentence = false) -%}
-{% spaceless %}
+{% apply spaceless %}
 {% if class.interface %}
 {% if sentence %}an {% endif %}
 interface
@@ -22,23 +22,23 @@ interface
 {% if class.abstract %}abstract {% endif %}
 class
 {%- endif -%}
-{% endspaceless %}
+{% endapply %}
 {%- endmacro -%}
 
 {% macro hint(hint) -%}
-{% spaceless %}
+{% apply spaceless %}
 {% if hint.class -%}
 {{ _self.class_name(hint.name, true, hint.array ? "[]" : "") }}
 {%- elseif hint.name -%}
 `{{ hint.name }}{% if hint.array %}[]{% endif %}`
 {%- endif %}
-{% endspaceless %}
+{% endapply %}
 {%- endmacro -%}
 
 {% macro markdown_path(path) -%}
-{% spaceless %}
+{% apply spaceless %}
 {{- path|replace({".html": ".md"}) -}}
-{% endspaceless %}
+{% endapply %}
 {%- endmacro -%}
 
 {% macro member_signature(type, member, class) -%}
@@ -61,9 +61,9 @@ class
 {% if member.parameters %}
 -  It accepts the following parameter(s):
 {% for parameter in member.getParameters %}
-    - `${{ parameter.name }}`{% if parameter.hint %} ({% for hint in parameter.hint %}{{ _self.hint(hint) }}{% if not loop.last %}|{% endif %}{% endfor %}) &mdash;{% endif %}
+    - `${{ parameter.name|string }}`{% if parameter.hint %} ({% for hint in parameter.hint %}{{ _self.hint(hint) }}{% if not loop.last %}|{% endif %}{% endfor %}) &mdash;{% endif %}
 
-      {% if parameter.shortDesc is defined and parameter.shortDesc %} {{ parameter.shortDesc|inlinelinkparser(class)|raw }}{% endif %}{% if parameter.shortDesc is defined and parameter.longDesc %} {{ parameter.longDesc|inlinelinkparser(class)|raw }}{% endif %}
+      {% if parameter.shortDesc is defined and parameter.shortDesc %} {{ parameter.shortDesc|removeNewLine|inlinelinkparser(class)|raw }}{% endif %}{% if parameter.shortDesc is defined and parameter.longDesc %} {{ parameter.longDesc|inlinelinkparser(class)|raw }}{% endif %}
 
 {% endfor %}
 {% endif %}
@@ -76,7 +76,7 @@ class
 {% elseif member.hint|length > 0 %}
 - It returns a {{ _self.hint(member.hint[0]) }} value.
 {% else %}
-- It does not return anything.
+- It does not return anything or a mixed result.
 {% endif %}{% endif %}
 {% if member.exceptions %}
 - It throws one of the following exceptions:
@@ -89,8 +89,8 @@ class
 {%- endmacro -%}
 
 {% macro member_visibility(member) -%}
-{% spaceless %}
+{% apply spaceless %}
 {% if member.private %}private{% elseif member.protected %}protected{% else %}public{% endif %}
 {% if member.static %} static{% endif %}
-{% endspaceless %}
+{% endapply %}
 {%- endmacro -%}

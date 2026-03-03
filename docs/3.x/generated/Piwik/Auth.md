@@ -71,7 +71,7 @@ Sets the authentication token to authenticate with.
 -  It accepts the following parameter(s):
     - `$token_auth` (`string`) &mdash;
        authentication token
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getlogin" id="getlogin"></a>
 <a name="getLogin" id="getLogin"></a>
@@ -110,7 +110,7 @@ Sets the login name to authenticate with.
 -  It accepts the following parameter(s):
     - `$login` (`string`) &mdash;
        The username.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setpassword" id="setpassword"></a>
 <a name="setPassword" id="setPassword"></a>
@@ -123,22 +123,20 @@ Sets the password to authenticate with.
 -  It accepts the following parameter(s):
     - `$password` (`string`) &mdash;
        Password (not hashed).
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setpasswordhash" id="setpasswordhash"></a>
 <a name="setPasswordHash" id="setPasswordHash"></a>
 ### `setPasswordHash()`
 
-Sets the hash of the password to authenticate with.
-
-The hash will be an MD5 hash.
+Sets the hash of the password to authenticate with. The hash will be an MD5 hash.
 
 #### Signature
 
 -  It accepts the following parameter(s):
     - `$passwordHash` (`string`) &mdash;
        The hashed password.
-- It does not return anything.
+- It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if authentication by hashed password is not supported.
 
@@ -146,19 +144,19 @@ The hash will be an MD5 hash.
 <a name="authenticate" id="authenticate"></a>
 ### `authenticate()`
 
-Authenticates a user using the login and password set using the setters.
-
-Can also authenticate
+Authenticates a user using the login and password set using the setters. Can also authenticate
 via token auth if one is set and no password is set.
 
 Note: this method must successfully authenticate if the token auth supplied is a special hash
 of the user's real token auth. This is because the SessionInitializer class stores a
 hash of the token auth in the session cookie. You can calculate the token auth hash using the
-Piwik\Plugins\Login\SessionInitializer::getHashTokenAuth() method.
+[SessionInitializer::getHashTokenAuth()](/api-reference/Piwik/Plugins/Login/SessionInitializer#gethashtokenauth) method.
 
 #### Signature
 
 - It returns a [`AuthResult`](../Piwik/AuthResult.md) value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if the Auth implementation has an invalid state (ie, no login was specified). Note: implementations are not **required** to throw exceptions for invalid state, but they are allowed to.
+    - [`Exception`](http://php.net/class.Exception) &mdash; if the Auth implementation has an invalid state (ie, no login
+                  was specified). Note: implementations are not **required** to throw
+                  exceptions for invalid state, but they are allowed to.
 

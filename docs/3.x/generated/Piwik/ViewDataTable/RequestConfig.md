@@ -5,9 +5,6 @@ RequestConfig
 
 Contains base request properties for [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) instances.
 
-Manipulating
-these properties will change the way a [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) loads report data.
-
 <a name="client-side-parameters-desc"></a>
 **Client Side Parameters**
 
@@ -141,9 +138,7 @@ Default value: If the report contains nb_uniq_visitors and nb_uniq_visitors is a
 <a name="filter_sort_order" id="filter_sort_order"></a>
 ### `$filter_sort_order`
 
-Controls the sort order.
-
-Either 'asc' or 'desc'.
+Controls the sort order. Either 'asc' or 'desc'.
 
 Default value: 'desc'
 
@@ -184,7 +179,8 @@ Default value: false
 <a name="totals" id="totals"></a>
 ### `$totals`
 
-If set to true or "1", the report may calculate totals information and show percentage values for each row in relative to the total value.
+If set to true or "1", the report may calculate totals information and show percentage values for each row in
+relative to the total value.
 
 Default value: 0
 
@@ -272,7 +268,8 @@ Default value: false
 <a name="request_parameters_to_modify" id="request_parameters_to_modify"></a>
 ### `$request_parameters_to_modify`
 
-An array property that contains query parameter name/value overrides for API requests made by ViewDataTable.
+An array property that contains query parameter name/value overrides for API requests made
+by ViewDataTable.
 
 E.g. array('idSite' => ..., 'period' => 'month')
 
@@ -313,9 +310,8 @@ Default value: false
 <a name="apiMethodToRequestDataTable" id="apiMethodToRequestDataTable"></a>
 ### `$apiMethodToRequestDataTable`
 
-returns 'Plugin.apiMethodName' used for this ViewDataTable, eg.
-
-'Actions.getPageUrls'
+returns 'Plugin.apiMethodName' used for this ViewDataTable,
+eg. 'Actions.getPageUrls'
 
 #### Signature
 
@@ -325,9 +321,7 @@ returns 'Plugin.apiMethodName' used for this ViewDataTable, eg.
 <a name="idSubtable" id="idSubtable"></a>
 ### `$idSubtable`
 
-If the current dataTable refers to a subDataTable (eg.
-
-keywordsBySearchEngineId for id=X) this variable is set to the Id
+If the current dataTable refers to a subDataTable (eg. keywordsBySearchEngineId for id=X) this variable is set to the Id
 
 #### Signature
 
@@ -339,9 +333,7 @@ keywordsBySearchEngineId for id=X) this variable is set to the Id
 <a name="pivotBy" id="pivotBy"></a>
 ### `$pivotBy`
 
-Dimension ID to pivot by.
-
-See Piwik\DataTable\Filter\PivotByDimension for more info.
+Dimension ID to pivot by. See Piwik\DataTable\Filter\PivotByDimension for more info.
 
 #### Signature
 
@@ -351,9 +343,7 @@ See Piwik\DataTable\Filter\PivotByDimension for more info.
 <a name="pivotByColumn" id="pivotByColumn"></a>
 ### `$pivotByColumn`
 
-The column to display in a pivot table, eg, `'nb_visits'`.
-
-See Piwik\DataTable\Filter\PivotByDimension
+The column to display in a pivot table, eg, `'nb_visits'`. See Piwik\DataTable\Filter\PivotByDimension
 for more info.
 
 #### Signature
@@ -364,9 +354,7 @@ for more info.
 <a name="pivotByColumnLimit" id="pivotByColumnLimit"></a>
 ### `$pivotByColumnLimit`
 
-The maximum number of columns to display in a pivot table.
-
-See Piwik\DataTable\Filter\PivotByDimension
+The maximum number of columns to display in a pivot table. See Piwik\DataTable\Filter\PivotByDimension
 for more info.
 
 #### Signature
@@ -377,9 +365,7 @@ for more info.
 <a name="compareSegments" id="compareSegments"></a>
 ### `$compareSegments`
 
-List of segments to compare with.
-
-Defaults to segments used in `compareSegments[]` query parameter.
+List of segments to compare with. Defaults to segments used in `compareSegments[]` query parameter.
 
 #### Signature
 
@@ -389,9 +375,7 @@ Defaults to segments used in `compareSegments[]` query parameter.
 <a name="comparePeriods" id="comparePeriods"></a>
 ### `$comparePeriods`
 
-List of period labels to compare with.
-
-Defaults to values used in `comparePeriods[]` query parameter.
+List of period labels to compare with. Defaults to values used in `comparePeriods[]` query parameter.
 
 #### Signature
 
@@ -401,9 +385,7 @@ Defaults to values used in `comparePeriods[]` query parameter.
 <a name="compareDates" id="compareDates"></a>
 ### `$compareDates`
 
-List of period dates to compare with.
-
-Defaults to values used in `compareDates[]` query parameter.
+List of period dates to compare with. Defaults to values used in `compareDates[]` query parameter.
 
 #### Signature
 
@@ -429,15 +411,13 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addpropertiesthatshouldbeavailableclientside" id="addpropertiesthatshouldbeavailableclientside"></a>
 <a name="addPropertiesThatShouldBeAvailableClientSide" id="addPropertiesThatShouldBeAvailableClientSide"></a>
 ### `addPropertiesThatShouldBeAvailableClientSide()`
 
-Marks request properties as client side properties.
-
-[Read this](#client-side-properties-desc)
+Marks request properties as client side properties. [Read this](#client-side-properties-desc)
 to learn more.
 
 #### Signature
@@ -445,15 +425,13 @@ to learn more.
 -  It accepts the following parameter(s):
     - `$propertyNames` (`array`) &mdash;
        List of property names, eg, `array('disable_queued_filters', 'filter_column')`.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="addpropertiesthatcanbeoverwrittenbyqueryparams" id="addpropertiesthatcanbeoverwrittenbyqueryparams"></a>
 <a name="addPropertiesThatCanBeOverwrittenByQueryParams" id="addPropertiesThatCanBeOverwrittenByQueryParams"></a>
 ### `addPropertiesThatCanBeOverwrittenByQueryParams()`
 
-Marks display properties as overridable.
-
-[Read this](#overridable-properties-desc) to
+Marks display properties as overridable. [Read this](#overridable-properties-desc) to
 learn more.
 
 #### Signature
@@ -461,7 +439,7 @@ learn more.
 -  It accepts the following parameter(s):
     - `$propertyNames` (`array`) &mdash;
        List of property names, eg, `array('disable_queued_filters', 'filter_column')`.
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="setdefaultsort" id="setdefaultsort"></a>
 <a name="setDefaultSort" id="setDefaultSort"></a>
@@ -476,7 +454,7 @@ learn more.
       
     - `$actualColumns`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getapimoduletorequest" id="getapimoduletorequest"></a>
 <a name="getApiModuleToRequest" id="getApiModuleToRequest"></a>
@@ -484,7 +462,7 @@ learn more.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getapimethodtorequest" id="getapimethodtorequest"></a>
 <a name="getApiMethodToRequest" id="getApiMethodToRequest"></a>
@@ -492,7 +470,7 @@ learn more.
 
 #### Signature
 
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getrequestparam" id="getrequestparam"></a>
 <a name="getRequestParam" id="getRequestParam"></a>
@@ -503,15 +481,14 @@ learn more.
 -  It accepts the following parameter(s):
     - `$paramName`
       
-- It does not return anything.
+- It does not return anything or a mixed result.
 
 <a name="getextraparameterstoset" id="getextraparameterstoset"></a>
 <a name="getExtraParametersToSet" id="getExtraParametersToSet"></a>
 ### `getExtraParametersToSet()`
 
-Override this method if you want to add custom request parameters to the API request based on ViewDataTable parameters.
-
-Return in the result the list of extra parameters.
+Override this method if you want to add custom request parameters to the API request based on ViewDataTable
+parameters. Return in the result the list of extra parameters.
 
 #### Signature
 
