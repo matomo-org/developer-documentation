@@ -118,6 +118,7 @@ Matomo provides a mechanism to manage your user's tracking consent. You can requ
 *   `hasRememberedConsent()` - Returns true or false depending on whether the current visitor has given consent previously or not.
 *   `getRememberedConsent()` - If consent was given, returns the timestamp when the visitor gave consent. Only works if `rememberConsentGiven` was used and not when `setConsentGiven` was used. The timestamp is the local timestamp which depends on the visitors time.
 *   `isConsentRequired()` - Returns true or false depending on whether `requireConsent` was called previously.
+*   `hasConsent()` - Returns true if tracking is enabled for the visitor (regardless of cookie consent), false if tracking is disbaled for the visitor via `forgetConsentGiven()` or another method.
 
 Matomo also provides a mechanism to manage your user's cookie consent. You can require that users consent to using cookies. Tracking requests will be always sent but depending on the consent cookies will be used or not used.
 
@@ -143,7 +144,6 @@ Piwik uses first party cookies to keep track of some user information over time.
 
 *   `disableCookies()` - Disable all first party cookies. Existing Piwik cookies for this websites will be deleted on the next page view. Cookies will be even disabled if the user has given cookie consent using the method `rememberCookieConsentGiven()`.
 *   `deleteCookies()` - Delete the tracking cookies currently currently set (this is useful when [creating new visits](https://matomo.org/faq/how-to/#faq_187))
-*   `hasConsent()` - Returns true if tracking is enabled for the visitor (regardless of cookie consent), false if tracking is disbaled for the visitor via `forgetConsentGiven()` or another method.
 *   `hasCookies()` - Return whether cookies are enabled and supported by this browser.
 *   `setCookieNamePrefix( prefix )` - the default prefix is '_pk_'.
 *   `setCookieDomain( domain )` - the default is the document domain; if your website can be visited at both www.example.com and example.com, you would use: `tracker.setCookieDomain('.example.com');` or `tracker.setCookieDomain('*.example.com');`
