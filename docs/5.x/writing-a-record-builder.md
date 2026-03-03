@@ -1,13 +1,7 @@
 ---
 category: Develop
+title: Record Builder
 ---
-
-<div markdown="1" class="alert alert-warning">
-**This API is unstable.**
-
-The RecordBuilder API will eventually be public and the only way to define archiving logic, but for now the API is unstable
-and subject to change. Please be aware it could potentially change between minor version releases.
-</div>
 
 # Writing a RecordBuilder
 
