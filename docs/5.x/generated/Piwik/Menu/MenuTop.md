@@ -46,25 +46,25 @@ Adds a new entry to the menu.
        The menu's category name. Can be a translation token.
     - `$subMenuName` (`string`|`null`) &mdash;
        The menu item's name. Can be a translation token.
-    - `$url` (`string`|`array`) &mdash;
-       The URL the admin menu entry should link to, or an array of query parameters that can be used to build the URL.
+    - `$url` (`string`|`Piwik\Menu\array&lt;string,`) &mdash;
+       scalar> $url The URL the admin menu entry should link to, or an array of query parameters that can be used to build the URL.
     - `$order` (`int`) &mdash;
        The order hint.
-    - `$tooltip` (`bool`|`string`) &mdash;
+    - `$tooltip` (`string`|`null`|`false`) &mdash;
        An optional tooltip to display or false to display the tooltip.
-    - `$icon` (`bool`|`string`) &mdash;
+    - `$icon` (`string`|`null`|`false`) &mdash;
        An icon classname, such as "icon-add". Only supported by admin menu
-    - `$onclick` (`bool`|`string`) &mdash;
+    - `$onclick` (`string`|`null`|`false`) &mdash;
        Will execute the on click handler instead of executing the link. Only supported by admin menu.
-    - `$attribute` (`bool`|`string`) &mdash;
+    - `$attribute` (`string`|`null`|`false`) &mdash;
        Will add this string as a link attribute.
-    - `$help` (`bool`|`string`) &mdash;
+    - `$help` (`string`|`null`|`false`) &mdash;
        Will display a help icon that will pop a notification with help information.
     - `$badgeCount` (`int`) &mdash;
        If non-zero then a badge will be overlaid on the icon showing the provided count
     - `$cssClass` (`string`) &mdash;
        If a string is provided, it will be added as an extra CSS class to the menu item
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="remove" id="remove"></a>
 <a name="remove" id="remove"></a>
@@ -77,9 +77,9 @@ Removes an existing entry from the menu.
 -  It accepts the following parameter(s):
     - `$menuName` (`string`) &mdash;
        The menu's category name. Can be a translation token.
-    - `$subMenuName` (`bool`|`string`) &mdash;
+    - `$subMenuName` (`string`|`null`|`false`) &mdash;
        The menu item's name. Can be a translation token.
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="rename" id="rename"></a>
 <a name="rename" id="rename"></a>
@@ -90,15 +90,15 @@ Renames a single menu entry.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$mainMenuOriginal`
+    - `$mainMenuOriginal` (`string`) &mdash;
       
-    - `$subMenuOriginal`
+    - `$subMenuOriginal` (`string`|`null`) &mdash;
       
-    - `$mainMenuRenamed`
+    - `$mainMenuRenamed` (`string`) &mdash;
       
-    - `$subMenuRenamed`
+    - `$subMenuRenamed` (`string`|`null`) &mdash;
       
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="editurl" id="editurl"></a>
 <a name="editUrl" id="editUrl"></a>
@@ -109,13 +109,13 @@ Edits a URL of an existing menu entry.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$mainMenuToEdit`
+    - `$mainMenuToEdit` (`string`) &mdash;
       
-    - `$subMenuToEdit`
+    - `$subMenuToEdit` (`string`|`null`) &mdash;
       
-    - `$newUrl`
-      
-- It does not return anything or a mixed result.
+    - `$newUrl` (`string`|`Piwik\Menu\array&lt;string,`) &mdash;
+       scalar> $newUrl
+- It returns a `void` value.
 
 <a name="addhtml" id="addhtml"></a>
 <a name="addHtml" id="addHtml"></a>
