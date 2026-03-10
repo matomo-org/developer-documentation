@@ -13,12 +13,15 @@
         "slim/twig-view": "^3.0.0",
         "php-di/php-di": "^7.0",
         "ext-json": "*",
-        "symfony/yaml": "^6.4.7"
+        "symfony/yaml": "^6.4.7",
+        "swagger-api/swagger-ui": "^5.29"
     },
-    "require-dev": {},
     "scripts": {
         "serve": [
             "php -S 0.0.0.0:8000 -t public"
+        ],
+        "start-ddev": [
+            "cd .. && bash ddev-developer-docs.sh"
         ]
     }
 }

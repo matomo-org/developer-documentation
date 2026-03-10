@@ -136,6 +136,49 @@ $app->get('/api-reference/PHP-Matomo-Tracker', function (Request $request, Respo
     return renderGuide($this->get("view"), $response, $request->getUri(), new PhpDoc($matomoTracker, 'PHP-Matomo-Tracker'), new ApiReferenceCategory());
 });
 
+$app->group('/openapi', function (\Slim\Routing\RouteCollectorProxy $group) {
+    $group->get('/docs', function (Request $request, Response $response, array $args) {
+        $isEmbedded = $request->getQueryParams()['embedded'] ?? false;
+        return $this->get('view')->render($response, 'swagger-ui.twig', [
+            'embedded' => !in_array($isEmbedded, ['false', '0']),
+        ]);
+    });
+
+    $group->get('/spec', function (Request $request, Response $response, array $args) {
+        $format = strtolower($request->getQueryParams()['format'] ?? 'json');
+        if ($format !== 'json') {
+            throw new \Slim\Exception\HttpBadRequestException($request, 'Unsupported response format: ' . $format);
+        }
+
+        // Load the JSON OpenAPI spec file
+        $response->getBody()->write(file_get_contents(__DIR__ . '/../openapi/demo_matomo_spec_v1.0.0.json'));
+        return $response->withHeader('Content-Type', 'application/json')
+            ->withStatus(200);
+    });
+
+    $group->get('/source/{file}', function (Request $request, Response $response, array $args) {
+        $fileName = $args['file'];
+
+        // Allow only whitelisted source files from the swagger-ui dist/ directory
+        if (!in_array($fileName, ['swagger-ui.css', 'swagger-ui-bundle.js', 'swagger-ui-standalone-preset.js'])) {
+            throw new HttpNotFoundException($request);
+        }
+
+        $fileContent = file_get_contents(__DIR__ . '/../vendor/swagger-api/swagger-ui/dist/' . $fileName);
+        $response->getBody()->write($fileContent);
+        $contentType = pathinfo($fileName, PATHINFO_EXTENSION) === 'js' ? 'text/javascript' : 'text/css';
+        return $response->withHeader('Content-Type', $contentType)
+            ->withStatus(200);
+    });
+})->add(function (Request $request, \Psr\Http\Server\RequestHandlerInterface $handler) {
+    // Only allow OpenAPI endpoints for Matomo 5 or greater
+    if (Environment::getPiwikVersion() < 5) {
+        throw new HttpNotFoundException($request, 'This is only supported in Matomo version 5 or higher.');
+    }
+
+    return $handler->handle($request);
+});
+
 $app->get('/api-reference/{reference1}/{reference2}', function (Request $request, Response $response, $args) {
     try {
         $guide = new ApiReferenceGuide($args["reference1"] . '/' . $args["reference2"]);
