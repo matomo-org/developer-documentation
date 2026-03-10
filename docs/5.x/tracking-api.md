@@ -183,53 +183,69 @@ Note: the user of the HTTP API is responsible for determining the source locatio
 
 ## Tracking Bots
 
-As of Matomo 5.7.0, Matomo can record requests from automated agents, allowing you to analyse bot activity separately from normal visits. Tracking distinguishes between **visit/action tracking** and **bot tracking**, depending on the `recMode` parameter and detection results.
+As of Matomo 5.7.0, Matomo can record requests from automated agents, allowing you to analyse bot activity separately from normal visits.
 
-_Note: Currently the bot activity tracking is limited to user triggered AI Assistants, such as ChatGPT-User, Perplexity-User and others. Other bot requests will be detected, but discarded._
+_Note: Currently bot activity tracking is limited to user triggered AI Assistants, such as ChatGPT-User, Perplexity-User and others. Other bot requests will be detected, but discarded._
 
 ### How Matomo decides how to process a request
 
-Matomo uses the optional `recMode` parameter to control how incoming requests are handled:
+Matomo uses the optional `recMode` parameter to control request handling:
 
 * **(not set)** – *Visit only*
-  This is the default behavior for all tracking requests. Only normal visits and actions are recorded.
+  This is the default behavior for all tracking requests. Only normal visit/action tracking is performed.
   Requests detected as bots are ignored unless explicitly overridden with `bots=1`.
 
 * **`recMode=1`** – *Bot only*
-  Only bot tracking is performed. If the request is not detected as a bot, it will be discarded.
-
+  Only bot tracking is performed. Non-bot requests are discarded.
 * **`recMode=2`** – *Auto mode*
-  Matomo automatically decides whether to treat the request as a bot or a normal visit based on detection.
+  Matomo automatically decides whether to process the request as bot tracking or visit/action tracking.
 
 ### The `bots` parameter
 
 `bots=1` can be used to **force a request to be tracked as a normal visit/action**, even if Matomo’s detection classifies it as a bot.
 This allows preserving visit data from known bots in special cases, such as when using automated testing or controlled monitoring tools.
 
-_Note: This parameter exclusively works in *Visit only mode*, so with `recMode` not set_
+_Note: `bots=1` works only when `recMode` is not set (Visit only mode)._
 
 ### Parameters processed during bot tracking
 
-When a request is processed as a bot (either via `recMode=1` or automatically detected in `recMode=2`), **only** the following parameters are evaluated.
-All other Tracking API parameters are ignored for bot requests.
+When a request is processed as a bot (via `recMode=1` or bot detection in `recMode=2`), bot tracking uses only bot-relevant parameters.
 
-* `url`: The page URL that the bot accessed.
-* `download`: The document URL if the request represents a download. To be sent instead of `url`.
-* `http_status`: The HTTP status code returned by your server.
+#### Required Bot Info
+
+* `idsite` (required globally): Website ID to track into.
+* `rec=1` (required globally): Enables tracking request processing.
+* `recMode` (required for bot tracking): Use `1` (bot only) or `2` (auto mode).
+* `ua` (required): Full user agent string used for bot detection/classification.
+* `url` or `download` (required, at least one):
+  Use `url` for page requests, or `download` for file/document requests.
+
+#### Optional Bot Info
+
+* `http_status`: HTTP status code returned by your server.
 * `bw_bytes`: Bytes transferred to the client.
 * `pf_srv`: Server processing time in milliseconds.
-* `ua`: Full user agent string of the bot.
-* `source`: Source label for the bot request (for example `Cloudflare`, `Cloudfront`, `Wordpress` or a system tag).
-* `cdt`: Request date/time (if sending an explicit timestamp).
+* `source`: Source label for the bot request (for example `Cloudflare`, `Cloudfront`, `WordPress`, or another system tag).
+* `cdt`: Explicit request date/time (timestamp or UTC datetime).
+  If `cdt` is older than 24 hours, `token_auth` is required (same rule as general Tracking API requests).
 
-These fields are stored in Matomo’s bot tracking logs and used for analysis of AI crawlers and similar automated agents.
+If optional fields are omitted, the request is still processed and those fields remain empty in bot logs.
 
 ### Behavior summary
 
-* Default (no `recMode`): only visit tracking is performed; bots are ignored unless `bots=1` is set.
-* `recMode=1`: only bot tracking is performed; non-bots are discarded.
-* `recMode=2`: automatic detection determines whether the request is tracked as bot or visit.
+* `recMode` not set: visit/action tracking only; detected bots are ignored unless `bots=1`.
+* `recMode=1`: bot tracking only; non-bots are discarded.
+* `recMode=2`: automatic routing between bot tracking and visit/action tracking.
 
+### Example bot tracking requests
+
+Minimal bot request (required fields only):
+
+    https://your-matomo-domain.example/matomo.php?idsite=1&rec=1&recMode=1&ua=ChatGPT-User%2F1.0&url=https%3A%2F%2Fexample.com%2Fdocs%2Fintro
+
+Bot request with optional telemetry:
+
+    https://your-matomo-domain.example/matomo.php?idsite=1&rec=1&recMode=1&ua=Perplexity-User%2F1.0&download=https%3A%2F%2Fexample.com%2Fwhitepaper.pdf&http_status=200&bw_bytes=183245&pf_srv=142&source=Cloudflare&cdt=2026-03-06%2010%3A00%3A00
 ## Example Tracking Request
 
 Here is an example of a real tracking request used by the [Matomo Mobile app](https://matomo.org/mobile/) when anonymously tracking Mobile App usage:
