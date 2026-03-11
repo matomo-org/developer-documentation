@@ -34,7 +34,9 @@
                 {% endfor %}
             {% endif %}
 
-            {{ guide.validatedRenderedContent(anchorLinks)|raw }}
+            {% block guideContent %}
+                {{ guide.validatedRenderedContent(anchorLinks)|raw }}
+            {% endblock %}
 
             {% if guide.subItems is not empty %}
                 <h2>What's next?</h2>

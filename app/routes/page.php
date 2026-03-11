@@ -30,9 +30,9 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Exception\HttpNotFoundException;
 
 
-function renderGuide(Slim\Views\Twig $view, Response $response, Psr\Http\Message\UriInterface $uri, Guide $guide, Category $category)
+function renderGuide(Slim\Views\Twig $view, Response $response, Psr\Http\Message\UriInterface $uri, Guide $guide, Category $category, string $template = 'guide.twig')
 {
-    return $view->render($response, 'guide.twig', [
+    return $view->render($response, $template, [
         'category' => $category,
         'guide' => $guide,
         'linkToEditDocument' => $guide->linkToEdit(),
@@ -97,6 +97,13 @@ $app->get('/develop', function (Request $request, Response $response, $args) {
 $app->get('/piwik-in-depth', function (Request $request, Response $response, $args) {
     $category = new DevelopInDepthCategory();
     return renderGuide($this->get("view"), $response, $request->getUri(), $category->getIntroGuide(), $category);
+});
+
+$app->get('/api-reference-swagger', function (Request $request, Response $response, $args) {
+    $category = new ApiReferenceCategory();
+    $guide = new Guide('swagger-api');
+
+    return renderGuide($this->get("view"), $response, $request->getUri(), $guide, $category, 'api-swagger.twig');
 });
 
 
