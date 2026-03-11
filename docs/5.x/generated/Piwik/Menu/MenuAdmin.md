@@ -247,7 +247,9 @@ See add(). Adds a new menu item to the measurable section of the admin menu.
       
     - `$order` (`int`) &mdash;
       
-    - `$tooltip` (`bool`|`string`) &mdash;
+    - `$tooltip` (`false`|`string`) &mdash;
+      
+    - `$icon` (`false`|`string`) &mdash;
       
 - It does not return anything or a mixed result.
 
