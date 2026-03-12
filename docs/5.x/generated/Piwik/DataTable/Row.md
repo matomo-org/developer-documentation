@@ -161,7 +161,7 @@ just check whether a column exists independent of its value.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$name` (`string`) &mdash;
+    - `$name` (`string`|`int`) &mdash;
       
 - It returns a `bool` value.
 

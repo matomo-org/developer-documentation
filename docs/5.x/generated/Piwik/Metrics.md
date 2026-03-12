@@ -23,8 +23,7 @@ This class defines the following properties:
 
 #### Signature
 
-- Its type is not specified.
-
+- It is a `string[]` value.
 
 <a name="$mappingfromidtonamegoal" id="$mappingfromidtonamegoal"></a>
 <a name="mappingFromIdToNameGoal" id="mappingFromIdToNameGoal"></a>
@@ -32,8 +31,7 @@ This class defines the following properties:
 
 #### Signature
 
-- Its type is not specified.
-
+- It is a `string[]` value.
 
 Methods
 -------
@@ -60,7 +58,9 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything or a mixed result.
+
+- *Returns:*  `Piwik\array&lt;int,` &mdash;
+    string>
 
 <a name="getvisitsmetricnames" id="getvisitsmetricnames"></a>
 <a name="getVisitsMetricNames" id="getVisitsMetricNames"></a>
@@ -68,7 +68,9 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything or a mixed result.
+
+- *Returns:*  `Piwik\array&lt;int,` &mdash;
+    string>
 
 <a name="getmappingfromnametoid" id="getmappingfromnametoid"></a>
 <a name="getMappingFromNameToId" id="getMappingFromNameToId"></a>
@@ -76,7 +78,9 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything or a mixed result.
+
+- *Returns:*  `Piwik\array&lt;string,` &mdash;
+    int>
 
 <a name="getmappingfromnametoidgoal" id="getmappingfromnametoidgoal"></a>
 <a name="getMappingFromNameToIdGoal" id="getMappingFromNameToIdGoal"></a>
@@ -84,7 +88,9 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything or a mixed result.
+
+- *Returns:*  `Piwik\array&lt;string,` &mdash;
+    int>
 
 <a name="getdefaultmetricsemantictypes" id="getdefaultmetricsemantictypes"></a>
 <a name="getDefaultMetricSemanticTypes" id="getDefaultMetricSemanticTypes"></a>
@@ -92,7 +98,9 @@ The class defines the following methods:
 
 #### Signature
 
-- It returns a `array` value.
+
+- *Returns:*  `array` &mdash;
+    string>
 
 <a name="getdefaultmetrictranslations" id="getdefaultmetrictranslations"></a>
 <a name="getDefaultMetricTranslations" id="getDefaultMetricTranslations"></a>
@@ -100,7 +108,9 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything or a mixed result.
+
+- *Returns:*  `Piwik\array&lt;string,` &mdash;
+    string>
 
 <a name="getdefaultmetrics" id="getdefaultmetrics"></a>
 <a name="getDefaultMetrics" id="getDefaultMetrics"></a>
@@ -108,7 +118,9 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything or a mixed result.
+
+- *Returns:*  `Piwik\array&lt;string,` &mdash;
+    string>
 
 <a name="getdefaultprocessedmetrics" id="getdefaultprocessedmetrics"></a>
 <a name="getDefaultProcessedMetrics" id="getDefaultProcessedMetrics"></a>
@@ -116,7 +128,9 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything or a mixed result.
+
+- *Returns:*  `Piwik\array&lt;string,` &mdash;
+    string>
 
 <a name="getreadablecolumnname" id="getreadablecolumnname"></a>
 <a name="getReadableColumnName" id="getReadableColumnName"></a>
@@ -125,9 +139,11 @@ The class defines the following methods:
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$columnIdRaw`
+    - `$columnIdRaw` (`int`|`string`) &mdash;
       
-- It does not return anything or a mixed result.
+
+- *Returns:*  `int`|`string` &mdash;
+    
 
 <a name="getmetricidstoprocessreporttotal" id="getmetricidstoprocessreporttotal"></a>
 <a name="getMetricIdsToProcessReportTotal" id="getMetricIdsToProcessReportTotal"></a>
@@ -135,7 +151,7 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `int[]` value.
 
 <a name="getdefaultmetricsdocumentation" id="getdefaultmetricsdocumentation"></a>
 <a name="getDefaultMetricsDocumentation" id="getDefaultMetricsDocumentation"></a>
@@ -143,7 +159,9 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything or a mixed result.
+
+- *Returns:*  `Piwik\array&lt;string,` &mdash;
+    string>
 
 <a name="getpercentvisitcolumn" id="getpercentvisitcolumn"></a>
 <a name="getPercentVisitColumn" id="getPercentVisitColumn"></a>
@@ -151,7 +169,7 @@ The class defines the following methods:
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `string` value.
 
 <a name="makegoalcolumnsrow" id="makegoalcolumnsrow"></a>
 <a name="makeGoalColumnsRow" id="makeGoalColumnsRow"></a>
@@ -186,5 +204,7 @@ The goal metrics returned will differ based on whether the goal is user defined 
       
     - `$goalsMetrics` (`array`) &mdash;
       
-- It returns a `array` value.
+
+- *Returns:*  `array` &mdash;
+    float>
 

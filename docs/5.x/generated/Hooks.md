@@ -2323,7 +2323,7 @@ Callback Signature:
 
 ### Metrics.getDefaultMetricDocumentationTranslations
 
-*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php) in line [581](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php#L581)*
+*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php) in line [631](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php#L631)*
 
 Use this event to register translations for metrics documentation processed by your plugin.
 
@@ -2339,7 +2339,7 @@ Usages:
 
 ### Metrics.getDefaultMetricSemanticTypes
 
-*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php) in line [406](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php#L406)*
+*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php) in line [433](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php#L433)*
 
 Use this event to notify Matomo of the semantic types of metrics your plugin adds. A metric's semantic type is metadata used primarily in integrations with Matomo
 and third party services/applications. It provides information that can be used
@@ -2363,7 +2363,7 @@ Usages:
 
 ### Metrics.getDefaultMetricTranslations
 
-*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php) in line [466](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php#L466)*
+*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php) in line [497](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php#L497)*
 
 Use this event to register translations for metrics processed by your plugin.
 
@@ -2379,7 +2379,7 @@ Usages:
 
 ### Metrics.getEvolutionUnit
 
-*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php) in line [331](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php#L331)*
+*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php) in line [354](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php#L354)*
 
 Use this event to define units for custom metrics used in evolution graphs and row evolution only.
 
@@ -2399,7 +2399,7 @@ Usages:
 
 ### Metrics.isLowerValueBetter
 
-*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php) in line [288](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php#L288)*
+*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php) in line [310](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Metrics.php#L310)*
 
 Use this event to define if a lower value of a metric is better.
 
