@@ -107,6 +107,7 @@ Index
 ## C
 
 - [`createDataTableFromArchive()`](Piwik/Archive.md#createdatatablefromarchive) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
+- [`clearStaticCache()`](Piwik/Archive.md#clearstaticcache) &mdash; *Method in class* [`Archive`](Piwik/Archive.md)
 - [`ComputedMetricFactory`](Piwik/Columns/ComputedMetricFactory.md) &mdash; *Class in namespace* `Piwik\Columns`- [`createComputedMetric()`](Piwik/Columns/ComputedMetricFactory.md#createcomputedmetric) &mdash; *Method in class* [`ComputedMetricFactory`](Piwik/Columns/ComputedMetricFactory.md)
 - [`$columnName`](Piwik/Columns/Dimension.md#$columnname) &mdash; *Property in class* [`Dimension`](Piwik/Columns/Dimension.md)
 - [`$columnType`](Piwik/Columns/Dimension.md#$columntype) &mdash; *Property in class* [`Dimension`](Piwik/Columns/Dimension.md)

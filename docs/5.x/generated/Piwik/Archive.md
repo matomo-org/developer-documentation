@@ -15,7 +15,7 @@ they cannot be constructed.
 
 You can search for metrics (such as `nb_visits`) using the [getNumeric()](/api-reference/Piwik/Archive#getnumeric) and
 [getDataTableFromNumeric()](/api-reference/Piwik/Archive#getdatatablefromnumeric) methods. You can search for
-reports using the [getBlob()](/api-reference/Piwik/Archive#getblob), [getDataTable()](/api-reference/Piwik/Archive#getdatatable) and [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded) methods.
+reports using the [getDataTable()](/api-reference/Piwik/Archive#getdatatable) and [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded) methods.
 
 If you're creating an API that returns report data, you may want to use the
 [createDataTableFromArchive()](/api-reference/Piwik/Archive#createdatatablefromarchive) helper function.
@@ -106,6 +106,7 @@ The class defines the following methods:
 - [`getParams()`](#getparams) &mdash; Returns an object describing the set of sites, the set of periods and the segment this Archive will query data for.
 - [`createDataTableFromArchive()`](#createdatatablefromarchive) &mdash; Helper function that creates an Archive instance and queries for report data using query parameter data.
 - [`getPluginForReport()`](#getpluginforreport) &mdash; Returns the name of the plugin that archives a given report.
+- [`clearStaticCache()`](#clearstaticcache) &mdash; Only kept for BC
 - [`forceFetchingWithoutLaunchingArchiving()`](#forcefetchingwithoutlaunchingarchiving)
 
 <a name="__construct" id="__construct"></a>
@@ -144,9 +145,9 @@ If you want to create an Archive instance with an array of Period instances, use
        'day', `'week'`, `'month'`, `'year'` or `'range'`
     - `$strDate` ([`Date`](../Piwik/Date.md)|`string`) &mdash;
        'YYYY-MM-DD', magic keywords (ie, 'today'; [Date::factory()](/api-reference/Piwik/Date#factory) or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD').
-    - `$segment` (`bool`|`false`|`string`) &mdash;
+    - `$segment` (`string`|`null`|`false`) &mdash;
        Segment definition or false if no segment should be used. [Segment](/api-reference/Piwik/Segment)
-    - `$_restrictSitesToLogin` (`bool`|`false`|`string`) &mdash;
+    - `$_restrictSitesToLogin` (`string`|`null`|`false`) &mdash;
        Used only when running as a scheduled task.
 - It returns a `Piwik\Archive\ArchiveQuery` value.
 
@@ -191,7 +192,7 @@ use [build()](/api-reference/Piwik/Archive#build).
       
     - `$segment` ([`Segment`](../Piwik/Segment.md)) &mdash;
       
-- It does not return anything or a mixed result.
+- It returns a `bool` value.
 
 <a name="getnumeric" id="getnumeric"></a>
 <a name="getNumeric" id="getNumeric"></a>
@@ -211,10 +212,10 @@ will be indexed by site ID first, then period.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$names` (`string`|`array`) &mdash;
+    - `$names` (`string`|`string[]`) &mdash;
        One or more archive names, eg, `'nb_visits'`, `'Referrers_distinctKeywords'`, etc.
 
-- *Returns:*  `false`|`integer`|`array` &mdash;
+- *Returns:*  `float`|`array` &mdash;
     `false` if there is no data to return, a single numeric value if we're not querying
                             for multiple sites/periods, or an array if multiple sites, periods or names are
                             queried for.
@@ -231,9 +232,9 @@ and process blob data.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$names`
-      
-    - `$idSubtable`
+    - `$names` (`string`|`string[]`) &mdash;
+       One or more archive names, eg, `'nb_visits'`, `'Referrers_distinctKeywords'`, etc.
+    - `$idSubtable` (`int`|`string`|`null`) &mdash;
       
 
 - *Returns:*  `Piwik\Archive\DataCollection` &mdash;
@@ -365,7 +366,7 @@ query parameter data. API methods can use this method to reduce code redundancy.
        If true, loads all subtables. See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)
     - `$flat` (`bool`) &mdash;
        If true, loads all subtables and disabled all recursive filters.
-    - `$idSubtable` (`int`|`null`|`string`) &mdash;
+    - `$idSubtable` (`int`|`string`|`null`|`false`) &mdash;
        See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)
     - `$depth` (`int`|`null`) &mdash;
        See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)
@@ -391,11 +392,21 @@ Returns the name of the plugin that archives a given report.
     - [`Exception`](http://php.net/class.Exception) &mdash; If a plugin cannot be found or if the plugin for the report isn&#039;t
                    activated.
 
+<a name="clearstaticcache" id="clearstaticcache"></a>
+<a name="clearStaticCache" id="clearStaticCache"></a>
+### `clearStaticCache()`
+
+Only kept for BC
+
+#### Signature
+
+- It returns a `void` value.
+
 <a name="forcefetchingwithoutlaunchingarchiving" id="forcefetchingwithoutlaunchingarchiving"></a>
 <a name="forceFetchingWithoutLaunchingArchiving" id="forceFetchingWithoutLaunchingArchiving"></a>
 ### `forceFetchingWithoutLaunchingArchiving()`
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
