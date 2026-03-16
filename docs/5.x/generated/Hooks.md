@@ -180,7 +180,7 @@ Usages:
 
 ### API.$pluginName.$methodName
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [229](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L229)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [268](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L268)*
 
 Triggered before an API request is dispatched. This event exists for convenience and is triggered directly after the [API.Request.dispatch](/api-reference/events#apirequestdispatch)
 event is triggered. It can be used to modify the arguments passed to a **single** API method.
@@ -203,7 +203,7 @@ Callback Signature:
 
 ### API.$pluginName.$methodName.end
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [304](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L304)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [343](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L343)*
 
 Triggered directly after an API request is dispatched. This event exists for convenience and is triggered immediately before the
 [API.Request.dispatch.end](/api-reference/events#apirequestdispatchend) event. It can be used to modify the output of a **single**
@@ -272,7 +272,7 @@ Usages:
 
 ### API.DocumentationGenerator.$token
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [650](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L650)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [689](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L689)*
 
 This event exists for checking whether a Plugin API class or a Plugin API method tagged
 with a `@hideXYZ` should be hidden in the API listing.
@@ -359,7 +359,7 @@ Usages:
 
 ### API.Request.dispatch
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [209](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L209)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [248](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L248)*
 
 Triggered before an API request is dispatched. This event can be used to modify the arguments passed to one or more API methods.
 
@@ -391,7 +391,7 @@ Usages:
 
 ### API.Request.dispatch.end
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [344](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L344)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [383](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L383)*
 
 Triggered directly after an API request is dispatched. This event can be used to modify the output of any API method.
 
@@ -439,7 +439,7 @@ Usages:
 
 ### API.Request.intercept
 
-*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [244](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L244)*
+*Defined in [Piwik/API/Proxy](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php) in line [283](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Proxy.php#L283)*
 
 Triggered before an API request is dispatched. Use this event to intercept an API request and execute your own code instead. If you set
 `$returnedValue` in a handler for this event, the original API method will not be executed,
@@ -3507,7 +3507,7 @@ Usages:
 
 ### SegmentEditor.deactivate
 
-*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php) in line [223](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php#L223)*
+*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php) in line [254](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php#L254)*
 
 Triggered before a segment is deleted or made invisible. This event can be used by plugins to throw an exception
 or do something else.
@@ -3524,7 +3524,7 @@ Usages:
 
 ### SegmentEditor.update
 
-*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php) in line [292](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php#L292)*
+*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php) in line [323](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php#L323)*
 
 Triggered before a segment is modified. This event can be used by plugins to throw an exception
 or do something else.
