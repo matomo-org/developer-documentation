@@ -76,7 +76,7 @@ In most case, we should be able to remove the `@api` tag starting from the next 
 
 ## Developer changelog
 
-When we are adding a new API or when we are breaking or deprecating an existing API, then we change our [Developer Changelog](https://github.com/matomo-org/matomo/blob/4.x-dev/CHANGELOG.md). We also mention library updates and on occasion internal changes that may be interesting for developers.
+When we are adding a new API or when we are breaking or deprecating an existing API, then we change our [Developer Changelog](https://github.com/matomo-org/matomo/blob/5.x-dev/CHANGELOG.md). We also mention library updates and on occasion internal changes that may be interesting for developers.
 
 ### Examples when to update the developer changelog
 

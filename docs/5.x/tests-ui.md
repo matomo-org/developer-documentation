@@ -86,7 +86,7 @@ We start by using the [Piwik Console](https://developer.matomo.org/guides/piwik-
 ./console generate:test --testtype ui
 ```
 
-The command will ask you to enter the name of the plugin the created test should belong to. For the rest of this guide we assume you're using the plugin name "Widgetize". Next it will ask you for the name of the test. Here you usually enter the name of the page or report you want to test. We will use the name "WidgetizePage" in this example. There should now be a file `plugins/Widgetize/tests/UI/WidgetizePage_spec.js` which contains already an example to get you started easily:
+The command will ask you to enter the name of the plugin the created test should belong to. For the rest of this guide we assume you're using the plugin name "Widgetize". Next it will ask you for the name of the test. Here you usually enter the name of the page or report you want to test. We will use the name "WidgetizePage" in this example. There should now be a file in your plugin's `tests/UI` directory, for example `plugins/Widgetize/tests/UI/WidgetizePage_spec.js`, which already contains an example to get you started easily:
 
 ```javascript
 describe("WidgetizePage", function () {
@@ -253,9 +253,9 @@ public function addTestHooks($testingEnvironment) {
 
 The following are examples of test environment manipulation:
 
- * [Overlay_spec.js](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Overlay/tests/UI/Overlay_spec.js)
- * [Dashboard_spec.js](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Dashboard/tests/UI/Dashboard_spec.js)
- * [Login_spec.js](https://github.com/matomo-org/matomo/blob/4.x-dev/plugins/Login/tests/UI/Login_spec.js)
+ * [Overlay_spec.js](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Overlay/tests/UI/Overlay_spec.js)
+ * [Dashboard_spec.js](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Dashboard/tests/UI/Dashboard_spec.js)
+ * [Login_spec.js](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/tests/UI/Login_spec.js)
 
 #### Dependency injection configuration
 

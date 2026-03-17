@@ -17,7 +17,7 @@ Matomo uses the following JavaScript libraries:
 * [Vue.js 3](https://v3.vuejs.org/)
 * [jQuery](https://jquery.com/) and [jQuery UI](https://jqueryui.com/) (deprecated, try to avoid using in new Vue code)
 * [jqPlot](http://www.jqplot.com/)
-* A couple of other libraries are used see our [npm dependencies](https://github.com/matomo-org/matomo/blob/4.x-dev/package.json)
+* A couple of other libraries are used see our [npm dependencies](https://github.com/matomo-org/matomo/blob/5.x-dev/package.json)
 
 **Include new JS libraries only if they are vital to your plugin, and be sure to use the TypeScript workflow so there won't be clashes if a different version of the same library is used in other plugins.** If many plugins decide to use a custom library, the UI will slow down.
 
@@ -162,7 +162,7 @@ AJAX requests in non-Vue, Vanilla JavaScript should use the `ajaxHelper` global.
 
 The `ajaxHelper` class should be used whenever you need to create an AJAX request. **Plugins should not use `$.ajax` directly.** `ajaxHelper` does some extra things that make it harder to write insecure code. It also keeps track of the current ongoing AJAX requests which is vital to the [UI tests](/guides/tests-ui).
 
-To use the `ajaxHelper`, create an instance, configure it, and then call the `send()` method. To learn more, read the documentation in the source code (located in [`plugins/Morpheus/javascripts/ajaxHelper.js`](https://github.com/matomo-org/matomo/blob/master/plugins/Morpheus/javascripts/ajaxHelper.js)).
+To use the `ajaxHelper`, create an instance, configure it, and then call the `send()` method. To learn more, read the documentation in the source code (located in [`plugins/CoreHome/vue/src/AjaxHelper/AjaxHelper.ts`](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/vue/src/AjaxHelper/AjaxHelper.ts)).
 
 For example:
 

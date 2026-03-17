@@ -181,4 +181,4 @@ The Piwik JavaScript API has been tested with numerous web browsers. To maximize
 
 ## Minify matomo.js
 
-The matomo.js is minified to reduce the size that your website visitors will have to download. The YUI Compressor is used to minify the JavaScript ([more information](https://github.com/matomo-org/matomo/blob/master/js/README.md#introduction)). You can find the original non minified version in [/js/piwik.js](https://github.com/matomo-org/matomo/blob/master/js/piwik.js#L1).
+The matomo.js is minified to reduce the size that your website visitors will have to download. The YUI Compressor is used to minify the JavaScript ([more information](https://github.com/matomo-org/matomo/blob/5.x-dev/js/README.md#introduction)). You can find the original non minified version in [/js/piwik.js](https://github.com/matomo-org/matomo/blob/5.x-dev/js/piwik.js#L1).
