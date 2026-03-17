@@ -46,7 +46,7 @@ Follow below steps to add, change or remove an icon.
   * If needed, you could change the position of the icon here and make further tweaks such as rotate it, but this is usually not needed.
 * Click on "Download".
 * Extract the downloaded zip file.
-* Copy the files from the `font` directory and the `selection.json` to `plugins/Morpheus/font`.
+* Copy the files from the `font` directory and the `selection.json` to `plugins/Morpheus/fonts`.
 * Generate the `woff2` version of the font as it is not included automatically.
   * get `woff2_compress` e.g. via the woff2 debian package or similar packages for other distributions or compile it yourself as explained on [https://github.com/google/woff2](https://github.com/google/woff2).
   * convert the .ttf file using `woff2_compress matomo.ttf`

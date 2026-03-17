@@ -26,7 +26,7 @@ Every plugin on the marketplace has a unique name. Make sure the name you chose 
 
 ### Prepare your plugin
 
-Two files are required to be present in your plugin before you can publish: the **README.md** file and the **[plugin.json](https://github.com/matomo-org/matomo/blob/master/plugins/ExamplePlugin/plugin.json)** file.
+Two files are required to be present in your plugin before you can publish: the **README.md** file and the **[plugin.json](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ExamplePlugin/plugin.json)** file.
 
 #### README.md file
 

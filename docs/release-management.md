@@ -78,7 +78,7 @@ Also, as soon as we start working on the next major version, we need to require 
 * Adjust the min required PHP version in tests yml, so we no longer execute the tests on the previously required min PHP version.
 * GitHub test action: Update the scripts in the action, so the default branches to test against match the new one. e.g. in this file https://github.com/matomo-org/github-action-tests/blob/main/scripts/bash/checkout_test_against_branch.sh
 * Once the builds for `5.x-dev` branch succeeds, make it the default branch for Matomo core and all plugins
-* Update the [submodule GitHub action](https://github.com/matomo-org/matomo/blob/5.x-dev/.github/workflows/submodules.yml), [composer update action](https://github.com/matomo-org/matomo/blob/5.x-dev/.github/workflows/composer-update.yml), and the [CLDR action](https://github.com/matomo-org/matomo/blob/5.x-dev/.github/workflows/update-intl.yml) to use the new main branch.
+* Update the [composer update action](https://github.com/matomo-org/matomo/blob/5.x-dev/.github/workflows/composer-update.yml) and the [CLDR action](https://github.com/matomo-org/matomo/blob/5.x-dev/.github/workflows/update-intl.yml) to use the new main branch.
 * We can now start working and merging PRs for the next major release
   * We first start working on the big issues that take a very long to make sure they are finished by the time we want to release the first RC, and so they won't delay the release
   * We look for all `@deprecated` APIs and review if we can remove the API now safely see also [Deprecating APIs](https://developer.matomo.org/guides/apis#deprecating-a-php-or-api-method). Removing an API now safely means
@@ -122,7 +122,7 @@ To be ready for the next step, the first beta release of core, we need to:
 #### developer.matomo.org
 
 * Follow steps as described in [README.md](https://github.com/matomo-org/developer-documentation/#how-to-add-docs-for-a-new-matomo-version)
-* Replace all mentions of eg. `4.x-dev` by `5.x-dev` in the docs in  `docs/*.md` and `docs/5.x-dev/*.md` (for example [this page](https://github.com/matomo-org/developer-documentation/pull/233/files)). The files in `docs/4.x-dev` should remain unchanged.
+* Replace all mentions of eg. `4.x-dev` by `5.x-dev` in the docs in `docs/*.md` and `docs/5.x/*.md` (for example [this page](https://github.com/matomo-org/developer-documentation/pull/233/files)). The files in `docs/4.x` should remain unchanged.
 * Document new APIs if there are any
 * Create the new migration guide for plugins similar to [this migration guide](https://developer.matomo.org/guides/migrate-matomo-3-to-4). We create this guide even if there are no breaking changes for plugins.
 * Remove docs from the previous version. For example, if we are currently on Matomo 4 and are starting to work on Matomo 5, and we are still showing docs for Matomo 3, then we edit [config/app.php](https://github.com/matomo-org/developer-documentation/blob/live/app/config/app.php#L13) to remove the docs for Matomo 3 from the UI assuming Matomo 3 was released more than 12 months ago. We keep the docs for at least 12 months as then the LTS expires (see bottom of this page).
