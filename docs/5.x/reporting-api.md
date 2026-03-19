@@ -50,7 +50,7 @@ When 'period=range', the implicit period unit is 'day' and following keywords ar
 *   **segment** &mdash; defines the Custom Segment you wish to filter your reports to.
 
     *   for example, 'referrerName==twitter.com' will return the requested API report, processed for the subset of users coming from twitter.com
-    *   segments can be combined in AND and OR operations. For example, to filter for "Visits where (Referrer name is Google OR Referrer name is Bing) AND Country is India", you would write:
+    *   a segment can be combined in AND and OR operations. For example, to filter for "Visits where (Referrer name is Google OR Referrer name is Bing) AND Country is India", you would write:
 _referrerName==Google,referrerName==Bing;country==IN_
 
         *   see [segmentation documentation](/api-reference/segmentation) for the list of available dimensions & metrics, example values for each, and more information about the custom segment parameter
