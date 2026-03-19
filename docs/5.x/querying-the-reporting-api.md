@@ -17,6 +17,8 @@ If you want to request data in any language (PHP, Python, Ruby, ASP, C++, Java, 
 If the API call requires the token_auth and the HTTP request is sent over untrusted networks, we highly advise that you use an encrypted request. Otherwise, your token\_auth is exposed to eavesdroppers. This can be done by using https instead of http.
 </div>
 
+If the [OAuth2](/guides/oauth2) plugin is installed, external applications can also authenticate using OAuth2 bearer tokens instead of sending a `token_auth`. The examples below continue to use `token_auth` because it is available in every Matomo installation.
+
 You can, for example, get the list of countries where most of your visitors in the current month are from. Here is an example in PHP:
 
 ```php
