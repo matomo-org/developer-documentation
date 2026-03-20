@@ -1,0 +1,3286 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Matomo Reporting API for Goals plugin",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://demo.matomo.cloud/",
+            "description": "Matomo demo server"
+        }
+    ],
+    "paths": {
+        "/index.php?module=API&method=Goals.getGoal": {
+            "get": {
+                "tags": [
+                    "Goals"
+                ],
+                "description": "Return a single goal.",
+                "operationId": "Goals.getGoal",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idGoalRequired"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An array of goal attributes."
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Goals.getGoals": {
+            "get": {
+                "tags": [
+                    "Goals"
+                ],
+                "description": "Returns all Goals for a given website, or list of websites",
+                "operationId": "Goals.getGoals",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idSite",
+                        "in": "query",
+                        "description": "Array or Comma separated list of website IDs to request the goals for",
+                        "required": true,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {}
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "orderByName",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Array of Goal attributes, indexed by \"idgoal\" when requesting a single site, no specific index when requesting multiple sites</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=Goals.getGoals&idSite=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=Goals.getGoals&idSite=1&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=Goals.getGoals&idSite=1&format=Tsv&token_auth=anonymous)",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "idsite": "1",
+                                            "idgoal": "4",
+                                            "name": "New Job Application",
+                                            "description": "",
+                                            "match_attribute": "url",
+                                            "pattern": "\\/jobs\\/apply\\/",
+                                            "pattern_type": "contains",
+                                            "case_sensitive": "0",
+                                            "allow_multiple": "0",
+                                            "revenue": "1",
+                                            "deleted": "0",
+                                            "event_value_as_revenue": "0"
+                                        },
+                                        {
+                                            "idsite": "1",
+                                            "idgoal": "5",
+                                            "name": "View Submit Job",
+                                            "description": "",
+                                            "match_attribute": "url",
+                                            "pattern": "jobs\\/add",
+                                            "pattern_type": "contains",
+                                            "case_sensitive": "0",
+                                            "allow_multiple": "0",
+                                            "revenue": "5",
+                                            "deleted": "0",
+                                            "event_value_as_revenue": "0"
+                                        },
+                                        {
+                                            "idsite": "1",
+                                            "idgoal": "6",
+                                            "name": "New Resume",
+                                            "description": "",
+                                            "match_attribute": "url",
+                                            "pattern": "resumes\\/register",
+                                            "pattern_type": "contains",
+                                            "case_sensitive": "0",
+                                            "allow_multiple": "0",
+                                            "revenue": "2",
+                                            "deleted": "0",
+                                            "event_value_as_revenue": "0"
+                                        },
+                                        {
+                                            "idsite": "1",
+                                            "idgoal": "7",
+                                            "name": "Liveaboard.com click",
+                                            "description": "",
+                                            "match_attribute": "external_website",
+                                            "pattern": "liveaboard.com",
+                                            "pattern_type": "contains",
+                                            "case_sensitive": "0",
+                                            "allow_multiple": "0",
+                                            "revenue": "1",
+                                            "deleted": "0",
+                                            "event_value_as_revenue": "0"
+                                        },
+                                        {
+                                            "idsite": "1",
+                                            "idgoal": "8",
+                                            "name": "Agoda click",
+                                            "description": "",
+                                            "match_attribute": "external_website",
+                                            "pattern": "agoda",
+                                            "pattern_type": "contains",
+                                            "case_sensitive": "0",
+                                            "allow_multiple": "0",
+                                            "revenue": "0",
+                                            "deleted": "0",
+                                            "event_value_as_revenue": "0"
+                                        },
+                                        {
+                                            "idsite": "1",
+                                            "idgoal": "9",
+                                            "name": "User Comments",
+                                            "description": "",
+                                            "match_attribute": "manually",
+                                            "allow_multiple": "1",
+                                            "revenue": "0",
+                                            "deleted": "0",
+                                            "event_value_as_revenue": "0"
+                                        },
+                                        {
+                                            "idsite": "1",
+                                            "idgoal": "10",
+                                            "name": "Newsletter Signup",
+                                            "description": "",
+                                            "match_attribute": "url",
+                                            "pattern": "\\/newsletter\\/thank-you",
+                                            "pattern_type": "contains",
+                                            "case_sensitive": "0",
+                                            "allow_multiple": "0",
+                                            "revenue": "0",
+                                            "deleted": "0",
+                                            "event_value_as_revenue": "0"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "idsite": {
+                                                        "type": "integer"
+                                                    },
+                                                    "idgoal": {
+                                                        "type": "integer"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "description": {
+                                                        "type": "string"
+                                                    },
+                                                    "match_attribute": {
+                                                        "type": "string"
+                                                    },
+                                                    "pattern": {
+                                                        "type": "string"
+                                                    },
+                                                    "pattern_type": {
+                                                        "type": "string"
+                                                    },
+                                                    "case_sensitive": {
+                                                        "type": "integer"
+                                                    },
+                                                    "allow_multiple": {
+                                                        "type": "integer"
+                                                    },
+                                                    "revenue": {
+                                                        "type": "integer"
+                                                    },
+                                                    "deleted": {
+                                                        "type": "integer"
+                                                    },
+                                                    "event_value_as_revenue": {
+                                                        "type": "integer"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "idsite": 1,
+                                        "idgoal": 4,
+                                        "name": "New Job Application",
+                                        "description": "",
+                                        "match_attribute": "url",
+                                        "pattern": "\\/jobs\\/apply\\/",
+                                        "pattern_type": "contains",
+                                        "case_sensitive": 0,
+                                        "allow_multiple": 0,
+                                        "revenue": 1,
+                                        "deleted": 0,
+                                        "event_value_as_revenue": 0
+                                    },
+                                    {
+                                        "idsite": 1,
+                                        "idgoal": 5,
+                                        "name": "View Submit Job",
+                                        "description": "",
+                                        "match_attribute": "url",
+                                        "pattern": "jobs\\/add",
+                                        "pattern_type": "contains",
+                                        "case_sensitive": 0,
+                                        "allow_multiple": 0,
+                                        "revenue": 5,
+                                        "deleted": 0,
+                                        "event_value_as_revenue": 0
+                                    },
+                                    {
+                                        "idsite": 1,
+                                        "idgoal": 6,
+                                        "name": "New Resume",
+                                        "description": "",
+                                        "match_attribute": "url",
+                                        "pattern": "resumes\\/register",
+                                        "pattern_type": "contains",
+                                        "case_sensitive": 0,
+                                        "allow_multiple": 0,
+                                        "revenue": 2,
+                                        "deleted": 0,
+                                        "event_value_as_revenue": 0
+                                    },
+                                    {
+                                        "idsite": 1,
+                                        "idgoal": 7,
+                                        "name": "Liveaboard.com click",
+                                        "description": "",
+                                        "match_attribute": "external_website",
+                                        "pattern": "liveaboard.com",
+                                        "pattern_type": "contains",
+                                        "case_sensitive": 0,
+                                        "allow_multiple": 0,
+                                        "revenue": 1,
+                                        "deleted": 0,
+                                        "event_value_as_revenue": 0
+                                    },
+                                    {
+                                        "idsite": 1,
+                                        "idgoal": 8,
+                                        "name": "Agoda click",
+                                        "description": "",
+                                        "match_attribute": "external_website",
+                                        "pattern": "agoda",
+                                        "pattern_type": "contains",
+                                        "case_sensitive": 0,
+                                        "allow_multiple": 0,
+                                        "revenue": 0,
+                                        "deleted": 0,
+                                        "event_value_as_revenue": 0
+                                    },
+                                    {
+                                        "idsite": 1,
+                                        "idgoal": 9,
+                                        "name": "User Comments",
+                                        "description": "",
+                                        "match_attribute": "manually",
+                                        "allow_multiple": 1,
+                                        "revenue": 0,
+                                        "deleted": 0,
+                                        "event_value_as_revenue": 0
+                                    },
+                                    {
+                                        "idsite": 1,
+                                        "idgoal": 10,
+                                        "name": "Newsletter Signup",
+                                        "description": "",
+                                        "match_attribute": "url",
+                                        "pattern": "\\/newsletter\\/thank-you",
+                                        "pattern_type": "contains",
+                                        "case_sensitive": 0,
+                                        "allow_multiple": 0,
+                                        "revenue": 0,
+                                        "deleted": 0,
+                                        "event_value_as_revenue": 0
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "idsite\tidgoal\tname\tdescription\tmatch_attribute\tpattern\tpattern_type\tcase_sensitive\tallow_multiple\trevenue\tdeleted\tevent_value_as_revenue\n1\t4\tNew Job Application\t\turl\t/jobs/apply/\tcontains\t0\t0\t1\t0\t0\n1\t5\tView Submit Job\t\turl\tjobs/add\tcontains\t0\t0\t5\t0\t0\n1\t6\tNew Resume\t\turl\tresumes/register\tcontains\t0\t0\t2\t0\t0\n1\t7\tLiveaboard.com click\t\texternal_website\tliveaboard.com\tcontains\t0\t0\t1\t0\t0\n1\t8\tAgoda click\t\texternal_website\tagoda\tcontains\t0\t0\t0\t0\t0\n1\t9\tUser Comments\t\tmanually\t\t\t\t1\t0\t0\t0\n1\t10\tNewsletter Signup\t\turl\t/newsletter/thank-you\tcontains\t0\t0\t0\t0\t0"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Goals.addGoal": {
+            "get": {
+                "tags": [
+                    "Goals"
+                ],
+                "description": "Creates a Goal for a given website.",
+                "operationId": "Goals.addGoal",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "matchAttribute",
+                        "in": "query",
+                        "description": "'url', 'title', 'file', 'external_website', 'manually', 'visit_duration', 'visit_total_actions', 'visit_total_pageviews', 'event_action', 'event_category' or 'event_name'",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pattern",
+                        "in": "query",
+                        "description": "eg. purchase-confirmation.htm or numeric value if used with a numeric match attribute",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "patternType",
+                        "in": "query",
+                        "description": "'regex', 'contains', 'exact', or 'greater_than' for numeric match attributes",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "caseSensitive",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    },
+                    {
+                        "name": "revenue",
+                        "in": "query",
+                        "description": "If set, default revenue to assign to conversions",
+                        "required": false,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "allowMultipleConversionsPerVisit",
+                        "in": "query",
+                        "description": "By default, multiple conversions in the same visit will only record the first conversion. If set to true, multiple conversions will all be recorded within a visit (useful for Ecommerce goals)",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    },
+                    {
+                        "name": "useEventValueAsRevenue",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ID of the new goal"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Goals.updateGoal": {
+            "get": {
+                "tags": [
+                    "Goals"
+                ],
+                "description": "Updates a Goal description.",
+                "operationId": "Goals.updateGoal",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idGoalRequired"
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "matchAttribute",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pattern",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "patternType",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "caseSensitive",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    },
+                    {
+                        "name": "revenue",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "allowMultipleConversionsPerVisit",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    },
+                    {
+                        "name": "useEventValueAsRevenue",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#/components/responses/GenericSuccess"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Goals.deleteGoal": {
+            "get": {
+                "tags": [
+                    "Goals"
+                ],
+                "description": "Soft deletes a given Goal.",
+                "operationId": "Goals.deleteGoal",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idGoalRequired"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#/components/responses/GenericSuccess"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Goals.getItemsSku": {
+            "get": {
+                "tags": [
+                    "Goals"
+                ],
+                "description": "",
+                "operationId": "Goals.getItemsSku",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "name": "abandonedCarts",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Example links: [XML](https://demo.matomo.cloud/?module=API&method=Goals.getItemsSku&idSite=1&period=day&date=today&abandonedCarts=0&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=Goals.getItemsSku&idSite=1&period=day&date=today&abandonedCarts=0&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=Goals.getItemsSku&idSite=1&period=day&date=today&abandonedCarts=0&format=Tsv&token_auth=anonymous)",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "label": "3882",
+                                            "revenue": "31000",
+                                            "quantity": "62",
+                                            "orders": "61",
+                                            "avg_price": "500",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productSku==3882"
+                                        },
+                                        {
+                                            "label": "4804",
+                                            "revenue": "15999.6",
+                                            "quantity": "8",
+                                            "orders": "8",
+                                            "avg_price": "1999.95",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productSku==4804"
+                                        },
+                                        {
+                                            "label": "3881",
+                                            "revenue": "6500",
+                                            "quantity": "13",
+                                            "orders": "13",
+                                            "avg_price": "500",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productSku==3881"
+                                        },
+                                        {
+                                            "label": "3222",
+                                            "revenue": "6230",
+                                            "quantity": "70",
+                                            "orders": "70",
+                                            "avg_price": "89",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productSku==3222"
+                                        },
+                                        {
+                                            "label": "3883",
+                                            "revenue": "6000",
+                                            "quantity": "12",
+                                            "orders": "12",
+                                            "avg_price": "500",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productSku==3883"
+                                        },
+                                        {
+                                            "label": "3196",
+                                            "revenue": "4500",
+                                            "quantity": "9",
+                                            "orders": "9",
+                                            "avg_price": "500",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productSku==3196"
+                                        },
+                                        {
+                                            "label": "3884",
+                                            "revenue": "4500",
+                                            "quantity": "9",
+                                            "orders": "9",
+                                            "avg_price": "500",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productSku==3884"
+                                        },
+                                        {
+                                            "label": "6859",
+                                            "revenue": "4223.8",
+                                            "quantity": "4",
+                                            "orders": "4",
+                                            "avg_price": "1055.95",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productSku==6859"
+                                        },
+                                        {
+                                            "label": "3197",
+                                            "revenue": "4000",
+                                            "quantity": "8",
+                                            "orders": "8",
+                                            "avg_price": "500",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productSku==3197"
+                                        },
+                                        {
+                                            "label": "4333",
+                                            "revenue": "3402.85",
+                                            "quantity": "23",
+                                            "orders": "23",
+                                            "avg_price": "147.95",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productSku==4333"
+                                        },
+                                        {
+                                            "label": "3221",
+                                            "revenue": "2403",
+                                            "quantity": "27",
+                                            "orders": "27",
+                                            "avg_price": "89",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productSku==3221"
+                                        },
+                                        {
+                                            "label": "2606",
+                                            "revenue": "2089.05",
+                                            "quantity": "19",
+                                            "orders": "19",
+                                            "avg_price": "109.95",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productSku==2606"
+                                        },
+                                        {
+                                            "label": "3198",
+                                            "revenue": "2000",
+                                            "quantity": "4",
+                                            "orders": "4",
+                                            "avg_price": "500",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productSku==3198"
+                                        },
+                                        {
+                                            "label": "3199",
+                                            "revenue": "2000",
+                                            "quantity": "4",
+                                            "orders": "4",
+                                            "avg_price": "500",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productSku==3199"
+                                        },
+                                        {
+                                            "label": "2607",
+                                            "revenue": "1649.25",
+                                            "quantity": "15",
+                                            "orders": "15",
+                                            "avg_price": "109.95",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productSku==2607"
+                                        },
+                                        {
+                                            "label": "2633",
+                                            "revenue": "1573.25",
+                                            "quantity": "35",
+                                            "orders": "29",
+                                            "avg_price": "44.95",
+                                            "avg_quantity": "1.2",
+                                            "conversion_rate": "0%",
+                                            "segment": "productSku==2633"
+                                        },
+                                        {
+                                            "label": "3224",
+                                            "revenue": "979",
+                                            "quantity": "11",
+                                            "orders": "11",
+                                            "avg_price": "89",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productSku==3224"
+                                        },
+                                        {
+                                            "label": "2634",
+                                            "revenue": "899",
+                                            "quantity": "20",
+                                            "orders": "20",
+                                            "avg_price": "44.95",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productSku==2634"
+                                        },
+                                        {
+                                            "label": "3223",
+                                            "revenue": "623",
+                                            "quantity": "7",
+                                            "orders": "7",
+                                            "avg_price": "89",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productSku==3223"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "revenue": {
+                                                        "type": "integer"
+                                                    },
+                                                    "quantity": {
+                                                        "type": "integer"
+                                                    },
+                                                    "orders": {
+                                                        "type": "integer"
+                                                    },
+                                                    "avg_price": {
+                                                        "type": "integer"
+                                                    },
+                                                    "avg_quantity": {
+                                                        "type": "integer"
+                                                    },
+                                                    "conversion_rate": {
+                                                        "type": "string"
+                                                    },
+                                                    "segment": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "label": "3882",
+                                        "revenue": 31000,
+                                        "quantity": 62,
+                                        "orders": 61,
+                                        "avg_price": 500,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productSku==3882"
+                                    },
+                                    {
+                                        "label": "4804",
+                                        "revenue": 15999.6,
+                                        "quantity": 8,
+                                        "orders": 8,
+                                        "avg_price": 1999.95,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productSku==4804"
+                                    },
+                                    {
+                                        "label": "3881",
+                                        "revenue": 6500,
+                                        "quantity": 13,
+                                        "orders": 13,
+                                        "avg_price": 500,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productSku==3881"
+                                    },
+                                    {
+                                        "label": "3222",
+                                        "revenue": 6230,
+                                        "quantity": 70,
+                                        "orders": 70,
+                                        "avg_price": 89,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productSku==3222"
+                                    },
+                                    {
+                                        "label": "3883",
+                                        "revenue": 6000,
+                                        "quantity": 12,
+                                        "orders": 12,
+                                        "avg_price": 500,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productSku==3883"
+                                    },
+                                    {
+                                        "label": "3196",
+                                        "revenue": 4500,
+                                        "quantity": 9,
+                                        "orders": 9,
+                                        "avg_price": 500,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productSku==3196"
+                                    },
+                                    {
+                                        "label": "3884",
+                                        "revenue": 4500,
+                                        "quantity": 9,
+                                        "orders": 9,
+                                        "avg_price": 500,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productSku==3884"
+                                    },
+                                    {
+                                        "label": "6859",
+                                        "revenue": 4223.8,
+                                        "quantity": 4,
+                                        "orders": 4,
+                                        "avg_price": 1055.95,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productSku==6859"
+                                    },
+                                    {
+                                        "label": "3197",
+                                        "revenue": 4000,
+                                        "quantity": 8,
+                                        "orders": 8,
+                                        "avg_price": 500,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productSku==3197"
+                                    },
+                                    {
+                                        "label": "4333",
+                                        "revenue": 3402.85,
+                                        "quantity": 23,
+                                        "orders": 23,
+                                        "avg_price": 147.95,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productSku==4333"
+                                    },
+                                    {
+                                        "label": "3221",
+                                        "revenue": 2403,
+                                        "quantity": 27,
+                                        "orders": 27,
+                                        "avg_price": 89,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productSku==3221"
+                                    },
+                                    {
+                                        "label": "2606",
+                                        "revenue": 2089.05,
+                                        "quantity": 19,
+                                        "orders": 19,
+                                        "avg_price": 109.95,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productSku==2606"
+                                    },
+                                    {
+                                        "label": "3198",
+                                        "revenue": 2000,
+                                        "quantity": 4,
+                                        "orders": 4,
+                                        "avg_price": 500,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productSku==3198"
+                                    },
+                                    {
+                                        "label": "3199",
+                                        "revenue": 2000,
+                                        "quantity": 4,
+                                        "orders": 4,
+                                        "avg_price": 500,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productSku==3199"
+                                    },
+                                    {
+                                        "label": "2607",
+                                        "revenue": 1649.25,
+                                        "quantity": 15,
+                                        "orders": 15,
+                                        "avg_price": 109.95,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productSku==2607"
+                                    },
+                                    {
+                                        "label": "2633",
+                                        "revenue": 1573.25,
+                                        "quantity": 35,
+                                        "orders": 29,
+                                        "avg_price": 44.95,
+                                        "avg_quantity": 1.2,
+                                        "conversion_rate": "0%",
+                                        "segment": "productSku==2633"
+                                    },
+                                    {
+                                        "label": "3224",
+                                        "revenue": 979,
+                                        "quantity": 11,
+                                        "orders": 11,
+                                        "avg_price": 89,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productSku==3224"
+                                    },
+                                    {
+                                        "label": "2634",
+                                        "revenue": 899,
+                                        "quantity": 20,
+                                        "orders": 20,
+                                        "avg_price": 44.95,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productSku==2634"
+                                    },
+                                    {
+                                        "label": "3223",
+                                        "revenue": 623,
+                                        "quantity": 7,
+                                        "orders": 7,
+                                        "avg_price": 89,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productSku==3223"
+                                    },
+                                    {
+                                        "label": "2447",
+                                        "revenue": 604.45,
+                                        "quantity": 11,
+                                        "orders": 11,
+                                        "avg_price": 54.95,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productSku==2447"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\trevenue\tquantity\torders\tavg_price\tavg_quantity\tconversion_rate\tmetadata_segment\n3882\t31000\t62\t61\t500\t1\t0%\tproductSku==3882\n4804\t15999.6\t8\t8\t1999.95\t1\t0%\tproductSku==4804\n3881\t6500\t13\t13\t500\t1\t0%\tproductSku==3881\n3222\t6230\t70\t70\t89\t1\t0%\tproductSku==3222\n3883\t6000\t12\t12\t500\t1\t0%\tproductSku==3883\n3196\t4500\t9\t9\t500\t1\t0%\tproductSku==3196\n3884\t4500\t9\t9\t500\t1\t0%\tproductSku==3884\n6859\t4223.8\t4\t4\t1055.95\t1\t0%\tproductSku==6859\n3197\t4000\t8\t8\t500\t1\t0%\tproductSku==3197\n4333\t3402.85\t23\t23\t147.95\t1\t0%\tproductSku==4333\n3221\t2403\t27\t27\t89\t1\t0%\tproductSku==3221\n2606\t2089.05\t19\t19\t109.95\t1\t0%\tproductSku==2606\n3198\t2000\t4\t4\t500\t1\t0%\tproductSku==3198\n3199\t2000\t4\t4\t500\t1\t0%\tproductSku==3199\n2607\t1649.25\t15\t15\t109.95\t1\t0%\tproductSku==2607\n2633\t1573.25\t35\t29\t44.95\t1.2\t0%\tproductSku==2633\n3224\t979\t11\t11\t89\t1\t0%\tproductSku==3224\n2634\t899\t20\t20\t44.95\t1\t0%\tproductSku==2634\n3223\t623\t7\t7\t89\t1\t0%\tproductSku==3223\n2447\t604.45\t11\t11\t54.95\t1\t0%\tproductSku==2447\n2716\t599.25\t15\t15\t39.95\t1\t0%\tproductSku==2716\n2717\t439.45\t11\t11\t39.95\t1\t0%\tproductSku==2717\n2636\t359.6\t8\t8\t44.95\t1\t0%\tproductSku==2636\n2446\t329.7\t6\t6\t54.95\t1\t0%\tproductSku==2446\n2635\t314.65\t7\t7\t44.95\t1\t0%\tproductSku==2635\n2584\t259.35\t13\t13\t19.95\t1\t0%\tproductSku==2584\n2479\t251.65\t7\t7\t35.95\t1\t0%\tproductSku==2479\n2608\t219.9\t2\t2\t109.95\t1\t0%\tproductSku==2608\n2609\t219.9\t2\t2\t109.95\t1\t0%\tproductSku==2609\n2449\t219.8\t4\t4\t54.95\t1\t0%\tproductSku==2449\n2585\t179.55\t9\t9\t19.95\t1\t0%\tproductSku==2585\n2587\t179.55\t9\t9\t19.95\t1\t0%\tproductSku==2587\n5901\t179.55\t9\t9\t19.95\t1\t0%\tproductSku==5901\n2481\t143.8\t4\t4\t35.95\t1\t0%\tproductSku==2481\n2448\t109.9\t2\t2\t54.95\t1\t0%\tproductSku==2448\n2443\t87.45\t11\t11\t7.95\t1\t0%\tproductSku==2443\n2442\t79.5\t10\t9\t7.95\t1.1\t0%\tproductSku==2442\n2478\t71.9\t2\t2\t35.95\t1\t0%\tproductSku==2478\n2718\t39.95\t1\t1\t39.95\t1\t0%\tproductSku==2718\n5903\t39.9\t2\t2\t19.95\t1\t0%\tproductSku==5903\n2480\t35.95\t1\t1\t35.95\t1\t0%\tproductSku==2480\n2445\t23.85\t3\t3\t7.95\t1\t0%\tproductSku==2445\n2444\t7.95\t1\t1\t7.95\t1\t0%\tproductSku==2444"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Goals.getItemsName": {
+            "get": {
+                "tags": [
+                    "Goals"
+                ],
+                "description": "",
+                "operationId": "Goals.getItemsName",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "name": "abandonedCarts",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Example links: [XML](https://demo.matomo.cloud/?module=API&method=Goals.getItemsName&idSite=1&period=day&date=today&abandonedCarts=0&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=Goals.getItemsName&idSite=1&period=day&date=today&abandonedCarts=0&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=Goals.getItemsName&idSite=1&period=day&date=today&abandonedCarts=0&format=Tsv&token_auth=anonymous)",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "label": "Basic Wetsuit",
+                                            "revenue": "48000",
+                                            "quantity": "96",
+                                            "orders": "95",
+                                            "avg_price": "500",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productName==Basic+Wetsuit"
+                                        },
+                                        {
+                                            "label": "Deluxe Neoprene Dive Suit",
+                                            "revenue": "15999.6",
+                                            "quantity": "8",
+                                            "orders": "8",
+                                            "avg_price": "1999.95",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productName==Deluxe+Neoprene+Dive+Suit"
+                                        },
+                                        {
+                                            "label": "Diving Accessory Starter Kit",
+                                            "revenue": "12500",
+                                            "quantity": "25",
+                                            "orders": "25",
+                                            "avg_price": "500",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productName==Diving+Accessory+Starter+Kit"
+                                        },
+                                        {
+                                            "label": "Diving Tank",
+                                            "revenue": "10235",
+                                            "quantity": "115",
+                                            "orders": "115",
+                                            "avg_price": "89",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productName==Diving+Tank"
+                                        },
+                                        {
+                                            "label": "Deluxe Regulator & BCD Combo Pack",
+                                            "revenue": "4223.8",
+                                            "quantity": "4",
+                                            "orders": "4",
+                                            "avg_price": "1055.95",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productName==Deluxe+Regulator+%26+BCD+Combo+Pack"
+                                        },
+                                        {
+                                            "label": "Octopus",
+                                            "revenue": "4178.1",
+                                            "quantity": "38",
+                                            "orders": "38",
+                                            "avg_price": "109.95",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productName==Octopus"
+                                        },
+                                        {
+                                            "label": "Regulator",
+                                            "revenue": "3402.85",
+                                            "quantity": "23",
+                                            "orders": "23",
+                                            "avg_price": "147.95",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productName==Regulator"
+                                        },
+                                        {
+                                            "label": "Scuba Fins",
+                                            "revenue": "3146.5",
+                                            "quantity": "70",
+                                            "orders": "64",
+                                            "avg_price": "44.95",
+                                            "avg_quantity": "1.1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productName==Scuba+Fins"
+                                        },
+                                        {
+                                            "label": "Distance Line & Reel",
+                                            "revenue": "1263.85",
+                                            "quantity": "23",
+                                            "orders": "23",
+                                            "avg_price": "54.95",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productName==Distance+Line+%26+Reel"
+                                        },
+                                        {
+                                            "label": "Diving Knife",
+                                            "revenue": "1078.65",
+                                            "quantity": "27",
+                                            "orders": "27",
+                                            "avg_price": "39.95",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productName==Diving+Knife"
+                                        },
+                                        {
+                                            "label": "Diving Boots",
+                                            "revenue": "618.45",
+                                            "quantity": "31",
+                                            "orders": "31",
+                                            "avg_price": "19.95",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productName==Diving+Boots"
+                                        },
+                                        {
+                                            "label": "Diving Mask",
+                                            "revenue": "503.3",
+                                            "quantity": "14",
+                                            "orders": "14",
+                                            "avg_price": "35.95",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productName==Diving+Mask"
+                                        },
+                                        {
+                                            "label": "Diving Snorkel",
+                                            "revenue": "219.45",
+                                            "quantity": "11",
+                                            "orders": "11",
+                                            "avg_price": "19.95",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productName==Diving+Snorkel"
+                                        },
+                                        {
+                                            "label": "Silicone Grease",
+                                            "revenue": "198.75",
+                                            "quantity": "25",
+                                            "orders": "24",
+                                            "avg_price": "7.95",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productName==Silicone+Grease"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "revenue": {
+                                                        "type": "integer"
+                                                    },
+                                                    "quantity": {
+                                                        "type": "integer"
+                                                    },
+                                                    "orders": {
+                                                        "type": "integer"
+                                                    },
+                                                    "avg_price": {
+                                                        "type": "integer"
+                                                    },
+                                                    "avg_quantity": {
+                                                        "type": "integer"
+                                                    },
+                                                    "conversion_rate": {
+                                                        "type": "string"
+                                                    },
+                                                    "segment": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "label": "Basic Wetsuit",
+                                        "revenue": 48000,
+                                        "quantity": 96,
+                                        "orders": 95,
+                                        "avg_price": 500,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productName==Basic+Wetsuit"
+                                    },
+                                    {
+                                        "label": "Deluxe Neoprene Dive Suit",
+                                        "revenue": 15999.6,
+                                        "quantity": 8,
+                                        "orders": 8,
+                                        "avg_price": 1999.95,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productName==Deluxe+Neoprene+Dive+Suit"
+                                    },
+                                    {
+                                        "label": "Diving Accessory Starter Kit",
+                                        "revenue": 12500,
+                                        "quantity": 25,
+                                        "orders": 25,
+                                        "avg_price": 500,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productName==Diving+Accessory+Starter+Kit"
+                                    },
+                                    {
+                                        "label": "Diving Tank",
+                                        "revenue": 10235,
+                                        "quantity": 115,
+                                        "orders": 115,
+                                        "avg_price": 89,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productName==Diving+Tank"
+                                    },
+                                    {
+                                        "label": "Deluxe Regulator & BCD Combo Pack",
+                                        "revenue": 4223.8,
+                                        "quantity": 4,
+                                        "orders": 4,
+                                        "avg_price": 1055.95,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productName==Deluxe+Regulator+%26+BCD+Combo+Pack"
+                                    },
+                                    {
+                                        "label": "Octopus",
+                                        "revenue": 4178.1,
+                                        "quantity": 38,
+                                        "orders": 38,
+                                        "avg_price": 109.95,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productName==Octopus"
+                                    },
+                                    {
+                                        "label": "Regulator",
+                                        "revenue": 3402.85,
+                                        "quantity": 23,
+                                        "orders": 23,
+                                        "avg_price": 147.95,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productName==Regulator"
+                                    },
+                                    {
+                                        "label": "Scuba Fins",
+                                        "revenue": 3146.5,
+                                        "quantity": 70,
+                                        "orders": 64,
+                                        "avg_price": 44.95,
+                                        "avg_quantity": 1.1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productName==Scuba+Fins"
+                                    },
+                                    {
+                                        "label": "Distance Line & Reel",
+                                        "revenue": 1263.85,
+                                        "quantity": 23,
+                                        "orders": 23,
+                                        "avg_price": 54.95,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productName==Distance+Line+%26+Reel"
+                                    },
+                                    {
+                                        "label": "Diving Knife",
+                                        "revenue": 1078.65,
+                                        "quantity": 27,
+                                        "orders": 27,
+                                        "avg_price": 39.95,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productName==Diving+Knife"
+                                    },
+                                    {
+                                        "label": "Diving Boots",
+                                        "revenue": 618.45,
+                                        "quantity": 31,
+                                        "orders": 31,
+                                        "avg_price": 19.95,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productName==Diving+Boots"
+                                    },
+                                    {
+                                        "label": "Diving Mask",
+                                        "revenue": 503.3,
+                                        "quantity": 14,
+                                        "orders": 14,
+                                        "avg_price": 35.95,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productName==Diving+Mask"
+                                    },
+                                    {
+                                        "label": "Diving Snorkel",
+                                        "revenue": 219.45,
+                                        "quantity": 11,
+                                        "orders": 11,
+                                        "avg_price": 19.95,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productName==Diving+Snorkel"
+                                    },
+                                    {
+                                        "label": "Silicone Grease",
+                                        "revenue": 198.75,
+                                        "quantity": 25,
+                                        "orders": 24,
+                                        "avg_price": 7.95,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productName==Silicone+Grease"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\trevenue\tquantity\torders\tavg_price\tavg_quantity\tconversion_rate\tmetadata_segment\nBasic Wetsuit\t48000\t96\t95\t500\t1\t0%\tproductName==Basic+Wetsuit\nDeluxe Neoprene Dive Suit\t15999.6\t8\t8\t1999.95\t1\t0%\tproductName==Deluxe+Neoprene+Dive+Suit\nDiving Accessory Starter Kit\t12500\t25\t25\t500\t1\t0%\tproductName==Diving+Accessory+Starter+Kit\nDiving Tank\t10235\t115\t115\t89\t1\t0%\tproductName==Diving+Tank\nDeluxe Regulator & BCD Combo Pack\t4223.8\t4\t4\t1055.95\t1\t0%\tproductName==Deluxe+Regulator+%26+BCD+Combo+Pack\nOctopus\t4178.1\t38\t38\t109.95\t1\t0%\tproductName==Octopus\nRegulator\t3402.85\t23\t23\t147.95\t1\t0%\tproductName==Regulator\nScuba Fins\t3146.5\t70\t64\t44.95\t1.1\t0%\tproductName==Scuba+Fins\nDistance Line & Reel\t1263.85\t23\t23\t54.95\t1\t0%\tproductName==Distance+Line+%26+Reel\nDiving Knife\t1078.65\t27\t27\t39.95\t1\t0%\tproductName==Diving+Knife\nDiving Boots\t618.45\t31\t31\t19.95\t1\t0%\tproductName==Diving+Boots\nDiving Mask\t503.3\t14\t14\t35.95\t1\t0%\tproductName==Diving+Mask\nDiving Snorkel\t219.45\t11\t11\t19.95\t1\t0%\tproductName==Diving+Snorkel\nSilicone Grease\t198.75\t25\t24\t7.95\t1\t0%\tproductName==Silicone+Grease"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Goals.getItemsCategory": {
+            "get": {
+                "tags": [
+                    "Goals"
+                ],
+                "description": "",
+                "operationId": "Goals.getItemsCategory",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "name": "abandonedCarts",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Example links: [XML](https://demo.matomo.cloud/?module=API&method=Goals.getItemsCategory&idSite=1&period=day&date=today&abandonedCarts=0&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=Goals.getItemsCategory&idSite=1&period=day&date=today&abandonedCarts=0&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=Goals.getItemsCategory&idSite=1&period=day&date=today&abandonedCarts=0&format=Tsv&token_auth=anonymous)",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "label": "Starting Out",
+                                            "revenue": "60500",
+                                            "quantity": "121",
+                                            "orders": "109",
+                                            "avg_price": "550.46",
+                                            "avg_quantity": "1.1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productCategory==Starting+Out"
+                                        },
+                                        {
+                                            "label": "Accessories",
+                                            "revenue": "24844.9",
+                                            "quantity": "377",
+                                            "orders": "290",
+                                            "avg_price": "84.71",
+                                            "avg_quantity": "1.3",
+                                            "conversion_rate": "0%",
+                                            "segment": "productCategory==Accessories"
+                                        },
+                                        {
+                                            "label": "High End",
+                                            "revenue": "20223.4",
+                                            "quantity": "12",
+                                            "orders": "12",
+                                            "avg_price": "1685.28",
+                                            "avg_quantity": "1",
+                                            "conversion_rate": "0%",
+                                            "segment": "productCategory==High+End"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "revenue": {
+                                                        "type": "integer"
+                                                    },
+                                                    "quantity": {
+                                                        "type": "integer"
+                                                    },
+                                                    "orders": {
+                                                        "type": "integer"
+                                                    },
+                                                    "avg_price": {
+                                                        "type": [
+                                                            "string",
+                                                            "number",
+                                                            "integer",
+                                                            "boolean",
+                                                            "array",
+                                                            "object",
+                                                            "null"
+                                                        ]
+                                                    },
+                                                    "avg_quantity": {
+                                                        "type": [
+                                                            "string",
+                                                            "number",
+                                                            "integer",
+                                                            "boolean",
+                                                            "array",
+                                                            "object",
+                                                            "null"
+                                                        ]
+                                                    },
+                                                    "conversion_rate": {
+                                                        "type": "string"
+                                                    },
+                                                    "segment": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "label": "Starting Out",
+                                        "revenue": 60500,
+                                        "quantity": 121,
+                                        "orders": 109,
+                                        "avg_price": 550.46,
+                                        "avg_quantity": 1.1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productCategory==Starting+Out"
+                                    },
+                                    {
+                                        "label": "Accessories",
+                                        "revenue": 24844.9,
+                                        "quantity": 377,
+                                        "orders": 290,
+                                        "avg_price": 84.71,
+                                        "avg_quantity": 1.3,
+                                        "conversion_rate": "0%",
+                                        "segment": "productCategory==Accessories"
+                                    },
+                                    {
+                                        "label": "High End",
+                                        "revenue": 20223.4,
+                                        "quantity": 12,
+                                        "orders": 12,
+                                        "avg_price": 1685.28,
+                                        "avg_quantity": 1,
+                                        "conversion_rate": "0%",
+                                        "segment": "productCategory==High+End"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\trevenue\tquantity\torders\tavg_price\tavg_quantity\tconversion_rate\tmetadata_segment\nStarting Out\t60500\t121\t109\t550.46\t1.1\t0%\tproductCategory==Starting+Out\nAccessories\t24844.9\t377\t290\t84.71\t1.3\t0%\tproductCategory==Accessories\nHigh End\t20223.4\t12\t12\t1685.28\t1\t0%\tproductCategory==High+End"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Goals.get": {
+            "get": {
+                "tags": [
+                    "Goals"
+                ],
+                "description": "Returns Goals data.",
+                "operationId": "Goals.get",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idGoalOptional"
+                    },
+                    {
+                        "name": "columns",
+                        "in": "query",
+                        "description": "Array of metrics to fetch: nb_conversions, conversion_rate, revenue",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {},
+                            "default": []
+                        }
+                    },
+                    {
+                        "name": "showAllGoalSpecificMetrics",
+                        "in": "query",
+                        "description": "whether to show all goal specific metrics when no goal is set",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    },
+                    {
+                        "name": "compare",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=Goals.get&idSite=1&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=Goals.get&idSite=1&period=day&date=today&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=Goals.get&idSite=1&period=day&date=today&format=Tsv&token_auth=anonymous)",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "nb_conversions": "1005",
+                                    "nb_visits_converted": "965",
+                                    "revenue": "85908.3",
+                                    "conversion_rate": "9.78%",
+                                    "nb_conversions_new_visit": "0",
+                                    "nb_visits_converted_new_visit": "0",
+                                    "revenue_new_visit": "0",
+                                    "conversion_rate_new_visit": "0%",
+                                    "nb_conversions_returning_visit": "1003",
+                                    "nb_visits_converted_returning_visit": "965",
+                                    "revenue_returning_visit": "85730.3",
+                                    "conversion_rate_returning_visit": "9.78%"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "nb_conversions": {
+                                            "type": "integer"
+                                        },
+                                        "nb_visits_converted": {
+                                            "type": "integer"
+                                        },
+                                        "revenue": {
+                                            "type": [
+                                                "string",
+                                                "number",
+                                                "integer",
+                                                "boolean",
+                                                "array",
+                                                "object",
+                                                "null"
+                                            ]
+                                        },
+                                        "conversion_rate": {
+                                            "type": "string"
+                                        },
+                                        "nb_conversions_new_visit": {
+                                            "type": "integer"
+                                        },
+                                        "nb_visits_converted_new_visit": {
+                                            "type": "integer"
+                                        },
+                                        "revenue_new_visit": {
+                                            "type": "integer"
+                                        },
+                                        "conversion_rate_new_visit": {
+                                            "type": "string"
+                                        },
+                                        "nb_conversions_returning_visit": {
+                                            "type": "integer"
+                                        },
+                                        "nb_visits_converted_returning_visit": {
+                                            "type": "integer"
+                                        },
+                                        "revenue_returning_visit": {
+                                            "type": [
+                                                "string",
+                                                "number",
+                                                "integer",
+                                                "boolean",
+                                                "array",
+                                                "object",
+                                                "null"
+                                            ]
+                                        },
+                                        "conversion_rate_returning_visit": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "nb_conversions": 1005,
+                                    "nb_visits_converted": 965,
+                                    "revenue": 85908.3,
+                                    "conversion_rate": "9.78%",
+                                    "nb_conversions_new_visit": 0,
+                                    "nb_visits_converted_new_visit": 0,
+                                    "revenue_new_visit": 0,
+                                    "conversion_rate_new_visit": "0%",
+                                    "nb_conversions_returning_visit": 1003,
+                                    "nb_visits_converted_returning_visit": 965,
+                                    "revenue_returning_visit": 85730.3,
+                                    "conversion_rate_returning_visit": "9.78%"
+                                }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "nb_conversions\tnb_visits_converted\trevenue\tconversion_rate\tnb_conversions_new_visit\tnb_visits_converted_new_visit\trevenue_new_visit\tconversion_rate_new_visit\tnb_conversions_returning_visit\tnb_visits_converted_returning_visit\trevenue_returning_visit\tconversion_rate_returning_visit\n1005\t965\t85908.3\t9.78%\t0\t0\t0\t0%\t1003\t965\t85730.3\t9.78%"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Goals.getDaysToConversion": {
+            "get": {
+                "tags": [
+                    "Goals"
+                ],
+                "description": "Gets a DataTable that maps ranges of days to the number of conversions that occurred within those ranges, for the specified site, date range, segment and goal.",
+                "operationId": "Goals.getDaysToConversion",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idSite",
+                        "in": "query",
+                        "description": "The site to select data from.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": "The period type.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "description": "The date type.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "segment",
+                        "in": "query",
+                        "description": "The segment.",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idGoal",
+                        "in": "query",
+                        "description": "The id of the goal to get data for. If this is set to false, data for every goal that belongs to $idSite is returned.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=Goals.getDaysToConversion&idSite=1&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=Goals.getDaysToConversion&idSite=1&period=day&date=today&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=Goals.getDaysToConversion&idSite=1&period=day&date=today&format=Tsv&token_auth=anonymous)",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "label": "0 days",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "1 day",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "2 days",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "3 days",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "4 days",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "5 days",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "6 days",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "7 days",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "8-14 days",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "15-30 days",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "31-60 days",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "61-120 days",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "121-364 days",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "365+ days",
+                                            "nb_conversions": "628"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_conversions": {
+                                                        "type": "integer"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "label": "0 days",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "1 day",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "2 days",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "3 days",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "4 days",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "5 days",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "6 days",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "7 days",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "8-14 days",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "15-30 days",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "31-60 days",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "61-120 days",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "121-364 days",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "365+ days",
+                                        "nb_conversions": 628
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_conversions\n0 days\t0\n1 day\t0\n2 days\t0\n3 days\t0\n4 days\t0\n5 days\t0\n6 days\t0\n7 days\t0\n8-14 days\t0\n15-30 days\t0\n31-60 days\t0\n61-120 days\t0\n121-364 days\t0\n365+ days\t628"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Goals.getVisitsUntilConversion": {
+            "get": {
+                "tags": [
+                    "Goals"
+                ],
+                "description": "Gets a DataTable that maps ranges of visit counts to the number of conversions that occurred on those visits for the specified site, date range, segment and goal.",
+                "operationId": "Goals.getVisitsUntilConversion",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idSite",
+                        "in": "query",
+                        "description": "The site to select data from.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": "The period type.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "description": "The date type.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "segment",
+                        "in": "query",
+                        "description": "The segment.",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idGoal",
+                        "in": "query",
+                        "description": "The id of the goal to get data for. If this is set to false, data for every goal that belongs to $idSite is returned.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=Goals.getVisitsUntilConversion&idSite=1&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=Goals.getVisitsUntilConversion&idSite=1&period=day&date=today&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=Goals.getVisitsUntilConversion&idSite=1&period=day&date=today&format=Tsv&token_auth=anonymous)",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "label": "1 visit",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "2 visits",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "3 visits",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "4 visits",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "5 visits",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "6 visits",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "7 visits",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "8 visits",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "9-14 visits",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "15-25 visits",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "26-50 visits",
+                                            "nb_conversions": "0"
+                                        },
+                                        {
+                                            "label": "51-100 visits",
+                                            "nb_conversions": "2"
+                                        },
+                                        {
+                                            "label": "101+ visits",
+                                            "nb_conversions": "626"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_conversions": {
+                                                        "type": "integer"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "label": "1 visit",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "2 visits",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "3 visits",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "4 visits",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "5 visits",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "6 visits",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "7 visits",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "8 visits",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "9-14 visits",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "15-25 visits",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "26-50 visits",
+                                        "nb_conversions": 0
+                                    },
+                                    {
+                                        "label": "51-100 visits",
+                                        "nb_conversions": 2
+                                    },
+                                    {
+                                        "label": "101+ visits",
+                                        "nb_conversions": 626
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_conversions\n1 visit\t0\n2 visits\t0\n3 visits\t0\n4 visits\t0\n5 visits\t0\n6 visits\t0\n7 visits\t0\n8 visits\t0\n9-14 visits\t0\n15-25 visits\t0\n26-50 visits\t0\n51-100 visits\t2\n101+ visits\t626"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GenericSuccess": {
+                "description": "Generic Matomo success payload.",
+                "required": [
+                    "result",
+                    "message"
+                ],
+                "properties": {
+                    "result": {
+                        "type": "string",
+                        "example": "success"
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "ok"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "example": "200"
+                    }
+                },
+                "type": "object",
+                "example": {
+                    "result": "success",
+                    "message": "ok"
+                },
+                "additionalProperties": true
+            },
+            "GenericSuccessXml": {
+                "description": "Generic Matomo success payload in XML.",
+                "required": [
+                    "success"
+                ],
+                "properties": {
+                    "success": {
+                        "properties": {
+                            "message": {
+                                "type": "string",
+                                "xml": {
+                                    "attribute": true
+                                },
+                                "example": "ok"
+                            }
+                        },
+                        "type": "object",
+                        "xml": {
+                            "name": "success"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "result"
+                },
+                "example": {
+                    "success": {
+                        "message": "ok"
+                    }
+                },
+                "additionalProperties": true
+            },
+            "Error": {
+                "description": "Generic Matomo error payload.",
+                "required": [
+                    "result",
+                    "message"
+                ],
+                "properties": {
+                    "result": {
+                        "type": "string",
+                        "example": "error"
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "There was an error"
+                    },
+                    "code": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "additionalProperties": true
+            },
+            "ErrorXml": {
+                "description": "Generic Matomo error payload in XML.",
+                "properties": {
+                    "error": {
+                        "properties": {
+                            "message": {
+                                "type": "string",
+                                "xml": {
+                                    "attribute": true
+                                },
+                                "example": "There was an error"
+                            }
+                        },
+                        "type": "object",
+                        "xml": {
+                            "name": "error"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "result"
+                }
+            }
+        },
+        "responses": {
+            "BadRequest": {
+                "description": "Bad request (validation or missing parameters).",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: There was an error."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "There was an error."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "Unauthorized": {
+                "description": "Authentication failed or missing token.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: You must be logged in to access this functionality."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "You must be logged in to access this functionality."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "Forbidden": {
+                "description": "Authenticated but not allowed to access the resource.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: Not authorised."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Not authorised."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "NotFound": {
+                "description": "Resource not found.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: The method is not available."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "The method is not available."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "ServerError": {
+                "description": "Unexpected server error.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: There was an error."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "There was an error."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "DefaultError": {
+                "description": "Default error response (any non-2xx).",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: There was an error."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "There was an error."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "GenericSuccessNoBody": {
+                "description": "Generic 200 response with no body"
+            },
+            "GenericSuccess": {
+                "description": "Generic 200 response",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Success:ok"
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "<!-- Success: ok -->"
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/GenericSuccess"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/GenericSuccessXml"
+                        }
+                    }
+                }
+            },
+            "GenericString": {
+                "description": "Generic 200 response with only a string body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Result: success"
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "success"
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "GenericBoolean": {
+                "description": "Generic 200 response with only true or false as the body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                }
+            },
+            "GenericInteger": {
+                "description": "Generic 200 response with only an integer as the body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            },
+            "GenericArray": {
+                "description": "Generic 200 response with array body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "array",
+                            "items": {}
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "array",
+                            "items": {}
+                        }
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "moduleRequired": {
+                "name": "module",
+                "in": "query",
+                "description": "Always `API` for Reporting API requests.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "default": "API"
+                }
+            },
+            "methodRequired": {
+                "name": "method",
+                "in": "query",
+                "description": "API method, e.g. `VisitsSummary.get` or `CustomAlerts.getAlert`.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "example": "CustomAlerts.getAlert"
+                }
+            },
+            "formatRequired": {
+                "name": "format",
+                "in": "query",
+                "description": "Response format such as `xml` or `json`. Use `original` to get the original PHP data structure.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "default": "xml",
+                    "enum": [
+                        "xml",
+                        "json",
+                        "csv",
+                        "tsv",
+                        "html",
+                        "rss",
+                        "original"
+                    ]
+                }
+            },
+            "formatOptional": {
+                "name": "format",
+                "in": "query",
+                "description": "Response format. Defaults to `xml`. Use `original` to get the original PHP data structure.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "default": "xml",
+                    "enum": [
+                        "xml",
+                        "json",
+                        "csv",
+                        "tsv",
+                        "html",
+                        "rss",
+                        "original"
+                    ]
+                }
+            },
+            "idSiteRequired": {
+                "name": "idSite",
+                "in": "query",
+                "description": "Matomo site ID.",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "example": 1
+                }
+            },
+            "idSiteOptional": {
+                "name": "idSite",
+                "in": "query",
+                "description": "Matomo site ID.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "example": 1
+                }
+            },
+            "periodRequired": {
+                "name": "period",
+                "in": "query",
+                "description": "Reporting period.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "day",
+                        "week",
+                        "month",
+                        "year",
+                        "range"
+                    ],
+                    "example": "day"
+                }
+            },
+            "periodOptional": {
+                "name": "period",
+                "in": "query",
+                "description": "Reporting period.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "day",
+                        "week",
+                        "month",
+                        "year",
+                        "range"
+                    ],
+                    "example": "day"
+                }
+            },
+            "dateRequired": {
+                "name": "date",
+                "in": "query",
+                "description": "Date or range (e.g. `2025-08-01`, `yesterday`, `last30`, or `2025-08-01,2025-08-11`).",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "example": "today"
+                }
+            },
+            "dateOptional": {
+                "name": "date",
+                "in": "query",
+                "description": "Date or range (e.g. `2025-08-01`, `yesterday`, `last30`, or `2025-08-01,2025-08-11`).",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "today"
+                }
+            },
+            "segmentRequired": {
+                "name": "segment",
+                "in": "query",
+                "description": "Segment expression; see `API.getSegmentDimensionMetadata`.",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "segmentOptional": {
+                "name": "segment",
+                "in": "query",
+                "description": "Segment expression; see `API.getSegmentDimensionMetadata`.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "expandedOptional": {
+                "name": "expanded",
+                "in": "query",
+                "description": "If true, loads all subtables.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "default": 0,
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "idSubtableOptional": {
+                "name": "idSubtable",
+                "in": "query",
+                "description": "An in-database subtable ID.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "flatOptional": {
+                "name": "flat",
+                "in": "query",
+                "description": "Flatten subtables into the parent table.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "filter_patternOptional": {
+                "name": "filter_pattern",
+                "in": "query",
+                "description": "Regex to keep matching rows.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_columnOptional": {
+                "name": "filter_column",
+                "in": "query",
+                "description": "Column to apply the regex to (e.g., `label`).",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "label"
+                }
+            },
+            "filter_pattern_recursiveOptional": {
+                "name": "filter_pattern_recursive",
+                "in": "query",
+                "description": "Recursive regex filter.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_column_recursiveOptional": {
+                "name": "filter_column_recursive",
+                "in": "query",
+                "description": "Column for the recursive regex filter.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_excludelowpopOptional": {
+                "name": "filter_excludelowpop",
+                "in": "query",
+                "description": "Column to threshold and exclude low values.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_excludelowpop_valueOptional": {
+                "name": "filter_excludelowpop_value",
+                "in": "query",
+                "description": "Minimum value threshold for `filter_excludelowpop`.",
+                "required": false,
+                "schema": {
+                    "type": "number",
+                    "example": 0
+                }
+            },
+            "filter_sort_columnOptional": {
+                "name": "filter_sort_column",
+                "in": "query",
+                "description": "Column to sort by.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_sort_orderOptional": {
+                "name": "filter_sort_order",
+                "in": "query",
+                "description": "Sort direction.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "example": "desc"
+                }
+            },
+            "filter_truncateOptional": {
+                "name": "filter_truncate",
+                "in": "query",
+                "description": "Row index after which rows are removed.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "filter_limitOptional": {
+                "name": "filter_limit",
+                "in": "query",
+                "description": "Maximum number of rows to return.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "filter_offsetOptional": {
+                "name": "filter_offset",
+                "in": "query",
+                "description": "Row offset.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "keep_summary_rowOptional": {
+                "name": "keep_summary_row",
+                "in": "query",
+                "description": "Keep the summary row.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 1
+                }
+            },
+            "disable_generic_filtersOptional": {
+                "name": "disable_generic_filters",
+                "in": "query",
+                "description": "Disable generic filters (those above).",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "disable_queued_filtersOptional": {
+                "name": "disable_queued_filters",
+                "in": "query",
+                "description": "Skip queued filters.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "hideColumnsOptional": {
+                "name": "hideColumns",
+                "in": "query",
+                "description": "Comma-separated list of columns to hide.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "showColumnsOptional": {
+                "name": "showColumns",
+                "in": "query",
+                "description": "Comma-separated list of columns to include.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "labelOptional": {
+                "name": "label",
+                "in": "query",
+                "description": "Keep only rows with these label(s). Supports path via '>' and arrays.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "idGoalRequired": {
+                "name": "idGoal",
+                "in": "query",
+                "description": "The ID of a configured goal.",
+                "required": true,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "idGoalOptional": {
+                "name": "idGoal",
+                "in": "query",
+                "description": "The ID of a configured goal.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            }
+        },
+        "securitySchemes": {
+            "MatomoToken": {
+                "type": "apiKey",
+                "description": "Matomo API token passed as the 'token_auth' query parameter.",
+                "name": "token_auth",
+                "in": "query"
+            }
+        }
+    },
+    "security": [
+        {
+            "MatomoToken": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "Goals",
+            "description": "Goals API lets you Manage existing goals, via \"updateGoal\" and \"deleteGoal\", create new Goals via \"addGoal\", or list existing Goals for one or several websites via \"getGoals\"  If you are <a href='https://matomo.org/docs/ecommerce-analytics/' target='_blank'>tracking Ecommerce orders and products</a> on your site, the functions \"getItemsSku\", \"getItemsName\" and \"getItemsCategory\" will return the list of products purchased on your site, either grouped by Product SKU, Product Name or Product Category. For each name, SKU or category, the following metrics are returned: Total revenue, Total quantity, average price, average quantity, number of orders (or abandoned carts) containing this product, number of visits on the Product page, Conversion rate.  By default, these functions return the 'Products purchased'. These functions also accept an optional parameter &abandonedCarts=1. If the parameter is set, it will instead return the metrics for products that were left in an abandoned cart therefore not purchased.  The API also lets you request overall Goal metrics via the method \"get\": Conversions, Visits with at least one conversion, Conversion rate and Revenue. If you wish to request specific metrics about Ecommerce goals, you can set the parameter &idGoal=ecommerceAbandonedCart to get metrics about abandoned carts (including Lost revenue, and number of items left in the cart) or &idGoal=ecommerceOrder to get metrics about Ecommerce orders (number of orders, visits with an order, subtotal, tax, shipping, discount, revenue, items ordered)  See also the documentation about <a href='https://matomo.org/docs/tracking-goals-web-analytics/' rel='noreferrer' target='_blank'>Tracking Goals</a> in Matomo."
+        }
+    ],
+    "externalDocs": {
+        "description": "Matomo Reporting API developer page",
+        "url": "https://developer.matomo.org/api-reference/reporting-api/"
+    }
+}

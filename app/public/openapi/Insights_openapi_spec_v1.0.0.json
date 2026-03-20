@@ -1,0 +1,1503 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Matomo Reporting API for Insights plugin",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://demo.matomo.cloud/",
+            "description": "Matomo demo server"
+        }
+    ],
+    "paths": {
+        "/index.php?module=API&method=Insights.canGenerateInsights": {
+            "get": {
+                "tags": [
+                    "Insights"
+                ],
+                "description": "Detects whether insights can be generated for this date/period combination or not.",
+                "operationId": "Insights.canGenerateInsights",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "description": "eg 'today', '2012-12-12'",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": "eg 'day' or 'week'",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=Insights.canGenerateInsights&date=today&period=day&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=Insights.canGenerateInsights&date=today&period=day&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": [
+                                    "1"
+                                ]
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "value": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "value": true
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Insights.getInsightsOverview": {
+            "get": {
+                "tags": [
+                    "Insights"
+                ],
+                "description": "Generates insights for a set of reports. Plugins can add their own reports to be included in the insights overview by listening to the {@hook Insights.addReportToOverview} event.",
+                "operationId": "Insights.getInsightsOverview",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A map containing a dataTable for each insight report. See {@link getInsights()} for more\ninformation</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=Insights.getInsightsOverview&idSite=1&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=Insights.getInsightsOverview&idSite=1&period=day&date=today&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=Insights.getInsightsOverview&idSite=1&period=day&date=today&format=Tsv&token_auth=anonymous)",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "defaultKeyName": {
+                                                        "type": "string",
+                                                        "xml": {
+                                                            "attribute": true
+                                                        },
+                                                        "example": "Campaign Names"
+                                                    },
+                                                    "row": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "xml": {
+                                                                "name": "row"
+                                                            },
+                                                            "additionalProperties": true
+                                                        }
+                                                    }
+                                                },
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "result"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "result": [
+                                        {
+                                            "defaultKeyName": "Page URLs"
+                                        },
+                                        {
+                                            "defaultKeyName": "Page titles"
+                                        },
+                                        {
+                                            "row": {
+                                                "label": "divezone.net",
+                                                "nb_visits": "14",
+                                                "growth_percent": "-50%",
+                                                "growth_percent_numeric": "-50",
+                                                "grown": "0",
+                                                "value_old": "28",
+                                                "value_new": "14",
+                                                "difference": "-14",
+                                                "importance": "14",
+                                                "isDisappeared": "0",
+                                                "isNew": "0",
+                                                "isMover": "1",
+                                                "isMoverAndShaker": "0",
+                                                "label1": "divezone.net"
+                                            },
+                                            "defaultKeyName": "Downloads"
+                                        },
+                                        {
+                                            "defaultKeyName": "Websites"
+                                        },
+                                        {
+                                            "defaultKeyName": "Social Networks"
+                                        },
+                                        {
+                                            "row": [
+                                                {
+                                                    "label": "Bing & Yahoo!",
+                                                    "nb_visits": "305",
+                                                    "growth_percent": "100%",
+                                                    "growth_percent_numeric": "100",
+                                                    "grown": "1",
+                                                    "value_old": "0",
+                                                    "value_new": "305",
+                                                    "difference": "305",
+                                                    "importance": "305",
+                                                    "isDisappeared": "0",
+                                                    "isNew": "1",
+                                                    "isMover": "0",
+                                                    "isMoverAndShaker": "0"
+                                                },
+                                                {
+                                                    "label": "Bing & Yahoo!",
+                                                    "nb_visits": "281",
+                                                    "growth_percent": "-100%",
+                                                    "growth_percent_numeric": "-100",
+                                                    "grown": "0",
+                                                    "value_old": "281",
+                                                    "value_new": "0",
+                                                    "difference": "-281",
+                                                    "importance": "281",
+                                                    "isDisappeared": "1",
+                                                    "isNew": "0",
+                                                    "isMover": "0",
+                                                    "isMoverAndShaker": "0"
+                                                }
+                                            ],
+                                            "defaultKeyName": "Search Engines"
+                                        },
+                                        {
+                                            "defaultKeyName": "AI Assistants"
+                                        },
+                                        {
+                                            "defaultKeyName": "Country"
+                                        },
+                                        {
+                                            "defaultKeyName": "Campaign Names"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "Campaign Names": {
+                                            "type": "array",
+                                            "items": {}
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "Page URLs": [],
+                                    "Page titles": [],
+                                    "Downloads": [
+                                        {
+                                            "label": "divezone.net",
+                                            "nb_visits": 14,
+                                            "growth_percent": "-50%",
+                                            "growth_percent_numeric": "-50",
+                                            "grown": false,
+                                            "value_old": 28,
+                                            "value_new": 14,
+                                            "difference": -14,
+                                            "importance": 14,
+                                            "isDisappeared": false,
+                                            "isNew": false,
+                                            "isMover": true,
+                                            "isMoverAndShaker": false,
+                                            "label1": "divezone.net"
+                                        }
+                                    ],
+                                    "Websites": [],
+                                    "Social Networks": [],
+                                    "Search Engines": [
+                                        {
+                                            "label": "Bing & Yahoo!",
+                                            "nb_visits": 305,
+                                            "growth_percent": "100%",
+                                            "growth_percent_numeric": "100",
+                                            "grown": true,
+                                            "value_old": 0,
+                                            "value_new": 305,
+                                            "difference": 305,
+                                            "importance": 305,
+                                            "isDisappeared": false,
+                                            "isNew": true,
+                                            "isMover": false,
+                                            "isMoverAndShaker": false
+                                        },
+                                        {
+                                            "label": "Bing & Yahoo!",
+                                            "nb_visits": 281,
+                                            "growth_percent": "-100%",
+                                            "growth_percent_numeric": "-100",
+                                            "grown": false,
+                                            "value_old": 281,
+                                            "value_new": 0,
+                                            "difference": -281,
+                                            "importance": 281,
+                                            "isDisappeared": true,
+                                            "isNew": false,
+                                            "isMover": false,
+                                            "isMoverAndShaker": false
+                                        }
+                                    ],
+                                    "AI Assistants": [],
+                                    "Country": [],
+                                    "Campaign Names": []
+                                }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "defaultKeyName\tlabel\tnb_visits\tgrowth_percent\tgrowth_percent_numeric\tgrown\tvalue_old\tvalue_new\tdifference\timportance\tisDisappeared\tisNew\tisMover\tisMoverAndShaker\tmetadata_label1\nDownloads\tdivezone.net\t14\t-50%\t-50\t0\t28\t14\t-14\t14\t0\t0\t1\t0\tdivezone.net\nSearch Engines\tBing & Yahoo!\t305\t100%\t100\t1\t0\t305\t305\t305\t0\t1\t0\t0\t\nSearch Engines\tBing & Yahoo!\t281\t-100%\t-100\t0\t281\t0\t-281\t281\t1\t0\t0\t0\t"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Insights.getMoversAndShakersOverview": {
+            "get": {
+                "tags": [
+                    "Insights"
+                ],
+                "description": "Detects the movers and shakers for a set of reports. Plugins can add their own reports to be included in this overview by listening to the {@hook Insights.addReportToOverview} event.",
+                "operationId": "Insights.getMoversAndShakersOverview",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A map containing a dataTable for each movers and shakers report. See\n{@link getMoversAndShakers()} for more information</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=Insights.getMoversAndShakersOverview&idSite=1&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=Insights.getMoversAndShakersOverview&idSite=1&period=day&date=today&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=Insights.getMoversAndShakersOverview&idSite=1&period=day&date=today&format=Tsv&token_auth=anonymous)",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "defaultKeyName": {
+                                                        "type": "string",
+                                                        "xml": {
+                                                            "attribute": true
+                                                        },
+                                                        "example": "Campaign Names"
+                                                    }
+                                                },
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "result"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "result": [
+                                        {
+                                            "defaultKeyName": "Page URLs"
+                                        },
+                                        {
+                                            "defaultKeyName": "Page titles"
+                                        },
+                                        {
+                                            "defaultKeyName": "Downloads"
+                                        },
+                                        {
+                                            "defaultKeyName": "Websites"
+                                        },
+                                        {
+                                            "defaultKeyName": "Social Networks"
+                                        },
+                                        {
+                                            "defaultKeyName": "Search Engines"
+                                        },
+                                        {
+                                            "defaultKeyName": "AI Assistants"
+                                        },
+                                        {
+                                            "defaultKeyName": "Country"
+                                        },
+                                        {
+                                            "defaultKeyName": "Campaign Names"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "Campaign Names": {
+                                            "type": "array",
+                                            "items": {}
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "Page URLs": [],
+                                    "Page titles": [],
+                                    "Downloads": [],
+                                    "Websites": [],
+                                    "Social Networks": [],
+                                    "Search Engines": [],
+                                    "AI Assistants": [],
+                                    "Country": [],
+                                    "Campaign Names": []
+                                }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "defaultKeyName"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Insights.getMoversAndShakers": {
+            "get": {
+                "tags": [
+                    "Insights"
+                ],
+                "description": "Detects the movers and shakers of a given date / report combination. A mover and shakers has an higher impact than other rows on average. For instance if a sites pageviews increase by 10% a page that increased by 40% at the same time contributed significantly more to the success than the average of 10%.",
+                "operationId": "Insights.getMoversAndShakers",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "name": "reportUniqueId",
+                        "in": "query",
+                        "description": "eg 'Actions_getPageUrls'. An id like 'Goals_getVisitsUntilConversion_idGoal--4' works as well.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    },
+                    {
+                        "name": "comparedToXPeriods",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        }
+                    },
+                    {
+                        "name": "limitIncreaser",
+                        "in": "query",
+                        "description": "Value '0' ignores all increasers",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 4
+                        }
+                    },
+                    {
+                        "name": "limitDecreaser",
+                        "in": "query",
+                        "description": "Value '0' ignores all decreasers",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 4
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Insights.getInsights": {
+            "get": {
+                "tags": [
+                    "Insights"
+                ],
+                "description": "Generates insights by comparing the report for a given date/period with a different date and calculating the difference. The API can exclude rows which growth is not good enough or did not have enough impact.",
+                "operationId": "Insights.getInsights",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "name": "reportUniqueId",
+                        "in": "query",
+                        "description": "eg 'Actions_getPageUrls'. An id like 'Goals_getVisitsUntilConversion_idGoal--4' works as well.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    },
+                    {
+                        "name": "limitIncreaser",
+                        "in": "query",
+                        "description": "Value '0' ignores all increasers",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 5
+                        }
+                    },
+                    {
+                        "name": "limitDecreaser",
+                        "in": "query",
+                        "description": "Value '0' ignores all decreasers",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 5
+                        }
+                    },
+                    {
+                        "name": "filterBy",
+                        "in": "query",
+                        "description": "By default all rows will be ignored. If given only 'movers', 'new' or 'disappeared' will be returned.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    },
+                    {
+                        "name": "minImpactPercent",
+                        "in": "query",
+                        "description": "The minimum impact in percent. Eg '2%' of 1000 visits means the change / increase / decrease has to be at least 20 visits. Usually the '2%' are based on the total amount of visits but for reports having way less visits the metric total is used. Eg A page has 1000 visits but only 100 visits having keywords. In this case a minimum impact of '2%' evaluates to 2 and not 20.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 2
+                        }
+                    },
+                    {
+                        "name": "minGrowthPercent",
+                        "in": "query",
+                        "description": "The amount of percent a row has to increase or decrease at least compared to the previous period. If value is '20' the growth has to be either at least '+20%' or '-20%' and lower.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 20
+                        }
+                    },
+                    {
+                        "name": "comparedToXPeriods",
+                        "in": "query",
+                        "description": "The report will be compared to X periods before.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        }
+                    },
+                    {
+                        "name": "orderBy",
+                        "in": "query",
+                        "description": "Orders the rows by 'absolute', 'relative' or 'importance'.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "absolute"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GenericSuccess": {
+                "description": "Generic Matomo success payload.",
+                "required": [
+                    "result",
+                    "message"
+                ],
+                "properties": {
+                    "result": {
+                        "type": "string",
+                        "example": "success"
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "ok"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "example": "200"
+                    }
+                },
+                "type": "object",
+                "example": {
+                    "result": "success",
+                    "message": "ok"
+                },
+                "additionalProperties": true
+            },
+            "GenericSuccessXml": {
+                "description": "Generic Matomo success payload in XML.",
+                "required": [
+                    "success"
+                ],
+                "properties": {
+                    "success": {
+                        "properties": {
+                            "message": {
+                                "type": "string",
+                                "xml": {
+                                    "attribute": true
+                                },
+                                "example": "ok"
+                            }
+                        },
+                        "type": "object",
+                        "xml": {
+                            "name": "success"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "result"
+                },
+                "example": {
+                    "success": {
+                        "message": "ok"
+                    }
+                },
+                "additionalProperties": true
+            },
+            "Error": {
+                "description": "Generic Matomo error payload.",
+                "required": [
+                    "result",
+                    "message"
+                ],
+                "properties": {
+                    "result": {
+                        "type": "string",
+                        "example": "error"
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "There was an error"
+                    },
+                    "code": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "additionalProperties": true
+            },
+            "ErrorXml": {
+                "description": "Generic Matomo error payload in XML.",
+                "properties": {
+                    "error": {
+                        "properties": {
+                            "message": {
+                                "type": "string",
+                                "xml": {
+                                    "attribute": true
+                                },
+                                "example": "There was an error"
+                            }
+                        },
+                        "type": "object",
+                        "xml": {
+                            "name": "error"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "result"
+                }
+            }
+        },
+        "responses": {
+            "BadRequest": {
+                "description": "Bad request (validation or missing parameters).",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: There was an error."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "There was an error."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "Unauthorized": {
+                "description": "Authentication failed or missing token.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: You must be logged in to access this functionality."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "You must be logged in to access this functionality."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "Forbidden": {
+                "description": "Authenticated but not allowed to access the resource.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: Not authorised."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Not authorised."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "NotFound": {
+                "description": "Resource not found.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: The method is not available."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "The method is not available."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "ServerError": {
+                "description": "Unexpected server error.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: There was an error."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "There was an error."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "DefaultError": {
+                "description": "Default error response (any non-2xx).",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: There was an error."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "There was an error."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "GenericSuccessNoBody": {
+                "description": "Generic 200 response with no body"
+            },
+            "GenericSuccess": {
+                "description": "Generic 200 response",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Success:ok"
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "<!-- Success: ok -->"
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/GenericSuccess"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/GenericSuccessXml"
+                        }
+                    }
+                }
+            },
+            "GenericString": {
+                "description": "Generic 200 response with only a string body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Result: success"
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "success"
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "GenericBoolean": {
+                "description": "Generic 200 response with only true or false as the body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                }
+            },
+            "GenericInteger": {
+                "description": "Generic 200 response with only an integer as the body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            },
+            "GenericArray": {
+                "description": "Generic 200 response with array body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "array",
+                            "items": {}
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "array",
+                            "items": {}
+                        }
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "moduleRequired": {
+                "name": "module",
+                "in": "query",
+                "description": "Always `API` for Reporting API requests.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "default": "API"
+                }
+            },
+            "methodRequired": {
+                "name": "method",
+                "in": "query",
+                "description": "API method, e.g. `VisitsSummary.get` or `CustomAlerts.getAlert`.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "example": "CustomAlerts.getAlert"
+                }
+            },
+            "formatRequired": {
+                "name": "format",
+                "in": "query",
+                "description": "Response format such as `xml` or `json`. Use `original` to get the original PHP data structure.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "default": "xml",
+                    "enum": [
+                        "xml",
+                        "json",
+                        "csv",
+                        "tsv",
+                        "html",
+                        "rss",
+                        "original"
+                    ]
+                }
+            },
+            "formatOptional": {
+                "name": "format",
+                "in": "query",
+                "description": "Response format. Defaults to `xml`. Use `original` to get the original PHP data structure.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "default": "xml",
+                    "enum": [
+                        "xml",
+                        "json",
+                        "csv",
+                        "tsv",
+                        "html",
+                        "rss",
+                        "original"
+                    ]
+                }
+            },
+            "idSiteRequired": {
+                "name": "idSite",
+                "in": "query",
+                "description": "Matomo site ID.",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "example": 1
+                }
+            },
+            "idSiteOptional": {
+                "name": "idSite",
+                "in": "query",
+                "description": "Matomo site ID.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "example": 1
+                }
+            },
+            "periodRequired": {
+                "name": "period",
+                "in": "query",
+                "description": "Reporting period.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "day",
+                        "week",
+                        "month",
+                        "year",
+                        "range"
+                    ],
+                    "example": "day"
+                }
+            },
+            "periodOptional": {
+                "name": "period",
+                "in": "query",
+                "description": "Reporting period.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "day",
+                        "week",
+                        "month",
+                        "year",
+                        "range"
+                    ],
+                    "example": "day"
+                }
+            },
+            "dateRequired": {
+                "name": "date",
+                "in": "query",
+                "description": "Date or range (e.g. `2025-08-01`, `yesterday`, `last30`, or `2025-08-01,2025-08-11`).",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "example": "today"
+                }
+            },
+            "dateOptional": {
+                "name": "date",
+                "in": "query",
+                "description": "Date or range (e.g. `2025-08-01`, `yesterday`, `last30`, or `2025-08-01,2025-08-11`).",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "today"
+                }
+            },
+            "segmentRequired": {
+                "name": "segment",
+                "in": "query",
+                "description": "Segment expression; see `API.getSegmentDimensionMetadata`.",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "segmentOptional": {
+                "name": "segment",
+                "in": "query",
+                "description": "Segment expression; see `API.getSegmentDimensionMetadata`.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "expandedOptional": {
+                "name": "expanded",
+                "in": "query",
+                "description": "If true, loads all subtables.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "default": 0,
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "idSubtableOptional": {
+                "name": "idSubtable",
+                "in": "query",
+                "description": "An in-database subtable ID.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "flatOptional": {
+                "name": "flat",
+                "in": "query",
+                "description": "Flatten subtables into the parent table.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "filter_patternOptional": {
+                "name": "filter_pattern",
+                "in": "query",
+                "description": "Regex to keep matching rows.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_columnOptional": {
+                "name": "filter_column",
+                "in": "query",
+                "description": "Column to apply the regex to (e.g., `label`).",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "label"
+                }
+            },
+            "filter_pattern_recursiveOptional": {
+                "name": "filter_pattern_recursive",
+                "in": "query",
+                "description": "Recursive regex filter.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_column_recursiveOptional": {
+                "name": "filter_column_recursive",
+                "in": "query",
+                "description": "Column for the recursive regex filter.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_excludelowpopOptional": {
+                "name": "filter_excludelowpop",
+                "in": "query",
+                "description": "Column to threshold and exclude low values.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_excludelowpop_valueOptional": {
+                "name": "filter_excludelowpop_value",
+                "in": "query",
+                "description": "Minimum value threshold for `filter_excludelowpop`.",
+                "required": false,
+                "schema": {
+                    "type": "number",
+                    "example": 0
+                }
+            },
+            "filter_sort_columnOptional": {
+                "name": "filter_sort_column",
+                "in": "query",
+                "description": "Column to sort by.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_sort_orderOptional": {
+                "name": "filter_sort_order",
+                "in": "query",
+                "description": "Sort direction.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "example": "desc"
+                }
+            },
+            "filter_truncateOptional": {
+                "name": "filter_truncate",
+                "in": "query",
+                "description": "Row index after which rows are removed.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "filter_limitOptional": {
+                "name": "filter_limit",
+                "in": "query",
+                "description": "Maximum number of rows to return.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "filter_offsetOptional": {
+                "name": "filter_offset",
+                "in": "query",
+                "description": "Row offset.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "keep_summary_rowOptional": {
+                "name": "keep_summary_row",
+                "in": "query",
+                "description": "Keep the summary row.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 1
+                }
+            },
+            "disable_generic_filtersOptional": {
+                "name": "disable_generic_filters",
+                "in": "query",
+                "description": "Disable generic filters (those above).",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "disable_queued_filtersOptional": {
+                "name": "disable_queued_filters",
+                "in": "query",
+                "description": "Skip queued filters.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "hideColumnsOptional": {
+                "name": "hideColumns",
+                "in": "query",
+                "description": "Comma-separated list of columns to hide.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "showColumnsOptional": {
+                "name": "showColumns",
+                "in": "query",
+                "description": "Comma-separated list of columns to include.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "labelOptional": {
+                "name": "label",
+                "in": "query",
+                "description": "Keep only rows with these label(s). Supports path via '>' and arrays.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "idGoalRequired": {
+                "name": "idGoal",
+                "in": "query",
+                "description": "The ID of a configured goal.",
+                "required": true,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "idGoalOptional": {
+                "name": "idGoal",
+                "in": "query",
+                "description": "The ID of a configured goal.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            }
+        },
+        "securitySchemes": {
+            "MatomoToken": {
+                "type": "apiKey",
+                "description": "Matomo API token passed as the 'token_auth' query parameter.",
+                "name": "token_auth",
+                "in": "query"
+            }
+        }
+    },
+    "security": [
+        {
+            "MatomoToken": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "Insights",
+            "description": "API for plugin Insights"
+        }
+    ],
+    "externalDocs": {
+        "description": "Matomo Reporting API developer page",
+        "url": "https://developer.matomo.org/api-reference/reporting-api/"
+    }
+}

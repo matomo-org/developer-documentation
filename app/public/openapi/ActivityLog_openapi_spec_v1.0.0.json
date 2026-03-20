@@ -1,0 +1,1374 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Matomo Reporting API for ActivityLog plugin",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://demo.matomo.cloud/",
+            "description": "Matomo demo server"
+        }
+    ],
+    "paths": {
+        "/index.php?module=API&method=ActivityLog.getEntries": {
+            "get": {
+                "tags": [
+                    "ActivityLog"
+                ],
+                "operationId": "ActivityLog.getEntries",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "offset to start at",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "amount of entries to return",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 25
+                        }
+                    },
+                    {
+                        "name": "filterByUserLogin",
+                        "in": "query",
+                        "description": "user login to filter by, or null for the current user",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    },
+                    {
+                        "name": "filterByActivityType",
+                        "in": "query",
+                        "description": "activity type identifier to filter by",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    },
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": "Reporting period (or a plugin-defined period).",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "description": "Date string (`YYYY-MM-DD`, `now`, `today`, `tomorrow`, `yesterday`, `yesterdaySameTime`, `last week|month|year`, `lastN`, `previousN`) or date range (`YYYY-MM-DD,YYYY-MM-DD`). Timezone is not applied here unless the date is already resolved upstream.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "list of activity entries with formatted metadata</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=ActivityLog.getEntries&offset=0&limit=25&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=ActivityLog.getEntries&offset=0&limit=25&period=day&date=today&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "id": "277",
+                                            "user_login": "Test",
+                                            "type": "ActivityLog\\/UserSignedIn",
+                                            "parameters": "",
+                                            "country": "",
+                                            "ip": "172.18.0.1",
+                                            "datetime": "2026-01-26 00:32:13",
+                                            "datetime_pretty": "Jan 26, 2026 00:32:13",
+                                            "time_relative_pretty": "23 hours 23 min ago",
+                                            "description": "logged in",
+                                            "avatar": "plugins\\/ActivityLog\\/images\\/avatar19.png",
+                                            "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
+                                            "country_name": "Unknown"
+                                        },
+                                        {
+                                            "id": "276",
+                                            "user_login": "Test",
+                                            "type": "ActivityLog\\/UserSignInFailed",
+                                            "parameters": "",
+                                            "country": "",
+                                            "ip": "172.18.0.1",
+                                            "datetime": "2026-01-26 00:32:09",
+                                            "datetime_pretty": "Jan 26, 2026 00:32:09",
+                                            "time_relative_pretty": "23 hours 23 min ago",
+                                            "description": "failed to log in",
+                                            "avatar": "plugins\\/ActivityLog\\/images\\/avatar19.png",
+                                            "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
+                                            "country_name": "Unknown"
+                                        },
+                                        {
+                                            "id": "275",
+                                            "user_login": "admin",
+                                            "type": "ActivityLog\\/UserSignedOff",
+                                            "parameters": "",
+                                            "country": "",
+                                            "ip": "172.18.0.1",
+                                            "datetime": "2026-01-26 00:32:05",
+                                            "datetime_pretty": "Jan 26, 2026 00:32:05",
+                                            "time_relative_pretty": "23 hours 23 min ago",
+                                            "description": "logged out",
+                                            "avatar": "plugins\\/ActivityLog\\/images\\/avatar15.png",
+                                            "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
+                                            "country_name": "Unknown"
+                                        },
+                                        {
+                                            "id": "274",
+                                            "user_login": "admin",
+                                            "type": "ActivityLog\\/UserSignedIn",
+                                            "parameters": "",
+                                            "country": "",
+                                            "ip": "172.18.0.1",
+                                            "datetime": "2026-01-26 00:31:55",
+                                            "datetime_pretty": "Jan 26, 2026 00:31:55",
+                                            "time_relative_pretty": "23 hours 24 min ago",
+                                            "description": "logged in",
+                                            "avatar": "plugins\\/ActivityLog\\/images\\/avatar15.png",
+                                            "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
+                                            "country_name": "Unknown"
+                                        },
+                                        {
+                                            "id": "273",
+                                            "user_login": "test",
+                                            "type": "ActivityLog\\/UserSignInFailed",
+                                            "parameters": "",
+                                            "country": "",
+                                            "ip": "172.18.0.1",
+                                            "datetime": "2026-01-26 00:31:50",
+                                            "datetime_pretty": "Jan 26, 2026 00:31:50",
+                                            "time_relative_pretty": "23 hours 24 min ago",
+                                            "description": "failed to log in",
+                                            "avatar": "plugins\\/ActivityLog\\/images\\/avatar5.png",
+                                            "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
+                                            "country_name": "Unknown"
+                                        },
+                                        {
+                                            "id": "272",
+                                            "user_login": "admin",
+                                            "type": "ActivityLog\\/UserSignedOff",
+                                            "parameters": "",
+                                            "country": "",
+                                            "ip": "172.18.0.1",
+                                            "datetime": "2026-01-26 00:31:47",
+                                            "datetime_pretty": "Jan 26, 2026 00:31:47",
+                                            "time_relative_pretty": "23 hours 24 min ago",
+                                            "description": "logged out",
+                                            "avatar": "plugins\\/ActivityLog\\/images\\/avatar15.png",
+                                            "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
+                                            "country_name": "Unknown"
+                                        },
+                                        {
+                                            "id": "271",
+                                            "user_login": "admin",
+                                            "type": "ActivityLog\\/UserSignedIn",
+                                            "parameters": "",
+                                            "country": "",
+                                            "ip": "172.18.0.1",
+                                            "datetime": "2026-01-26 00:12:26",
+                                            "datetime_pretty": "Jan 26, 2026 00:12:26",
+                                            "time_relative_pretty": "23 hours 43 min ago",
+                                            "description": "logged in",
+                                            "avatar": "plugins\\/ActivityLog\\/images\\/avatar15.png",
+                                            "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
+                                            "country_name": "Unknown"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer"
+                                                    },
+                                                    "user_login": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": {
+                                                        "type": "string"
+                                                    },
+                                                    "parameters": {
+                                                        "type": "array",
+                                                        "items": {}
+                                                    },
+                                                    "country": {
+                                                        "type": [
+                                                            "string",
+                                                            "number",
+                                                            "integer",
+                                                            "boolean",
+                                                            "array",
+                                                            "object",
+                                                            "null"
+                                                        ]
+                                                    },
+                                                    "ip": {
+                                                        "type": "string"
+                                                    },
+                                                    "datetime": {
+                                                        "type": "string"
+                                                    },
+                                                    "datetime_pretty": {
+                                                        "type": "string"
+                                                    },
+                                                    "time_relative_pretty": {
+                                                        "type": "string"
+                                                    },
+                                                    "description": {
+                                                        "type": "string"
+                                                    },
+                                                    "avatar": {
+                                                        "type": "string"
+                                                    },
+                                                    "country_flag": {
+                                                        "type": "string"
+                                                    },
+                                                    "country_name": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "id": 277,
+                                        "user_login": "Test",
+                                        "type": "ActivityLog\\/UserSignedIn",
+                                        "parameters": [],
+                                        "country": null,
+                                        "ip": "172.18.0.1",
+                                        "datetime": "2026-01-26 00:32:13",
+                                        "datetime_pretty": "Jan 26, 2026 00:32:13",
+                                        "time_relative_pretty": "23 hours 23 min ago",
+                                        "description": "logged in",
+                                        "avatar": "plugins\\/ActivityLog\\/images\\/avatar19.png",
+                                        "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
+                                        "country_name": "Unknown"
+                                    },
+                                    {
+                                        "id": 276,
+                                        "user_login": "Test",
+                                        "type": "ActivityLog\\/UserSignInFailed",
+                                        "parameters": [],
+                                        "country": null,
+                                        "ip": "172.18.0.1",
+                                        "datetime": "2026-01-26 00:32:09",
+                                        "datetime_pretty": "Jan 26, 2026 00:32:09",
+                                        "time_relative_pretty": "23 hours 23 min ago",
+                                        "description": "failed to log in",
+                                        "avatar": "plugins\\/ActivityLog\\/images\\/avatar19.png",
+                                        "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
+                                        "country_name": "Unknown"
+                                    },
+                                    {
+                                        "id": 275,
+                                        "user_login": "admin",
+                                        "type": "ActivityLog\\/UserSignedOff",
+                                        "parameters": [],
+                                        "country": null,
+                                        "ip": "172.18.0.1",
+                                        "datetime": "2026-01-26 00:32:05",
+                                        "datetime_pretty": "Jan 26, 2026 00:32:05",
+                                        "time_relative_pretty": "23 hours 24 min ago",
+                                        "description": "logged out",
+                                        "avatar": "plugins\\/ActivityLog\\/images\\/avatar15.png",
+                                        "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
+                                        "country_name": "Unknown"
+                                    },
+                                    {
+                                        "id": 274,
+                                        "user_login": "admin",
+                                        "type": "ActivityLog\\/UserSignedIn",
+                                        "parameters": [],
+                                        "country": null,
+                                        "ip": "172.18.0.1",
+                                        "datetime": "2026-01-26 00:31:55",
+                                        "datetime_pretty": "Jan 26, 2026 00:31:55",
+                                        "time_relative_pretty": "23 hours 24 min ago",
+                                        "description": "logged in",
+                                        "avatar": "plugins\\/ActivityLog\\/images\\/avatar15.png",
+                                        "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
+                                        "country_name": "Unknown"
+                                    },
+                                    {
+                                        "id": 273,
+                                        "user_login": "test",
+                                        "type": "ActivityLog\\/UserSignInFailed",
+                                        "parameters": [],
+                                        "country": null,
+                                        "ip": "172.18.0.1",
+                                        "datetime": "2026-01-26 00:31:50",
+                                        "datetime_pretty": "Jan 26, 2026 00:31:50",
+                                        "time_relative_pretty": "23 hours 24 min ago",
+                                        "description": "failed to log in",
+                                        "avatar": "plugins\\/ActivityLog\\/images\\/avatar5.png",
+                                        "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
+                                        "country_name": "Unknown"
+                                    },
+                                    {
+                                        "id": 272,
+                                        "user_login": "admin",
+                                        "type": "ActivityLog\\/UserSignedOff",
+                                        "parameters": [],
+                                        "country": null,
+                                        "ip": "172.18.0.1",
+                                        "datetime": "2026-01-26 00:31:47",
+                                        "datetime_pretty": "Jan 26, 2026 00:31:47",
+                                        "time_relative_pretty": "23 hours 24 min ago",
+                                        "description": "logged out",
+                                        "avatar": "plugins\\/ActivityLog\\/images\\/avatar15.png",
+                                        "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
+                                        "country_name": "Unknown"
+                                    },
+                                    {
+                                        "id": 271,
+                                        "user_login": "admin",
+                                        "type": "ActivityLog\\/UserSignedIn",
+                                        "parameters": [],
+                                        "country": null,
+                                        "ip": "172.18.0.1",
+                                        "datetime": "2026-01-26 00:12:26",
+                                        "datetime_pretty": "Jan 26, 2026 00:12:26",
+                                        "time_relative_pretty": "23 hours 43 min ago",
+                                        "description": "logged in",
+                                        "avatar": "plugins\\/ActivityLog\\/images\\/avatar15.png",
+                                        "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
+                                        "country_name": "Unknown"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=ActivityLog.getEntryCount": {
+            "get": {
+                "tags": [
+                    "ActivityLog"
+                ],
+                "operationId": "ActivityLog.getEntryCount",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "filterByUserLogin",
+                        "in": "query",
+                        "description": "user login to filter by, or null for the current user",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    },
+                    {
+                        "name": "filterByActivityType",
+                        "in": "query",
+                        "description": "activity type identifier to filter by",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    },
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": "Reporting period (or a plugin-defined period).",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "description": "Date string (`YYYY-MM-DD`, `now`, `today`, `tomorrow`, `yesterday`, `yesterdaySameTime`, `last week|month|year`, `lastN`, `previousN`) or date range (`YYYY-MM-DD,YYYY-MM-DD`). Timezone is not applied here unless the date is already resolved upstream.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "number of matching entries</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=ActivityLog.getEntryCount&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=ActivityLog.getEntryCount&period=day&date=today&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": [
+                                    "7"
+                                ]
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "value": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "value": 7
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=ActivityLog.getAllActivityTypes": {
+            "get": {
+                "tags": [
+                    "ActivityLog"
+                ],
+                "operationId": "ActivityLog.getAllActivityTypes",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "filterLimit",
+                        "in": "query",
+                        "description": "maximum number of activity types to return, or -1 for no limit",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "list of activity type labels</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=ActivityLog.getAllActivityTypes&filterLimit=-1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=ActivityLog.getAllActivityTypes&filterLimit=-1&format=JSON&token_auth=anonymous), TSV (N/A)"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GenericSuccess": {
+                "description": "Generic Matomo success payload.",
+                "required": [
+                    "result",
+                    "message"
+                ],
+                "properties": {
+                    "result": {
+                        "type": "string",
+                        "example": "success"
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "ok"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "example": "200"
+                    }
+                },
+                "type": "object",
+                "example": {
+                    "result": "success",
+                    "message": "ok"
+                },
+                "additionalProperties": true
+            },
+            "GenericSuccessXml": {
+                "description": "Generic Matomo success payload in XML.",
+                "required": [
+                    "success"
+                ],
+                "properties": {
+                    "success": {
+                        "properties": {
+                            "message": {
+                                "type": "string",
+                                "xml": {
+                                    "attribute": true
+                                },
+                                "example": "ok"
+                            }
+                        },
+                        "type": "object",
+                        "xml": {
+                            "name": "success"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "result"
+                },
+                "example": {
+                    "success": {
+                        "message": "ok"
+                    }
+                },
+                "additionalProperties": true
+            },
+            "Error": {
+                "description": "Generic Matomo error payload.",
+                "required": [
+                    "result",
+                    "message"
+                ],
+                "properties": {
+                    "result": {
+                        "type": "string",
+                        "example": "error"
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "There was an error"
+                    },
+                    "code": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "additionalProperties": true
+            },
+            "ErrorXml": {
+                "description": "Generic Matomo error payload in XML.",
+                "properties": {
+                    "error": {
+                        "properties": {
+                            "message": {
+                                "type": "string",
+                                "xml": {
+                                    "attribute": true
+                                },
+                                "example": "There was an error"
+                            }
+                        },
+                        "type": "object",
+                        "xml": {
+                            "name": "error"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "result"
+                }
+            }
+        },
+        "responses": {
+            "BadRequest": {
+                "description": "Bad request (validation or missing parameters).",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: There was an error."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "There was an error."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "Unauthorized": {
+                "description": "Authentication failed or missing token.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: You must be logged in to access this functionality."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "You must be logged in to access this functionality."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "Forbidden": {
+                "description": "Authenticated but not allowed to access the resource.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: Not authorised."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Not authorised."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "NotFound": {
+                "description": "Resource not found.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: The method is not available."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "The method is not available."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "ServerError": {
+                "description": "Unexpected server error.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: There was an error."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "There was an error."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "DefaultError": {
+                "description": "Default error response (any non-2xx).",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: There was an error."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "There was an error."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "GenericSuccessNoBody": {
+                "description": "Generic 200 response with no body"
+            },
+            "GenericSuccess": {
+                "description": "Generic 200 response",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Success:ok"
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "<!-- Success: ok -->"
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/GenericSuccess"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/GenericSuccessXml"
+                        }
+                    }
+                }
+            },
+            "GenericString": {
+                "description": "Generic 200 response with only a string body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Result: success"
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "success"
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "GenericBoolean": {
+                "description": "Generic 200 response with only true or false as the body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                }
+            },
+            "GenericInteger": {
+                "description": "Generic 200 response with only an integer as the body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            },
+            "GenericArray": {
+                "description": "Generic 200 response with array body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "array",
+                            "items": {}
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "array",
+                            "items": {}
+                        }
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "moduleRequired": {
+                "name": "module",
+                "in": "query",
+                "description": "Always `API` for Reporting API requests.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "default": "API"
+                }
+            },
+            "methodRequired": {
+                "name": "method",
+                "in": "query",
+                "description": "API method, e.g. `VisitsSummary.get` or `CustomAlerts.getAlert`.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "example": "CustomAlerts.getAlert"
+                }
+            },
+            "formatRequired": {
+                "name": "format",
+                "in": "query",
+                "description": "Response format such as `xml` or `json`. Use `original` to get the original PHP data structure.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "default": "xml",
+                    "enum": [
+                        "xml",
+                        "json",
+                        "csv",
+                        "tsv",
+                        "html",
+                        "rss",
+                        "original"
+                    ]
+                }
+            },
+            "formatOptional": {
+                "name": "format",
+                "in": "query",
+                "description": "Response format. Defaults to `xml`. Use `original` to get the original PHP data structure.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "default": "xml",
+                    "enum": [
+                        "xml",
+                        "json",
+                        "csv",
+                        "tsv",
+                        "html",
+                        "rss",
+                        "original"
+                    ]
+                }
+            },
+            "idSiteRequired": {
+                "name": "idSite",
+                "in": "query",
+                "description": "Matomo site ID.",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "example": 1
+                }
+            },
+            "idSiteOptional": {
+                "name": "idSite",
+                "in": "query",
+                "description": "Matomo site ID.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "example": 1
+                }
+            },
+            "periodRequired": {
+                "name": "period",
+                "in": "query",
+                "description": "Reporting period.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "day",
+                        "week",
+                        "month",
+                        "year",
+                        "range"
+                    ],
+                    "example": "day"
+                }
+            },
+            "periodOptional": {
+                "name": "period",
+                "in": "query",
+                "description": "Reporting period.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "day",
+                        "week",
+                        "month",
+                        "year",
+                        "range"
+                    ],
+                    "example": "day"
+                }
+            },
+            "dateRequired": {
+                "name": "date",
+                "in": "query",
+                "description": "Date or range (e.g. `2025-08-01`, `yesterday`, `last30`, or `2025-08-01,2025-08-11`).",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "example": "today"
+                }
+            },
+            "dateOptional": {
+                "name": "date",
+                "in": "query",
+                "description": "Date or range (e.g. `2025-08-01`, `yesterday`, `last30`, or `2025-08-01,2025-08-11`).",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "today"
+                }
+            },
+            "segmentRequired": {
+                "name": "segment",
+                "in": "query",
+                "description": "Segment expression; see `API.getSegmentDimensionMetadata`.",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "segmentOptional": {
+                "name": "segment",
+                "in": "query",
+                "description": "Segment expression; see `API.getSegmentDimensionMetadata`.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "expandedOptional": {
+                "name": "expanded",
+                "in": "query",
+                "description": "If true, loads all subtables.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "default": 0,
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "idSubtableOptional": {
+                "name": "idSubtable",
+                "in": "query",
+                "description": "An in-database subtable ID.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "flatOptional": {
+                "name": "flat",
+                "in": "query",
+                "description": "Flatten subtables into the parent table.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "filter_patternOptional": {
+                "name": "filter_pattern",
+                "in": "query",
+                "description": "Regex to keep matching rows.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_columnOptional": {
+                "name": "filter_column",
+                "in": "query",
+                "description": "Column to apply the regex to (e.g., `label`).",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "label"
+                }
+            },
+            "filter_pattern_recursiveOptional": {
+                "name": "filter_pattern_recursive",
+                "in": "query",
+                "description": "Recursive regex filter.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_column_recursiveOptional": {
+                "name": "filter_column_recursive",
+                "in": "query",
+                "description": "Column for the recursive regex filter.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_excludelowpopOptional": {
+                "name": "filter_excludelowpop",
+                "in": "query",
+                "description": "Column to threshold and exclude low values.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_excludelowpop_valueOptional": {
+                "name": "filter_excludelowpop_value",
+                "in": "query",
+                "description": "Minimum value threshold for `filter_excludelowpop`.",
+                "required": false,
+                "schema": {
+                    "type": "number",
+                    "example": 0
+                }
+            },
+            "filter_sort_columnOptional": {
+                "name": "filter_sort_column",
+                "in": "query",
+                "description": "Column to sort by.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_sort_orderOptional": {
+                "name": "filter_sort_order",
+                "in": "query",
+                "description": "Sort direction.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "example": "desc"
+                }
+            },
+            "filter_truncateOptional": {
+                "name": "filter_truncate",
+                "in": "query",
+                "description": "Row index after which rows are removed.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "filter_limitOptional": {
+                "name": "filter_limit",
+                "in": "query",
+                "description": "Maximum number of rows to return.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "filter_offsetOptional": {
+                "name": "filter_offset",
+                "in": "query",
+                "description": "Row offset.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "keep_summary_rowOptional": {
+                "name": "keep_summary_row",
+                "in": "query",
+                "description": "Keep the summary row.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 1
+                }
+            },
+            "disable_generic_filtersOptional": {
+                "name": "disable_generic_filters",
+                "in": "query",
+                "description": "Disable generic filters (those above).",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "disable_queued_filtersOptional": {
+                "name": "disable_queued_filters",
+                "in": "query",
+                "description": "Skip queued filters.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "hideColumnsOptional": {
+                "name": "hideColumns",
+                "in": "query",
+                "description": "Comma-separated list of columns to hide.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "showColumnsOptional": {
+                "name": "showColumns",
+                "in": "query",
+                "description": "Comma-separated list of columns to include.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "labelOptional": {
+                "name": "label",
+                "in": "query",
+                "description": "Keep only rows with these label(s). Supports path via '>' and arrays.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "idGoalRequired": {
+                "name": "idGoal",
+                "in": "query",
+                "description": "The ID of a configured goal.",
+                "required": true,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "idGoalOptional": {
+                "name": "idGoal",
+                "in": "query",
+                "description": "The ID of a configured goal.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            }
+        },
+        "securitySchemes": {
+            "MatomoToken": {
+                "type": "apiKey",
+                "description": "Matomo API token passed as the 'token_auth' query parameter.",
+                "name": "token_auth",
+                "in": "query"
+            }
+        }
+    },
+    "security": [
+        {
+            "MatomoToken": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "ActivityLog",
+            "description": "The Activity Log API is used to get the activity logs for users in your Matomo instance. <br/><br/> The method <code>ActivityLog.getEntries</code> returns a list of the activities done by users in your Matomo instance.  <br/>The list of activities returned depends on which user is calling the API: <br/> - if you authenticate with a Super User access, the API will return activity logs for all users <br/> - if you authenticate as anonymous (no authentication), or a user with view or admin access, only this user's activity will be returned. <br/><br/> Each activity includes an activity ID, the user who initiated the activity, a list of parameters/metadata specific to this activity, the datetime (and pretty datetime), the activity description, and the URL to the colored avatar image for this user.  <br/><br/>The activity log includes over 80 different types of Matomo activities, for example: <br/> - See when a user logged in, failed to log in, or logged out <br/> - See when a user was created, updated or deleted by who <br/> - See when a website was created, updated or deleted by who <br/> - See when a Matomo setting, an <a href=\"https://www.ab-tests.net\">A/B Test</a>, a <a href=\"https://piwik.org/docs/email-reports/\">Scheduled Report</a>, or a <a href=\"https://piwik.org/docs/segmentation/\">Segment</a> was changed and by who"
+        }
+    ],
+    "externalDocs": {
+        "description": "Matomo Reporting API developer page",
+        "url": "https://developer.matomo.org/api-reference/reporting-api/"
+    }
+}
