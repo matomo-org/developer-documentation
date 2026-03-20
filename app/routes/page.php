@@ -124,6 +124,25 @@ $app->get('/api-reference/api/{plugin}', function (Request $request, Response $r
         throw new HttpNotFoundException($request);
     }
 
+    $pluginSpecPath = OpenApiSpecRegistry::getSpecFilePath($pluginSpec['file']);
+    $pluginSpecContents = @file_get_contents($pluginSpecPath);
+    if ($pluginSpecContents === false) {
+        throw new HttpNotFoundException($request);
+    }
+
+    $pluginSpecData = json_decode($pluginSpecContents, true);
+    if (!is_array($pluginSpecData)) {
+        throw new RuntimeException('Invalid OpenAPI spec: ' . $pluginSpec['file']);
+    }
+
+    $pluginSpecJson = json_encode(
+        $pluginSpecData,
+        JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT
+    );
+    if ($pluginSpecJson === false) {
+        throw new RuntimeException('Could not encode OpenAPI spec: ' . $pluginSpec['file']);
+    }
+
     $category = new ApiReferenceCategory();
     $guide = new ApiReferenceGuide('api');
 
@@ -136,6 +155,7 @@ $app->get('/api-reference/api/{plugin}', function (Request $request, Response $r
         'selectedPiwikVersion' => Environment::getPiwikVersion(),
         'urlIfAvailableInNewerVersion' => (Environment::isLatestPiwikVersion() ? false : Url::getUrlIfDocumentIsAvailableInPiwikVersion($request->getUri()->getPath(), LATEST_PIWIK_DOCS_VERSION)),
         'pluginSpec' => $pluginSpec,
+        'pluginSpecJson' => $pluginSpecJson,
         'swaggerPluginSpecs' => OpenApiSpecRegistry::getPluginSpecs(),
         'hideGuideSections' => true,
     ]);

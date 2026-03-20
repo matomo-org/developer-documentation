@@ -8,11 +8,19 @@ namespace helpers;
 class OpenApiSpecRegistry
 {
     /**
+     * @return string
+     */
+    public static function getOpenApiDirectory()
+    {
+        return __DIR__ . '/../public/openapi';
+    }
+
+    /**
      * @return array<int, array{name: string, slug: string, file: string, url: string}>
      */
     public static function getPluginSpecs()
     {
-        $files = glob(__DIR__ . '/../public/openapi/*_openapi_spec_v*.json');
+        $files = glob(self::getOpenApiDirectory() . '/*_openapi_spec_v*.json');
         if ($files === false) {
             return [];
         }
@@ -58,6 +66,15 @@ class OpenApiSpecRegistry
         }
 
         return null;
+    }
+
+    /**
+     * @param string $basename
+     * @return string
+     */
+    public static function getSpecFilePath($basename)
+    {
+        return self::getOpenApiDirectory() . '/' . $basename;
     }
 
     /**

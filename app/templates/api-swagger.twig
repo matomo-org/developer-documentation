@@ -17,10 +17,13 @@
     <script src="/vendor/swagger-ui/swagger-ui-standalone-preset.js?{{ revision|e('html_attr') }}"></script>
     <script type="text/javascript">
     window.onload = function () {
+        var pluginSpec = {{ pluginSpecJson|raw }};
+
         if (typeof SwaggerUIBundle === 'function') {
             SwaggerUIBundle({
                 dom_id: '#swagger-ui',
-                url: '{{ pluginSpec.url|e('js') }}',
+                url: null,
+                spec: pluginSpec,
                 docExpansion: true,
                 filter: true,
                 tagsSorter: 'alpha',
