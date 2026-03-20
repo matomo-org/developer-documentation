@@ -103,6 +103,7 @@ $app->get('/piwik-in-depth', function (Request $request, Response $response, $ar
 $app->get('/api-reference/api', function (Request $request, Response $response, $args) {
     $category = new ApiReferenceCategory();
     $guide = new ApiReferenceGuide('api');
+    $pluginSpecs = OpenApiSpecRegistry::getPluginSpecs();
 
     return $this->get("view")->render($response, 'api-swagger-index.twig', [
         'category' => $category,
@@ -112,28 +113,20 @@ $app->get('/api-reference/api', function (Request $request, Response $response, 
         'currentPath' => $request->getUri()->getPath(),
         'selectedPiwikVersion' => Environment::getPiwikVersion(),
         'urlIfAvailableInNewerVersion' => (Environment::isLatestPiwikVersion() ? false : Url::getUrlIfDocumentIsAvailableInPiwikVersion($request->getUri()->getPath(), LATEST_PIWIK_DOCS_VERSION)),
-        'pluginSpecs' => OpenApiSpecRegistry::getPluginSpecs(),
-        'swaggerPluginSpecs' => OpenApiSpecRegistry::getPluginSpecs(),
+        'pluginSpecs' => $pluginSpecs,
         'hideGuideSections' => true,
     ]);
 });
 
 $app->get('/api-reference/api/{plugin}', function (Request $request, Response $response, $args) {
-    $pluginSpec = OpenApiSpecRegistry::getPluginSpecBySlug($args['plugin']);
-    if ($pluginSpec === null) {
+    $pluginSpecs = OpenApiSpecRegistry::getPluginSpecs();
+    $pluginSpecDocument = OpenApiSpecRegistry::getPluginSpecDocumentBySlug($args['plugin']);
+    if ($pluginSpecDocument === null) {
         throw new HttpNotFoundException($request);
     }
 
-    $pluginSpecPath = OpenApiSpecRegistry::getSpecFilePath($pluginSpec['file']);
-    $pluginSpecContents = @file_get_contents($pluginSpecPath);
-    if ($pluginSpecContents === false) {
-        throw new HttpNotFoundException($request);
-    }
-
-    $pluginSpecData = json_decode($pluginSpecContents, true);
-    if (!is_array($pluginSpecData)) {
-        throw new RuntimeException('Invalid OpenAPI spec: ' . $pluginSpec['file']);
-    }
+    $pluginSpec = $pluginSpecDocument['pluginSpec'];
+    $pluginSpecData = $pluginSpecDocument['pluginSpecData'];
 
     $pluginSpecJson = json_encode(
         $pluginSpecData,
@@ -156,7 +149,7 @@ $app->get('/api-reference/api/{plugin}', function (Request $request, Response $r
         'urlIfAvailableInNewerVersion' => (Environment::isLatestPiwikVersion() ? false : Url::getUrlIfDocumentIsAvailableInPiwikVersion($request->getUri()->getPath(), LATEST_PIWIK_DOCS_VERSION)),
         'pluginSpec' => $pluginSpec,
         'pluginSpecJson' => $pluginSpecJson,
-        'swaggerPluginSpecs' => OpenApiSpecRegistry::getPluginSpecs(),
+        'pluginSpecs' => $pluginSpecs,
         'hideGuideSections' => true,
     ]);
 });

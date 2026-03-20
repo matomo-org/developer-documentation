@@ -42,7 +42,7 @@
         </div>
     {% endif %}
 
-    {% if swaggerPluginSpecs is defined and swaggerPluginSpecs is not empty %}
+    {% if pluginSpecs is defined and pluginSpecs is not empty %}
         <div class="guide-sections panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
@@ -52,11 +52,11 @@
 
             <div class="panel-body bs-sidebar">
                 <ul class="nav nav-pills nav-stacked bs-sidenav">
-                    {% for swaggerPlugin in swaggerPluginSpecs %}
-                        {% set pluginPath = '/api-reference/api/' ~ swaggerPlugin.slug %}
+                    {% for pluginSpec in pluginSpecs %}
+                        {% set pluginPath = '/api-reference/api/' ~ pluginSpec.slug %}
                         {% set menuClass = (pluginPath == currentPath) ? 'active' : '' %}
-                        <li class="{{ menuClass }}" title="{{ swaggerPlugin.name|striptags|raw }}">
-                            <a href="{{ pluginPath|completeUrl }}">{{ swaggerPlugin.name|raw }}</a>
+                        <li class="{{ menuClass }}" title="{{ pluginSpec.name|striptags|raw }}">
+                            <a href="{{ pluginPath|completeUrl }}">{{ pluginSpec.name|raw }}</a>
                         </li>
                     {% endfor %}
                 </ul>

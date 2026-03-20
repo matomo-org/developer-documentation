@@ -69,6 +69,34 @@ class OpenApiSpecRegistry
     }
 
     /**
+     * @param string $slug
+     * @return array{pluginSpec: array{name: string, slug: string, file: string, url: string}, pluginSpecData: array<mixed>}|null
+     */
+    public static function getPluginSpecDocumentBySlug($slug)
+    {
+        $pluginSpec = self::getPluginSpecBySlug($slug);
+        if ($pluginSpec === null) {
+            return null;
+        }
+
+        $pluginSpecPath = self::getSpecFilePath($pluginSpec['file']);
+        $pluginSpecContents = @file_get_contents($pluginSpecPath);
+        if ($pluginSpecContents === false) {
+            return null;
+        }
+
+        $pluginSpecData = json_decode($pluginSpecContents, true);
+        if (!is_array($pluginSpecData)) {
+            throw new \RuntimeException('Invalid OpenAPI spec: ' . $pluginSpec['file']);
+        }
+
+        return [
+            'pluginSpec' => $pluginSpec,
+            'pluginSpecData' => $pluginSpecData,
+        ];
+    }
+
+    /**
      * @param string $basename
      * @return string
      */
