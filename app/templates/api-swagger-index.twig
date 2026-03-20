@@ -1,0 +1,18 @@
+{% extends 'guide.twig' %}
+
+{% block guideContent %}
+    {{ guide.validatedRenderedContent(anchorLinks)|raw }}
+
+    {% if pluginSpecs is empty %}
+        <p>No API modules are currently available.</p>
+    {% else %}
+        <h2>Available API modules</h2>
+        <ul>
+            {% for pluginSpec in pluginSpecs %}
+                <li>
+                    <a href="/api-reference/api/{{ pluginSpec.slug|e('url') }}">{{ pluginSpec.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

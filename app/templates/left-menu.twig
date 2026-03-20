@@ -42,7 +42,27 @@
         </div>
     {% endif %}
 
-    {% if guide.sections|length %}
+    {% if swaggerPluginSpecs is defined and swaggerPluginSpecs is not empty %}
+        <div class="guide-sections panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="/api-reference/api">API Documentation</a>
+                </h4>
+            </div>
+
+            <div class="panel-body bs-sidebar">
+                <ul class="nav nav-pills nav-stacked bs-sidenav">
+                    {% for swaggerPlugin in swaggerPluginSpecs %}
+                        {% set pluginPath = '/api-reference/api/' ~ swaggerPlugin.slug %}
+                        {% set menuClass = (pluginPath == currentPath) ? 'active' : '' %}
+                        <li class="{{ menuClass }}" title="{{ swaggerPlugin.name|striptags|raw }}">
+                            <a href="{{ pluginPath|completeUrl }}">{{ swaggerPlugin.name|raw }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% elseif guide.sections|length and not hideGuideSections|default(false) %}
         <div class="guide-sections panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">

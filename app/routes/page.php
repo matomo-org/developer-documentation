@@ -22,6 +22,7 @@ use helpers\Content\Guide;
 use helpers\Content\PhpDoc;
 use helpers\DocumentNotExistException;
 use helpers\Environment;
+use helpers\OpenApiSpecRegistry;
 use helpers\Redirects;
 use helpers\SearchIndex;
 use helpers\Url;
@@ -99,11 +100,45 @@ $app->get('/piwik-in-depth', function (Request $request, Response $response, $ar
     return renderGuide($this->get("view"), $response, $request->getUri(), $category->getIntroGuide(), $category);
 });
 
-$app->get('/api-reference-swagger', function (Request $request, Response $response, $args) {
+$app->get('/api-reference/api', function (Request $request, Response $response, $args) {
     $category = new ApiReferenceCategory();
-    $guide = new Guide('swagger-api');
+    $guide = new ApiReferenceGuide('api');
 
-    return renderGuide($this->get("view"), $response, $request->getUri(), $guide, $category, 'api-swagger.twig');
+    return $this->get("view")->render($response, 'api-swagger-index.twig', [
+        'category' => $category,
+        'guide' => $guide,
+        'linkToEditDocument' => $guide->linkToEdit(),
+        'activeMenu' => $category->getName(),
+        'currentPath' => $request->getUri()->getPath(),
+        'selectedPiwikVersion' => Environment::getPiwikVersion(),
+        'urlIfAvailableInNewerVersion' => (Environment::isLatestPiwikVersion() ? false : Url::getUrlIfDocumentIsAvailableInPiwikVersion($request->getUri()->getPath(), LATEST_PIWIK_DOCS_VERSION)),
+        'pluginSpecs' => OpenApiSpecRegistry::getPluginSpecs(),
+        'swaggerPluginSpecs' => OpenApiSpecRegistry::getPluginSpecs(),
+        'hideGuideSections' => true,
+    ]);
+});
+
+$app->get('/api-reference/api/{plugin}', function (Request $request, Response $response, $args) {
+    $pluginSpec = OpenApiSpecRegistry::getPluginSpecBySlug($args['plugin']);
+    if ($pluginSpec === null) {
+        throw new HttpNotFoundException($request);
+    }
+
+    $category = new ApiReferenceCategory();
+    $guide = new ApiReferenceGuide('api');
+
+    return $this->get("view")->render($response, 'api-swagger.twig', [
+        'category' => $category,
+        'guide' => $guide,
+        'linkToEditDocument' => $guide->linkToEdit(),
+        'activeMenu' => $category->getName(),
+        'currentPath' => $request->getUri()->getPath(),
+        'selectedPiwikVersion' => Environment::getPiwikVersion(),
+        'urlIfAvailableInNewerVersion' => (Environment::isLatestPiwikVersion() ? false : Url::getUrlIfDocumentIsAvailableInPiwikVersion($request->getUri()->getPath(), LATEST_PIWIK_DOCS_VERSION)),
+        'pluginSpec' => $pluginSpec,
+        'swaggerPluginSpecs' => OpenApiSpecRegistry::getPluginSpecs(),
+        'hideGuideSections' => true,
+    ]);
 });
 
 
