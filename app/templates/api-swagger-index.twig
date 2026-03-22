@@ -10,7 +10,7 @@
         <ul>
             {% for pluginSpec in pluginSpecs %}
                 <li>
-                    <a href="/api-reference/api/{{ pluginSpec.slug|e('url') }}">{{ pluginSpec.name }}</a>
+                    <a href="{{ ('/api-reference/api/' ~ pluginSpec.slug)|completeUrl }}">{{ pluginSpec.name }}</a>
                 </li>
             {% endfor %}
         </ul>
