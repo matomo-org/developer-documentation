@@ -21,7 +21,7 @@ The plugin provides these scopes:
 * `matomo:admin`
 * `matomo:superuser`
 
-See the [permissions guide](https://developer.matomo.org/guides/permissions) for more information.
+See the [permissions guide](/guides/permissions) for more information.
 
 At the time of writing, only one scope can be requested at a time.
 
