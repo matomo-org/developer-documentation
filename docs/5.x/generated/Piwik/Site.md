@@ -277,8 +277,8 @@ Checks the given string for valid site IDs and returns them as an array.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$ids` (`string`|`array`) &mdash;
-       Comma separated idSite list, eg, `'1,2,3,4'` or an array of IDs, eg, `array(1, 2, 3, 4)`.
+    - `$ids` (`bool`|`int`|`string`|`Piwik\array&lt;string`|`int`|`Piwik\null&gt;`) &mdash;
+       Comma separated idSite list, eg, `'1,2,3,4'` or an array of IDs, eg, `array(1, 2, 3, 4)`, or 'all'.
     - `$_restrictSitesToLogin` (`bool`|`string`) &mdash;
        Implementation detail. Used only when running as a scheduled task.
     - `$throwOnInvalid` (`bool`) &mdash;
