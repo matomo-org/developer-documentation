@@ -42,7 +42,27 @@
         </div>
     {% endif %}
 
-    {% if guide.sections|length %}
+    {% if pluginSpecs is defined and pluginSpecs is not empty %}
+        <div class="guide-sections panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="{{ '/api-reference/api'|completeUrl }}">API Documentation</a>
+                </h4>
+            </div>
+
+            <div class="panel-body bs-sidebar">
+                <ul class="nav nav-pills nav-stacked bs-sidenav">
+                    {% for pluginSpec in pluginSpecs %}
+                        {% set pluginPath = '/api-reference/api/' ~ pluginSpec.slug %}
+                        {% set menuClass = (pluginPath == currentPath) ? 'active' : '' %}
+                        <li class="{{ menuClass }}" title="{{ pluginSpec.name|striptags|raw }}">
+                            <a href="{{ pluginPath|completeUrl }}">{{ pluginSpec.name|raw }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% elseif guide.sections|length and not hideGuideSections|default(false) %}
         <div class="guide-sections panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">

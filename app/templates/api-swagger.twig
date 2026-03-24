@@ -7,6 +7,7 @@
 
 {% block guideContent %}
     {{ guide.validatedRenderedContent(anchorLinks)|raw }}
+    <h2>{{ pluginSpec.name }}</h2>
     <div id="swagger-ui"></div>
 {% endblock %}
 
@@ -16,16 +17,18 @@
     <script src="/vendor/swagger-ui/swagger-ui-standalone-preset.js?{{ revision|e('html_attr') }}"></script>
     <script type="text/javascript">
     window.onload = function () {
+        var pluginSpec = {{ pluginSpecJson|raw }};
+
         if (typeof SwaggerUIBundle === 'function') {
             SwaggerUIBundle({
                 dom_id: '#swagger-ui',
-                url: '/openapi/matomo_openapi_spec_v1.0.0.json',
-                docExpansion: 'none',
+                url: null,
+                spec: pluginSpec,
+                docExpansion: 'list',
                 filter: true,
                 tagsSorter: 'alpha',
                 presets: [
                     SwaggerUIBundle.presets.apis,
-                    SwaggerUIStandalonePreset
                 ],
                 layout: 'BaseLayout'
             });

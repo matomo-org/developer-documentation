@@ -1,0 +1,2350 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Matomo Reporting API for Events plugin",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://demo.matomo.cloud/",
+            "description": "Matomo demo server"
+        }
+    ],
+    "paths": {
+        "/index.php?module=API&method=Events.getCategory": {
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "description": "",
+                "operationId": "Events.getCategory",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/expandedOptional"
+                    },
+                    {
+                        "name": "secondaryDimension",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/flatOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Example links: [XML](https://demo.matomo.cloud/?module=API&method=Events.getCategory&idSite=1&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=Events.getCategory&idSite=1&period=day&date=today&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=Events.getCategory&idSite=1&period=day&date=today&format=Tsv&token_auth=anonymous)",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "label": "Ecommerce",
+                                            "nb_uniq_visitors": "1643",
+                                            "nb_visits": "1833",
+                                            "nb_events": "2126",
+                                            "nb_events_with_value": "2126",
+                                            "sum_event_value": "1650",
+                                            "min_event_value": "-4",
+                                            "max_event_value": "5",
+                                            "avg_event_value": "0.78",
+                                            "segment": "eventCategory==Ecommerce"
+                                        },
+                                        {
+                                            "label": "MediaVideo",
+                                            "nb_uniq_visitors": "311",
+                                            "nb_visits": "311",
+                                            "nb_events": "508",
+                                            "nb_events_with_value": "413",
+                                            "sum_event_value": "44886",
+                                            "min_event_value": "0",
+                                            "max_event_value": "898",
+                                            "avg_event_value": "108.68",
+                                            "segment": "eventCategory==MediaVideo"
+                                        },
+                                        {
+                                            "label": "wBounce",
+                                            "nb_uniq_visitors": "40",
+                                            "nb_visits": "40",
+                                            "nb_events": "40",
+                                            "nb_events_with_value": "0",
+                                            "sum_event_value": "0",
+                                            "min_event_value": "",
+                                            "max_event_value": "",
+                                            "avg_event_value": "0",
+                                            "segment": "eventCategory==wBounce"
+                                        },
+                                        {
+                                            "label": "Add review",
+                                            "nb_uniq_visitors": "26",
+                                            "nb_visits": "26",
+                                            "nb_events": "36",
+                                            "nb_events_with_value": "0",
+                                            "sum_event_value": "0",
+                                            "min_event_value": "",
+                                            "max_event_value": "",
+                                            "avg_event_value": "0",
+                                            "segment": "eventCategory==Add+review"
+                                        },
+                                        {
+                                            "label": "Rate location",
+                                            "nb_uniq_visitors": "11",
+                                            "nb_visits": "11",
+                                            "nb_events": "18",
+                                            "nb_events_with_value": "0",
+                                            "sum_event_value": "0",
+                                            "min_event_value": "",
+                                            "max_event_value": "",
+                                            "avg_event_value": "0",
+                                            "segment": "eventCategory==Rate+location"
+                                        },
+                                        {
+                                            "label": "GetMatomo",
+                                            "nb_uniq_visitors": "7",
+                                            "nb_visits": "7",
+                                            "nb_events": "7",
+                                            "nb_events_with_value": "0",
+                                            "sum_event_value": "0",
+                                            "min_event_value": "",
+                                            "max_event_value": "",
+                                            "avg_event_value": "0",
+                                            "segment": "eventCategory==GetMatomo"
+                                        },
+                                        {
+                                            "label": "Back to top",
+                                            "nb_uniq_visitors": "3",
+                                            "nb_visits": "3",
+                                            "nb_events": "3",
+                                            "nb_events_with_value": "0",
+                                            "sum_event_value": "0",
+                                            "min_event_value": "",
+                                            "max_event_value": "",
+                                            "avg_event_value": "0",
+                                            "segment": "eventCategory==Back+to+top"
+                                        },
+                                        {
+                                            "label": "MediaAudio",
+                                            "nb_uniq_visitors": "2",
+                                            "nb_visits": "2",
+                                            "nb_events": "2",
+                                            "nb_events_with_value": "2",
+                                            "sum_event_value": "3",
+                                            "min_event_value": "0",
+                                            "max_event_value": "3",
+                                            "avg_event_value": "1.5",
+                                            "segment": "eventCategory==MediaAudio"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_uniq_visitors": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_visits": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_events": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_events_with_value": {
+                                                        "type": "integer"
+                                                    },
+                                                    "sum_event_value": {
+                                                        "type": "integer"
+                                                    },
+                                                    "min_event_value": {
+                                                        "type": "integer"
+                                                    },
+                                                    "max_event_value": {
+                                                        "type": "integer"
+                                                    },
+                                                    "avg_event_value": {
+                                                        "type": [
+                                                            "string",
+                                                            "number",
+                                                            "integer",
+                                                            "boolean",
+                                                            "array",
+                                                            "object",
+                                                            "null"
+                                                        ]
+                                                    },
+                                                    "segment": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "label": "Ecommerce",
+                                        "nb_uniq_visitors": 1643,
+                                        "nb_visits": 1833,
+                                        "nb_events": 2126,
+                                        "nb_events_with_value": 2126,
+                                        "sum_event_value": 1650,
+                                        "min_event_value": -4,
+                                        "max_event_value": 5,
+                                        "avg_event_value": 0.78,
+                                        "segment": "eventCategory==Ecommerce"
+                                    },
+                                    {
+                                        "label": "MediaVideo",
+                                        "nb_uniq_visitors": 311,
+                                        "nb_visits": 311,
+                                        "nb_events": 508,
+                                        "nb_events_with_value": 413,
+                                        "sum_event_value": 44886,
+                                        "min_event_value": 0,
+                                        "max_event_value": 898,
+                                        "avg_event_value": 108.68,
+                                        "segment": "eventCategory==MediaVideo"
+                                    },
+                                    {
+                                        "label": "wBounce",
+                                        "nb_uniq_visitors": 40,
+                                        "nb_visits": 40,
+                                        "nb_events": 40,
+                                        "nb_events_with_value": 0,
+                                        "sum_event_value": 0,
+                                        "min_event_value": null,
+                                        "max_event_value": null,
+                                        "avg_event_value": 0,
+                                        "segment": "eventCategory==wBounce"
+                                    },
+                                    {
+                                        "label": "Add review",
+                                        "nb_uniq_visitors": 26,
+                                        "nb_visits": 26,
+                                        "nb_events": 36,
+                                        "nb_events_with_value": 0,
+                                        "sum_event_value": 0,
+                                        "min_event_value": null,
+                                        "max_event_value": null,
+                                        "avg_event_value": 0,
+                                        "segment": "eventCategory==Add+review"
+                                    },
+                                    {
+                                        "label": "Rate location",
+                                        "nb_uniq_visitors": 11,
+                                        "nb_visits": 11,
+                                        "nb_events": 18,
+                                        "nb_events_with_value": 0,
+                                        "sum_event_value": 0,
+                                        "min_event_value": null,
+                                        "max_event_value": null,
+                                        "avg_event_value": 0,
+                                        "segment": "eventCategory==Rate+location"
+                                    },
+                                    {
+                                        "label": "GetMatomo",
+                                        "nb_uniq_visitors": 7,
+                                        "nb_visits": 7,
+                                        "nb_events": 7,
+                                        "nb_events_with_value": 0,
+                                        "sum_event_value": 0,
+                                        "min_event_value": null,
+                                        "max_event_value": null,
+                                        "avg_event_value": 0,
+                                        "segment": "eventCategory==GetMatomo"
+                                    },
+                                    {
+                                        "label": "Back to top",
+                                        "nb_uniq_visitors": 3,
+                                        "nb_visits": "3",
+                                        "nb_events": "3",
+                                        "nb_events_with_value": "0",
+                                        "sum_event_value": 0,
+                                        "min_event_value": null,
+                                        "max_event_value": null,
+                                        "avg_event_value": 0,
+                                        "segment": "eventCategory==Back+to+top"
+                                    },
+                                    {
+                                        "label": "MediaAudio",
+                                        "nb_uniq_visitors": 2,
+                                        "nb_visits": 2,
+                                        "nb_events": 2,
+                                        "nb_events_with_value": 2,
+                                        "sum_event_value": 3,
+                                        "min_event_value": 0,
+                                        "max_event_value": 3,
+                                        "avg_event_value": 1.5,
+                                        "segment": "eventCategory==MediaAudio"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_uniq_visitors\tnb_visits\tnb_events\tnb_events_with_value\tsum_event_value\tmin_event_value\tmax_event_value\tavg_event_value\tmetadata_segment\nEcommerce\t1643\t1833\t2126\t2126\t1650\t-4\t5\t0.78\teventCategory==Ecommerce\nMediaVideo\t311\t311\t508\t413\t44886\t0\t898\t108.68\teventCategory==MediaVideo\nwBounce\t40\t40\t40\t0\t0\t\t\t0\teventCategory==wBounce\nAdd review\t26\t26\t36\t0\t0\t\t\t0\teventCategory==Add+review\nRate location\t11\t11\t18\t0\t0\t\t\t0\teventCategory==Rate+location\nGetMatomo\t7\t7\t7\t0\t0\t\t\t0\teventCategory==GetMatomo\nBack to top\t3\t3\t3\t0\t0\t\t\t0\teventCategory==Back+to+top\nMediaAudio\t2\t2\t2\t2\t3\t0\t3\t1.5\teventCategory==MediaAudio"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Events.getAction": {
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "description": "",
+                "operationId": "Events.getAction",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/expandedOptional"
+                    },
+                    {
+                        "name": "secondaryDimension",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/flatOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Example links: [XML](https://demo.matomo.cloud/?module=API&method=Events.getAction&idSite=1&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=Events.getAction&idSite=1&period=day&date=today&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=Events.getAction&idSite=1&period=day&date=today&format=Tsv&token_auth=anonymous)",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "label": "Cart change",
+                                            "nb_uniq_visitors": "1643",
+                                            "nb_visits": "1833",
+                                            "nb_events": "2126",
+                                            "nb_events_with_value": "2126",
+                                            "sum_event_value": "1650",
+                                            "min_event_value": "-4",
+                                            "max_event_value": "5",
+                                            "avg_event_value": "0.78",
+                                            "segment": "eventAction==Cart+change"
+                                        },
+                                        {
+                                            "label": "play",
+                                            "nb_uniq_visitors": "153",
+                                            "nb_visits": "153",
+                                            "nb_events": "154",
+                                            "nb_events_with_value": "102",
+                                            "sum_event_value": "284",
+                                            "min_event_value": "0",
+                                            "max_event_value": "123",
+                                            "avg_event_value": "2.78",
+                                            "segment": "eventAction==play"
+                                        },
+                                        {
+                                            "label": "pause",
+                                            "nb_uniq_visitors": "90",
+                                            "nb_visits": "90",
+                                            "nb_events": "99",
+                                            "nb_events_with_value": "60",
+                                            "sum_event_value": "7570",
+                                            "min_event_value": "1",
+                                            "max_event_value": "477",
+                                            "avg_event_value": "126.17",
+                                            "segment": "eventAction==pause"
+                                        },
+                                        {
+                                            "label": "seek",
+                                            "nb_uniq_visitors": "47",
+                                            "nb_visits": "47",
+                                            "nb_events": "233",
+                                            "nb_events_with_value": "233",
+                                            "sum_event_value": "35113",
+                                            "min_event_value": "0",
+                                            "max_event_value": "898",
+                                            "avg_event_value": "150.7",
+                                            "segment": "eventAction==seek"
+                                        },
+                                        {
+                                            "label": "click",
+                                            "nb_uniq_visitors": "40",
+                                            "nb_visits": "40",
+                                            "nb_events": "57",
+                                            "nb_events_with_value": "0",
+                                            "sum_event_value": "0",
+                                            "min_event_value": "",
+                                            "max_event_value": "",
+                                            "avg_event_value": "0",
+                                            "segment": "eventAction==click"
+                                        },
+                                        {
+                                            "label": "fired",
+                                            "nb_uniq_visitors": "29",
+                                            "nb_visits": "29",
+                                            "nb_events": "29",
+                                            "nb_events_with_value": "0",
+                                            "sum_event_value": "0",
+                                            "min_event_value": "",
+                                            "max_event_value": "",
+                                            "avg_event_value": "0",
+                                            "segment": "eventAction==fired"
+                                        },
+                                        {
+                                            "label": "resume",
+                                            "nb_uniq_visitors": "20",
+                                            "nb_visits": "20",
+                                            "nb_events": "21",
+                                            "nb_events_with_value": "17",
+                                            "sum_event_value": "1467",
+                                            "min_event_value": "0",
+                                            "max_event_value": "477",
+                                            "avg_event_value": "86.29",
+                                            "segment": "eventAction==resume"
+                                        },
+                                        {
+                                            "label": "hidden_footer",
+                                            "nb_uniq_visitors": "6",
+                                            "nb_visits": "6",
+                                            "nb_events": "6",
+                                            "nb_events_with_value": "0",
+                                            "sum_event_value": "0",
+                                            "min_event_value": "",
+                                            "max_event_value": "",
+                                            "avg_event_value": "0",
+                                            "segment": "eventAction==hidden_footer"
+                                        },
+                                        {
+                                            "label": "download",
+                                            "nb_uniq_visitors": "5",
+                                            "nb_visits": "5",
+                                            "nb_events": "5",
+                                            "nb_events_with_value": "0",
+                                            "sum_event_value": "0",
+                                            "min_event_value": "",
+                                            "max_event_value": "",
+                                            "avg_event_value": "0",
+                                            "segment": "eventAction==download"
+                                        },
+                                        {
+                                            "label": "hidden_outside",
+                                            "nb_uniq_visitors": "5",
+                                            "nb_visits": "5",
+                                            "nb_events": "5",
+                                            "nb_events_with_value": "0",
+                                            "sum_event_value": "0",
+                                            "min_event_value": "",
+                                            "max_event_value": "",
+                                            "avg_event_value": "0",
+                                            "segment": "eventAction==hidden_outside"
+                                        },
+                                        {
+                                            "label": "finish",
+                                            "nb_uniq_visitors": "3",
+                                            "nb_visits": "3",
+                                            "nb_events": "3",
+                                            "nb_events_with_value": "3",
+                                            "sum_event_value": "455",
+                                            "min_event_value": "35",
+                                            "max_event_value": "259",
+                                            "avg_event_value": "151.67",
+                                            "segment": "eventAction==finish"
+                                        },
+                                        {
+                                            "label": "start_trial",
+                                            "nb_uniq_visitors": "2",
+                                            "nb_visits": "2",
+                                            "nb_events": "2",
+                                            "nb_events_with_value": "0",
+                                            "sum_event_value": "0",
+                                            "min_event_value": "",
+                                            "max_event_value": "",
+                                            "avg_event_value": "0",
+                                            "segment": "eventAction==start_trial"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_uniq_visitors": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_visits": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_events": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_events_with_value": {
+                                                        "type": "integer"
+                                                    },
+                                                    "sum_event_value": {
+                                                        "type": "integer"
+                                                    },
+                                                    "min_event_value": {
+                                                        "type": "integer"
+                                                    },
+                                                    "max_event_value": {
+                                                        "type": "integer"
+                                                    },
+                                                    "avg_event_value": {
+                                                        "type": [
+                                                            "string",
+                                                            "number",
+                                                            "integer",
+                                                            "boolean",
+                                                            "array",
+                                                            "object",
+                                                            "null"
+                                                        ]
+                                                    },
+                                                    "segment": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "label": "Cart change",
+                                        "nb_uniq_visitors": 1643,
+                                        "nb_visits": 1833,
+                                        "nb_events": 2126,
+                                        "nb_events_with_value": 2126,
+                                        "sum_event_value": 1650,
+                                        "min_event_value": -4,
+                                        "max_event_value": 5,
+                                        "avg_event_value": 0.78,
+                                        "segment": "eventAction==Cart+change"
+                                    },
+                                    {
+                                        "label": "play",
+                                        "nb_uniq_visitors": 153,
+                                        "nb_visits": 153,
+                                        "nb_events": 154,
+                                        "nb_events_with_value": 102,
+                                        "sum_event_value": 284,
+                                        "min_event_value": 0,
+                                        "max_event_value": 123,
+                                        "avg_event_value": 2.78,
+                                        "segment": "eventAction==play"
+                                    },
+                                    {
+                                        "label": "pause",
+                                        "nb_uniq_visitors": 90,
+                                        "nb_visits": 90,
+                                        "nb_events": 99,
+                                        "nb_events_with_value": 60,
+                                        "sum_event_value": 7570,
+                                        "min_event_value": 1,
+                                        "max_event_value": 477,
+                                        "avg_event_value": 126.17,
+                                        "segment": "eventAction==pause"
+                                    },
+                                    {
+                                        "label": "seek",
+                                        "nb_uniq_visitors": 47,
+                                        "nb_visits": 47,
+                                        "nb_events": 233,
+                                        "nb_events_with_value": 233,
+                                        "sum_event_value": 35113,
+                                        "min_event_value": 0,
+                                        "max_event_value": 898,
+                                        "avg_event_value": 150.7,
+                                        "segment": "eventAction==seek"
+                                    },
+                                    {
+                                        "label": "click",
+                                        "nb_uniq_visitors": 40,
+                                        "nb_visits": 40,
+                                        "nb_events": 57,
+                                        "nb_events_with_value": 0,
+                                        "sum_event_value": 0,
+                                        "min_event_value": null,
+                                        "max_event_value": null,
+                                        "avg_event_value": 0,
+                                        "segment": "eventAction==click"
+                                    },
+                                    {
+                                        "label": "fired",
+                                        "nb_uniq_visitors": 29,
+                                        "nb_visits": 29,
+                                        "nb_events": 29,
+                                        "nb_events_with_value": 0,
+                                        "sum_event_value": 0,
+                                        "min_event_value": null,
+                                        "max_event_value": null,
+                                        "avg_event_value": 0,
+                                        "segment": "eventAction==fired"
+                                    },
+                                    {
+                                        "label": "resume",
+                                        "nb_uniq_visitors": 20,
+                                        "nb_visits": 20,
+                                        "nb_events": 21,
+                                        "nb_events_with_value": 17,
+                                        "sum_event_value": 1467,
+                                        "min_event_value": 0,
+                                        "max_event_value": 477,
+                                        "avg_event_value": 86.29,
+                                        "segment": "eventAction==resume"
+                                    },
+                                    {
+                                        "label": "hidden_footer",
+                                        "nb_uniq_visitors": 6,
+                                        "nb_visits": 6,
+                                        "nb_events": 6,
+                                        "nb_events_with_value": 0,
+                                        "sum_event_value": 0,
+                                        "min_event_value": null,
+                                        "max_event_value": null,
+                                        "avg_event_value": 0,
+                                        "segment": "eventAction==hidden_footer"
+                                    },
+                                    {
+                                        "label": "download",
+                                        "nb_uniq_visitors": 5,
+                                        "nb_visits": "5",
+                                        "nb_events": "5",
+                                        "nb_events_with_value": "0",
+                                        "sum_event_value": 0,
+                                        "min_event_value": null,
+                                        "max_event_value": null,
+                                        "avg_event_value": 0,
+                                        "segment": "eventAction==download"
+                                    },
+                                    {
+                                        "label": "hidden_outside",
+                                        "nb_uniq_visitors": 5,
+                                        "nb_visits": 5,
+                                        "nb_events": 5,
+                                        "nb_events_with_value": 0,
+                                        "sum_event_value": 0,
+                                        "min_event_value": null,
+                                        "max_event_value": null,
+                                        "avg_event_value": 0,
+                                        "segment": "eventAction==hidden_outside"
+                                    },
+                                    {
+                                        "label": "finish",
+                                        "nb_uniq_visitors": 3,
+                                        "nb_visits": 3,
+                                        "nb_events": 3,
+                                        "nb_events_with_value": 3,
+                                        "sum_event_value": 455,
+                                        "min_event_value": 35,
+                                        "max_event_value": 259,
+                                        "avg_event_value": 151.67,
+                                        "segment": "eventAction==finish"
+                                    },
+                                    {
+                                        "label": "start_trial",
+                                        "nb_uniq_visitors": 2,
+                                        "nb_visits": "2",
+                                        "nb_events": "2",
+                                        "nb_events_with_value": "0",
+                                        "sum_event_value": 0,
+                                        "min_event_value": null,
+                                        "max_event_value": null,
+                                        "avg_event_value": 0,
+                                        "segment": "eventAction==start_trial"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_uniq_visitors\tnb_visits\tnb_events\tnb_events_with_value\tsum_event_value\tmin_event_value\tmax_event_value\tavg_event_value\tmetadata_segment\nCart change\t1643\t1833\t2126\t2126\t1650\t-4\t5\t0.78\teventAction==Cart+change\nplay\t153\t153\t154\t102\t284\t0\t123\t2.78\teventAction==play\npause\t90\t90\t99\t60\t7570\t1\t477\t126.17\teventAction==pause\nseek\t47\t47\t233\t233\t35113\t0\t898\t150.7\teventAction==seek\nclick\t40\t40\t57\t0\t0\t\t\t0\teventAction==click\nfired\t29\t29\t29\t0\t0\t\t\t0\teventAction==fired\nresume\t20\t20\t21\t17\t1467\t0\t477\t86.29\teventAction==resume\nhidden_footer\t6\t6\t6\t0\t0\t\t\t0\teventAction==hidden_footer\ndownload\t5\t5\t5\t0\t0\t\t\t0\teventAction==download\nhidden_outside\t5\t5\t5\t0\t0\t\t\t0\teventAction==hidden_outside\nfinish\t3\t3\t3\t3\t455\t35\t259\t151.67\teventAction==finish\nstart_trial\t2\t2\t2\t0\t0\t\t\t0\teventAction==start_trial"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Events.getName": {
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "description": "",
+                "operationId": "Events.getName",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/expandedOptional"
+                    },
+                    {
+                        "name": "secondaryDimension",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/flatOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Example links: [XML](https://demo.matomo.cloud/?module=API&method=Events.getName&idSite=1&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=Events.getName&idSite=1&period=day&date=today&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=Events.getName&idSite=1&period=day&date=today&format=Tsv&token_auth=anonymous)",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "label": "added - Basic Wetsuit",
+                                            "nb_uniq_visitors": "281",
+                                            "nb_visits": "315",
+                                            "nb_events": "394",
+                                            "nb_events_with_value": "394",
+                                            "sum_event_value": "425",
+                                            "min_event_value": "1",
+                                            "max_event_value": "4",
+                                            "avg_event_value": "1.08",
+                                            "segment": "eventName==added+-+Basic+Wetsuit"
+                                        },
+                                        {
+                                            "label": "added - Diving Tank",
+                                            "nb_uniq_visitors": "276",
+                                            "nb_visits": "304",
+                                            "nb_events": "370",
+                                            "nb_events_with_value": "370",
+                                            "sum_event_value": "396",
+                                            "min_event_value": "1",
+                                            "max_event_value": "4",
+                                            "avg_event_value": "1.07",
+                                            "segment": "eventName==added+-+Diving+Tank"
+                                        },
+                                        {
+                                            "label": "added - Scuba Fins",
+                                            "nb_uniq_visitors": "164",
+                                            "nb_visits": "192",
+                                            "nb_events": "234",
+                                            "nb_events_with_value": "234",
+                                            "sum_event_value": "245",
+                                            "min_event_value": "1",
+                                            "max_event_value": "4",
+                                            "avg_event_value": "1.05",
+                                            "segment": "eventName==added+-+Scuba+Fins"
+                                        },
+                                        {
+                                            "label": "added - Diving Boots",
+                                            "nb_uniq_visitors": "110",
+                                            "nb_visits": "133",
+                                            "nb_events": "149",
+                                            "nb_events_with_value": "149",
+                                            "sum_event_value": "158",
+                                            "min_event_value": "1",
+                                            "max_event_value": "2",
+                                            "avg_event_value": "1.06",
+                                            "segment": "eventName==added+-+Diving+Boots"
+                                        },
+                                        {
+                                            "label": "added - Silicone Grease",
+                                            "nb_uniq_visitors": "95",
+                                            "nb_visits": "109",
+                                            "nb_events": "117",
+                                            "nb_events_with_value": "117",
+                                            "sum_event_value": "136",
+                                            "min_event_value": "1",
+                                            "max_event_value": "3",
+                                            "avg_event_value": "1.16",
+                                            "segment": "eventName==added+-+Silicone+Grease"
+                                        },
+                                        {
+                                            "label": "added - Diving Accessory Starter Kit",
+                                            "nb_uniq_visitors": "81",
+                                            "nb_visits": "98",
+                                            "nb_events": "114",
+                                            "nb_events_with_value": "114",
+                                            "sum_event_value": "123",
+                                            "min_event_value": "1",
+                                            "max_event_value": "2",
+                                            "avg_event_value": "1.08",
+                                            "segment": "eventName==added+-+Diving+Accessory+Starter+Kit"
+                                        },
+                                        {
+                                            "label": "added - Distance Line & Reel",
+                                            "nb_uniq_visitors": "81",
+                                            "nb_visits": "90",
+                                            "nb_events": "98",
+                                            "nb_events_with_value": "98",
+                                            "sum_event_value": "115",
+                                            "min_event_value": "1",
+                                            "max_event_value": "5",
+                                            "avg_event_value": "1.17",
+                                            "segment": "eventName==added+-+Distance+Line+%26amp%3B+Reel"
+                                        },
+                                        {
+                                            "label": "added - Diving Knife",
+                                            "nb_uniq_visitors": "76",
+                                            "nb_visits": "86",
+                                            "nb_events": "92",
+                                            "nb_events_with_value": "92",
+                                            "sum_event_value": "103",
+                                            "min_event_value": "1",
+                                            "max_event_value": "3",
+                                            "avg_event_value": "1.12",
+                                            "segment": "eventName==added+-+Diving+Knife"
+                                        },
+                                        {
+                                            "label": "added - Octopus",
+                                            "nb_uniq_visitors": "69",
+                                            "nb_visits": "72",
+                                            "nb_events": "87",
+                                            "nb_events_with_value": "87",
+                                            "sum_event_value": "88",
+                                            "min_event_value": "1",
+                                            "max_event_value": "2",
+                                            "avg_event_value": "1.01",
+                                            "segment": "eventName==added+-+Octopus"
+                                        },
+                                        {
+                                            "label": "removed - Basic Wetsuit",
+                                            "nb_uniq_visitors": "65",
+                                            "nb_visits": "67",
+                                            "nb_events": "71",
+                                            "nb_events_with_value": "71",
+                                            "sum_event_value": "-98",
+                                            "min_event_value": "-4",
+                                            "max_event_value": "-1",
+                                            "avg_event_value": "-1.38",
+                                            "segment": "eventName==removed+-+Basic+Wetsuit"
+                                        },
+                                        {
+                                            "label": "removed - Diving Tank",
+                                            "nb_uniq_visitors": "62",
+                                            "nb_visits": "63",
+                                            "nb_events": "64",
+                                            "nb_events_with_value": "64",
+                                            "sum_event_value": "-78",
+                                            "min_event_value": "-3",
+                                            "max_event_value": "-1",
+                                            "avg_event_value": "-1.22",
+                                            "segment": "eventName==removed+-+Diving+Tank"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_uniq_visitors": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_visits": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_events": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_events_with_value": {
+                                                        "type": "string"
+                                                    },
+                                                    "sum_event_value": {
+                                                        "type": "integer"
+                                                    },
+                                                    "min_event_value": {
+                                                        "type": "integer"
+                                                    },
+                                                    "max_event_value": {
+                                                        "type": "integer"
+                                                    },
+                                                    "avg_event_value": {
+                                                        "type": [
+                                                            "string",
+                                                            "number",
+                                                            "integer",
+                                                            "boolean",
+                                                            "array",
+                                                            "object",
+                                                            "null"
+                                                        ]
+                                                    },
+                                                    "segment": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "label": "added - Basic Wetsuit",
+                                        "nb_uniq_visitors": 281,
+                                        "nb_visits": "315",
+                                        "nb_events": "394",
+                                        "nb_events_with_value": "394",
+                                        "sum_event_value": 425,
+                                        "min_event_value": 1,
+                                        "max_event_value": 4,
+                                        "avg_event_value": 1.08,
+                                        "segment": "eventName==added+-+Basic+Wetsuit"
+                                    },
+                                    {
+                                        "label": "added - Diving Tank",
+                                        "nb_uniq_visitors": 276,
+                                        "nb_visits": "304",
+                                        "nb_events": "370",
+                                        "nb_events_with_value": "370",
+                                        "sum_event_value": 396,
+                                        "min_event_value": 1,
+                                        "max_event_value": 4,
+                                        "avg_event_value": 1.07,
+                                        "segment": "eventName==added+-+Diving+Tank"
+                                    },
+                                    {
+                                        "label": "added - Scuba Fins",
+                                        "nb_uniq_visitors": 164,
+                                        "nb_visits": "192",
+                                        "nb_events": "234",
+                                        "nb_events_with_value": "234",
+                                        "sum_event_value": 245,
+                                        "min_event_value": 1,
+                                        "max_event_value": 4,
+                                        "avg_event_value": 1.05,
+                                        "segment": "eventName==added+-+Scuba+Fins"
+                                    },
+                                    {
+                                        "label": "added - Diving Boots",
+                                        "nb_uniq_visitors": 110,
+                                        "nb_visits": "133",
+                                        "nb_events": "149",
+                                        "nb_events_with_value": "149",
+                                        "sum_event_value": 158,
+                                        "min_event_value": 1,
+                                        "max_event_value": 2,
+                                        "avg_event_value": 1.06,
+                                        "segment": "eventName==added+-+Diving+Boots"
+                                    },
+                                    {
+                                        "label": "added - Silicone Grease",
+                                        "nb_uniq_visitors": 95,
+                                        "nb_visits": "109",
+                                        "nb_events": "117",
+                                        "nb_events_with_value": "117",
+                                        "sum_event_value": 136,
+                                        "min_event_value": 1,
+                                        "max_event_value": 3,
+                                        "avg_event_value": 1.16,
+                                        "segment": "eventName==added+-+Silicone+Grease"
+                                    },
+                                    {
+                                        "label": "added - Diving Accessory Starter Kit",
+                                        "nb_uniq_visitors": 81,
+                                        "nb_visits": "98",
+                                        "nb_events": "114",
+                                        "nb_events_with_value": "114",
+                                        "sum_event_value": 123,
+                                        "min_event_value": 1,
+                                        "max_event_value": 2,
+                                        "avg_event_value": 1.08,
+                                        "segment": "eventName==added+-+Diving+Accessory+Starter+Kit"
+                                    },
+                                    {
+                                        "label": "added - Distance Line & Reel",
+                                        "nb_uniq_visitors": 81,
+                                        "nb_visits": "90",
+                                        "nb_events": "98",
+                                        "nb_events_with_value": "98",
+                                        "sum_event_value": 115,
+                                        "min_event_value": 1,
+                                        "max_event_value": 5,
+                                        "avg_event_value": 1.17,
+                                        "segment": "eventName==added+-+Distance+Line+%26amp%3B+Reel"
+                                    },
+                                    {
+                                        "label": "added - Diving Knife",
+                                        "nb_uniq_visitors": 76,
+                                        "nb_visits": "86",
+                                        "nb_events": "92",
+                                        "nb_events_with_value": "92",
+                                        "sum_event_value": 103,
+                                        "min_event_value": 1,
+                                        "max_event_value": 3,
+                                        "avg_event_value": 1.12,
+                                        "segment": "eventName==added+-+Diving+Knife"
+                                    },
+                                    {
+                                        "label": "added - Octopus",
+                                        "nb_uniq_visitors": 69,
+                                        "nb_visits": "72",
+                                        "nb_events": "87",
+                                        "nb_events_with_value": "87",
+                                        "sum_event_value": 88,
+                                        "min_event_value": 1,
+                                        "max_event_value": 2,
+                                        "avg_event_value": 1.01,
+                                        "segment": "eventName==added+-+Octopus"
+                                    },
+                                    {
+                                        "label": "removed - Basic Wetsuit",
+                                        "nb_uniq_visitors": 65,
+                                        "nb_visits": "67",
+                                        "nb_events": "71",
+                                        "nb_events_with_value": "71",
+                                        "sum_event_value": -98,
+                                        "min_event_value": -4,
+                                        "max_event_value": -1,
+                                        "avg_event_value": -1.38,
+                                        "segment": "eventName==removed+-+Basic+Wetsuit"
+                                    },
+                                    {
+                                        "label": "removed - Diving Tank",
+                                        "nb_uniq_visitors": 62,
+                                        "nb_visits": "63",
+                                        "nb_events": "64",
+                                        "nb_events_with_value": "64",
+                                        "sum_event_value": -78,
+                                        "min_event_value": -3,
+                                        "max_event_value": -1,
+                                        "avg_event_value": -1.22,
+                                        "segment": "eventName==removed+-+Diving+Tank"
+                                    },
+                                    {
+                                        "label": "top",
+                                        "nb_uniq_visitors": 9,
+                                        "nb_visits": "9",
+                                        "nb_events": "12",
+                                        "nb_events_with_value": "0",
+                                        "sum_event_value": 0,
+                                        "min_event_value": null,
+                                        "max_event_value": null,
+                                        "avg_event_value": 0,
+                                        "segment": "eventName==top"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_uniq_visitors\tnb_visits\tnb_events\tnb_events_with_value\tsum_event_value\tmin_event_value\tmax_event_value\tavg_event_value\tmetadata_segment\nadded - Basic Wetsuit\t281\t315\t394\t394\t425\t1\t4\t1.08\teventName==added+-+Basic+Wetsuit\nadded - Diving Tank\t276\t304\t370\t370\t396\t1\t4\t1.07\teventName==added+-+Diving+Tank\nadded - Scuba Fins\t164\t192\t234\t234\t245\t1\t4\t1.05\teventName==added+-+Scuba+Fins\nadded - Diving Boots\t110\t133\t149\t149\t158\t1\t2\t1.06\teventName==added+-+Diving+Boots\nadded - Silicone Grease\t95\t109\t117\t117\t136\t1\t3\t1.16\teventName==added+-+Silicone+Grease\nadded - Diving Accessory Starter Kit\t81\t98\t114\t114\t123\t1\t2\t1.08\teventName==added+-+Diving+Accessory+Starter+Kit\nadded - Distance Line & Reel\t81\t90\t98\t98\t115\t1\t5\t1.17\teventName==added+-+Distance+Line+%26amp%3B+Reel\nadded - Diving Knife\t76\t86\t92\t92\t103\t1\t3\t1.12\teventName==added+-+Diving+Knife\nadded - Octopus\t69\t72\t87\t87\t88\t1\t2\t1.01\teventName==added+-+Octopus\nremoved - Basic Wetsuit\t65\t67\t71\t71\t-98\t-4\t-1\t-1.38\teventName==removed+-+Basic+Wetsuit\nremoved - Diving Tank\t62\t63\t64\t64\t-78\t-3\t-1\t-1.22\teventName==removed+-+Diving+Tank\nadded - Diving Snorkel\t50\t60\t65\t65\t79\t1\t3\t1.22\teventName==added+-+Diving+Snorkel\nadded - Regulator\t38\t43\t54\t54\t56\t1\t2\t1.04\teventName==added+-+Regulator\nIndonesia Preview\t34\t34\t40\t28\t1602\t0\t257\t57.21\teventName==Indonesia+Preview\nadded - Diving Mask\t33\t33\t38\t38\t40\t1\t2\t1.05\teventName==added+-+Diving+Mask\nremoved - Diving Boots\t21\t23\t23\t23\t-25\t-2\t-1\t-1.09\teventName==removed+-+Diving+Boots\nRed Sea 2009: Reefs and Sharks HD\t21\t21\t54\t50\t7764\t0\t337\t155.28\teventName==Red+Sea+2009%3A+Reefs+and+Sharks+HD\nremoved - Silicone Grease\t20\t21\t21\t21\t-22\t-2\t-1\t-1.05\teventName==removed+-+Silicone+Grease\nremoved - Scuba Fins\t20\t20\t22\t22\t-24\t-2\t-1\t-1.09\teventName==removed+-+Scuba+Fins\nCheck prices\t18\t18\t23\t0\t0\t\t\t0\teventName==Check+prices\nDiving in Coron\t18\t18\t19\t14\t1350\t0\t309\t96.43\teventName==Diving+in+Coron\nDiving the Ribbon Reefs on Australia's Great Barrier Reef\t18\t18\t58\t57\t7778\t0\t282\t136.46\teventName==Diving+the+Ribbon+Reefs+on+Australia%26%23039%3Bs+Great+Barrier+Reef\nSimilan islands\t17\t17\t25\t13\t7414\t0\t898\t570.31\teventName==Similan+islands\nReefs and Oceanics\t16\t16\t22\t17\t1257\t0\t245\t73.94\teventName==Reefs+and+Oceanics\nNorth Sulawesi\t15\t15\t42\t35\t3326\t0\t299\t95.03\teventName==North+Sulawesi\nremoved - Diving Snorkel\t15\t15\t18\t18\t-23\t-3\t-1\t-1.28\teventName==removed+-+Diving+Snorkel\nremoved - Diving Accessory Starter Kit\t14\t14\t14\t14\t-14\t-1\t-1\t-1\teventName==removed+-+Diving+Accessory+Starter+Kit\nhttps://matomo.org/\t13\t13\t13\t0\t0\t\t\t0\teventName==https%3A%2F%2Fmatomo.org%2F\nremoved - Diving Knife\t13\t13\t13\t13\t-15\t-2\t-1\t-1.15\teventName==removed+-+Diving+Knife\nremoved - Octopus\t13\t13\t13\t13\t-15\t-2\t-1\t-1.15\teventName==removed+-+Octopus\nLife around Puerto Galera\t12\t12\t14\t8\t265\t0\t175\t33.13\teventName==Life+around+Puerto+Galera\nThe Russian Destroyer - Shipwrecks of Cayman\t12\t12\t20\t19\t1657\t0\t166\t87.21\teventName==The+Russian+Destroyer+-+Shipwrecks+of+Cayman\ntop\t9\t9\t12\t0\t0\t\t\t0\teventName==top\nCloud\t2\t2\t2\t0\t0\t\t\t0\teventName==Cloud"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Events.getActionFromCategoryId": {
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "description": "",
+                "operationId": "Events.getActionFromCategoryId",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSubtableRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Events.getNameFromCategoryId": {
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "description": "",
+                "operationId": "Events.getNameFromCategoryId",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSubtableRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Events.getCategoryFromActionId": {
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "description": "",
+                "operationId": "Events.getCategoryFromActionId",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSubtableRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Events.getNameFromActionId": {
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "description": "",
+                "operationId": "Events.getNameFromActionId",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSubtableRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Events.getActionFromNameId": {
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "description": "",
+                "operationId": "Events.getActionFromNameId",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSubtableRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Events.getCategoryFromNameId": {
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "description": "",
+                "operationId": "Events.getCategoryFromNameId",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSubtableRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GenericSuccess": {
+                "description": "Generic Matomo success payload.",
+                "required": [
+                    "result",
+                    "message"
+                ],
+                "properties": {
+                    "result": {
+                        "type": "string",
+                        "example": "success"
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "ok"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "example": "200"
+                    }
+                },
+                "type": "object",
+                "example": {
+                    "result": "success",
+                    "message": "ok"
+                },
+                "additionalProperties": true
+            },
+            "GenericSuccessXml": {
+                "description": "Generic Matomo success payload in XML.",
+                "required": [
+                    "success"
+                ],
+                "properties": {
+                    "success": {
+                        "properties": {
+                            "message": {
+                                "type": "string",
+                                "xml": {
+                                    "attribute": true
+                                },
+                                "example": "ok"
+                            }
+                        },
+                        "type": "object",
+                        "xml": {
+                            "name": "success"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "result"
+                },
+                "example": {
+                    "success": {
+                        "message": "ok"
+                    }
+                },
+                "additionalProperties": true
+            },
+            "Error": {
+                "description": "Generic Matomo error payload.",
+                "required": [
+                    "result",
+                    "message"
+                ],
+                "properties": {
+                    "result": {
+                        "type": "string",
+                        "example": "error"
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "There was an error"
+                    },
+                    "code": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "additionalProperties": true
+            },
+            "ErrorXml": {
+                "description": "Generic Matomo error payload in XML.",
+                "properties": {
+                    "error": {
+                        "properties": {
+                            "message": {
+                                "type": "string",
+                                "xml": {
+                                    "attribute": true
+                                },
+                                "example": "There was an error"
+                            }
+                        },
+                        "type": "object",
+                        "xml": {
+                            "name": "error"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "result"
+                }
+            }
+        },
+        "responses": {
+            "BadRequest": {
+                "description": "Bad request (validation or missing parameters).",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: There was an error."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "There was an error."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "Unauthorized": {
+                "description": "Authentication failed or missing token.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: You must be logged in to access this functionality."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "You must be logged in to access this functionality."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "Forbidden": {
+                "description": "Authenticated but not allowed to access the resource.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: Not authorised."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Not authorised."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "NotFound": {
+                "description": "Resource not found.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: The method is not available."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "The method is not available."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "ServerError": {
+                "description": "Unexpected server error.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: There was an error."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "There was an error."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "DefaultError": {
+                "description": "Default error response (any non-2xx).",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: There was an error."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "There was an error."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "GenericSuccessNoBody": {
+                "description": "Generic 200 response with no body"
+            },
+            "GenericSuccess": {
+                "description": "Generic 200 response",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Success:ok"
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "<!-- Success: ok -->"
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/GenericSuccess"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/GenericSuccessXml"
+                        }
+                    }
+                }
+            },
+            "GenericString": {
+                "description": "Generic 200 response with only a string body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Result: success"
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "success"
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "GenericBoolean": {
+                "description": "Generic 200 response with only true or false as the body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                }
+            },
+            "GenericInteger": {
+                "description": "Generic 200 response with only an integer as the body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            },
+            "GenericArray": {
+                "description": "Generic 200 response with array body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "array",
+                            "items": {}
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "array",
+                            "items": {}
+                        }
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "moduleRequired": {
+                "name": "module",
+                "in": "query",
+                "description": "Always `API` for Reporting API requests.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "default": "API"
+                }
+            },
+            "methodRequired": {
+                "name": "method",
+                "in": "query",
+                "description": "API method, e.g. `VisitsSummary.get` or `CustomAlerts.getAlert`.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "example": "CustomAlerts.getAlert"
+                }
+            },
+            "formatRequired": {
+                "name": "format",
+                "in": "query",
+                "description": "Response format such as `xml` or `json`. Use `original` to get the original PHP data structure.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "default": "xml",
+                    "enum": [
+                        "xml",
+                        "json",
+                        "csv",
+                        "tsv",
+                        "html",
+                        "rss",
+                        "original"
+                    ]
+                }
+            },
+            "formatOptional": {
+                "name": "format",
+                "in": "query",
+                "description": "Response format. Defaults to `xml`. Use `original` to get the original PHP data structure.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "default": "xml",
+                    "enum": [
+                        "xml",
+                        "json",
+                        "csv",
+                        "tsv",
+                        "html",
+                        "rss",
+                        "original"
+                    ]
+                }
+            },
+            "idSiteRequired": {
+                "name": "idSite",
+                "in": "query",
+                "description": "Matomo site ID.",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "example": 1
+                }
+            },
+            "idSiteOptional": {
+                "name": "idSite",
+                "in": "query",
+                "description": "Matomo site ID.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "example": 1
+                }
+            },
+            "periodRequired": {
+                "name": "period",
+                "in": "query",
+                "description": "Reporting period.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "day",
+                        "week",
+                        "month",
+                        "year",
+                        "range"
+                    ],
+                    "example": "day"
+                }
+            },
+            "periodOptional": {
+                "name": "period",
+                "in": "query",
+                "description": "Reporting period.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "day",
+                        "week",
+                        "month",
+                        "year",
+                        "range"
+                    ],
+                    "example": "day"
+                }
+            },
+            "dateRequired": {
+                "name": "date",
+                "in": "query",
+                "description": "Date or range (e.g. `2025-08-01`, `yesterday`, `last30`, or `2025-08-01,2025-08-11`).",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "example": "today"
+                }
+            },
+            "dateOptional": {
+                "name": "date",
+                "in": "query",
+                "description": "Date or range (e.g. `2025-08-01`, `yesterday`, `last30`, or `2025-08-01,2025-08-11`).",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "today"
+                }
+            },
+            "segmentRequired": {
+                "name": "segment",
+                "in": "query",
+                "description": "Segment expression; see `API.getSegmentDimensionMetadata`.",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "segmentOptional": {
+                "name": "segment",
+                "in": "query",
+                "description": "Segment expression; see `API.getSegmentDimensionMetadata`.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "expandedOptional": {
+                "name": "expanded",
+                "in": "query",
+                "description": "If true, loads all subtables.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "default": 0,
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "idSubtableOptional": {
+                "name": "idSubtable",
+                "in": "query",
+                "description": "An in-database subtable ID.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "idSubtableRequired": {
+                "name": "idSubtable",
+                "in": "query",
+                "description": "An in-database subtable ID.",
+                "required": true,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "flatOptional": {
+                "name": "flat",
+                "in": "query",
+                "description": "Flatten subtables into the parent table.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "filter_patternOptional": {
+                "name": "filter_pattern",
+                "in": "query",
+                "description": "Regex to keep matching rows.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_columnOptional": {
+                "name": "filter_column",
+                "in": "query",
+                "description": "Column to apply the regex to (e.g., `label`).",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "label"
+                }
+            },
+            "filter_pattern_recursiveOptional": {
+                "name": "filter_pattern_recursive",
+                "in": "query",
+                "description": "Recursive regex filter.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_column_recursiveOptional": {
+                "name": "filter_column_recursive",
+                "in": "query",
+                "description": "Column for the recursive regex filter.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_excludelowpopOptional": {
+                "name": "filter_excludelowpop",
+                "in": "query",
+                "description": "Column to threshold and exclude low values.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_excludelowpop_valueOptional": {
+                "name": "filter_excludelowpop_value",
+                "in": "query",
+                "description": "Minimum value threshold for `filter_excludelowpop`.",
+                "required": false,
+                "schema": {
+                    "type": "number",
+                    "example": 0
+                }
+            },
+            "filter_sort_columnOptional": {
+                "name": "filter_sort_column",
+                "in": "query",
+                "description": "Column to sort by.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_sort_orderOptional": {
+                "name": "filter_sort_order",
+                "in": "query",
+                "description": "Sort direction.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "example": "desc"
+                }
+            },
+            "filter_truncateOptional": {
+                "name": "filter_truncate",
+                "in": "query",
+                "description": "Row index after which rows are removed.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "filter_limitOptional": {
+                "name": "filter_limit",
+                "in": "query",
+                "description": "Maximum number of rows to return.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "filter_offsetOptional": {
+                "name": "filter_offset",
+                "in": "query",
+                "description": "Row offset.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "keep_summary_rowOptional": {
+                "name": "keep_summary_row",
+                "in": "query",
+                "description": "Keep the summary row.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 1
+                }
+            },
+            "disable_generic_filtersOptional": {
+                "name": "disable_generic_filters",
+                "in": "query",
+                "description": "Disable generic filters (those above).",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "disable_queued_filtersOptional": {
+                "name": "disable_queued_filters",
+                "in": "query",
+                "description": "Skip queued filters.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "hideColumnsOptional": {
+                "name": "hideColumns",
+                "in": "query",
+                "description": "Comma-separated list of columns to hide.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "showColumnsOptional": {
+                "name": "showColumns",
+                "in": "query",
+                "description": "Comma-separated list of columns to include.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "labelOptional": {
+                "name": "label",
+                "in": "query",
+                "description": "Keep only rows with these label(s). Supports path via '>' and arrays.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "idGoalRequired": {
+                "name": "idGoal",
+                "in": "query",
+                "description": "The ID of a configured goal.",
+                "required": true,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "idGoalOptional": {
+                "name": "idGoal",
+                "in": "query",
+                "description": "The ID of a configured goal.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            }
+        },
+        "securitySchemes": {
+            "MatomoToken": {
+                "type": "apiKey",
+                "description": "Matomo API token passed as the 'token_auth' query parameter.",
+                "name": "token_auth",
+                "in": "query"
+            }
+        }
+    },
+    "security": [
+        {
+            "MatomoToken": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "Events",
+            "description": "The Events API lets you request reports about your users' Custom Events.  Events are tracked using the Javascript Tracker trackEvent() function, or using the [Tracking HTTP API](https://developer.matomo.org/api-reference/tracking-api).  <br/>An event is defined by an event category (Videos, Music, Games...), an event action (Play, Pause, Duration, Add Playlist, Downloaded, Clicked...), and an optional event name (a movie name, a song title, etc.) and an optional numeric value.  <br/>This API exposes the following Custom Events reports: <code>getCategory</code> lists the top Event Categories, <code>getAction</code> lists the top Event Actions, <code>getName</code> lists the top Event Names.  <br/>These Events report define the following metrics: nb_uniq_visitors, nb_visits, nb_events. If you define values for your events, you can expect to see the following metrics: nb_events_with_value, sum_event_value, min_event_value, max_event_value, avg_event_value  <br/>The Events.get* reports can be used with an optional <code>&secondaryDimension</code> parameter. Secondary dimension is the dimension used in the sub-table of the Event report you are requesting.  <br/>Here are the possible values of <code>secondaryDimension</code>: <ul> <li>For <code>Events.getCategory</code> you can set <code>secondaryDimension</code> to <code>eventAction</code> or <code>eventName</code>.</li> <li>For <code>Events.getAction</code> you can set <code>secondaryDimension</code> to <code>eventName</code> or <code>eventCategory</code>.</li> <li>For <code>Events.getName</code> you can set <code>secondaryDimension</code> to <code>eventAction</code> or <code>eventCategory</code>.</li> </ul>  <br/>For example, to request all Custom Events Categories, and for each, the top Event actions, you would request: <code>method=Events.getCategory&secondaryDimension=eventAction&flat=1</code>. You may also omit <code>&flat=1</code> in which case, to get top Event actions for one Event category, use <code>method=Events.getActionFromCategoryId</code> passing it the <code>&idSubtable=</code> of this Event category."
+        }
+    ],
+    "externalDocs": {
+        "description": "Matomo Reporting API developer page",
+        "url": "https://developer.matomo.org/api-reference/reporting-api/"
+    }
+}
