@@ -4,6 +4,90 @@
     flex-wrap: wrap;
 }
 
+.swagger-ui {
+    --matomo-swagger-get-main: #3152A0;
+    --matomo-swagger-get-background: #E9EFFF;
+    --matomo-swagger-post-main: #35C4C4;
+    --matomo-swagger-post-background: #E8FFFF;
+}
+
+.swagger-ui .opblock-description-wrapper,
+.swagger-ui .opblock-description-wrapper p,
+.swagger-ui .opblock-description-wrapper li,
+.swagger-ui .opblock-external-docs-wrapper,
+.swagger-ui .opblock-external-docs-wrapper p {
+    line-height: 1.6;
+}
+
+.swagger-ui .opblock-tag > small,
+.swagger-ui .opblock-tag > small p,
+.swagger-ui .opblock-tag > small li,
+.swagger-ui .opblock-tag .renderedMarkdown,
+.swagger-ui .opblock-tag .renderedMarkdown p,
+.swagger-ui .opblock-tag .renderedMarkdown li {
+    line-height: 1.6;
+}
+
+.swagger-ui .opblock-description-wrapper code,
+.swagger-ui .opblock-external-docs-wrapper code,
+.swagger-ui .opblock-tag > small code,
+.swagger-ui .opblock-tag .renderedMarkdown code {
+    color: #3152A0;
+}
+
+.swagger-ui .opblock.opblock-get {
+    background: var(--matomo-swagger-get-background);
+    border-color: var(--matomo-swagger-get-main);
+}
+
+.swagger-ui .opblock.opblock-get .opblock-summary,
+.swagger-ui .opblock.opblock-get .opblock-section-header,
+.swagger-ui .opblock.opblock-get .opblock-body > .opblock-description-wrapper,
+.swagger-ui .opblock.opblock-get .opblock-body > .opblock-title_normal {
+    border-color: var(--matomo-swagger-get-main);
+}
+
+.swagger-ui .opblock.opblock-get .opblock-section-header {
+    background: #F3F6FF;
+}
+
+.swagger-ui .opblock.opblock-get .opblock-summary-method {
+    background: var(--matomo-swagger-get-main);
+}
+
+.swagger-ui .opblock.opblock-post {
+    background: var(--matomo-swagger-post-background);
+    border-color: var(--matomo-swagger-post-main);
+}
+
+.swagger-ui .opblock.opblock-post .opblock-summary,
+.swagger-ui .opblock.opblock-post .opblock-section-header,
+.swagger-ui .opblock.opblock-post .opblock-body > .opblock-description-wrapper,
+.swagger-ui .opblock.opblock-post .opblock-body > .opblock-title_normal {
+    border-color: var(--matomo-swagger-post-main);
+}
+
+.swagger-ui .opblock.opblock-post .opblock-section-header {
+    background: #F1FFFF;
+}
+
+.swagger-ui .opblock.opblock-post .opblock-summary-method {
+    background: var(--matomo-swagger-post-main);
+}
+
+.swagger-ui .copy-to-clipboard,
+.swagger-ui .copy-to-clipboard button,
+.swagger-ui button.copy-to-clipboard,
+.swagger-ui .btn.copy-to-clipboard {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.swagger-ui .copy-to-clipboard {
+    align-items: center;
+    display: inline-flex !important;
+}
+
 .swagger-ui .opblock-tag > a.nostyle {
     order: 1;
 }

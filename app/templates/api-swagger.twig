@@ -18,18 +18,66 @@
     <script type="text/javascript">
     window.onload = function () {
         var pluginSpec = {{ pluginSpecJson|raw }};
+        var summaryPrefix = '/index.php?module=API&method=';
+
+        function clonePluginSpec(spec) {
+            return JSON.parse(JSON.stringify(spec));
+        }
+
+        function shortenSummaryPaths() {
+            var summaryPaths = document.querySelectorAll('#swagger-ui .opblock.opblock-get .opblock-summary-path');
+
+            Array.prototype.forEach.call(summaryPaths, function (element) {
+                var fullPath = element.getAttribute('data-path');
+
+                if (!fullPath || fullPath.indexOf(summaryPrefix) !== 0) {
+                    return;
+                }
+
+                element.textContent = fullPath.substring(summaryPrefix.length);
+                element.setAttribute('title', fullPath);
+            });
+        }
+
+        function scheduleSummaryPathShortening() {
+            window.setTimeout(shortenSummaryPaths, 0);
+            window.setTimeout(shortenSummaryPaths, 250);
+            window.setTimeout(shortenSummaryPaths, 1000);
+        }
 
         if (typeof SwaggerUIBundle === 'function') {
             SwaggerUIBundle({
                 dom_id: '#swagger-ui',
                 url: null,
-                spec: pluginSpec,
+                spec: clonePluginSpec(pluginSpec),
                 docExpansion: 'list',
                 filter: true,
                 tagsSorter: 'alpha',
                 presets: [
                     SwaggerUIBundle.presets.apis,
                 ],
+		requestInterceptor: (req) => {
+		    req.headers.Authorization = "Bearer anonymous"
+		    return req
+		},
+                onComplete: function () {
+                    var swaggerRoot = document.getElementById('swagger-ui');
+
+                    scheduleSummaryPathShortening();
+
+                    if (!swaggerRoot || swaggerRoot.__matomoSummaryPathClickHandlerAttached) {
+                        return;
+                    }
+
+                    swaggerRoot.__matomoSummaryPathClickHandlerAttached = true;
+                    swaggerRoot.addEventListener('click', function (event) {
+                        if (!event.target.closest('.opblock-tag, .opblock-summary, .expand-operation, .opblock-summary-control')) {
+                            return;
+                        }
+
+                        scheduleSummaryPathShortening();
+                    });
+                },
                 layout: 'BaseLayout'
             });
             return;
