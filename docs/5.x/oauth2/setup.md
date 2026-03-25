@@ -23,6 +23,8 @@ The plugin currently supports these scopes:
 * `matomo:admin`
 * `matomo:superuser`
 
+See the [permissions guide](/guides/permissions) for more information.
+
 ## OAuth endpoints
 
 Matomo exposes these OAuth2 endpoints:
