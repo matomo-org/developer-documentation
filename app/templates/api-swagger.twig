@@ -1,3 +1,4 @@
+{% set title = pluginSpec.name ~ ' API Reference' %}
 {% extends 'guide.twig' %}
 
 {% block meta %}
@@ -6,8 +7,7 @@
 {% endblock %}
 
 {% block guideContent %}
-    {{ guide.validatedRenderedContent(anchorLinks)|raw }}
-    <h2>{{ pluginSpec.name }}</h2>
+    <h1>{{ title }}</h1>
     <div id="swagger-ui"></div>
 {% endblock %}
 

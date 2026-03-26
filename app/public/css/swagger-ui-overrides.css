@@ -9,6 +9,8 @@
     --matomo-swagger-get-background: #E9EFFF;
     --matomo-swagger-post-main: #35C4C4;
     --matomo-swagger-post-background: #E8FFFF;
+    border: 1px solid #ecf0f2;
+    border-radius: 5px;
 }
 
 .swagger-ui .opblock-description-wrapper,
