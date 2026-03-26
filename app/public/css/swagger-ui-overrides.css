@@ -34,7 +34,10 @@
 .swagger-ui .opblock-tag .renderedMarkdown code,
 .swagger-ui .markdown code,
 .swagger-ui .renderedMarkdown code {
-    color: #3152A0 !important;
+    color: #A93552!important;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 5px;
 }
 
 .swagger-ui .opblock.opblock-get {
