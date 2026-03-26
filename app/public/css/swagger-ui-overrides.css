@@ -31,8 +31,10 @@
 .swagger-ui .opblock-description-wrapper code,
 .swagger-ui .opblock-external-docs-wrapper code,
 .swagger-ui .opblock-tag > small code,
-.swagger-ui .opblock-tag .renderedMarkdown code {
-    color: #3152A0;
+.swagger-ui .opblock-tag .renderedMarkdown code,
+.swagger-ui .markdown code,
+.swagger-ui .renderedMarkdown code {
+    color: #3152A0 !important;
 }
 
 .swagger-ui .opblock.opblock-get {
@@ -75,17 +77,12 @@
     background: var(--matomo-swagger-post-main);
 }
 
-.swagger-ui .copy-to-clipboard,
-.swagger-ui .copy-to-clipboard button,
-.swagger-ui button.copy-to-clipboard,
-.swagger-ui .btn.copy-to-clipboard {
-    opacity: 1 !important;
-    visibility: visible !important;
+.swagger-ui .authorization__btn {
+    display: none;
 }
 
-.swagger-ui .copy-to-clipboard {
-    align-items: center;
-    display: inline-flex !important;
+.swagger-ui .opblock .opblock-summary .view-line-link.copy-to-clipboard {
+    width: 24px;
 }
 
 .swagger-ui .opblock-tag > a.nostyle {

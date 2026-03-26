@@ -14,21 +14,20 @@
 {% block footer %}
     {{ parent() }}
     <script src="/vendor/swagger-ui/swagger-ui-bundle.js?{{ revision|e('html_attr') }}"></script>
-    <script src="/vendor/swagger-ui/swagger-ui-standalone-preset.js?{{ revision|e('html_attr') }}"></script>
     <script type="text/javascript">
     window.onload = function () {
-        var pluginSpec = {{ pluginSpecJson|raw }};
-        var summaryPrefix = '/index.php?module=API&method=';
+        let pluginSpec = {{ pluginSpecJson|raw }};
+        let summaryPrefix = '/index.php?module=API&method=';
 
         function clonePluginSpec(spec) {
             return JSON.parse(JSON.stringify(spec));
         }
 
         function shortenSummaryPaths() {
-            var summaryPaths = document.querySelectorAll('#swagger-ui .opblock.opblock-get .opblock-summary-path');
+            let summaryPaths = document.querySelectorAll('.opblock-summary-path');
 
             Array.prototype.forEach.call(summaryPaths, function (element) {
-                var fullPath = element.getAttribute('data-path');
+                let fullPath = element.getAttribute('data-path');
 
                 if (!fullPath || fullPath.indexOf(summaryPrefix) !== 0) {
                     return;
@@ -39,10 +38,12 @@
             });
         }
 
-        function scheduleSummaryPathShortening() {
-            window.setTimeout(shortenSummaryPaths, 0);
-            window.setTimeout(shortenSummaryPaths, 250);
-            window.setTimeout(shortenSummaryPaths, 1000);
+        function DisableAuthorizePlugin() {
+            return {
+                wrapComponents: {
+                    authorizeBtn: () => () => null
+                }
+            }
         }
 
         if (typeof SwaggerUIBundle === 'function') {
@@ -56,26 +57,31 @@
                 presets: [
                     SwaggerUIBundle.presets.apis,
                 ],
-		requestInterceptor: (req) => {
-		    req.headers.Authorization = "Bearer anonymous"
-		    return req
-		},
-                onComplete: function () {
-                    var swaggerRoot = document.getElementById('swagger-ui');
+                plugins: [
+                    DisableAuthorizePlugin,
+                ],
+                requestInterceptor: (req) => {
+                    req.headers.Authorization = "Bearer anonymous"
+                    return req
+                },
+                onComplete: () => {
+                    let swaggerRoot = document.getElementById('swagger-ui');
 
-                    scheduleSummaryPathShortening();
+                    // For some reason onComplete is not actually on complete
+                    // this allows it to run when the paths are available
+                    window.setTimeout(shortenSummaryPaths, 0);
 
                     if (!swaggerRoot || swaggerRoot.__matomoSummaryPathClickHandlerAttached) {
                         return;
                     }
 
                     swaggerRoot.__matomoSummaryPathClickHandlerAttached = true;
+                    // Opening path adds back in path with index.php?module=API..., need to shorten paths again
                     swaggerRoot.addEventListener('click', function (event) {
                         if (!event.target.closest('.opblock-tag, .opblock-summary, .expand-operation, .opblock-summary-control')) {
                             return;
                         }
-
-                        scheduleSummaryPathShortening();
+                        shortenSummaryPaths();
                     });
                 },
                 layout: 'BaseLayout'
