@@ -808,7 +808,7 @@ subtables.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$name` (`string`) &mdash;
+    - `$name` (`string`|`int`) &mdash;
        Column name to delete.
 - It returns a `void` value.
 
@@ -844,7 +844,7 @@ Deletes several columns by name in every row.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$names` (`array`) &mdash;
+    - `$names` (`Piwik\list&lt;string`|`Piwik\int&gt;`) &mdash;
        List of column names to delete.
     - `$deleteRecursiveInSubtables` (`bool`) &mdash;
        Whether to apply this change to all subtables or not.

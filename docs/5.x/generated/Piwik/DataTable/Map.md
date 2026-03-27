@@ -334,7 +334,7 @@ See DataTable::deleteColumns().
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$columns` (`array`) &mdash;
+    - `$columns` (`Piwik\DataTable\list&lt;string`|`Piwik\DataTable\int&gt;`) &mdash;
        The columns to delete.
     - `$deleteRecursiveInSubtables` (`bool`) &mdash;
        This param is currently not used.
@@ -366,7 +366,7 @@ Deletes the given column in every contained DataTable.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$name` (`string`) &mdash;
+    - `$name` (`string`|`int`) &mdash;
       
 - It does not return anything or a mixed result.
 
