@@ -1705,7 +1705,7 @@ Usages:
 
 ### LanguagesManager.getAvailableLanguages
 
-*Defined in [Piwik/Plugins/LanguagesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/LanguagesManager/API.php) in line [93](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/LanguagesManager/API.php#L93)*
+*Defined in [Piwik/Plugins/LanguagesManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/LanguagesManager/API.php) in line [113](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/LanguagesManager/API.php#L113)*
 
 Hook called after loading available language files. Use this hook to customise the list of languagesPath available in Matomo.
 
@@ -3507,7 +3507,7 @@ Usages:
 
 ### SegmentEditor.deactivate
 
-*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php) in line [254](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php#L254)*
+*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php) in line [262](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php#L262)*
 
 Triggered before a segment is deleted or made invisible. This event can be used by plugins to throw an exception
 or do something else.
@@ -3524,7 +3524,7 @@ Usages:
 
 ### SegmentEditor.update
 
-*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php) in line [323](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php#L323)*
+*Defined in [Piwik/Plugins/SegmentEditor/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php) in line [331](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/API.php#L331)*
 
 Triggered before a segment is modified. This event can be used by plugins to throw an exception
 or do something else.
