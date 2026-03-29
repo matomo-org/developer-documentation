@@ -172,6 +172,8 @@ Usages:
 - [API.addGlossaryItems](#apiaddglossaryitems)
 - [API.DocumentationGenerator.$token](#apidocumentationgeneratortoken)
 - [API.getPagesComparisonsDisabledFor](#apigetpagescomparisonsdisabledfor)
+- [API.getProcessedReport.inner.after](#apigetprocessedreportinnerafter)
+- [API.getProcessedReport.inner.before](#apigetprocessedreportinnerbefore)
 - [API.getReportMetadata.end](#apigetreportmetadataend)
 - [API.Request.authenticate](#apirequestauthenticate)
 - [API.Request.dispatch](#apirequestdispatch)
@@ -308,9 +310,42 @@ Usages:
 [Live::getPagesComparisonsDisabledFor](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Live/Live.php#L41), [MultiSites::getPagesComparisonsDisabledFor](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/MultiSites/MultiSites.php#L29), [Referrers::getPagesComparisonsDisabledFor](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Referrers/Referrers.php#L98), [SegmentEditor::getPagesComparisonsDisabledFor](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/SegmentEditor.php#L61), [Transitions::getPagesComparisonsDisabledFor](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Transitions/Transitions.php#L31), [UserCountryMap::getPagesComparisonsDisabledFor](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UserCountryMap/UserCountryMap.php#L39)
 
 
+### API.getProcessedReport.inner.after
+
+*Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/ProcessedReport.php) in line [482](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/ProcessedReport.php#L482)*
+
+Triggered before the API.getProcessedReport API method fetches
+report data. This event can be used to directly modify the report data returned
+by API.getProcessedReport, before the data is processed.
+
+Callback Signature:
+<pre><code>function($parameters, $dataTable]</code></pre>
+
+- array `$parameters` The request parameters used to fetch report
+                          data.
+
+- \DataTableInterface `$dataTable`
+
+
+### API.getProcessedReport.inner.before
+
+*Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/ProcessedReport.php) in line [461](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/ProcessedReport.php#L461)*
+
+Triggered before the API.getProcessedReport API method fetches
+report data. This event can be used to modify the parameters of the API request
+used to get report data, allowing plugins to modify the output of
+API.getProcessedReport.
+
+Callback Signature:
+<pre><code>function(&amp;$parameters]</code></pre>
+
+- array &$parameters The request parameters used to fetch report
+                          data.
+
+
 ### API.getReportMetadata.end
 
-*Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/ProcessedReport.php) in line [245](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/ProcessedReport.php#L245)*
+*Defined in [Piwik/Plugins/API/ProcessedReport](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/ProcessedReport.php) in line [246](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/API/ProcessedReport.php#L246)*
 
 Triggered after all available reports are collected. This event can be used to modify the report metadata of reports in other plugins. You
 could, for example, add custom metrics to every report or remove reports from the list
