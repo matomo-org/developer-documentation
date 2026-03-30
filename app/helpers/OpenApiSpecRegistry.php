@@ -39,7 +39,7 @@ class OpenApiSpecRegistry
 
             $name = $matches[1];
             $specs[] = [
-                'name' => $name,
+                'name' => self::splitCamelCase($name),
                 'slug' => self::toSlug($name),
                 'file' => $basename,
                 'url' => '/openapi/' . $basename,
@@ -115,5 +115,17 @@ class OpenApiSpecRegistry
         $slug = preg_replace('/(?<=\\p{Ll})(\\p{Lu})/u', '-$1', $slug ?? $name);
 
         return strtolower($slug ?? $name);
+    }
+
+    private static function splitCamelCase(string $value): string
+    {
+        return trim(preg_replace(
+            [
+                '/(?<=[a-z])(?=[A-Z])/',
+                '/(?<=[A-Z])(?=[A-Z][a-z])/'
+            ],
+            ' ',
+            $value
+        ));
     }
 }

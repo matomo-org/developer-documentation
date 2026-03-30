@@ -4,6 +4,92 @@
     flex-wrap: wrap;
 }
 
+.swagger-ui {
+    --matomo-swagger-get-main: #3152A0;
+    --matomo-swagger-get-background: #E9EFFF;
+    --matomo-swagger-post-main: #35C4C4;
+    --matomo-swagger-post-background: #E8FFFF;
+    border: 1px solid #ecf0f2;
+    border-radius: 5px;
+}
+
+.swagger-ui .opblock-description-wrapper,
+.swagger-ui .opblock-description-wrapper p,
+.swagger-ui .opblock-description-wrapper li,
+.swagger-ui .opblock-external-docs-wrapper,
+.swagger-ui .opblock-external-docs-wrapper p {
+    line-height: 1.6;
+}
+
+.swagger-ui .opblock-tag > small,
+.swagger-ui .opblock-tag > small p,
+.swagger-ui .opblock-tag > small li,
+.swagger-ui .opblock-tag .renderedMarkdown,
+.swagger-ui .opblock-tag .renderedMarkdown p,
+.swagger-ui .opblock-tag .renderedMarkdown li {
+    line-height: 1.6;
+}
+
+.swagger-ui .opblock-description-wrapper code,
+.swagger-ui .opblock-external-docs-wrapper code,
+.swagger-ui .opblock-tag > small code,
+.swagger-ui .opblock-tag .renderedMarkdown code,
+.swagger-ui .markdown code,
+.swagger-ui .renderedMarkdown code {
+    color: #A93552!important;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 5px;
+}
+
+.swagger-ui .opblock.opblock-get {
+    background: var(--matomo-swagger-get-background);
+    border-color: var(--matomo-swagger-get-main);
+}
+
+.swagger-ui .opblock.opblock-get .opblock-summary,
+.swagger-ui .opblock.opblock-get .opblock-section-header,
+.swagger-ui .opblock.opblock-get .opblock-body > .opblock-description-wrapper,
+.swagger-ui .opblock.opblock-get .opblock-body > .opblock-title_normal {
+    border-color: var(--matomo-swagger-get-main);
+}
+
+.swagger-ui .opblock.opblock-get .opblock-section-header {
+    background: #F3F6FF;
+}
+
+.swagger-ui .opblock.opblock-get .opblock-summary-method {
+    background: var(--matomo-swagger-get-main);
+}
+
+.swagger-ui .opblock.opblock-post {
+    background: var(--matomo-swagger-post-background);
+    border-color: var(--matomo-swagger-post-main);
+}
+
+.swagger-ui .opblock.opblock-post .opblock-summary,
+.swagger-ui .opblock.opblock-post .opblock-section-header,
+.swagger-ui .opblock.opblock-post .opblock-body > .opblock-description-wrapper,
+.swagger-ui .opblock.opblock-post .opblock-body > .opblock-title_normal {
+    border-color: var(--matomo-swagger-post-main);
+}
+
+.swagger-ui .opblock.opblock-post .opblock-section-header {
+    background: #F1FFFF;
+}
+
+.swagger-ui .opblock.opblock-post .opblock-summary-method {
+    background: var(--matomo-swagger-post-main);
+}
+
+.swagger-ui .authorization__btn {
+    display: none;
+}
+
+.swagger-ui .opblock .opblock-summary .view-line-link.copy-to-clipboard {
+    width: 24px;
+}
+
 .swagger-ui .opblock-tag > a.nostyle {
     order: 1;
 }
