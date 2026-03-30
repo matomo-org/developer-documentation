@@ -8,6 +8,9 @@
 
 {% block guideContent %}
     <h1>{{ title }}</h1>
+    <div markdown="1" class="alert alert-info">
+        Test API requests use our public demo environment. Because of this, read requests work but requests that create, edit, or delete data do not.
+    </div>
     <div id="swagger-ui"></div>
 {% endblock %}
 
