@@ -268,14 +268,21 @@ $app->get('/data/documents', function (Request $request, Response $response, $ar
 });
 
 $app->get('/demo-proxy/{path:.*}', function (Request $request, Response $response, $args) {
-    $path = ltrim($args['path'] ?? '', '/');
-    $targetUrl = rtrim(DemoProxy::MATOMO_SWAGGER_PROXY_TARGET, '/') . '/' . $path;
-    $query = $request->getUri()->getQuery();
-    if ($query !== '') {
-        $targetUrl .= '?' . $query;
+    $path = $args['path'] ?? '';
+
+    try {
+        $targetUrl = DemoProxy::buildValidatedApiUrl($path, $request->getQueryParams());
+    } catch (\InvalidArgumentException $e) {
+        $response->getBody()->write($e->getMessage());
+        return $response->withStatus(400);
     }
 
-    $proxiedResponse = DemoProxy::get($targetUrl, $request->getHeaderLine('Authorization'));
+    try {
+        $proxiedResponse = DemoProxy::get($targetUrl);
+    } catch (\RuntimeException $e) {
+        $response->getBody()->write('Could not proxy demo request');
+        return $response->withStatus(502);
+    }
 
     $response->getBody()->write($proxiedResponse['body']);
     return $response->withStatus($proxiedResponse['statusCode']);
