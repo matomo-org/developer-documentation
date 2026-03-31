@@ -20,6 +20,7 @@ use helpers\Content\Category\SupportCategory;
 use helpers\Content\Category\TracTicketArchiveCategory;
 use helpers\Content\Guide;
 use helpers\Content\PhpDoc;
+use helpers\DemoProxy;
 use helpers\DocumentNotExistException;
 use helpers\Environment;
 use helpers\OpenApiSpecRegistry;
@@ -29,6 +30,7 @@ use helpers\Url;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Exception\HttpNotFoundException;
+
 
 
 function renderGuide(Slim\Views\Twig $view, Response $response, Psr\Http\Message\UriInterface $uri, Guide $guide, Category $category, string $template = 'guide.twig')
@@ -263,6 +265,20 @@ $app->get('/data/documents', function (Request $request, Response $response, $ar
     ]));
     return $response->withHeader('Content-Type', 'application/json')
         ->withStatus(200);
+});
+
+$app->get('/demo-proxy/{path:.*}', function (Request $request, Response $response, $args) {
+    $path = ltrim($args['path'] ?? '', '/');
+    $targetUrl = rtrim(DemoProxy::MATOMO_SWAGGER_PROXY_TARGET, '/') . '/' . $path;
+    $query = $request->getUri()->getQuery();
+    if ($query !== '') {
+        $targetUrl .= '?' . $query;
+    }
+
+    $proxiedResponse = DemoProxy::get($targetUrl, $request->getHeaderLine('Authorization'));
+
+    $response->getBody()->write($proxiedResponse['body']);
+    return $response->withStatus($proxiedResponse['statusCode']);
 });
 
 $app->post('/receive-commit-hook', function (Request $request, Response $response, $args) {
