@@ -19,7 +19,8 @@
     <script src="/vendor/swagger-ui/swagger-ui-bundle.js?{{ revision|e('html_attr') }}"></script>
     <script type="text/javascript">
     window.onload = function () {
-        let pluginSpec = {{ pluginSpecJson|raw }};
+        let pluginSpecJson = {{ pluginSpecJson|raw }};
+        let proxyBaseUrl = window.location.origin + '/api-proxy/matomo';
         let summaryPrefix = '/index.php?module=API&method=';
 
         function clonePluginSpec(spec) {
@@ -50,10 +51,15 @@
         }
 
         if (typeof SwaggerUIBundle === 'function') {
+            let pluginSpec = clonePluginSpec(pluginSpecJson);
+
+            // CORs on demo not allowing authorization: Bearer anonymous in preflight, so we need a proxy into demo
+            pluginSpec.servers = [{ url: proxyBaseUrl }];
+
             SwaggerUIBundle({
                 dom_id: '#swagger-ui',
                 url: null,
-                spec: clonePluginSpec(pluginSpec),
+                spec: proxiedPluginSpec,
                 docExpansion: 'list',
                 tagsSorter: 'alpha',
                 presets: [
