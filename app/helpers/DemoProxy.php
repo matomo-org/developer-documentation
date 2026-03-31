@@ -26,11 +26,11 @@ class DemoProxy
     public static function get(string $url, string $authorizationHeader = ''): array
     {
         $context = self::createContext($authorizationHeader);
-        $body = self::fetchBody($url, $context);
-        $statusCode = self::parseStatusCode($http_response_header ?? []);
+        $proxiedResponse = self::fetchResponse($url, $context);
+        $statusCode = self::parseStatusCode($proxiedResponse['responseHeaders']);
 
         return [
-            'body' => $body,
+            'body' => $proxiedResponse['body'],
             'statusCode' => $statusCode,
         ];
     }
@@ -56,14 +56,20 @@ class DemoProxy
         return 'Authorization: ' . $authorizationHeader;
     }
 
-    private static function fetchBody(string $url, $context): string
+    /**
+     * @return array{body: string, responseHeaders: array}
+     */
+    private static function fetchResponse(string $url, $context): array
     {
         $body = @file_get_contents($url, false, $context);
         if ($body === false) {
             throw new \RuntimeException('Could not proxy HTTP request');
         }
 
-        return $body;
+        return [
+            'body' => $body,
+            'responseHeaders' => $http_response_header ?? [],
+        ];
     }
 
     private static function parseStatusCode(array $responseHeaders): int
