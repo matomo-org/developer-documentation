@@ -267,7 +267,7 @@ $app->get('/data/documents', function (Request $request, Response $response, $ar
         ->withStatus(200);
 });
 
-$app->get('/demo-proxy/{path:.*}', function (Request $request, Response $response, $args) {
+$app->get('/demo/{path:.*}', function (Request $request, Response $response, $args) {
     $path = $args['path'] ?? '';
 
     try {
