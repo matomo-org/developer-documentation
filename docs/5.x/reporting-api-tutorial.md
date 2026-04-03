@@ -31,7 +31,7 @@ To build the URL of the API call, you need:
 
     **period=day**
 
-    Alternatively, if you wanted to request all pages from a given date, you could use a date range parameter. For example, to request all pages since January 1st 2021:`period=range&date=2011-01-21,yesterday`
+    Alternatively, if you wanted to request all pages from a given date, you could use a date range parameter. For example, to request all pages since January 1st 2021:`period=range&date=2021-01-01,yesterday`
 
 - the format parameter. Defines the output format of the data: XML, JSON, CSV, PHP (serialized PHP), HTML (simple html)
 
