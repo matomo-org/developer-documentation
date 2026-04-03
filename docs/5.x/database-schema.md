@@ -422,14 +422,23 @@ User entities describe each Piwik user. They are persisted in the `user` table.
 The following information is stored in a user entity:
 
 - `login`: the user's login handle.
-- `password'`: a hash of the user's password.
-- `alias`: the user's alias if any. This value is displayed instead of the login handle when addressing the user in the UI.
+- `password`: a hash of the user's password.
 - `email`: the user's email address.
-- `twofactor_secret`: the 2FA secret
-- `token_auth`: a user's token auth.
+- `twofactor_secret`: the 2FA secret.
 - `superuser_access`: whether the user has Super User permission.
 - `date_registered`: the date the user data was persisted.
 - `ts_password_modified`: the date the user password was last changed.
+- `idchange_last_viewed`: the ID of the last change the user has viewed.
+- `invited_by`: the login of the user who invited this user (if any).
+- `invite_token`: token used for the invitation process.
+- `invite_link_token`: token used for the invitation link.
+- `invite_expired_at`: the date when the invitation expires.
+- `invite_accept_at`: the date when the invitation was accepted.
+- `ts_changes_shown`: the date when changes were last shown to the user.
+- `ts_last_seen`: the date when the user was last seen active.
+- `ts_inactivity_notified`: the date when the user was notified about inactivity.
+
+Note: The `alias` column was removed in Matomo 4.0. Authentication tokens are stored in a separate `user_token_auth` table.
 
 User data is read on every UI and [Reporting API](/guides/piwiks-reporting-api) request.
 
