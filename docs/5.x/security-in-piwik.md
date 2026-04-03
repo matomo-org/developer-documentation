@@ -22,9 +22,9 @@ In your PHP code, if you need access to a variable in `$_GET` or `$_POST`, **alw
 
 `getRequestVar()` will sanitize the request variable. If an attacker passes a string containing `<script>...</script>`, it will be sanitized to `&lt;script&gt;...&lt;/script&gt;`. This will help to avoid accidentally embedding unescaped text in HTML output.
 
-For text you know may contain special characters or if you need to output text in a format that doesn't need XML/HTML sanitization (like JSON), call [Piwik::unsanitizeInputValues()](/api-reference/Piwik/Common#unsanitizeinputvalues) to undo the sanitization.
+For text you know may contain special characters or if you need to output text in a format that doesn't need XML/HTML sanitization (like JSON), call [Common::unsanitizeInputValues()](/api-reference/Piwik/Common#unsanitizeinputvalues) to undo the sanitization.
 
-*Note: You can sanitize text that isn't in a request parameter by using [Piwik::sanitizeInputValues()](/api-reference/Piwik/Common#sanitizeinputvalues).*
+*Note: You can sanitize text that isn't in a request parameter by using [Common::sanitizeInputValues()](/api-reference/Piwik/Common#sanitizeinputvalues).*
 
 ### Use the correct Twig escaping strategy
 
