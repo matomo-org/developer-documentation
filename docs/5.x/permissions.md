@@ -44,7 +44,7 @@ To check a user's permissions, you need to `use` the [`Piwik\Piwik`](https://dev
     public function deleteAllMessages()
     {
         // delete messages only if user has super user access, otherwise show an error message
-        Piwik::checkUserSuperUserAccess();
+        Piwik::checkUserHasSuperUserAccess();
 
         $this->getModel()->deleteAllMessages();
     }
