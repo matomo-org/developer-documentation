@@ -94,7 +94,7 @@ describe("WidgetizePage", function () {
 
     it('should load a simple page by its module and action', function (done) {
         var urlToTest = "?" + generalParams + "&amp;module=Widgetize&amp;action=index";
-        page.load(urlToTest);
+        await page.goto(urlToTest);
 
         var screenshotName = 'simplePage';
         // will save image in "processed-ui-screenshots/WidgetizePageTest_simplePage.png"
