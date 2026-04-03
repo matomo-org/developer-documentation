@@ -3,11 +3,11 @@ category: Develop
 ---
 # User permissions
 
-Permissions define what a user can see or do in Piwik.
+Permissions define what a user can see or do in Matomo.
 
 ## Users and permissions
 
-Piwik defines 4 types of permissions:
+Matomo defines 4 types of permissions:
 
 - [**view permission**](https://matomo.org/faq/general/faq_70/): applies to a specific site
 
@@ -21,7 +21,7 @@ Piwik defines 4 types of permissions:
 
     With that permission, a user can view and configure a given site (name, URLs, timezone, etc.). They can also grant other users the "view" or "admin" permission.
 
-- [**super user permission**](https://matomo.org/faq/general/faq_35/): applies to **whole Piwik** (all sites)
+- [**super user permission**](https://matomo.org/faq/general/faq_35/): applies to **whole Matomo** (all sites)
 
     With that permission, a user can view and configure all sites. They can also perform all administrative tasks such as add new sites, add users, change user permissions, activate and deactivate plugins or install new ones from the Marketplace.
 
@@ -101,7 +101,7 @@ Piwik::checkUserHasAdminAccess($idSites = array(1,2,3));
 
 ### Super user permission
 
-A user having the super user permission is allowed to access all data stored in Piwik and change any settings. To check if a user has this role use any of the methods that end with `UserSuperUserAccess`.
+A user having the super user permission is allowed to access all data stored in Matomo and change any settings. To check if a user has this role use any of the methods that end with `UserSuperUserAccess`.
 
 ```php
 Piwik::checkUserHasSuperUserAccess();
