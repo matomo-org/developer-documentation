@@ -28,7 +28,7 @@ Token auths are used for the [Tracking API](/api-reference/tracking-api), the [R
 
 When a `token_auth` URL parameter is provided, then we don't create a session. This means when a widget is embedded all requests done from this widget need to include the `token_auth` parameter.
 
-When it is a token_auth, then the authentication happens [here](https://github.com/matomo-org/matomo/blob/4.4.1/plugins/Login/Auth.php#L63). Please note that Matomo will always first authenticate using the anonymous user, and then call the same method again later using the token only. Meaning if you are using the debugger you will see the `authenticate` method being called twice.
+When it is a token_auth, then the authentication happens [here](https://github.com/matomo-org/matomo/blob/4.4.1/plugins/Login/Auth.php#L63). Please note that Matomo will first try to authenticate using the session, then fall back to normal authentication (which may result in the anonymous user), and finally re-authenticate using the provided token. Meaning if you are using the debugger you will see the `authenticate` method being called twice.
 
 ### Adding the token_auth to a UI request in JS
 
