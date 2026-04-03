@@ -238,7 +238,6 @@ Conversions are stored in the `log_conversion` table and consist of the followin
 - `server_time`: the datetime of the conversion in the UTC timezone
 - `idaction_url`: the ID of the URL action type of the visit action that caused this conversion
 - `idlink_va`: the ID of the specific visit action that resulted in this conversion
-- `referer_visit_server_date`: <!-- TODO: what is this? tied to _refts query parameter -->
 - `url`: the URL that caused this conversion to be tracked
 - `idgoal`: the ID of the goal this conversion is for
 - `idorder`: if this conversion is for an ecommerce order or abandoned cart, this will be the order's ID
