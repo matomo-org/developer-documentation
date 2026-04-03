@@ -97,7 +97,7 @@ Ordering of plugins is done in PluginUmdAssetFetcher.php by:
 ### Browser support
 
 As stated above, `browserslist` is used to control what browsers our compiled JavaScript supports. In the `.browserslistrc`
-file we specify some generic parameters, like `> 1%` (we want to support browsers with an overall usage of over 1%) and
+file we specify some generic parameters, like `> 0.05%` (we want to support browsers with an overall usage of over 0.05%) and
 `last 2 versions` (we want to support the last two versions of every browser).
 
 Browserslist takes this description and creates the list of browsers and browser versions that must be supported. To
