@@ -491,7 +491,7 @@ formElement.addEventListener('submit', function () {
 
 - The passed `domNode` can be any node within a content block or the content block element itself. Nothing will be tracked in case there is no content block found.
 - Optionally you can set the name of the content interaction, for instance `click` or `submit`. If none is provided, the value `Unknown` will be used.
-- You should disable the automatic interaction tracking of that content block by setting the CSS class `piwikContentIgnoreInteraction` or the attribute `data-content-ignoreinteraction`. Otherwise an interaction might be tracked on top of it as soon as a visitor performs a click.
+- You should disable the automatic interaction tracking of that content block by setting the CSS class `matomoContentIgnoreInteraction` (or the legacy `piwikContentIgnoreInteraction`) or the attribute `data-content-ignoreinteraction`. Otherwise an interaction might be tracked on top of it as soon as a visitor performs a click.
 
 We call this kind of tracking semi-automatic as you triggered the interaction manually but the content name, piece and target is detected automatically. Detecting the content name and piece automatically makes sure we can map the interaction with a previously tracked impression.
 
