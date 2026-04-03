@@ -66,7 +66,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `setDoNotTrack( bool )` - Set to true to not track users who opt out of tracking using Mozilla's (proposed) Do Not Track setting.
 *   `killFrame()` - Enable a frame-buster to prevent the tracked web page from being framed/iframed.
 *   `redirectFile( url )` - Force the browser load the live URL if the tracked web page is loaded from a local file (e.g., saved to someone's desktop).
-*   `setHeartBeatTimer( minimumVisitLength, heartBeatDelay )` - Record how long the page has been viewed if the minimumVisitLength (in seconds) is attained; the heartBeatDelay determines how frequently to update the server
+*   `disableHeartBeatTimer()` - Disable the heartbeat timer if it has previously been enabled via `enableHeartBeatTimer`
 *   `getVisitorId()` - Return the 16 characters ID for the visitor
 *   `setVisitorId( visitorId )` -  `visitorId` needs to be a 16 digit hex string. The visitorId won't be persisted in a cookie and needs to be set on every new page load. 
 *   `getVisitorInfo()` - Return the visitor cookie contents in an array
