@@ -267,7 +267,7 @@ Examples:
 As no specific target element is set, we will read the `href` attribute of the content block.
 
 ```html
-<a onclick="location.href='https://www.example.com'" data-content-target="http://www.example.com" data-track-content>Click me</a>
+<a onclick="location.href='https://www.example.com'" data-content-target="https://www.example.com" data-track-content>Click me</a>
 // content name   = Unknown
 // content piece  = Unknown
 // content target = "https://www.example.com"
