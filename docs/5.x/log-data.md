@@ -17,7 +17,7 @@ There are five types of log data:
 
 **Log data is aggregated by the [Archiving process](/guides/archiving) into [archive data](/guides/archive-data).**
 
-**Log data is never used directly for Piwik reports**, archive data is used instead. The only exception is the *Live* plugin which uses log data to generate real-time reports.
+**Log data is never used directly for Matomo reports**, archive data is used instead. The only exception is the *Live* plugin which uses log data to generate real-time reports.
 
 ## Persistence
 
