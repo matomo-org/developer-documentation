@@ -37,7 +37,7 @@ public function install();
 // Executed every time the plugin is activated.
 public function activate();
 
-// Executed on every request after a plugin was loaded.
+// Executed after a plugin is loaded and translations are registered. Useful for initialization code that uses translated strings.
 public function postLoad();
 
 // Executed every time the plugin is deactivated.
