@@ -125,7 +125,7 @@ This will automatically create an instance of the `LoaderCache` whenever the `Lo
 
 ```php
 return array(
-    'log.format' => '%level% %tag%[%datetime%] %message%'
+    'log.short.format' => '%level% %tag%[%datetime%] %message%'
 );
 ```
 
@@ -145,12 +145,12 @@ class LineMessageFormatter
 }
 ```
 
-We configure to inject the `log.format` entry in the constructor:
+We configure to inject the `log.short.format` entry in the constructor:
 
 ```php
 return array(
     'Piwik\Plugins\Monolog\Formatter\LineMessageFormatter' => Piwik\DI::autowire()
-        ->constructor(Piwik\DI::get('log.format')),
+        ->constructor(Piwik\DI::get('log.short.format')),
 );
 ```
 
@@ -159,7 +159,7 @@ or
 ```php
 return array(
     'Piwik\Plugins\Monolog\Formatter\LineMessageFormatter' => Piwik\DI::autowire()
-        ->constructorParameter('logMessageFormat', Piwik\DI::get('log.format')),
+        ->constructorParameter('logMessageFormat', Piwik\DI::get('log.short.format')),
 );
 ```
 
