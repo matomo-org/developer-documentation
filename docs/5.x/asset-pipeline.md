@@ -89,7 +89,7 @@ Detecting plugin dependencies is done by:
   we save it in an array.
 * Later, after compilation has ended, we output the array to a metadata JSON file (`plugins/MyPlugin/vue/dist/umd.metadata.json`).
 
-Ordering of plugins is done in JScriptUIFetcher.php by:
+Ordering of plugins is done in PluginUmdAssetFetcher.php by:
 
 * Reading the dependencies from the umd.metadata.json files above,
 * and performing a DFS that orders the plugins, dependencies first.
