@@ -111,7 +111,7 @@ class Controller
     public function myExpensiveAction()
     {
         $idSite = Common::getRequestVar('idSite', $default = null, 'int');
-        $cacheKey = \Piwik\CacheId::siteAware('myCacheData', $idSite);
+        $cacheKey = \Piwik\CacheId::siteAware('myCacheData', [$idSite]);
         
         // NOTE: using this approach where we fetch first instead of using contains only works if `false` is not a valid cached value
         $data = $this->cache->fetch($cacheKey);
