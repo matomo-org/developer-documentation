@@ -198,7 +198,7 @@ describe("TheControlImTesting", function () {
 
 ### Manipulating pages before capture
 
-You can use any method from the <a href="https://pptr.dev/#?product=Puppeteer&version=v1.18.0&show=api-class-page">Puppeteer library</a> to manipulate the page before you take a screenshot. Matomo also provides a couple of extra methods:
+You can use any method from the <a href="https://pptr.dev/api/puppeteer.page">Puppeteer library</a> to manipulate the page before you take a screenshot. Matomo also provides a couple of extra methods:
 
 - **waitForNetworkIdle()**: Wait for all requests to finish. Automatically called on functions that load a page.
 - **screenshotSelector(selector)**: An alternative to `element.screenshot()`.
