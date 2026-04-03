@@ -18,16 +18,16 @@ subGuides:
 This guide assumes that you:
 
 * can code in PHP,
-* and have a general understanding of extending Piwik (if not, read our [Getting Started](/guides/getting-started-part-1) guide).
+* and have a general understanding of extending Matomo (if not, read our [Getting Started](/guides/getting-started-part-1) guide).
 
-## Piwik Configuration
+## Matomo Configuration
 
-Piwik uses two methods to store configuration settings:
+Matomo uses two methods to store configuration settings:
 
 - **INI files** in the `config/` folder
 - **Options** which are persisted to the database
 
-These methods are used by **Piwik Core** and should not be used by plugins. Plugins use a separate method of configuration [described here](/guides/plugin-settings).
+These methods are used by **Matomo Core** and should not be used by plugins. Plugins use a separate method of configuration [described here](/guides/plugin-settings).
 
 ### INI configuration
 
@@ -35,6 +35,6 @@ INI configuration is explained in the [INI configuration](/guides/piwiks-ini-con
 
 ### Options
 
-Some Piwik configuration settings are stored as **Options**. Options are just key value pairs persisted in the database. To learn more about options, read the documentation of the [Option](/api-reference/Piwik/Option) class.
+Some Matomo configuration settings are stored as **Options**. Options are just key value pairs persisted in the database. To learn more about options, read the documentation of the [Option](/api-reference/Piwik/Option) class.
 
-*To learn about how options are persisted in the MySQL backend, read about the [Piwik database schema](/guides/database-schema).*
+*To learn about how options are persisted in the MySQL backend, read about the [Matomo database schema](/guides/database-schema).*
