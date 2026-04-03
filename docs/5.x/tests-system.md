@@ -134,7 +134,7 @@ MySystemTest::$fixture = new \Piwik\Tests\Fixtures\ThreeGoalsOnePageview();
 
 To see the fixtures Piwik defines, see the files in the `tests/PHPUnit/Fixtures` directory.
 
-You can create your own fixture as well, just extend `Piwik\Tests\Framework\Fixture` and place the file in the `Test/Fixtures/` directory of your plugin.
+You can create your own fixture as well, just extend `Piwik\Tests\Framework\Fixture` and place the file in the `tests/Fixtures/` directory of your plugin.
 
 ## Expected and processed output
 
