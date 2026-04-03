@@ -44,7 +44,7 @@ public function onNewVisit(Request $request, Visitor $visitor, $action)
 
 public function onExistingVisit(Request $request, Visitor $visitor, $action)
 {
-    return $visitor->getVisitorColumn($this->column_name) + 1;
+    return $visitor->getVisitorColumn($this->columnName) + 1;
 }
 ```
 
