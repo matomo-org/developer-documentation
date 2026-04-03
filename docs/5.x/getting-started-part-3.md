@@ -115,10 +115,10 @@ To use the setting, we first need to get the setting value in our API method and
             $period,
             $date,
             $segment,
-            $numLastVisitorsToFetch = 100,
+            $countVisitorsToFetch = 100,
             $minTimestamp = false,
             $flat = false,
-            $doNotFetchActions = true
+            $doNotFetchActions = false
         );
         $data->applyQueuedFilters();
 
