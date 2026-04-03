@@ -186,7 +186,7 @@ window.addEventListener('hashchange', function() {
     _paq.push(['setCustomUrl', currentUrl]);
     _paq.push(['setDocumentTitle', 'My New Title']);
 
-    // remove all previously assigned custom variables, requires Piwik 3.0.2
+    // remove all previously assigned custom variables
     _paq.push(['deleteCustomVariables', 'page']);
     _paq.push(['AbTesting::create', {
        name: 'theExperimentName',
