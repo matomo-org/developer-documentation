@@ -163,7 +163,7 @@ This example uses the following API requests:
 ### Other Methods
 
 - **API.get**: Calls the `get` API method of all loaded plugins that support it and merges the result. The `get` methods all output the metrics that the plugin archives, so the result of **API.get** is the set of values for every metric your Matomo install supports (for the specified website & period).
-- **API.getSegmentDimensionMetadata**: Returns metadata for every supported [segment dimension](/api-reference/segmentation). The following information is returned for each segment dimension:
+- **API.getSegmentsMetadata**: Returns metadata for every supported [segment dimension](/api-reference/segmentation). The following information is returned for each segment dimension:
   - `type`: The type of segment dimension.
   - `category`: A translated string that describes the segment dimension's category.
   - `name`: A translated string or a translation token that describes the segment dimension itself.
