@@ -25,7 +25,7 @@ We'll create a **plugin setting** which will control which visit property the pl
 ```php
 namespace Piwik\Plugins\MyPlugin;
 
-class Settings extends \Piwik\Plugin\Settings
+class Settings extends \Piwik\Settings\Plugin\UserSettings
 {
     protected function init()
     {
@@ -41,7 +41,7 @@ We're going to create one setting that can be set differently by each user. Our 
 Let's add an attribute and new method for this setting:
 
 ```php
-class Settings extends \Piwik\Plugin\Settings
+class Settings extends \Piwik\Settings\Plugin\UserSettings
 {
     public $realtimeReportDimension;
 
