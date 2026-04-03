@@ -138,7 +138,7 @@ You can create your own fixture as well, just extend `Piwik\Tests\Framework\Fixt
 
 ## Expected and processed output
 
-System tests will generate an expected output file for every API method and period combination. The generated output (also called *processed* output) is stored in the `processed/` subdirectory of your plugin's `Test/` directory. The expected output should be stored in a directory named `expected/`.
+System tests will generate an expected output file for every API method and period combination. The generated output (also called *processed* output) is stored in the `processed/` subdirectory of your plugin's `tests/System/` directory. The expected output should be stored in a directory named `expected/`.
 
 When you first create a system test, there will be no expected files. You will have to copy processed files to the expected folder after ensuring they are correct.
 
