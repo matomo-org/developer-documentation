@@ -362,11 +362,7 @@ The way we track interactions varies based on the type of the link.
 
 ##### Links to the same domain
 
-In case we detect a link element having an `href` attribute to the same domain as the current page we will replace the `href` attribute with a link to the `matomo.php` tracker URL. Whenever a user clicks on such a link we will first send the user to the `matomo.php` of your Piwik installation and then redirect the user from there to the actual page. This makes sure to track an interaction even if someone opens the URL with a right click.
-
-If the URL of the replaced `href` attribute changes meanwhile by your code we will respect the new link.
-
-Note: The referrer information will get lost when redirecting from matomo.php to your page. If you depend on this you need to disable automatic tracking of an interaction see below.
+When a visitor clicks on a same-domain link within a content block, Matomo tracks the content interaction via an XHR request before allowing the browser to follow the link. This approach preserves the referrer information and does not alter the `href` attribute of the link.
 
 ##### Outlinks and downloads
 
