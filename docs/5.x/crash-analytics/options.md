@@ -37,7 +37,7 @@ To **limit the total number of of requests per tracker**, use the `setMaxNoOfCra
 _paq.push(["CrashAnalytics::setMaxNoOfCrashRequestsAllowed", 100]);
 ```
 
-If a tracker reaches this limit, it will stop sending Crash Analytics requests entirely. The only way requests are sent again is if the user reloads the page.
+If a tracker reaches this limit, it will stop sending Crash Analytics requests entirely. The counter resets when the user reloads the page or when a pageview is tracked (e.g., via `trackPageView`).
 
 By default, trackers are limited to 50 Crash Analytics requests per page view.
 
@@ -74,13 +74,13 @@ _paq.push(["CrashAnalytics::doNotTrackSourcesWithDomain", ["facebook.com", "some
 To ignore every domain **except** the ones you care about, use the `onlyTrackSourcesWithDomain()` method:
 
 ```js
-_paq.push(["CrashAnalytics::onlyTrackSourcesWithDomain", ["mysite.com"]);
+_paq.push(["CrashAnalytics::onlyTrackSourcesWithDomain", "mysite.com"]);
 ```
 
 ## How can I make sure browser extension errors are tracked?
 
-By default, the JavaScript tracker will ignore errors that come from browser extensions. If instead you’d like to see these errors, use the `trackBrowserExtensionErrors()` method:
+By default, the JavaScript tracker will ignore errors that come from browser extensions. If instead you’d like to see these errors, use the `trackBrowserExtensionCrashes()` method:
 
 ```js
-_paq.push(["CrashAnalytics::trackBrowserExtensionErrors"]);
+_paq.push(["CrashAnalytics::trackBrowserExtensionCrashes"]);
 ```
