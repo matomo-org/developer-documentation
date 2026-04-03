@@ -244,7 +244,7 @@ You can declare this via environment variables, or alternatively by setting $GLO
 
 To control where Marketplace or ZIP installs are written, set `MATOMO_PLUGIN_COPY_DIR` to one of the absolute paths already listed in MATOMO_PLUGIN_DIRS. 
 
-**Warning:** The directory must be writable by the web server user, otherwise plugin installation will fail. If the specified path is invalid or not writable, Matomo will either display an error message or fallback to installing plugins in the core `./plugins` directory, depending on the situation.
+**Warning:** The directory must be writable by the web server user, otherwise plugin installation will fail. If the specified path is not one of the directories listed in `MATOMO_PLUGIN_DIRS`, Matomo will throw an exception. The fallback to the default `./plugins` directory only applies when `MATOMO_PLUGIN_COPY_DIR` is not set at all.
 
 
 ## Other valuable resources
