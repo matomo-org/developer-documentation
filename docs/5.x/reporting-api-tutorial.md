@@ -64,7 +64,7 @@ Here is the output of this request:
 [https://demo.matomo.cloud/?module=API&method=Referrers.getReferrerType&idSite=1&period=day&date=last10&format=xml](https://demo.matomo.cloud/?module=API&method=Referrers.getReferrerType&idSite=1&period=day&date=last10&format=xml)
 
 
-*   RSS feed containing the top 30 pages for the last 3 weeks
+*   RSS feed containing the top 30 search engine keywords for the last 3 weeks
 [https://demo.matomo.cloud/?module=API&method=Referrers.getKeywords&idSite=1&period=week&date=last3&format=rss&filter_limit=30](https://demo.matomo.cloud/?module=API&method=Referrers.getKeywords&idSite=1&period=week&date=last3&format=rss&filter_limit=30)
 
 
