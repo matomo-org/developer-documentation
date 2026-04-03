@@ -21,7 +21,7 @@ There are five types of log data:
 
 ## Persistence
 
-Log data is represented in PHP as `Piwik\Tracker\Visit` objects, and is stored into the following tables:
+Log data is persisted in the database via the `Piwik\Tracker\Visit` handler. Visit properties are represented in PHP as `Piwik\Tracker\Visit\VisitProperties` objects, and stored into the following tables:
 
 - `log_visit` contains one entry per visit (returning visitor)
 - `log_action` contains all the type of actions possible on the website (e.g. unique URLs, page titles, download URLs…)
