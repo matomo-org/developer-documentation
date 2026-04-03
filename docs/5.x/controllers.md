@@ -41,11 +41,10 @@ ajax.addParams({
     module: 'MyPlugin',
     action: 'myPage'
 }, 'get');
-ajax.setCallback(function (response) {
+ajax.setFormat('html');
+ajax.send().then(function (response) {
     $('#root').append(response);
 });
-ajax.setFormat('html');
-ajax.send();
 ```
 
 The **`ajaxHelper`** JavaScript class is stored in the [piwik/plugins/CoreHome/vue/src/AjaxHelper/AjaxHelper.ts](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/vue/src/AjaxHelper/AjaxHelper.ts) file.
