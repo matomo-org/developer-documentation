@@ -43,7 +43,7 @@ $this->logger->info('This is an info');
 $this->logger->debug('This is a debug message');
 ```
 
-Each of these messages will or will not be logged according to the log level configured by the user in their `config.php.ini`. Developers should not log conditionally according to the current log level: they should simply log and let the system figure it all out.
+Each of these messages will or will not be logged according to the log level configured by the user in their `config/config.ini.php`. Developers should not log conditionally according to the current log level: they should simply log and let the system figure it all out.
 
 ### Parameterized messages
 
