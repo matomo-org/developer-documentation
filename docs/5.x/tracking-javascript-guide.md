@@ -5,9 +5,9 @@ category: Integrate
 
 You can use the JavaScript tracking client to track any application that supports JavaScript: for example websites!
 
-This guide will explain how you can use the JavaScript tracking client to customize the way some of the web analytics data is recorded in Piwik.
+This guide will explain how you can use the JavaScript tracking client to customize the way some of the web analytics data is recorded in Matomo.
 
-## Finding the Piwik Tracking Code
+## Finding the Matomo Tracking Code
 
 To use all the features described in this page, you need to use the latest version of the tracking code. To find the tracking code for your website, follow the steps below:
 
@@ -37,7 +37,7 @@ The tracking code looks as follows:
 <!-- End Matomo Code -->
 ```
 
-In your tracking code, `{$MATOMO_URL}` would be replaced by your Piwik URL and `{$IDSITE}` would be replaced by the idsite of the website you are tracking in Piwik.
+In your tracking code, `{$MATOMO_URL}` would be replaced by your Matomo URL and `{$IDSITE}` would be replaced by the idsite of the website you are tracking in Matomo.
 
 This code might look a bit strange to those of you familiar with JavaScript, but that is because it is made to run asynchronously. In other words, browsers will not wait for the `matomo.js` file to be downloaded in order to show your page.
 
@@ -63,7 +63,7 @@ _paq.push([ function() { var customVariable = this.getCustomVariable(1); }]);
 
 You can push to the `_paq` array even after the `matomo.js` file has been loaded and run.
 
-If your Piwik tracking code doesn't look like this one, you may be using the deprecated version.
+If your Matomo tracking code doesn't look like this one, you may be using the deprecated version.
 Older versions still work as expected and will track your visitors, but we highly recommend that you update your pages to use the most recent tracking code.
 
 ## Requirements
@@ -108,11 +108,11 @@ You can customise the page URL to track by using the function `setCustomUrl`, le
 
 ### Manually trigger events
 
-By default, Piwik tracks page views when the JavaScript tracking code loads and executes on each page view.
+By default, Matomo tracks page views when the JavaScript tracking code loads and executes on each page view.
 
-However, on modern web applications, user interactions do not necessarily involve loading a new page. For example, when users click on a JavaScript link, or when they click on a tab (which triggers a JS event), or when they interact with elements of the user interface, you can still track these interactions with Piwik.
+However, on modern web applications, user interactions do not necessarily involve loading a new page. For example, when users click on a JavaScript link, or when they click on a tab (which triggers a JS event), or when they interact with elements of the user interface, you can still track these interactions with Matomo.
 
-To track any user interaction or click with Piwik, you can manually call the JavaScript function `trackEvent()`. For example, if you wanted to track a click on a JavaScript menu, you could write:
+To track any user interaction or click with Matomo, you can manually call the JavaScript function `trackEvent()`. For example, if you wanted to track a click on a JavaScript menu, you could write:
 
 ```html
 <a href="#" onclick="_paq.push(['trackEvent', 'Menu', 'Freedom']);">Freedom page</a>
@@ -122,14 +122,14 @@ You can learn more about [Tracking Events](https://matomo.org/docs/event-trackin
 
 ### Manually trigger goal conversions
 
-By default, Goals in Piwik are defined as "matching" parts of the URL (starts with, contains, or regular expression matching). You can also track goals for given page views, downloads, or outlink clicks.
+By default, Goals in Matomo are defined as "matching" parts of the URL (starts with, contains, or regular expression matching). You can also track goals for given page views, downloads, or outlink clicks.
 
 In some situations, you may want to register conversions on other types of actions, for example:
 
 - when a user submits a form
 - when a user has stayed more than a given amount of time on the page
 - when a user does some interaction in your Flash application
-- when a user has submitted his cart and has done the payment: you can give the Piwik tracking code to the payment website which will then register the conversions in your Piwik database, with the conversion's custom revenue
+- when a user has submitted his cart and has done the payment: you can give the Matomo tracking code to the payment website which will then register the conversions in your Matomo database, with the conversion's custom revenue
 
 To trigger a goal conversion:
 
@@ -145,23 +145,23 @@ You can also register a conversion for this goal with a custom revenue. For exam
 _paq.push(['trackGoal', 1, <?php echo $cart->getCartValue(); ?>]);
 ```
 
-Find more information about goal tracking in Piwik in the [**Tracking Goals**](https://matomo.org/docs/tracking-goals-web-analytics/) documentation.
+Find more information about goal tracking in Matomo in the [**Tracking Goals**](https://matomo.org/docs/tracking-goals-web-analytics/) documentation.
 
 ### Accurately measure the time spent on each page
 
-By default, when a user visits only one page view during a visit, Piwik will assume that the visitor has spent 0 second on the website. This has a few consequences:
+By default, when a user visits only one page view during a visit, Matomo will assume that the visitor has spent 0 second on the website. This has a few consequences:
 
 * when the visitor views only one page view, the "Visit duration" will be 0 second.
 * when the visitor views more than one page, then the last page view of the visit will have a "Time spent on page" of 0 second.
 
-It is possible to configure Piwik so that it accurately measures the time spent in the visit. To better measure time spent in the visit, add to your JavaScript code the following:
+It is possible to configure Matomo so that it accurately measures the time spent in the visit. To better measure time spent in the visit, add to your JavaScript code the following:
 
 ```javascript
 // accurately measure the time spent in the visit
 _paq.push(['enableHeartBeatTimer']);
 ```
 
-Piwik will then send requests to count the actual time spent in the visit, as long as the user is actively viewing the page (i.e. when the tab is active and in focus). The heart beat request is executed when:
+Matomo will then send requests to count the actual time spent in the visit, as long as the user is actively viewing the page (i.e. when the tab is active and in focus). The heart beat request is executed when:
 
  * switching to another browser tab after the current tab was active for at least 15 seconds (can be configured see below).
  * navigating to another page within the same tab. 
@@ -177,13 +177,13 @@ Note: When testing the heart beat timer, remember to make sure the browser tab h
 
 ## Ecommerce tracking
 
-Piwik allows for advanced and powerful Ecommerce tracking. Check out the [Ecommerce Analytics](https://matomo.org/docs/ecommerce-analytics/) documentation for more information about Ecommerce reports and how to set up Ecommerce tracking.
+Matomo allows for advanced and powerful Ecommerce tracking. Check out the [Ecommerce Analytics](https://matomo.org/docs/ecommerce-analytics/) documentation for more information about Ecommerce reports and how to set up Ecommerce tracking.
 
 ## Internal search tracking
 
-Piwik offers advanced [Site Search Analytics](https://matomo.org/docs/site-search/) feature, letting you track how your visitors use your internal website search engine. By default, Piwik can read URL parameters that will contain the search keyword. However, you can also record the site search keyword manually using the JavaScript function `trackSiteSearch(...)`
+Matomo offers advanced [Site Search Analytics](https://matomo.org/docs/site-search/) feature, letting you track how your visitors use your internal website search engine. By default, Matomo can read URL parameters that will contain the search keyword. However, you can also record the site search keyword manually using the JavaScript function `trackSiteSearch(...)`
 
-In your website, in standard pages, you would typically have a call to record Page views via `matomoTracker.trackPageView()`. On your search result page, you would call **instead** `piwikTracker.trackSiteSearch(keyword, category, searchCount)` function to record the internal search request. Note: the 'keyword' parameter is required, but category and searchCount are optional.
+In your website, in standard pages, you would typically have a call to record Page views via `matomoTracker.trackPageView()`. On your search result page, you would call **instead** `matomoTracker.trackSiteSearch(keyword, category, searchCount)` function to record the internal search request. Note: the 'keyword' parameter is required, but category and searchCount are optional.
 
 ```javascript
 _paq.push(['trackSiteSearch',
@@ -199,7 +199,7 @@ _paq.push(['trackSiteSearch',
 // _paq.push(['trackPageView']);
 ```
 
-We also highly recommend setting the searchCount parameter, as Piwik will specifically report "No Result Keywords", ie. Keywords that were searched, but did not return any result. It is usually very interesting to know what users search for but can't find (yet?) on your website. Learn more about [Site Search Analytics in the User Doc](https://matomo.org/docs/site-search/).
+We also highly recommend setting the searchCount parameter, as Matomo will specifically report "No Result Keywords", ie. Keywords that were searched, but did not return any result. It is usually very interesting to know what users search for but can't find (yet?) on your website. Learn more about [Site Search Analytics in the User Doc](https://matomo.org/docs/site-search/).
 
 ## Custom variables
 
@@ -214,7 +214,7 @@ There are two "scopes" which you can set your custom variables to. The "scope" i
 
 The "index" parameter is the custom variable slot index, an integer from 1 to 5. (note: [read this FAQ](https://matomo.org/faq/how-to/faq_17931/) if you need more than the default 5 slots).
 
-Custom variable statistics are reported in Piwik under **Visitors &gt; custom variables**. Both custom variables of scope "visit" and "page" are aggregated in this report.
+Custom variable statistics are reported in Matomo under **Visitors &gt; custom variables**. Both custom variables of scope "visit" and "page" are aggregated in this report.
 
 ### Custom variables for visits
 
@@ -249,7 +249,7 @@ You only need to set a variable with scope "visit" once, and the value will be r
 setCustomVariable(index, name, value, scope = "page")
 ```
 
-As well as tracking custom variables for "visits", it is sometimes useful to track custom variables for each page view separately. For example, for a "News" website or blog, a given article may be categorized into one or several categories. In this case, you could set one or several custom variables with `name="category"`, one with `value="Sports"` and another with `value="Europe"` if the article is classified in Sports and Europe Categories. The custom variables report will then report on how many visits and page views were in each of your website's categories. This information can be difficult to obtain with standard Piwik reports because they report on "Best Page URLs" and "Best Page Titles" which might not contain the "category" information.
+As well as tracking custom variables for "visits", it is sometimes useful to track custom variables for each page view separately. For example, for a "News" website or blog, a given article may be categorized into one or several categories. In this case, you could set one or several custom variables with `name="category"`, one with `value="Sports"` and another with `value="Europe"` if the article is classified in Sports and Europe Categories. The custom variables report will then report on how many visits and page views were in each of your website's categories. This information can be difficult to obtain with standard Matomo reports because they report on "Best Page URLs" and "Best Page Titles" which might not contain the "category" information.
 
 ```javascript
 // Track 2 custom variables with the same name, but in different slots.
@@ -289,7 +289,7 @@ deleteCustomVariable(index, scope)
 
 If you created a custom variable and then decide to remove this variable from a visit or page view, you can use deleteCustomVariable.
 
-To persist the change in the Piwik server, you must call the function before the call to `trackPageView();`
+To persist the change in the Matomo server, you must call the function before the call to `trackPageView();`
 
 ```javascript
 _paq.push(['deleteCustomVariable', 1, "visit"]); // Delete the variable in index 1 stored for the current visit
@@ -304,7 +304,7 @@ getCustomVariable(index, scope)
 
 This function can be used to get the custom variable name and value. By default, it will only work for custom variables that were set during the same page load.
 
-Note: it is possible to configure Piwik so that `getCustomVariable` will also return the name and value of a custom variable of scope "visit", even when it was set in a previous pageview in the same visit. To enable this behavior, call the JavaScript function `storeCustomVariablesInCookie` before the call to `trackPageView`. This will enable the storage of Custom Variables of scope "visit" in a first party cookie. The custom variables cookie will be valid for the duration of the visit (30 minutes after the last action). You can then retrieve the custom variable names and values using `getCustomVariable`. If there is no custom variable in the requested index, it will return false.
+Note: it is possible to configure Matomo so that `getCustomVariable` will also return the name and value of a custom variable of scope "visit", even when it was set in a previous pageview in the same visit. To enable this behavior, call the JavaScript function `storeCustomVariablesInCookie` before the call to `trackPageView`. This will enable the storage of Custom Variables of scope "visit" in a first party cookie. The custom variables cookie will be valid for the duration of the visit (30 minutes after the last action). You can then retrieve the custom variable names and values using `getCustomVariable`. If there is no custom variable in the requested index, it will return false.
 
 ```javascript
 _paq.push([ function() {
@@ -321,7 +321,7 @@ _paq.push(['trackPageView']);
 
 ## Custom Dimensions
 
-[Custom Dimensions](https://matomo.org/docs/custom-dimensions/) are a powerful feature that enable you to track custom values for each visit, and/or each action (page view, outlink, download). This feature is not shipped with Piwik directly but can be installed as a plugin via the [Piwik Marketplace (CustomDimensions plugin)](https://plugins.matomo.org/CustomDimensions). Before you can use a Custom Dimension you need to install the plugin and configure at least one dimension, see the [Custom Dimensions guide](https://matomo.org/docs/custom-dimensions/). You will get a numeric ID for each configured Custom Dimension which can be used to set a value for it.
+[Custom Dimensions](https://matomo.org/docs/custom-dimensions/) are a powerful feature that enable you to track custom values for each visit, and/or each action (page view, outlink, download). This feature is bundled with Matomo as a core plugin (CustomDimensions). Before you can use a Custom Dimension you need to configure at least one dimension, see the [Custom Dimensions guide](https://matomo.org/docs/custom-dimensions/). You will get a numeric ID for each configured Custom Dimension which can be used to set a value for it.
 
 ### Tracking a Custom Dimension across tracking requests
 
@@ -376,11 +376,11 @@ This function can be used to get the value of a Custom Dimension. It will only w
 
 ## User ID
 
-[User ID](https://matomo.org/docs/user-id/) is a feature in Piwik that lets you connect together a given user's data collected from multiple devices and multiple browsers. There are two steps to implementing User ID:
+[User ID](https://matomo.org/docs/user-id/) is a feature in Matomo that lets you connect together a given user's data collected from multiple devices and multiple browsers. There are two steps to implementing User ID:
 
 - You must assign a unique and persistent non-empty string that represents each logged-in user. Typically, this ID will be an email address or a username provided by your authentication system.
 - You must set the user ID for each pageview, otherwise the pageview will be tracked without the user ID set.  
-- You must then pass this User ID string to Piwik via the `setUserId` method call just before calling any of the `track*` functions (`trackPageview`, `trackEvent`, `trackGoal`, `trackSiteSearch`, etc.) for example:
+- You must then pass this User ID string to Matomo via the `setUserId` method call just before calling any of the `track*` functions (`trackPageview`, `trackEvent`, `trackGoal`, `trackSiteSearch`, etc.) for example:
 
 ```javascript
 _paq.push(['setUserId', 'USER_ID_HERE']);
@@ -391,7 +391,7 @@ Note: `USER_ID_HERE` must be a unique and persistent non-empty string that repre
 
 ### When user is logged in, set the User ID
 
-Let's take an example. Imagine that your website authenticate your users via a login form using a PHP script. Here is what your Piwik JavaScript snippet may look like:
+Let's take an example. Imagine that your website authenticate your users via a login form using a PHP script. Here is what your Matomo JavaScript snippet may look like:
 
 ```javascript
 var _paq = window._paq = window._paq || [];
@@ -508,15 +508,15 @@ div.addEventListener('click', function () {
 });
 ```
 
-Be aware that each call to those methods will send one request to your Piwik tracker instance. Doing this too many times can cause performance problems.
+Be aware that each call to those methods will send one request to your Matomo tracker instance. Doing this too many times can cause performance problems.
 
 ## Measuring domains and/or sub-domains
 
-Whether you are tracking one domain, or a subdomain, or both at the same time, etc. you may need to configure the Piwik JavaScript tracking code. There are two things that may need to be configured: 1) how tracking cookies are created and shared, and 2) which clicks should be tracked as 'Outlinks'.
+Whether you are tracking one domain, or a subdomain, or both at the same time, etc. you may need to configure the Matomo JavaScript tracking code. There are two things that may need to be configured: 1) how tracking cookies are created and shared, and 2) which clicks should be tracked as 'Outlinks'.
 
 ### Tracking one domain
 
-This is the standard use case. Piwik tracks the visits of one domain name with no subdomain, in a single Piwik website.
+This is the standard use case. Matomo tracks the visits of one domain name with no subdomain, in a single Matomo website.
 
 ```javascript
 // Default Tracking code
@@ -529,7 +529,7 @@ If you are tracking one specific subdomain, this default tracking code also work
 
 ### Tracking one domain and its subdomains in the same website
 
-To record users across the main domain name and any of its subdomains, we tell Piwik to share the cookies across all subdomains. `setCookieDomain()` is called in the Piwik tracking code in example.com/* and all subdomains.
+To record users across the main domain name and any of its subdomains, we tell Matomo to share the cookies across all subdomains. `setCookieDomain()` is called in the Matomo tracking code in example.com/* and all subdomains.
 
 ```javascript
 _paq.push(['setSiteId', 1]);
@@ -538,23 +538,23 @@ _paq.push(['setTrackerUrl', u+'matomo.php']);
 // Share the tracking cookie across example.com, www.example.com, subdomain.example.com, ...
 _paq.push(['setCookieDomain', '*.example.com']);
 
-// Tell Piwik the website domain so that clicks on these domains are not tracked as 'Outlinks'
+// Tell Matomo the website domain so that clicks on these domains are not tracked as 'Outlinks'
 _paq.push(['setDomains', '*.example.com']);
 
 _paq.push(['trackPageView']);
 ```
 ### Tracking your visitors across multiple domain names in the same website
 
-To accurately track a visitor across different domain names into a single visit within one Piwik website, we need to set up what is called Cross Domain linking. Cross domain tracking in Piwik makes sure that when the visitor visits multiple websites and domain names, the visitor data will be stored in the same visit and that the visitor ID is reused across domain names. A typical use case where cross domain is needed is, for example, when an ecommerce online store is on `www.awesome-shop.com` and the ecommerce shopping cart technology is on another domain such as `secure.cart.com`.
+To accurately track a visitor across different domain names into a single visit within one Matomo website, we need to set up what is called Cross Domain linking. Cross domain tracking in Piwik makes sure that when the visitor visits multiple websites and domain names, the visitor data will be stored in the same visit and that the visitor ID is reused across domain names. A typical use case where cross domain is needed is, for example, when an ecommerce online store is on `www.awesome-shop.com` and the ecommerce shopping cart technology is on another domain such as `secure.cart.com`.
 
 Cross domain linking uses a combination of the two tracker methods `setDomains` and `enableCrossDomainLinking`. Learn how to set up cross-domain linking in our guide: [How do I accurately measure a same visitor across multiple domain names (cross domain linking)?](https://matomo.org/faq/how-to/faq_23654/)
 
 
 ### Tracking subdirectories of a domain in separate websites
 
-When tracking subdirectories of a domain in their own separate Piwik website, it is recommended to customise the tracking code to ensure optimal data accuracy and performance.
+When tracking subdirectories of a domain in their own separate Matomo website, it is recommended to customise the tracking code to ensure optimal data accuracy and performance.
 
-For example, if your website offers a 'User profile' functionality, you may wish to track each user profile pages in a separate website in Piwik. In the main domain homepage, you would use the default tracking code:
+For example, if your website offers a 'User profile' functionality, you may wish to track each user profile pages in a separate website in Matomo. In the main domain homepage, you would use the default tracking code:
 
 ```javascript
 // idSite = X for the Homepage
@@ -574,7 +574,7 @@ _paq.push(['setSiteId', Y]);
 // Create the tracking cookie specifically in `example.com/user/MyUsername`
 _paq.push(['setCookiePath', '/user/MyUsername']);
 
-// Tell Piwik the website domain so that clicks on other pages (eg. /user/AnotherUsername) will be tracked as 'Outlinks'
+// Tell Matomo the website domain so that clicks on other pages (eg. /user/AnotherUsername) will be tracked as 'Outlinks'
 _paq.push(['setDomains', 'example.com/user/MyUsername']);
 
 _paq.push(['setTrackerUrl', u+'matomo.php']);
@@ -611,13 +611,13 @@ Notes:
 * since the wildcard can match several paths, calls to `setCookieDomain` or `setCookiePath` are omitted to ensure tracking cookie is correctly shared for all pages matching the wildcard.
 
 
-For more information about tracking websites and subdomains in Piwik, see the FAQ: [How to configure Piwik to monitor several websites, domains and sub-domains](https://matomo.org/faq/new-to-piwik/#faq_104)
+For more information about tracking websites and subdomains in Matomo, see the FAQ: [How to configure Matomo to monitor several websites, domains and sub-domains](https://matomo.org/faq/new-to-piwik/#faq_104)
 
 ## Download and Outlink tracking
 
 ### Enabling Download & Outlink tracking
 
-The default Piwik JavaScript tracker code automatically enables the download & outlink tracking automatically, which is done by calling the `enableLinkTracking` function:
+The default Matomo JavaScript tracker code automatically enables the download & outlink tracking automatically, which is done by calling the `enableLinkTracking` function:
 
 ```javascript
 
@@ -643,7 +643,7 @@ _paq(['setDomains', ["*.hostname1.com", "hostname2.com"]]);
 _paq.push(['trackPageView']);
 ```
 
-Since Piwik 2.15.1 you may also append a path to a domain and Piwik will correctly detect links to the same domain but different path as an outlink.
+You may also append a path to a domain and Matomo will correctly detect links to the same domain but different path as an outlink.
 
 ```javascript
 // Don't track Outlinks on all clicks pointing to *.hostname1.com/product1/* or *.hostname2.com/product1/*
@@ -655,7 +655,7 @@ Learn more about this use case [Tracking subdirectories of a domain in separate 
 
 ### Tracking a click as an outlink via CSS or JavaScript
 
-If you want to force Piwik to consider a link as an outlink (links to the current domain or to one of the alias domains), you can add the `matomo_link` or `piwik_link` css class to the link:
+If you want to force Matomo to consider a link as an outlink (links to the current domain or to one of the alias domains), you can add the `matomo_link` or `piwik_link` css class to the link:
 
 ```html
 <a href='https://mysite.com/partner/' class='matomo_link'>Link I want to track as an outlink</a>
@@ -680,7 +680,7 @@ Alternatively, you can use JavaScript to manually trigger a click on an outlink 
 
 ### Tracking file downloads
 
-By default, any file ending with one of these extensions will be considered a 'download' in the Piwik interface:
+By default, any file ending with one of these extensions will be considered a 'download' in the Matomo interface:
 
 ```
 7z|aac|arc|arj|apk|asf|asx|avi|bin|bz|bz2|csv|deb|dmg|doc|
@@ -720,7 +720,7 @@ _paq.push(['trackPageView']);
 
 ### Recording a click as a download
 
-If you want to force Piwik to consider a link as a download, you can add the `matomo_download` or `piwik_download` css class to the link:
+If you want to force Matomo to consider a link as a download, you can add the `matomo_download` or `piwik_download` css class to the link:
 
 ```html
 <a href='last.php' class='matomo_download'>Link I want to track as a download</a>
@@ -745,7 +745,7 @@ Alternatively, you can use JavaScript to manually trigger a click on a download.
 
 ### Changing the Pause Timer
 
-When a user clicks to download a file, or clicks on an outbound link, Piwik records it. In order to do so, it adds a small delay before the user is redirected to the requested file or link. The default value is 500ms, but you can set it to a shorter length of time. It should be noted, however, that doing so results in the risk that this period of time is not long enough for the data to be recorded in Piwik.
+When a user clicks to download a file, or clicks on an outbound link, Matomo records it. In order to do so, it adds a small delay before the user is redirected to the requested file or link. The default value is 500ms, but you can set it to a shorter length of time. It should be noted, however, that doing so results in the risk that this period of time is not long enough for the data to be recorded in Matomo.
 
 ```javascript
 _paq.push(['setLinkTrackingTimer', 250]); // 250 milliseconds
@@ -756,7 +756,7 @@ _paq.push(['trackPageView']);
 
 ### Disabling Download & Outlink tracking
 
-By default, the Piwik tracking code enables clicks and download tracking. To disable all automatic download and outlink tracking, you must remove the call to the `enableLinkTracking()` function:
+By default, the Matomo tracking code enables clicks and download tracking. To disable all automatic download and outlink tracking, you must remove the call to the `enableLinkTracking()` function:
 
 ```javascript
 _paq.push(['trackPageView']);
@@ -871,15 +871,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 </script>
 ```
 
-## Multiple Piwik trackers
+## Multiple Matomo trackers
 
-By default, the Piwik JavaScript Tracking code collects your analytics data into one Piwik server. The Piwik service URL is specified in your JavaScript Tracking code (for example: `var u="//matomo.example.org";`). In some cases, you may want to track your analytics data into more than just one Piwik server or into multiple websites on the same Piwik server.
+By default, the Matomo JavaScript Tracking code collects your analytics data into one Matomo server. The Matomo service URL is specified in your JavaScript Tracking code (for example: `var u="//matomo.example.org";`). In some cases, you may want to track your analytics data into more than just one Matomo server or into multiple websites on the same Matomo server.
 
 *If you haven't upgraded yet to Piwik 2.16.2 or later, please upgrade now! (Instructions for 2.16.1 or older versions are found below.)*
 
-### Duplicate your data into different websites in one Piwik server
+### Duplicate your data into different websites in one Matomo server
 
-You may need to collect a duplicate of your web analytics data into the same Piwik server, but in another website.
+You may need to collect a duplicate of your web analytics data into the same Matomo server, but in another website.
 
 #### Recommended solution: use RollUp Reporting plugin
 
@@ -887,7 +887,7 @@ When you need to duplicate data into another website, or consolidate several web
 
 #### Alternative solution: duplicate the tracking data
 
-Alternative to using the RollUp Reporting plugin, you can duplicate the tracking data. To duplicate the data you can call `addTracker` with a Piwik URL and your website ID where to duplicate the data. This method is simpler than adding the JavaScript tracking code twice on the page.
+Alternative to using the RollUp Reporting plugin, you can duplicate the tracking data. To duplicate the data you can call `addTracker` with a Matomo URL and your website ID where to duplicate the data. This method is simpler than adding the JavaScript tracking code twice on the page.
 
 ```js
   var u="//matomo.example.org/";
@@ -901,11 +901,11 @@ Alternative to using the RollUp Reporting plugin, you can duplicate the tracking
   // Your data is now tracked in both website ID 1 and website 7 into your piwik.example.org server!
 ```
 
-As this solution causes every visitor's event, pageview, etc. to be tracked twice in your Piwik server, we generally do not recommend it.
+As this solution causes every visitor's event, pageview, etc. to be tracked twice in your Matomo server, we generally do not recommend it.
 
-### Collect your analytics data into two or more Piwik servers
+### Collect your analytics data into two or more Matomo servers
 
-The example below shows how to use `addTracker`  method to track the same analytics data into a second Piwik server. The main Piwik server is `piwik.example.org/matomo.php` where the data is stored into website ID `1`. The second Piwik server is `analytics.example.com/matomo.php` where the data is stored into website ID `77`. When you implement this in your website, please replace these two Matomo URLs and Matomo website IDs with your own Matomo URLs and website IDs.
+The example below shows how to use `addTracker`  method to track the same analytics data into a second Matomo server. The main Matomo server is `piwik.example.org/matomo.php` where the data is stored into website ID `1`. The second Matomo server is `analytics.example.com/matomo.php` where the data is stored into website ID `77`. When you implement this in your website, please replace these two Matomo URLs and Matomo website IDs with your own Matomo URLs and website IDs.
 
 ```html
 <script type="text/javascript">
@@ -918,11 +918,11 @@ The example below shows how to use `addTracker`  method to track the same analyt
     _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', '1']);
 
-    // Add this code below within the Piwik JavaScript tracker code
+    // Add this code below within the Matomo JavaScript tracker code
     // Important: the tracker url includes the /matomo.php
     var secondaryTrackerUrl = 'https://analytics.example.com/matomo.php';
     var secondaryWebsiteId = 77;
-    // Also send all of the tracking data to this other Piwik server, in website ID 77
+    // Also send all of the tracking data to this other Matomo server, in website ID 77
     _paq.push(['addTracker', secondaryTrackerUrl, secondaryWebsiteId]);
     // That's it!
 
@@ -934,11 +934,11 @@ The example below shows how to use `addTracker`  method to track the same analyt
 
 ### Customise one of the tracker object instances
 
-Note: by default any tracker added via `addTracker` is configured the same as the main default tracker object (regarding cookies, custom dimensions, user id, download & link tracking, domains and sub-domains, etc.). If you want to configure one of the Piwik tracker object instances that was added via `addTracker`, you may call the `Matomo.getAsyncTracker(optionalMatomoUrl, optionalPiwikSiteId)`  method. This method returns the tracker instance object which you can configure differently than the main JavaScript tracker object instance.
+Note: by default any tracker added via `addTracker` is configured the same as the main default tracker object (regarding cookies, custom dimensions, user id, download & link tracking, domains and sub-domains, etc.). If you want to configure one of the Matomo tracker object instances that was added via `addTracker`, you may call the `Matomo.getAsyncTracker(optionalMatomoUrl, optionalPiwikSiteId)`  method. This method returns the tracker instance object which you can configure differently than the main JavaScript tracker object instance.
 
 ### Duplicate the tracking data when calling the JavaScript API directly (not via `_paq.push`)
 
-It is possible to track your analytics data into either a different website ID on the same server or you may record a copy of your data into another Piwik server altogether. Each call to `Matomo.getTracker()` returns a unique Piwik Tracker object (instance) which can be configured.
+It is possible to track your analytics data into either a different website ID on the same server or you may record a copy of your data into another Matomo server altogether. Each call to `Matomo.getTracker()` returns a unique Matomo Tracker object (instance) which can be configured.
 
 ```html
 <script type="text/javascript">
@@ -953,7 +953,7 @@ It is possible to track your analytics data into either a different website ID o
 </script>
 ```
 
-The `matomoAsyncInit()` method will be executed once the Piwik tracker is loaded and initialized. In earlier versions you must load Piwik synchronous.
+The `matomoAsyncInit()` method will be executed once the Matomo tracker is loaded and initialized. In earlier versions you must load Matomo synchronous.
 
 
 ## JavaScript Tracker Reference
@@ -962,13 +962,13 @@ View all features of the Tracking client in the [JavaScript Tracker Reference](/
 
 ## Frequently Asked Questions
 
-If you have any question about JavaScript Tracking in Piwik, [please search the website](https://matomo.org/), or [ask in the forums](https://forum.matomo.org).
+If you have any question about JavaScript Tracking in Matomo, [please search the website](https://matomo.org/), or [ask in the forums](https://forum.matomo.org).
 
 - [How do I enable tracking for users without JavaScript?](https://matomo.org/faq/how-to/faq_176/)
-- [How does Piwik track downloads?](https://matomo.org/faq/new-to-piwik/faq_47/)
+- [How does Matomo track downloads?](https://matomo.org/faq/new-to-piwik/faq_47/)
 - [How to track single-page websites and web applications](https://matomo.org/blog/2017/02/how-to-track-single-page-websites-using-piwik-analytics/)
 - [How to track error pages and get the list of 404 and referrers urls.](https://matomo.org/faq/how-to/faq_60/)
 - [How can I set custom groups of pages (structure) so that page view are aggregated by categories?](https://matomo.org/faq/how-to/faq_62/)
-- [How do I set up Piwik to track multiple websites without revealing the Piwik server URL footprint in JS?](https://matomo.org/faq/how-to/faq_132/)
+- [How do I set up Matomo to track multiple websites without revealing the Matomo server URL footprint in JS?](https://matomo.org/faq/how-to/faq_132/)
 - [How do I customise the matomo.js being loaded on all my websites?](https://matomo.org/faq/how-to/faq_19087/)
-- [How do I disable all tracking cookies used by Piwik in the javascript code?](https://matomo.org/faq/general/faq_157/)
+- [How do I disable all tracking cookies used by Matomo in the javascript code?](https://matomo.org/faq/general/faq_157/)
