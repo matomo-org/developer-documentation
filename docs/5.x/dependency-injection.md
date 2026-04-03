@@ -138,7 +138,7 @@ Given that you have the following class:
 ```php
 class LineMessageFormatter
 {
-    public function __construct($logFormat)
+    public function __construct($logMessageFormat)
     {
         // ...
     }
@@ -159,7 +159,7 @@ or
 ```php
 return array(
     'Piwik\Plugins\Monolog\Formatter\LineMessageFormatter' => Piwik\DI::autowire()
-        ->constructorParameter('logFormat', Piwik\DI::get('log.format')),
+        ->constructorParameter('logMessageFormat', Piwik\DI::get('log.format')),
 );
 ```
 
