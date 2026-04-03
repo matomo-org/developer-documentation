@@ -3,21 +3,21 @@ category: DevelopInDepth
 ---
 # Controllers
 
-In Piwik, Controllers are the objects responsible for outputting HTML. Every plugin that wants to output HTML should define its own Controller that extends [Piwik\Plugin\Controller](/api-reference/Piwik/Plugin/Controller).
+In Matomo, Controllers are the objects responsible for outputting HTML. Every plugin that wants to output HTML should define its own Controller that extends [Piwik\Plugin\Controller](/api-reference/Piwik/Plugin/Controller).
 
 Every public method in a controller is exposed and can be called through an HTTP request. **When creating your controller, care should be taken to avoid exposing methods that don't need to be. It may be possible for an attacker to use these methods.**
 
 ## Controller output
 
-Controller methods should `return` their output (as opposed to `echo`ing it). Piwik will assume the output is HTML and will automatically take care of the appropriate HTTP response headers. If you want to output something other than HTML you will have to use the `Content-Type` HTTP response header. For example:
+Controller methods should `return` their output (as opposed to `echo`ing it). Matomo will assume the output is HTML and will automatically take care of the appropriate HTTP response headers. If you want to output something other than HTML you will have to use the `Content-Type` HTTP response header. For example:
 
 ```php
 @header('Content-Type: application/json; charset=utf-8');
 ```
 
-## Using controller methods in the Piwik UI
+## Using controller methods in the Matomo UI
 
-Adding a controller method to a plugin's controller will allow it to be executed via an HTTP request, but it won't automatically show it in the Piwik UI somewhere. There are two ways to make the result of a controller method appear in the Piwik UI:
+Adding a controller method to a plugin's controller will allow it to be executed via an HTTP request, but it won't automatically show it in the Matomo UI somewhere. There are two ways to make the result of a controller method appear in the Matomo UI:
 
 * add a new menu item that links to the controller method
 * use AJAX to invoke the controller method and then display the result
@@ -26,11 +26,11 @@ Here's how you do both:
 
 ### Adding controller methods as menu items
 
-To add menu items in Piwik, read [the following guide](https://matomo.org/blog/2014/09/add-new-page-menu-item-piwik-introducing-piwik-platform/).
+To add menu items in Matomo, read [the following guide](https://matomo.org/blog/2014/09/add-new-page-menu-item-piwik-introducing-piwik-platform/).
 
 ### Invoking controller methods via AJAX
 
-If you have your own custom JavaScript running on Piwik you can use AJAX to dynamically invoke controller methods and display the result.
+If you have your own custom JavaScript running on Matomo you can use AJAX to dynamically invoke controller methods and display the result.
 
 For example:
 
@@ -60,7 +60,7 @@ Unlike API methods, controller methods do not take query parameters as input. If
 
 ### Generating Output
 
-As a plugin developer you are welcome to generate your output in any way you'd like (as long as it's secure), there is nothing in Piwik that will force you to code a certain way. That being said, most Piwik controller methods will have the following convention:
+As a plugin developer you are welcome to generate your output in any way you'd like (as long as it's secure), there is nothing in Matomo that will force you to code a certain way. That being said, most Matomo controller methods will have the following convention:
 
 ```php
 public function myControllerAction()
