@@ -19,7 +19,7 @@ Matomo defines 4 types of permissions:
 
 - [**admin permission**](https://matomo.org/faq/general/faq_69/): applies to a specific site
 
-    With that permission, a user can view and configure a given site (name, URLs, timezone, etc.). They can also grant other users the "view" or "admin" permission.
+    With that permission, a user can view and configure a given site (name, URLs, timezone, etc.). They can also grant other users the "view", "write", or "admin" permission.
 
 - [**super user permission**](https://matomo.org/faq/general/faq_35/): applies to **whole Matomo** (all sites)
 
