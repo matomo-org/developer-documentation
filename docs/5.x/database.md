@@ -16,7 +16,7 @@ There are various methods available to query data like:
 * `fetchOne` - return only one value
 * `fetchRow` - return only one row as an array
 * `fetchAll` - return all matching rows as an array
-* `query`    - returns a [Zend_Db_Statement](http://framework.zend.com/manual/1.12/en/zend.db.statement.html) which lets you iterate over each row, get the row count, and more.
+* `query`    - returns a [Zend_Db_Statement](https://framework.zend.com/manual/1.12/en/zend.db.statement.html) which lets you iterate over each row, get the row count, and more.
 
 All of these support binding parameters using place holders (`?`) for security to prevent SQL injections, for example:
 
