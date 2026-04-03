@@ -226,7 +226,7 @@ Plugins sometimes define their own version of this test.
 
 * When possible prefer using `assertSame` over `assertEquals` so it does an exact comparison (including type)
 * Know the other methods like instead of `$this->assertSame(1, count($array))` use `$this->assertCount(1, $array)`
-* See the [full list of available assertions](https://phpunit.readthedocs.io/en/9.5/assertions.html).
+* See the [full list of available assertions](https://phpunit.readthedocs.io/en/8.5/assertions.html).
 
 ### Compare the entire variable 
 
@@ -330,7 +330,7 @@ This ensures that the test execution won't stop in the middle if one of them fai
 
 ### Related links
 
-* [Writing tests for PHP Unit](https://phpunit.readthedocs.io/en/9.5/writing-tests-for-phpunit.html)
+* [Writing tests for PHP Unit](https://phpunit.readthedocs.io/en/8.5/writing-tests-for-phpunit.html)
 * [Five Tips to Improve Your Unit Testing](https://kore-nordmann.de/blog/105_five_tips_improve_unit_testing.html)
 * [Testing the untestable](https://kore-nordmann.de/blog/102_testing_the_untestable.html)
 
