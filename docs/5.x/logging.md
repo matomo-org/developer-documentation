@@ -5,17 +5,17 @@ category: Develop
 
 <div class="alert alert-info" markdown="1">
 <strong>Since v2.11:</strong>
-the API described here has been introduced in Piwik 2.11 and doesn't apply to previous versions.
+the API described here has been introduced in Matomo 2.11 and doesn't apply to previous versions.
 </div>
 
-Logging is the action of recording events which happen while Piwik is running. It is intended to:
+Logging is the action of recording events which happen while Matomo is running. It is intended to:
 
-- let users monitor the health of their Piwik installation by being able to know when minor or major errors happen
+- let users monitor the health of their Matomo installation by being able to know when minor or major errors happen
 - help users debug problems by having a detailed account of events leading to an error
 
-To log messages, Piwik uses the standardized `Psr\Log\LoggerInterface` ([PSR-3 standard](https://www.php-fig.org/psr/psr-3/)). This PHP standard lets Piwik developers use the standard interface, leaving the possibility to switch from and to *any* compatible PHP logger.
+To log messages, Matomo uses the standardized `Psr\Log\LoggerInterface` ([PSR-3 standard](https://www.php-fig.org/psr/psr-3/)). This PHP standard lets Matomo developers use the standard interface, leaving the possibility to switch from and to *any* compatible PHP logger.
 
-The PSR-3 implementation that Piwik has chosen is [Monolog](https://github.com/Seldaek/monolog). Monolog is a robust and very customizable logger used by Symfony, Silex, Laravel…
+The PSR-3 implementation that Matomo has chosen is [Monolog](https://github.com/Seldaek/monolog). Monolog is a robust and very customizable logger used by Symfony, Silex, Laravel…
 
 ## How to log messages
 
@@ -73,7 +73,7 @@ If an exception occurs, you have two choices:
 - catch it
 - not catch it and let it bubble
 
-If an exception happens and everything should be stopped and an error page should be shown, you should not catch the exception. Let it bubble and Piwik will catch it and display the exception message to the user.
+If an exception happens and everything should be stopped and an error page should be shown, you should not catch the exception. Let it bubble and Matomo will catch it and display the exception message to the user.
 
 If an exception happens but the current action should not be interrupted, you should catch the exception. If the exception was an expected case, you probably shouldn't log it. You should only log it if it's an unexpected situation that the user should be aware of.
 
@@ -93,4 +93,4 @@ In this example, we log to `error` level, but we caught the exception: the curre
 
 ### Viewing logs
 
-To view the logs, we recommend using our [LogViewer plugin](https://plugins.matomo.org/LogViewer): learn more in [How do I view Piwik application logs?](https://matomo.org/faq/how-to/faq_20991/)
+To view the logs, we recommend using our [LogViewer plugin](https://plugins.matomo.org/LogViewer): learn more in [How do I view Matomo application logs?](https://matomo.org/faq/how-to/faq_20991/)
