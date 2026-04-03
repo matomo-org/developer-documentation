@@ -144,7 +144,7 @@ or to run every UI test for a plugin:
 $ ./console tests:run-ui --plugin=MyPlugin
 ```
 
-After running the tests for the first time you will notice a new folder `plugins/PLUGINNAME/tests/UI/processed-ui-screenshots` in your plugin. If everything worked, there will be an image for every captured screenshot. If you're happy with the result it is time to copy the file over to the `expected-ui-screenshots` folder, otherwise you have to adjust your test until you get the result you want. From now on, the newly captured screenshots will be compared with the expected images whenever you execute the tests.
+After running the tests for the first time you will notice a new folder `plugins/PLUGINNAME/tests/UI/processed-ui-screenshots` in your plugin. If everything worked, there will be an image for every captured screenshot. If you're happy with the result it is time to copy the file over to the `expected-screenshots` folder, otherwise you have to adjust your test until you get the result you want. From now on, the newly captured screenshots will be compared with the expected images whenever you execute the tests.
 
 Some fixtures can take a long while to set up. You can save time by using the `persist-fixture-data` flag, which means the fixture teardown and setup will be skipped and the test database from the previous execution will be used:
 
@@ -164,7 +164,7 @@ The following options may be useful if you plan on running the UI tests locally 
 
 ### Fixing a test
 
-At some point your UI test will fail, for example due to expected CSS changes. To fix a test all you have to do is to copy the captured screenshot from the folder `processed-ui-screenshots` to the folder `expected-ui-screenshots`.
+At some point your UI test will fail, for example due to expected CSS changes. To fix a test all you have to do is to copy the captured screenshot from the folder `processed-ui-screenshots` to the folder `expected-screenshots`.
 
 ## Writing a UI test in depth
 
