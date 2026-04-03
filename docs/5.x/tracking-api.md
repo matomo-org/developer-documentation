@@ -183,7 +183,7 @@ Note: the user of the HTTP API is responsible for determining the source locatio
 
 ## Tracking Bots
 
-As of Matomo 5.7.0, Matomo can record requests from automated agents, allowing you to analyse bot activity separately from normal visits.
+As of Matomo 5.8.0, Matomo can record requests from automated agents, allowing you to analyse bot activity separately from normal visits.
 
 _Note: Currently bot activity tracking is limited to user triggered AI Assistants, such as ChatGPT-User, Perplexity-User and others. Other bot requests will be detected, but discarded._
 
