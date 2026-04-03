@@ -26,7 +26,7 @@ Matomo's **Reporting API** allows third party applications to access analytics d
 
 ### API Requests
 
-Every HTTP API request to the `API.index` controller method will be handled by the Reporting API. Valid requests **must** have a query parameter named `method` that references the API method to invoke, for example, `UserSettings.getBrowser`.
+Every HTTP API request to the `API.index` controller method will be handled by the Reporting API. Valid requests **must** have a query parameter named `method` that references the API method to invoke, for example, `DevicesDetection.getBrowsers`.
 
 API requests are processed in the following way:
 
@@ -143,7 +143,7 @@ Report metadata can also be used within Matomo for features that operate on repo
 
 ### Row Evolution
 
-Matomo's [row evolution feature](https://demo.matomo.org/index.php?module=CoreHome&action=index&idSite=62&period=day&date=yesterday#module=UserSettings&action=index&idSite=7&period=day&date=yesterday&popover=RowAction$3ARowEvolution$3AUserSettings.getConfiguration$3A0$3AWindows$25207$2520$252F$2520Chrome$2520$252F$25201920x1080) that is available through the UI is also available through the Reporting API. Third party applications can use the **API.getRowEvolution** method to get both [single row evolution data](https://demo.matomo.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=UserSettings&apiAction=getOS&label=Windows+7) or [multi-row evolution data](https://demo.matomo.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=UserSettings&apiAction=getOS).
+Matomo's [row evolution feature](https://demo.matomo.org/index.php?module=CoreHome&action=index&idSite=62&period=day&date=yesterday#module=DevicesDetection&action=index&idSite=7&period=day&date=yesterday&popover=RowAction$3ARowEvolution$3ADevicesDetection.getOsVersions$3A0$3AWindows$252010) that is available through the UI is also available through the Reporting API. Third party applications can use the **API.getRowEvolution** method to get both [single row evolution data](https://demo.matomo.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=DevicesDetection&apiAction=getOsVersions&label=Windows+10) or [multi-row evolution data](https://demo.matomo.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=DevicesDetection&apiAction=getOsVersions).
 
 ### Bulk API Requests
 
@@ -151,11 +151,11 @@ Matomo's [row evolution feature](https://demo.matomo.org/index.php?module=CoreHo
 
 To send a bulk request, send an HTTP request to the **API.getBulkRequest** API method. The only required query parameter is named `urls`. It should be an array of individual API request URLs. For example:
 
-    https://demo.matomo.org/?module=API&method=API.getBulkRequest&format=xml&urls[]=module%3DAPI%26method%3DVisitorInterest.getNumberOfVisitsPerVisitDuration%26format%3DXML%26idSite%3D62%26period%3Dday%26date%3D2013-11-24%26expanded%3D1&urls[]=module%3DAPI%26method%3DUserSettings.getBrowser%26format%3DXML%26idSite%3D7%26period%3Dday%26date%3D2013-11-24%26expanded%3D1
+    https://demo.matomo.org/?module=API&method=API.getBulkRequest&format=xml&urls[]=module%3DAPI%26method%3DVisitorInterest.getNumberOfVisitsPerVisitDuration%26format%3DXML%26idSite%3D62%26period%3Dday%26date%3D2013-11-24%26expanded%3D1&urls[]=module%3DAPI%26method%3DDevicesDetection.getBrowsers%26format%3DXML%26idSite%3D62%26period%3Dday%26date%3D2013-11-24%26expanded%3D1
 
 This example uses the following API requests:
 
-- module=API&method=UserSettings.getBrowser&format=XML&idSite=62&period=day&date=2013-11-24&expanded=1
+- module=API&method=DevicesDetection.getBrowsers&format=XML&idSite=62&period=day&date=2013-11-24&expanded=1
 - module=API&method=VisitorInterest.getNumberOfVisitsPerVisitDuration&format=XML&idSite=62&period=day&date=2013-11-24&expanded=1
 
 **_Note: The separate API methods are executed synchronously, so for long-running API methods, using a bulk request may be a bad idea._**
