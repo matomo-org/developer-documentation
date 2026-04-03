@@ -138,6 +138,6 @@ Event handlers can read these optional values as follows:
 public function handleMyEventInATemplate(&$outString, $usefulVariable1, $usefulVariable2)
 {
     $outString .= '<h1>This text was injected!</h1>';
-    $outString .= $usefulVariable . ' - ' . $usefulVariable2;
+    $outString .= $usefulVariable1 . ' - ' . $usefulVariable2;
 }
 ```
