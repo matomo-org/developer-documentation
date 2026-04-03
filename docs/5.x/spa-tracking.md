@@ -115,7 +115,11 @@ restrict the re-scan to a specific area.
 If you use the [A/B Testing](https://matomo.org/docs/ab-testing/) feature to test your experiments, whenever a new page is displayed you need to embed the js code again before tracking a new pageview as explained below:
 
 ```javascript
-window.addEventListener('pathchange', function() {
+// Use the appropriate event for your SPA routing strategy:
+// - 'hashchange' for hash-based routing
+// - 'popstate' for History API-based routing
+// - or your framework's router hooks
+window.addEventListener('hashchange', function() {
    var _paq = window._paq = window._paq || [];
    _paq.push(['setCustomUrl', window.location.pathname]);
    _paq.push(['setDocumentTitle', document.title]);
