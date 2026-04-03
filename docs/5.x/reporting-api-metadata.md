@@ -87,7 +87,7 @@ URL: `index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=VisitsSummar
 
 URL: `index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=DevicesDetection&apiAction=getBrowsers&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250`
 
-*   Example: Horizontal Bar Graph Plotting Countries for the Current Week
+*   Example: Horizontal Bar Graph Plotting Countries for the Current Month
 
     ![](https://demo.matomo.cloud/index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=UserCountry&apiAction=getCountry&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=500&height=250)
 
