@@ -231,7 +231,7 @@ class MyVisualization extends Visualization
         $date = Common::getRequestVar('date');
         $yesterday = Date::factory($date)->subDay(1)->toString();
 
-        $this->config->request_parameters_to_modify['date'] = $yesterday;
+        $this->requestConfig->request_parameters_to_modify['date'] = $yesterday;
     }
 }
 ```
