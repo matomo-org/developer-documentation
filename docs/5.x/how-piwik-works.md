@@ -125,7 +125,7 @@ API requests are authenticated using a `token_auth` URL parameter and usually do
 
 ### The HTTP Tracking API
 
-This [HTTP tracking API](/api-reference/tracking-api) lets the JavaScript tracker **submit analytics data** to be saved in Piwik.
+This [HTTP tracking API](/api-reference/tracking-api) lets the JavaScript tracker **submit analytics data** to be saved in Matomo.
 
 Its entry point is different from Matomo's web application and HTTP reporting API: it is through the `matomo.php` file. Some older Matomo installations might still use `piwik.php`.
 
