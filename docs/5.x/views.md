@@ -33,9 +33,9 @@ The preferred way to generate anything text-based (like HTML) using data is to d
 
 ### Template storage and referencing
 
-Templates are stored in the `templates/` subdirectory of a plugin's root directory. When you create a [View](/api-reference/Piwik/View) instance you must tell it what template it should use using a string with the following format: `"@PluginName/TemplateFileName"`. Piwik will look for a file named `TemplateFileName.twig` in the **PluginName** plugin's `templates/` subdirectory.
+Templates are stored in the `templates/` subdirectory of a plugin's root directory. When you create a [View](/api-reference/Piwik/View) instance you must tell it what template it should use using a string with the following format: `"@PluginName/TemplateFileName"`. Matomo will look for a file named `TemplateFileName.twig` in the **PluginName** plugin's `templates/` subdirectory.
 
-Template files in Piwik have a very specific naming convention. If the file contains the output for a specific controller method, the file should be named after the method. For example, `myControllerMethod.twig`. In all other cases, the file should be named after what it contains and be prefixed with an underscore. For example, `_myEmbeddedWidget.twig`.
+Template files in Matomo have a very specific naming convention. If the file contains the output for a specific controller method, the file should be named after the method. For example, `myControllerMethod.twig`. In all other cases, the file should be named after what it contains and be prefixed with an underscore. For example, `_myEmbeddedWidget.twig`.
 
 ### Twig functions and filters
 
@@ -43,7 +43,7 @@ The [View](/api-reference/Piwik/View) class adds several filters and functions b
 
 ## UI Components and Styles
 
-Piwik has a UI demo page available. This page is intended to show all the UI components and styles available to use in Piwik. To view the demo page:
+Matomo has a UI demo page available. This page is intended to show all the UI components and styles available to use in Matomo. To view the demo page:
 
 1. Go to the Administration page (gear icon)
 2. In the navigation menu, under _Development_, select  _UI Demo_
