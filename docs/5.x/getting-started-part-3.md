@@ -252,19 +252,19 @@ We're not going to add any translation tokens to `en.json` this time because the
 
 ```php
 public static $availableDimensionsForAggregation = array(
-    'browser' => 'UserSettings_ColumnBrowser',
+    'browser' => 'DevicesDetection_ColumnBrowser',
     'visitIp' => 'General_IP',
     'visitorId' => 'General_VisitorID',
     'searches' => 'General_NbSearches',
-    'events' => 'Events_NbEvents',
+    'events' => 'Events_TotalEvents',
     'actions' => 'General_NbActions',
     'visitDurationPretty' => 'VisitorInterest_ColumnVisitDuration',
     'country' => 'UserCountry_Country',
     'region' => 'UserCountry_Region',
     'city' => 'UserCountry_City',
-    'operatingSystem' => 'UserSettings_ColumnOperatingSystem',
-    'screenType' => 'UserSettings_ColumnTypeOfScreen',
-    'resolution' => 'UserSettings_ColumnResolution'
+    'operatingSystem' => 'DevicesDetection_ColumnOperatingSystem',
+    'screenType' => 'DevicesDetection_DeviceType',
+    'resolution' => 'Resolution_ColumnResolution'
 
     // we could add more, but let's not waste time.
 );
