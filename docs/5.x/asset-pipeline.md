@@ -119,7 +119,7 @@ polyfill as this could result in a lot of extra JavaScript in our finished asset
 
 These polyfills are stored in the `plugins/CoreVue/polyfills` folder. This folder houses a separate Vue project
 that is built as a Vue app instead of a Vue library (all plugin `vue` folders are built as libraries). The specific
-polyfills we include are specified in the `plugins/CoreVue/polyfills/vue.config.js` file.
+polyfills we include are specified in the `plugins/CoreVue/polyfills/src/index.ts` file.
 
 Building the polyfill project is done via the `vue:build-polyfill` command. Only core developers will have
 to use this command and only when adding or removing polyfills.
