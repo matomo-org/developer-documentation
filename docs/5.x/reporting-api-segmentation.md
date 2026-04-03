@@ -4,7 +4,7 @@ title: Segmentation
 ---
 # Segmentation in the API
 
-Learn how to use the powerful segmentation feature available in Piwik. This page explains how to build the 'segment' parameter in your API requests. Segmentation makes it easy to request any Piwik report for a subset of your audience.
+Learn how to use the powerful segmentation feature available in Matomo. This page explains how to build the 'segment' parameter in your API requests. Segmentation makes it easy to request any Matomo report for a subset of your audience.
 
 This page explains how to build and use the 'segment' API URL parameter, and you will find the list of all the supported visitor segments (country, entry page, keyword, returning visitor, etc.).
 
@@ -39,10 +39,10 @@ Operator | Behavior           | Example
 <  | Less than                | `&segment=visitServerHour<12` Return results where the Server time (hour) is before midday.
 >= | Greater than or equal to | `&segment=visitDuration>=600` Return results where visitors spent 10 minutes or more on the website.
 >  | Greater than             | `&segment=daysSinceLastVisit>1` Return results where visitors are coming back to the website 2 days or more after their previous visit.
-=@ | Contains                 | `&segment=referrerName=@piwik` Return results where the Referer name (website domain or search engine name) contains the word "piwik".
+=@ | Contains                 | `&segment=referrerName=@matomo` Return results where the Referer name (website domain or search engine name) contains the word "matomo".
 !@ | Does not contain         | `&segment=referrerKeyword!@yourBrand` Return results where the keyword used to access the website does not contain word "yourBrand".
-=^ | Starts with         | `&segment=referrerKeyword=^yourBrand` Return results where the keyword used to access the website starts with "yourBrand" (requires at least Piwik 2.15.1).
-=$ | Ends with         | `&segment=referrerKeyword=$yourBrand` Return results where the keyword used to access the website ends with "yourBrand" (requires at least Piwik 2.15.1).
+=^ | Starts with         | `&segment=referrerKeyword=^yourBrand` Return results where the keyword used to access the website starts with "yourBrand" (requires at least Matomo 2.15.1).
+=$ | Ends with         | `&segment=referrerKeyword=$yourBrand` Return results where the keyword used to access the website ends with "yourBrand" (requires at least Matomo 2.15.1).
 
 ## Combine Segments with AND and OR expressions
 
@@ -55,11 +55,11 @@ You can combine several segments together with AND and OR logic.
 **AND** operator is the `;` (semi-colon) character, for example:
 
 - `&segment=visitorType==returning;countryCode==FR` Returning visitors AND Country is France
-- `&segment=referrerType==search;referrerKeyword!=Piwik` Visitors from Search engines AND Keyword is not Piwik
+- `&segment=referrerType==search;referrerKeyword!=Matomo` Visitors from Search engines AND Keyword is not Matomo
 
 Note that if you combine OR and AND operators, the OR operator will take precedence. For example, the following query
-`&segment=referrerType==search;referrerKeyword==Piwik,referrerKeyword==analytics`
-will select "Visitors from Search engines AND (Keyword is Piwik OR Keyword is analytics)"
+`&segment=referrerType==search;referrerKeyword==Matomo,referrerKeyword==analytics`
+will select "Visitors from Search engines AND (Keyword is Matomo OR Keyword is analytics)"
 
 ## List of segments
 
@@ -67,7 +67,7 @@ will select "Visitors from Search engines AND (Keyword is Piwik OR Keyword is an
 
 ### Segment values must be URL encoded
 
-The segment value (located after the segment operator) must be URL encoded before being sent to Piwik. For example to select all visitors that visited your website via a Search keyword containing `My brand`, you need to URL encode the value such as: `&segment=referrerKeyword!@My%20brand`.
+The segment value (located after the segment operator) must be URL encoded before being sent to Matomo. For example to select all visitors that visited your website via a Search keyword containing `My brand`, you need to URL encode the value such as: `&segment=referrerKeyword!@My%20brand`.
 
 ### Segment where value is empty / is not empty
 
@@ -80,4 +80,4 @@ You can combine it with other segments, for example to select all visitors that 
 Similarly, you can segment your traffic to select visitors where a particular segment is not empty (a value was set). This is similar to the SQL "is not null" clause. To do so, you can leave the value blank after the operator `!=` in the segment string. For example to select all visitors that come from India and have a City set, you can write:
 `city!=;countryCode==in`
 
-*Note: Leaving an empty value is supported for the operators == and !==*
+*Note: Leaving an empty value is supported for the operators == and !=*
