@@ -149,7 +149,7 @@ We configure to inject the `log.format` entry in the constructor:
 
 ```php
 return array(
-    'Piwik\Log\Formatter\LineMessageFormatter' => Piwik\DI::autowire()
+    'Piwik\Plugins\Monolog\Formatter\LineMessageFormatter' => Piwik\DI::autowire()
         ->constructor(Piwik\DI::get('log.format')),
 );
 ```
@@ -158,7 +158,7 @@ or
 
 ```php
 return array(
-    'Piwik\Log\Formatter\LineMessageFormatter' => Piwik\DI::autowire()
+    'Piwik\Plugins\Monolog\Formatter\LineMessageFormatter' => Piwik\DI::autowire()
         ->constructorParameter('logFormat', Piwik\DI::get('log.format')),
 );
 ```
