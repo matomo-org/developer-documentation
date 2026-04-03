@@ -180,7 +180,7 @@ Here is a list of metrics returned by the API and their definition.
 *   `nb_uniq_visitors` - Number of unique visitors
 *   `nb_visits` - Number of Visits (30 min of inactivity considered a new visit)
 *   `nb_users` - Number of unique active users (visitors with a known [User ID](https://matomo.org/docs/user-id/)). If you are not using User ID then this metric will be set to zero.
-*   `nb_actions` - Number of actions (page views, outlinks and downloads)
+*   `nb_actions` - Number of actions (page views, internal site searches, outlinks and downloads)
 *   `sum_visit_length` - Total time spent, in seconds
 *   `bounce_count` - Number of visits that bounced (viewed only one page)
 *   `max_actions` - Maximum number of actions in a visit
