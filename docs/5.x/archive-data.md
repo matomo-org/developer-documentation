@@ -159,7 +159,7 @@ Core metrics have special names and do not follow this convention.
 
 Reports are stored in memory using the [`DataTable`](/api-reference/Matomo/DataTable) class. A `DataTable` is a 2-dimension array composed of rows and columns.
 
-Each row contains metrics that relate to a set of visits, actions, conversions… That set is defined and described by a special **label** column. How the column describes the set depends entirely upon the specific report. For example in the `UserSettings.getBrowser` report, a row with the label *Firefox* would hold metrics for visits that used the Firefox browser.
+Each row contains metrics that relate to a set of visits, actions, conversions… That set is defined and described by a special **label** column. How the column describes the set depends entirely upon the specific report. For example in the `DevicesDetection.getBrowsers` report, a row with the label *Firefox* would hold metrics for visits that used the Firefox browser.
 
 Some reports like `VisitsSummary.get` will not have a label column: they have only one row that refers to the entire set of entities.
 
