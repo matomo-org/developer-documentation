@@ -65,12 +65,12 @@ public function remindMeToLogIn()
     $mail = new \Piwik\Mail();
     $mail->addTo('me@example.com');
     $mail->setSubject('Check stats');
-    $mail->setBodyText('Log into your Piwik instance and check your stats!');
+    $mail->setBodyText('Log into your Matomo instance and check your stats!');
     $mail->send();
 }
 ```
 
-This example sends you an email once a day to remind you to log into your Piwik daily. The Piwik platform makes sure to execute the method remindMeToLogIn exactly once every day.
+This example sends you an email once a day to remind you to log into your Matomo daily. The Matomo platform makes sure to execute the method remindMeToLogIn exactly once every day.
 
 ### Passing a parameter to a task
 
@@ -119,7 +119,7 @@ To manually execute all scheduled tasks, you can run the following command:
 $ ./console core:run-scheduled-tasks 
 ```
 
-There is one problem with this though: Piwik makes sure the scheduled tasks are executed only once an hour, a day, etc. This means you can't simply run the command again and again as you would have to wait for the next hour or day.
+There is one problem with this though: Matomo makes sure the scheduled tasks are executed only once an hour, a day, etc. This means you can't simply run the command again and again as you would have to wait for the next hour or day.
 
 To solve this, the `--force` option will force to execute all tasks, even those that are not due to run at this time.
 
