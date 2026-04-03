@@ -114,7 +114,7 @@ URL: `index.php?module=API&method=ImageGraph.get&idSite=62&apiModule=CustomVaria
 
 The static Graphs API requires the standard Matomo parameters (idSite, date, period, etc.) but also accepts the following parameters:
 
-*   **graphType** - defines the type of graph to draw. Accepted values are: '**evolution**' (line graph), '**horizontalBar**' (horizontal bar graph), 'verticalBar' (vertical bar graph) and 'pie' (2D Pie chart)
+*   **graphType** - defines the type of graph to draw. Accepted values are: '**evolution**' (line graph), '**horizontalBar**' (horizontal bar graph), '**verticalBar**' (vertical bar graph), '**pie**' (2D Pie chart) and '**3dPie**' (3D Pie chart)
 *   **width** and **height** - define the width and height in pixels of the generated image
 *   **columns** - by default, the graph will plot the number of visits (nb_visits). You can specify another metric such as: nb_actions, nb_visits_converted, nb_uniq_visitors, etc.
 *   **colors** - you can specify a comma separated list of hexadecimal colors to use in the graph instead of the default colors, eg. _&colors=FFFF00,00FF00,FF0000_
