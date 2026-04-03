@@ -60,7 +60,7 @@ When there is a request and we can use a session, then Matomo [checks first if t
 
 ## Security considerations
 
-* Matomo has a brute force detection built-in and enabled by default. It can be configured in "Matomo Admin -> General settings".
+* Matomo has a brute force detection built-in and enabled by default. It can be configured in the Login plugin's System Settings ("Matomo Admin -> System -> General settings -> Login").
 * When a `token_auth` parameter is set by us, then we usually POST the token_auth. This is for security reasons so the token_auth won't appear in server logs. Otherwise a sysadmin could see the token in the logs and do all sort of actions on behalf of another user.
 * Remember that users should not share the token_auth as it is the same as them sharing their username/password.
 
