@@ -14,7 +14,7 @@ For available methods please check the tracker SDK documentation.
 
 ### How to track exceptions with the PHP tracker?
 
-To track an exception you caught, use the `trackPhpThrowable()` method:
+To track an exception you caught, use the `doTrackPhpThrowable()` method:
 
 ```php
 $tracker = new \MatomoTracker(...);
@@ -22,11 +22,11 @@ $tracker = new \MatomoTracker(...);
 try {
     doSomeComplicatedTask();
 } catch (\Throwable $ex) {
-    $tracker->trackPhpThrowable($ex);
+    $tracker->doTrackPhpThrowable($ex);
 }
 ```
 
-Like the JavaScript tracker, this method will deduce as much information as possible from the exception, including the stack trace, source line and column, and error type.
+Like the JavaScript tracker, this method will deduce as much information as possible from the exception, including the stack trace, source line, and error type.
 
 #### Manual track crashing with the PHP tracker
 
@@ -36,7 +36,7 @@ There is also a method that can be used to track a crash or error if you don’t
 $tracker = new \MatomoTracker(...);
 
 if (!is_file('myveryimportantfile')) {
-    $tracker->trackCrash('myveryimportantfile is expected, but cannot be found!', 'IllegalState', 'my category', $stack = null, __FILE__);
+    $tracker->doTrackCrash('myveryimportantfile is expected, but cannot be found!', 'IllegalState', 'my category', $stack = null, __FILE__);
     return;
 }
 ```
@@ -46,6 +46,6 @@ Though you can also simply create an exception which in most cases would be simp
 ```php
 $tracker = new \MatomoTracker(...);
 if (!is_file('myveryimportantfile')) {
-    $tracker->trackPhpThrowable(new IllegalStateException('myveryimportantfile is expected, but cannot be found!'));
+    $tracker->doTrackPhpThrowable(new \RuntimeException('myveryimportantfile is expected, but cannot be found!'));
 }
 ```
