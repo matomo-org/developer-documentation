@@ -173,9 +173,6 @@ This example uses the following API requests:
   - `sqlFilterValue`: An optional PHP callback that transforms the value supplied in a segment expression before it is used in an SQL expression.
   - `permission`: Whether the current user can use this segment dimension.
 - **API.getSuggestedValuesForSegment**: Returns a list of values that can be used with a specified segment dimension.
-- **API.getLogoUrl**: Returns a URL to the Matomo logo.
-- **API.getHeaderLogoUrl**: Returns a URL to a smaller version of the Matomo logo.
-
 ## Learn more
 
 - To learn **how API classes are used internally** read our [Matomo APIs](/guides/apis) guide.
