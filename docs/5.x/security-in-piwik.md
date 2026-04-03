@@ -16,11 +16,18 @@ Attackers can achieve that either by:
 - storing malicious scripts in data (like website names for Piwik)
 - passing malicious scripts as HTTP request parameter/data
 
-### Get request parameters via [Common::getRequestVar()](/api-reference/Piwik/Common#getrequestvar)
+### Get request parameters safely
 
-In your PHP code, if you need access to a variable in `$_GET` or `$_POST`, **always** use [Common::getRequestVar()](/api-reference/Piwik/Common#getrequestvar).
+In your PHP code, if you need access to a variable in `$_GET` or `$_POST`, use the `Request` class:
 
-`getRequestVar()` will sanitize the request variable. If an attacker passes a string containing `<script>...</script>`, it will be sanitized to `&lt;script&gt;...&lt;/script&gt;`. This will help to avoid accidentally embedding unescaped text in HTML output.
+```php
+$request = new \Piwik\Request();
+$idSite = $request->getParameter('idSite');
+```
+
+> Note: `Common::getRequestVar()` is deprecated. Use `\Piwik\Request::getParameter()` instead. Unlike `getRequestVar()`, the `Request` class returns raw (unsanitized) values, so make sure to apply proper escaping when outputting values in HTML.
+
+The older `getRequestVar()` method sanitizes request variables automatically. If an attacker passes a string containing `<script>...</script>`, it will be sanitized to `&lt;script&gt;...&lt;/script&gt;`. This will help to avoid accidentally embedding unescaped text in HTML output.
 
 For text you know may contain special characters or if you need to output text in a format that doesn't need XML/HTML sanitization (like JSON), call [Common::unsanitizeInputValues()](/api-reference/Piwik/Common#unsanitizeinputvalues) to undo the sanitization.
 
