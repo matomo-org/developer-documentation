@@ -74,7 +74,7 @@ public function getApiForTesting()
 
     return array(
         // test a single API method
-        array('UserSettings.getResolution', array('idSite' => $idSite, 'date' => $dateTime)),
+        array('Resolution.getResolution', array('idSite' => $idSite, 'date' => $dateTime)),
 
         // test all methods in a plugin
         array('API', array('idSite' => $idSite, 'date' => $dateTime)),
@@ -88,7 +88,7 @@ public function getApiForTesting()
                                           'otherRequestParameters' => array('urls' => $bulkUrls))),
 
         // test multiple dates w/ multiple periods and multiple sites
-        array('UserSettings.getResolution', array('idSite' => 'all',
+        array('Resolution.getResolution', array('idSite' => 'all',
                                                   'date' => $dateTime,
                                                   'periods' => array('day', 'week', 'month'),
                                                   'setDateLastN' => true)),
