@@ -4,18 +4,18 @@ title: Metadata
 ---
 # Report Metadata API Methods
 
-The standard Piwik Analytics APIs return raw data, for example: visits, page views, revenue, conversions.
+The standard Matomo Analytics APIs return raw data, for example: visits, page views, revenue, conversions.
 
 The Metadata API is the service that calls other APIs, then add more metadata around it, for example, it will:
 
 *   return the report category, name, but also name of all the columns (in a specific language), or the translated date label (eg. "Thursday 10 February 2011")
 *   return the data units as well, including the % sign, money symbols like $ or €, or time format "00:04:17"
 *   return the processed metrics (ratios, averages) that are not returned in the normal API response, for example: bounce rate and time on site.
-The Piwik Metadata API provides a simple entry point to get this additional information for most Piwik API functions returning analytics data.
+The Matomo Metadata API provides a simple entry point to get this additional information for most Matomo API functions returning analytics data.
 
 ## Fetch the Analytics Data and Metadata for a report
 
-The method **API.getProcessedReport** can be called to request the full data set (metadata, column names, report data) of a given Piwik report. The response contains:
+The method **API.getProcessedReport** can be called to request the full data set (metadata, column names, report data) of a given Matomo report. The response contains:
 
 *   'metadata' - report name, category, list of metrics
 *   'columns' - the list of translated column names in the report
@@ -47,9 +47,9 @@ The returned XML is:
 
 ## Listing all the Metadata API Functions
 
-The API method **API.getReportMetadata** can be called to request the full list of API functions returning web analytics reports - [see the example output on the Piwik demo](https://demo.matomo.cloud/?module=API&method=API.getReportMetadata&format=xml&idSite=1&token_auth=anonymous).
+The API method **API.getReportMetadata** can be called to request the full list of API functions returning web analytics reports - [see the example output on the Matomo demo](https://demo.matomo.cloud/?module=API&method=API.getReportMetadata&format=xml&idSite=1&token_auth=anonymous).
 
-There are two types of reports in Piwik, and each have a slightly different format.
+There are two types of reports in Matomo, and each have a slightly different format.
 
 *   **Simple metrics reports**
 
@@ -71,7 +71,7 @@ There are two types of reports in Piwik, and each have a slightly different form
 
 ## Static Image Graphs
 
-In the metadata output, the field &lt;imageGraphUrl&gt; is a URL that will generate a static PNG graph plotting data for the requested report. Static PNG graphs are used, for example, in the [Piwik mobile app](https://matomo.org/mobile/) and in [email reports](https://matomo.org/docs/email-reports/). These static image graphs can also be used in any custom dashboard, web page, monitoring page, email, etc. As opposed to the [Piwik Widgets](https://matomo.org/docs/embed-piwik-report/), static image graphs do not require JavaScript or HTML, since the URL returns a PNG image.
+In the metadata output, the field &lt;imageGraphUrl&gt; is a URL that will generate a static PNG graph plotting data for the requested report. Static PNG graphs are used, for example, in the [Matomo Mobile](https://matomo.org/mobile/) and in [email reports](https://matomo.org/docs/email-reports/). These static image graphs can also be used in any custom dashboard, web page, monitoring page, email, etc. As opposed to the [Matomo Widgets](https://matomo.org/docs/embed-piwik-report/), static image graphs do not require JavaScript or HTML, since the URL returns a PNG image.
 
 In the following examples, to see the URL used to generate the image, right-click on the image and select "view image" to see the full URL.
 
@@ -112,7 +112,7 @@ URL: `index.php?module=API&method=ImageGraph.get&idSite=62&apiModule=DevicesDete
 URL: `index.php?module=API&method=ImageGraph.get&idSite=62&apiModule=CustomVariables&apiAction=getCustomVariables&token_auth=anonymous&period=day&date=2013-11-11,2013-11-18&flat=1&filter_pattern_recursive=.*logged.*`
 
 
-The static Graphs API requires the standard Piwik parameters (idSite, date, period, etc.) but also accepts the following parameters:
+The static Graphs API requires the standard Matomo parameters (idSite, date, period, etc.) but also accepts the following parameters:
 
 *   **graphType** - defines the type of graph to draw. Accepted values are: '**evolution**' (line graph), '**horizontalBar**' (horizontal bar graph), 'verticalBar' (vertical bar graph) and 'pie' (2D Pie chart)
 *   **width** and **height** - define the width and height in pixels of the generated image
