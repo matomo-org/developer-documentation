@@ -52,7 +52,7 @@ in turn, invokes many separate tools that process individual files. These tools 
   extend and/or override this file by placing their own `tsconfig.json` in their `vue` folder.
 - [ESLint](https://eslint.org/): used to lint our TypeScript, Vue and ES files. Currently we use the
   [https://github.com/airbnb/javascript](Airbnb ESlint ruleset). Base configuration for this tool is stored in the
-  `eslintrc.js` file in Matomo's root folder. Plugins can extend or override this file by placing their own `eslintrc.js`
+  `.eslintrc.js` file in Matomo's root folder. Plugins can extend or override this file by placing their own `.eslintrc.js`
   file in their `vue` folder.
 - [Babel](https://babeljs.io/): used to compile the ES that the TypeScript compiler emits into JavaScript that
   can be consumed by the browsers we support. Technically, the TypeScript compiler can do this too, but babel is included
