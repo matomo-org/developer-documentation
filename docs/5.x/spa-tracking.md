@@ -148,9 +148,10 @@ window.addEventListener('hashchange', function() {
 
 #### Link tracking
 
-Supposing that you use the link tracking feature to measure [outlinks](https://matomo.org/faq/new-to-piwik/faq_71/) and [downloads](https://matomo.org/faq/new-to-piwik/faq_47/), Matomo needs to re-scan the entire DOM for newly added links whenever your DOM changes. To make sure Matomo will track such links, call this method:
+Supposing that you use the link tracking feature to measure [outlinks](https://matomo.org/faq/new-to-piwik/faq_71/) and [downloads](https://matomo.org/faq/new-to-piwik/faq_47/), make sure to call `enableLinkTracking` once during initial setup. It installs a delegated click listener on `document.body`, so newly added links are tracked automatically without any additional calls:
 
 ```javascript
+// Call once during initial setup — subsequent calls are no-ops
 _paq.push(['enableLinkTracking']);
 ```
 
