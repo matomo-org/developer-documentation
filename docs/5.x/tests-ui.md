@@ -9,7 +9,7 @@ Some might know a UI test under the term 'CSS test' or 'screenshot test'. When w
 
 **What is a UI test good for?**
 
-We use them to test our PHP Controllers, Twig templates, CSS, and indirectly test our JavaScript. We usually don't write Unit or Integration tests for our controllers. For example, we use UI tests to ensure that the installation, the login and the update process works as expected. We also have tests for most pages, reports, settings, etc. This increases the quality of our product and saves us a lot of time as it is easy to write and maintain such tests. All UI tests are executed as [GitHub Action](https://github.com/matomo-org/matomo/actions/workflows/matomo-tests.yml) after each commit in a pull request or on a development branch. They are then compared with [our expected screenshots](https://github.com/matomo-org/matomo-ui-tests).
+We use them to test our PHP Controllers, Twig templates, CSS, and indirectly test our JavaScript. We usually don't write Unit or Integration tests for our controllers. For example, we use UI tests to ensure that the installation, the login and the update process works as expected. We also have tests for most pages, reports, settings, etc. This increases the quality of our product and saves us a lot of time as it is easy to write and maintain such tests. All UI tests are executed as [GitHub Action](https://github.com/matomo-org/matomo/actions/workflows/matomo-tests.yml) after each commit in a pull request or on a development branch. They are then compared with the expected screenshots stored in `tests/UI/expected-screenshots/` (tracked via git-lfs).
 
 **When is it better to create a php tests?** 
 
