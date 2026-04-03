@@ -60,7 +60,7 @@ Here is the output of this request:
 *   XML of the visits of the last 10 days, one entry per day
 [https://demo.matomo.cloud/?module=API&method=VisitsSummary.getVisits&idSite=1&period=day&date=last10&format=xml](https://demo.matomo.cloud/?module=API&method=VisitsSummary.getVisits&idSite=1&period=day&date=last10&format=xml)
 
-*   XML of the visits by Aquisition Channel 
+*   XML of the visits by Acquisition Channel 
 [https://demo.matomo.cloud/?module=API&method=Referrers.getReferrerType&idSite=1&period=day&date=last10&format=xml](https://demo.matomo.cloud/?module=API&method=Referrers.getReferrerType&idSite=1&period=day&date=last10&format=xml)
 
 
