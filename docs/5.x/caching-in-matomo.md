@@ -62,7 +62,7 @@ See the {@see Piwik\Tracker\Cache} class for more information.
 # Cache invalidation
 
 When it is known that data in a cache is no longer valid, it must be invalidated. If, for example, a measurable setting is changed
-for a site, and that setting is used during tracking, the `Tracker::deleteCacheWebsiteAttributes()` must be called.
+for a site, and that setting is used during tracking, the `Piwik\Tracker\Cache::deleteCacheWebsiteAttributes()` must be called.
 
 Each individual cache type has a different way of doing that.
 
