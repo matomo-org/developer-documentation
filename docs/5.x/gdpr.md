@@ -32,7 +32,7 @@ and export features:
 Your plugin needs to export any information that your plugin stores along specific visits like this:
 
 ```php
-public function exportDataSubjects(&export, $visitsToExport)
+public function exportDataSubjects(&$export, $visitsToExport)
 {
     $export['mypluginname'] = array();
     foreach($visitsToExport as $visit) {
