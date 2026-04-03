@@ -52,7 +52,7 @@ In Javascript there is a method `piwik.broadcast.isWidgetizeRequestWithoutSessio
 
 We are storing session data in the `session` table. 
 
-The session data looks like `{data: base64 encoded session data}`. If you wanted to see the actual stored data you need to base64 decode the value from the data attribute.
+The session data is stored as raw PHP-serialized session data in the `data` column. There is no base64 encoding or JSON wrapper applied.
 
 If you are searching for your session ID in the `session.id` column this won't work as the IDs are stored hashed for security reasons. This way a user with DB access cannot take over someone else's session.
 
