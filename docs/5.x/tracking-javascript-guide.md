@@ -683,11 +683,11 @@ Alternatively, you can use JavaScript to manually trigger a click on an outlink 
 By default, any file ending with one of these extensions will be considered a 'download' in the Matomo interface:
 
 ```
-7z|aac|arc|arj|apk|asf|asx|avi|bin|bz|bz2|csv|deb|dmg|doc|
-exe|flv|gif|gz|gzip|hqx|jar|jpg|jpeg|js|mp2|mp3|mp4|mpg|
-mpeg|mov|movie|msi|msp|odb|odf|odg|odp|ods|odt|ogg|ogv|
-pdf|phps|png|ppt|qt|qtm|ra|ram|rar|rpm|sea|sit|tar|
-tbz|tbz2|tgz|torrent|txt|wav|wma|wmv|wpd||xls|xml|z|zip
+3mf|7z|aac|apk|arc|arj|asc|asf|asx|avi|azw3|bin|bz|bz2|csv|deb|dmg|doc|docx|
+epub|exe|flv|gif|gz|gzip|hqx|ibooks|jar|jpeg|jpg|js|md5|mobi|mov|movie|mp2|
+mp3|mp4|mpg|mpeg|msi|msp|obj|odb|odf|odg|ods|odt|ogg|ogv|pdf|phps|png|ply|
+ppt|pptx|qt|qtm|ra|ram|rar|rpm|rtf|sea|sha|sha256|sha512|sig|sit|stl|tar|
+tbz|tbz2|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xlsx|xml|xz|z|zip
 ```
 
 ### Customise the type of files tracked as downloaded
