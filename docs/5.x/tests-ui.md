@@ -322,9 +322,9 @@ See also below the steps for how to sync the files automatically.
     * If a change is not wanted, revert or fix your commit.
     * If a change is correct, then you can set the new screenshot as the expected screenshot.
       To do so, in the diffviewer.html page click on the "Processed" link for this screenshot.
-      Then "Save this file as" and save it in the piwik/tests/UI/expected-screenshots/ directory.
-      (If the screenshot test is for a plugin and not Piwik Core, the expected screenshot should be added to the
-      plugin's expected screenshot directory. For example: piwik/plugins/DBStats/tests/UI/expected-screenshots.)
+      Then "Save this file as" and save it in the matomo/tests/UI/expected-screenshots/ directory.
+      (If the screenshot test is for a plugin and not Matomo Core, the expected screenshot should be added to the
+      plugin's expected screenshot directory. For example: matomo/plugins/DBStats/tests/UI/expected-screenshots.)
 
   _Note: When determining whether a screenshot is correct, the data displayed is not important. Report data correctness is verified through System and other PHP tests. The UI tests should only test UI behavior._
 * Push the changes (to your code and/or to the expected-screenshots directory).
