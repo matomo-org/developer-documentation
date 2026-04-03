@@ -34,5 +34,5 @@ To add "What's new?" change notifications for your plugin, create a `changes.jso
 | link        | URL of the link, optional. |
 
 Whenever a plugin is installed or updated any new entries in the `changes.json` file will be loaded into the `changes` database
-table and shown when the "What's New?" menu icon is clicked. Change notifications are loaded in the same order as they appear in
-the `changes.json` file and will be shown for ninety days from the date that they were loaded. 
+table and shown when the "What's New?" menu icon is clicked. Change notifications are loaded in reverse order from how they appear in
+the `changes.json` file, so the last entry in the file will be displayed first. Changes will be shown for six months from the date that they were loaded. 
