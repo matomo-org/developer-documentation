@@ -181,11 +181,11 @@ using references to make manipulation possible it's required to wrap the event l
 
 ```php
 return [
-    'observers.global' => [
+    'observers.global' => Piwik\DI::add([
         ['AssetManager.getStylesheetFiles', Piwik\DI::value(function (&$stylesheets) {
             $stylesheets[] = 'my\custom.css';
         })],
-    ],
+    ]),
 ];
 ```
 
