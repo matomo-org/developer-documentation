@@ -234,7 +234,7 @@ Let's internationalize the text we use in our `Settings` class. First, we'll add
 ```json
 {
     "MyPlugin": {
-        "RealtimeReports": "Real-time reports"
+        "RealtimeReports": "Real-time reports",
         "ReportDimensionSettingDescription" : "Choose the dimension to aggregate by"
     }
 }
