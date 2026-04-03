@@ -54,7 +54,7 @@ Methods are only allowed to return the following values:
 
 *Note: When returning [DataTable](/api-reference/Piwik/DataTable) or [DataTable\Map](/api-reference/Piwik/DataTable/Map) instances, filters will need to applied. Make sure to queue filters that are used for presentation purposes and directly apply other ones.*
 
-If a method throws an exception its message will appear in the output. The stack trace can be displayed during debugging by changing `ResponseBuilder::DISPLAY_BACKTRACE_DEBUG` to `true`.
+If a method throws an exception its message will appear in the output. The stack trace can be displayed during debugging by setting the `PIWIK_PRINT_ERROR_BACKTRACE` constant or `$GLOBALS['PIWIK_PRINT_ERROR_BACKTRACE']` to `true`.
 
 **You can see the list of all API methods your Matomo install exposes: click the _API_ link in the top menu. See the demo's list [here](https://demo.matomo.org/index.php?module=API&action=listAllAPI&idSite=62&period=day&date=yesterday).**
 
