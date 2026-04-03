@@ -18,7 +18,7 @@ and testing your code more easily.
 ## Loading a class through dependency injection
 
 Plugin developers can take advantage of constructor injection in most API classes in Matomo. This works for example for 
-controllers, APIs, widgets, menus, tasks, commands etc. Matomo will automatically create the needed instances and pass 
+controllers, APIs, widgets, menus, tasks etc. Matomo will automatically create the needed instances and pass 
 it to your constructor.
 
 For example if you want an instance of a logger and translator, simply define them in the constructor. It automatically 
