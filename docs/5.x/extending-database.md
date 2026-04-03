@@ -16,7 +16,7 @@ use Piwik\Db;
 use Piwik\Common;
 use \Exception;
 
-public class MyPlugin extends \Piwik\Plugin
+class MyPlugin extends \Piwik\Plugin
 {
     // ...
 
@@ -50,7 +50,7 @@ use Piwik\Db;
 use Piwik\Common;
 use \Exception;
 
-public class MyPlugin extends \Piwik\Plugin
+class MyPlugin extends \Piwik\Plugin
 {
     // ...
 
@@ -73,7 +73,7 @@ This would also be done in the [install](/api-reference/Piwik/Plugin#install) me
 ```php
 use Piwik\Db;
 
-public class MyPlugin extends \Piwik\Plugin
+class MyPlugin extends \Piwik\Plugin
 {
     // ...
 
