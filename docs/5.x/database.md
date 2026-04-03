@@ -37,7 +37,7 @@ If you need to change data (insert, update, delete, alter), there are two method
 Example:
 
 ```php
-$sql = sprintf('INSERT INTO table_name (`key`, `value`, `expiry_time`) VALUES (?,?,(UNIX_TIMESTAMP() + ?))';
+$sql = 'INSERT INTO table_name (`key`, `value`, `expiry_time`) VALUES (?,?,(UNIX_TIMESTAMP() + ?))';
 $db->query($sql, array($key, $value, (int) $ttlInSeconds));
 ```
 
