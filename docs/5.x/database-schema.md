@@ -412,6 +412,9 @@ The following information is stored in the `segment` table in a segment entity:
 - `ts_created`: the date when the segment was created.
 - `ts_last_edit`: the date when the segment was last edited.
 - `deleted`: set to `1` when a segment is deleted.
+- `hash`: a hash of the segment definition, used for faster lookups.
+- `starred`: whether the segment is starred by its creator.
+- `starred_by`: a list of user logins who have starred this segment.
 
 <a name="other-data-user"></a>
 ### Users
