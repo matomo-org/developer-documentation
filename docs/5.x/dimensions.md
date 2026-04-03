@@ -19,7 +19,7 @@ To create a new dimension, use the console:
 
 The command will ask for your plugin name and what kind of dimension you'd like to create. You can choose between `visit`, `action` and `conversion`. Next it will ask you for the name of the dimension (eg 'Browsername'), for the MySQL database column name (eg `browser_name`) and column type (eg `VARCHAR(255) NOT NULL`).
 
-Once all information is provided, a dimension class will be created in the `Columns` directory of your plugin containing an example on how to define which data should be tracked. The dimension will be automatically installed as soon as you open the Piwik UI.
+Once all information is provided, a dimension class will be created in the `Columns` directory of your plugin containing an example on how to define which data should be tracked. The dimension will be automatically installed as soon as you open the Matomo UI.
 
 ## Visit dimensions
 
@@ -76,7 +76,7 @@ A tracking request could be done like this: `matomo.php?idsite=1&sport_activity_
 Of course, you can add any custom behaviour like limiting the max speed etc.
 
 ## Segmentation
-Since Piwik 3.2.0 A new segment is automatically created for a dimension when you define a `$segmentName` property. It is also recommended adjusting the description of the accepted values.
+Since Matomo 3.2.0 a new segment is automatically created for a dimension when you define a `$segmentName` property. It is also recommended adjusting the description of the accepted values.
 
 ## Learn more
 Dimensions are quite powerful. For example, you can change the behavior of an existing dimension by creating a dimension that has the same column name, you can store action related data efficiently by using a lookup table. Dimensions can also force the creation of a new visit in case an existing visitor was recognized. We recommend having a look at the documentation within a created dimension and at the API-Reference of the classes [VisitDimension](/api-reference/Piwik/Plugin/Dimension/VisitDimension), [ActionDimension](/api-reference/Piwik/Plugin/Dimension/ActionDimension) and [ConversionDimension](/api-reference/Piwik/Plugin/Dimension/ConversionDimension)
