@@ -4,12 +4,12 @@ category: Develop
 # Extending the database
 
 Plugins can provide persistence for new data if they need to.
-As Piwik is currently storing all data in a MySQL database, we learn how to add new tables in the database and how to add a new data column to an existing table.
+As Matomo is currently storing all data in a MySQL database, we learn how to add new tables in the database and how to add a new data column to an existing table.
 
 
 ## Adding new tables
 
-To add new tables to Piwik's MySQL database, execute a `CREATE TABLE` statement in the plugin descriptor's [install](/api-reference/Piwik/Plugin#install) method. For example:
+To add new tables to Matomo's MySQL database, execute a `CREATE TABLE` statement in the plugin descriptor's [install](/api-reference/Piwik/Plugin#install) method. For example:
 
 ```php
 use Piwik\Db;
@@ -159,4 +159,4 @@ If a change is very useful or needed then one workaround would be to make this c
 
 ## Learn more
 
-Learn more about the Piwik Analytics database structure and tables in the [Database schema reference](/guides/database-schema).
+Learn more about the Matomo database structure and tables in the [Database schema reference](/guides/database-schema).
