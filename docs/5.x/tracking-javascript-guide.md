@@ -638,7 +638,7 @@ If you only want clicks to external websites to appear in your outlinks report, 
 ```javascript
 // Don't track Outlinks on all clicks pointing to *.hostname1.com or *.hostname2.com
 // Note: the currently tracked website is added to this array automatically
-_paq(['setDomains', ["*.hostname1.com", "hostname2.com"]]);
+_paq.push(['setDomains', ["*.hostname1.com", "hostname2.com"]]);
 
 _paq.push(['trackPageView']);
 ```
@@ -648,7 +648,7 @@ You may also append a path to a domain and Matomo will correctly detect links to
 ```javascript
 // Don't track Outlinks on all clicks pointing to *.hostname1.com/product1/* or *.hostname2.com/product1/*
 // Track all clicks not pointing to *.hostname1.com/product1/* or *.hostname2.com/product1/* as outlink.
-_paq(['setDomains', ["*.hostname1.com/product1", "hostname2.com/product1"]]);
+_paq.push(['setDomains', ["*.hostname1.com/product1", "hostname2.com/product1"]]);
 ```
 
 Learn more about this use case [Tracking subdirectories of a domain in separate websites](#tracking-subdirectories-of-a-domain-in-separate-websites).
