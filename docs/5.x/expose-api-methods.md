@@ -38,7 +38,7 @@ class API extends \Piwik\Plugin\API
         return 24;
     }
 
-    public function getExampleReport(string $idSite, string $period, string $date, bool $wonderful = false): DataTable
+    public function getExampleReport(string $idSite, string $period, string $date, ?string $segment = null): DataTable
     {
         $table = DataTable::makeFromSimpleArray(array(
             array('label' => 'My Label 1', 'nb_visits' => '1'),
@@ -54,7 +54,7 @@ Any public method in that file will be available via the Reporting API. For exam
 
 ### Passing parameters to your method
 
-Both example methods define some parameters. To pass any value to a parameter of your method simply specify them by name in the URL. For example <code>...&amp;method=MyApiPlugin.getExampleReport&amp;idSite=1&amp;period=week&amp;date=today&amp;wonderful=1</code> to pass values to the parameters of the method <code>getExampleReport</code>.
+Both example methods define some parameters. To pass any value to a parameter of your method simply specify them by name in the URL. For example <code>...&amp;method=MyApiPlugin.getExampleReport&amp;idSite=1&amp;period=week&amp;date=today&amp;segment=pageUrl%3D%40example</code> to pass values to the parameters of the method <code>getExampleReport</code>.
 
 #### Type handling / Type hinting
 
