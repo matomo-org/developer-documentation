@@ -72,7 +72,7 @@ Here is the output of this request:
 [https://demo.matomo.cloud/?module=API&method=Actions.getPageTitles&idSite=1&period=day&date=last3&format=xml&filter_column=label&filter_pattern=store](https://demo.matomo.cloud/?module=API&method=Actions.getPageTitles&idSite=1&period=day&date=last3&format=xml&filter_column=label&filter_pattern=store)
 
 *   XML containing search engine keywords from the last 3 weeks, one entry per week
-[https://demo.matomo.cloud/?module=API&method=Referrers.getKeywords&idSite=1&period=week&date=last3&translateColumnNames=1&format=xml](https://demo.matomo.cloud/?module=API&method=Referrers.getKeywords&idSite=1&period=week&date=last3&translateColumnNames=1format=xml)
+[https://demo.matomo.cloud/?module=API&method=Referrers.getKeywords&idSite=1&period=week&date=last3&translateColumnNames=1&format=xml](https://demo.matomo.cloud/?module=API&method=Referrers.getKeywords&idSite=1&period=week&date=last3&translateColumnNames=1&format=xml)
 
 
 You can get the data in one of these formats: XML, JSON, HTML, CSV, TSV, etc. See the [API Reference](/api-reference/reporting-api) for the documentation.
