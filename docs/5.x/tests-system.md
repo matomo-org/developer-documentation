@@ -129,7 +129,7 @@ class MySystemTest extends SystemTestCase
     // ...
 }
 
-MySystemTest::$fixture = new \Test_Piwik_Fixture_ThreeGoalsOnePageview();
+MySystemTest::$fixture = new \Piwik\Tests\Fixtures\ThreeGoalsOnePageview();
 ```
 
 To see the fixtures Piwik defines, see the files in the `tests/PHPUnit/Fixtures` directory.
