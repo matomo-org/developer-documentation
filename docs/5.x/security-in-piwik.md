@@ -235,8 +235,6 @@ Here are some other coding guidelines that will help make your code more secure:
 
 - **Make sure that accessing your files directly doesn't execute any code that could have an impact on your Piwik install.**
 
-- **Make sure your code doesn't rely on `register_globals` set to `On`. Note: PHP5 sets `register_globals` to `Off` by default.**
-
 - **For timing attack safe equal comparisons use `Common::hashEquals()` method**
 
 - **If your plugin has admin functionality (functionality only an administrator or the super user can use) then your plugin's Controller must extend [Piwik\Plugin\ControllerAdmin](/api-reference/Piwik/Plugin/ControllerAdmin).**
