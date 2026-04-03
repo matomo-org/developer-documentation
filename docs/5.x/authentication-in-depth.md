@@ -28,7 +28,7 @@ Token auths are used for the [Tracking API](/api-reference/tracking-api), the [R
 
 When a `token_auth` URL parameter is provided, then we don't create a session. This means when a widget is embedded all requests done from this widget need to include the `token_auth` parameter.
 
-When it is a token_auth, then the authentication happens [here](https://github.com/matomo-org/matomo/blob/4.4.1/plugins/Login/Auth.php#L63). Please note that Matomo will first try to authenticate using the session, then fall back to normal authentication (which may result in the anonymous user), and finally re-authenticate using the provided token. Meaning if you are using the debugger you will see the `authenticate` method being called twice.
+When it is a token_auth, then the authentication happens [here](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Auth.php#L63). Please note that Matomo will first try to authenticate using the session, then fall back to normal authentication (which may result in the anonymous user), and finally re-authenticate using the provided token. Meaning if you are using the debugger you will see the `authenticate` method being called twice.
 
 ### Adding the token_auth to a UI request in JS
 
@@ -40,13 +40,13 @@ The Matomo UI uses the `token_auth` URL parameter to load and change all kind of
 
 That's why we create a random token_auth when a user logs into the Matomo UI and store this token as part of the session. To learn more about the session read below. The token is only valid for the specific session and it won't work for anyone else.
 
-When there is a "&force_api_session=1" parameter either in the request GET or POST then we will be starting a session after all even if it is an HTTP API call. In that case we then compare the provided token_auth value from the URL against the token_auth value from the session. At the time of writing this logic is mostly handled [here](https://github.com/matomo-org/matomo/blob/4.4.1/core/Access.php#L160-L180).
+When there is a "&force_api_session=1" parameter either in the request GET or POST then we will be starting a session after all even if it is an HTTP API call. In that case we then compare the provided token_auth value from the URL against the token_auth value from the session. At the time of writing this logic is mostly handled [here](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Access.php#L160-L180).
 
 For actions that change data we require this parameter to be posted for slightly better security. For API requests that read data it can be a regular URL parameter.
 
 #### Knowing if "force_api_session=1" needs to be set or not
 
-In Javascript there is a method `piwik.broadcast.isWidgetizeRequestWithoutSession()` that we usually use to decide if we need to append the "force_api_session" URL parameter or not [see example](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/vue/src/AjaxHelper/AjaxHelper.ts#L669).
+In Javascript there is a method `piwik.broadcast.isWidgetizeRequestWithoutSession()` that we usually use to decide if we need to append the "force_api_session" URL parameter or not [see example](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/vue/src/AjaxHelper/AjaxHelper.ts).
 
 ## Session authentication
 
@@ -56,7 +56,7 @@ The session data is stored as raw PHP-serialized session data in the `data` colu
 
 If you are searching for your session ID in the `session.id` column this won't work as the IDs are stored hashed for security reasons. This way a user with DB access cannot take over someone else's session.
 
-When there is a request and we can use a session, then Matomo [checks first if the user is authenticated using the session cookie](https://github.com/matomo-org/matomo/blob/4.4.1/core/Session/SessionAuth.php). If that's not the case, then it falls back to the regular authentication. 
+When there is a request and we can use a session, then Matomo [checks first if the user is authenticated using the session cookie](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Session/SessionAuth.php). If that's not the case, then it falls back to the regular authentication. 
 
 ## Security considerations
 
