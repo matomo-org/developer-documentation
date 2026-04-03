@@ -210,7 +210,7 @@ class CheckDirectDependencyUseCommandTest extends SystemTestCase
 {
     public function testCommand()
     {
-        if (version_compare(Version::VERSION, '5.1.0', '<=') || !file_exists(PIWIK_INCLUDE_PATH . '/plugins/TestRunner/Commands/CheckDirectDependencyUse.php')) {
+        if (version_compare(Version::VERSION, '5.1.0', '<') || !file_exists(PIWIK_INCLUDE_PATH . '/plugins/TestRunner/Commands/CheckDirectDependencyUse.php')) {
             $this->markTestSkipped('tests:check-direct-dependency-use is not available in this version');
           }
         
