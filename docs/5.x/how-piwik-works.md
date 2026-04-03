@@ -179,11 +179,11 @@ Archive data can be:
 
 - **numeric metric records**: simple numeric values (like the number of page views or the number of visits)
 
-    These are stored in the `archive_numeric_*` tables. Values are stored as float.
+    These are stored in the `archive_numeric_*` tables. Values are stored as double-precision floating-point numbers.
 
 - **table records**: bidimensional data (can be numeric values as well as anything else), represented as [`DataTable`](/guides/datatable) objects
 
-    These are stored in the `archive_blob_*` tables. `DataTable` objects are serialized to a string and compressed to be stored as `BLOB` in the table.
+    These are stored in the `archive_blob_*` tables. `DataTable` objects are serialized to a string and compressed to be stored as `LONGBLOB` in the table.
 
 Both numeric and table record objects stored in the database are named *records* to differentiate them from `DataTable` objects manipulated and returned by Matomo's API that we name *reports*.
 
