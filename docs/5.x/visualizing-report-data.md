@@ -263,15 +263,13 @@ Report data can also be manipulated by setting the [`$filters`](/api-reference/P
 
 #### Making your visualization available everywhere
 
-If you want to allow Piwik users to use your visualization on any report (by clicking the appropriate footer icon), add it to the global list of available visualizations in the [`ViewDataTable.addViewDataTable`](/api-reference/events#viewdatatableaddviewdatatable) event:
+If you want to allow Piwik users to use your visualization on any report (by clicking the appropriate footer icon), place your visualization class in the `Visualizations/` directory of your plugin:
 
-```php
-// event handler for ViewDataTable.addViewDataTable in MyPlugin plugin
-public function addViewDataTable(&$visualizations)
-{
-    $visualizations[] = 'Piwik\Plugins\MyPlugin\Visualizations\MyVisualization';
-}
 ```
+plugins/MyPlugin/Visualizations/MyVisualization.php
+```
+
+Visualizations in this directory are automatically discovered by Matomo and added to the global list of available visualizations. No event subscription is needed.
 
 Visualizations that are exposed this way must have the `FOOTER_ICON` and `FOOTER_ICON_TITLE` [ViewDataTable metadata](#viewdatatable-metadata) set.
 
