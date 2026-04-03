@@ -3,11 +3,6 @@ category: Develop
 ---
 # Logging
 
-<div class="alert alert-info" markdown="1">
-<strong>Since v2.11:</strong>
-the API described here has been introduced in Matomo 2.11 and doesn't apply to previous versions.
-</div>
-
 Logging is the action of recording events which happen while Matomo is running. It is intended to:
 
 - let users monitor the health of their Matomo installation by being able to know when minor or major errors happen
