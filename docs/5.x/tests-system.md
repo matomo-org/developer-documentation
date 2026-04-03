@@ -42,7 +42,7 @@ If we don't update the OmniFixture then we end up with many failed screenshots t
 As part of our system tests we generate the scheduled reports (in HTML, PDF & SMS).
 Some of these scheduled reports contain PNG graphs. Depending on the system under test, generated images can differ.
 Therefore, PNG graphs are only tested and compared against "expected" graphs, if the system under test has the same characteristics as the integration server.
-The characteristics of the integration server are described in `SystemTestCase::canImagesBeIncludedInScheduledReports()`
+The characteristics of the integration server are described in `Fixture::canImagesBeIncludedInScheduledReports()`
 
 ## Writing system tests
 
