@@ -109,7 +109,7 @@ The container includes the following configuration files in the order listed:
 
 When developing a plugin, you can supply DI config with your plugin in one of the files listed above to either configure your plugin or customize Matomo.
 
-The syntax used in those files is described in [PHP-DI's documentation](http://php-di.org/doc/definition.html). Below are examples of the most common use cases.
+The syntax used in those files is described in [PHP-DI's documentation](https://php-di.org/doc/definition.html). Below are examples of the most common use cases.
 
 ### Binding an interface to a class
 
