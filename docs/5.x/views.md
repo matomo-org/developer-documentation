@@ -8,7 +8,7 @@ Views are classes that implement `ViewInterface`. The main view class [Piwik\Vie
 Using a view is straightforward. First, it is configured. The meaning of this is different based on the View type. For [Piwik\View](/api-reference/Piwik/View) instances, it simply means setting properties. For example:
 
 ```php
-$view = new View("@MyPlugin/myTemplate.twig");
+$view = new View("@MyPlugin/myTemplate");
 
 // set properties
 $view->property1 = 'property1';
