@@ -157,7 +157,7 @@ The HTTP tracking API (i.e. the `Piwik\Tracker` component) receives **raw** anal
 
 Log data is represented in PHP as `Piwik\Tracker\Visit` objects, and is stored into the following tables:
 
-- `log_visit` contains one entry per visit (returning visitor)
+- `log_visit` contains one entry per visit (both new and returning visitors)
 - `log_action` contains all the type of actions possible on the website (e.g. unique URLs, page titles, download URLs…)
 - `log_link_visit_action` contains one entry per action of a visitor (page view, …)
 - `log_conversion` contains conversions (actions that match goals) that happen during a visit
