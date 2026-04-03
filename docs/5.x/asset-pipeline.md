@@ -157,8 +157,8 @@ URL used to load them is, more or less, hardcoded by Webpack._
 ### Discovering UMD files
 
 UMD files are automatically discovered by Matomo's asset pipeline. If Matomo sees a file in a plugin stored in the
-`plugins/MyPlugin/vue/dist` folder with a name like `MyPlugin.umd.js`, it will automatically be included as a
-JavaScript asset. (Note: this code is in the `Piwik\AssetManager\UIAssetFetcher\JScriptUIAssetFetcher` class.)
+`plugins/MyPlugin/vue/dist` folder with a name like `MyPlugin.umd.min.js` (or `MyPlugin.development.umd.js` in development mode), it will automatically be included as a
+JavaScript asset. (Note: this code is in the `Piwik\AssetManager\UIAssetFetcher\PluginUmdAssetFetcher` class.)
 
 So these files do not need to be added via the [`AssetManager.getJavaScriptFiles`](/api-reference/events#assetmanagergetjavascriptfiles)
 event.
