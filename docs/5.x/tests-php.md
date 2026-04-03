@@ -98,7 +98,7 @@ The command will ask you for the name of the plugin and the name of the test (wh
  * @group WidgetsTest
  * @group Plugins
  */
-class WidgetsTest extends UnitTestCase
+class WidgetsTest extends \PHPUnit\Framework\TestCase
 {
     public function testSimpleAddition()
     {
