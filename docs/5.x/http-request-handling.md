@@ -34,7 +34,7 @@ class Controller extends \Piwik\Plugin\Controller
 {
     public function index()
     {
-        $view = new View("@MyPlugin\index.twig");
+        $view = new View("@MyPlugin/index");
         $view->data = \Piwik\Plugins\MyPlugin\API::getInstance()->getData();
         return $view->render();
     }
