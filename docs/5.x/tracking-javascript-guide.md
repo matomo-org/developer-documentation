@@ -587,8 +587,6 @@ The function`setDomains` ensures that clicks of users leaving your website (subd
 
 ### Tracking a group of pages in a separate website
 
-*(available since Piwik 2.16.1)*
-
 In some rare cases, you may want to track all pages matching a wildcard in a particular website, and track clicks on other pages (not matching the wildcard) as 'Outlinks'.
 
 In the pages `/index_fr.htm` or `/index_en.htm` write:
@@ -874,8 +872,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 ## Multiple Matomo trackers
 
 By default, the Matomo JavaScript Tracking code collects your analytics data into one Matomo server. The Matomo service URL is specified in your JavaScript Tracking code (for example: `var u="//matomo.example.org";`). In some cases, you may want to track your analytics data into more than just one Matomo server or into multiple websites on the same Matomo server.
-
-*If you haven't upgraded yet to Piwik 2.16.2 or later, please upgrade now! (Instructions for 2.16.1 or older versions are found below.)*
 
 ### Duplicate your data into different websites in one Matomo server
 
