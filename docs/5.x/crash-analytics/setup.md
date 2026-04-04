@@ -87,6 +87,6 @@ _paq.push(["CrashAnalytics::trackCrash", "my error message", "my error type"]);
 You can also set a custom stack trace, category, line number and column number this way:
 
 ```js
-_paq.push(["CrashAnalytics::trackCrash", "my error message", "my error type", "my category", "a custom stack trace value", 50, 60]);
+_paq.push(["CrashAnalytics::trackCrash", "my error message", "my error type", "my category", "a custom stack trace value", null, 50, 60]);
 ```
 
