@@ -51,26 +51,25 @@ console of your browser.
 
 ## Is it possible to change the ping interval when a media is played?  
 
-Yes, it is possible by calling the method `setPingInterval`. By default, an update is sent every 5 seconds. 
-Sending the ping more frequently can be useful to get a bit more accurate statistics, sending it less frequently can
-be useful to reduce the amount of traffic your server has to handle.
+Yes, it is possible by calling the method `setPingInterval`. By default, an update is sent every 10 seconds. 
+Sending the ping less frequently can be useful to reduce the amount of traffic your server has to handle.
 
 ```js
-var intervalInSeconds = 2;
+var intervalInSeconds = 30;
 _paq.push(['MediaAnalytics::setPingInterval', intervalInSeconds]);
 ```
 
 Make sure to call this method as early as possible, for example just after `_paq.push(['setSiteId', 'X']);`
 
-## How do I setup media analytics when using multiple Piwik JavaScript trackers?
+## How do I setup media analytics when using multiple Matomo JavaScript trackers?
 
-Piwik lets you track a website into different Piwik installations or into different Piwik websites. Learn more about 
-using [Multiple Piwik trackers on the JavaScript Tracking guide](/guides/tracking-javascript-guide#multiple-piwik-trackers).
+Matomo lets you track a website into different Matomo installations or into different Matomo websites. Learn more about 
+using [Multiple Matomo trackers on the JavaScript Tracking guide](/guides/tracking-javascript-guide#multiple-piwik-trackers).
 
 If you are using the regular `_paq.push` tracking method, everything will work out of the box when you create more trackers 
 via `_paq.push(['addTracker', url, idsite]);`
 
-Using `_paq.push` for multiple trackers is a good and simple way when you want to track the same data into different Piwik installations or into different Piwik websites.
+Using `_paq.push` for multiple trackers is a good and simple way when you want to track the same data into different Matomo installations or into different Matomo websites.
 
 ```js
 // configuration of first tracker
@@ -80,12 +79,12 @@ _paq.push(['setSiteId', 1]);
 _paq.push(['addTracker', 'https://example.com/matomo.php', 2]);
 ```
 
-If you are working with Piwik tracker instances because you want to configure each tracker instance differently and track
-different data into each Piwik, you need to set the tracker instances manually:
+If you are working with Matomo tracker instances because you want to configure each tracker instance differently and track
+different data into each Matomo, you need to set the tracker instances manually:
 
 ```js
 window.matomoAsyncInit = function () {
-    // This works from Piwik 2.17.1. Before 2.17.1 you need to define a method
+    // This works from Matomo 2.17.1. Before 2.17.1 you need to define a method
     // `window.matomoMediaAnalyticsAsyncInit` instead of `window.matomoAsyncInit`.
     
     var matomoTracker1 = Matomo.getTracker('https://example.com/matomo.php', 1);
@@ -100,7 +99,7 @@ window.matomoAsyncInit = function () {
 }
 ```
 
-It is important to define these methods before the Piwik tracker file is loaded. Otherwise, your `matomoAsyncInit` 
+It is important to define these methods before the Matomo tracker file is loaded. Otherwise, your `matomoAsyncInit` 
 or `matomoMediaAnalyticsAsyncInit` method will never be called.
 
 In order to use your additional tracker(s) outside the `matomoAsyncInit` function, you will need to declare the tracker name as a global variable. For example:
@@ -135,7 +134,7 @@ In the `matomo.js` tracker we differentiate between two kind of methods:
 ```js
 window.matomoMediaAnalyticsAsyncInit = function () {
     // static methods
-    var intervalInSeconds = 2;
+    var intervalInSeconds = 30;
     Matomo.MediaAnalytics.removePlayer('youtube'); 
     Matomo.MediaAnalytics.setPingInterval(intervalInSeconds);
      
@@ -155,7 +154,7 @@ for a specific tracker instance like this:
 ```js
 window.matomoMediaAnalyticsAsyncInit = function () {
     // get tracker instance if you do not have a reference to the tracker instance yet
-    var tracker = Matomo.getAsyncTracker(matomoSiteUrl, piwikSiteId); 
+    var tracker = Matomo.getAsyncTracker(matomoSiteUrl, matomoSiteId); 
     tracker.MediaAnalytics.disableTrackEvents();
     tracker.MediaAnalytics.disableTrackProgress();
 };
@@ -163,7 +162,7 @@ window.matomoMediaAnalyticsAsyncInit = function () {
 
 ## How do I define a media title in case the title cannot be detected automatically?
 
-Piwik will automatically detect the title of a video or audio in most cases. In case you are using an old version
+Matomo will automatically detect the title of a video or audio in most cases. In case you are using an old version
 of a media player, or an exotic media player which does not allow us to detect the title automatically, you can optionally 
 define a callback method to detect the title of a video or audio manually based on your own custom logic. 
 
