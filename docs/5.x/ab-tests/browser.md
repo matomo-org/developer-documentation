@@ -22,7 +22,7 @@ and is therefore loaded automatically with the [Matomo JavaScript Tracking Code]
 This will work by default as long as the file `matomo.js` in your Matomo directory is writable by the webserver/PHP.
  
 To check whether this works by default for you, login into Matomo as a Super User, go to Administration, and open the "System Check" report. 
-If the System Check displays a warning for "Writable Matomo.js" then [learn below in the FAQ how to solve this](#how-do-i-include-the-ab-testing-framework-when-my-matomojs-file-is-not-writable).
+If the System Check displays a warning for "Writable JavaScript Tracker" then [learn below in the FAQ how to solve this](#how-do-i-include-the-ab-testing-framework-when-my-matomojs-file-is-not-writable).
 
 
 ### Loading matomo.js synchronously as early as possible
