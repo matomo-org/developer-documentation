@@ -31,7 +31,7 @@ This is the API Reference for developers who want to enrich the [Matomo for Word
 Example:
 
 ```php
-if (current_user_can(\WpMatomo\Capabilities::KEY_SUPERUSER) {
+if (current_user_can(\WpMatomo\Capabilities::KEY_SUPERUSER)) {
     // user has super user permission
 }
 ```
