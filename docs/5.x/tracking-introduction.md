@@ -10,7 +10,7 @@ subGuides:
 ---
 # Tracking your application
 
-This section contains guides that will help you track your application using Piwik.
+This section contains guides that will help you track your application using Matomo.
 
 ## API references
 
