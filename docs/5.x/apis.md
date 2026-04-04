@@ -24,16 +24,16 @@ Everything below is what we consider API.
     -   so far we only consider public APIs these commands: `core:archive`, `core:update`, `plugin:activate`, `plugin:deactivate`, `git:pull`, `development:enable`, `development:disable`, `customvariables:set-max-custom-variables`.
     -   some of these commands are setup in crontabs and we shouldn't break them.
 -   JavaScript variables in global `piwik.*` object
-    -   as [documented here](https://developer.piwik.org/guides/working-with-piwiks-ui#global-variables-defined-by-piwik)
+    -   as [documented here](https://developer.matomo.org/guides/working-with-piwiks-ui#global-variables-defined-by-piwik)
 -   LESS variables used for Theming
-    -   when [writing a theme for Piwik](/guides/theming) we announce that LESS variables in ([theme.less](https://github.com/piwik/piwik/blob/master/plugins/Morpheus/stylesheets/theme.less) and [theme-advanced.less](https://github.com/piwik/piwik/blob/master/plugins/Morpheus/stylesheets/theme-advanced.less)) are API
+    -   when [writing a theme for Matomo](/guides/theming) we announce that LESS variables in ([theme.less](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Morpheus/stylesheets/theme.less) and [theme-advanced.less](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Morpheus/stylesheets/theme-advanced.less)) are API
 -   INI Config settings names in `config/global.ini.php` are API
     -   we should not rename INI config settings as users may have overridden them in `config/config.ini.php`
 -   Widgets embed URLs are API
-    -   thousands of users include Piwik reports directly via [the iframe embed feature](http://piwik.org/docs/embed-piwik-report/) and rely on the URL to work
--   Some tools bundled with Piwik are considered API in the sense that their paths should not change:
-    -   `libs/PiwikTracker/PiwikTracker.php` <- tracker API client directly used from this path (as we advise [in our doc](https://piwik.org/docs/tracking-api/))
-    -   `misc/log-analytics/import_logs.py` <- [Log Analytics script](http://piwik.org/log-analytics/)
+    -   thousands of users include Matomo reports directly via [the iframe embed feature](https://matomo.org/docs/embed-piwik-report/) and rely on the URL to work
+-   Some tools bundled with Matomo are considered API in the sense that their paths should not change:
+    -   `libs/PiwikTracker/PiwikTracker.php` <- tracker API client directly used from this path (as we advise [in our doc](https://matomo.org/docs/tracking-api/))
+    -   `misc/log-analytics/import_logs.py` <- [Log Analytics script](https://matomo.org/log-analytics/)
     -   `piwik.js` is the minified JavaScript tracking client referenced in Tracking code in users' websites
     -   alternatively `/js/` endpoint is sometimes used to serve the minified file ensuring caching of the file in browsers.
 
@@ -84,7 +84,7 @@ When we are adding a new API or when we are breaking or deprecating an existing 
 * change to Reporting API output (eg. a new field in an API response)
 * change to Reporting API parameter (eg. parameter added, deprecated, removed)
 * change to Tracking API parameter (eg. parameter added, deprecated, removed)
-* change to Piwik JavaScript Tracker feature (eg. new feature, or removed feature)
+* change to Matomo JavaScript Tracker feature (eg. new feature, or removed feature)
 * since PHP 8 argument names of public API's are also considered API
 * new console command
 * new config.ini.php settings
