@@ -20,7 +20,7 @@ Using this option the embedded opt-out form code will load Javascript from your 
 
 In order for the [Matomo JavaScript tracking code](/guides/tracking-javascript-guide) to be used by the opt-out it must also be loaded by the same page. A common approach
 is to add both the opt-out form and Matomo JavaScript tracker to the website's Privacy Policy page. If it is not possible to load the Matomo JavaScript tracker on the privacy
-policy page then you can either use the self-contained opt-out form instead or add the `useCookieTimeout=0` URL parameter to avoid waiting for the JavaScript tracker to load.
+policy page then you can either use the self-contained opt-out form instead or add the `useCookiesTimeout=0` URL parameter to avoid waiting for the JavaScript tracker to load.
 
 ### Process
 
@@ -39,7 +39,7 @@ The embedded opt-out form code to add to the website page is simple:
 
 ```
 <div id="matomo-opt-out"></div>
-<script src="https://my-matomo-site.org/index.php?module=CoreAdminHome&action=optOutJS&div=matomo-opt-out></script>\
+<script src="https://my-matomo-site.org/index.php?module=CoreAdminHome&action=optOutJS&divId=matomo-opt-out"></script>
 ```
 
 The opt-out div may be positioned anywhere on the page and can have its own styling. If the div is created dynamically then it must exist when the `DOMContentLoaded`
@@ -47,7 +47,7 @@ event is fired.
 
 Opt-out form configuration options can be passed as URL parameters, the following options are available:
 
-- `div` Specify the id of the div tag in which the opt-out form will be created.
+- `divId` Specify the id of the div tag in which the opt-out form will be created.
 - `language` Override the language used to display the opt-out form text, by default the value `auto` is used which will automatically determine the language to use 
 based on the browser. To force a particular language pass language code such as 'de' or 'en'.
 - `showIntro` Set to `1` if the opt-out form should include text explaining the opt-out choice, set to `0` if the form should just show the checkbox.
@@ -88,7 +88,7 @@ will be made.
 ### Process
 
 - The embedded website `<script>` tag contains around 110 lines of JavaScript.
-- The script executes when the `DomCOntentLoaded` event is fired, indicating the page has finished loading.
+- The script executes when the `DOMContentLoaded` event is fired, indicating the page has finished loading.
 - It checks that the specified opt-out form div exists on the page, if not then an error is shown.
 - The opt-out form is created to set consent cookies directly.
 - If cookies are disabled in the browser or the connection is not `HTTPS` then an error will be shown.
