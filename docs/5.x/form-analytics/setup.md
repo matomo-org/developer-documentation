@@ -8,17 +8,17 @@ In this guide you will learn how to get [Form Analytics](https://www.form-analyt
 
 ## Embedding the Form Analytics JavaScript Tracker
 
-If you have already embedded the [Piwik JavaScript Tracking Code](/guides/tracking-javascript-guide) into your website,
+If you have already embedded the [Matomo JavaScript Tracking Code](/guides/tracking-javascript-guide) into your website,
 the Form Analytics will automatically start tracking the usage of your web forms. 
 
-The tracker code for forms is automatically added into your Matomo JavaScript tracker file `/matomo.js` as long as the file `matomo.js` in your Piwik directory is writable by the webserver/PHP.
+The tracker code for forms is automatically added into your Matomo JavaScript tracker file `/matomo.js` as long as the file `matomo.js` in your Matomo directory is writable by the webserver/PHP.
  
 To check whether this works by default for you, login into Matomo as a Super User, go to Administration, and open the "System Check" report. 
 If the System Check displays a warning for "Writable Matomo.js" then [learn below how to solve this](#when-the-matomojs-in-your-piwik-directory-file-is-not-writable).
 
 ## Tracking Forms
 
-Piwik detects and starts the tracking of your forms automatically if they have set a form `name` or a form `id` attribute like this:
+Matomo detects and starts the tracking of your forms automatically if they have set a form `name` or a form `id` attribute like this:
 
 ```html
 <form name="cloud_login">...</form>
@@ -44,14 +44,14 @@ Similarly you can define a readable name for your fields like this:
 <input data-matomo-name="username" type="text">
 ```
 
-Note that in Piwik Form Analytics itself you can give a readable name to any form or any field. If your form has for example a field named "input_4",
-you can map this field name to a human readable name like "Username" directly in the Piwik user interface. 
+Note that in Matomo Form Analytics itself you can give a readable name to any form or any field. If your form has for example a field named "input_4",
+you can map this field name to a human readable name like "Username" directly in the Matomo user interface. 
 You don't need to set a `data-matomo-name` or a `data-piwik-name` in this case.
 
 ## Custom form elements
 
 If you do not use a `<form>` element to mark your forms, you can specify a `data-matomo-form` (recommended) or a `data-piwik-form` attribute on any element 
-to let Piwik know that this element contains a form. Piwik will then discover this form and all fields automatically.
+to let Matomo know that this element contains a form. Matomo will then discover this form and all fields automatically.
 
 ```html
 <div data-matomo-form data-matomo-name="cloud_login">
@@ -71,16 +71,16 @@ If you do not want a form to be tracked, you can specify a `data-matomo-ignore` 
 <form name="cloud_signup" data-matomo-ignore></form>
 ```
 
-If set, it will not even send any tracking requests for this form to your Piwik. This is useful if you want to exclude
+If set, it will not even send any tracking requests for this form to your Matomo. This is useful if you want to exclude
 for example forms that are shown on each page like a search or a newsletter sign up form.
 
-## When the `matomo.js` in your Piwik directory file is not writable
+## When the `matomo.js` in your Matomo directory file is not writable
  
-When your Settings > System Check reports that "The Piwik JavaScript tracker file `matomo.js` is not writable 
+When your Settings > System Check reports that "The Matomo JavaScript tracker file `matomo.js` is not writable 
 which means other plugins cannot extend the JavaScript tracker." then you have two options to solve this issue:
 
-1. Make the `matomo.js` file writable, for example by executing `chmod a+w piwik.js` or `chown $phpuser piwik.js` (replace `$phpuser` with actual username) in your Piwik directory. 
-We recommend running the [Piwik console](/guides/piwik-on-the-command-line) command `./console custom-piwik-js:update` after you have made the file writable.
+1. Make the `matomo.js` file writable, for example by executing `chmod a+w matomo.js` or `chown $phpuser matomo.js` (replace `$phpuser` with actual username) in your Matomo directory. 
+We recommend running the [Matomo console](/guides/piwik-on-the-command-line) command `./console custom-matomo-js:update` after you have made the file writable.
 2. or Load the FormAnalytics tracker file manually in your website by adding in all your pages ideally in the `<head>`: 
    `<script src="https://your-matomo-domain/plugins/FormAnalytics/tracker.min.js">`
 
