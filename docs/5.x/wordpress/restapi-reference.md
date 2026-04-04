@@ -10,7 +10,7 @@ For more details about each method and all the available parameters please view 
 
 Example endpoint: https://example.com/index.php?rest_route=/matomo/v1
 
-Example request: https://example.com/index.php?rest_route=/matomo/v1/api/processed_report&period=date&date=year&filter_limit=10&apiModule=Actions&apiActions=getPageUrls
+Example request: https://example.com/index.php?rest_route=/matomo/v1/api/processed_report&period=date&date=year&filter_limit=10&apiModule=Actions&apiAction=getPageUrls
 
 Namespace: `matomo/v1`
 
