@@ -62,7 +62,7 @@ _paq.push(['rememberConsentGiven']);
 _paq.push(['rememberCookieConsentGiven']);
 ```
 
-Matomo will then remember on subsequent requests that the user has given their consent by setting a cookie named "consent". As long as this cookie exists, Matomo will know that consent has been given and will automatically process the data. This means that you only need to call `_paq.push(['rememberConsentGiven'])` or `_paq.push(['rememberCookieConsentGiven'])` once.
+Matomo will then remember on subsequent requests that the user has given their consent by setting a cookie named `mtm_consent` (or `mtm_cookie_consent` for cookie consent). As long as this cookie exists, Matomo will know that consent has been given and will automatically process the data. This means that you only need to call `_paq.push(['rememberConsentGiven'])` or `_paq.push(['rememberCookieConsentGiven'])` once.
 
 Notes:
 
@@ -82,7 +82,7 @@ _paq.push(['requireConsent']);
 // OR require user cookie consent before storing any cookies
 _paq.push(['requireCookieConsent']);
 
-_paq.push(['trackPageview']);
+_paq.push(['trackPageView']);
 [...]
 
 // user has given consent to process their data
