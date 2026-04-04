@@ -73,7 +73,7 @@ When you track an event, make sure to pass the following values:
 
 The experiment name and variation names that you use have to be pre-configured for that experiment in your Matomo. 
 If you track a different variation name without having created it in your Matomo, 
-the request will be ignored and a regular event will be tracked.
+the tracking request will be aborted entirely.
 
 ### Custom A/B testing framework
 
