@@ -5,16 +5,16 @@ title: Mobile & Desktop Apps
 # Running an A/B test experiment in an app eg. Android, iOS, desktop app or games 
 
 You can run experiments in apps by using any A/B testing framework of your choice if you are tracking your users 
-via one of the Piwik SDKs (eg [Android SDK](https://github.com/matomo-org/matomo-sdk-android), 
+via one of the Matomo SDKs (eg [Android SDK](https://github.com/matomo-org/matomo-sdk-android), 
 [iOS SDK](https://github.com/matomo-org/matomo-sdk-ios), [C#](https://github.com/matomo-org/piwik-dotnet-tracker), 
 [PHP](https://github.com/matomo-org/matomo-php-tracker), [Java](https://github.com/matomo-org/matomo-java-tracker)). 
 
-This guide requires that you track your application via a [Piwik Tracking SDK](/guides/tracking-api-clients), 
-via the [Tracking HTTP API](/api-reference/tracking-api) or any other [Piwik Tracking Integration](https://matomo.org/integrate).
+This guide requires that you track your application via a [Matomo Tracking SDK](/guides/tracking-api-clients), 
+via the [Tracking HTTP API](/api-reference/tracking-api) or any other [Matomo Tracking Integration](https://matomo.org/integrate).
  
 ## Creating an experiment
 
-First you need to create an A/B test experiment in Piwik: read the [A/B testing user guide](https://matomo.org/docs/ab-testing/) to learn more.
+First you need to create an A/B test experiment in Matomo: read the [A/B testing user guide](https://matomo.org/docs/ab-testing/) to learn more.
 
 When you are asked on which target pages the experiment should be activated, we recommend selecting "Visitors enter this experiment on any page".
 
@@ -41,28 +41,28 @@ if ($activated->getName() == 'variation1') {
     /* do something variation2 */
 }
 
-// Important: let Piwik know that you have entered the current visitor into an experiment
+// Important: let Matomo know that you have entered the current visitor into an experiment
 $experiment->trackVariationActivation($piwikPhpTracker);
 // executes $piwikPhpTracker->trackEvent('abtesting', 'theExperimentName', 'nameOfActivatedVariation');
 ```
 
-### Sending the name of the activated variation to Piwik
+### Sending the name of the activated variation to Matomo
 
 So far you have created and implemented the experiment, so users get to see different versions of your app. 
-Now you need to let Piwik know which variation was activated for your current user by tracking a [Piwik event](https://matomo.org/docs/event-tracking/):
+Now you need to let Matomo know which variation was activated for your current user by tracking a [Matomo event](https://matomo.org/docs/event-tracking/):
 
 ```php
-// example tracking request via PHP Piwik Tracker
+// example tracking request via PHP Matomo Tracker
 $tracker->doTrackEvent('abtesting', 'buynowfoobar', 'nameOfVariation');
 ```
 
 ```objectivec
-// example tracking request via Piwik iOS SDK
+// example tracking request via Matomo iOS SDK
 [[PiwikTracker sharedInstance] sendEventWithCategory:@"abtesting" action:@"buynowfoobar" name:@"nameOfVariation"];
 ```
 
 ```java
-// example tracking request via Piwik Android SDK
+// example tracking request via Matomo Android SDK
 TrackHelper.track().event("abtesting", "buynowfoobar").name("nameOfVariation").with(tracker);
 ```
 
@@ -71,8 +71,8 @@ When you track an event, make sure to pass the following values:
 * Use the experiment name or experiment ID as event action. 
 * Use the variation name or variation ID as event name. When the original version was activated, use `original`. 
 
-The experiment name and variation names that you use have to be pre-configured for that experiment in your Piwik. 
-If you track a different variation name without having created it in your Piwik, 
+The experiment name and variation names that you use have to be pre-configured for that experiment in your Matomo. 
+If you track a different variation name without having created it in your Matomo, 
 the request will be ignored and a regular event will be tracked.
 
 ### Custom A/B testing framework
@@ -87,7 +87,7 @@ You can also implement a simple A/B testing framework yourself. An A/B test fram
   * read the persisted variation value to find out which variation the user is supposed to see.
 * Execute the app code for the randomly chosen, or previously activated variation: 
   * this is the code which implements the changes needed to display this variation in your app.  
-* Send the name of the activated variation to Piwik  (see previous section)
+* Send the name of the activated variation to Matomo  (see previous section)
 
 ## Finishing an experiment
 
