@@ -3,7 +3,7 @@ category: Develop
 ---
 # Distributing Your Plugin
 
-[**Piwik's Plugin Marketplace**](https://plugins.piwik.org) is the main way to download and install third-party plugins.
+[**Matomo's Plugin Marketplace**](https://plugins.matomo.org) is the main way to download and install third-party plugins.
 
 Every instance of Piwik running version 2.0 or greater is able to directly download and install plugins from the marketplace. **Making your plugin available on the marketplace is the best way for you to get your plugin out into the hands of Piwik users.**
 
@@ -12,7 +12,7 @@ It's also a great way for you to:
 * get user feedback via email or the GitHub issue tracker
 * see how many people use your plugin
 * allow people to donate money
-* allow people to buy your plugin ([get in touch](https://piwik.org/contact/marketplace/))
+* allow people to buy your plugin ([get in touch](https://matomo.org/contact/marketplace/))
 * allow people to get in touch with you to get help or to report bugs and features
 * get exposure for your skills and work
 
@@ -185,7 +185,7 @@ Here is a complete example to get you started:
     ],
     "preview": {
         "demo_url": "https://demo.piwik.org",
-        "video_url": "https://www.youtube.com/embed/Aaa_111HHH"
+        "video_url": "https://www.youtube-nocookie.com/embed/Aaa_111HHH"
     },
     "archive": {
         "exclude": ["/builds", "/test.log"]
@@ -282,7 +282,7 @@ Here are some common errors:
 
 If you did not receive an email, then the webhook might not be configured (or you may have created the tag before setting up the webhook).
 
-If you still encounter trouble while publishing your plugin, please join the IRC channel **#piwik** on [freenode](https://freenode.net/). If you can't find anyone in the IRC channel, please ask for help [on the forums](http://forum.piwik.org/).
+If you still encounter trouble while publishing your plugin, please join the IRC channel **#piwik** on [freenode](https://freenode.net/). If you can't find anyone in the IRC channel, please ask for help [on the forums](https://forum.matomo.org/).
 
 ## Rules for Plugins
 
