@@ -12,13 +12,13 @@ You may also be interested in the Heatmap & Session Recording [Reporting HTTP AP
 
 In the `matomo.js` tracker we differentiate between two methods:
 
-* Calling a **tracker instance method** affects only a specific Piwik tracker instance. In the docs you can 
+* Calling a **tracker instance method** affects only a specific Matomo tracker instance. In the docs you can 
   identify a tracker method when the method name contains a single dot (`.`), for example 
   `HeatmapSessionRecording.disable`.
 * Calling a **static method** affects all created tracker instances. In the docs you can identify a static method when 
   the method name contains `::`, for example `HeatmapSessionRecording::disableCaptureKeystrokes`.
 
-In most cases only one Piwik tracker will be used so the only difference is how you call that method:
+In most cases only one Matomo tracker will be used so the only difference is how you call that method:
 
 * Tracker methods are called via `_paq.push(['HeatmapSessionRecording.$methodName']);` or on a tracker instance directly eg. 
   `Matomo.getAsyncTracker().HeatmapSessionRecording.$methodName();`
@@ -26,7 +26,7 @@ In most cases only one Piwik tracker will be used so the only difference is how 
   eg. `Matomo.HeatmapSessionRecording.$methodName()`.
 
 If you do not want to use the `_paq.push` methods, you need to define a `window.matomoHeatmapSessionRecordingAsyncInit` method 
-that is called as soon as the media tracker has been initialized:
+that is called as soon as the Heatmap & Session Recording tracker has been initialized:
 
 ```js
 window.matomoHeatmapSessionRecordingAsyncInit = function () {
@@ -55,7 +55,7 @@ window.matomoAsyncInit = function () {
 
 To support single-page websites and web applications out of the box, Heatmap & Session Recording will automatically 
 detect a new page view when you call the `trackPageView` method. This applies if you call `trackPageView` several times without 
-an actual page reload. Piwik will after each call of `trackPageView` stop the recording of any activities and re-evaluate 
+an actual page reload. Matomo will after each call of `trackPageView` stop the recording of any activities and re-evaluate 
 based on the new URL whether if it should record activities for the new page or not. 
  
 If you use `trackPageView` for any other purposes than an actual page view, for example for error or event tracking, 
@@ -104,7 +104,7 @@ whether a new recording should be started, set `fetchConfig = false`.
 
 ### `setMaxCaptureTime(maxTimeInSeconds)`
 
-By default, the activities of a visitor is only recorded for up to 10 minutes in a single page view. If you want to record 
+By default, the activities of a visitor is only recorded for up to 15 minutes in a single page view. If you want to record 
 activities for a longer or shorter period, you can change the limit using this method. 
 
 Example:
@@ -127,11 +127,11 @@ Matomo.HeatmapSessionRecording.setMaxTextInputLength(100000);
 
 ### `disableCaptureKeystrokes()`
 
-When you configure a new session recording in Piwik, you can choose whether keystrokes should be recorded or not. If enabled,
+When you configure a new session recording in Matomo, you can choose whether keystrokes should be recorded or not. If enabled,
 keystrokes that are entered by a user into text form elements will be recorded and replayed later in the recorded session. If 
 you want to make sure to never record any keystrokes entered by your users, call this method.
 
-Password fields and some common credit card fields will be automatically masked before sending the data to your Piwik.
+Password fields and some common credit card fields will be automatically masked before sending the data to your Matomo.
 For privacy reasons you can mask the keystrokes of form fields by setting a `data-matomo-mask` (or `data-piwik-mask`) attribute on any element. 
 Learn more about this in [masking keystrokes](/guides/heatmap-session-recording/setup#masking-keystrokes-in-form-fields).
 
@@ -147,7 +147,7 @@ to certain target groups, to certain times, to certain locations, and more. An e
 
 ### `matchTrackerUrl()`
 
-When you configure a Heatmap or a Session Recording in Piwik, you can define page rules based on URL, URL path and URL parameters
+When you configure a Heatmap or a Session Recording in Matomo, you can define page rules based on URL, URL path and URL parameters
  to limit the recording to certain pages. By default, these rules are matched against the current browser URL.
 If you track custom URLs using the `setCustomUrl()` tracker method and want to apply the configured rules against a possibly set 
 custom URL, call this method.
@@ -161,7 +161,7 @@ By default, the target page rules you configure will be matched against
 ### `disable()`
 
 Allows you to completely disable the tracking of any Heatmap or Session Recording data. This is useful if you for example 
-manage multiple websites in your Piwik and there are some websites where you do not want to track any such activities. It is recommended
+manage multiple websites in your Matomo and there are some websites where you do not want to track any such activities. It is recommended
 to call this method as early in your tracking code as possible or during the `matomoHeatmapSessionRecordingAsyncInit` method.
 
 ### `enable()`
@@ -181,32 +181,32 @@ enabled in production.
 ### `setMatomoTrackers()`
 
 Allows you to set the tracker instances to be used when tracking heatmap and session activities. Can be either
- a single tracker instance, or an array of Piwik tracker instances. This is useful when you are working with multiple Piwik
+ a single tracker instance, or an array of Matomo tracker instances. This is useful when you are working with multiple Matomo
  tracker instances using `Matomo.getTracker` instead of `Matomo.addTracker`. 
  
 ### `getPiwikTrackers()`
 
-Returns an array of Piwik tracker instances that are used by the Heatmap and Session Recording plugin. By default, 
+Returns an array of Matomo tracker instances that are used by the Heatmap and Session Recording plugin. By default, 
 this will return the same as `Matomo.getAsyncTrackers()` and will return all tracker instances that were created eg 
-via `Matomo.addTracker` or `_paq.push(['addTracker']);` unless custom Piwik tracker instances were set via `setMatomoTrackers()`.
+via `Matomo.addTracker` or `_paq.push(['addTracker']);` unless custom Matomo tracker instances were set via `setMatomoTrackers()`.
 
 ## Tracker methods
 
 ### `disable()`
 
-Disables the tracking of any heatmap and session activities. This is useful when you have multiple Piwik tracker
- instances on your website and you want to track activities only into one Piwik. If called early in your tracking code, 
+Disables the tracking of any heatmap and session activities. This is useful when you have multiple Matomo tracker
+ instances on your website and you want to track activities only into one Matomo. If called early in your tracking code, 
  it will not even try to detect whether a recording should be started, saving you one HTTP request on each page view. If you
- use only one Piwik tracker on your website - which is normal in most of the cases - this method is equivalent to 
+ use only one Matomo tracker on your website - which is normal in most of the cases - this method is equivalent to 
  `HeatmapSessionRecording::disable`.
 
 Example:
 
 ```js
-// disables the tracking of any activities on all Piwik trackers
+// disables the tracking of any activities on all Matomo trackers
 _paq.push(['HeatmapSessionRecording::disable']); 
 
-// or if you are using multiple Piwik trackers and only want to disable it for a specific tracker:
+// or if you are using multiple Matomo trackers and only want to disable it for a specific tracker:
 var tracker = Matomo.getAsyncTracker(matomoUrl, matomoSiteId);
 tracker.HeatmapSessionRecording.disable();
 ```
@@ -221,7 +221,7 @@ Detects if the tracking is currently enabled or disabled.
 
 ### `addConfig()`
 
-By default, Heatmap & Session Recording configures itself by issuing an HTTP request to your Piwik installation to
+By default, Heatmap & Session Recording configures itself by issuing an HTTP request to your Matomo installation to
  detect automatically whether any activities should be recorded on the current page. This way you don't need to change
  your website when you configure new heatmaps or session recordings. This HTTP request is executed on each page view 
  and may add some load to your server. If you want to instead configure manually when to record a heatmap or a session, 
