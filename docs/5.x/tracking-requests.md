@@ -100,10 +100,10 @@ When we added event tracking or content tracking, we basically simply added a ne
 
 ### Defining a new action
 
-To add such an action, simply create a new file called `Tracker/ActionMyDescriptiveName.php` within a plugin and define a class that extends `Piwik\Tracker\Action`. For example, if a plugin is called `MyPluginName`, then you would create a file in `plugins/MyPluginName/Tracker/ActionMyDescriptiveName.php` and there you would define a class like this:
+To add such an action, simply create a new file called `Actions/ActionMyDescriptiveName.php` within a plugin and define a class that extends `Piwik\Tracker\Action`. For example, if a plugin is called `MyPluginName`, then you would create a file in `plugins/MyPluginName/Actions/ActionMyDescriptiveName.php` and there you would define a class like this:
 
 ```php
-namespace Piwik\Plugins\MyPluginName\Tracker;
+namespace Piwik\Plugins\MyPluginName\Actions;
 
 use Piwik\Tracker\Action;
 
