@@ -113,7 +113,7 @@ https://example.org/landingpage?pk_abe=buyNowColor&pk_abv=original&matomo_campai
 When an experiment is finished:
 
  * remove the two URL parameters `pk_abe` and `pk_abv` from your marketing campaigns. 
- If visitors still visit your website via one of these URLs, Piwik will simply ignore the two URL parameters and not enter visitors into the experiment anymore. 
+ If visitors still visit your website via one of these URLs, the A/B testing tracking request will be aborted and visitors will not enter the experiment anymore. The regular page view will still be tracked normally. 
  * if the experiment proved that one of your campaign variations performed significantly better than another, it is now time to change your campaigns to the winning variation and benefit from higher conversion rates. 
 
 Happy experimenting!
