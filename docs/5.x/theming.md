@@ -4,16 +4,16 @@ title: Themes
 ---
 # Writing a theme
 
-**Themes** are special types of plugins that change the look and feel of Piwik's UI. They use CSS and LESS to override the default styles defined by other Piwik plugins.
+**Themes** are special types of plugins that change the look and feel of Matomo's UI. They use CSS and LESS to override the default styles defined by other Matomo plugins.
 
 This guide will explain how to create a new theme. This guide assumes that you:
 
 - can code in HTML, PHP, CSS and JavaScript,
-- and have a general understanding of extending Piwik (if not, read our [Getting Started](/guides/getting-started-part-1) guide).
+- and have a general understanding of extending Matomo (if not, read our [Getting Started](/guides/getting-started-part-1) guide).
 
 ## Creating a new theme
 
-To create an empty theme, run the following command from Piwik's root directory:
+To create an empty theme, run the following command from Matomo's root directory:
 
     ./console generate:theme
 
@@ -74,7 +74,7 @@ For a complete list of icons you can override have a look at the [Morpheus theme
 
 ### Logo and favicon
 
-As Piwik users can upload their own logo and favicon using the admin interface a theme is not supposed to change any of those.
+As Matomo users can upload their own logo and favicon using the admin interface a theme is not supposed to change any of those.
 
 ## Advanced theming
 
@@ -137,7 +137,7 @@ For example,
 
 #### Named colors
 
-Here is a list of all named colors in Piwik:
+Here is a list of all named colors in Matomo:
 
 * _Namespace_: **sparkline-colors**: contains colors for sparkline images.
 
@@ -248,7 +248,7 @@ Here is a list of all named colors in Piwik:
 
 ## Twig, the template engine
 
-Piwik uses the [Twig templating engine](https://twig.symfony.com) to create HTML pages from PHP.
+Matomo uses the [Twig templating engine](https://twig.symfony.com) to create HTML pages from PHP.
 
 When creating a theme, you do not need to create or change any template as the recommended way is to only use Less (CSS) and JavaScript. However, in some rare cases where advanced customisation is necessary, you may need to customise Twig templates.
 
@@ -269,5 +269,5 @@ plugins/[MyThemePlugin]/templates/plugins/[OverriddenPlugin]/[overriddenTemplate
 ## Learn more
 
 * To learn **more about creating new report visualizations** read our [Visualizing Report Data](/guides/visualizing-report-data) guide.
-* To learn **more about writing JavaScript for Piwik plugins and themes** read our [Working with Piwik's UI](/guides/working-with-piwiks-ui) guide.
+* To learn **more about writing JavaScript for Matomo plugins and themes** read our [Working with Piwik's UI](/guides/working-with-piwiks-ui) guide.
 * To learn **more about UI components and styles** read our [Views](/guides/views) guide.
