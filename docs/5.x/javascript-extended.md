@@ -99,7 +99,7 @@ In your JavaScript, you can use **ColorManager** to access these colors:
     var myColorToUse = ColorManager.getColor('my-color-namespace', 'my-color-name');
 
     // get multiple colors all at once
-    var myColorsToUse = ColorManager.getColor('my-color-namespace', ['my-first-color', 'my-second-color']);
+    var myColorsToUse = ColorManager.getColors('my-color-namespace', ['my-first-color', 'my-second-color']);
 
 })(require);
 ```
@@ -135,7 +135,7 @@ public function myWidget() {
 ```
 
 ```twig
-// MyPlugin/templages/_mywidget.twig
+// MyPlugin/templates/_mywidget.twig
 <p>Hello world!</p>
 ```
 
