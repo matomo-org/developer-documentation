@@ -128,7 +128,7 @@ public function __construct(MigrationFactory $factory)
 public function getMigrations(Updater $updater)
 {
     return array(
-        $this->migration->db->addColumn('custom_dimensions', 'case_sensitive', 'INYINT UNSIGNED NOT NULL DEFAULT 1', 'extractions')
+        $this->migration->db->addColumn('custom_dimensions', 'case_sensitive', 'TINYINT UNSIGNED NOT NULL DEFAULT 1', 'extractions')
     );
 }
 
