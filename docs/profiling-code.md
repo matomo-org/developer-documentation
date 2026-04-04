@@ -45,9 +45,9 @@ The profiler will automatically stop the recording as soon as the `register_shut
 
 ### Storage of profile runs
 
-The files will be stored as `{runId}-{profilerNamespace}.xhprof` under the configured directory in the `xhprof.output_dir` PHP ini setting. If that's not configured, then it may fall back to the `sys_get_temp_dir()` which is for example `/tmp`. Please note that when the ini setting is not set, there's a chance that when viewing a run that it can't locate the xhprof file.
+The files will be stored as `{runId}.{profilerNamespace}.xhprof` under the configured directory in the `xhprof.output_dir` PHP ini setting. If that's not configured, then it may fall back to the `sys_get_temp_dir()` which is for example `/tmp`. Please note that when the ini setting is not set, there's a chance that when viewing a run that it can't locate the xhprof file.
 
-The profiler namespace may the name of your git branch.
+The profiler namespace may be the name of your git branch.
 
 ### Viewing a profile run
 
