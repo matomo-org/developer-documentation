@@ -588,7 +588,7 @@ at all.
 When your Settings > System Check reports that "The Matomo JavaScript tracker file `matomo.js` is not writable 
 which means other plugins cannot extend the JavaScript tracker." then you have two options to solve this issue:
 
-1. Make the `matomo.js` file writable, for example by executing `chmod a+w piwik.js` or `chown $phpuser piwik.js` (replace `$phpuser` with actual username) in your Piwik directory. 
+1. Make the `matomo.js` file writable, for example by executing `chmod a+w matomo.js` or `chown $phpuser matomo.js` (replace `$phpuser` with actual username) in your Matomo directory. 
 We recommend running the [Matomo console](/guides/piwik-on-the-command-line) command `./console custom-piwik-js:update` after you have made the file writable.
 2. or Load the A/B Testing framework manually in your website by adding in all your pages in the `<head>`: 
    `<script src="//$yourPiwikDomain/plugins/AbTesting/tracker.min.js">`
