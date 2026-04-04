@@ -32,7 +32,7 @@ This would allow you to call eg `UsersManager.(set|get)UserPreference($login, 'p
 
 User specific data can also be stored in the `option` table similar to [retrieving a value](https://github.com/matomo-org/matomo/blob/4.1.0/plugins/Feedback/Feedback.php#L80-L93) and storing a [user specific value](https://github.com/matomo-org/matomo/blob/4.1.0/plugins/Feedback/Controller.php#L37-L47). Basically, you define a meaningful key and append the username to the key `Option::get('MyPluginName.valueDescribeSetting.' . Piwik::getCurrentUserLogin());`. This way a different entry is created in the `option` table for every user. 
 
-Similarly you can set a value using `Option:set('MyPluginName.valueDescribeSetting.' . Piwik::getCurrentUserLogin(), $value)` or get all values for all users like `Option.getLike('MyPluginName.valueDescribeSetting.%')`.
+Similarly you can set a value using `Option::set('MyPluginName.valueDescribeSetting.' . Piwik::getCurrentUserLogin(), $value)` or get all values for all users like `Option::getLike('MyPluginName.valueDescribeSetting.%')`.
 
 When a user is deleted, you would need to make sure to clean up any configured value using the `'UsersManager.deleteUser'` event where you can then do a `Option::delete($key)`.
 
