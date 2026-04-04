@@ -4,9 +4,9 @@ title: Introduction
 ---
 # Develop
 
-Welcome to the *Develop* section of the Piwik Developer Zone. If you are interested in customizing Matomo, you are in the right place!
+Welcome to the *Develop* section of the Matomo Developer Zone. If you are interested in customizing Matomo, you are in the right place!
 
-This section contains guides that will help you create **Plugins** and **Themes** to customize Matomo (Piwik), or to add new features to Matomo.
+This section contains guides that will help you create **Plugins** and **Themes** to customize Matomo, or to add new features to Matomo.
 
 If you want to get more insight into how Matomo works behind the API's check out our [Matomo In Depth](/piwik-in-depth) section.
 
