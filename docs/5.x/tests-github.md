@@ -34,7 +34,7 @@ You can control how the generated action file behaves, by providing certain opti
     Allows to specify the name of the plugin you want to generate the action file for. If the option is missing the action file for Matomo itself will be regenerated.
 
 
-  * **--php-version**
+  * **--php-versions**
 
     Allows to specify the PHP versions the tests should be run with. You can provide all versions as a comma separated list. e.g. "7.2,8.1" or "7.2,7.4,8.2"
     
