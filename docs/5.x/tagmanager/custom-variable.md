@@ -36,7 +36,7 @@ $ ./console generate:tagmanager-preconfigured-variable
 
 ### Defining the name, description, and help of your variable
 
-When you generate a variable, the generator will automatically create some [translation keys](/guides/translations) in your `plugin/$yourplugin/lang/en.json` file.
+When you generate a variable, the generator will automatically create some [translation keys](/guides/translations) in your `plugins/$yourplugin/lang/en.json` file.
 You may want to adjust the translations for the created keys:
 
 ```json
