@@ -562,7 +562,7 @@ function createExperiment() {
     // do something
   } else if (Experiment.NAME_ORIGINAL_VARIATION === selectedVariation) {
     // original version is supposed to be shown, usually nothing to do
-  } else if (null === selectedVariation) {
+  } else if (undefined === selectedVariation) {
     // the experiment is supposed to do nothing as the visitor does not participate in the experiment
     // basically means the original version is supposed to be shown
   }
@@ -580,7 +580,7 @@ if ('object' === typeof Piwik && 'object' === typeof Matomo.AbTesting) {
 ```
 
 The method `getActivatedVariationName` will either return the name of the activated variation, a string 'original' 
-if the original version is supposed to be shown or null if the visitor is not supposed to participate in the experiment 
+if the original version is supposed to be shown or `undefined` if the visitor is not supposed to participate in the experiment 
 at all.
 
 ### How do I include the A/B testing framework when my `matomo.js` file is not writable?
