@@ -43,7 +43,7 @@ The [Config](/api-reference/Piwik/Config) singleton allows PHP code to access wh
 For example, the following code will output every config option in the `[General]` section:
 
 ```php
-for (Config::getInstance()->General as $name => $value) {
+foreach (Config::getInstance()->General as $name => $value) {
     echo "Option $name == " . print_r($value, true);
 }
 ```
