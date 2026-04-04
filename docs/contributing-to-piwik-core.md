@@ -57,7 +57,7 @@ git config --global user.email john@example.com
 Clone your Piwik fork (replace `myusername` with you GitHub user name):
 
 ```bash
-git clone https://github.com/myusername/piwik
+git clone https://github.com/myusername/matomo
 ```
 
 This will copy the entire forked repository (including all history) to the _piwik_ folder on your machine.
