@@ -43,7 +43,7 @@ if ($activated->getName() == 'variation1') {
 
 // Important: let Matomo know that you have entered the current visitor into an experiment
 $experiment->trackVariationActivation($piwikPhpTracker);
-// executes $piwikPhpTracker->trackEvent('abtesting', 'theExperimentName', 'nameOfActivatedVariation');
+// executes $piwikPhpTracker->doTrackEvent('abtesting', 'theExperimentName', 'nameOfActivatedVariation');
 ```
 
 ### Sending the name of the activated variation to Matomo
