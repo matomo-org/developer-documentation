@@ -14,9 +14,9 @@ In the `matomo.js` tracker we differentiate between two kind of methods:
 
 * Calling a **tracker instance method** affects only a specific Matomo tracker instance. In the docs you can
   identify a tracker method when the method name contains a single dot (`.`), for example
-  `CrashAnalytics.disableTrackEvents`.
+  `CrashAnalytics.disable`.
 * Calling a **static method** affects all created tracker instances. In the docs you can identify a static method when
-  the method name contains `::`, for example `CrashAnalytics::removePlayer`.
+  the method name contains `::`, for example `CrashAnalytics::setSampleRate`.
 
 In most cases only one Matomo tracker will be used so the only difference is how you call that method:
 
@@ -27,7 +27,7 @@ In most cases only one Matomo tracker will be used so the only difference is how
   eg. `Matomo.CrashAnalytics.$methodName()`.
 
 If you do not want to use the `_paq.push` methods, you need to define a `window.matomoCrashAnalyticsAsyncInit` method
-that is called as soon as the media tracker has been initialized:
+that is called as soon as the crash analytics tracker has been initialized:
 
 ```js
 window.matomoCrashAnalyticsAsyncInit = function () {
@@ -49,7 +49,7 @@ Returns the configured “sample rate”. See documentation for `setSampleRate()
 
 Sets the maximum number of crash requests that are allowed to be sent per tracker. Once this limit is reached, no further crash tracking requests are sent. Defaults to 50.
 
-Note: if the page is reloaded the count of crash requests sent resets, but if a pageview is tracked, it will not reset. This is significant if you’re using this functionality within a single page application where actual page loads/reloads may be rare.
+Note: the count of crash requests sent resets when the page is reloaded or when a pageview is tracked (e.g., via `trackPageView`).
 
 ### `getMatomoTrackers()`
 
@@ -102,9 +102,9 @@ Allows you to limit crash tracking to crashes that originate from a source file 
 
 Allows you to exclude crashes from crash tracking if they originate from a source file hosted on one or a list of domains. If you use JavaScript from another organization or product that you have no control over, for instance, you can ignore any crashes that occur from those source files with this method.
 
-### `trackBrowserExtensionErrors()`
+### `trackBrowserExtensionCrashes()`
 
-Some browsers will report crashes that occur in browser extensions to the website causing them to be tracked in Matomo. By default these crashes are ignored, but if you’d like them to be tracked, you can call `trackBrowserExtensionErrors()`.
+Some browsers will report crashes that occur in browser extensions to the website causing them to be tracked in Matomo. By default these crashes are ignored, but if you’d like them to be tracked, you can call `trackBrowserExtensionCrashes()`.
 
 ### `doNotTrackBrowserExtensions()`
 
@@ -151,21 +151,21 @@ Enables the debug mode that logs debug information to the developer console of y
 
 ### `enable()`
 
-Disables the tracking of crashes for a specific tracker instance.
+If crash tracking was disabled via `disable()`, you can enable it again for a specific tracker instance using this method.
 
 Example:
 ```js
-// disables the tracking of events on all Matomo trackers
-_paq.push([‘CrashAnalytics.disable’]);
+// enables the tracking of crashes on all Matomo trackers
+_paq.push([‘CrashAnalytics.enable’]);
 
-// or if you are using multiple Matomo trackers and only want to disable it for a specific tracker:
+// or if you are using multiple Matomo trackers and only want to enable it for a specific tracker:
 var tracker = Matomo.getAsyncTracker(matomoUrl, matomoSiteId);
-tracker.CrashAnalytics.disable();
+tracker.CrashAnalytics.enable();
 ```
 
 ### `disable()`
 
-If the tracking of crashes was disabled via `disableTrackEvents()`, you can enable it again using this method.
+Disables the tracking of crashes for a specific tracker instance.
 
 ### `isEnabled()`
 
