@@ -416,7 +416,7 @@ You can add a URL parameter `?pk_ab_test=$variationName` to force the activation
 
 The selected variation for an experiment is persisted in the local storage of your users browsers. This makes sure the same user will always see 
 the same variation on all subsequent visits. If the local storage feature is not supported by the browser, this information 
-is stored in a cookie for up to 365 days.
+is stored in a cookie for up to 13 months.
 
 ### Can I use redirects in A/B tests to test entirely different pages or layouts?
 
