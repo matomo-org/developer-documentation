@@ -72,7 +72,7 @@ Now you can for example add below code to hook into WordPress and it will only b
 ```php
 if (defined( 'ABSPATH') && function_exists('add_action')) {
     // the Matomo plugin is used within wordpress...
-    apply_filters('post_row_actions', function ($actions, $post) {
+    add_filter('post_row_actions', function ($actions, $post) {
         $actions['link_to_my_plugin'] = '<a target="_blank" href="'.\WpMatomo\Admin\Menu::make_matomo_action_link('MyPlugin', 'index').'">View My Matomo Plugin</a>';
         return $actions;
     }, 10, 2);
