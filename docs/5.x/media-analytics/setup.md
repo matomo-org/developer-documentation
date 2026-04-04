@@ -9,12 +9,12 @@ in particular: HTML5 videos and audios, YouTube videos and Vimeo videos. Support
 
 ## Embedding the Media Analytics JavaScript Tracker
 
-If you have already embedded the [Piwik JavaScript Tracking Code](/guides/tracking-javascript-guide) into your website,
+If you have already embedded the [Matomo JavaScript Tracking Code](/guides/tracking-javascript-guide) into your website,
 the Media Analytics will automatically start tracking the usage of video and audio. 
-The video player tracking code is directly added in your Matomo JavaScript tracker file `/matomo.js` as long as the file `matomo.js` in your Piwik directory is writable by the webserver/PHP.
+The video player tracking code is directly added in your Matomo JavaScript tracker file `/matomo.js` as long as the file `matomo.js` in your Matomo directory is writable by the webserver/PHP.
  
-To check whether this works by default for you, login into Piwik as a Super User, go to Administration, and open the "System Check" report. 
-If the System Check displays a warning for "Writable Matomo.js" then [learn below how to solve this](#when-the-matomojs-in-your-piwik-directory-file-is-not-writable).
+To check whether this works by default for you, login into Matomo as a Super User, go to Administration, and open the "System Check" report. 
+If the System Check displays a warning for "Writable JavaScript Tracker" then [learn below how to solve this](#when-the-matomojs-in-your-piwik-directory-file-is-not-writable).
 
 ## Tracking HTML5 videos
 
@@ -117,13 +117,13 @@ window.onYouTubeIframeAPIReady = function () {
 
 To not break your website the media tracker will not overwrite your `onYouTubeIframeAPIReady` method.
 
-## When the `matomo.js` in your Piwik directory file is not writable
+## When the `matomo.js` in your Matomo directory file is not writable
  
-When your Settings > System Check reports that "The Piwik JavaScript tracker file `matomo.js` is not writable 
+When your Settings > System Check reports that "The Matomo JavaScript tracker file `matomo.js` is not writable 
 which means other plugins cannot extend the JavaScript tracker." then you have two options to solve this issue:
 
-1. Make the `matomo.js` file writable, for example by executing `chmod a+w piwik.js` or `chown $phpuser piwik.js` (replace `$phpuser` with actual username) in your Piwik directory. 
-We recommend running the [Piwik console](/guides/piwik-on-the-command-line) command `./console custom-piwik-js:update` after you have made the file writable.
+1. Make the `matomo.js` file writable, for example by executing `chmod a+w matomo.js` or `chown $phpuser matomo.js` (replace `$phpuser` with actual username) in your Matomo directory. 
+We recommend running the [Matomo console](/guides/piwik-on-the-command-line) command `./console custom-piwik-js:update` after you have made the file writable.
 2. or Load the MediaAnalytics tracker file manually in your website by adding in all your pages ideally in the `<head>`: 
    `<script src="https://your-matomo-domain/plugins/MediaAnalytics/tracker.min.js">`
 
