@@ -114,7 +114,7 @@ With custom campaign parameters:
 
 ```
 var link = _pk_externalRawLink('https://matomo.org/faq/new-to-piwik/faq_17/',
-                'MyCampaign', 'MySource', 'MyMedium');
+                ['MyCampaign', 'MySource', 'MyMedium']);
 ``` 
 
 
