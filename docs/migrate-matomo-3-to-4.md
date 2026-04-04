@@ -77,16 +77,6 @@ e.g. `{% spaceless %}` becomes `{% apply spaceless %}`
 
 e.g. `divisibleby(2)` becomes `divisible by(2)`
 
-## Running tests on Travis
-
-If you are [running tests for your plugin on Travis](https://developer.matomo.org/guides/tests-travis) you should regenerate the `.travis.yml` file by executing the following command within your Matomo directory:
-
-```
-$ ./console generate:travis-yml --plugin=MyPlugin --php-versions="7.2,7.4" --distribution="bionic" --sudo-false --verbose
-```
-
-You may need to update the "exclude" matrix as this isn't done automatically should you not want certain jobs to run. It would otherwise only exclude runs for PHP versions that don't run anymore anyway.
-
 ## Marketplace distribution
 
 Updates used to be published from the GitHub repository to the Matomo Marketplace using a GitHub service. GitHub deprecated this feature a while ago. To send updates to the marketplace you need to make sure you have a [Matomo Webhook](https://developer.matomo.org/guides/distributing-your-plugin#activate-the-piwik-plugins-webhook) configured in your repository. Otherwise the Marketplace won't notice there has been an update for your plugin.
@@ -94,6 +84,6 @@ Updates used to be published from the GitHub repository to the Matomo Marketplac
 ## Summary
 
 In this guide we have seen which steps to take to migrate your Matomo plugin to be compatible with our latest Matomo 4.
-If you need further help for converting your plugin to Matomo 3, head over to the [Piwik developers community forums](https://forum.matomo.org/c/plugins-platform).
+If you need further help for converting your plugin to Matomo 4, head over to the [Matomo developers community forums](https://forum.matomo.org/c/plugins-platform).
 
 Once you've adjusted your plugin, don't forget to release a new version.
