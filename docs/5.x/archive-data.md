@@ -100,7 +100,7 @@ Goal Revenue     | `goal_<idGoal>_revenue`        | The total revenue generated 
 
 _Note: `<idGoal>` should be replaced with the ID of a goal._
 
-Goal specific metrics are stored in the database in the `goals` column of serialized reports. The column contains a PHP array mapping goal IDs with arrays of goal specific metric values. These values are set as normal column values with the metric names described above by the [AddColumnsProcessedMetricsGoal](/api-reference/Matomo/DataTable/Filter/AddColumnsProcessedMetricsGoal) DataTable filter.
+Goal specific metrics are stored in the database in the `goals` column of serialized reports. The column contains a PHP array mapping goal IDs with arrays of goal specific metric values. These values are set as normal column values with the metric names described above by the [AddColumnsProcessedMetricsGoal](/api-reference/Piwik/DataTable/Filter/AddColumnsProcessedMetricsGoal) DataTable filter.
 
 ### Processed metrics
 
@@ -157,7 +157,7 @@ Core metrics have special names and do not follow this convention.
 
 ## Reports
 
-Reports are stored in memory using the [`DataTable`](/api-reference/Matomo/DataTable) class. A `DataTable` is a 2-dimension array composed of rows and columns.
+Reports are stored in memory using the [`DataTable`](/api-reference/Piwik/DataTable) class. A `DataTable` is a 2-dimension array composed of rows and columns.
 
 Each row contains metrics that relate to a set of visits, actions, conversions… That set is defined and described by a special **label** column. How the column describes the set depends entirely upon the specific report. For example in the `DevicesDetection.getBrowsers` report, a row with the label *Firefox* would hold metrics for visits that used the Firefox browser.
 
