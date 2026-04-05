@@ -64,7 +64,7 @@ Make sure to call this method as early as possible, for example just after `_paq
 ## How do I setup media analytics when using multiple Matomo JavaScript trackers?
 
 Matomo lets you track a website into different Matomo installations or into different Matomo websites. Learn more about 
-using [Multiple Matomo trackers on the JavaScript Tracking guide](/guides/tracking-javascript-guide#multiple-piwik-trackers).
+using [Multiple Matomo trackers on the JavaScript Tracking guide](/guides/tracking-javascript-guide#multiple-matomo-trackers).
 
 If you are using the regular `_paq.push` tracking method, everything will work out of the box when you create more trackers 
 via `_paq.push(['addTracker', url, idsite]);`
