@@ -57,7 +57,7 @@ If you can't think of an idea for a plugin, you can check the *[New plugin](http
 Before we start extending Matomo, let's make sure you have the tools needed. You will need the following:
 
 - **A PHP IDE or a text editor.** We recommend using [PhpStorm](https://www.jetbrains.com/phpstorm/), a powerful IDE built specifically for developing in PHP.
-- **A webserver,** such as [Apache](https://www.apache.org/) or [Nginx](https://nginx.org/). You can also use [PHP's built-in webserver](https://secure.php.net/manual/en/features.commandline.webserver.php) on your development machine if you have PHP 7.2.5 or higher installed.
+- **A webserver,** such as [Apache](https://www.apache.org/) or [Nginx](https://nginx.org/). You can also use [PHP's built-in webserver](https://www.php.net/manual/en/features.commandline.webserver.php) on your development machine if you have PHP 7.2.5 or higher installed.
 - **A MySQL database**
 - **[git](https://git-scm.com/)** so you can work with the latest Matomo source code.
 - **[Composer](https://getcomposer.org/)** so you can install the PHP libraries needed by Matomo.
@@ -114,7 +114,7 @@ Next, we will install all the libraries that Matomo needs using Composer.
 
 Now that you've got a copy of Matomo, you'll need to point your web server to it. If you use Apache or Nginx, the specific instructions for configuring your web server depend on the web server itself.
 
-If your PHP version is 7.2.5 or greater, you can also use [PHP's built-in web server](https://secure.php.net/manual/en/features.commandline.webserver.php) which requires no installation. Simply run the following command:
+If your PHP version is 7.2.5 or greater, you can also use [PHP's built-in web server](https://www.php.net/manual/en/features.commandline.webserver.php) which requires no installation. Simply run the following command:
 
     $ php -S 0.0.0.0:8000
 
