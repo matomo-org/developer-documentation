@@ -5,10 +5,10 @@ category: Develop
 
 ## Type of settings
 
-The Piwik platform differentiate between "System Settings", "User Settings" and "Measurable Settings":
+The Matomo platform differentiates between "System Settings", "User Settings" and "Measurable Settings":
 
 **User Settings** can be configured by any logged in user and each user can configure the setting independently.
-The Piwik platform makes sure that settings are stored per user and that a user cannot see another user's configuration.
+The Matomo platform makes sure that settings are stored per user and that a user cannot see another user's configuration.
 A user will be able to change the settings on the "Personal Settings" page.
 
 **System Settings** applies to all of your users. It can be configured only by a user who has super user access.
@@ -25,7 +25,7 @@ All these classes extend the [Settings](/api-reference/Piwik/Settings/Settings) 
 
 ### Creating a Settings class
 
-Piwik can create the `Settings` class for you by using the [console](/guides/piwik-on-the-command-line):
+Matomo can create the `Settings` class for you by using the [console](/guides/piwik-on-the-command-line):
 
 ```
 $ ./console generate:settings
@@ -36,7 +36,7 @@ The command will ask you to enter the name of your plugin and for the type of se
  `MeasurableSettings.php`, for example `plugins/MyPlugin/SystemSettings.php`. This created file contains some examples to
  get you started. The creation and definition of settings works the same across the different types.
 
-To see the settings in action go to *Administration > General Settings* in your Piwik installation.
+To see the settings in action go to *Administration > General Settings* in your Matomo installation.
 
 ### Adding one or more settings
 
@@ -143,7 +143,7 @@ $this->autoRefresh->setIsWritableByCurrentUser(false);
 ### Showing or hiding a setting in the UI dynamically
 
 Sometimes you might have a bit more complicated form where a setting should be only visible when another setting
-is configured in a certain way. Piwik can show or hide settings dynamically without reloading based on a certain
+is configured in a certain way. Matomo can show or hide settings dynamically without reloading based on a certain
 condition. Say we wanted to have the setting `refreshInterval` only visible if `autoRefresh` is enabled, then
 we can do this as follows:
 
