@@ -3,7 +3,7 @@ category: Develop
 ---
 # Widgets
 
-All widgets can be added to your dashboards or exported via a URL to embed it on any page. Most widgets in Piwik
+All widgets can be added to your dashboards or exported via a URL to embed it on any page. Most widgets in Matomo
 represent a report but a widget can display anything, for example an RSS feed of your corporate news. You can also use
 widgets to add new content to an existing report page and to create new report pages.
 
@@ -35,7 +35,7 @@ class MyExampleWidget extends Widget
 
     public static function configure(WidgetConfig $config)
     {
-        $config->setCategoryId('About Piwik');
+        $config->setCategoryId('About Matomo');
         $config->setName('My Example Widget');
         $config->setOrder(5);
     }
@@ -56,7 +56,7 @@ In the constructor you can request any dependencies such as a translator or any 
 
 ### Configuration
 
-The widget can be configured in the `configure` method. The method is `static` because the Piwik platform would otherwise
+The widget can be configured in the `configure` method. The method is `static` because the Matomo platform would otherwise
 need to resolve all dependencies defined in the constructor for all widgets just to get a list of all existing widget
 names etc. For a list of all options have a look at the [WidgetConfig class reference](/api-reference/Piwik/Widget/WidgetConfig).
 
@@ -120,7 +120,7 @@ page the widget will be visible.
 ### Identifying the right category and subcategory
 
 Category and subcategory IDs are usually translation keys like `General_Visitors` and not the actual translation
-("Visitors") because Piwik is available in many different languages. The best way to find the correct IDs is to
+("Visitors") because Matomo is available in many different languages. The best way to find the correct IDs is to
  navigate to the page you want to extend in the browser, and then look for a URL parameter `category` and `subcategory`.
 
 
