@@ -64,8 +64,8 @@ Note: URLs can be built using the controller methods:
 ```php
     public function configureAdminMenu(MenuAdmin $menu)
     {
-        // add items to an existing category
-        $menu->addSettingsItem('My admin item', $this->urlForDefaultAction());
+        // add item to an existing category
+        $menu->addSystemItem('My admin item', $this->urlForDefaultAction());
         $menu->addPlatformItem('My admin item', $this->urlForDefaultAction());
 
         // or create a custom category
