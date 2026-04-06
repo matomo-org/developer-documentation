@@ -20,15 +20,15 @@ Read this guide if
 
 ## About analytics
 
-Analyzing data means searching for patterns in a set of _**things**_. In Piwik those **_things_** are visits, web actions and goal conversions.
+Analyzing data means searching for patterns in a set of _**things**_. In Matomo those **_things_** are visits, web actions and goal conversions.
 
 We search for patterns by [**reducing**](https://en.wikipedia.org/wiki/Data_reduction) the set of things. Or in other words, we search for patterns by grouping individual things together to create subsets that are both recognizable and meaningful.
 
-In Piwik the result of that grouping is the **analytics data**. Analytics data is stored, displayed and exposed through an API. Read on to learn what this data contains, how Piwik calculates and stores it, and how it is made available to Piwik users.
+In Matomo the result of that grouping is the **analytics data**. Analytics data is stored, displayed and exposed through an API. Read on to learn what this data contains, how Matomo calculates and stores it, and how it is made available to Matomo users.
 
 ## Data workflow
 
-Here is the workflow that data follows in Piwik:
+Here is the workflow that data follows in Matomo:
 
 - **raw data** is collected from trackers and stored as [**log data**](/guides/log-data)
 - the [**archiving process**](/guides/archiving) aggregates log data into [**archive data**](/guides/archive-data) (see also the [**archiving behavior specification**](/guides/archiving-behavior-specification))
