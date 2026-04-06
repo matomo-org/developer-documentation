@@ -77,7 +77,7 @@ a custom Vue component:
 
 ```html
 <Field
-    :component="{plugin: 'MyPlugin', component: 'MyFieldComponent'}"
+    :component="{plugin: 'MyPlugin', name: 'MyFieldComponent'}"
 />
 ```
 
