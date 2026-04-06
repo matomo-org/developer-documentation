@@ -18,14 +18,18 @@ Attackers can achieve that either by:
 
 ### Get request parameters safely
 
-In your PHP code, if you need access to a variable in `$_GET` or `$_POST`, use the `Request` class:
+In your PHP code, if you need access to a variable in `$_GET` or `$_POST`, use the `Request` class. Prefer the type-safe methods that validate and cast the value for you:
 
 ```php
 $request = new \Piwik\Request();
-$idSite = $request->getParameter('idSite');
+$idSite  = $request->getIntegerParameter('idSite');
+$segment = $request->getStringParameter('segment', '');
+$flat    = $request->getBoolParameter('flat', false);
 ```
 
-> Note: `Common::getRequestVar()` is deprecated. Use `\Piwik\Request::getParameter()` instead. Unlike `getRequestVar()`, the `Request` class returns raw (unsanitized) values, so make sure to apply proper escaping when outputting values in HTML.
+Available type-safe methods: `getIntegerParameter()`, `getStringParameter()`, `getFloatParameter()`, `getBoolParameter()`, `getArrayParameter()`, `getJsonParameter()`. Use the untyped `getParameter()` only when the expected type can genuinely vary.
+
+> Note: `Common::getRequestVar()` is deprecated. Use the `\Piwik\Request` class instead. Unlike `getRequestVar()`, the `Request` class returns raw (unsanitized) values, so make sure to apply proper escaping when outputting values in HTML.
 
 The older `getRequestVar()` method sanitizes request variables automatically. If an attacker passes a string containing `<script>...</script>`, it will be sanitized to `&lt;script&gt;...&lt;/script&gt;`. This will help to avoid accidentally embedding unescaped text in HTML output.
 
