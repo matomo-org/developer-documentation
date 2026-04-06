@@ -537,7 +537,7 @@ using the following process:
 - Check that the connection is `HTTPS` if secure cookies are to be used, if not then an error will be shown in the content div.
 - The small inline JavaScript `MatomoConsent` class `hasConsent` method is used to read the consent cookie and determine opt-out status.
 - The opt-out form is rendered in the content div using the inline settings.
-- The opt-out form checkbox is connected to events which call `MatomoConsent.consentGiven()` or `Matomo.consentRevoked();` to set or
+- The opt-out form checkbox is connected to events which call `MatomoConsent.consentGiven()` or `MatomoConsent.consentRevoked();` to set or
 remove the consent cookie as needed.
 
 For a description of inline settings, see the [Opt-out Tracking Guide](tracking-optout).
