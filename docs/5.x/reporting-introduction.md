@@ -5,9 +5,9 @@ subGuides:
   - querying-the-reporting-api
   - reporting-api-clients
 ---
-# Accessing Piwik data
+# Accessing Matomo data
 
-This section contains guides that will help you query Piwik's reporting data to integrate it into your application.
+This section contains guides that will help you query Matomo's reporting data to integrate it into your application.
 
 ## API references
 

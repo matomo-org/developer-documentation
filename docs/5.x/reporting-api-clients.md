@@ -8,7 +8,7 @@ previous: querying-the-reporting-api
 
 **Read this guide if**
 
-* you'd like to know **which client libraries are available to use [Piwik's Reporting HTTP API](https://developer.matomo.org/guides/reporting-introduction) from your application**
+* you'd like to know **which client libraries are available to use [Matomo's Reporting HTTP API](https://developer.matomo.org/guides/reporting-introduction) from your application**
 
 ## Client libraries for Reporting API
 
@@ -48,4 +48,4 @@ If you're looking instead for client libraries to use Matomo Tracking HTTP API a
 
 ## Learn more
 
-You can view the complete list of clients and integrations of Piwik at [matomo.org/integrate/](https://matomo.org/integrate/).
+You can view the complete list of clients and integrations of Matomo at [matomo.org/integrate/](https://matomo.org/integrate/).
