@@ -33,7 +33,7 @@ Once you're ready to create the pull request, write a description of the pull re
 
 If the PR is ready for a review, assign the label `Needs Review` and put it in the correct milestone. The milestone for the PR is usually the same milestone as the original issue you worked on. If there is an issue for this PR, then we also assign the label `Not In Changelog`. This prevents the same issue being listed twice in the changelog. A PR will only be reviewed when it has the `Needs Review` label.
 
-If the PR is not ready for a review yet and the PR is in progress, then you can click on the link `Convert to draft` which you find in the GitHub PR UI below `Reviewers`. Once you finished the work for the PR and it's ready for a review, you can click on `Ready for review` where it says `This pull request is still a work in progress` and assign the labels as mentioned above.
+If the PR is not ready for a review yet and the PR is in progress, then you can click on the link `Convert to draft` which you find in the GitHub PR sidebar. Once you finished the work for the PR and it's ready for a review, you can click on `Ready for review` where it says `This pull request is still a work in progress` and assign the labels as mentioned above.
 
 For more PR best practices read below.
 

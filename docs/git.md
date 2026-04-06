@@ -140,7 +140,7 @@ Technically, you can also undo the last commit that was already pushed but then 
 
 You can push changes using the command `git push`. If you are working on a branch then you may need to define the name of the so-called "remote" (which is usually `origin`) and the name of the branch you want to push. For example, if you created a branch `myfeature` then you need to execute `git push origin myfeature`.
 
-Pushing means it will send all the previous commits to the remote server, which is github.com. You will then see the branch appear in the GitHub user interface and Travis will automatically run our suite of automated tests.
+Pushing means it will send all the previous commits to the remote server, which is github.com. You will then see the branch appear in the GitHub user interface and GitHub Actions will automatically run our suite of automated tests.
 
 When you visit the repository you pushed the change to on github.com then GitHub will show you the branch you pushed to and you can inspect the pushed changes again. You then either make more pushes or if you are happy with the changes or seek feedback then you [create a pull request](/guides/pull-request-reviews).
 
@@ -161,14 +161,14 @@ Submodules are configured in a `.gitmodules` file ([see this example](https://gi
 ``` 
 [submodule "plugins/SecurityInfo"]
     path = plugins/SecurityInfo
-    url = git@github.com:matomo-org/plugin-SecurityInfo.git
+    url = https://github.com/matomo-org/plugin-SecurityInfo.git
 ```
 
-This means the repository has a submodule in the path `plugins/MyPlugin` and it points to the repository `git@github.com:matomo-org/plugin-SecurityInfo.git`. If the content of that submodule was to include the commit hash `0c3c4182d96edcb23c896ca86042bab06247db42`, then the directory `plugins/MyPlugin` will have the content of this specific commit checked out.
+This means the repository has a submodule in the path `plugins/SecurityInfo` and it points to the repository `git@github.com:matomo-org/plugin-SecurityInfo.git`. If the content of that submodule was to include the commit hash `0c3c4182d96edcb23c896ca86042bab06247db42`, then the directory `plugins/SecurityInfo` will have the content of this specific commit checked out.
 
 Every time this commit hash changes you will need to execute `git submodule update` to ensure the path has the correct version of the submodule checked out.
 
-Note: If you are wondering why our repositories on GitHub use HTTPS git URLs this is so that Travis can clone this repository without issues.
+Note: If you are wondering why our repositories on GitHub use HTTPS git URLs in `.gitmodules`, this is so that GitHub Actions can clone these repositories without issues.
 
 ### Making a change in a submodule and updating the reference to this submodule
 

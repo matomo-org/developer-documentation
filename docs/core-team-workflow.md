@@ -69,11 +69,11 @@ We try to publish a new Piwik release [about once a month](https://piwik.org/faq
 Generally we will release several beta releases to give early access and ensuring continuous testing of Piwik.
 
 To publish a new Piwik version, the release manager will tag the new version in git (see [all release tags](https://github.com/matomo-org/matomo/tags)).
-A shell script is then run to generate the archives (zip and tar.gz) which are [cryptographically signed](https://piwik.org/blog/2014/11/verify-signatures-piwik-packages/) and then copied to the build server [builds.piwik.org](https://builds.piwik.org/) and [builds.piwik.org/LATEST](https://builds.piwik.org/LATEST) is updated with the latest stable release number.
+A shell script is then run to generate the archives (zip and tar.gz) which are [cryptographically signed](https://piwik.org/blog/2014/11/verify-signatures-piwik-packages/) and then copied to the build server [builds.matomo.org](https://builds.matomo.org/) and [builds.matomo.org/LATEST](https://builds.matomo.org/LATEST) is updated with the latest stable release number.
 Within hours, Piwik installations will be updated by users via the one click [upgrade mechanism](https://piwik.org/docs/update/) &ndash; or by manual upgrades.
 
 Releases that contain the string "alpha", "beta", "rc", are built for testing purposes and are not advertised on [piwik.org](https://piwik.org).
-They are however made available on the build server and the [builds.piwik.org/LATEST_BETA](https://builds.piwik.org/LATEST_BETA) is updated to contain the release's version string.
+They are however made available on the build server and the [builds.matomo.org/LATEST_BETA](https://builds.matomo.org/LATEST_BETA) is updated to contain the release's version string.
 You can enable Piwik to use the latest Beta release automatically if you want to test the latest features ([see this faq to learn how](https://piwik.org/faq/how-to-update/#faq_159)).
 
 ### Changelog
@@ -99,7 +99,7 @@ It is highly recommended that code committed in the [main branch (*.x-dev)](http
 
     fixes #159 - changed patch to use wrapInner() instead of wrap()
 
-This message will automatically close the ticket [#472](https://github.com/matomo-org/matomo/issues/472).
+This message will automatically close the ticket [#159](https://github.com/matomo-org/matomo/issues/159).
 You can also use simply `#159` and a comment will be automatically added to the ticket #159 with a link to the commit on GitHub.
 
 When applicable, the related [online documentation](https://piwik.org/docs/) and the related [FAQs](https://piwik.org/faq/) should be updated.
@@ -114,19 +114,15 @@ To gain push access to the Piwik code repositories, one must make positive chang
 
 ### In the forums
 
-Join us in the forums at [forum.piwik.org](https://forum.piwik.org)
+Join us in the forums at [forum.matomo.org](https://forum.matomo.org)
 
 Discover our vibrant community where analytics tips are shared, suggestions on how to make the most out of Piwik, or general questions. Several team members visit the forums regularly, as well as active members of the community.
 
 ### By email
 
-You can contact the team by email: <a href='mailto:hello@matomo.org?subject=Contact the Piwik team'>hello (at) piwik.org</a>, or using [the contact form](https://piwik.org/contact/).
+You can contact the team by email: <a href='mailto:hello@matomo.org?subject=Contact the Matomo team'>hello (at) matomo.org</a>, or using [the contact form](https://matomo.org/contact/).
 
-### Using IRC
-
-Some team members may be available in IRC at [irc.freenode.net/#piwik](irc://irc.freenode.net#piwik) ([webchat](https://webchat.freenode.net/?channels=piwik&uio=MTE9NTE3a)).
-
-## Influencing Piwik development
+## Influencing Matomo development
 
 There are many ways you can make a difference in the project and influence the overall goodness of Piwik, most of which do not include coding.
 

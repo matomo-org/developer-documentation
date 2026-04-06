@@ -115,6 +115,6 @@ To not needing to set a breakpoint you can also place the keyword `debugger;` an
 
 If the JS is minified: Most browsers have a "Pretty print" feature which will format the code making it easier to debug.
 
-In some cases you may want to log information using `console.(log|warning|error|...)`.
+In some cases you may want to log information using `console.(log|warn|error|...)`.
 
 
