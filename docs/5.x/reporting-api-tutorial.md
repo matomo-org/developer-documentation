@@ -31,7 +31,7 @@ To build the URL of the API call, you need:
 
     **period=day**
 
-    Alternatively, if you wanted to request all pages from a given date, you could use a date range parameter. For example, to request all pages since January 1st 2021:`period=range&date=2011-01-21,yesterday`
+    Alternatively, if you wanted to request all pages from a given date, you could use a date range parameter. For example, to request all pages since January 1st 2021:`period=range&date=2021-01-01,yesterday`
 
 - the format parameter. Defines the output format of the data: XML, JSON, CSV, PHP (serialized PHP), HTML (simple html)
 
@@ -60,11 +60,11 @@ Here is the output of this request:
 *   XML of the visits of the last 10 days, one entry per day
 [https://demo.matomo.cloud/?module=API&method=VisitsSummary.getVisits&idSite=1&period=day&date=last10&format=xml](https://demo.matomo.cloud/?module=API&method=VisitsSummary.getVisits&idSite=1&period=day&date=last10&format=xml)
 
-*   XML of the visits by Aquisition Channel 
+*   XML of the visits by Acquisition Channel 
 [https://demo.matomo.cloud/?module=API&method=Referrers.getReferrerType&idSite=1&period=day&date=last10&format=xml](https://demo.matomo.cloud/?module=API&method=Referrers.getReferrerType&idSite=1&period=day&date=last10&format=xml)
 
 
-*   RSS feed containing the top 30 pages for the last 3 weeks
+*   RSS feed containing the top 30 search engine keywords for the last 3 weeks
 [https://demo.matomo.cloud/?module=API&method=Referrers.getKeywords&idSite=1&period=week&date=last3&format=rss&filter_limit=30](https://demo.matomo.cloud/?module=API&method=Referrers.getKeywords&idSite=1&period=week&date=last3&format=rss&filter_limit=30)
 
 
@@ -72,7 +72,7 @@ Here is the output of this request:
 [https://demo.matomo.cloud/?module=API&method=Actions.getPageTitles&idSite=1&period=day&date=last3&format=xml&filter_column=label&filter_pattern=store](https://demo.matomo.cloud/?module=API&method=Actions.getPageTitles&idSite=1&period=day&date=last3&format=xml&filter_column=label&filter_pattern=store)
 
 *   XML containing search engine keywords from the last 3 weeks, one entry per week
-[https://demo.matomo.cloud/?module=API&method=Referrers.getKeywords&idSite=1&period=week&date=last3&translateColumnNames=1&format=xml](https://demo.matomo.cloud/?module=API&method=Referrers.getKeywords&idSite=1&period=week&date=last3&translateColumnNames=1format=xml)
+[https://demo.matomo.cloud/?module=API&method=Referrers.getKeywords&idSite=1&period=week&date=last3&translateColumnNames=1&format=xml](https://demo.matomo.cloud/?module=API&method=Referrers.getKeywords&idSite=1&period=week&date=last3&translateColumnNames=1&format=xml)
 
 
 You can get the data in one of these formats: XML, JSON, HTML, CSV, TSV, etc. See the [API Reference](/api-reference/reporting-api) for the documentation.
