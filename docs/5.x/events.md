@@ -3,17 +3,17 @@ category: Develop
 ---
 # Events
 
-Piwik's event system works like any other event system:
+Matomo's event system works like any other event system:
 
 - **events can be posted**
 - **events can be handled** by registering code to be executed when it is posted
 
-Piwik Core will post events all along the code execution so that plugins can register to them. 
+Matomo Core will post events all along the code execution so that plugins can register to them. 
 Plugins can also post and handle their own custom events (or events of other plugins).
 
 ## Complete list of events
 
-The complete list of events posted by Piwik Core is [here](/api-reference/events).
+The complete list of events posted by Matomo Core is [here](/api-reference/events).
 
 
 ## Handling events
@@ -138,6 +138,6 @@ Event handlers can read these optional values as follows:
 public function handleMyEventInATemplate(&$outString, $usefulVariable1, $usefulVariable2)
 {
     $outString .= '<h1>This text was injected!</h1>';
-    $outString .= $usefulVariable . ' - ' . $usefulVariable2;
+    $outString .= $usefulVariable1 . ' - ' . $usefulVariable2;
 }
 ```
