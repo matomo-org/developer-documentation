@@ -153,7 +153,7 @@ Activity and consumption of your videos and audios can be measured via the param
 
 Learn more in the [Media Analytics HTTP Tracking API Reference](/guides/media-analytics/custom-player#media-analytics-http-tracking-api-reference).
 
-### Tracking HTTP API Reference
+### Crash Analytics parameters
 
 If you want to track crashes in a language that does not have an official tracking SDK, then you will need to use the Crash Analytics HTTP API.
 
