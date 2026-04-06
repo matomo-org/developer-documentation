@@ -64,7 +64,7 @@ _referrerName==Google,referrerName==Bing;country==IN_
     *   tsv (tab-separated values, similar to CSV but loads properly in Excel)
     *   html
     *   rss (when **date** is a range for example date=last10 or date=previous15)
-    *   original; to fetch the original PHP data structure. This is useful when you call the Piwik API [internally using the PHP code](/guides/querying-the-reporting-api)
+    *   original; to fetch the original PHP data structure. This is useful when you call the Matomo API [internally using the PHP code](/guides/querying-the-reporting-api)
 
 *   **format_metrics**; defines the output format of the metrics' values.
     *   `format_metrics=0`: metrics will not be formatted at all. Percent values are returned as rates. This can be applied if the numbers should be used for further processing.
@@ -88,18 +88,18 @@ Here is an overview of the parameters you can add to any API request, where appl
 
 *   **language**; if specified, returns data strings that can be internationalized and will be translated. For example, dates and times returned by the Live API can be translated into the specified language. Expected value is the 2 language letters code, eg. en, fr, de, es, etc. You can get the available list of language by calling the LanguagesManager API.
 
-*   **idSubtable** is used to request a subtable of a given row. In Piwik, some rows are linked to a sub-table. For example, each row in the Referrers.getSearchEngines response have an "idsubdatatable" field. This integer idsubdatatable is the idSubtable of the table that contains all keywords for this search engine. You can then request the keywords for this search engine by calling Referrers.getKeywordsFromSearchEngineId with the parameter idSubtable=X (replace X with the idsubdatatable value found in the Referrers.getSearchEngines response, for the search engine you are interested in).
+*   **idSubtable** is used to request a subtable of a given row. In Matomo, some rows are linked to a sub-table. For example, each row in the Referrers.getSearchEngines response have an "idsubdatatable" field. This integer idsubdatatable is the idSubtable of the table that contains all keywords for this search engine. You can then request the keywords for this search engine by calling Referrers.getKeywordsFromSearchEngineId with the parameter idSubtable=X (replace X with the idsubdatatable value found in the Referrers.getSearchEngines response, for the search engine you are interested in).
 
 *   **expanded**; some API functions have a parameter 'expanded'. If 'expanded' is set to 1, the returned data will contain the first level results, as well as all sub-tables. See, for example, the [returned dataset for the Actions.getDownloads API function](https://demo.matomo.org/?module=API&method=Actions.getDownloads&idSite=62&period=month&date=today&format=xml&token_auth=anonymous&expanded=1).
 
-*   **flat**; some API functions have a parameter 'expanded', which means that the data is hierarchical. For such API function, if 'flat' is set to 1, the returned data will contain the flattened view of the table data set. The children of all first level rows will be aggregated under one row. This is useful for example to see all Custom Variables names and values at once, for example, [Piwik forum user status](https://demo.matomo.org/index.php?module=API&method=CustomVariables.getCustomVariables&idSite=62&period=month&date=yesterday&format=xml&token_auth=anonymous&flat=1), or to see the full URLs not broken down by directory or structure.
+*   **flat**; some API functions have a parameter 'expanded', which means that the data is hierarchical. For such API function, if 'flat' is set to 1, the returned data will contain the flattened view of the table data set. The children of all first level rows will be aggregated under one row. This is useful for example to see all Custom Variables names and values at once, for example, [Matomo forum user status](https://demo.matomo.org/index.php?module=API&method=CustomVariables.getCustomVariables&idSite=62&period=month&date=yesterday&format=xml&token_auth=anonymous&flat=1), or to see the full URLs not broken down by directory or structure.
 
 *   **show_dimensions**; some reports contain different dimensions on each level. When such a report is requested flat, all dimensions will be combined into the label column. If you need each dimension as a separate column, you can send `show_dimensions=1` with the request to achieve that. This parameter has no effect if the report is not requested flat, or when the same dimension is used across all report levels. (Available as of Matomo 5.4.0)
 
 *   **label**; this parameter can be used to search only for the row matching a given label. When specified, the report data will be filtered and return only the row where the row label matches the specified parameter. For example, you can set &label=Nice%20Keyword to keep only the row with a label "Nice Keyword".
 There are also generic filters you can choose to apply on all APIs that return web analytics reports. For example, there is a filter for sorting by column, define start and number of rows to return, a filter to only return rows matching a given string,
 
-*   **pivotBy**; this parameter can be used to create a pivot table of a report using a specified dimension. Pivoting a report will intersect a report with another report and display a single metric for values along two dimensions. To pivot a report, this query parameter must be set to the ID of the dimension to pivot by. For example, **queryParam=Referrers.Keyword** would pivot against the Keyword dimension.
+*   **pivotBy**; this parameter can be used to create a pivot table of a report using a specified dimension. Pivoting a report will intersect a report with another report and display a single metric for values along two dimensions. To pivot a report, this query parameter must be set to the ID of the dimension to pivot by. For example, **pivotBy=Referrers.Keyword** would pivot against the Keyword dimension.
 
     Note: If you want to pivot against a dimension that is not the dimension of a report's subtable, you must set the **pivot_by_filter_enable_fetch_by_segment** INI config variable to 1. Using segments will allow you to pivot by any dimension, but currently, it will be slow.
 *   **pivotByColumn**; specifies which column should be displayed in a pivoted report. Should be used with **pivotBy** and set to a column name, for example, **nb_visits**.
@@ -120,8 +120,8 @@ There are also generic filters you can choose to apply on all APIs that return w
 *   **filter\_column\_recursive**; defines the column to be searched for when recursively searching for a pattern _filter\_pattern\_recursive_
 *   **filter\_pattern\_recursive**; defines the text you are searching for. Only the matching rows are returned. This filter is applied to recursive tables (Actions/Downloads/Outlinks tables)
 
-*   **disable\_generic\_filters**; if set to 1, all the generic filters above will not be applied. This can be useful to disable the filters above which are otherwise applied with default values. Mostly used internally or when developing plugins for Piwik.
-*   **disable\_queued\_filters**; if set to 1, all the filters that are mostly presentation filters (replace a column name, apply callbacks on the column to add new information such as the browser icon URL, etc.) will not be applied. Mostly used internally or when developing plugins for Piwik.
+*   **disable\_generic\_filters**; if set to 1, all the generic filters above will not be applied. This can be useful to disable the filters above which are otherwise applied with default values. Mostly used internally or when developing plugins for Matomo.
+*   **disable\_queued\_filters**; if set to 1, all the filters that are mostly presentation filters (replace a column name, apply callbacks on the column to add new information such as the browser icon URL, etc.) will not be applied. Mostly used internally or when developing plugins for Matomo.
 
 *   **translateColumnNames**; if set to 1, column names in report output will be translated to the language specified by the `language` parameter described above. Note: this parameter only has an effect for the CSV, RSS and HTML output formats.
 
@@ -133,7 +133,7 @@ Some parameters can optionally accept arrays. For example, the urls parameter of
 
 ### Advanced Users: Send multiple API Requests at once
 
-Sometimes it is necessary to call the Piwik API a few times to get the data needed for a report or custom application. When you need to call many API functions simultaneously or if you just don't want to issue a lot of HTTP requests, you may want to consider using a **Bulk API Request**. This feature allows you to call several API methods with one HTTP request (either a GET or POST).
+Sometimes it is necessary to call the Matomo API a few times to get the data needed for a report or custom application. When you need to call many API functions simultaneously or if you just don't want to issue a lot of HTTP requests, you may want to consider using a **Bulk API Request**. This feature allows you to call several API methods with one HTTP request (either a GET or POST).
 
 To issue a bulk request, call the API.getBulkRequest method and pass the API methods & parameters (each request must be [URL Encoded](https://secure.php.net/manual/en/function.urlencode.php)) you wish to call in the 'urls' query parameter. For example, to call VisitsSummary.get & VisitorInterest.getNumberOfVisitsPerVisitDuration at the same time, you can use:
 
@@ -150,9 +150,9 @@ You can also issue the Bulk request as an HTTP POST request to work around any r
 
 ## Authenticate to the API via token_auth parameter
 
-In the example above, the request works because the statistics are public (the _anonymous_ user has a _view_ access to the website). By default, in Piwik your statistics are private. In the case that you cannot have your statistics to be public:
+In the example above, the request works because the statistics are public (the _anonymous_ user has a _view_ access to the website). By default, in Matomo your statistics are private. In the case that you cannot have your statistics to be public:
 
-*   when you access your Piwik installation you are requested to log in
+*   when you access your Matomo installation you are requested to log in
 *   when you call the API over http you need to authenticate yourself. This is done by adding a secret parameter called `token_auth` in the URL. This parameter is as secret as your login and password!
 
 You can create authentication tokens in the Administration area under _Administration_ => _Personal_ => _Security_ => _Auth tokens_.
@@ -180,7 +180,7 @@ Here is a list of metrics returned by the API and their definition.
 *   `nb_uniq_visitors` - Number of unique visitors
 *   `nb_visits` - Number of Visits (30 min of inactivity considered a new visit)
 *   `nb_users` - Number of unique active users (visitors with a known [User ID](https://matomo.org/docs/user-id/)). If you are not using User ID then this metric will be set to zero.
-*   `nb_actions` - Number of actions (page views, outlinks and downloads)
+*   `nb_actions` - Number of actions (page views, internal site searches, outlinks and downloads)
 *   `sum_visit_length` - Total time spent, in seconds
 *   `bounce_count` - Number of visits that bounced (viewed only one page)
 *   `max_actions` - Maximum number of actions in a visit
@@ -199,7 +199,7 @@ Here is a list of metrics returned by the API and their definition.
 *   `exit_nb_visits` - Number of visits that finished on this page
 *   `exit_nb_uniq_visitors` - Number of unique visitors that ended their visit on this page
 *   `sum_time_spent` - Total time spent on this page, in seconds
-*   `sum_daily_nb_uniq_visitors` - Sum of daily unique visitors over days in the period. Piwik doesn't process unique visitors across the full period.
+*   `sum_daily_nb_uniq_visitors` - Sum of daily unique visitors over days in the period. Matomo doesn't process unique visitors across the full period.
 *   `sum_daily_entry_nb_uniq_visitors` - Sum of daily unique visitors that started their visit on this page
 *   `sum_daily_exit_nb_uniq_visitors` - (deprecated) Same as `sum_daily_entry_nb_uniq_visitors`
 *   `exit_bounce_count` - (deprecated) Same as `entry_bounce_count`
@@ -232,7 +232,7 @@ Here is a list of metrics returned by the API and their definition.
 
 #### Glossary
 
-All the commonly used terms in Piwik Analytics are documented in the [Glossary](https://glossary.matomo.org) including all metrics and reports.
+All the commonly used terms in Matomo Analytics are documented in the [Glossary](https://glossary.matomo.org) including all metrics and reports.
 
 ## API Method List
 
