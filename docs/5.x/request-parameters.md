@@ -110,12 +110,12 @@ If your parameters does not have a specific type you may use the following metho
   $request->getArrayParameter(string $name, array $default = null): array
   ```
 
-* **JSON encoded data** / **getJSONParameter()**
+* **JSON encoded data** / **getJsonParameter()**
 
   If the data of your parameter should contain a json encoded string, you can use this method, to directly receive the parameters values decoded. The returned type though might contain any type of data, so handle it with care.
 
   ```php
-  $request->getJSONParameter(string $name, mixed $default = null): mixed
+  $request->getJsonParameter(string $name, mixed $default = null): mixed
   ```
 
 * **Unspecific type** / **getParameter()**

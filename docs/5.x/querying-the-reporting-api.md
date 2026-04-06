@@ -5,9 +5,9 @@ next: reporting-api-clients
 ---
 # Querying the Reporting API
 
-This guide explains how to call the Piwik API to request your web analytics data. 
+This guide explains how to call the Matomo API to request your web analytics data. 
 
-## Call the Piwik API using the HTTP API
+## Call the Matomo API using the HTTP API
 
 If you want to request data in any language (PHP, Python, Ruby, ASP, C++, Java, etc.) you can use the HTTP API. It is a simple way to request data via an HTTP GET.
 
