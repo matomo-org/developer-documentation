@@ -77,6 +77,16 @@ e.g. `{% spaceless %}` becomes `{% apply spaceless %}`
 
 e.g. `divisibleby(2)` becomes `divisible by(2)`
 
+## Running tests on GitHub Actions
+
+Travis CI is no longer used for Matomo plugin testing. If you were previously running tests on Travis CI, you should migrate to GitHub Actions. You can generate a GitHub Actions workflow file by running:
+
+```
+$ ./console generate:github-test-action --plugin=MyPlugin
+```
+
+For more details, see the [GitHub Actions tests guide](/guides/tests-github).
+
 ## Marketplace distribution
 
 Updates used to be published from the GitHub repository to the Matomo Marketplace using a GitHub service. GitHub deprecated this feature a while ago. To send updates to the marketplace you need to make sure you have a [Matomo Webhook](https://developer.matomo.org/guides/distributing-your-plugin#activate-the-piwik-plugins-webhook) configured in your repository. Otherwise the Marketplace won't notice there has been an update for your plugin.
