@@ -9,7 +9,7 @@ Some might know a UI test under the term 'CSS test' or 'screenshot test'. When w
 
 **What is a UI test good for?**
 
-We use them to test our PHP Controllers, Twig templates, CSS, and indirectly test our JavaScript. We usually don't write Unit or Integration tests for our controllers. For example, we use UI tests to ensure that the installation, the login and the update process works as expected. We also have tests for most pages, reports, settings, etc. This increases the quality of our product and saves us a lot of time as it is easy to write and maintain such tests. All UI tests are executed as [GitHub Action](https://github.com/matomo-org/matomo/actions/workflows/matomo-tests.yml) after each commit in a pull request or on a development branch. They are then compared with [our expected screenshots](https://github.com/matomo-org/matomo-ui-tests).
+We use them to test our PHP Controllers, Twig templates, CSS, and indirectly test our JavaScript. We usually don't write Unit or Integration tests for our controllers. For example, we use UI tests to ensure that the installation, the login and the update process works as expected. We also have tests for most pages, reports, settings, etc. This increases the quality of our product and saves us a lot of time as it is easy to write and maintain such tests. All UI tests are executed as [GitHub Action](https://github.com/matomo-org/matomo/actions/workflows/matomo-tests.yml) after each commit in a pull request or on a development branch. They are then compared with the expected screenshots stored in `tests/UI/expected-screenshots/` (tracked via git-lfs).
 
 **When is it better to create a php tests?** 
 
@@ -94,7 +94,7 @@ describe("WidgetizePage", function () {
 
     it('should load a simple page by its module and action', function (done) {
         var urlToTest = "?" + generalParams + "&amp;module=Widgetize&amp;action=index";
-        page.load(urlToTest);
+        await page.goto(urlToTest);
 
         var screenshotName = 'simplePage';
         // will save image in "processed-ui-screenshots/WidgetizePageTest_simplePage.png"
@@ -144,7 +144,7 @@ or to run every UI test for a plugin:
 $ ./console tests:run-ui --plugin=MyPlugin
 ```
 
-After running the tests for the first time you will notice a new folder `plugins/PLUGINNAME/tests/UI/processed-ui-screenshots` in your plugin. If everything worked, there will be an image for every captured screenshot. If you're happy with the result it is time to copy the file over to the `expected-ui-screenshots` folder, otherwise you have to adjust your test until you get the result you want. From now on, the newly captured screenshots will be compared with the expected images whenever you execute the tests.
+After running the tests for the first time you will notice a new folder `plugins/PLUGINNAME/tests/UI/processed-ui-screenshots` in your plugin. If everything worked, there will be an image for every captured screenshot. If you're happy with the result it is time to copy the file over to the `expected-screenshots` folder, otherwise you have to adjust your test until you get the result you want. From now on, the newly captured screenshots will be compared with the expected images whenever you execute the tests.
 
 Some fixtures can take a long while to set up. You can save time by using the `persist-fixture-data` flag, which means the fixture teardown and setup will be skipped and the test database from the previous execution will be used:
 
@@ -164,7 +164,7 @@ The following options may be useful if you plan on running the UI tests locally 
 
 ### Fixing a test
 
-At some point your UI test will fail, for example due to expected CSS changes. To fix a test all you have to do is to copy the captured screenshot from the folder `processed-ui-screenshots` to the folder `expected-ui-screenshots`.
+At some point your UI test will fail, for example due to expected CSS changes. To fix a test all you have to do is to copy the captured screenshot from the folder `processed-ui-screenshots` to the folder `expected-screenshots`.
 
 ## Writing a UI test in depth
 
@@ -198,7 +198,7 @@ describe("TheControlImTesting", function () {
 
 ### Manipulating pages before capture
 
-You can use any method from the <a href="https://pptr.dev/#?product=Puppeteer&version=v1.18.0&show=api-class-page">Puppeteer library</a> to manipulate the page before you take a screenshot. Matomo also provides a couple of extra methods:
+You can use any method from the <a href="https://pptr.dev/api/puppeteer.page">Puppeteer library</a> to manipulate the page before you take a screenshot. Matomo also provides a couple of extra methods:
 
 - **waitForNetworkIdle()**: Wait for all requests to finish. Automatically called on functions that load a page.
 - **screenshotSelector(selector)**: An alternative to `element.screenshot()`.
@@ -289,7 +289,7 @@ describe("PiwikUpdater", function () {
 
 ## Troubleshooting UI tests
 
-If a UI test fails and it's not clear why, then open all the GitHub action UI jobs in your browser and check if there was any warning or error logged for a particular UI test. Please note that at the time of writing there are 3 jobs in each GitHub actions dedicated to UI tests (so they complete faster than one long running job) and you need to click into each job to find the output for a specific UI test. Within the output of a specific job, you can find the UI test by searching for the name of the UI test, for example `"should show percent metrics like bounce rate correctly`". Simply search each of the UI jobs for the name of the test that is failing and see if there's any additional information printed.
+If a UI test fails and it's not clear why, then open all the GitHub action UI jobs in your browser and check if there was any warning or error logged for a particular UI test. Please note that at the time of writing there are 4 jobs in each GitHub actions dedicated to UI tests (so they complete faster than one long running job) and you need to click into each job to find the output for a specific UI test. Within the output of a specific job, you can find the UI test by searching for the name of the UI test, for example `"should show percent metrics like bounce rate correctly`". Simply search each of the UI jobs for the name of the test that is failing and see if there's any additional information printed.
 
 ### Checklist for common problems
 
@@ -322,9 +322,9 @@ See also below the steps for how to sync the files automatically.
     * If a change is not wanted, revert or fix your commit.
     * If a change is correct, then you can set the new screenshot as the expected screenshot.
       To do so, in the diffviewer.html page click on the "Processed" link for this screenshot.
-      Then "Save this file as" and save it in the piwik/tests/UI/expected-screenshots/ directory.
-      (If the screenshot test is for a plugin and not Piwik Core, the expected screenshot should be added to the
-      plugin's expected screenshot directory. For example: piwik/plugins/DBStats/tests/UI/expected-screenshots.)
+      Then "Save this file as" and save it in the matomo/tests/UI/expected-screenshots/ directory.
+      (If the screenshot test is for a plugin and not Matomo Core, the expected screenshot should be added to the
+      plugin's expected screenshot directory. For example: matomo/plugins/DBStats/tests/UI/expected-screenshots.)
 
   _Note: When determining whether a screenshot is correct, the data displayed is not important. Report data correctness is verified through System and other PHP tests. The UI tests should only test UI behavior._
 * Push the changes (to your code and/or to the expected-screenshots directory).
