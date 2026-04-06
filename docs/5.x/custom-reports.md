@@ -14,7 +14,7 @@ We're going to create a new report that shows the browsers used for the most rec
 <div markdown="1" class="alert alert-warning">
 **On reports and metrics**
 
-Reports and metrics are the two types of analytics data Piwik calculates and stores:
+Reports and metrics are the two types of analytics data Matomo calculates and stores:
 
 - *metrics* are just single values, like **visits**
 - *reports* are two-dimensional arrays of values, usually metric values, and are stored using the [DataTable](/api-reference/Piwik/DataTable) class.
@@ -34,7 +34,7 @@ This command will guide you through the creation of a report and ask for several
 
 The CLI tool has created a new file `Reports/GetLastVisitsByBrowser.php` within your plugin folder. We recommend taking the time to have a look at all the methods and comments to get an idea how a report is defined.
 
-Links to Piwik's reporting pages are displayed on the main page under the logo:
+Links to Matomo's reporting pages are displayed on the main page under the logo:
 
 <img src="/img/reporting_menu.png"/>
 
@@ -87,7 +87,7 @@ public function configureWidgets(WidgetsList $widgetsList, ReportWidgetFactory $
 
 #### Creating multiple widgets from one report
 
-You can create as many widgets from one report as you want. In Piwik there are several reports that actually create 3 or
+You can create as many widgets from one report as you want. In Matomo there are several reports that actually create 3 or
 even more widgets out of one report. For example one widget with a default visualization that lets the user change the
 visualization, one widget with an "Evolution" visualization and one widget with a set of "Sparklines" visualization.
 
