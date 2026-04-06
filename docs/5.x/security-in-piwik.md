@@ -16,15 +16,26 @@ Attackers can achieve that either by:
 - storing malicious scripts in data (like website names for Piwik)
 - passing malicious scripts as HTTP request parameter/data
 
-### Get request parameters via [Common::getRequestVar()](/api-reference/Piwik/Common#getrequestvar)
+### Get request parameters safely
 
-In your PHP code, if you need access to a variable in `$_GET` or `$_POST`, **always** use [Common::getRequestVar()](/api-reference/Piwik/Common#getrequestvar).
+In your PHP code, if you need access to a variable in `$_GET` or `$_POST`, use the `Request` class. Prefer the type-safe methods that validate and cast the value for you:
 
-`getRequestVar()` will sanitize the request variable. If an attacker passes a string containing `<script>...</script>`, it will be sanitized to `&lt;script&gt;...&lt;/script&gt;`. This will help to avoid accidentally embedding unescaped text in HTML output.
+```php
+$request = new \Piwik\Request();
+$idSite  = $request->getIntegerParameter('idSite');
+$segment = $request->getStringParameter('segment', '');
+$flat    = $request->getBoolParameter('flat', false);
+```
 
-For text you know may contain special characters or if you need to output text in a format that doesn't need XML/HTML sanitization (like JSON), call [Piwik::unsanitizeInputValues()](/api-reference/Piwik/Common#unsanitizeinputvalues) to undo the sanitization.
+Available type-safe methods: `getIntegerParameter()`, `getStringParameter()`, `getFloatParameter()`, `getBoolParameter()`, `getArrayParameter()`, `getJsonParameter()`. Use the untyped `getParameter()` only when the expected type can genuinely vary.
 
-*Note: You can sanitize text that isn't in a request parameter by using [Piwik::sanitizeInputValues()](/api-reference/Piwik/Common#sanitizeinputvalues).*
+> Note: `Common::getRequestVar()` is deprecated. Use the `\Piwik\Request` class instead. Unlike `getRequestVar()`, the `Request` class returns raw (unsanitized) values, so make sure to apply proper escaping when outputting values in HTML.
+
+The older `getRequestVar()` method sanitizes request variables automatically. If an attacker passes a string containing `<script>...</script>`, it will be sanitized to `&lt;script&gt;...&lt;/script&gt;`. This will help to avoid accidentally embedding unescaped text in HTML output.
+
+For text you know may contain special characters or if you need to output text in a format that doesn't need XML/HTML sanitization (like JSON), call [Common::unsanitizeInputValues()](/api-reference/Piwik/Common#unsanitizeinputvalues) to undo the sanitization.
+
+*Note: You can sanitize text that isn't in a request parameter by using [Common::sanitizeInputValues()](/api-reference/Piwik/Common#sanitizeinputvalues).*
 
 ### Use the correct Twig escaping strategy
 
@@ -68,7 +79,7 @@ $('#someLabel').text( safeString );
 [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) is set by default in Matomo (since Matomo 4.6.0) and plugins can modify the CSP as needed using `$this->securityPolicy` methods in the controller, for example:
 
 ```php
-$this->securityPolicy->addPolicy('image-src', 'self');
+$this->securityPolicy->addPolicy('img-src', 'self');
 ```
 
 Or using dependency injection by creating a `plugins/MyPlugin/config/config.php` like this to apply the change to every UI request instead of only a specific request:
@@ -234,8 +245,6 @@ Here are some other coding guidelines that will help make your code more secure:
 - **Avoid executing php code using one of the following functions: [eval](https://secure.php.net/manual/en/function.eval.php), [exec](https://secure.php.net/manual/en/function.exec.php), [passthru](https://secure.php.net/manual/en/function.passthru.php), [system](https://secure.php.net/manual/en/function.system.php), [popen](https://secure.php.net/manual/en/function.popen.php) or [preg_replace](https://secure.php.net/manual/en/function.preg-replace.php) (with the `"e"` modifier).**
 
 - **Make sure that accessing your files directly doesn't execute any code that could have an impact on your Piwik install.**
-
-- **Make sure your code doesn't rely on `register_globals` set to `On`. Note: PHP5 sets `register_globals` to `Off` by default.**
 
 - **For timing attack safe equal comparisons use `Common::hashEquals()` method**
 
