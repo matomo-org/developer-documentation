@@ -7,14 +7,14 @@ next: reports
 
 **Archive data** is created during the [archiving process](/guides/archiving) by aggregating **log data**.
 
-Piwik aggregates and persists two types of archive data:
+Matomo aggregates and persists two types of archive data:
 
 - **metrics**, which are single numeric values
 - **reports**, which are two-dimensional array of values
 
 Reports will normally contain metric values, but they can also contain other data (either additionally or in lieu of metric values).
 
-Reports and metrics are defined by plugins, letting any plugin extend the data analyzed by Piwik. However, there are several metrics, called **core metrics**, that are defined by Piwik Core.
+Reports and metrics are defined by plugins, letting any plugin extend the data analyzed by Matomo. However, there are several metrics, called **core metrics**, that are defined by Matomo Core.
 
 ## Subset parameters
 
@@ -36,7 +36,7 @@ Analytics parameters are stored in reports as metadata, that means they are stor
 
 ### Core metrics
 
-**Core metrics** are metrics that are not defined by plugins but by **Piwik Core**.
+**Core metrics** are metrics that are not defined by plugins but by **Matomo Core**.
 
 New reports that analyze visits, action types or conversions should contain these metrics.
 
@@ -48,7 +48,7 @@ Name             | Metric ID             | Description
 -----------------|-----------------------|------------
 Visits           | `nb_visits`           | Number of tracked visits. <br> A visit is series of events each of which happened no more than 30 minutes apart.
 Unique visitors  | `nb_uniq_visitors`    | The number of unique sources of visits. <br> A visit source is an entity that causes a visit to be tracked.
-Actions          | `nb_actions`          | The number of tracked actions. <br> An action is an event tracked by Piwik.
+Actions          | `nb_actions`          | The number of tracked actions. <br> An action is an event tracked by Matomo.
 Max Actions      | `max_actions`         | The maximum number of actions that occurred in one visit.
 Sum Visit Length | `sum_visit_length`    | The sum of each visit's elapsed time.
 Bounce Count     | `bounce_count`        | The number of visits that consisted of only one action.
@@ -159,7 +159,7 @@ Core metrics have special names and do not follow this convention.
 
 Reports are stored in memory using the [`DataTable`](/api-reference/Piwik/DataTable) class. A `DataTable` is a 2-dimension array composed of rows and columns.
 
-Each row contains metrics that relate to a set of visits, actions, conversions… That set is defined and described by a special **label** column. How the column describes the set depends entirely upon the specific report. For example in the `UserSettings.getBrowser` report, a row with the label *Firefox* would hold metrics for visits that used the Firefox browser.
+Each row contains metrics that relate to a set of visits, actions, conversions… That set is defined and described by a special **label** column. How the column describes the set depends entirely upon the specific report. For example in the `DevicesDetection.getBrowsers` report, a row with the label *Firefox* would hold metrics for visits that used the Firefox browser.
 
 Some reports like `VisitsSummary.get` will not have a label column: they have only one row that refers to the entire set of entities.
 
@@ -167,7 +167,7 @@ Some reports like `VisitsSummary.get` will not have a label column: they have on
 
 In addition to metrics, each row can also contain **metadata**. This metadata will usually assist the label column in describing the set of things the row represents.
 
-Some metadata have special meaning in Piwik, for example:
+Some metadata have special meaning in Matomo, for example:
 
 - `logo`: the value can be a path to an image that will be shown alongside each row in the UI
 - `url`: the value can be a URL to which the row will link in the UI
@@ -183,7 +183,7 @@ Search Engine  Keyword (subtable)  Visitors
 --------------|-------------------|----------
 Google                            | 207
 --------------|------------------------------
-              | piwik             | 11
+              | matomo            | 11
               | libre analytics   | 6
               | ...
 ---------------------------------------------
