@@ -187,8 +187,8 @@ For example:
 
 Below are some solutions to common problems that may occur during development:
 
-* If working on Vue code and `vue:build --watch` is running but the JavaScript isn't being built properly, try restarting the command. Internally it will
-  clear the webpack cache before watching again, which can solve some problems.
+* If working on Vue code and `vue:build --watch` is running but the JavaScript isn't being built properly, try restarting the command with the
+  `--clear-webpack-cache` flag, which will clear the webpack cache before watching again and can solve some problems.
 * If working on frontend unit tests that use Jest and you are seeing strange errors, clearing Jest's cache can sometimes help. To do this,
   run the `npm test -- --clearCache` command.
 

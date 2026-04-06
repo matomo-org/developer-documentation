@@ -118,7 +118,7 @@ The following classes are involved in the Core Archiving process:
 - **Piwik\Archive**: entry point for archive data queries. This is used by API methods to get numeric and blob data by site ID and/or period.
   If we can't find up to date data for an archive data query, and the current request is allowed to start the core archiving process, we
   initiate archiving. This class will call the CoreAdminHome.archiveReports API method to do so.
-- **Piwik\Loader**: entry point for the core archiving process. The `prepareArchive()` method is invoked directly by CoreAdminHome.archiveReports.
+- **Piwik\ArchiveProcessor\Loader**: entry point for the core archiving process. The `prepareArchive()` method is invoked directly by CoreAdminHome.archiveReports.
   This class is used to look for one individual archive (so for one site and one period). If we can't find a usable one, we launch the core
   archiving process.
   
