@@ -34,7 +34,6 @@ This is only needed for accessing purchased premium features.
 * https://plugins.matomo.org/api/1.0/plugins/checkUpdates
 * https://plugins.matomo.org/api/1.0/plugins/:pluginname/info
 * https://plugins.matomo.org/api/1.0/plugins/:pluginname/download/:pluginversion
-* https://plugins.matomo.org/api/1.0/plugins/:pluginname/download/:pluginversion
 * https://plugins.matomo.org/api/1.0/(developer|artist)/:owner
 
 ### From Version 2
