@@ -145,7 +145,7 @@ Here is a list of all named colors in Matomo:
   * **lineColor**: The color of the line in the sparkline.
   * **minPointColor**: The color of the point that marks the minimum value observed in the data set.
   * **lastPointColor**: The color of the point that marks the last value of the data set.
-  * **maxPointColo**: The color of the point that marks the maximum value observed in the data set.
+  * **maxPointColor**: The color of the point that marks the maximum value observed in the data set.
 
 * _Namespace_: **bar-graph-colors**: contains colors for bar graph [report visualizations](/guides/visualizing-report-data).
 
