@@ -11,13 +11,13 @@ In this guide you will learn how to create an experiment and implement it in you
  
 ## Creating an experiment
 
-First you need to create an A/B test experiment in Piwik: read the [A/B testing user guide](https://matomo.org/docs/ab-testing/) to learn more.
+First you need to create an A/B test experiment in Matomo: read the [A/B testing user guide](https://matomo.org/docs/ab-testing/) to learn more.
 
 When you are asked on which target pages the experiment should be activated, we recommend selecting "Visitors enter this experiment on any page".
 
 ## Embedding an experiment
 
-In most cases, nothing needs to be done as long as the regular [Piwik JavaScript Tracking Code](/guides/tracking-javascript-guide) 
+In most cases, nothing needs to be done as long as the regular [Matomo JavaScript Tracking Code](/guides/tracking-javascript-guide) 
 is embedded into your website. Learn more about this step in the [Embedding the A/B Testing framework](/guides/ab-tests/browser#embedding-the-ab-testing-javascript-framework).
  
 The generated experiment code (`_paq.push(['AbTesting::create', {...`) does not need to be embedded into your website.
@@ -29,7 +29,7 @@ As marketing campaigns are typically seen by your audience outside of your websi
 you need to modify the campaign URL that leads your users to your website. 
 
 ### Tagging the A/B test variation in your Marketing campaign URLs 
-You only need to add two URL parameters: `pk_abe` and `pk_abv` which let Piwik know which campaign variation a user got to see. 
+You only need to add two URL parameters: `pk_abe` and `pk_abv` which let Matomo know which campaign variation a user got to see. 
 
 If your landing page is `https://example.org/landingpage`, you would include the following URL to link visitors to your website:
 
@@ -71,15 +71,15 @@ As shown in the example above you can either use the experiment name and variati
 variation ID in the URL. Using IDs is useful when you do not want to expose the names of your experiments and 
 variations in the URL.
 
-* You can find the ID of an experiment in the list of all experiments in your Piwik. 
-* The ID of a variation is shown when you edit your experiment in your Piwik and hover a variation (put your mouse over a variation form field). 
+* You can find the ID of an experiment in the list of all experiments in your Matomo. 
+* The ID of a variation is shown when you edit your experiment in your Matomo and hover a variation (put your mouse over a variation form field). 
 
 The IDs are also shown in the "Embed code" area when you edit an experiment in the tracking code example.
 
 
-## Using A/B tests along with the standard Piwik campaign tracking
+## Using A/B tests along with the standard Matomo campaign tracking
 
-Measuring the impact of your campaigns using experiments complements the existing built-in Piwik [Campaign Tracking](https://matomo.org/docs/tracking-campaigns/).
+Measuring the impact of your campaigns using experiments complements the existing built-in Matomo [Campaign Tracking](https://matomo.org/docs/tracking-campaigns/).
 
 We recommend creating experiments to measure your marketing campaigns as it will provide you additional value such as:
 
@@ -113,7 +113,7 @@ https://example.org/landingpage?pk_abe=buyNowColor&pk_abv=original&matomo_campai
 When an experiment is finished:
 
  * remove the two URL parameters `pk_abe` and `pk_abv` from your marketing campaigns. 
- If visitors still visit your website via one of these URLs, Piwik will simply ignore the two URL parameters and not enter visitors into the experiment anymore. 
+ If visitors still visit your website via one of these URLs, the A/B testing tracking request will be aborted and visitors will not enter the experiment anymore. The regular page view will still be tracked normally. 
  * if the experiment proved that one of your campaign variations performed significantly better than another, it is now time to change your campaigns to the winning variation and benefit from higher conversion rates. 
 
 Happy experimenting!

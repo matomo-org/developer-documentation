@@ -4,8 +4,8 @@ title: Websites (JavaScript)
 ---
 # Running an A/B test experiment in your website using JavaScript only
 
-This guide covers how to run experiments (A/B tests) in your website using the [Piwik JavaScript Tracker](/guides/tracking-javascript-guide)
-and the Piwik A/B Testing JavaScript framework. 
+This guide covers how to run experiments (A/B tests) in your website using the [Matomo JavaScript Tracker](/guides/tracking-javascript-guide)
+and the Matomo A/B Testing JavaScript framework. 
 
 We will learn how to embed the A/B testing framework in your website, how to embed and implement your experiments using best practices, 
 and what to do when an experiment is finished. 
@@ -17,12 +17,12 @@ Read the [A/B testing user guide](https://matomo.org/docs/ab-testing/) to learn 
 ## Embedding the A/B Testing JavaScript framework
 
 The [A/B Testing plugin](https://www.ab-tests.net) directly adds the JavaScript A/B testing framework to your Matomo JavaScript tracker file `/matomo.js` 
-and is therefore loaded automatically with the [Piwik JavaScript Tracking Code](/guides/tracking-javascript-guide).
+and is therefore loaded automatically with the [Matomo JavaScript Tracking Code](/guides/tracking-javascript-guide).
 
-This will work by default as long as the file `matomo.js` in your Piwik directory is writable by the webserver/PHP.
+This will work by default as long as the file `matomo.js` in your Matomo directory is writable by the webserver/PHP.
  
-To check whether this works by default for you, login into Piwik as a Super User, go to Administration, and open the "System Check" report. 
-If the System Check displays a warning for "Writable Matomo.js" then [learn below in the FAQ how to solve this](#how-do-i-include-the-ab-testing-framework-when-my-matomojs-file-is-not-writable).
+To check whether this works by default for you, login into Matomo as a Super User, go to Administration, and open the "System Check" report. 
+If the System Check displays a warning for "Writable JavaScript Tracker" then [learn below in the FAQ how to solve this](#how-do-i-include-the-ab-testing-framework-when-my-matomojs-file-is-not-writable).
 
 
 ### Loading matomo.js synchronously as early as possible
@@ -30,7 +30,7 @@ If the System Check displays a warning for "Writable Matomo.js" then [learn belo
 To prevent any flickering / flashing of content when you run your experiments, you need to make sure to load the 
 `matomo.js` tracker file as early as possible. Edit your JavaScript tracking code as follows:
 
-* Move the Piwik Tracking Code that loads the `matomo.js` file into the HTML `<head>`
+* Move the Matomo Tracking Code that loads the `matomo.js` file into the HTML `<head>`
 * Load the file synchronously instead of asynchronously by:
   1. Removing the two lines containing: `var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);`
   2. Adding the following line after the closing `</script>` element: `<script type="text/javascript" src="//$yourPiwikDomain/matomo.js"></script>`
@@ -57,7 +57,7 @@ the JavaScript code will automatically load synchronously. It is still recommend
 
 __Note:__ The embedded experiment code should be placed before your page view is tracked, for example before `_paq.push(['trackPageView']);`. This helps ensure that the A/B test is tracked before any page redirects.
 
-When creating an experiment in your Piwik, the A/B testing plugin will generate for you the JavaScript code that will run your experiment
+When creating an experiment in your Matomo, the A/B testing plugin will generate for you the JavaScript code that will run your experiment
 and that you need to embed in your pages. The code typically looks like this:
 
 ```js
@@ -84,19 +84,19 @@ _paq.push(['AbTesting::create', {
 ```
 
 In this example an experiment is created via the `_paq.push` method and several experiment properties are set. 
-This experiment code will be generated for you in your Piwik. 
+This experiment code will be generated for you in your Matomo. 
 For better understanding here is an explanation of what these properties mean:
 
-* `name` - The name of the experiment as configured in Piwik. 
- * If you prefer not to expose your experiment's name to your users in the DOM, you can alternatively use the experiment ID. You can find the ID of an experiment in the list of all experiments in your Piwik.
+* `name` - The name of the experiment as configured in Matomo. 
+ * If you prefer not to expose your experiment's name to your users in the DOM, you can alternatively use the experiment ID. You can find the ID of an experiment in the list of all experiments in your Matomo.
 * `includedTargets` - Specifies on which target pages the experiment is supposed to be activated. For an experiment to be activated, all rules need to match (logical AND) and none of the excluded targets is allowed to match.
 * `excludedTargets` - Specifies on which target pages the experiment is supposed to not be activated. If any of the given rules matches (logical OR), the experiment will not be activated even if all of the included targets match. 
 * `variations` - The list of different variations you want to compare. Experiments can be created for more than just two variations (A/B). 
- * Please note that you cannot simply add more variations in this JavaScript code. When Piwik receives a tracking request for an experiment, it will only accept the pre-configured variations. To define more experiment's variations or change an existing variation, edit your experiment in Piwik > Personal > Experiments. 
+ * Please note that you cannot simply add more variations in this JavaScript code. When Matomo receives a tracking request for an experiment, it will only accept the pre-configured variations. To define more experiment's variations or change an existing variation, edit your experiment in Matomo > Personal > Experiments. 
 
 ### Optional experiment properties
 
-There are more properties that can be configured when you create an experiment in your Piwik. These properties are optional.
+There are more properties that can be configured when you create an experiment in your Matomo. These properties are optional.
 
 ```js
 var _paq = window._paq = window._paq || [];
@@ -127,7 +127,7 @@ _paq.push(['AbTesting::create', {
 * `startDateTime` - If configured, the experiment will not be activated until the specified start time. 
 * `endDateTime` - If configured, the experiment will no longer be activated after the specified end time. 
 * `trigger` - The `trigger` function allows you to further restrict which of your visitors will participate in your experiment. For example if you want to run the experiment only for visitors from a specific country or only want to activate the experiment on a certain type of pages, you can use this method to customize who will participate in this experiment. 
-* `matomoTracker` - Lets you set a Piwik tracker instance if you track your data [into multiple Piwik instances](/guides/tracking-javascript-guide#multiple-piwik-trackers) and wish your experiments to be only tracked into one specific Piwik instance.
+* `matomoTracker` - Lets you set a Matomo tracker instance if you track your data [into multiple Matomo instances](/guides/tracking-javascript-guide#multiple-piwik-trackers) and wish your experiments to be only tracked into one specific Matomo instance.
 * `variation.percentage` - By default, each variation gets the same amount of traffic but you can allocate more or less
                            traffic to individual variations. You don't have to configure a percentage on all variations. 
                            If a percentage is only specified for a few variations, all other variations will share the 
@@ -140,7 +140,7 @@ _paq.push(['AbTesting::create', {
 To summarize what we've learnt so far:
 
 * To prevent flickering/flashing of the content, the `matomo.js` file is loaded synchronously as early as possible.
-* the Piwik generated experiment's code is copied and paste into the website.
+* the Matomo generated experiment's code is copied and paste into the website.
 
 Now you need to actually implement what is supposed to happen when a variation of your experiment gets activated. 
 All you need to do is to implement the `activate` method for each of your variations. 
@@ -178,7 +178,7 @@ If you access the DOM using jQuery or another library, make sure that this libra
 
 #### Testing variations
 
-Testing variations can be cumbersome because variations are activated randomly and you always get to see the same variation. To test a specific variation you can append a URL parameter `?pk_ab_test=$variationName`. This will make sure to activate the given variation even if the experiment should not trigger yet because of a defined filter. It will also not track any experiment activation to your Piwik so your data is kept clean.
+Testing variations can be cumbersome because variations are activated randomly and you always get to see the same variation. To test a specific variation you can append a URL parameter `?pk_ab_test=$variationName`. This will make sure to activate the given variation even if the experiment should not trigger yet because of a defined filter. It will also not track any experiment activation to your Matomo so your data is kept clean.
 
 If you are running multiple tests on the same page, you can activate multiple variations by specifying the variation names comma separated: `?pk_ab_test=$variationName1,$variationName2`.
 
@@ -377,7 +377,7 @@ any custom logic and the experiment will get only activated if the method return
 
 ### How do I activate the experiment only for a specific set of pages?
 
-In the Piwik Admin UI, when you edit an experiment you can configure on which pages the experiment is supposed to be activated. 
+In the Matomo Admin UI, when you edit an experiment you can configure on which pages the experiment is supposed to be activated. 
 However, you might have many different pages on which the experiment should be activated and these pages do not follow a specific 
 rule. In this case, you can use the `trigger` method to activate the experiment only on a certain set of pages. 
 
@@ -406,17 +406,17 @@ trigger: function (event) {
 }       
 ```
 
-In this example the experiment was configured (in your Piwik) to be activated on all pages, and will be actually activated for your visitors when the `trigger` method returns `true`.
+In this example the experiment was configured (in your Matomo) to be activated on all pages, and will be actually activated for your visitors when the `trigger` method returns `true`.
 
 ### How do I activate a specific variation via URL parameter?
 
 You can add a URL parameter `?pk_ab_test=$variationName` to force the activation of a specific variation. This is useful when you are integrating an experiment and you want to test each variation or when you need to share a URL for each variation with your colleagues to get an approval before running an experiment.
 
-### Where does Piwik store which variation gets activated?
+### Where does Matomo store which variation gets activated?
 
 The selected variation for an experiment is persisted in the local storage of your users browsers. This makes sure the same user will always see 
 the same variation on all subsequent visits. If the local storage feature is not supported by the browser, this information 
-is stored in a cookie for up to 365 days.
+is stored in a cookie for up to 13 months.
 
 ### Can I use redirects in A/B tests to test entirely different pages or layouts?
 
@@ -442,7 +442,7 @@ variations: [
 ```
 
 Make sure to embed the experiment as early as possible in the HTML `<head>`. Please note that the A/B Testing framework will 
-add two URL parameters `pk_abe` and `pk_abv` to the redirect URL so Piwik knows which experiment was activated. As of version 5.1.0 of the AbTesting plugin, there is an option to forward utm campaign URL parameters when redirecting. If you enable that option in the Redirects section, here is an example of what the option would look like in the JavaScript:
+add two URL parameters `pk_abe` and `pk_abv` to the redirect URL so Matomo knows which experiment was activated. As of version 5.1.0 of the AbTesting plugin, there is an option to forward utm campaign URL parameters when redirecting. If you enable that option in the Redirects section, here is an example of what the option would look like in the JavaScript:
 
 ```js
 startDateTime: '2023/12/06 01:59:53 UTC',
@@ -562,7 +562,7 @@ function createExperiment() {
     // do something
   } else if (Experiment.NAME_ORIGINAL_VARIATION === selectedVariation) {
     // original version is supposed to be shown, usually nothing to do
-  } else if (null === selectedVariation) {
+  } else if (undefined === selectedVariation) {
     // the experiment is supposed to do nothing as the visitor does not participate in the experiment
     // basically means the original version is supposed to be shown
   }
@@ -580,16 +580,16 @@ if ('object' === typeof Piwik && 'object' === typeof Matomo.AbTesting) {
 ```
 
 The method `getActivatedVariationName` will either return the name of the activated variation, a string 'original' 
-if the original version is supposed to be shown or null if the visitor is not supposed to participate in the experiment 
+if the original version is supposed to be shown or `undefined` if the visitor is not supposed to participate in the experiment 
 at all.
 
 ### How do I include the A/B testing framework when my `matomo.js` file is not writable?
  
-When your Settings > System Check reports that "The Piwik JavaScript tracker file `matomo.js` is not writable 
+When your Settings > System Check reports that "The Matomo JavaScript tracker file `matomo.js` is not writable 
 which means other plugins cannot extend the JavaScript tracker." then you have two options to solve this issue:
 
-1. Make the `matomo.js` file writable, for example by executing `chmod a+w piwik.js` or `chown $phpuser piwik.js` (replace `$phpuser` with actual username) in your Piwik directory. 
-We recommend running the [Piwik console](/guides/piwik-on-the-command-line) command `./console custom-piwik-js:update` after you have made the file writable.
+1. Make the `matomo.js` file writable, for example by executing `chmod a+w matomo.js` or `chown $phpuser matomo.js` (replace `$phpuser` with actual username) in your Matomo directory. 
+We recommend running the [Matomo console](/guides/piwik-on-the-command-line) command `./console custom-piwik-js:update` after you have made the file writable.
 2. or Load the A/B Testing framework manually in your website by adding in all your pages in the `<head>`: 
    `<script src="//$yourPiwikDomain/plugins/AbTesting/tracker.min.js">`
    
