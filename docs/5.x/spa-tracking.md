@@ -115,7 +115,11 @@ restrict the re-scan to a specific area.
 If you use the [A/B Testing](https://matomo.org/docs/ab-testing/) feature to test your experiments, whenever a new page is displayed you need to embed the js code again before tracking a new pageview as explained below:
 
 ```javascript
-window.addEventListener('pathchange', function() {
+// Use the appropriate event for your SPA routing strategy:
+// - 'hashchange' for hash-based routing
+// - 'popstate' for History API-based routing
+// - or your framework's router hooks
+window.addEventListener('hashchange', function() {
    var _paq = window._paq = window._paq || [];
    _paq.push(['setCustomUrl', window.location.pathname]);
    _paq.push(['setDocumentTitle', document.title]);
@@ -144,9 +148,10 @@ window.addEventListener('pathchange', function() {
 
 #### Link tracking
 
-Supposing that you use the link tracking feature to measure [outlinks](https://matomo.org/faq/new-to-piwik/faq_71/) and [downloads](https://matomo.org/faq/new-to-piwik/faq_47/), Matomo needs to re-scan the entire DOM for newly added links whenever your DOM changes. To make sure Matomo will track such links, call this method:
+Supposing that you use the link tracking feature to measure [outlinks](https://matomo.org/faq/new-to-piwik/faq_71/) and [downloads](https://matomo.org/faq/new-to-piwik/faq_47/), make sure to call `enableLinkTracking` once during initial setup. It installs a delegated click listener on `document.body`, so newly added links are tracked automatically without any additional calls:
 
 ```javascript
+// Call once during initial setup — subsequent calls are no-ops
 _paq.push(['enableLinkTracking']);
 ```
 
@@ -181,7 +186,7 @@ window.addEventListener('hashchange', function() {
     _paq.push(['setCustomUrl', currentUrl]);
     _paq.push(['setDocumentTitle', 'My New Title']);
 
-    // remove all previously assigned custom variables, requires Piwik 3.0.2
+    // remove all previously assigned custom variables
     _paq.push(['deleteCustomVariables', 'page']);
     _paq.push(['AbTesting::create', {
        name: 'theExperimentName',
