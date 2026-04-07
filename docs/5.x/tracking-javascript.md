@@ -28,11 +28,11 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 * `trackContentImpression( contentName, contentPiece, contentTarget )` - Track a content impression using the specified values.
 * `trackContentInteraction( contentInteraction, contentName, contentPiece, contentTarget )` - Track a content interaction using the specified values.
 * `logAllContentBlocksOnPage()` - Log all found content blocks within a page to the console. This is useful to debug / test content tracking.
-* `ping()` - Send a ping request. Ping requests do not track new actions. If they are sent within the standard visit length, they will update the existing visit time. If sent after the standard visit length, ping requests will be ignored. See also `enableHeartBeatTimer`.
+* `ping()` - Send a ping request. Ping requests do not track new actions. If they are sent within the standard visit length, they will update the existing visit time. If sent after the standard visit length, ping requests will create a new visit using the last action in the last known visit. See also `enableHeartBeatTimer`.
 * `enableHeartBeatTimer( activeTimeInseconds )` - Install a Heart beat timer that will send additional requests to Matomo in order to better measure the time spent in the visit. These requests will be sent only when the user is actively viewing the page (when the tab is active and in focus). These requests will not track additional actions or pageviews. By default, `activeTimeInSeconds` is set to 15 seconds. Meaning only if the page was viewed for at least 15 seconds (and the user leaves the page or focuses away from the tab) then a ping request will be sent. See also `ping` and the [developer guide](https://developer.matomo.org/guides/tracking-javascript-guide#accurately-measure-the-time-spent-on-each-page). 
 * `enableLinkTracking( enable )` - Install link tracking on all applicable link elements. Set the enable parameter to true to use pseudo click-handler (treat middle click and open contextmenu as left click). A right click (or any click that opens the context menu) on a link will be tracked as clicked even if "Open in new tab" is not selected. If "false" (default), nothing will be tracked on open context menu or middle click.
 * `enableFileTracking()` - Enable tracking of file:// protocol actions. By default, the file:// protocol is not tracked. 
-* `disablePerformanceTracking` - Disables page performance tracking.
+* `disablePerformanceTracking()` - Disables page performance tracking.
 * `enableCrossDomainLinking()` - Enable cross domain linking. By default, the visitor ID that identifies a unique visitor is stored in the browser's first party cookies. This means the cookie can only be accessed by pages on the same domain. If you own multiple domains and would like to track all the actions and pageviews of a specific visitor into the same visit, you may enable [cross domain linking (learn more)](https://matomo.org/faq/how-to/faq_23654/) . Whenever a user clicks on a link it will append a URL parameter `pk_vid` to the clicked URL which forwards the current visitor ID value to the page of the different domain.
 * `setCrossDomainLinkingTimeout( timeout )` - Set the cross domain linking timeout (in seconds). By default, the two visits across domains will be linked together when the link is clicked and the page is loaded within a 180 seconds timeout window.`
 * `getCrossDomainLinkingUrlParameter()` - Get the query parameter to append to links to handle cross domain linking. Use this to add cross domain support for links that are added to the DOM dynamically.  [Learn more about cross domain linking](https://matomo.org/faq/how-to/faq_23654/). 
@@ -48,7 +48,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `setReferrerUrl( string )` - Override the detected Http-Referer. We recommend you call this method early in your tracking code before you call `trackPageView` if it should be applied to all tracking requests.
 *   `setExcludedReferrers( string | array )` - Set array of hostnames or domains that should be ignored as referrers. For wildcard subdomains, you can use: `setExcludedReferrers('.example.com');` or `setExcludedReferrers('*.example.com');`. You can also specify a path along a domain: `setExcludedReferrers('*.example.com/subsite1');`. This method is available as of Matomo 4.12.
 *   `setSiteId( integer )` - Specify the website ID. Redundant: can be specified in `getTracker()` constructor.
-*   `setApiUrl( string )` - Specify the Piwik HTTP API URL endpoint. Points to the root directory of piwik, e.g. https://matomo.example.org/ or https://example.org/matomo/. This function is only useful when the 'Overlay' report is not working. By default, you do not need to use this function.
+*   `setAPIUrl( string )` - Specify the Piwik HTTP API URL endpoint. Points to the root directory of piwik, e.g. https://matomo.example.org/ or https://example.org/matomo/. This function is only useful when the 'Overlay' report is not working. By default, you do not need to use this function.
 *   `setTrackerUrl( string )` - Specify the Piwik server URL. Redundant: can be specified in `getTracker()` constructor.
 *   `getMatomoUrl()` - Return the Matomo server URL.
 *   `getPiwikUrl()` - Deprecated, use `getMatomoUrl()` instead. 
@@ -66,7 +66,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `setDoNotTrack( bool )` - Set to true to not track users who opt out of tracking using Mozilla's (proposed) Do Not Track setting.
 *   `killFrame()` - Enable a frame-buster to prevent the tracked web page from being framed/iframed.
 *   `redirectFile( url )` - Force the browser load the live URL if the tracked web page is loaded from a local file (e.g., saved to someone's desktop).
-*   `setHeartBeatTimer( minimumVisitLength, heartBeatDelay )` - Record how long the page has been viewed if the minimumVisitLength (in seconds) is attained; the heartBeatDelay determines how frequently to update the server
+*   `disableHeartBeatTimer()` - Disable the heartbeat timer if it has previously been enabled via `enableHeartBeatTimer`
 *   `getVisitorId()` - Return the 16 characters ID for the visitor
 *   `setVisitorId( visitorId )` -  `visitorId` needs to be a 16 digit hex string. The visitorId won't be persisted in a cookie and needs to be set on every new page load. 
 *   `getVisitorInfo()` - Return the visitor cookie contents in an array
@@ -82,7 +82,7 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 
 *   `getUserId()` - Return the User ID string if it was set.
 *   `setUserId( userId )` -  Sets a [User ID](https://matomo.org/docs/user-id/) to this user (such as an email address or a username).
-*   `resetUserId` - Clears (un-set) the User ID.
+*   `resetUserId()` - Clears (un-set) the User ID.
 *   `setPageViewId( pageView )` - Override PageView id for every use of logPageView(). Do not use this if you call trackPageView() multiple times during tracking (e.g. when tracking a single page application)
 *   `getPageViewId()` - Returns the PageView id. If not set manually using `setPageViewId`, this method will return the dynamic PageView id, used in the last tracked page view, or undefined if no page view was tracked yet.
 *   `setCustomVariable (index, name, value, scope)` - Set a custom variable.
