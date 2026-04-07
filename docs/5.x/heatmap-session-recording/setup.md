@@ -5,28 +5,28 @@ title: Setting up
 # Setting up Heatmap & Session Recording
 
 In this guide you will learn how to customize the tracking of [Heatmaps & Session Recordings](https://www.heatmap-analytics.com/).
-By default, you do not need to change your tracking code and Piwik takes care of everything. However, you can adjust the tracking
+By default, you do not need to change your tracking code and Matomo takes care of everything. However, you can adjust the tracking
 in various ways.
 
 ## Embedding the Heatmap & Session Recording JavaScript Tracker
 
-If you have already embedded the [Piwik JavaScript Tracking Code](/guides/tracking-javascript-guide) into your website,
+If you have already embedded the [Matomo JavaScript Tracking Code](/guides/tracking-javascript-guide) into your website,
 the Heatmap & Session Recording will automatically start tracking user activities. The tracking code is directly added 
-in your Piwik JavaScript tracker file `/matomo.js` as long as the file `matomo.js` in your Piwik directory is writable 
+in your Matomo JavaScript tracker file `/matomo.js` as long as the file `matomo.js` in your Matomo directory is writable 
 by the webserver/PHP.
 
-To check whether this works by default for you, login into Piwik as a Super User, go to Administration, and open the "System Check" report. 
+To check whether this works by default for you, login into Matomo as a Super User, go to Administration, and open the "System Check" report. 
 If the System Check displays a warning for "Writable Matomo.js" then [learn below how to solve this](#when-the-matomojs-in-your-piwik-directory-file-is-not-writable).
 
 ## Configuring Heatmaps & Session Recordings
 
-To configure the recording of a session or a heatmap, log in to your Piwik and click on "Heatmaps => Manage" or "Session Recordings => Manage".
+To configure the recording of a session or a heatmap, log in to your Matomo and click on "Heatmaps => Manage" or "Session Recordings => Manage".
 
 There you will be able to configure on which pages you want to record activities and how many sessions should be recorded. 
-Piwik will automatically detect any configured heatmap or session recording and start recording activities when needed. 
+Matomo will automatically detect any configured heatmap or session recording and start recording activities when needed. 
 You don't need to change your tracking code or your website to configure .
 
-To detect if any activities need to be recorded, an HTTP request will be issued on each page view to your Piwik. While this request is 
+To detect if any activities need to be recorded, an HTTP request will be issued on each page view to your Matomo. While this request is 
 fast and does for example not connect to your database, it may still add a bit of load to your server. If you want to avoid such 
 a request on each page view, have a look at the API reference for [`addConfig()`](/guides/heatmap-session-recording/reference#addconfig).
 
@@ -84,15 +84,15 @@ Alternatively, you can mask a set of form fields within your web page by specify
 ```
 
 To force that no keystrokes will be recorded even when enabled in the UI, call `_paq.push(['HeatmapSessionRecording::disableCaptureKeystrokes']);`
-If disabled, no text entered into any form field will be sent to Piwik, not even masked form fields.
+If disabled, no text entered into any form field will be sent to Matomo, not even masked form fields.
 
-## When the `matomo.js` in your Piwik directory file is not writable
+## When the `matomo.js` in your Matomo directory file is not writable
  
-When your Settings > System Check reports that "The Piwik JavaScript tracker file `matomo.js` is not writable 
+When your Settings > System Check reports that "The Matomo JavaScript tracker file `matomo.js` is not writable 
 which means other plugins cannot extend the JavaScript tracker." then you have two options to solve this issue:
 
-1. Make the `matomo.js` file writable, for example by executing `chmod a+w piwik.js` or `chown $phpuser piwik.js` (replace `$phpuser` with actual username) in your Piwik directory. 
-We recommend running the [Piwik console](/guides/piwik-on-the-command-line) command `./console custom-matomo-js:update` after you have made the file writable.
+1. Make the `matomo.js` file writable, for example by executing `chmod a+w matomo.js` or `chown $phpuser matomo.js` (replace `$phpuser` with actual username) in your Matomo directory. 
+We recommend running the [Matomo console](/guides/piwik-on-the-command-line) command `./console custom-matomo-js:update` after you have made the file writable.
 2. or Load the HeatmapSessionRecording tracker file manually in your website by adding in all your pages ideally in the `<head>`: 
    `<script src="https://your-matomo-domain/plugins/HeatmapSessionRecording/tracker.min.js">`
 
