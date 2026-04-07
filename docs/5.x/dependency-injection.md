@@ -18,7 +18,7 @@ and testing your code more easily.
 ## Loading a class through dependency injection
 
 Plugin developers can take advantage of constructor injection in most API classes in Matomo. This works for example for 
-controllers, APIs, widgets, menus, tasks, commands etc. Matomo will automatically create the needed instances and pass 
+controllers, APIs, widgets, menus, tasks etc. Matomo will automatically create the needed instances and pass 
 it to your constructor.
 
 For example if you want an instance of a logger and translator, simply define them in the constructor. It automatically 
@@ -109,7 +109,7 @@ The container includes the following configuration files in the order listed:
 
 When developing a plugin, you can supply DI config with your plugin in one of the files listed above to either configure your plugin or customize Matomo.
 
-The syntax used in those files is described in [PHP-DI's documentation](http://php-di.org/doc/definition.html). Below are examples of the most common use cases.
+The syntax used in those files is described in [PHP-DI's documentation](https://php-di.org/doc/definition.html). Below are examples of the most common use cases.
 
 ### Binding an interface to a class
 
@@ -125,7 +125,7 @@ This will automatically create an instance of the `LoaderCache` whenever the `Lo
 
 ```php
 return array(
-    'log.format' => '%level% %tag%[%datetime%] %message%'
+    'log.short.format' => '%level% %tag%[%datetime%] %message%'
 );
 ```
 
@@ -138,19 +138,19 @@ Given that you have the following class:
 ```php
 class LineMessageFormatter
 {
-    public function __construct($logFormat)
+    public function __construct($logMessageFormat)
     {
         // ...
     }
 }
 ```
 
-We configure to inject the `log.format` entry in the constructor:
+We configure to inject the `log.short.format` entry in the constructor:
 
 ```php
 return array(
-    'Piwik\Log\Formatter\LineMessageFormatter' => Piwik\DI::autowire()
-        ->constructor(Piwik\DI::link('log.format')),
+    'Piwik\Plugins\Monolog\Formatter\LineMessageFormatter' => Piwik\DI::autowire()
+        ->constructor(Piwik\DI::get('log.short.format')),
 );
 ```
 
@@ -158,8 +158,8 @@ or
 
 ```php
 return array(
-    'Piwik\Log\Formatter\LineMessageFormatter' => Piwik\DI::autowire()
-        ->constructorParameter('logFormat', Piwik\DI::link('log.format')),
+    'Piwik\Plugins\Monolog\Formatter\LineMessageFormatter' => Piwik\DI::autowire()
+        ->constructorParameter('logMessageFormat', Piwik\DI::get('log.short.format')),
 );
 ```
 
@@ -181,11 +181,11 @@ using references to make manipulation possible it's required to wrap the event l
 
 ```php
 return [
-    'observers.global' => [
+    'observers.global' => Piwik\DI::add([
         ['AssetManager.getStylesheetFiles', Piwik\DI::value(function (&$stylesheets) {
             $stylesheets[] = 'my\custom.css';
         })],
-    ],
+    ]),
 ];
 ```
 
