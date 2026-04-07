@@ -32,7 +32,7 @@ and export features:
 Your plugin needs to export any information that your plugin stores along specific visits like this:
 
 ```php
-public function exportDataSubjects(&export, $visitsToExport)
+public function exportDataSubjects(&$export, $visitsToExport)
 {
     $export['mypluginname'] = array();
     foreach($visitsToExport as $visit) {
@@ -49,7 +49,7 @@ Your plugin needs to delete any information that is stored along specific visits
 public function deleteDataSubjects(&$result, $visitsToDelete)
 {
     $result['mypluginname'] = 0;
-    foreach($visitsToExport as $visit) {
+    foreach($visitsToDelete as $visit) {
         $result['mypluginname'] += Db::query('DELETE FROM mytable WHERE idsite = ? and idvisit = ?', array($visit['idsite'], $visit['idvisit']))->rowCount();
     }
 }
