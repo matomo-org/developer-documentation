@@ -17,7 +17,7 @@ This feature is not only limited to ads or images, you can use it for any kind o
 | Content name             | A name that represents a content block. The name will be visible in reports. One name can belong to different content pieces. |
 | Content piece            | This is the actual content that was displayed, eg a path to a video/image/audio file, a text, ... |
 | Content target           | For instance the URL of a landing page where the user was led to after interacting with the content block. In a single page website it could be also the name of an anchor. In a mobile app it could be the name of the screen you are going to open. |
-| Content impression       | Any content block that was displayed on a page, such as a banner or an ad. Optionally you can tell Piwik to track only impressions for visible content blocks. |
+| Content impression       | Any content block that was displayed on a page, such as a banner or an ad. Optionally you can tell Matomo to track only impressions for visible content blocks. |
 | Content interaction      | An interaction is happening when a visitor is interacting with a content block. This means usually a 'click' on a banner or ad, but it can be any interaction. |
 | Content interaction rate | The ratio of content impressions to interactions. For instance an ad was displayed a 100 times and there were 2 interactions results in a rate of 2%. |
 
@@ -109,7 +109,7 @@ Examples:
 // content target = ""
 ```
 
-As you can see in these examples we do detect the content piece and name automatically based on the `src` attribute of the image. The content target cannot be detected since an image does not define a `href` attribute. Piwik will track an interaction automatically as soon as a visitor clicks on the image.
+As you can see in these examples we do detect the content piece and name automatically based on the `src` attribute of the image. The content target cannot be detected since an image does not define a `href` attribute. Matomo will track an interaction automatically as soon as a visitor clicks on the image.
 
 #### How do we detect the content piece?
 
@@ -184,7 +184,7 @@ Better:
 
 #### How do we detect the content name?
 
-The content name represents a content block which will help you in the Piwik UI to easily identify a specific block. A content name groups different content pieces together. For instance while a content name could be "My Product 1" there could be many different content pieces to exactly know which content was displayed and interacted with. For example "Buy now", "Click here to buy", "/image.png".
+The content name represents a content block which will help you in the Matomo UI to easily identify a specific block. A content name groups different content pieces together. For instance while a content name could be "My Product 1" there could be many different content pieces to exactly know which content was displayed and interacted with. For example "Buy now", "Click here to buy", "/image.png".
 
 * The simplest scenario is to provide an HTML attribute `data-content-name` with a value anywhere within a content block or in the content block element itself.
 * If there is no such attribute we will use the value of the content piece in case there is one (if !== Unknown).
@@ -267,7 +267,7 @@ Examples:
 As no specific target element is set, we will read the `href` attribute of the content block.
 
 ```html
-<a onclick="location.href='https://www.example.com'" data-content-target="http://www.example.com" data-track-content>Click me</a>
+<a onclick="location.href='https://www.example.com'" data-content-target="https://www.example.com" data-track-content>Click me</a>
 // content name   = Unknown
 // content piece  = Unknown
 // content target = "https://www.example.com"
@@ -340,11 +340,11 @@ A typical example for a content block that displays a text ad.
 // content target = /anylink
 ```
 
-A typical example for a content block that displays an image - which is the content piece - and a call to action link - which is the content target - below. We would replace the `href=/anylink` with a link to matomo.php of your Piwik installation which will in turn redirect the user to the actual target to actually track the interaction.
+A typical example for a content block that displays an image - which is the content piece - and a call to action link - which is the content target - below. Matomo will track an interaction automatically when a visitor clicks on the call to action link.
 
 #### How to debug / test whether all content blocks will be detected correctly?
 
-In Piwik 2.15 we added a new method `logAllContentBlocksOnPage` to log all found content blocks within a page to the console. It will log an array of all content blocks to the console like this:
+Matomo provides a method `logAllContentBlocksOnPage` to log all found content blocks within a page to the console. It will log an array of all content blocks to the console like this:
 
 ```js
 [{name: '...', target:'...', piece: "..."},...]
@@ -356,17 +356,13 @@ To log them simply open the developer tools of the browser you are using and cal
 
 #### How do we track an interaction automatically?
 
-Piwik tracks an interaction automatically by listening to clicks on the target element. On mobile devices you might want to listen to `touch` events. In this case you may have to disable automatic content interaction tracking see below.
+Matomo tracks an interaction automatically by listening to clicks on the target element. On mobile devices you might want to listen to `touch` events. In this case you may have to disable automatic content interaction tracking see below.
 
 The way we track interactions varies based on the type of the link.
 
 ##### Links to the same domain
 
-In case we detect a link element having an `href` attribute to the same domain as the current page we will replace the `href` attribute with a link to the `matomo.php` tracker URL. Whenever a user clicks on such a link we will first send the user to the `matomo.php` of your Piwik installation and then redirect the user from there to the actual page. This makes sure to track an interaction even if someone opens the URL with a right click.
-
-If the URL of the replaced `href` attribute changes meanwhile by your code we will respect the new link.
-
-Note: The referrer information will get lost when redirecting from matomo.php to your page. If you depend on this you need to disable automatic tracking of an interaction see below.
+When a visitor clicks on a same-domain link within a content block, Matomo tracks the content interaction via an XHR request before allowing the browser to follow the link. This approach preserves the referrer information and does not alter the `href` attribute of the link.
 
 ##### Outlinks and downloads
 
