@@ -15,7 +15,7 @@ Use this cache in a request if you need to avoid invoking the same, expensive lo
 request. Examples of that might be to cache the result of an API call to get a list of entities. You might need that
 list in multiple places in PHP, but only really need to issue a database query once.
 
-See the {@see Matomo\Cache\Backend\Transient::class} class for more information.
+See the {@see Matomo\Cache\Transient::class} class for more information.
 
 ## Lazy Cache
 
@@ -30,7 +30,7 @@ in a Controller action. Issuing the HTTP request every time the controller actio
 action seem slow, so we want to cache the result. We don't need it in any other context, however, so we want the
 cache to be accessed only when we want the data. The Lazy cache is perfect for this.
 
-See the {@see Matomo\Cache\Backend\Lazy::class} class for more information.
+See the {@see Matomo\Cache\Lazy::class} class for more information.
 
 ## Eager Cache
 
@@ -62,7 +62,7 @@ See the {@see Piwik\Tracker\Cache} class for more information.
 # Cache invalidation
 
 When it is known that data in a cache is no longer valid, it must be invalidated. If, for example, a measurable setting is changed
-for a site, and that setting is used during tracking, the `Tracker::deleteCacheWebsiteAttributes()` must be called.
+for a site, and that setting is used during tracking, the `Piwik\Tracker\Cache::deleteCacheWebsiteAttributes()` must be called.
 
 Each individual cache type has a different way of doing that.
 
@@ -111,7 +111,7 @@ class Controller
     public function myExpensiveAction()
     {
         $idSite = Common::getRequestVar('idSite', $default = null, 'int');
-        $cacheKey = \Piwik\CacheId::siteAware('myCacheData', $idSite);
+        $cacheKey = \Piwik\CacheId::siteAware('myCacheData', [$idSite]);
         
         // NOTE: using this approach where we fetch first instead of using contains only works if `false` is not a valid cached value
         $data = $this->cache->fetch($cacheKey);
