@@ -107,7 +107,7 @@ Plugin controllers return a **string** (usually HTML content) which is sent in t
 
 If the specified controller action cannot be found, then Matomo checks if there is a matching widget or report having this name.
 
-If one is found, it will call the `render()` method of the widget or alternatively the report. This is done in the `CoreHome.renderWidget` and `CoreHome.renderReportWidget` controller action and the matching widget or report is found in the [ControllerResolver](https://github.com/matomo-org/matomo/blob/4.4.1/core/Http/ControllerResolver.php#L47-L65).
+If one is found, it will call the `render()` method of the widget or alternatively the report. This is done in the `CoreHome.renderWidget` and `CoreHome.renderReportWidget` controller action and the matching widget or report is found in the [ControllerResolver](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Http/ControllerResolver.php).
 
 ### The HTTP Reporting API
 
@@ -119,13 +119,13 @@ It has the same entry point and is also dispatched by the front controller.
 
 This HTTP request will be processed like any other call to a controller: the plugin name is `API` and no `action` is given, which will fall back to `index`.
 
-The `Piwik\Plugin\API\Controller` class will be called, and it will dispatch the call to the targeted API, acting as a second front controller for API calls. In our example, the method `SEO.getRank ` means that the `Piwik\Plugin\SEO\API::getRank()` method will be called.
+The `Piwik\Plugins\API\Controller` class will be called, and it will dispatch the call to the targeted API, acting as a second front controller for API calls. In our example, the method `SEO.getRank` means that the `Piwik\Plugins\SEO\API::getRank()` method will be called.
 
 API requests are authenticated using a `token_auth` URL parameter and usually don't have a session loaded unless the `force_api_session=1` parameter is present. Learn more about [Authentication in Matomo](/guides/authentication-in-depth).
 
 ### The HTTP Tracking API
 
-This [HTTP tracking API](/api-reference/tracking-api) lets the JavaScript tracker **submit analytics data** to be saved in Piwik.
+This [HTTP tracking API](/api-reference/tracking-api) lets the JavaScript tracker **submit analytics data** to be saved in Matomo.
 
 Its entry point is different from Matomo's web application and HTTP reporting API: it is through the `matomo.php` file. Some older Matomo installations might still use `piwik.php`.
 
@@ -157,7 +157,7 @@ The HTTP tracking API (i.e. the `Piwik\Tracker` component) receives **raw** anal
 
 Log data is represented in PHP as `Piwik\Tracker\Visit` objects, and is stored into the following tables:
 
-- `log_visit` contains one entry per visit (returning visitor)
+- `log_visit` contains one entry per visit (both new and returning visitors)
 - `log_action` contains all the type of actions possible on the website (e.g. unique URLs, page titles, download URLs…)
 - `log_link_visit_action` contains one entry per action of a visitor (page view, …)
 - `log_conversion` contains conversions (actions that match goals) that happen during a visit
@@ -179,11 +179,11 @@ Archive data can be:
 
 - **numeric metric records**: simple numeric values (like the number of page views or the number of visits)
 
-    These are stored in the `archive_numeric_*` tables. Values are stored as float.
+    These are stored in the `archive_numeric_*` tables. Values are stored as double-precision floating-point numbers.
 
 - **table records**: bidimensional data (can be numeric values as well as anything else), represented as [`DataTable`](/guides/datatable) objects
 
-    These are stored in the `archive_blob_*` tables. `DataTable` objects are serialized to a string and compressed to be stored as `BLOB` in the table.
+    These are stored in the `archive_blob_*` tables. `DataTable` objects are serialized to a string and compressed to be stored as `LONGBLOB` in the table.
 
 Both numeric and table record objects stored in the database are named *records* to differentiate them from `DataTable` objects manipulated and returned by Matomo's API that we name *reports*.
 
@@ -244,7 +244,7 @@ You can declare this via environment variables, or alternatively by setting $GLO
 
 To control where Marketplace or ZIP installs are written, set `MATOMO_PLUGIN_COPY_DIR` to one of the absolute paths already listed in MATOMO_PLUGIN_DIRS. 
 
-**Warning:** The directory must be writable by the web server user, otherwise plugin installation will fail. If the specified path is invalid or not writable, Matomo will either display an error message or fallback to installing plugins in the core `./plugins` directory, depending on the situation.
+**Warning:** The directory must be writable by the web server user, otherwise plugin installation will fail. If the specified path is not one of the directories listed in `MATOMO_PLUGIN_DIRS`, Matomo will throw an exception. The fallback to the default `./plugins` directory only applies when `MATOMO_PLUGIN_COPY_DIR` is not set at all.
 
 
 ## Other valuable resources
