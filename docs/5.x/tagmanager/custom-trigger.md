@@ -29,7 +29,7 @@ This command will guide you through the creation of a trigger and ask for severa
 
 ### Defining the name, description, and help of your trigger
 
-When you generate a trigger, the generator will automatically create some [translation keys](/guides/translations) in your `plugin/$yourplugin/lang/en.json` file.
+When you generate a trigger, the generator will automatically create some [translation keys](/guides/translations) in your `plugins/$yourplugin/lang/en.json` file.
 You may want to adjust the translations for the created keys:
 
 ```json
@@ -91,7 +91,7 @@ public function getParameters()
     return array(
         $this->makeSetting('listenEvent', 'all', FieldConfig::TYPE_STRING, function (FieldConfig $field) {
             $field->title = 'Trigger when network status changes to';
-            $field->uiControl = FieldConfig::UI_CONTROL_SELECT;
+            $field->uiControl = FieldConfig::UI_CONTROL_SINGLE_SELECT;
             $field->availableValues = array(
                 'all' => 'Online or Offline',
                 'online' => 'Online',

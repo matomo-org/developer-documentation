@@ -15,6 +15,6 @@ Alternatively, you may also [release](/guides/distributing-your-plugin) a tag or
 
 ## Guides & API references
 
-* Are you new to the Matomo Tag Manager? Check out our [user guide]().
+* Are you new to the Matomo Tag Manager? Check out our [user guide](https://matomo.org/guide/tag-manager/).
 * Want to integrate Matomo Tag Manager into your website? Check out our [integration guide](/guides/tagmanager/introduction).
 * Looking for the Tag Manager API Reference? Check out our [JavaScript Tag Manager API Reference](/api-reference/tagmanager/javascript-api-reference).

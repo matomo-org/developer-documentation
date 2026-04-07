@@ -28,7 +28,7 @@ This command will guide you through the creation of a tag and ask for several th
 
 ### Defining the name, description, and help of your tag
 
-When you generate a tag, the generator will automatically create some [translation keys](/guides/translations) in your `plugin/$yourplugin/lang/en.json` file.
+When you generate a tag, the generator will automatically create some [translation keys](/guides/translations) in your `plugins/$yourplugin/lang/en.json` file.
 You may want to adjust the translations for the created keys:
 
 ```json

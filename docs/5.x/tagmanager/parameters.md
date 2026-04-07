@@ -39,14 +39,14 @@ simply set the template file to one of these values:
 ```php
 // a text field that allows the user to choose a variable
 $field->uiControl = FieldConfig::UI_CONTROL_TEXT;
-$field->customUiControlTemplateFile = self::FIELD_TEMPLATE_VARIABLE;
+$field->customFieldComponent = self::FIELD_VARIABLE_COMPONENT;
 
 // a textarea that allows the user to choose a variable
 $field->uiControl = FieldConfig::UI_CONTROL_TEXTAREA;
-$field->customUiControlTemplateFile = self::FIELD_TEMPLATE_TEXTAREA_VARIABLE;
+$field->customFieldComponent = self::FIELD_TEXTAREA_VARIABLE_COMPONENT;
 
 // requires the user to select a "MatomoConfigurationVariable"
-$field->customUiControlTemplateFile = self::FIELD_TEMPLATE_VARIABLE_TYPE;
+$field->customFieldComponent = self::FIELD_VARIABLE_TYPE_COMPONENT;
 $field->uiControlAttributes = array('variableType' => 'MatomoConfiguration');
 ```
 
@@ -78,6 +78,7 @@ public function getParameters()
             }
         }),
     );
+}
 ```
 
 ### Validating a value
