@@ -49,7 +49,7 @@ Example:
 \WpMatomo\Admin\Menu::get_matomo_reporting_url( $category = 'General_Visitors', $subcategory = 'General_Overview', $additional_url_params = array() );
 // This will generate a link like this:
 // https://example.com/wp-content/plugins/matomo/app/index.php?module=CoreHome&action=index&idSite=1&period=day&date=yesterday#?idSite=1&period=day&date=yesterday&category=General_Visitors&subcategory=General_Overview
-// You can add additional url parameters if needed, for example array('idGoal' = 1)
+// You can add additional url parameters if needed, for example array('idGoal' => 1)
 ```
 
 The above example would send a user right to the Visitors => Overview reporting page.
@@ -62,7 +62,7 @@ Example:
 \WpMatomo\Admin\Menu::get_matomo_action_url( $module = 'PrivacyManager', $action = 'privacySettings', $additional_url_params = array() );
 // This will generate a link like this:
 // https://example.com/wp-content/plugins/matomo/app/index.php?module=PrivacyManager&action=privacySettings&idSite=1&period=day&date=yesterday
-// You can add additional url parameters if needed, for example array('idGoal' = 1)
+// You can add additional url parameters if needed, for example array('idGoal' => 1)
 ```
 
 This link will show a specific controller action that is defined in a Matomo plugin.

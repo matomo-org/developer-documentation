@@ -56,7 +56,7 @@ If WP MultiSites is used, this action is executed after a particular blog was un
 
 This action is executed each time a specific site in Matomo was synced / updated.
 
-* `matomo_ecommerce_init ( \PiwikTracker $tracker )`
+* `matomo_ecommerce_init ( \MatomoTracker $tracker )`
 
 This action can be used to register support for additional ecommerce stores. The hook is triggered on plugin load if the user has ecommerce and tracking enabled. An instance of the [Matomo Tracker](https://github.com/matomo-org/matomo-php-tracker) is passed and can be used to track purchases etc server side if needed (eg during an ajax request). 
 
