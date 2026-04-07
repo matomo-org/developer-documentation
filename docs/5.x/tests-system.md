@@ -42,7 +42,7 @@ If we don't update the OmniFixture then we end up with many failed screenshots t
 As part of our system tests we generate the scheduled reports (in HTML, PDF & SMS).
 Some of these scheduled reports contain PNG graphs. Depending on the system under test, generated images can differ.
 Therefore, PNG graphs are only tested and compared against "expected" graphs, if the system under test has the same characteristics as the integration server.
-The characteristics of the integration server are described in `SystemTestCase::canImagesBeIncludedInScheduledReports()`
+The characteristics of the integration server are described in `Fixture::canImagesBeIncludedInScheduledReports()`
 
 ## Writing system tests
 
@@ -74,7 +74,7 @@ public function getApiForTesting()
 
     return array(
         // test a single API method
-        array('UserSettings.getResolution', array('idSite' => $idSite, 'date' => $dateTime)),
+        array('Resolution.getResolution', array('idSite' => $idSite, 'date' => $dateTime)),
 
         // test all methods in a plugin
         array('API', array('idSite' => $idSite, 'date' => $dateTime)),
@@ -88,7 +88,7 @@ public function getApiForTesting()
                                           'otherRequestParameters' => array('urls' => $bulkUrls))),
 
         // test multiple dates w/ multiple periods and multiple sites
-        array('UserSettings.getResolution', array('idSite' => 'all',
+        array('Resolution.getResolution', array('idSite' => 'all',
                                                   'date' => $dateTime,
                                                   'periods' => array('day', 'week', 'month'),
                                                   'setDateLastN' => true)),
@@ -129,16 +129,16 @@ class MySystemTest extends SystemTestCase
     // ...
 }
 
-MySystemTest::$fixture = new \Test_Piwik_Fixture_ThreeGoalsOnePageview();
+MySystemTest::$fixture = new \Piwik\Tests\Fixtures\ThreeGoalsOnePageview();
 ```
 
 To see the fixtures Piwik defines, see the files in the `tests/PHPUnit/Fixtures` directory.
 
-You can create your own fixture as well, just extend `Piwik\Tests\Framework\Fixture` and place the file in the `Test/Fixtures/` directory of your plugin.
+You can create your own fixture as well, just extend `Piwik\Tests\Framework\Fixture` and place the file in the `tests/Fixtures/` directory of your plugin.
 
 ## Expected and processed output
 
-System tests will generate an expected output file for every API method and period combination. The generated output (also called *processed* output) is stored in the `processed/` subdirectory of your plugin's `Test/` directory. The expected output should be stored in a directory named `expected/`.
+System tests will generate an expected output file for every API method and period combination. The generated output (also called *processed* output) is stored in the `processed/` subdirectory of your plugin's `tests/System/` directory. The expected output should be stored in a directory named `expected/`.
 
 When you first create a system test, there will be no expected files. You will have to copy processed files to the expected folder after ensuring they are correct.
 
@@ -210,7 +210,7 @@ class CheckDirectDependencyUseCommandTest extends SystemTestCase
 {
     public function testCommand()
     {
-        if (version_compare(Version::VERSION, '5.1.0', '<=') || !file_exists(PIWIK_INCLUDE_PATH . '/plugins/TestRunner/Commands/CheckDirectDependencyUse.php')) {
+        if (version_compare(Version::VERSION, '5.1.0', '<') || !file_exists(PIWIK_INCLUDE_PATH . '/plugins/TestRunner/Commands/CheckDirectDependencyUse.php')) {
             $this->markTestSkipped('tests:check-direct-dependency-use is not available in this version');
           }
         
