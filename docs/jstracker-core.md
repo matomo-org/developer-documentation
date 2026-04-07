@@ -20,7 +20,7 @@ To make changes to the JS tracker, you need to edit the raw/unminfied JS tracker
 
 ### Adding a new public JS tracker method
 
-Public tracker methods like `trackPageView` can be called eg using `_paq.push(['trackPageView', '...parameters'])`. Such methods are defined similar to this [example](https://github.com/matomo-org/matomo/blob/4.4.1/js/piwik.js#L6260-L6275).
+Public tracker methods like `trackPageView` can be called eg using `_paq.push(['trackPageView', '...parameters'])`. Such methods are defined similar to this [example](https://github.com/matomo-org/matomo/blob/5.x-dev/js/piwik.js#L6260-L6275).
 
 Any newly added method or changed parameters will be documented in the [developer changelog](https://developer.matomo.org/guides/apis#developer-changelog) and on the [JS tracking client](https://developer.matomo.org/api-reference/tracking-javascript) page.
 
@@ -51,7 +51,7 @@ Sometimes you may want to test private methods that aren't exposed in the JS tra
 
 ### Testing private tracker variables
 
-To access private tracker variables that only exist within a tracker instance, you can place extra tracker methods between `/*<DEBUG>*/` and `/*</DEBUG>*/`. Any code between these comments will be removed in the final minified JS tracker version. You can see this done for example here: https://github.com/matomo-org/matomo/blob/4.2.0/js/piwik.js#L4820-L4840
+To access private tracker variables that only exist within a tracker instance, you can place extra tracker methods between `/*<DEBUG>*/` and `/*</DEBUG>*/`. Any code between these comments will be removed in the final minified JS tracker version. You can see this done for example here: https://github.com/matomo-org/matomo/blob/5.x-dev/js/piwik.js#L4820-L4840
 
 You can then access these methods on a tracker instance as usual. For example `tracker.isUsingAlwaysUseSendBeacon`. 
 
@@ -61,7 +61,7 @@ You may see a message like `Test failed in module externals: 'JSLint'. Error: JS
 
 In that case you need to run the tests in the browser and then open the browser developer tools. It will show you all the JSLint errors in the console. There might be a lot of log output in the console. You can find the relevant entry by searching for `JSLint`. Explanations for the different errors you can find for example on [linterrors.com/js](http://linterrors.com/js).
 
-If the error is for example `Unexpected /*property*/ '{a}'.` then you may need to [add a new member or global in the comments](https://github.com/matomo-org/matomo/blob/4.4.1/js/piwik.js#L30-L130) to resolve the issue.
+If the error is for example `Unexpected /*property*/ '{a}'.` then you may need to [add a new member or global in the comments](https://github.com/matomo-org/matomo/blob/5.x-dev/js/piwik.js#L30-L130) to resolve the issue.
 
 ## Minifying the JS tracker
 
