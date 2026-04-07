@@ -25,6 +25,8 @@ We'll create a **plugin setting** which will control which visit property the pl
 ```php
 namespace Piwik\Plugins\MyPlugin;
 
+use Piwik\Settings\FieldConfig;
+
 class Settings extends \Piwik\Settings\Plugin\UserSettings
 {
     protected function init()
@@ -48,7 +50,6 @@ class Settings extends \Piwik\Settings\Plugin\UserSettings
     protected function init()
     {
         $this->realtimeReportDimension = $this->createRealtimeReportDimensionSetting();
-        $this->addSetting($this->realtimeReportDimension);
     }
 
     private function createRealtimeReportDimensionSetting()
@@ -63,14 +64,12 @@ Then we'll implement the `createRealtimeReportDimensionSetting()` method:
 ```php
     private function createRealtimeReportDimensionSetting()
     {
-        $setting = new \Piwik\Settings\UserSetting('reportDimension', 'Report Dimension');
-        $setting->type = self::TYPE_STRING;
-        $setting->uiControlType = self::CONTROL_SINGLE_SELECT;
-        $setting->description   = 'Choose the dimension to aggregate by';
-        $setting->availableValues = MyPlugin::$availableDimensionsForAggregation;
-        $setting->defaultValue = 'browserName';
-        
-        return $setting;
+        return $this->makeSetting('reportDimension', $default = 'browserName', FieldConfig::TYPE_STRING, function (FieldConfig $field) {
+            $field->title = 'Report Dimension';
+            $field->uiControl = FieldConfig::UI_CONTROL_SINGLE_SELECT;
+            $field->description = 'Choose the dimension to aggregate by';
+            $field->availableValues = MyPlugin::$availableDimensionsForAggregation;
+        });
     }
 ```
 
