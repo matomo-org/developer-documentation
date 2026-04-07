@@ -8,7 +8,7 @@ In this guide we will learn how you can implement [Media Analytics](https://www.
  
 ## Tracking a new media player in the browser
 
-The Media Analytics plugin currently supports out of the box the HTML5, Vimeo and YouTube media players (more details: [list of all supported media players](https://matomo.org/faq/media-analytics/faq_22380/)). If you are using
+The Media Analytics plugin currently supports out of the box the HTML5, Vimeo, YouTube, SoundCloud and JW Player media players (more details: [list of all supported media players](https://matomo.org/faq/media-analytics/faq_22380/)). If you are using
  a different media player for your videos and audio, you can measure them by registering your own player. 
 
 If you need help implementing Media Analytics for your media player or if you wish to share your implementation with us, [please contact us](https://matomo.org/support/).
@@ -39,7 +39,7 @@ window.matomoMediaAnalyticsAsyncInit = function () {
 };
 ```
 
-It is recommended to define this method before the [Piwik JavaScript Tracking Code](/guides/tracking-javascript-guide).
+It is recommended to define this method before the [Matomo JavaScript Tracking Code](/guides/tracking-javascript-guide).
 
 ### Scanning for media
 
@@ -99,8 +99,8 @@ function MyPlayer (node, mediaType) {
     tracker.setFullscreen(MA.element.isFullscreen(node));
 
     // the method `getMediaTitle` will try to get a media title from a
-    // "data-matomo-title", "title" or "alt" HTML attribute. Sometimes it might be possible
-    // to retrieve the media title directly from the video or audio player
+    // "data-matomo-title", "data-piwik-title", "title" or "alt" HTML attribute. Sometimes 
+    // it might be possible to retrieve the media title directly from the video or audio player
     var title = MA.element.getMediaTitle(node);
     tracker.setMediaTitle(title);
 
@@ -150,7 +150,7 @@ function MyPlayer (node, mediaType) {
         // updated data will be tracked. 
         // The method itself will not actually send a tracking request whenever it 
         // is called. Instead it will make sure to respect the set ping interval and
-        // eg only send a tracking request every 5 seconds.
+        // eg only send a tracking request every 10 seconds.
         tracker.update();
         
     }, useCapture);
@@ -197,7 +197,7 @@ Once you have added support for your custom player analytics, please [contact us
 ## Tracking a new player in mobile apps and desktop apps
 
 You can use the MediaAnalytics plugin to track the media consumption in mobile apps, desktop apps and games. For this
-to work you need to use the [Piwik HTTP Tracking API](/api-reference/tracking-api) or a [Piwik Tracking SDK](/guides/tracking-api-clients).
+to work you need to use the [Matomo HTTP Tracking API](/api-reference/tracking-api) or a [Matomo Tracking SDK](/guides/tracking-api-clients).
 
 ### Media Analytics HTTP Tracking API reference
 
@@ -222,7 +222,7 @@ These HTTP Tracking API parameters can be used to track the usage of media:
 When tracking a media impression it is important to set the parameter `ma_st` to `0`:
 
 ```
-https://yourpiwikdomain/matomo.php?ma_st=0ma_id=8C1gOQ9CPOiQfzft&ma_ti=MediaName&ma_pn=playerName&ma_mt=video&ma_re=https%3A%2F%2Fplayer.example.org%2Fvideo%2F1111111&idsite=1&rec=1&r=077275&h=15&m=33&s=48&url=http%3A%2F%2Fexample.piwik&...
+https://yourmatomodomain/matomo.php?ma_st=0&ma_id=8C1gOQ&ma_ti=MediaName&ma_pn=playerName&ma_mt=video&ma_re=https%3A%2F%2Fplayer.example.org%2Fvideo%2F1111111&idsite=1&rec=1&r=077275&h=15&m=33&s=48&url=http%3A%2F%2Fexample.org&...
 ```
 
 ### Example request to track a media progress 
@@ -231,17 +231,17 @@ When tracking a media progress it is important to send the same media unique id 
 As soon as a new video or audio is playing you need to reset all parameters and generate a new `ma_id`.
 
 ```
-https://yourpiwikdomain/matomo.php?ma_st=5&ma_ttp=12&ma_fs=1&ma_w=500&ma_h=300&ma_ps=34&ma_le=100ma_id=8C1gOQ9CPOiQfzft&ma_ti=MediaName&ma_pn=playerName&ma_mt=video&ma_re=https%3A%2F%2Fplayer.example.org%2Fvideo%2F1111111&idsite=1&rec=1&r=077275&h=15&m=33&s=48&url=http%3A%2F%2Fexample.piwik&...
+https://yourmatomodomain/matomo.php?ma_st=5&ma_ttp=12&ma_fs=1&ma_w=500&ma_h=300&ma_ps=34&ma_le=100&ma_id=8C1gOQ&ma_ti=MediaName&ma_pn=playerName&ma_mt=video&ma_re=https%3A%2F%2Fplayer.example.org%2Fvideo%2F1111111&idsite=1&rec=1&r=077275&h=15&m=33&s=48&url=http%3A%2F%2Fexample.org&...
 ```
 
-While a media is playing we recommend sending an update regularly, for example every 5 seconds. Most of the parameters
+While a media is playing we recommend sending an update regularly, for example every 10 seconds. Most of the parameters
 usually remain the same when sending updated media progress requests, but the current media position (`ma_ps`) and the played
 media time (`ma_st`) should change with every request.
 
-### Using a Piwik Tracking SDK 
+### Using a Matomo Tracking SDK 
 
-There are many [Piwik Tracking SDKs](/guides/tracking-api-clients) available for Piwik so 
-you do not have to send pure HTTP requests. There is for example a Piwik Tracking SDK for PHP, Android, iOS, C#, Java 
+There are many [Matomo Tracking SDKs](/guides/tracking-api-clients) available for Matomo so 
+you do not have to send pure HTTP requests. There is for example a Matomo Tracking SDK for PHP, Android, iOS, C#, Java 
 and more. They usually allow you to set custom tracking parameters like this:
 
 ```php

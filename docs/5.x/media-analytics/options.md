@@ -9,7 +9,7 @@ In this guide we will learn how to customise how your Video and Audio media cont
  
 ## Setting video and audio titles
 
-When analyzing your media reports in Piwik, media titles are often more useful than the Media HTTP URLs (which may contain only 
+When analyzing your media reports in Matomo, media titles are often more useful than the Media HTTP URLs (which may contain only 
 random numbers and letters). The YouTube and Vimeo player let us retrieve the video title automatically, 
 so your video reports directly show the original video titles. 
 If you use HTML5 videos or audios, or if you wish to customise the video titles in your analytics reports, read on. 
@@ -29,7 +29,7 @@ received from a media player.
 <video data-matomo-title="My custom Video title" title="A different title"></video>
 ```
 
-In the above example your video analytics reports in Piwik will show "My custom Video title" as the media title. 
+In the above example your video analytics reports in Matomo will show "My custom Video title" as the media title. 
 If the video title cannot be detected (depending on your media player) and there is none of these HTML attributes set, 
 then the title will be shown as "Unknown".
 
@@ -75,7 +75,7 @@ directly as described above.
 
 By default, the HTTP URL of a media is fetched from the player API or read in the DOM. There can be use cases
  where you might want to track a custom resource URL instead of the actual resource. For example when your media
-  URLs contain unique ids and you prefer to have more readable  URLs when analyzing your Piwik reports.
+  URLs contain unique ids and you prefer to have more readable  URLs when analyzing your Matomo reports.
 To do this you can define a custom resource via the `data-matomo-resource` (recommended) or the `data-piwik-resource` HTML attribute. For example:
 
 ```html
@@ -142,7 +142,7 @@ you can disable analytics for one or more players calling the `removePlayer` met
 _paq.push(['MediaAnalytics::removePlayer', 'playerName']);
 ```
 
-`playerName` should be one of `html5`, `vimeo` or `youtube`. 
+`playerName` should be one of `html5`, `vimeo`, `youtube`, `soundcloud` or `jwplayer`. 
 For example if you don't want to track any Vimeo videos, you can remove that player as follows:
  
 ```js
@@ -163,7 +163,7 @@ The tracking of any media can be disabled at any time by calling the following m
 _paq.push(['MediaAnalytics::disableMediaAnalytics']);
 ```
 
-This can be useful when you track several websites in one Piwik installation and you want to track the media usage
+This can be useful when you track several websites in one Matomo installation and you want to track the media usage
 only for some of your websites. For the websites you want to disable the media tracking simply call the above shown
 method. If you do not use the `_paq` variable, you can disable the media tracker as follows:
  
@@ -174,7 +174,7 @@ window.matomoMediaAnalyticsAsyncInit = function () {
 ```
 
 Calling this method will stop tracking any media data. No media event such as "play", "pause" or "resume", nor other media
-data like how often or for how long a media was played, will be tracked. If you use multiple Piwik JavaScript trackers, 
+data like how often or for how long a media was played, will be tracked. If you use multiple Matomo JavaScript trackers, 
 calling this method will disable the tracking for all of them. 
 
 It is recommended to call this method as early as possible, for example just after `_paq.push(['setSiteId', 'X']);` unless
