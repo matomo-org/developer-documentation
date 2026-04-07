@@ -17,13 +17,13 @@ There are five types of log data:
 
 **Log data is aggregated by the [Archiving process](/guides/archiving) into [archive data](/guides/archive-data).**
 
-**Log data is never used directly for Piwik reports**, archive data is used instead. The only exception is the *Live* plugin which uses log data to generate real-time reports.
+**Log data is never used directly for Matomo reports**, archive data is used instead. The only exception is the *Live* plugin which uses log data to generate real-time reports.
 
 ## Persistence
 
-Log data is represented in PHP as `Piwik\Tracker\Visit` objects, and is stored into the following tables:
+Log data is persisted in the database via the `Piwik\Tracker\Visit` handler. Visit properties are represented in PHP as `Piwik\Tracker\Visit\VisitProperties` objects, and stored into the following tables:
 
-- `log_visit` contains one entry per visit (returning visitor)
+- `log_visit` contains one entry per visit
 - `log_action` contains all the type of actions possible on the website (e.g. unique URLs, page titles, download URLs…)
 - `log_link_visit_action` contains one entry per action of a visitor (page view, …)
 - `log_conversion` contains conversions (actions that match goals) that happen during a visit
