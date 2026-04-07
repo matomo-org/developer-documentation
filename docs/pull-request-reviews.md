@@ -9,7 +9,7 @@ To [contribute code to Matomo](/guides/contributing-to-piwik-core) you will need
 
 This is the overall process for getting a PR merged from PR creation to merging a PR. For more details read the entire page.
 
-* When creating a PR and you're still working on it, it is recommended to mark your PR as `Draft` (you can do this in the `Reviewers` section). Once the PR is done and ready for a review click on `Ready for review` and add the label `Needs Review`. If a PR references another issue we assign the label `not-in-changelog`. The PR author also assigns the PR to a milestone (usually the same milestone as the referenced issue).
+* When creating a PR and you're still working on it, it is recommended to mark your PR as `Draft` (you can do this via the `Convert to draft` link in the GitHub PR sidebar). Once the PR is done and ready for a review click on `Ready for review` and add the label `Needs Review`. If a PR references another issue we assign the label `not-in-changelog`. The PR author also assigns the PR to a milestone (usually the same milestone as the referenced issue).
 * The reviewer selects "Approve / Reject changes / Comment" when finishing a review so it's clear if a PR is accepted or more changes are needed.
 * The PR author marks an individual review conversation/comment as resolved when the feedback was applied or notices/acknowledged (not always do need changes to be made for each comment as sometimes they are suggestions etc).
   * If further feedback is needed for the conversation/comment then PR author will ask the reviewer to confirm the conversation is resolved.
