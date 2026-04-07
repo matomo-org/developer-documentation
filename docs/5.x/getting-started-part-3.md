@@ -25,7 +25,7 @@ We'll create a **plugin setting** which will control which visit property the pl
 ```php
 namespace Piwik\Plugins\MyPlugin;
 
-class Settings extends \Piwik\Plugin\Settings
+class Settings extends \Piwik\Settings\Plugin\UserSettings
 {
     protected function init()
     {
@@ -34,14 +34,14 @@ class Settings extends \Piwik\Plugin\Settings
 }
 ```
 
-The `Settings` class is a special class that is automatically detected by Piwik. Piwik uses the information it sets to add a new section for your plugin in the _Plugins > Settings_ admin page.
+The `Settings` class is a special class that is automatically detected by Matomo. Matomo uses the information it sets to add a new section for your plugin in the _Plugins > Settings_ admin page.
 
 We're going to create one setting that can be set differently by each user. Our setting will determine the column of the `Live.getLastVisitsDetails` that we'll aggregate by. So it's a string and has a limited number of valid values. We'll use a single select dropdown (just a normal `<select>`) for it.
 
 Let's add an attribute and new method for this setting:
 
 ```php
-class Settings extends \Piwik\Plugin\Settings
+class Settings extends \Piwik\Settings\Plugin\UserSettings
 {
     public $realtimeReportDimension;
 
@@ -115,10 +115,10 @@ To use the setting, we first need to get the setting value in our API method and
             $period,
             $date,
             $segment,
-            $numLastVisitorsToFetch = 100,
+            $countVisitorsToFetch = 100,
             $minTimestamp = false,
             $flat = false,
-            $doNotFetchActions = true
+            $doNotFetchActions = false
         );
         $data->applyQueuedFilters();
 
@@ -188,9 +188,9 @@ Finally, we'll rename the report. After all, it can do more than just aggregate 
 
 ### Internationalizing your plugin
 
-The other improvement we'll make to our plugin is to use Piwik's [internationalization](https://en.wikipedia.org/wiki/Internationalization) system so our plugin can be made available in multiple languages.
+The other improvement we'll make to our plugin is to use Matomo's [internationalization](https://en.wikipedia.org/wiki/Internationalization) system so our plugin can be made available in multiple languages.
 
-Internationalization is achieved in Piwik by replacing translated text, like `"Realtime Analytics"`, with unique identifiers, like `"MyPlugin_RealtimeAnalytics"` called **translation tokens**.
+Internationalization is achieved in Matomo by replacing translated text, like `"Realtime Analytics"`, with unique identifiers, like `"MyPlugin_RealtimeAnalytics"` called **translation tokens**.
 
 Translation tokens are associated with translated text in multiple JSON files, one for each supported language. In the code, the translation tokens are converted into translated text based on the user's selected language.
 
@@ -234,7 +234,7 @@ Let's internationalize the text we use in our `Settings` class. First, we'll add
 ```json
 {
     "MyPlugin": {
-        "RealtimeReports": "Real-time reports"
+        "RealtimeReports": "Real-time reports",
         "ReportDimensionSettingDescription" : "Choose the dimension to aggregate by"
     }
 }
@@ -252,19 +252,19 @@ We're not going to add any translation tokens to `en.json` this time because the
 
 ```php
 public static $availableDimensionsForAggregation = array(
-    'browser' => 'UserSettings_ColumnBrowser',
+    'browser' => 'DevicesDetection_ColumnBrowser',
     'visitIp' => 'General_IP',
     'visitorId' => 'General_VisitorID',
     'searches' => 'General_NbSearches',
-    'events' => 'Events_NbEvents',
+    'events' => 'Events_TotalEvents',
     'actions' => 'General_NbActions',
     'visitDurationPretty' => 'VisitorInterest_ColumnVisitDuration',
     'country' => 'UserCountry_Country',
     'region' => 'UserCountry_Region',
     'city' => 'UserCountry_City',
-    'operatingSystem' => 'UserSettings_ColumnOperatingSystem',
-    'screenType' => 'UserSettings_ColumnTypeOfScreen',
-    'resolution' => 'UserSettings_ColumnResolution'
+    'operatingSystem' => 'DevicesDetection_ColumnOperatingSystem',
+    'screenType' => 'DevicesDetection_DeviceType',
+    'resolution' => 'Resolution_ColumnResolution'
 
     // we could add more, but let's not waste time.
 );
@@ -291,5 +291,5 @@ $columnLabel = $columnTranslations[$columnToAggregate];
 ```
 
 <div markdown="1" class="alert alert-warning">
-**If you believe you're ready to start developing your plugin,** please take the time to read our security guide [Security in Piwik](/guides/security-in-piwik). We have very high security standards that your plugin or contribution **must** respect.
+**If you believe you're ready to start developing your plugin,** please take the time to read our security guide [Security in Matomo](/guides/security-in-piwik). We have very high security standards that your plugin or contribution **must** respect.
 </div>
