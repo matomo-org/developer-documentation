@@ -18,7 +18,7 @@ public function getLastVisitsByBrowser($idSite, $period, $date, $segment = false
         'period' => $period,
         'date' => $date,
         'segment' => $segment,
-        'numLastVisitorsToFetch' => 100,
+        'filter_limit' => 100,
         'minTimestamp' => false,
         'flat' => false,
         'doNotFetchActions' => true
@@ -44,7 +44,7 @@ Now that we've got a list of visits, let's think about what our report will look
 <div markdown="1" class="alert alert-warning">
 **DataTable Column Names**
 
-It might look odd that we use `label` and `nb_visits` for our report's column names instead of just `Browser` and `Visits`. That's because reports served through the API should be easy to process by other applications. Using `label`, which is common to all Piwik reports, means apps that use the API can easily tell which column describes the row without having to know the details of the report.
+It might look odd that we use `label` and `nb_visits` for our report's column names instead of just `Browser` and `Visits`. That's because reports served through the API should be easy to process by other applications. Using `label`, which is common to all Matomo reports, means apps that use the API can easily tell which column describes the row without having to know the details of the report.
 
 Eventually, before we display the report, these column names will be replaced with names that are more informative to human viewers.
 </div>
@@ -61,7 +61,7 @@ public function getLastVisitsByBrowser($idSite, $period, $date, $segment = false
         'period' => $period,
         'date' => $date,
         'segment' => $segment,
-        'numLastVisitorsToFetch' => 100,
+        'filter_limit' => 100,
         'minTimestamp' => false,
         'flat' => false,
         'doNotFetchActions' => true
@@ -101,7 +101,7 @@ If you visit [http://localhost/index.php?module=API&method=MyPlugin.getLastVisit
 
 This new API method directly accesses visit data. That is because the report is a real-time report. Most reports aren't in real-time because the amount of time it would take to process visit data would make the interface unusable.
 
-Archived reports are calculated and **cached** during the [Archiving Process](/guides/archiving). To learn more, read about Piwik's [Data Model](/guides/data-model) guide.
+Archived reports are calculated and **cached** during the [Archiving Process](/guides/archiving). To learn more, read about Matomo's [Data Model](/guides/data-model) guide.
 </div>
 
 
@@ -124,7 +124,7 @@ public function configureView(ViewDataTable $view)
 }
 ```
 
-As we will only display the number of visitors, and not the number of unique visitors or actions which Piwik assumes by default, we need to modify the supported metrics in the `init()` method of the report as follows:
+As we will only display the number of visitors, and not the number of unique visitors or actions which Matomo assumes by default, we need to modify the supported metrics in the `init()` method of the report as follows:
 
 ```php
 $this->metrics = array('nb_visits');
@@ -146,11 +146,11 @@ It is possible for plugins to create their own visualizations. To find out how, 
 
 So now there's a page with a report that shows the browsers used by the latest visitors. It uses realtime data - but it's not truly realtime since after a couple of minutes, the report will be out-of-date. To make the report more realtime we'll update the report every 10 seconds automatically.
 
-### Adding JavaScript files to Piwik
+### Adding JavaScript files to Matomo
 
 To make the report reload itself, we'll have to write some JavaScript code. This means we'll need a JavaScript file.
 
-Create an empty `javascripts/plugin.js` file in your plugin directory. Then register to the [AssetManager.getJavaScriptFiles](/api-reference/events#assetmanagergetjavascriptfiles) event ([read more about Events](/guides/events)) to have this javascript file included by Piwik:
+Create an empty `javascripts/plugin.js` file in your plugin directory. Then register to the [AssetManager.getJavaScriptFiles](/api-reference/events#assetmanagergetjavascriptfiles) event ([read more about Events](/guides/events)) to have this javascript file included by Matomo:
 
 ```php
 class MyPlugin extends \Piwik\Plugin
@@ -169,12 +169,12 @@ class MyPlugin extends \Piwik\Plugin
 }
 ```
 
-Remember that Piwik will include this file directly only when `disable_merged_assets` is enabled in your ini config:
+Remember that Matomo will include this file directly only when `disable_merged_assets` is enabled in your ini config:
 
     [Development]
     disable_merged_assets = 1
 
-If this option is disabled, Piwik will merge all JavaScript files into one to optimize the page loading time, but that means that any change to `plugin.js` will be ignored.
+If this option is disabled, Matomo will merge all JavaScript files into one to optimize the page loading time, but that means that any change to `plugin.js` will be ignored.
 
 ### Reloading the report
 
