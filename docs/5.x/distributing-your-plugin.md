@@ -5,7 +5,7 @@ category: Develop
 
 [**Matomo's Plugin Marketplace**](https://plugins.matomo.org) is the main way to download and install third-party plugins.
 
-Every instance of Piwik running version 2.0 or greater is able to directly download and install plugins from the marketplace. **Making your plugin available on the marketplace is the best way for you to get your plugin out into the hands of Piwik users.**
+Every instance of Matomo running version 2.0 or greater is able to directly download and install plugins from the marketplace. **Making your plugin available on the marketplace is the best way for you to get your plugin out into the hands of Matomo users.**
 
 It's also a great way for you to:
 
@@ -33,18 +33,18 @@ Two files are required to be present in your plugin before you can publish: the 
 The `README.md` file should contain a description of your plugin.
 Let's take a look at the CustomAlerts plugin's [README file](https://raw.githubusercontent.com/piwik/plugin-CustomAlerts/master/README.md).
 The file is written in Markdown format and has the following section: `Description`.
-The content between `## Description` and the next `## ...` headline will be directly displayed on your plugin's page in the Marketplace! Checkout the [CustomAlerts plugin's](https://plugins.piwik.org/CustomAlerts) page created from the README file.
+The content between `## Description` and the next `## ...` headline will be directly displayed on your plugin's page in the Marketplace! Checkout the [CustomAlerts plugin's](https://plugins.matomo.org/CustomAlerts) page created from the README file.
 
 #### Screenshots
 
-To make your plugin shine on the Piwik marketplace, include screenshots in your Git repository!
+To make your plugin shine on the Matomo marketplace, include screenshots in your Git repository!
 
 Prepare a few screenshots of your plugin in action and place them in a `screenshots/` directory in your plugin's folder.
 Give them descriptive names because the file names will be used as the legends shown below each screenshot. Only alphanumeric characters, underscores and dashes are allowed in the file name. The file name must end with `.png`, `.jpg` or `.jpeg`.
 
 To add a cover image, it must be **880x480** pixels and named `_cover.png`. It can then be added to the `screenshots/` directory with the rest of the plugin screenshots. If the cover image does not fit the recommended dimensions, it may not display correctly.
 
-See the result for the [CustomAlerts plugin's screenshots](https://plugins.piwik.org/CustomAlerts) (click on the Screenshots link).
+See the result for the [CustomAlerts plugin's screenshots](https://plugins.matomo.org/CustomAlerts) (click on the Screenshots link).
 These screenshots are stored [in git: CustomAlerts/screenshots](https://github.com/matomo-org/plugin-CustomAlerts/tree/master/screenshots).
 
 #### plugin.json file
@@ -140,7 +140,7 @@ The following fields are not required for publishing a plugin, but you may want 
     ```
 
 
-- `archive` - Lets you define some options for creating Piwik Plugin archives.
+- `archive` - Lets you define some options for creating Matomo Plugin archives.
     - `exclude` - Allows you to configure which files or directories should be removed from the ZIP file when a user downloads or installs a plugin. It is not possible to use any wildcards and the path must start with a leading slash `/`. By default, a few directories and files are always removed from the ZIP archive: the directories `.github`, `tests`, `Test` and `screenshots` as well as the files `.gitattributes` and `.gitignore` found in your plugin's root directory.
 
     ```json
@@ -228,13 +228,13 @@ It is recommended to put an FAQ for your plugin directly into a `/docs/faq.md` f
 
 ### Put your plugin on GitHub
 
-The marketplace uses [GitHub](https://github.com) webhooks to learn about your plugin and serve it to Piwik users that want it. This means you don't manually upload any files to the marketplace. Instead, you put your code into a GitHub repository and let the marketplace know about it.
+The marketplace uses [GitHub](https://github.com) webhooks to learn about your plugin and serve it to Matomo users that want it. This means you don't manually upload any files to the marketplace. Instead, you put your code into a GitHub repository and let the marketplace know about it.
 
 Creating and initializing a [git](https://git-scm.com) repository on GitHub is out of the scope of this guide. If you need to learn how to create a GitHub repository, [read this article](https://help.github.com/articles/create-a-repo).
 
-### Activate the Piwik Plugins webhook
+### Activate the Matomo Plugins webhook
 
-Once your plugin is in a GitHub repository, you need to let the marketplace know about it. This is done by activating the Piwik Plugins webhook.
+Once your plugin is in a GitHub repository, you need to let the marketplace know about it. This is done by activating the Matomo Plugins webhook.
 
 To activate this webhook, follow these steps:
 
@@ -282,15 +282,15 @@ Here are some common errors:
 
 If you did not receive an email, then the webhook might not be configured (or you may have created the tag before setting up the webhook).
 
-If you still encounter trouble while publishing your plugin, please join the IRC channel **#piwik** on [freenode](https://freenode.net/). If you can't find anyone in the IRC channel, please ask for help [on the forums](https://forum.matomo.org/).
+If you still encounter trouble while publishing your plugin, please ask for help [on the forums](https://forum.matomo.org/).
 
 ## Rules for Plugins
 
 There are some restrictions regarding what can be published on the marketplace. Chances are your plugin is fine, but if we find a plugin that violates one of the following rules, it will be immediately removed:
 
 - Your plugin must not do anything illegal, or be morally offensive.
-- Free plugins must have their license compatible with the [GNU General Public License v3](https://www.gnu.org/copyleft/gpl.html) or any later version. We strongly recommend using the same license as Piwik (*GPL-v3.0 or later*). Your free plugin should not contain obfuscated code. We believe that obfuscated code violates the spirit, if not the letter, of the GPL license under which we operate. If you don't specify a license anywhere in your plugin, it is assumed your plugin uses *GPL-3.0+ or later*.
-- No **[phoning home](https://en.wikipedia.org/wiki/Phoning_home)** without the user's informed consent. For the purposes of a Piwik plugin, **phoning home** includes:
+- Free plugins must have their license compatible with the [GNU General Public License v3](https://www.gnu.org/copyleft/gpl.html) or any later version. We strongly recommend using the same license as Matomo (*GPL-v3.0 or later*). Your free plugin should not contain obfuscated code. We believe that obfuscated code violates the spirit, if not the letter, of the GPL license under which we operate. If you don't specify a license anywhere in your plugin, it is assumed your plugin uses *GPL-3.0+ or later*.
+- No **[phoning home](https://en.wikipedia.org/wiki/Phoning_home)** without the user's informed consent. For the purposes of a Matomo plugin, **phoning home** includes:
   - Unauthorized collection of user data. For example, sending the admin's email address back to your own servers without the user's permission is not allowed; but asking the user for an email address and collecting if they choose to submit it is fine. All actions taken in this respect MUST be of the user's doing, not automatically done by the plugin.
   - All images and scripts shown should be part of the plugin. These should be loaded locally. If the plugin requires data that is loaded from an external website (such as [blocklists](https://en.wikipedia.org/wiki/Blacklist_%28computing%29)) this should be made clear in the plugin's admin screens or its description. The user must be informed of what information is being sent where.
 - Matomo comes with various useful libraries, such as jQuery, Vue.js, PHP-DI, Monolog, and more. For security and stability reasons, plugins may not include any library that is already included with Matomo. Instead, plugins must use the versions of the libraries that are packaged with Matomo. As Matomo comes with various APIs for example for sending mails, you should use these APIs and not include your own mailer library.
