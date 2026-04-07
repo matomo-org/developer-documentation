@@ -126,13 +126,13 @@ object.
 #### Signature
 
 
-- *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|`Piwik\API\Map`|`string` &mdash;
+- *Returns:*  [`DataTable`](../../Piwik/DataTable.md)|[`Map`](../../Piwik/DataTable/Map.md)|`scalar`|`array`|`object`|`resource`|`null` &mdash;
     The data resulting from the API call.
 - It throws one of the following exceptions:
-    - `Piwik\Exception\PluginDeactivatedException` &mdash; if the module plugin is not activated.
     - [`Exception`](http://php.net/class.Exception) &mdash; if the requested API method cannot be called, if required parameters for the
                   API method are missing or if the API method throws an exception and the **format**
                   query parameter is **original**.
+    - `Piwik\Exception\PluginDeactivatedException` &mdash; if the module plugin is not activated.
 
 <a name="getclassnameapi" id="getclassnameapi"></a>
 <a name="getClassNameAPI" id="getClassNameAPI"></a>
