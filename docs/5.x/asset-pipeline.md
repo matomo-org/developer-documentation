@@ -52,7 +52,7 @@ in turn, invokes many separate tools that process individual files. These tools 
   extend and/or override this file by placing their own `tsconfig.json` in their `vue` folder.
 - [ESLint](https://eslint.org/): used to lint our TypeScript, Vue and ES files. Currently we use the
   [https://github.com/airbnb/javascript](Airbnb ESlint ruleset). Base configuration for this tool is stored in the
-  `eslintrc.js` file in Matomo's root folder. Plugins can extend or override this file by placing their own `eslintrc.js`
+  `.eslintrc.js` file in Matomo's root folder. Plugins can extend or override this file by placing their own `.eslintrc.js`
   file in their `vue` folder.
 - [Babel](https://babeljs.io/): used to compile the ES that the TypeScript compiler emits into JavaScript that
   can be consumed by the browsers we support. Technically, the TypeScript compiler can do this too, but babel is included
@@ -89,7 +89,7 @@ Detecting plugin dependencies is done by:
   we save it in an array.
 * Later, after compilation has ended, we output the array to a metadata JSON file (`plugins/MyPlugin/vue/dist/umd.metadata.json`).
 
-Ordering of plugins is done in JScriptUIFetcher.php by:
+Ordering of plugins is done in PluginUmdAssetFetcher.php by:
 
 * Reading the dependencies from the umd.metadata.json files above,
 * and performing a DFS that orders the plugins, dependencies first.
@@ -97,7 +97,7 @@ Ordering of plugins is done in JScriptUIFetcher.php by:
 ### Browser support
 
 As stated above, `browserslist` is used to control what browsers our compiled JavaScript supports. In the `.browserslistrc`
-file we specify some generic parameters, like `> 1%` (we want to support browsers with an overall usage of over 1%) and
+file we specify some generic parameters, like `> 0.05%` (we want to support browsers with an overall usage of over 0.05%) and
 `last 2 versions` (we want to support the last two versions of every browser).
 
 Browserslist takes this description and creates the list of browsers and browser versions that must be supported. To
@@ -119,7 +119,7 @@ polyfill as this could result in a lot of extra JavaScript in our finished asset
 
 These polyfills are stored in the `plugins/CoreVue/polyfills` folder. This folder houses a separate Vue project
 that is built as a Vue app instead of a Vue library (all plugin `vue` folders are built as libraries). The specific
-polyfills we include are specified in the `plugins/CoreVue/polyfills/vue.config.js` file.
+polyfills we include are specified in the `plugins/CoreVue/polyfills/src/index.ts` file.
 
 Building the polyfill project is done via the `vue:build-polyfill` command. Only core developers will have
 to use this command and only when adding or removing polyfills.
@@ -157,8 +157,8 @@ URL used to load them is, more or less, hardcoded by Webpack._
 ### Discovering UMD files
 
 UMD files are automatically discovered by Matomo's asset pipeline. If Matomo sees a file in a plugin stored in the
-`plugins/MyPlugin/vue/dist` folder with a name like `MyPlugin.umd.js`, it will automatically be included as a
-JavaScript asset. (Note: this code is in the `Piwik\AssetManager\UIAssetFetcher\JScriptUIAssetFetcher` class.)
+`plugins/MyPlugin/vue/dist` folder with a name like `MyPlugin.umd.min.js` (or `MyPlugin.development.umd.js` in development mode), it will automatically be included as a
+JavaScript asset. (Note: this code is in the `Piwik\AssetManager\UIAssetFetcher\PluginUmdAssetFetcher` class.)
 
 So these files do not need to be added via the [`AssetManager.getJavaScriptFiles`](/api-reference/events#assetmanagergetjavascriptfiles)
 event.
