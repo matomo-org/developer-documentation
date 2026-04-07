@@ -117,7 +117,7 @@ $serializedData = $dataTable->getSerialized(
     $columnToSortBy = Metrics::INDEX_NB_VISITS
 );
 
-$archiveProcessor->insertBlobRecords('MyPlugin_myFancyReport', $serializedData);
+$archiveProcessor->insertBlobRecord('MyPlugin_myFancyReport', $serializedData);
 ```
 
 Persisted reports and metrics are indexed by the website ID, period and segment. The date and time of archiving is also attached to the data. To learn the specifics of how this is done with MySQL see the [database schema](/guides/database-schema).
@@ -151,7 +151,7 @@ idarchive             | name             | value             | Description
 
 When a report is archived, it is called a **record** not a report. We make a distinction because multiple reports can sometimes be generated from one **record**.
 
-For example, the *UserSettings* plugin uses one record to hold browser details of visitors. This record is used to generate both the `UserSettings.getBrowserVersion` and `UserSettings.getBrowser` reports. The second report simply processes the first to make a new report. The plugin could have archived both reports, but this would have been a **massive** waste of space, considering the new report would be cached for every website/period/segment combination.
+For example, the *DevicesDetection* plugin uses one record to hold browser details of visitors. This record is used to generate both the `DevicesDetection.getBrowserVersions` and `DevicesDetection.getBrowsers` reports. The second report simply processes the first to make a new report. The plugin could have archived both reports, but this would have been a **massive** waste of space, considering the new report would be cached for every website/period/segment combination.
 
 <a name="record-storage-guidelines"></a>
 
@@ -301,7 +301,7 @@ class Archiver extends \Piwik\Plugin\Archiver
                 $columnToSortBy = Metrics::INDEX_NB_VISITS
             );
 
-            $archiveProcessor->insertBlobRecords('MyPlugin_mySpecificReport', $serializedData);
+            $this->getProcessor()->insertBlobRecord('MyPlugin_mySpecificReport', $serializedData);
         }
     }
 
