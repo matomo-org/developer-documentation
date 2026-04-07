@@ -11,7 +11,7 @@ This is the API Reference for developers who want to enrich the [Matomo for Word
 
 ## `\WpMatomo\Bootstrap`
 
-* `::doBootstap()` - Lets you bootstrap Matomo application within WordPress. Once Matomo is bootstrapped, you can access all [Matomo PHP API's](https://developer.matomo.org/api-reference/classes).
+* `::doBootstrap()` - Lets you bootstrap Matomo application within WordPress. Once Matomo is bootstrapped, you can access all [Matomo PHP API's](https://developer.matomo.org/api-reference/classes).
 
 ## `\WpMatomo\Site`
 
