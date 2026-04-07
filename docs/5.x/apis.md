@@ -26,7 +26,7 @@ Everything below is what we consider API.
 -   JavaScript variables in global `piwik.*` object
     -   as [documented here](https://developer.matomo.org/guides/working-with-piwiks-ui#global-variables-defined-by-piwik)
 -   LESS variables used for Theming
-    -   when [writing a theme for Matomo](/guides/theming) we announce that LESS variables in ([theme.less](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Morpheus/stylesheets/theme.less) and [theme-advanced.less](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Morpheus/stylesheets/theme-advanced.less)) are API
+    -   when [writing a theme for Matomo](/guides/theming) we announce that LESS variables in [theme.less](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ExampleTheme/stylesheets/theme.less) are API
 -   INI Config settings names in `config/global.ini.php` are API
     -   we should not rename INI config settings as users may have overridden them in `config/config.ini.php`
 -   Widgets embed URLs are API
