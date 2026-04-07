@@ -7,8 +7,8 @@ category: DevelopInDepth
 
 **Read this guide if**
 
-* you'd like to know **how Piwik's Reporting API works and how your plugin can extend it**
-* you'd like to know **what Piwik's Reporting API does to data before it is served**
+* you'd like to know **how Matomo's Reporting API works and how your plugin can extend it**
+* you'd like to know **what Matomo's Reporting API does to data before it is served**
 * you'd like to know **what output formats can be used to view data that is returned from the Reporting API**
 * you'd like to know **about query parameters that are used by the Reporting API to transform analytics data**
 
@@ -18,15 +18,15 @@ This guide assumes that you:
 
 * can code in PHP,
 * understand how reports are stored in memory (if not read the [Reports](/guides/reports) guide),
-* and have a general understanding of extending Piwik (if not, read our [Getting Started](/guides/getting-started-part-1) guide).
+* and have a general understanding of extending Matomo (if not, read our [Getting Started](/guides/getting-started-part-1) guide).
 
 ## The Reporting API
 
-Piwik's **Reporting API** allows third party applications to access analytics data and manipulate miscellaneous data (anything other than reports or tracked data) through HTTP requests.
+Matomo's **Reporting API** allows third party applications to access analytics data and manipulate miscellaneous data (anything other than reports or tracked data) through HTTP requests.
 
 ### API Requests
 
-Every HTTP API request to the `API.index` controller method will be handled by the Reporting API. Valid requests **must** have a query parameter named `method` that references the API method to invoke, for example, `UserSettings.getBrowser`.
+Every HTTP API request to the `API.index` controller method will be handled by the Reporting API. Valid requests **must** have a query parameter named `method` that references the API method to invoke, for example, `DevicesDetection.getBrowsers`.
 
 API requests are processed in the following way:
 
@@ -54,9 +54,9 @@ Methods are only allowed to return the following values:
 
 *Note: When returning [DataTable](/api-reference/Piwik/DataTable) or [DataTable\Map](/api-reference/Piwik/DataTable/Map) instances, filters will need to applied. Make sure to queue filters that are used for presentation purposes and directly apply other ones.*
 
-If a method throws an exception its message will appear in the output. The stack trace can be displayed during debugging by changing `ResponseBuilder::DISPLAY_BACKTRACE_DEBUG` to `true`.
+If a method throws an exception its message will appear in the output. The stack trace can be displayed during debugging by setting the `PIWIK_PRINT_ERROR_BACKTRACE` constant or `$GLOBALS['PIWIK_PRINT_ERROR_BACKTRACE']` to `true`.
 
-**You can see the list of all API methods your Piwik install exposes: click the _API_ link in the top menu. See the demo's list [here](https://demo.matomo.org/index.php?module=API&action=listAllAPI&idSite=62&period=day&date=yesterday).**
+**You can see the list of all API methods your Matomo install exposes: click the _API_ link in the top menu. See the demo's list [here](https://demo.matomo.org/index.php?module=API&action=listAllAPI&idSite=62&period=day&date=yesterday).**
 
 ## Extra report processing
 
@@ -112,7 +112,7 @@ There are some other special query parameters that affect the way reports are pr
 
 ## Output formats
 
-The output of a Reporting API request is a serialized string of the API method's return value. The format of this string is determined by the value of the **format** query parameter. Currently Piwik supports the following output formats:
+The output of a Reporting API request is a serialized string of the API method's return value. The format of this string is determined by the value of the **format** query parameter. Currently Matomo supports the following output formats:
 
 - **[xml](https://demo.matomo.org/index.php?module=API&method=UserCountry.getCity&format=xml&idSite=62&period=day&date=yesterday&expanded=1)**
 - **[json](https://demo.matomo.org/index.php?module=API&method=UserCountry.getCity&format=json&idSite=62&period=day&date=yesterday&expanded=1)**
@@ -121,7 +121,7 @@ The output of a Reporting API request is a serialized string of the API method's
 - **[html](https://demo.matomo.org/index.php?module=API&method=UserCountry.getCity&format=html&idSite=62&period=day&date=yesterday&expanded=1)** _(simple HTML representation, does not use [report visualizations](/guides/visualizing-report-data))_
 - **[php](https://demo.matomo.org/index.php?module=API&method=UserCountry.getCity&format=php&idSite=62&period=day&date=yesterday&expanded=1)** _(serialized PHP array)_
 
-There is a special output format value, **original**, that can be used when requesting data from within Piwik using [`Piwik\API\Request`](/api-reference/Piwik/API/Request). This format will force the result to be returned as unprocessed and unserialized data. It should only be used when calling the API within Piwik in PHP.
+There is a special output format value, **original**, that can be used when requesting data from within Matomo using [`Piwik\API\Request`](/api-reference/Piwik/API/Request). This format will force the result to be returned as unprocessed and unserialized data. It should only be used when calling the API within Matomo in PHP.
 
 _Note: The [`Request::processRequest()`](/api-reference/Piwik/API/Request#processrequest) method automatically uses the **original** format, so in most cases you won't need to specify `format=original`._
 
@@ -133,37 +133,37 @@ Some of the API methods in the API plugin have special meaning and uses:
 
 The **API.getMetadata**, **API.getReportMetadata** and **API.getProcessedReport** API methods can be used to get information about one or all reports. The information includes the metrics contained in the report, documentation for those metrics and [more](https://demo.matomo.org/index.php?module=API&method=API.getMetadata&apiModule=UserCountry&apiAction=getCountry&format=xml&idSite=62&period=day&date=yesterday&expanded=1).
 
-These methods can be used by third party applications that provide an interface to the analytics stored by Piwik:
+These methods can be used by third party applications that provide an interface to the analytics stored by Matomo:
 
 - `API.getReportMetadata` returns metadata for every report, it can be used to get a list of all available reports for a website
 - `API.getMetadata` can be used to get more information about a single report
 - `API.getProcessedReport` can be used to get the metadata of a single report along with the report's data.
 
-Report metadata can also be used within Piwik for features that operate on report(s) specified by the user. For example, the **ImageGraph** plugin, which outputs an image of a graph using report data, uses report metadata values as hints for how to draw the output graph. The **ScheduledReports** plugin also uses report metadata in a similar way.
+Report metadata can also be used within Matomo for features that operate on report(s) specified by the user. For example, the **ImageGraph** plugin, which outputs an image of a graph using report data, uses report metadata values as hints for how to draw the output graph. The **ScheduledReports** plugin also uses report metadata in a similar way.
 
 ### Row Evolution
 
-Matomo's [row evolution feature](https://demo.matomo.org/index.php?module=CoreHome&action=index&idSite=62&period=day&date=yesterday#module=UserSettings&action=index&idSite=7&period=day&date=yesterday&popover=RowAction$3ARowEvolution$3AUserSettings.getConfiguration$3A0$3AWindows$25207$2520$252F$2520Chrome$2520$252F$25201920x1080) that is available through the UI is also available through the Reporting API. Third party applications can use the **API.getRowEvolution** method to get both [single row evolution data](https://demo.matomo.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=UserSettings&apiAction=getOS&label=Windows+7) or [multi-row evolution data](https://demo.matomo.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=UserSettings&apiAction=getOS).
+Matomo's [row evolution feature](https://demo.matomo.org/index.php?module=CoreHome&action=index&idSite=62&period=day&date=yesterday#module=DevicesDetection&action=index&idSite=7&period=day&date=yesterday&popover=RowAction$3ARowEvolution$3ADevicesDetection.getOsVersions$3A0$3AWindows$252010) that is available through the UI is also available through the Reporting API. Third party applications can use the **API.getRowEvolution** method to get both [single row evolution data](https://demo.matomo.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=DevicesDetection&apiAction=getOsVersions&label=Windows+10) or [multi-row evolution data](https://demo.matomo.org/index.php?module=API&method=API.getRowEvolution&idSite=7&period=day&date=2013-11-01,2013-11-25&apiModule=DevicesDetection&apiAction=getOsVersions).
 
 ### Bulk API Requests
 
-[Like the Tracking API](/api-reference/tracking-api), the Reporting API supports bulk requests. A bulk request allows applications to invoke and retrieve the results for multiple API methods with one HTTP request. This can be used to save time in applications that query the Piwik HTTP API.
+[Like the Tracking API](/api-reference/tracking-api), the Reporting API supports bulk requests. A bulk request allows applications to invoke and retrieve the results for multiple API methods with one HTTP request. This can be used to save time in applications that query the Matomo HTTP API.
 
 To send a bulk request, send an HTTP request to the **API.getBulkRequest** API method. The only required query parameter is named `urls`. It should be an array of individual API request URLs. For example:
 
-    https://demo.matomo.org/?module=API&method=API.getBulkRequest&format=xml&urls[]=module%3DAPI%26method%3DVisitorInterest.getNumberOfVisitsPerVisitDuration%26format%3DXML%26idSite%3D62%26period%3Dday%26date%3D2013-11-24%26expanded%3D1&urls[]=module%3DAPI%26method%3DUserSettings.getBrowser%26format%3DXML%26idSite%3D7%26period%3Dday%26date%3D2013-11-24%26expanded%3D1
+    https://demo.matomo.org/?module=API&method=API.getBulkRequest&format=xml&urls[]=module%3DAPI%26method%3DVisitorInterest.getNumberOfVisitsPerVisitDuration%26format%3DXML%26idSite%3D62%26period%3Dday%26date%3D2013-11-24%26expanded%3D1&urls[]=module%3DAPI%26method%3DDevicesDetection.getBrowsers%26format%3DXML%26idSite%3D62%26period%3Dday%26date%3D2013-11-24%26expanded%3D1
 
 This example uses the following API requests:
 
-- module=API&method=UserSettings.getBrowser&format=XML&idSite=62&period=day&date=2013-11-24&expanded=1
+- module=API&method=DevicesDetection.getBrowsers&format=XML&idSite=62&period=day&date=2013-11-24&expanded=1
 - module=API&method=VisitorInterest.getNumberOfVisitsPerVisitDuration&format=XML&idSite=62&period=day&date=2013-11-24&expanded=1
 
 **_Note: The separate API methods are executed synchronously, so for long-running API methods, using a bulk request may be a bad idea._**
 
 ### Other Methods
 
-- **API.get**: Calls the `get` API method of all loaded plugins that support it and merges the result. The `get` methods all output the metrics that the plugin archives, so the result of **API.get** is the set of values for every metric your Piwik install supports (for the specified website & period).
-- **API.getSegmentDimensionMetadata**: Returns metadata for every supported [segment dimension](/api-reference/segmentation). The following information is returned for each segment dimension:
+- **API.get**: Calls the `get` API method of all loaded plugins that support it and merges the result. The `get` methods all output the metrics that the plugin archives, so the result of **API.get** is the set of values for every metric your Matomo install supports (for the specified website & period).
+- **API.getSegmentsMetadata**: Returns metadata for every supported [segment dimension](/api-reference/segmentation). The following information is returned for each segment dimension:
   - `type`: The type of segment dimension.
   - `category`: A translated string that describes the segment dimension's category.
   - `name`: A translated string or a translation token that describes the segment dimension itself.
@@ -173,10 +173,7 @@ This example uses the following API requests:
   - `sqlFilterValue`: An optional PHP callback that transforms the value supplied in a segment expression before it is used in an SQL expression.
   - `permission`: Whether the current user can use this segment dimension.
 - **API.getSuggestedValuesForSegment**: Returns a list of values that can be used with a specified segment dimension.
-- **API.getLogoUrl**: Returns a URL to the Piwik logo.
-- **API.getHeaderLogoUrl**: Returns a URL to a smaller version of the Piwik logo.
-
 ## Learn more
 
-- To learn **how API classes are used internally** read our [Piwik APIs](/guides/apis) guide.
+- To learn **how API classes are used internally** read our [Matomo APIs](/guides/apis) guide.
 - To learn **about how to calculate a report** read our [Reports](/guides/reports) guide.
