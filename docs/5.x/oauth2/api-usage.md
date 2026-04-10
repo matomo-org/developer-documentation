@@ -1,8 +1,8 @@
 ---
 category: Integrate
-title: OAuth2 API Usage
+title: OAuth 2.0 API Usage
 ---
-# Calling Matomo APIs with OAuth2
+# Calling Matomo APIs with OAuth 2.0
 
 Once your application has obtained an access token, it can call Matomo APIs using the `Authorization` header.
 
@@ -23,11 +23,11 @@ curl 'https://matomo.example.com/index.php' \
   -d 'format=json'
 ```
 
-## OAuth2 compared to `token_auth`
+## OAuth 2.0 compared to `token_auth`
 
 By default, many Matomo API guides use `token_auth` examples because `token_auth` is available in every Matomo installation.
 
-When the OAuth2 plugin is installed, external applications can use OAuth2 bearer tokens instead. This avoids sharing a long-lived auth token with the external application and lets you choose a grant type that matches the integration.
+When the OAuth 2.0 plugin is installed, external applications can use OAuth 2.0 bearer tokens instead. This avoids sharing a long-lived auth token with the external application, lets you choose a grant type that matches the integration, and makes it easier to limit and revoke access without affecting other applications.
 
 If you are integrating a backend service with no user interaction, the Client Credentials flow is usually the best fit. If your application acts on behalf of a user, use the Authorization Code flow.
 
@@ -35,4 +35,4 @@ If you are integrating a backend service with no user interaction, the Client Cr
 
 * Use HTTPS whenever you send access tokens.
 * The plugin currently allows only one scope per request.
-* Keep using the standard `token_auth` flow in integrations where the OAuth2 plugin is not installed.
+* Keep using the standard `token_auth` flow in integrations where the OAuth 2.0 plugin is not installed.

@@ -1,8 +1,8 @@
 ---
 category: Integrate
-title: OAuth2 Developer FAQ
+title: OAuth 2.0 Developer FAQ
 ---
-# OAuth2 Developer FAQ
+# OAuth 2.0 Developer FAQ
 
 ## Which grant types are supported?
 
@@ -54,6 +54,14 @@ Optional cleaner routes can also be configured:
 * `/oauth2/authorize`
 * `/oauth2/token`
 
+## When is a client secret shown?
+
+For confidential clients, the client secret is shown in full only when the client is created or when the secret is rotated. After that, the secret is masked in the UI.
+
+## Can I rotate a client secret?
+
+Yes. Confidential clients support secret rotation from the edit screen. Rotate the secret if you need a new value or if the existing one may have been exposed.
+
 ## Can I still use `token_auth`?
 
-Yes. The OAuth2 plugin adds an alternative authentication method for external applications. Existing `token_auth` based integrations continue to be relevant for Matomo installations where the plugin is not enabled.
+Yes. The OAuth 2.0 plugin adds an alternative authentication method for external applications. Existing `token_auth` based integrations continue to be relevant for Matomo installations where the plugin is not enabled.

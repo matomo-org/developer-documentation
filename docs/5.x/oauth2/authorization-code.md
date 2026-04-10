@@ -1,8 +1,8 @@
 ---
 category: Integrate
-title: OAuth2 Authorization Code Flow
+title: OAuth 2.0 Authorization Code Flow
 ---
-# OAuth2 Authorization Code Flow
+# OAuth 2.0 Authorization Code Flow
 
 Use the Authorization Code flow when your application acts on behalf of a Matomo user.
 
@@ -11,7 +11,7 @@ Use the Authorization Code flow when your application acts on behalf of a Matomo
 The Authorization Code flow works like this:
 
 1. Your application redirects the user to the Matomo authorization endpoint.
-2. The user logs in and approves access.
+2. The user logs in, reviews the requested permissions, and approves access.
 3. Matomo redirects back with an authorization `code`.
 4. Your application exchanges the code for an access token.
 5. Your application calls Matomo APIs using `Authorization: Bearer ACCESS_TOKEN`.
@@ -59,7 +59,13 @@ https://matomo.example.com/index.php?module=OAuth2&action=authorize
 &state=abc123
 ```
 
-After the user approves access, Matomo redirects back to your application:
+The user will:
+
+1. Log in to Matomo.
+2. Review the requested permissions.
+3. Click **Allow**.
+
+After approval, Matomo redirects back to your application:
 
 ```text
 https://example-app.com/oauth/callback?code=AUTHORIZATION_CODE&state=abc123
@@ -106,6 +112,8 @@ curl -X POST 'https://matomo.example.com/index.php?module=OAuth2&action=token' \
 
 ## Refresh an access token
 
+Use a refresh token to obtain a new access token.
+
 ### Public client
 
 ```bash
@@ -129,4 +137,4 @@ curl -X POST 'https://matomo.example.com/index.php?module=OAuth2&action=token' \
 
 ## What to read next
 
-Once you have an access token, see [Calling Matomo APIs with OAuth2](/guides/oauth2/api-usage).
+Once you have an access token, see [Calling Matomo APIs with OAuth 2.0](/guides/oauth2/api-usage).

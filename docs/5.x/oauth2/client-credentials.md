@@ -1,15 +1,15 @@
 ---
 category: Integrate
-title: OAuth2 Client Credentials Flow
+title: OAuth 2.0 Client Credentials Flow
 ---
-# OAuth2 Client Credentials Flow
+# OAuth 2.0 Client Credentials Flow
 
 Use the Client Credentials flow when a backend service needs to access Matomo APIs without user interaction.
 
 Typical examples include:
 
 * Internal analytics dashboards
-* Scheduled exports
+* Scheduled data exports
 * Backend integrations
 
 ## Request an access token
@@ -37,6 +37,6 @@ Depending on your client configuration, a refresh token may also be available th
 
 ## When to use this flow
 
-Use this flow only for trusted server-side applications that can keep credentials secret.
+Use this flow for trusted server-side applications that need server-to-server access and can keep credentials secret.
 
 If the application needs a user to log in and approve access, use the [Authorization Code flow](/guides/oauth2/authorization-code) instead.
