@@ -11,6 +11,12 @@
     --matomo-swagger-post-background: #E8FFFF;
     border: 1px solid #ecf0f2;
     border-radius: 5px;
+    padding-top: 10px;
+}
+
+.swagger-ui .information-container,
+.swagger-ui .scheme-container {
+    display: none;
 }
 
 .swagger-ui .opblock-description-wrapper,
@@ -86,8 +92,47 @@
     display: none;
 }
 
-.swagger-ui .opblock .opblock-summary .view-line-link.copy-to-clipboard {
+.swagger-ui .opblock .opblock-summary .view-line-link.copy-to-clipboard,
+.swagger-ui .opblock .opblock-summary:hover .view-line-link.copy-to-clipboard {
+    align-items: center;
+    border-radius: 3px;
+    color: inherit;
+    display: inline-flex;
+    justify-content: center;
+    margin: 0;
+    transition: background-color 300ms ease, color 300ms ease, opacity 300ms ease;
     width: 24px;
+}
+
+.swagger-ui .opblock .opblock-summary .view-line-link.copy-to-clipboard:is(:hover, :focus) {
+    background: var(--matomo-swagger-get-main);
+    color: #fff;
+}
+
+.swagger-ui .opblock .opblock-summary .view-line-link.copy-to-clipboard.matomo-copy-success {
+    color: #fff;
+    opacity: 0.85;
+}
+
+.swagger-ui .opblock .opblock-summary .view-line-link.copy-to-clipboard.matomo-copy-success:is(:hover, :focus) {
+    color: #fff;
+    opacity: 0.85;
+}
+
+.swagger-ui .opblock .opblock-summary .view-line-link.copy-to-clipboard .matomo-copy-success-icon {
+    animation: matomo-copy-success-icon-in 300ms ease;
+}
+
+@keyframes matomo-copy-success-icon-in {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .swagger-ui .opblock-tag > a.nostyle {
@@ -103,6 +148,31 @@
     flex-basis: 100%;
     margin-top: 6px;
     order: 3;
+}
+
+.swagger-ui .opblock-tag-section.matomo-flat-tag {
+    margin-bottom: 16px;
+}
+
+.swagger-ui .opblock-tag-section.matomo-flat-tag > .opblock-tag {
+    cursor: default;
+    padding-right: 0;
+}
+
+.swagger-ui .opblock-tag-section.matomo-flat-tag > .opblock-tag:hover {
+    background: inherit;
+}
+
+.swagger-ui .opblock-tag-section.matomo-flat-tag > .opblock-tag > small {
+    cursor: text;
+}
+
+.swagger-ui .opblock-tag-section.matomo-flat-tag > .opblock-tag a {
+    cursor: pointer;
+}
+
+.swagger-ui .opblock-tag-section.matomo-flat-tag > .opblock-tag .expand-operation {
+    display: none;
 }
 
 /* Revert bootstrap global <pre> styles for Swagger version badges only. */
