@@ -106,18 +106,12 @@
 
 .swagger-ui .opblock .opblock-summary .view-line-link.copy-to-clipboard:is(:hover, :focus) {
     background: var(--matomo-swagger-get-main);
-    color: #fff;
 }
 
 .swagger-ui .opblock .opblock-summary .view-line-link.copy-to-clipboard.matomo-copy-success {
-    color: #fff;
-    opacity: 0.85;
+    color: white;
 }
 
-.swagger-ui .opblock .opblock-summary .view-line-link.copy-to-clipboard.matomo-copy-success:is(:hover, :focus) {
-    color: #fff;
-    opacity: 0.85;
-}
 
 .swagger-ui .opblock .opblock-summary .view-line-link.copy-to-clipboard .matomo-copy-success-icon {
     animation: matomo-copy-success-icon-in 300ms ease;
