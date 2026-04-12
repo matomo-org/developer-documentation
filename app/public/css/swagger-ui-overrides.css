@@ -117,10 +117,26 @@
     animation: matomo-copy-success-icon-in 300ms ease;
 }
 
+.swagger-ui .opblock .opblock-summary .view-line-link.copy-to-clipboard.matomo-copy-reset > * {
+    animation: matomo-copy-original-icon-in 300ms ease;
+}
+
 @keyframes matomo-copy-success-icon-in {
     from {
         opacity: 0;
         transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes matomo-copy-original-icon-in {
+    from {
+        opacity: 0;
+        transform: scale(1.15);
     }
 
     to {

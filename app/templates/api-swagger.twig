@@ -95,8 +95,12 @@
                 return;
             }
 
+            window.clearTimeout(state.resetTimeoutId);
             state.element.innerHTML = state.originalInnerHTML;
             state.element.classList.remove('matomo-copy-success');
+            state.element.classList.remove('matomo-copy-reset');
+            void state.element.offsetWidth;
+            state.element.classList.add('matomo-copy-reset');
             swaggerRoot.__matomoActiveCopySuccessState = null;
         }
 
@@ -104,11 +108,17 @@
             clearCopySuccessState(swaggerRoot);
 
             control.innerHTML = '<i class="fa fa-check matomo-copy-success-icon" aria-hidden="true"></i>';
+            control.classList.remove('matomo-copy-reset');
             control.classList.add('matomo-copy-success');
 
             swaggerRoot.__matomoActiveCopySuccessState = {
                 element: control,
                 originalInnerHTML: originalInnerHTML,
+                resetTimeoutId: window.setTimeout(function () {
+                    if (swaggerRoot.__matomoActiveCopySuccessState && swaggerRoot.__matomoActiveCopySuccessState.element === control) {
+                        clearCopySuccessState(swaggerRoot);
+                    }
+                }, 3000),
             };
         }
 
