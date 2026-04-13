@@ -1,7 +1,7 @@
 {
     "openapi": "3.1.0",
     "info": {
-        "title": "Matomo Reporting API for ActivityLog plugin",
+        "title": "Matomo Reporting API for UsersFlow plugin",
         "version": "1.0.0"
     },
     "servers": [
@@ -15,81 +15,51 @@
         }
     ],
     "paths": {
-        "/index.php?module=API&method=ActivityLog.getEntries": {
+        "/index.php?module=API&method=UsersFlow.getUsersFlowPretty": {
             "get": {
                 "tags": [
-                    "ActivityLog"
+                    "UsersFlow"
                 ],
-                "description": "Returns entries of activity log",
-                "operationId": "ActivityLog.getEntries",
+                "description": "Get flow details for each available interaction step.",
+                "operationId": "UsersFlow.getUsersFlowPretty",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "offset",
-                        "in": "query",
-                        "description": "offset to start at",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "default": 0
-                        }
+                        "$ref": "#/components/parameters/idSiteRequired"
                     },
                     {
-                        "name": "limit",
-                        "in": "query",
-                        "description": "amount of entries to return",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "default": 25
-                        }
+                        "$ref": "#/components/parameters/periodRequired"
                     },
                     {
-                        "name": "filterByUserLogin",
-                        "in": "query",
-                        "description": "user login to filter by, or null for the current user",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": "null"
-                        }
+                        "$ref": "#/components/parameters/dateRequired"
                     },
                     {
-                        "name": "filterByActivityType",
-                        "in": "query",
-                        "description": "activity type identifier to filter by",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": "null"
-                        }
+                        "$ref": "#/components/parameters/segmentOptional"
                     },
                     {
-                        "name": "period",
-                        "in": "query",
-                        "description": "Reporting period (or a plugin-defined period).",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": "null"
-                        }
+                        "$ref": "#/components/parameters/expandedOptional"
                     },
                     {
-                        "name": "date",
+                        "$ref": "#/components/parameters/flatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSubtableOptional"
+                    },
+                    {
+                        "name": "dataSource",
                         "in": "query",
-                        "description": "Date string (`YYYY-MM-DD`, `now`, `today`, `tomorrow`, `yesterday`, `yesterdaySameTime`, `last week|month|year`, `lastN`, `previousN`) or date range (`YYYY-MM-DD,YYYY-MM-DD`). Timezone is not applied here unless the date is already resolved upstream.",
+                        "description": "Either 'page_url' or 'page_title'. For a list of all available data sources call the API method UsersFlow.getAvailableDataSources",
                         "required": false,
                         "schema": {
-                            "type": "string",
-                            "default": "null"
+                            "type": "string"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "list of activity entries with formatted metadata",
+                        "description": "A collection of flow details.",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -97,28 +67,6 @@
                                         "row": {
                                             "type": "array",
                                             "items": {
-                                                "properties": {
-                                                    "parameters": {
-                                                        "properties": {
-                                                            "items": {
-                                                                "properties": {
-                                                                    "row": {
-                                                                        "type": "array",
-                                                                        "items": {
-                                                                            "type": "object",
-                                                                            "xml": {
-                                                                                "name": "row"
-                                                                            },
-                                                                            "additionalProperties": true
-                                                                        }
-                                                                    }
-                                                                },
-                                                                "type": "object"
-                                                            }
-                                                        },
-                                                        "type": "object"
-                                                    }
-                                                },
                                                 "type": "object",
                                                 "xml": {
                                                     "name": "row"
@@ -135,150 +83,84 @@
                                 "example": {
                                     "row": [
                                         {
-                                            "id": "6107",
-                                            "user_login": "ironman",
-                                            "type": "ActivityLog\\/UserChanged",
-                                            "parameters": {
-                                                "password_changed": "1",
-                                                "items": {
-                                                    "row": {
-                                                        "type": "user",
-                                                        "data": {
-                                                            "login": "ironman",
-                                                            "email": "billionairephilanthropistplayboy@starkindustries.com"
-                                                        }
-                                                    }
-                                                }
-                                            },
-                                            "country": "",
-                                            "ip": "172.18.0.5",
-                                            "datetime": "2026-03-27 01:07:44",
-                                            "datetime_pretty": "Mar 27, 2026 01:07:44",
-                                            "time_relative_pretty": "",
-                                            "description": "updated personal data and set a new password",
-                                            "avatar": "plugins\\/ActivityLog\\/images\\/avatar5.png",
-                                            "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
-                                            "country_name": "Unknown"
+                                            "label": "Interaction 1",
+                                            "nb_visits": "20",
+                                            "nb_exits": "11",
+                                            "nb_proceeded": "9",
+                                            "proceeded_rate": "0.45",
+                                            "exit_rate": "55%"
                                         },
                                         {
-                                            "id": "6108",
-                                            "user_login": "Matomo System",
-                                            "type": "ActivityLog\\/UserSetPreference",
-                                            "parameters": {
-                                                "items": {
-                                                    "row": [
-                                                        {
-                                                            "type": "user",
-                                                            "data": {
-                                                                "login": "ironman",
-                                                                "email": "billionairephilanthropistplayboy@starkindustries.com"
-                                                            }
-                                                        },
-                                                        {
-                                                            "type": "setting",
-                                                            "data": {
-                                                                "name": "isLDAPUser",
-                                                                "value": "1"
-                                                            }
-                                                        }
-                                                    ]
-                                                }
-                                            },
-                                            "country": "",
-                                            "ip": "172.18.0.5",
-                                            "datetime": "2026-03-27 01:07:44",
-                                            "datetime_pretty": "Mar 27, 2026 01:07:44",
-                                            "time_relative_pretty": "",
-                                            "description": "updated a preference",
-                                            "avatar": "plugins\\/ActivityLog\\/images\\/avatar19.png",
-                                            "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
-                                            "country_name": "Unknown"
+                                            "label": "Interaction 2",
+                                            "nb_visits": "9",
+                                            "nb_exits": "2",
+                                            "nb_proceeded": "7",
+                                            "proceeded_rate": "0.78",
+                                            "exit_rate": "22%"
                                         },
                                         {
-                                            "id": "6103",
-                                            "user_login": "ironman",
-                                            "type": "ActivityLog\\/UserChanged",
-                                            "parameters": {
-                                                "password_changed": "1",
-                                                "items": {
-                                                    "row": {
-                                                        "type": "user",
-                                                        "data": {
-                                                            "login": "ironman",
-                                                            "email": "billionairephilanthropistplayboy@starkindustries.com"
-                                                        }
-                                                    }
-                                                }
-                                            },
-                                            "country": "",
-                                            "ip": "172.18.0.5",
-                                            "datetime": "2026-03-27 01:06:28",
-                                            "datetime_pretty": "Mar 27, 2026 01:06:28",
-                                            "time_relative_pretty": "1 min 16s ago",
-                                            "description": "updated personal data and set a new password",
-                                            "avatar": "plugins\\/ActivityLog\\/images\\/avatar5.png",
-                                            "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
-                                            "country_name": "Unknown"
+                                            "label": "Interaction 3",
+                                            "nb_visits": "7",
+                                            "nb_exits": "2",
+                                            "nb_proceeded": "5",
+                                            "proceeded_rate": "0.71",
+                                            "exit_rate": "29%"
                                         },
                                         {
-                                            "id": "6104",
-                                            "user_login": "Matomo System",
-                                            "type": "ActivityLog\\/UserSetPreference",
-                                            "parameters": {
-                                                "items": {
-                                                    "row": [
-                                                        {
-                                                            "type": "user",
-                                                            "data": {
-                                                                "login": "ironman",
-                                                                "email": "billionairephilanthropistplayboy@starkindustries.com"
-                                                            }
-                                                        },
-                                                        {
-                                                            "type": "setting",
-                                                            "data": {
-                                                                "name": "isLDAPUser",
-                                                                "value": "1"
-                                                            }
-                                                        }
-                                                    ]
-                                                }
-                                            },
-                                            "country": "",
-                                            "ip": "172.18.0.5",
-                                            "datetime": "2026-03-27 01:06:28",
-                                            "datetime_pretty": "Mar 27, 2026 01:06:28",
-                                            "time_relative_pretty": "1 min 16s ago",
-                                            "description": "updated a preference",
-                                            "avatar": "plugins\\/ActivityLog\\/images\\/avatar19.png",
-                                            "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
-                                            "country_name": "Unknown"
+                                            "label": "Interaction 4",
+                                            "nb_visits": "5",
+                                            "nb_exits": "1",
+                                            "nb_proceeded": "4",
+                                            "proceeded_rate": "0.8",
+                                            "exit_rate": "20%"
                                         },
                                         {
-                                            "id": "6105",
-                                            "user_login": "ironman",
-                                            "type": "ActivityLog\\/UserChanged",
-                                            "parameters": {
-                                                "password_changed": "1",
-                                                "items": {
-                                                    "row": {
-                                                        "type": "user",
-                                                        "data": {
-                                                            "login": "ironman",
-                                                            "email": "billionairephilanthropistplayboy@starkindustries.com"
-                                                        }
-                                                    }
-                                                }
-                                            },
-                                            "country": "",
-                                            "ip": "172.18.0.5",
-                                            "datetime": "2026-03-27 01:06:28",
-                                            "datetime_pretty": "Mar 27, 2026 01:06:28",
-                                            "time_relative_pretty": "1 min 16s ago",
-                                            "description": "updated personal data and set a new password",
-                                            "avatar": "plugins\\/ActivityLog\\/images\\/avatar5.png",
-                                            "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
-                                            "country_name": "Unknown"
+                                            "label": "Interaction 5",
+                                            "nb_visits": "4",
+                                            "nb_exits": "0",
+                                            "nb_proceeded": "4",
+                                            "proceeded_rate": "1",
+                                            "exit_rate": "0%"
+                                        },
+                                        {
+                                            "label": "Interaction 6",
+                                            "nb_visits": "4",
+                                            "nb_exits": "2",
+                                            "nb_proceeded": "2",
+                                            "proceeded_rate": "0.5",
+                                            "exit_rate": "50%"
+                                        },
+                                        {
+                                            "label": "Interaction 7",
+                                            "nb_visits": "2",
+                                            "nb_exits": "1",
+                                            "nb_proceeded": "1",
+                                            "proceeded_rate": "0.5",
+                                            "exit_rate": "50%"
+                                        },
+                                        {
+                                            "label": "Interaction 8",
+                                            "nb_visits": "1",
+                                            "nb_exits": "0",
+                                            "nb_proceeded": "1",
+                                            "proceeded_rate": "1",
+                                            "exit_rate": "0%"
+                                        },
+                                        {
+                                            "label": "Interaction 9",
+                                            "nb_visits": "1",
+                                            "nb_exits": "1",
+                                            "nb_proceeded": "0",
+                                            "proceeded_rate": "0",
+                                            "exit_rate": "100%"
+                                        },
+                                        {
+                                            "label": "Interaction 10",
+                                            "nb_visits": "0",
+                                            "nb_exits": "0",
+                                            "nb_proceeded": "0",
+                                            "proceeded_rate": "0",
+                                            "exit_rate": "0%"
                                         }
                                     ]
                                 }
@@ -290,52 +172,19 @@
                                         "properties": {
                                             "": {
                                                 "properties": {
-                                                    "id": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_visits": {
                                                         "type": "integer"
                                                     },
-                                                    "user_login": {
-                                                        "type": "string"
+                                                    "nb_exits": {
+                                                        "type": "integer"
                                                     },
-                                                    "type": {
-                                                        "type": "string"
+                                                    "nb_proceeded": {
+                                                        "type": "integer"
                                                     },
-                                                    "parameters": {
-                                                        "properties": {
-                                                            "password_changed": {
-                                                                "type": "boolean"
-                                                            },
-                                                            "items": {
-                                                                "type": "array",
-                                                                "items": {
-                                                                    "properties": {
-                                                                        "": {
-                                                                            "properties": {
-                                                                                "type": {
-                                                                                    "type": "string"
-                                                                                },
-                                                                                "data": {
-                                                                                    "properties": {
-                                                                                        "login": {
-                                                                                            "type": "string"
-                                                                                        },
-                                                                                        "email": {
-                                                                                            "type": "string"
-                                                                                        }
-                                                                                    },
-                                                                                    "type": "object"
-                                                                                }
-                                                                            },
-                                                                            "type": "object"
-                                                                        }
-                                                                    },
-                                                                    "type": "object",
-                                                                    "additionalProperties": true
-                                                                }
-                                                            }
-                                                        },
-                                                        "type": "object"
-                                                    },
-                                                    "country": {
+                                                    "proceeded_rate": {
                                                         "type": [
                                                             "string",
                                                             "number",
@@ -346,28 +195,7 @@
                                                             "null"
                                                         ]
                                                     },
-                                                    "ip": {
-                                                        "type": "string"
-                                                    },
-                                                    "datetime": {
-                                                        "type": "string"
-                                                    },
-                                                    "datetime_pretty": {
-                                                        "type": "string"
-                                                    },
-                                                    "time_relative_pretty": {
-                                                        "type": "string"
-                                                    },
-                                                    "description": {
-                                                        "type": "string"
-                                                    },
-                                                    "avatar": {
-                                                        "type": "string"
-                                                    },
-                                                    "country_flag": {
-                                                        "type": "string"
-                                                    },
-                                                    "country_name": {
+                                                    "exit_rate": {
                                                         "type": "string"
                                                     }
                                                 },
@@ -380,148 +208,89 @@
                                 },
                                 "example": [
                                     {
-                                        "id": 6113,
-                                        "user_login": "ironman",
-                                        "type": "ActivityLog\\/UserChanged",
-                                        "parameters": {
-                                            "password_changed": true,
-                                            "items": [
-                                                {
-                                                    "type": "user",
-                                                    "data": {
-                                                        "login": "ironman",
-                                                        "email": "billionairephilanthropistplayboy@starkindustries.com"
-                                                    }
-                                                }
-                                            ]
-                                        },
-                                        "country": null,
-                                        "ip": "172.18.0.5",
-                                        "datetime": "2026-03-27 01:07:45",
-                                        "datetime_pretty": "Mar 27, 2026 01:07:45",
-                                        "time_relative_pretty": "",
-                                        "description": "updated personal data and set a new password",
-                                        "avatar": "plugins\\/ActivityLog\\/images\\/avatar5.png",
-                                        "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
-                                        "country_name": "Unknown"
+                                        "label": "Interaction 1",
+                                        "nb_visits": 20,
+                                        "nb_exits": 11,
+                                        "nb_proceeded": 9,
+                                        "proceeded_rate": 0.45,
+                                        "exit_rate": "55%"
                                     },
                                     {
-                                        "id": 6114,
-                                        "user_login": "Matomo System",
-                                        "type": "ActivityLog\\/UserSetPreference",
-                                        "parameters": {
-                                            "items": [
-                                                {
-                                                    "type": "user",
-                                                    "data": {
-                                                        "login": "ironman",
-                                                        "email": "billionairephilanthropistplayboy@starkindustries.com"
-                                                    }
-                                                },
-                                                {
-                                                    "type": "setting",
-                                                    "data": {
-                                                        "name": "isLDAPUser",
-                                                        "value": 1
-                                                    }
-                                                }
-                                            ]
-                                        },
-                                        "country": null,
-                                        "ip": "172.18.0.5",
-                                        "datetime": "2026-03-27 01:07:45",
-                                        "datetime_pretty": "Mar 27, 2026 01:07:45",
-                                        "time_relative_pretty": "",
-                                        "description": "updated a preference",
-                                        "avatar": "plugins\\/ActivityLog\\/images\\/avatar19.png",
-                                        "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
-                                        "country_name": "Unknown"
+                                        "label": "Interaction 2",
+                                        "nb_visits": 9,
+                                        "nb_exits": 2,
+                                        "nb_proceeded": 7,
+                                        "proceeded_rate": 0.78,
+                                        "exit_rate": "22%"
                                     },
                                     {
-                                        "id": 6107,
-                                        "user_login": "ironman",
-                                        "type": "ActivityLog\\/UserChanged",
-                                        "parameters": {
-                                            "password_changed": true,
-                                            "items": [
-                                                {
-                                                    "type": "user",
-                                                    "data": {
-                                                        "login": "ironman",
-                                                        "email": "billionairephilanthropistplayboy@starkindustries.com"
-                                                    }
-                                                }
-                                            ]
-                                        },
-                                        "country": null,
-                                        "ip": "172.18.0.5",
-                                        "datetime": "2026-03-27 01:07:44",
-                                        "datetime_pretty": "Mar 27, 2026 01:07:44",
-                                        "time_relative_pretty": "1s ago",
-                                        "description": "updated personal data and set a new password",
-                                        "avatar": "plugins\\/ActivityLog\\/images\\/avatar5.png",
-                                        "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
-                                        "country_name": "Unknown"
+                                        "label": "Interaction 3",
+                                        "nb_visits": 7,
+                                        "nb_exits": 2,
+                                        "nb_proceeded": 5,
+                                        "proceeded_rate": 0.71,
+                                        "exit_rate": "29%"
                                     },
                                     {
-                                        "id": 6108,
-                                        "user_login": "Matomo System",
-                                        "type": "ActivityLog\\/UserSetPreference",
-                                        "parameters": {
-                                            "items": [
-                                                {
-                                                    "type": "user",
-                                                    "data": {
-                                                        "login": "ironman",
-                                                        "email": "billionairephilanthropistplayboy@starkindustries.com"
-                                                    }
-                                                },
-                                                {
-                                                    "type": "setting",
-                                                    "data": {
-                                                        "name": "isLDAPUser",
-                                                        "value": 1
-                                                    }
-                                                }
-                                            ]
-                                        },
-                                        "country": null,
-                                        "ip": "172.18.0.5",
-                                        "datetime": "2026-03-27 01:07:44",
-                                        "datetime_pretty": "Mar 27, 2026 01:07:44",
-                                        "time_relative_pretty": "1s ago",
-                                        "description": "updated a preference",
-                                        "avatar": "plugins\\/ActivityLog\\/images\\/avatar19.png",
-                                        "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
-                                        "country_name": "Unknown"
+                                        "label": "Interaction 4",
+                                        "nb_visits": 5,
+                                        "nb_exits": 1,
+                                        "nb_proceeded": 4,
+                                        "proceeded_rate": 0.8,
+                                        "exit_rate": "20%"
                                     },
                                     {
-                                        "id": 6109,
-                                        "user_login": "ironman",
-                                        "type": "ActivityLog\\/UserChanged",
-                                        "parameters": {
-                                            "password_changed": true,
-                                            "items": [
-                                                {
-                                                    "type": "user",
-                                                    "data": {
-                                                        "login": "ironman",
-                                                        "email": "billionairephilanthropistplayboy@starkindustries.com"
-                                                    }
-                                                }
-                                            ]
-                                        },
-                                        "country": null,
-                                        "ip": "172.18.0.5",
-                                        "datetime": "2026-03-27 01:07:44",
-                                        "datetime_pretty": "Mar 27, 2026 01:07:44",
-                                        "time_relative_pretty": "1s ago",
-                                        "description": "updated personal data and set a new password",
-                                        "avatar": "plugins\\/ActivityLog\\/images\\/avatar5.png",
-                                        "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
-                                        "country_name": "Unknown"
+                                        "label": "Interaction 5",
+                                        "nb_visits": 4,
+                                        "nb_exits": 0,
+                                        "nb_proceeded": 4,
+                                        "proceeded_rate": 1,
+                                        "exit_rate": "0%"
+                                    },
+                                    {
+                                        "label": "Interaction 6",
+                                        "nb_visits": 4,
+                                        "nb_exits": 2,
+                                        "nb_proceeded": 2,
+                                        "proceeded_rate": 0.5,
+                                        "exit_rate": "50%"
+                                    },
+                                    {
+                                        "label": "Interaction 7",
+                                        "nb_visits": 2,
+                                        "nb_exits": 1,
+                                        "nb_proceeded": 1,
+                                        "proceeded_rate": 0.5,
+                                        "exit_rate": "50%"
+                                    },
+                                    {
+                                        "label": "Interaction 8",
+                                        "nb_visits": 1,
+                                        "nb_exits": 0,
+                                        "nb_proceeded": 1,
+                                        "proceeded_rate": 1,
+                                        "exit_rate": "0%"
+                                    },
+                                    {
+                                        "label": "Interaction 9",
+                                        "nb_visits": 1,
+                                        "nb_exits": 1,
+                                        "nb_proceeded": 0,
+                                        "proceeded_rate": 0,
+                                        "exit_rate": "100%"
+                                    },
+                                    {
+                                        "label": "Interaction 10",
+                                        "nb_visits": 0,
+                                        "nb_exits": 0,
+                                        "nb_proceeded": 0,
+                                        "proceeded_rate": 0,
+                                        "exit_rate": "0%"
                                     }
                                 ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_visits\tnb_exits\tnb_proceeded\tproceeded_rate\texit_rate\nInteraction 1\t20\t11\t9\t0.45\t55%\nInteraction 2\t9\t2\t7\t0.78\t22%\nInteraction 3\t7\t2\t5\t0.71\t29%\nInteraction 4\t5\t1\t4\t0.8\t20%\nInteraction 5\t4\t0\t4\t1\t0%\nInteraction 6\t4\t2\t2\t0.5\t50%\nInteraction 7\t2\t1\t1\t0.5\t50%\nInteraction 8\t1\t0\t1\t1\t0%\nInteraction 9\t1\t1\t0\t0\t100%\nInteraction 10\t0\t0\t0\t0\t0%"
                             }
                         }
                     },
@@ -546,85 +315,250 @@
                 }
             }
         },
-        "/index.php?module=API&method=ActivityLog.getEntryCount": {
+        "/index.php?module=API&method=UsersFlow.getUsersFlow": {
             "get": {
                 "tags": [
-                    "ActivityLog"
+                    "UsersFlow"
                 ],
-                "description": "Returns count auf available entries",
-                "operationId": "ActivityLog.getEntryCount",
+                "description": "Get flow details for each available interaction step.",
+                "operationId": "UsersFlow.getUsersFlow",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "filterByUserLogin",
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "name": "limitActionsPerStep",
                         "in": "query",
-                        "description": "user login to filter by, or null for the current user",
+                        "description": "By default, only 5 rows per interaction step are returned and all other rows are merged into \"Others\".",
                         "required": false,
                         "schema": {
-                            "type": "string",
-                            "default": "null"
+                            "type": "integer",
+                            "default": 5
                         }
                     },
                     {
-                        "name": "filterByActivityType",
+                        "name": "exploreStep",
                         "in": "query",
-                        "description": "activity type identifier to filter by",
+                        "description": "Optional filter on visit step tied to the pageview_position column.",
                         "required": false,
                         "schema": {
-                            "type": "string",
-                            "default": "null"
+                            "type": "integer"
                         }
                     },
                     {
-                        "name": "period",
+                        "name": "exploreUrl",
                         "in": "query",
-                        "description": "Reporting period (or a plugin-defined period).",
+                        "description": "Optional URL filter by.",
                         "required": false,
                         "schema": {
-                            "type": "string",
-                            "default": "null"
+                            "type": "string"
                         }
                     },
                     {
-                        "name": "date",
+                        "$ref": "#/components/parameters/segmentOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/expandedOptional"
+                    },
+                    {
+                        "name": "dataSource",
                         "in": "query",
-                        "description": "Date string (`YYYY-MM-DD`, `now`, `today`, `tomorrow`, `yesterday`, `yesterdaySameTime`, `last week|month|year`, `lastN`, `previousN`) or date range (`YYYY-MM-DD,YYYY-MM-DD`). Timezone is not applied here unless the date is already resolved upstream.",
+                        "description": "Either 'page_url' or 'page_title'. For a list of all available data sources call the API method UsersFlow.getAvailableDataSources",
                         "required": false,
                         "schema": {
-                            "type": "string",
-                            "default": "null"
+                            "type": "string"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "number of matching entries",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
                                     "type": "object",
                                     "xml": {
                                         "name": "result"
                                     }
                                 },
-                                "example": [
-                                    "0"
-                                ]
+                                "example": {
+                                    "row": [
+                                        {
+                                            "label": "1",
+                                            "nb_visits": "20",
+                                            "nb_exits": "11",
+                                            "nb_proceeded": "9"
+                                        },
+                                        {
+                                            "label": "2",
+                                            "nb_visits": "9",
+                                            "nb_exits": "2",
+                                            "nb_proceeded": "7"
+                                        },
+                                        {
+                                            "label": "3",
+                                            "nb_visits": "7",
+                                            "nb_exits": "2",
+                                            "nb_proceeded": "5"
+                                        },
+                                        {
+                                            "label": "4",
+                                            "nb_visits": "5",
+                                            "nb_exits": "1",
+                                            "nb_proceeded": "4"
+                                        },
+                                        {
+                                            "label": "5",
+                                            "nb_visits": "4",
+                                            "nb_exits": "0",
+                                            "nb_proceeded": "4"
+                                        },
+                                        {
+                                            "label": "6",
+                                            "nb_visits": "4",
+                                            "nb_exits": "2",
+                                            "nb_proceeded": "2"
+                                        },
+                                        {
+                                            "label": "7",
+                                            "nb_visits": "2",
+                                            "nb_exits": "1",
+                                            "nb_proceeded": "1"
+                                        },
+                                        {
+                                            "label": "8",
+                                            "nb_visits": "1",
+                                            "nb_exits": "0",
+                                            "nb_proceeded": "1"
+                                        },
+                                        {
+                                            "label": "9",
+                                            "nb_visits": "1",
+                                            "nb_exits": "1",
+                                            "nb_proceeded": "0"
+                                        },
+                                        {
+                                            "label": "10",
+                                            "nb_visits": "0",
+                                            "nb_exits": "0",
+                                            "nb_proceeded": "0"
+                                        }
+                                    ]
+                                }
                             },
                             "application/json": {
                                 "schema": {
-                                    "properties": {
-                                        "value": {
-                                            "type": "integer"
-                                        }
-                                    },
-                                    "type": "object"
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_visits": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_exits": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_proceeded": {
+                                                        "type": "integer"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
                                 },
-                                "example": {
-                                    "value": 0
-                                }
+                                "example": [
+                                    {
+                                        "label": "1",
+                                        "nb_visits": 20,
+                                        "nb_exits": 11,
+                                        "nb_proceeded": 9
+                                    },
+                                    {
+                                        "label": "2",
+                                        "nb_visits": 9,
+                                        "nb_exits": 2,
+                                        "nb_proceeded": 7
+                                    },
+                                    {
+                                        "label": "3",
+                                        "nb_visits": 7,
+                                        "nb_exits": 2,
+                                        "nb_proceeded": 5
+                                    },
+                                    {
+                                        "label": "4",
+                                        "nb_visits": 5,
+                                        "nb_exits": 1,
+                                        "nb_proceeded": 4
+                                    },
+                                    {
+                                        "label": "5",
+                                        "nb_visits": 4,
+                                        "nb_exits": 0,
+                                        "nb_proceeded": 4
+                                    },
+                                    {
+                                        "label": "6",
+                                        "nb_visits": 4,
+                                        "nb_exits": 2,
+                                        "nb_proceeded": 2
+                                    },
+                                    {
+                                        "label": "7",
+                                        "nb_visits": 2,
+                                        "nb_exits": 1,
+                                        "nb_proceeded": 1
+                                    },
+                                    {
+                                        "label": "8",
+                                        "nb_visits": 1,
+                                        "nb_exits": 0,
+                                        "nb_proceeded": 1
+                                    },
+                                    {
+                                        "label": "9",
+                                        "nb_visits": 1,
+                                        "nb_exits": 1,
+                                        "nb_proceeded": 0
+                                    },
+                                    {
+                                        "label": "10",
+                                        "nb_visits": 0,
+                                        "nb_exits": 0,
+                                        "nb_proceeded": 0
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_visits\tnb_exits\tnb_proceeded\n1\t20\t11\t9\n2\t9\t2\t7\n3\t7\t2\t5\n4\t5\t1\t4\n5\t4\t0\t4\n6\t4\t2\t2\n7\t2\t1\t1\n8\t1\t0\t1\n9\t1\t1\t0\n10\t0\t0\t0"
                             }
                         }
                     },
@@ -649,30 +583,325 @@
                 }
             }
         },
-        "/index.php?module=API&method=ActivityLog.getAllActivityTypes": {
+        "/index.php?module=API&method=UsersFlow.getInteractionActions": {
             "get": {
                 "tags": [
-                    "ActivityLog"
+                    "UsersFlow"
                 ],
-                "description": "Returns the available activity type metadata grouped by plugin.",
-                "operationId": "ActivityLog.getAllActivityTypes",
+                "description": "Get all actions that were performed as part of a specific interaction step. For example \"Give me all pages that were viewed in the first step\". Their subtables hold rows to where the users proceeded to next.",
+                "operationId": "UsersFlow.getInteractionActions",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "filterLimit",
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "name": "interactionPosition",
                         "in": "query",
-                        "description": "maximum number of activity types to return, or -1 for no limit",
+                        "description": "The label identifying the row to load as a subtable. E.g. '1' for the first row.",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "2"
+                        }
+                    },
+                    {
+                        "name": "offsetActionsPerStep",
+                        "in": "query",
+                        "description": "Optional number to offset the results by.",
                         "required": false,
                         "schema": {
                             "type": "integer"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSubtableOptional"
+                    },
+                    {
+                        "name": "dataSource",
+                        "in": "query",
+                        "description": "Either 'page_url' or 'page_title'",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "list of activity type labels"
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "label": "dive-shop.net\\/cart",
+                                            "nb_visits": "2",
+                                            "nb_exits": "0",
+                                            "nb_proceeded": "2"
+                                        },
+                                        {
+                                            "label": "dive-shop.net\\/my-account",
+                                            "nb_visits": "1",
+                                            "nb_exits": "0",
+                                            "nb_proceeded": "1"
+                                        },
+                                        {
+                                            "label": "divezone.net\\/divesite\\/deep-turbo",
+                                            "nb_visits": "1",
+                                            "nb_exits": "0",
+                                            "nb_proceeded": "1"
+                                        },
+                                        {
+                                            "label": "divezone.net\\/diving\\/mexico",
+                                            "nb_visits": "1",
+                                            "nb_exits": "0",
+                                            "nb_proceeded": "1"
+                                        },
+                                        {
+                                            "label": "divezone.net\\/diving\\/the-caribbean",
+                                            "nb_visits": "1",
+                                            "nb_exits": "0",
+                                            "nb_proceeded": "1"
+                                        },
+                                        {
+                                            "label": "divezone.net\\/jobs\\/view\\/divemaster-2",
+                                            "nb_visits": "1",
+                                            "nb_exits": "1",
+                                            "nb_proceeded": "0"
+                                        },
+                                        {
+                                            "label": "divezone.net\\/jobs\\/view\\/open-water-scuba-instructor-2",
+                                            "nb_visits": "1",
+                                            "nb_exits": "0",
+                                            "nb_proceeded": "1"
+                                        },
+                                        {
+                                            "label": "divezone.net\\/jobs\\/view\\/red-sea-fresh-owsi-is-needed-in-aqaba-jordan-asap",
+                                            "nb_visits": "1",
+                                            "nb_exits": "1",
+                                            "nb_proceeded": "0"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_visits": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_exits": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_proceeded": {
+                                                        "type": "integer"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "label": "dive-shop.net\\/cart",
+                                        "nb_visits": 2,
+                                        "nb_exits": 0,
+                                        "nb_proceeded": 2
+                                    },
+                                    {
+                                        "label": "dive-shop.net\\/my-account",
+                                        "nb_visits": 1,
+                                        "nb_exits": 0,
+                                        "nb_proceeded": 1
+                                    },
+                                    {
+                                        "label": "divezone.net\\/divesite\\/deep-turbo",
+                                        "nb_visits": 1,
+                                        "nb_exits": 0,
+                                        "nb_proceeded": 1
+                                    },
+                                    {
+                                        "label": "divezone.net\\/diving\\/mexico",
+                                        "nb_visits": 1,
+                                        "nb_exits": 0,
+                                        "nb_proceeded": 1
+                                    },
+                                    {
+                                        "label": "divezone.net\\/diving\\/the-caribbean",
+                                        "nb_visits": 1,
+                                        "nb_exits": 0,
+                                        "nb_proceeded": 1
+                                    },
+                                    {
+                                        "label": "divezone.net\\/jobs\\/view\\/divemaster-2",
+                                        "nb_visits": 1,
+                                        "nb_exits": "1",
+                                        "nb_proceeded": 0
+                                    },
+                                    {
+                                        "label": "divezone.net\\/jobs\\/view\\/open-water-scuba-instructor-2",
+                                        "nb_visits": 1,
+                                        "nb_exits": 0,
+                                        "nb_proceeded": 1
+                                    },
+                                    {
+                                        "label": "divezone.net\\/jobs\\/view\\/red-sea-fresh-owsi-is-needed-in-aqaba-jordan-asap",
+                                        "nb_visits": 1,
+                                        "nb_exits": "1",
+                                        "nb_proceeded": 0
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_visits\tnb_exits\tnb_proceeded\ndive-shop.net/cart\t2\t0\t2\ndive-shop.net/my-account\t1\t0\t1\ndivezone.net/divesite/deep-turbo\t1\t0\t1\ndivezone.net/diving/mexico\t1\t0\t1\ndivezone.net/diving/the-caribbean\t1\t0\t1\ndivezone.net/jobs/view/divemaster-2\t1\t1\t0\ndivezone.net/jobs/view/open-water-scuba-instructor-2\t1\t0\t1\ndivezone.net/jobs/view/red-sea-fresh-owsi-is-needed-in-aqaba-jordan-asap\t1\t1\t0"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersFlow.getAvailableDataSources": {
+            "get": {
+                "tags": [
+                    "UsersFlow"
+                ],
+                "description": "Get a list of all available data sources",
+                "operationId": "UsersFlow.getAvailableDataSources",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "value": "page_url",
+                                            "name": "Page URLs"
+                                        },
+                                        {
+                                            "value": "page_title",
+                                            "name": "Page Titles"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "value": {
+                                                        "type": "string"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "value": "page_url",
+                                        "name": "Page URLs"
+                                    },
+                                    {
+                                        "value": "page_title",
+                                        "name": "Page Titles"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "value\tname\npage_url\tPage URLs\npage_title\tPage Titles"
+                            }
+                        }
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1510,8 +1739,8 @@
     ],
     "tags": [
         {
-            "name": "ActivityLog",
-            "description": "The Activity Log API is used to get the activity logs for users in your Matomo instance. <br/><br/> The method <code>ActivityLog.getEntries</code> returns a list of the activities done by users in your Matomo instance.  <br/>The list of activities returned depends on which user is calling the API: <br/> - if you authenticate with a Super User access, the API will return activity logs for all users <br/> - if you authenticate as anonymous (no authentication), or a user with view or admin access, only this user's activity will be returned. <br/><br/> Each activity includes an activity ID, the user who initiated the activity, a list of parameters/metadata specific to this activity, the datetime (and pretty datetime), the activity description, and the URL to the colored avatar image for this user.  <br/><br/>The activity log includes over 80 different types of Matomo activities, for example: <br/> - See when a user logged in, failed to log in, or logged out <br/> - See when a user was created, updated or deleted by who <br/> - See when a website was created, updated or deleted by who <br/> - See when a Matomo setting, an <a href=\"https://www.ab-tests.net\">A/B Test</a>, a <a href=\"https://piwik.org/docs/email-reports/\">Scheduled Report</a>, or a <a href=\"https://piwik.org/docs/segmentation/\">Segment</a> was changed and by who"
+            "name": "UsersFlow",
+            "description": "API for Users Flow. The API lets you explore details about how your users or visitors navigate through your website.   @OA\\Tag(name=\"UsersFlow\")"
         }
     ],
     "externalDocs": {

@@ -1,7 +1,7 @@
 {
     "openapi": "3.1.0",
     "info": {
-        "title": "Matomo Reporting API for AdvertisingConversionExport plugin",
+        "title": "Matomo Reporting API for Annotations plugin",
         "version": "1.0.0"
     },
     "servers": [
@@ -15,13 +15,13 @@
         }
     ],
     "paths": {
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExports": {
+        "/index.php?module=API&method=Annotations.add": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "Annotations"
                 ],
-                "description": "Returns all configured conversion exports for the given idSite if idSite is omitted, all conversion exports of sites, the current user has write access for, will be returned",
-                "operationId": "AdvertisingConversionExport.getConversionExports",
+                "description": "Create a new annotation for a site.",
+                "operationId": "Annotations.add",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
@@ -29,24 +29,44 @@
                     {
                         "name": "idSite",
                         "in": "query",
-                        "description": "id of the site conversion exports should be returned for",
+                        "description": "The site ID to add the annotation to.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "description": "The date the annotation is attached to.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "note",
+                        "in": "query",
+                        "description": "The text of the annotation (max 255 chars).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "starred",
+                        "in": "query",
+                        "description": "Whether the annotation should be starred.",
                         "required": false,
                         "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "integer"
-                                },
-                                {
-                                    "type": "string",
-                                    "default": "null"
-                                }
-                            ]
+                            "type": "boolean",
+                            "default": false
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "list of conversion export configurations"
+                        "description": "Returns an array of two elements. The first element (indexed by 'annotation') is the new annotation. The second element (indexed by 'idNote' is the new note's ID)."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -69,76 +89,115 @@
                 }
             }
         },
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExport": {
+        "/index.php?module=API&method=Annotations.save": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "Annotations"
                 ],
-                "description": "Returns the (configuration) data of a specific conversion export identified by its id",
-                "operationId": "AdvertisingConversionExport.getConversionExport",
+                "description": "Modifies an annotation for a site and returns the modified annotation and its ID.",
+                "operationId": "Annotations.save",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of an export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "conversion export configuration"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.deleteConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Removes the conversion export with the given idExport",
-                "operationId": "AdvertisingConversionExport.deleteConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of the export to delete",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
                     },
                     {
                         "name": "idSite",
                         "in": "query",
-                        "description": "id of the site owning the export",
+                        "description": "The site ID to add the annotation to.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "idNote",
+                        "in": "query",
+                        "description": "The ID of the note.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "description": "The date the annotation is attached to. If null, the annotation's date is not modified.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    },
+                    {
+                        "name": "note",
+                        "in": "query",
+                        "description": "The text of the annotation (max 255 chars). If null, the annotation's text is not modified.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    },
+                    {
+                        "name": "starred",
+                        "in": "query",
+                        "description": "Whether the annotation should be starred. If null, the annotation is not starred/un-starred, so the current state won't change.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns an array of two elements. The first element (indexed by 'annotation') is the new annotation. The second element (indexed by 'idNote' is the new note's ID)."
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Annotations.delete": {
+            "get": {
+                "tags": [
+                    "Annotations"
+                ],
+                "description": "Removes an annotation from a site's list of annotations.",
+                "operationId": "Annotations.delete",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idSite",
+                        "in": "query",
+                        "description": "The site ID to add the annotation to.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "idNote",
+                        "in": "query",
+                        "description": "The ID of the note to delete.",
                         "required": true,
                         "schema": {
                             "type": "integer"
@@ -170,13 +229,13 @@
                 }
             }
         },
-        "/index.php?module=API&method=AdvertisingConversionExport.addConversionExport": {
+        "/index.php?module=API&method=Annotations.deleteAll": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "Annotations"
                 ],
-                "description": "Creates a new conversion export",
-                "operationId": "AdvertisingConversionExport.addConversionExport",
+                "description": "Removes all annotations for a single site. Only superusers can use this method.",
+                "operationId": "Annotations.deleteAll",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
@@ -184,205 +243,344 @@
                     {
                         "name": "idSite",
                         "in": "query",
-                        "description": "id of the website the export is for",
+                        "description": "The ID of the site to remove annotations for.",
                         "required": true,
                         "schema": {
                             "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "name of the conversion export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "type",
-                        "in": "query",
-                        "description": "type of the export (e.g. GoogleAds, YandexAds,...)",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "parameters",
-                        "in": "query",
-                        "description": "configuration array of the export",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "integer"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "description": "description of the export",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": ""
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "id of the newly added report and the access token"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.regenerateAccessToken": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Generates a new access token for the export identified by idExport",
-                "operationId": "AdvertisingConversionExport.regenerateAccessToken",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of an export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "new access token"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.updateConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Updates a conversion export with new configuration data",
-                "operationId": "AdvertisingConversionExport.updateConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of the export to change",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the website the export belongs to (needs to match)",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "new name of the export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "type",
-                        "in": "query",
-                        "description": "new type of the export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "parameters",
-                        "in": "query",
-                        "description": "new configuration array",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "integer"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "description": "new description of the export",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": ""
                         }
                     }
                 ],
                 "responses": {
                     "200": {
                         "$ref": "#/components/responses/GenericSuccess"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Annotations.get": {
+            "get": {
+                "tags": [
+                    "Annotations"
+                ],
+                "description": "Returns a single annotation for one site.",
+                "operationId": "Annotations.get",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idSite",
+                        "in": "query",
+                        "description": "The site ID the annotation is linked to.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "idNote",
+                        "in": "query",
+                        "description": "The ID of the annotation to get.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The annotation. It will contain the following properties: - id: the ID of the annotation - idsite: the site the annotation is linked to - date: The date the annotation was recorded for. - note: The note text. - starred: Whether the note is starred or not. - user: The user that created the note. - canEditOrDelete: Whether the current user is permitted to edit or delete this annotation"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Annotations.getAll": {
+            "get": {
+                "tags": [
+                    "Annotations"
+                ],
+                "description": "Returns every annotation for a specific site within a specific date range.",
+                "operationId": "Annotations.getAll",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idSite",
+                        "in": "query",
+                        "description": "The site ID to get annotations for. Can be one ID or a list of site IDs.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "description": "The date of the period.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    },
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": "The period type.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "day"
+                        }
+                    },
+                    {
+                        "name": "lastN",
+                        "in": "query",
+                        "description": "Whether to include the last N number of periods in the date range or not.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An array that indexes arrays of annotations by site ID. ie, array(   5 => array(     array(...), // annotation #1     array(...), // annotation #2   ),   8 => array(...) )",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": ""
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "type": "array",
+                                                "items": []
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    []
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "\n"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Annotations.getAnnotationCountForDates": {
+            "get": {
+                "tags": [
+                    "Annotations"
+                ],
+                "description": "Returns the count of annotations for a list of periods, including the count of starred annotations.",
+                "operationId": "Annotations.getAnnotationCountForDates",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idSite",
+                        "in": "query",
+                        "description": "The site ID(s) to get the annotation count for.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "description": "The date of the period.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": "The period type.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "lastN",
+                        "in": "query",
+                        "description": "Whether to get counts for the last N number of periods or not.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "getAnnotationText",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An array mapping site IDs to arrays holding dates & the count of annotations made for those dates. eg, array(   5 => array(     array('2012-01-02', array('count' => 4, 'starred' => 2)),     array('2012-01-03', array('count' => 0, 'starred' => 0)),     array('2012-01-04', array('count' => 2, 'starred' => 0)),   ),   6 => array(     array('2012-01-02', array('count' => 1, 'starred' => 0)),     array('2012-01-03', array('count' => 4, 'starred' => 3)),     array('2012-01-04', array('count' => 2, 'starred' => 0)),   ),   ... )",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "row": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "xml": {
+                                                                "name": "row"
+                                                            },
+                                                            "additionalProperties": true
+                                                        }
+                                                    }
+                                                },
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": {
+                                        "row": {
+                                            "row": [
+                                                "2026-02-16",
+                                                {
+                                                    "count": "0",
+                                                    "starred": "0"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "type": "array",
+                                                "items": {
+                                                    "properties": {
+                                                        "": {
+                                                            "type": "array",
+                                                            "items": []
+                                                        }
+                                                    },
+                                                    "type": "object",
+                                                    "additionalProperties": true
+                                                }
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    [
+                                        [
+                                            "2026-02-16",
+                                            {
+                                                "count": 0,
+                                                "starred": 0
+                                            }
+                                        ]
+                                    ]
+                                ]
+                            }
+                        }
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1220,8 +1418,8 @@
     ],
     "tags": [
         {
-            "name": "AdvertisingConversionExport",
-            "description": "Public API for managing advertising conversion exports. Provides endpoints to list, create, update, and delete export configurations."
+            "name": "Annotations",
+            "description": "API for annotations plugin. Provides methods to create, modify, delete & query annotations."
         }
     ],
     "externalDocs": {

@@ -1,7 +1,7 @@
 {
     "openapi": "3.1.0",
     "info": {
-        "title": "Matomo Reporting API for Goals plugin",
+        "title": "Matomo Reporting API for SearchEngineKeywordsPerformance plugin",
         "version": "1.0.0"
     },
     "servers": [
@@ -15,56 +15,13 @@
         }
     ],
     "paths": {
-        "/index.php?module=API&method=Goals.getGoal": {
+        "/index.php?module=API&method=SearchEngineKeywordsPerformance.getKeywords": {
             "get": {
                 "tags": [
-                    "Goals"
+                    "SearchEngineKeywordsPerformance"
                 ],
-                "description": "Return a single goal.",
-                "operationId": "Goals.getGoal",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSiteRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idGoalRequired"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "An array of goal attributes."
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=Goals.getGoals": {
-            "get": {
-                "tags": [
-                    "Goals"
-                ],
-                "description": "Returns all Goals for a given website, or list of websites",
-                "operationId": "Goals.getGoals",
+                "description": "Returns Keyword data used on any search Combines imported search keywords with those returned by Referrers plugin",
+                "operationId": "SearchEngineKeywordsPerformance.getKeywords",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
@@ -72,7 +29,7 @@
                     {
                         "name": "idSite",
                         "in": "query",
-                        "description": "Array or Comma separated list of website IDs to request the goals for",
+                        "description": "A single ID (eg, `'1'`), multiple IDs (eg, `'1,2,3'` or `array(1, 2, 3)`), or `'all'`.",
                         "required": true,
                         "schema": {
                             "oneOf": [
@@ -80,298 +37,193 @@
                                     "type": "string"
                                 },
                                 {
+                                    "type": "integer"
+                                },
+                                {
                                     "type": "array",
-                                    "items": []
+                                    "items": {
+                                        "type": "integer"
+                                    }
                                 }
                             ]
                         }
                     },
                     {
-                        "name": "orderByName",
+                        "name": "period",
                         "in": "query",
-                        "required": false,
+                        "description": "'day', `'week'`, `'month'`, `'year'` or `'range'`",
+                        "required": true,
                         "schema": {
-                            "type": "boolean",
-                            "default": false
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "description": "'YYYY-MM-DD', magic keywords (ie, 'today'; {@link Date::factory()} or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD').",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Array of Goal attributes, indexed by \"idgoal\" when requesting a single site, no specific index when requesting multiple sites",
-                        "content": {
-                            "text/xml": {
-                                "schema": {
-                                    "properties": {
-                                        "row": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "xml": {
-                                                    "name": "row"
-                                                },
-                                                "additionalProperties": true
-                                            }
-                                        }
-                                    },
-                                    "type": "object",
-                                    "xml": {
-                                        "name": "result"
-                                    }
+                        "description": "Keyword report merged with referrer search keywords."
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=SearchEngineKeywordsPerformance.getKeywordsImported": {
+            "get": {
+                "tags": [
+                    "SearchEngineKeywordsPerformance"
+                ],
+                "description": "Returns Keyword data used on any imported search engine",
+                "operationId": "SearchEngineKeywordsPerformance.getKeywordsImported",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idSite",
+                        "in": "query",
+                        "description": "A single ID (eg, `'1'`), multiple IDs (eg, `'1,2,3'` or `array(1, 2, 3)`), or `'all'`.",
+                        "required": true,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "string"
                                 },
-                                "example": {
-                                    "row": [
-                                        {
-                                            "idsite": "1",
-                                            "idgoal": "4",
-                                            "name": "New Job Application",
-                                            "description": "",
-                                            "match_attribute": "url",
-                                            "pattern": "\\/jobs\\/apply\\/",
-                                            "pattern_type": "contains",
-                                            "case_sensitive": "0",
-                                            "allow_multiple": "0",
-                                            "revenue": "1",
-                                            "deleted": "0",
-                                            "event_value_as_revenue": "0"
-                                        },
-                                        {
-                                            "idsite": "1",
-                                            "idgoal": "5",
-                                            "name": "View Submit Job",
-                                            "description": "",
-                                            "match_attribute": "url",
-                                            "pattern": "jobs\\/add",
-                                            "pattern_type": "contains",
-                                            "case_sensitive": "0",
-                                            "allow_multiple": "0",
-                                            "revenue": "5",
-                                            "deleted": "0",
-                                            "event_value_as_revenue": "0"
-                                        },
-                                        {
-                                            "idsite": "1",
-                                            "idgoal": "6",
-                                            "name": "New Resume",
-                                            "description": "",
-                                            "match_attribute": "url",
-                                            "pattern": "resumes\\/register",
-                                            "pattern_type": "contains",
-                                            "case_sensitive": "0",
-                                            "allow_multiple": "0",
-                                            "revenue": "2",
-                                            "deleted": "0",
-                                            "event_value_as_revenue": "0"
-                                        },
-                                        {
-                                            "idsite": "1",
-                                            "idgoal": "7",
-                                            "name": "Liveaboard.com click",
-                                            "description": "",
-                                            "match_attribute": "external_website",
-                                            "pattern": "liveaboard.com",
-                                            "pattern_type": "contains",
-                                            "case_sensitive": "0",
-                                            "allow_multiple": "0",
-                                            "revenue": "1",
-                                            "deleted": "0",
-                                            "event_value_as_revenue": "0"
-                                        },
-                                        {
-                                            "idsite": "1",
-                                            "idgoal": "8",
-                                            "name": "Agoda click",
-                                            "description": "",
-                                            "match_attribute": "external_website",
-                                            "pattern": "agoda",
-                                            "pattern_type": "contains",
-                                            "case_sensitive": "0",
-                                            "allow_multiple": "0",
-                                            "revenue": "0",
-                                            "deleted": "0",
-                                            "event_value_as_revenue": "0"
-                                        },
-                                        {
-                                            "idsite": "1",
-                                            "idgoal": "9",
-                                            "name": "User Comments",
-                                            "description": "",
-                                            "match_attribute": "manually",
-                                            "allow_multiple": "1",
-                                            "revenue": "0",
-                                            "deleted": "0",
-                                            "event_value_as_revenue": "0"
-                                        },
-                                        {
-                                            "idsite": "1",
-                                            "idgoal": "10",
-                                            "name": "Newsletter Signup",
-                                            "description": "",
-                                            "match_attribute": "url",
-                                            "pattern": "\\/newsletter\\/thank-you",
-                                            "pattern_type": "contains",
-                                            "case_sensitive": "0",
-                                            "allow_multiple": "0",
-                                            "revenue": "0",
-                                            "deleted": "0",
-                                            "event_value_as_revenue": "0"
-                                        }
-                                    ]
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
+                                {
+                                    "type": "integer"
+                                },
+                                {
                                     "type": "array",
                                     "items": {
-                                        "properties": {
-                                            "": {
-                                                "properties": {
-                                                    "idsite": {
-                                                        "type": "integer"
-                                                    },
-                                                    "idgoal": {
-                                                        "type": "integer"
-                                                    },
-                                                    "name": {
-                                                        "type": "string"
-                                                    },
-                                                    "description": {
-                                                        "type": "string"
-                                                    },
-                                                    "match_attribute": {
-                                                        "type": "string"
-                                                    },
-                                                    "pattern": {
-                                                        "type": "string"
-                                                    },
-                                                    "pattern_type": {
-                                                        "type": "string"
-                                                    },
-                                                    "case_sensitive": {
-                                                        "type": "integer"
-                                                    },
-                                                    "allow_multiple": {
-                                                        "type": "integer"
-                                                    },
-                                                    "revenue": {
-                                                        "type": "integer"
-                                                    },
-                                                    "deleted": {
-                                                        "type": "integer"
-                                                    },
-                                                    "event_value_as_revenue": {
-                                                        "type": "integer"
-                                                    }
-                                                },
-                                                "type": "object"
-                                            }
-                                        },
-                                        "type": "object",
-                                        "additionalProperties": true
+                                        "type": "integer"
                                     }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": "'day', `'week'`, `'month'`, `'year'` or `'range'`",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "description": "'YYYY-MM-DD', magic keywords (ie, 'today'; {@link Date::factory()} or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD').",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Combined imported keyword report."
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=SearchEngineKeywordsPerformance.getKeywordsGoogle": {
+            "get": {
+                "tags": [
+                    "SearchEngineKeywordsPerformance"
+                ],
+                "description": "Returns Keyword data used on Google",
+                "operationId": "SearchEngineKeywordsPerformance.getKeywordsGoogle",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idSite",
+                        "in": "query",
+                        "description": "A single ID (eg, `'1'`), multiple IDs (eg, `'1,2,3'` or `array(1, 2, 3)`), or `'all'`.",
+                        "required": true,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "string"
                                 },
-                                "example": [
-                                    {
-                                        "idsite": 1,
-                                        "idgoal": 4,
-                                        "name": "New Job Application",
-                                        "description": "",
-                                        "match_attribute": "url",
-                                        "pattern": "\\/jobs\\/apply\\/",
-                                        "pattern_type": "contains",
-                                        "case_sensitive": 0,
-                                        "allow_multiple": 0,
-                                        "revenue": 1,
-                                        "deleted": 0,
-                                        "event_value_as_revenue": 0
-                                    },
-                                    {
-                                        "idsite": 1,
-                                        "idgoal": 5,
-                                        "name": "View Submit Job",
-                                        "description": "",
-                                        "match_attribute": "url",
-                                        "pattern": "jobs\\/add",
-                                        "pattern_type": "contains",
-                                        "case_sensitive": 0,
-                                        "allow_multiple": 0,
-                                        "revenue": 5,
-                                        "deleted": 0,
-                                        "event_value_as_revenue": 0
-                                    },
-                                    {
-                                        "idsite": 1,
-                                        "idgoal": 6,
-                                        "name": "New Resume",
-                                        "description": "",
-                                        "match_attribute": "url",
-                                        "pattern": "resumes\\/register",
-                                        "pattern_type": "contains",
-                                        "case_sensitive": 0,
-                                        "allow_multiple": 0,
-                                        "revenue": 2,
-                                        "deleted": 0,
-                                        "event_value_as_revenue": 0
-                                    },
-                                    {
-                                        "idsite": 1,
-                                        "idgoal": 7,
-                                        "name": "Liveaboard.com click",
-                                        "description": "",
-                                        "match_attribute": "external_website",
-                                        "pattern": "liveaboard.com",
-                                        "pattern_type": "contains",
-                                        "case_sensitive": 0,
-                                        "allow_multiple": 0,
-                                        "revenue": 1,
-                                        "deleted": 0,
-                                        "event_value_as_revenue": 0
-                                    },
-                                    {
-                                        "idsite": 1,
-                                        "idgoal": 8,
-                                        "name": "Agoda click",
-                                        "description": "",
-                                        "match_attribute": "external_website",
-                                        "pattern": "agoda",
-                                        "pattern_type": "contains",
-                                        "case_sensitive": 0,
-                                        "allow_multiple": 0,
-                                        "revenue": 0,
-                                        "deleted": 0,
-                                        "event_value_as_revenue": 0
-                                    },
-                                    {
-                                        "idsite": 1,
-                                        "idgoal": 9,
-                                        "name": "User Comments",
-                                        "description": "",
-                                        "match_attribute": "manually",
-                                        "allow_multiple": 1,
-                                        "revenue": 0,
-                                        "deleted": 0,
-                                        "event_value_as_revenue": 0
-                                    },
-                                    {
-                                        "idsite": 1,
-                                        "idgoal": 10,
-                                        "name": "Newsletter Signup",
-                                        "description": "",
-                                        "match_attribute": "url",
-                                        "pattern": "\\/newsletter\\/thank-you",
-                                        "pattern_type": "contains",
-                                        "case_sensitive": 0,
-                                        "allow_multiple": 0,
-                                        "revenue": 0,
-                                        "deleted": 0,
-                                        "event_value_as_revenue": 0
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
                                     }
-                                ]
-                            },
-                            "application/vnd.ms-excel": {
-                                "example": "idsite\tidgoal\tname\tdescription\tmatch_attribute\tpattern\tpattern_type\tcase_sensitive\tallow_multiple\trevenue\tdeleted\tevent_value_as_revenue\n1\t4\tNew Job Application\t\turl\t/jobs/apply/\tcontains\t0\t0\t1\t0\t0\n1\t5\tView Submit Job\t\turl\tjobs/add\tcontains\t0\t0\t5\t0\t0\n1\t6\tNew Resume\t\turl\tresumes/register\tcontains\t0\t0\t2\t0\t0\n1\t7\tLiveaboard.com click\t\texternal_website\tliveaboard.com\tcontains\t0\t0\t1\t0\t0\n1\t8\tAgoda click\t\texternal_website\tagoda\tcontains\t0\t0\t0\t0\t0\n1\t9\tUser Comments\t\tmanually\t\t\t\t1\t0\t0\t0\n1\t10\tNewsletter Signup\t\turl\t/newsletter/thank-you\tcontains\t0\t0\t0\t0\t0"
-                            }
+                                }
+                            ]
                         }
+                    },
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": "'day', `'week'`, `'month'`, `'year'` or `'range'`",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "description": "'YYYY-MM-DD', magic keywords (ie, 'today'; {@link Date::factory()} or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD').",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Combined Google keyword report."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -394,96 +246,53 @@
                 }
             }
         },
-        "/index.php?module=API&method=Goals.addGoal": {
+        "/index.php?module=API&method=SearchEngineKeywordsPerformance.getKeywordsBing": {
             "get": {
                 "tags": [
-                    "Goals"
+                    "SearchEngineKeywordsPerformance"
                 ],
-                "description": "Creates a Goal for a given website.",
-                "operationId": "Goals.addGoal",
+                "description": "Returns Bing keyword data used on search",
+                "operationId": "SearchEngineKeywordsPerformance.getKeywordsBing",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "$ref": "#/components/parameters/idSiteRequired"
+                        "name": "idSite",
+                        "in": "query",
+                        "description": "A single ID (eg, `'1'`), multiple IDs (eg, `'1,2,3'` or `array(1, 2, 3)`), or `'all'`.",
+                        "required": true,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                }
+                            ]
+                        }
                     },
                     {
-                        "name": "name",
+                        "name": "period",
                         "in": "query",
+                        "description": "'day', `'week'`, `'month'`, `'year'` or `'range'`",
                         "required": true,
                         "schema": {
                             "type": "string"
                         }
                     },
                     {
-                        "name": "matchAttribute",
+                        "name": "date",
                         "in": "query",
-                        "description": "'url', 'title', 'file', 'external_website', 'manually', 'visit_duration', 'visit_total_actions', 'visit_total_pageviews', 'event_action', 'event_category' or 'event_name'",
+                        "description": "'YYYY-MM-DD', magic keywords (ie, 'today'; {@link Date::factory()} or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD').",
                         "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "pattern",
-                        "in": "query",
-                        "description": "eg. purchase-confirmation.htm or numeric value if used with a numeric match attribute",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "patternType",
-                        "in": "query",
-                        "description": "'regex', 'contains', 'exact', or 'greater_than' for numeric match attributes",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "caseSensitive",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean",
-                            "default": false
-                        }
-                    },
-                    {
-                        "name": "revenue",
-                        "in": "query",
-                        "description": "If set, default revenue to assign to conversions",
-                        "required": false,
-                        "schema": {
-                            "type": "number"
-                        }
-                    },
-                    {
-                        "name": "allowMultipleConversionsPerVisit",
-                        "in": "query",
-                        "description": "By default, multiple conversions in the same visit will only record the first conversion. If set to true, multiple conversions will all be recorded within a visit (useful for Ecommerce goals)",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean",
-                            "default": false
-                        }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": ""
-                        }
-                    },
-                    {
-                        "name": "useEventValueAsRevenue",
-                        "in": "query",
-                        "required": false,
                         "schema": {
                             "type": "string"
                         }
@@ -491,7 +300,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "ID of the new goal"
+                        "description": "Bing keyword report for the requested period."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -514,94 +323,284 @@
                 }
             }
         },
-        "/index.php?module=API&method=Goals.updateGoal": {
+        "/index.php?module=API&method=SearchEngineKeywordsPerformance.getKeywordsYandex": {
             "get": {
                 "tags": [
-                    "Goals"
+                    "SearchEngineKeywordsPerformance"
                 ],
-                "description": "Updates a Goal description.",
-                "operationId": "Goals.updateGoal",
+                "description": "Returns Yandex keyword data used on search",
+                "operationId": "SearchEngineKeywordsPerformance.getKeywordsYandex",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "$ref": "#/components/parameters/idSiteRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idGoalRequired"
-                    },
-                    {
-                        "name": "name",
+                        "name": "idSite",
                         "in": "query",
+                        "description": "A single ID (eg, `'1'`), multiple IDs (eg, `'1,2,3'` or `array(1, 2, 3)`), or `'all'`.",
+                        "required": true,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": "'day', `'week'`, `'month'`, `'year'` or `'range'`",
                         "required": true,
                         "schema": {
                             "type": "string"
                         }
                     },
                     {
-                        "name": "matchAttribute",
+                        "name": "date",
                         "in": "query",
+                        "description": "'YYYY-MM-DD', magic keywords (ie, 'today'; {@link Date::factory()} or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD').",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Yandex keyword report for the requested period."
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=SearchEngineKeywordsPerformance.getKeywordsGoogleWeb": {
+            "get": {
+                "tags": [
+                    "SearchEngineKeywordsPerformance"
+                ],
+                "description": "Returns Google keyword data used on Web search",
+                "operationId": "SearchEngineKeywordsPerformance.getKeywordsGoogleWeb",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idSite",
+                        "in": "query",
+                        "description": "A single ID (eg, `'1'`), multiple IDs (eg, `'1,2,3'` or `array(1, 2, 3)`), or `'all'`.",
+                        "required": true,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": "'day', `'week'`, `'month'`, `'year'` or `'range'`",
                         "required": true,
                         "schema": {
                             "type": "string"
                         }
                     },
                     {
-                        "name": "pattern",
+                        "name": "date",
                         "in": "query",
+                        "description": "'YYYY-MM-DD', magic keywords (ie, 'today'; {@link Date::factory()} or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD').",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Google web search keyword report."
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=SearchEngineKeywordsPerformance.getKeywordsGoogleImage": {
+            "get": {
+                "tags": [
+                    "SearchEngineKeywordsPerformance"
+                ],
+                "description": "Returns Google keyword data used on Image search",
+                "operationId": "SearchEngineKeywordsPerformance.getKeywordsGoogleImage",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idSite",
+                        "in": "query",
+                        "description": "A single ID (eg, `'1'`), multiple IDs (eg, `'1,2,3'` or `array(1, 2, 3)`), or `'all'`.",
+                        "required": true,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": "'day', `'week'`, `'month'`, `'year'` or `'range'`",
                         "required": true,
                         "schema": {
                             "type": "string"
                         }
                     },
                     {
-                        "name": "patternType",
+                        "name": "date",
                         "in": "query",
+                        "description": "'YYYY-MM-DD', magic keywords (ie, 'today'; {@link Date::factory()} or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD').",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Google image search keyword report."
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=SearchEngineKeywordsPerformance.getKeywordsGoogleVideo": {
+            "get": {
+                "tags": [
+                    "SearchEngineKeywordsPerformance"
+                ],
+                "description": "Returns Google keyword data used on Video search",
+                "operationId": "SearchEngineKeywordsPerformance.getKeywordsGoogleVideo",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idSite",
+                        "in": "query",
+                        "description": "A single ID (eg, `'1'`), multiple IDs (eg, `'1,2,3'` or `array(1, 2, 3)`), or `'all'`.",
+                        "required": true,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": "'day', `'week'`, `'month'`, `'year'` or `'range'`",
                         "required": true,
                         "schema": {
                             "type": "string"
                         }
                     },
                     {
-                        "name": "caseSensitive",
+                        "name": "date",
                         "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean",
-                            "default": false
-                        }
-                    },
-                    {
-                        "name": "revenue",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "number"
-                        }
-                    },
-                    {
-                        "name": "allowMultipleConversionsPerVisit",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean",
-                            "default": false
-                        }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": ""
-                        }
-                    },
-                    {
-                        "name": "useEventValueAsRevenue",
-                        "in": "query",
-                        "required": false,
+                        "description": "'YYYY-MM-DD', magic keywords (ie, 'today'; {@link Date::factory()} or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD').",
+                        "required": true,
                         "schema": {
                             "type": "string"
                         }
@@ -609,7 +608,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "$ref": "#/components/responses/GenericSuccess"
+                        "description": "Google video search keyword report."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -632,27 +631,61 @@
                 }
             }
         },
-        "/index.php?module=API&method=Goals.deleteGoal": {
+        "/index.php?module=API&method=SearchEngineKeywordsPerformance.getKeywordsGoogleNews": {
             "get": {
                 "tags": [
-                    "Goals"
+                    "SearchEngineKeywordsPerformance"
                 ],
-                "description": "Soft deletes a given Goal.",
-                "operationId": "Goals.deleteGoal",
+                "description": "Returns Google keyword data used on News search",
+                "operationId": "SearchEngineKeywordsPerformance.getKeywordsGoogleNews",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "$ref": "#/components/parameters/idSiteRequired"
+                        "name": "idSite",
+                        "in": "query",
+                        "description": "A single ID (eg, `'1'`), multiple IDs (eg, `'1,2,3'` or `array(1, 2, 3)`), or `'all'`.",
+                        "required": true,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                }
+                            ]
+                        }
                     },
                     {
-                        "$ref": "#/components/parameters/idGoalRequired"
+                        "name": "period",
+                        "in": "query",
+                        "description": "'day', `'week'`, `'month'`, `'year'` or `'range'`",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "description": "'YYYY-MM-DD', magic keywords (ie, 'today'; {@link Date::factory()} or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD').",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "$ref": "#/components/responses/GenericSuccess"
+                        "description": "Google news search keyword report."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -675,228 +708,53 @@
                 }
             }
         },
-        "/index.php?module=API&method=Goals.getItemsSku": {
+        "/index.php?module=API&method=SearchEngineKeywordsPerformance.getCrawlingOverviewBing": {
             "get": {
                 "tags": [
-                    "Goals"
+                    "SearchEngineKeywordsPerformance"
                 ],
-                "description": "",
-                "operationId": "Goals.getItemsSku",
+                "description": "Returns crawling metrics for Bing",
+                "operationId": "SearchEngineKeywordsPerformance.getCrawlingOverviewBing",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "$ref": "#/components/parameters/idSiteRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/periodRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/dateRequired"
-                    },
-                    {
-                        "name": "abandonedCarts",
+                        "name": "idSite",
                         "in": "query",
-                        "required": false,
+                        "description": "A single ID (eg, `'1'`), multiple IDs (eg, `'1,2,3'` or `array(1, 2, 3)`), or `'all'`.",
+                        "required": true,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": "'day', `'week'`, `'month'`, `'year'` or `'range'`",
+                        "required": true,
                         "schema": {
                             "type": "string"
                         }
                     },
                     {
-                        "$ref": "#/components/parameters/segmentOptional"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=Goals.getItemsName": {
-            "get": {
-                "tags": [
-                    "Goals"
-                ],
-                "description": "",
-                "operationId": "Goals.getItemsName",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSiteRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/periodRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/dateRequired"
-                    },
-                    {
-                        "name": "abandonedCarts",
+                        "name": "date",
                         "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "$ref": "#/components/parameters/segmentOptional"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=Goals.getItemsCategory": {
-            "get": {
-                "tags": [
-                    "Goals"
-                ],
-                "description": "",
-                "operationId": "Goals.getItemsCategory",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSiteRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/periodRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/dateRequired"
-                    },
-                    {
-                        "name": "abandonedCarts",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "$ref": "#/components/parameters/segmentOptional"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=Goals.get": {
-            "get": {
-                "tags": [
-                    "Goals"
-                ],
-                "description": "Returns Goals data.",
-                "operationId": "Goals.get",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSiteRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/periodRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/dateRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/segmentOptional"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idGoalOptional"
-                    },
-                    {
-                        "name": "columns",
-                        "in": "query",
-                        "description": "Array of metrics to fetch: nb_conversions, conversion_rate, revenue",
-                        "required": false,
-                        "schema": {
-                            "type": "array",
-                            "items": [],
-                            "default": []
-                        }
-                    },
-                    {
-                        "name": "showAllGoalSpecificMetrics",
-                        "in": "query",
-                        "description": "whether to show all goal specific metrics when no goal is set",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean",
-                            "default": false
-                        }
-                    },
-                    {
-                        "name": "compare",
-                        "in": "query",
-                        "required": false,
+                        "description": "'YYYY-MM-DD', magic keywords (ie, 'today'; {@link Date::factory()} or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD').",
+                        "required": true,
                         "schema": {
                             "type": "string"
                         }
@@ -904,7 +762,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Bing crawling overview metrics.",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -914,79 +772,89 @@
                                     }
                                 },
                                 "example": {
-                                    "nb_conversions": "1",
-                                    "nb_visits_converted": "1",
-                                    "revenue": "1",
-                                    "conversion_rate": "5%",
-                                    "nb_conversions_new_visit": "0",
-                                    "nb_visits_converted_new_visit": "0",
-                                    "revenue_new_visit": "0",
-                                    "conversion_rate_new_visit": "0%",
-                                    "nb_conversions_returning_visit": "1",
-                                    "nb_visits_converted_returning_visit": "1",
-                                    "revenue_returning_visit": "1",
-                                    "conversion_rate_returning_visit": "5%"
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_crawledpages": "0",
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_inindex": "0",
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_inlinks": "0",
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_malware": "0",
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_blocked_robots": "0",
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_errors": "0",
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_dnsfail": "0",
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_timeout": "0",
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_code_2xx": "0",
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_code_301": "0",
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_code_303": "0",
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_code_4xx": "0",
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_code_5xx": "0",
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_other_codes": "0"
                                 }
                             },
                             "application/json": {
                                 "schema": {
                                     "properties": {
-                                        "nb_conversions": {
+                                        "SearchEngineKeywordsPerformance_bing_crawlstats_crawledpages": {
                                             "type": "integer"
                                         },
-                                        "nb_visits_converted": {
+                                        "SearchEngineKeywordsPerformance_bing_crawlstats_inindex": {
                                             "type": "integer"
                                         },
-                                        "revenue": {
+                                        "SearchEngineKeywordsPerformance_bing_crawlstats_inlinks": {
                                             "type": "integer"
                                         },
-                                        "conversion_rate": {
-                                            "type": "string"
-                                        },
-                                        "nb_conversions_new_visit": {
+                                        "SearchEngineKeywordsPerformance_bing_crawlstats_malware": {
                                             "type": "integer"
                                         },
-                                        "nb_visits_converted_new_visit": {
+                                        "SearchEngineKeywordsPerformance_bing_crawlstats_blocked_robots": {
                                             "type": "integer"
                                         },
-                                        "revenue_new_visit": {
+                                        "SearchEngineKeywordsPerformance_bing_crawlstats_errors": {
                                             "type": "integer"
                                         },
-                                        "conversion_rate_new_visit": {
-                                            "type": "string"
-                                        },
-                                        "nb_conversions_returning_visit": {
+                                        "SearchEngineKeywordsPerformance_bing_crawlstats_dnsfail": {
                                             "type": "integer"
                                         },
-                                        "nb_visits_converted_returning_visit": {
+                                        "SearchEngineKeywordsPerformance_bing_crawlstats_timeout": {
                                             "type": "integer"
                                         },
-                                        "revenue_returning_visit": {
+                                        "SearchEngineKeywordsPerformance_bing_crawlstats_code_2xx": {
                                             "type": "integer"
                                         },
-                                        "conversion_rate_returning_visit": {
-                                            "type": "string"
+                                        "SearchEngineKeywordsPerformance_bing_crawlstats_code_301": {
+                                            "type": "integer"
+                                        },
+                                        "SearchEngineKeywordsPerformance_bing_crawlstats_code_303": {
+                                            "type": "integer"
+                                        },
+                                        "SearchEngineKeywordsPerformance_bing_crawlstats_code_4xx": {
+                                            "type": "integer"
+                                        },
+                                        "SearchEngineKeywordsPerformance_bing_crawlstats_code_5xx": {
+                                            "type": "integer"
+                                        },
+                                        "SearchEngineKeywordsPerformance_bing_crawlstats_other_codes": {
+                                            "type": "integer"
                                         }
                                     },
                                     "type": "object"
                                 },
                                 "example": {
-                                    "nb_conversions": 1,
-                                    "nb_visits_converted": 1,
-                                    "revenue": 1,
-                                    "conversion_rate": "5%",
-                                    "nb_conversions_new_visit": 0,
-                                    "nb_visits_converted_new_visit": 0,
-                                    "revenue_new_visit": 0,
-                                    "conversion_rate_new_visit": "0%",
-                                    "nb_conversions_returning_visit": 1,
-                                    "nb_visits_converted_returning_visit": 1,
-                                    "revenue_returning_visit": 1,
-                                    "conversion_rate_returning_visit": "5%"
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_crawledpages": 0,
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_inindex": 0,
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_inlinks": 0,
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_malware": 0,
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_blocked_robots": 0,
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_errors": 0,
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_dnsfail": 0,
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_timeout": 0,
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_code_2xx": 0,
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_code_301": 0,
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_code_303": 0,
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_code_4xx": 0,
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_code_5xx": 0,
+                                    "SearchEngineKeywordsPerformance_bing_crawlstats_other_codes": 0
                                 }
                             },
                             "application/vnd.ms-excel": {
-                                "example": "nb_conversions\tnb_visits_converted\trevenue\tconversion_rate\tnb_conversions_new_visit\tnb_visits_converted_new_visit\trevenue_new_visit\tconversion_rate_new_visit\tnb_conversions_returning_visit\tnb_visits_converted_returning_visit\trevenue_returning_visit\tconversion_rate_returning_visit\n1\t1\t1\t5%\t0\t0\t0\t0%\t1\t1\t1\t5%"
+                                "example": "SearchEngineKeywordsPerformance_bing_crawlstats_crawledpages\tSearchEngineKeywordsPerformance_bing_crawlstats_inindex\tSearchEngineKeywordsPerformance_bing_crawlstats_inlinks\tSearchEngineKeywordsPerformance_bing_crawlstats_malware\tSearchEngineKeywordsPerformance_bing_crawlstats_blocked_robots\tSearchEngineKeywordsPerformance_bing_crawlstats_errors\tSearchEngineKeywordsPerformance_bing_crawlstats_dnsfail\tSearchEngineKeywordsPerformance_bing_crawlstats_timeout\tSearchEngineKeywordsPerformance_bing_crawlstats_code_2xx\tSearchEngineKeywordsPerformance_bing_crawlstats_code_301\tSearchEngineKeywordsPerformance_bing_crawlstats_code_303\tSearchEngineKeywordsPerformance_bing_crawlstats_code_4xx\tSearchEngineKeywordsPerformance_bing_crawlstats_code_5xx\tSearchEngineKeywordsPerformance_bing_crawlstats_other_codes\n0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0"
                             }
                         }
                     },
@@ -1011,13 +879,13 @@
                 }
             }
         },
-        "/index.php?module=API&method=Goals.getDaysToConversion": {
+        "/index.php?module=API&method=SearchEngineKeywordsPerformance.getCrawlingOverviewYandex": {
             "get": {
                 "tags": [
-                    "Goals"
+                    "SearchEngineKeywordsPerformance"
                 ],
-                "description": "Gets a DataTable that maps ranges of days to the number of conversions that occurred within those ranges, for the specified site, date range, segment and goal.",
-                "operationId": "Goals.getDaysToConversion",
+                "description": "Returns crawling metrics for Yandex",
+                "operationId": "SearchEngineKeywordsPerformance.getCrawlingOverviewYandex",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
@@ -1025,16 +893,29 @@
                     {
                         "name": "idSite",
                         "in": "query",
-                        "description": "The site to select data from.",
+                        "description": "A single ID (eg, `'1'`), multiple IDs (eg, `'1,2,3'` or `array(1, 2, 3)`), or `'all'`.",
                         "required": true,
                         "schema": {
-                            "type": "integer"
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                }
+                            ]
                         }
                     },
                     {
                         "name": "period",
                         "in": "query",
-                        "description": "The period type.",
+                        "description": "'day', `'week'`, `'month'`, `'year'` or `'range'`",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1043,197 +924,83 @@
                     {
                         "name": "date",
                         "in": "query",
-                        "description": "The date type.",
+                        "description": "'YYYY-MM-DD', magic keywords (ie, 'today'; {@link Date::factory()} or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD').",
                         "required": true,
                         "schema": {
                             "type": "string"
-                        }
-                    },
-                    {
-                        "name": "segment",
-                        "in": "query",
-                        "description": "The segment.",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "idGoal",
-                        "in": "query",
-                        "description": "The id of the goal to get data for. If this is set to false, data for every goal that belongs to $idSite is returned.",
-                        "required": false,
-                        "schema": {
-                            "type": "integer"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Yandex crawling overview metrics.",
                         "content": {
                             "text/xml": {
                                 "schema": {
-                                    "properties": {
-                                        "row": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "xml": {
-                                                    "name": "row"
-                                                },
-                                                "additionalProperties": true
-                                            }
-                                        }
-                                    },
                                     "type": "object",
                                     "xml": {
                                         "name": "result"
                                     }
                                 },
                                 "example": {
-                                    "row": [
-                                        {
-                                            "label": "0 days",
-                                            "nb_conversions": "0"
-                                        },
-                                        {
-                                            "label": "1 day",
-                                            "nb_conversions": "0"
-                                        },
-                                        {
-                                            "label": "2 days",
-                                            "nb_conversions": "0"
-                                        },
-                                        {
-                                            "label": "3 days",
-                                            "nb_conversions": "0"
-                                        },
-                                        {
-                                            "label": "4 days",
-                                            "nb_conversions": "0"
-                                        },
-                                        {
-                                            "label": "5 days",
-                                            "nb_conversions": "0"
-                                        },
-                                        {
-                                            "label": "6 days",
-                                            "nb_conversions": "0"
-                                        },
-                                        {
-                                            "label": "7 days",
-                                            "nb_conversions": "0"
-                                        },
-                                        {
-                                            "label": "8-14 days",
-                                            "nb_conversions": "0"
-                                        },
-                                        {
-                                            "label": "15-30 days",
-                                            "nb_conversions": "0"
-                                        },
-                                        {
-                                            "label": "31-60 days",
-                                            "nb_conversions": "0"
-                                        },
-                                        {
-                                            "label": "61-120 days",
-                                            "nb_conversions": "0"
-                                        },
-                                        {
-                                            "label": "121-364 days",
-                                            "nb_conversions": "0"
-                                        },
-                                        {
-                                            "label": "365+ days",
-                                            "nb_conversions": "1"
-                                        }
-                                    ]
+                                    "SearchEngineKeywordsPerformance_yandex_crawlstats_crawledpages": "0",
+                                    "SearchEngineKeywordsPerformance_yandex_crawlstats_appeared": "0",
+                                    "SearchEngineKeywordsPerformance_yandex_crawlstats_removed": "0",
+                                    "SearchEngineKeywordsPerformance_yandex_crawlstats_inindex": "0",
+                                    "SearchEngineKeywordsPerformance_yandex_crawlstats_code_2xx": "0",
+                                    "SearchEngineKeywordsPerformance_yandex_crawlstats_code_3xx": "0",
+                                    "SearchEngineKeywordsPerformance_yandex_crawlstats_code_4xx": "0",
+                                    "SearchEngineKeywordsPerformance_yandex_crawlstats_code_5xx": "0",
+                                    "SearchEngineKeywordsPerformance_yandex_crawlstats_errors": "0"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "properties": {
-                                            "": {
-                                                "properties": {
-                                                    "label": {
-                                                        "type": "string"
-                                                    },
-                                                    "nb_conversions": {
-                                                        "type": "integer"
-                                                    }
-                                                },
-                                                "type": "object"
-                                            }
+                                    "properties": {
+                                        "SearchEngineKeywordsPerformance_yandex_crawlstats_crawledpages": {
+                                            "type": "integer"
                                         },
-                                        "type": "object",
-                                        "additionalProperties": true
-                                    }
+                                        "SearchEngineKeywordsPerformance_yandex_crawlstats_appeared": {
+                                            "type": "integer"
+                                        },
+                                        "SearchEngineKeywordsPerformance_yandex_crawlstats_removed": {
+                                            "type": "integer"
+                                        },
+                                        "SearchEngineKeywordsPerformance_yandex_crawlstats_inindex": {
+                                            "type": "integer"
+                                        },
+                                        "SearchEngineKeywordsPerformance_yandex_crawlstats_code_2xx": {
+                                            "type": "integer"
+                                        },
+                                        "SearchEngineKeywordsPerformance_yandex_crawlstats_code_3xx": {
+                                            "type": "integer"
+                                        },
+                                        "SearchEngineKeywordsPerformance_yandex_crawlstats_code_4xx": {
+                                            "type": "integer"
+                                        },
+                                        "SearchEngineKeywordsPerformance_yandex_crawlstats_code_5xx": {
+                                            "type": "integer"
+                                        },
+                                        "SearchEngineKeywordsPerformance_yandex_crawlstats_errors": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
                                 },
-                                "example": [
-                                    {
-                                        "label": "0 days",
-                                        "nb_conversions": 0
-                                    },
-                                    {
-                                        "label": "1 day",
-                                        "nb_conversions": 0
-                                    },
-                                    {
-                                        "label": "2 days",
-                                        "nb_conversions": 0
-                                    },
-                                    {
-                                        "label": "3 days",
-                                        "nb_conversions": 0
-                                    },
-                                    {
-                                        "label": "4 days",
-                                        "nb_conversions": 0
-                                    },
-                                    {
-                                        "label": "5 days",
-                                        "nb_conversions": 0
-                                    },
-                                    {
-                                        "label": "6 days",
-                                        "nb_conversions": 0
-                                    },
-                                    {
-                                        "label": "7 days",
-                                        "nb_conversions": 0
-                                    },
-                                    {
-                                        "label": "8-14 days",
-                                        "nb_conversions": 0
-                                    },
-                                    {
-                                        "label": "15-30 days",
-                                        "nb_conversions": 0
-                                    },
-                                    {
-                                        "label": "31-60 days",
-                                        "nb_conversions": 0
-                                    },
-                                    {
-                                        "label": "61-120 days",
-                                        "nb_conversions": 0
-                                    },
-                                    {
-                                        "label": "121-364 days",
-                                        "nb_conversions": 0
-                                    },
-                                    {
-                                        "label": "365+ days",
-                                        "nb_conversions": 1
-                                    }
-                                ]
+                                "example": {
+                                    "SearchEngineKeywordsPerformance_yandex_crawlstats_crawledpages": 0,
+                                    "SearchEngineKeywordsPerformance_yandex_crawlstats_appeared": 0,
+                                    "SearchEngineKeywordsPerformance_yandex_crawlstats_removed": 0,
+                                    "SearchEngineKeywordsPerformance_yandex_crawlstats_inindex": 0,
+                                    "SearchEngineKeywordsPerformance_yandex_crawlstats_code_2xx": 0,
+                                    "SearchEngineKeywordsPerformance_yandex_crawlstats_code_3xx": 0,
+                                    "SearchEngineKeywordsPerformance_yandex_crawlstats_code_4xx": 0,
+                                    "SearchEngineKeywordsPerformance_yandex_crawlstats_code_5xx": 0,
+                                    "SearchEngineKeywordsPerformance_yandex_crawlstats_errors": 0
+                                }
                             },
                             "application/vnd.ms-excel": {
-                                "example": "label\tnb_conversions\n0 days\t0\n1 day\t0\n2 days\t0\n3 days\t0\n4 days\t0\n5 days\t0\n6 days\t0\n7 days\t0\n8-14 days\t0\n15-30 days\t0\n31-60 days\t0\n61-120 days\t0\n121-364 days\t0\n365+ days\t1"
+                                "example": "SearchEngineKeywordsPerformance_yandex_crawlstats_crawledpages\tSearchEngineKeywordsPerformance_yandex_crawlstats_appeared\tSearchEngineKeywordsPerformance_yandex_crawlstats_removed\tSearchEngineKeywordsPerformance_yandex_crawlstats_inindex\tSearchEngineKeywordsPerformance_yandex_crawlstats_code_2xx\tSearchEngineKeywordsPerformance_yandex_crawlstats_code_3xx\tSearchEngineKeywordsPerformance_yandex_crawlstats_code_4xx\tSearchEngineKeywordsPerformance_yandex_crawlstats_code_5xx\tSearchEngineKeywordsPerformance_yandex_crawlstats_errors\n0\t0\t0\t0\t0\t0\t0\t0\t0"
                             }
                         }
                     },
@@ -1258,13 +1025,13 @@
                 }
             }
         },
-        "/index.php?module=API&method=Goals.getVisitsUntilConversion": {
+        "/index.php?module=API&method=SearchEngineKeywordsPerformance.getCrawlingErrorExamplesBing": {
             "get": {
                 "tags": [
-                    "Goals"
+                    "SearchEngineKeywordsPerformance"
                 ],
-                "description": "Gets a DataTable that maps ranges of visit counts to the number of conversions that occurred on those visits for the specified site, date range, segment and goal.",
-                "operationId": "Goals.getVisitsUntilConversion",
+                "description": "Returns list of pages that had an error while crawling for Bing",
+                "operationId": "SearchEngineKeywordsPerformance.getCrawlingErrorExamplesBing",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
@@ -1272,52 +1039,23 @@
                     {
                         "name": "idSite",
                         "in": "query",
-                        "description": "The site to select data from.",
+                        "description": "Site ID to fetch crawl error examples for.",
                         "required": true,
                         "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "period",
-                        "in": "query",
-                        "description": "The period type.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "date",
-                        "in": "query",
-                        "description": "The date type.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "segment",
-                        "in": "query",
-                        "description": "The segment.",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "idGoal",
-                        "in": "query",
-                        "description": "The id of the goal to get data for. If this is set to false, data for every goal that belongs to $idSite is returned.",
-                        "required": false,
-                        "schema": {
-                            "type": "integer"
+                            "oneOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "string"
+                                }
+                            ]
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Crawl error example rows, with URL metadata.",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -1341,56 +1079,95 @@
                                 "example": {
                                     "row": [
                                         {
-                                            "label": "1 visit",
-                                            "nb_conversions": "0"
+                                            "label": "wp-includes\\/js\\/tinymce",
+                                            "category": "Code301",
+                                            "inLinks": "0",
+                                            "responseCode": "301",
+                                            "url": "https:\\/\\/divezone.net\\/wp-includes\\/js\\/tinymce"
                                         },
                                         {
-                                            "label": "2 visits",
-                                            "nb_conversions": "0"
+                                            "label": "wp-includes\\/js\\/jquery\\/ui\\/widget.min.js",
+                                            "category": "Code4xx",
+                                            "inLinks": "0",
+                                            "responseCode": "404",
+                                            "url": "https:\\/\\/divezone.net\\/wp-includes\\/js\\/jquery\\/ui\\/widget.min.js"
                                         },
                                         {
-                                            "label": "3 visits",
-                                            "nb_conversions": "0"
+                                            "label": "wp-content\\/uploads\\/template-dive-sites-guest-divezone.xls",
+                                            "category": "Code301",
+                                            "inLinks": "0",
+                                            "responseCode": "301",
+                                            "url": "http:\\/\\/divezone.net\\/wp-content\\/uploads\\/template-dive-sites-guest-divezone.xls"
                                         },
                                         {
-                                            "label": "4 visits",
-                                            "nb_conversions": "0"
+                                            "label": "wp-content\\/uploads\\/guidelines-guest-review-divezone.doc",
+                                            "category": "Code301",
+                                            "inLinks": "0",
+                                            "responseCode": "301",
+                                            "url": "http:\\/\\/divezone.net\\/wp-content\\/uploads\\/guidelines-guest-review-divezone.doc"
                                         },
                                         {
-                                            "label": "5 visits",
-                                            "nb_conversions": "0"
+                                            "label": "wp-content\\/uploads\\/2012\\/07\\/maldives-map",
+                                            "category": "Code301",
+                                            "inLinks": "0",
+                                            "responseCode": "301",
+                                            "url": "http:\\/\\/divezone.net\\/wp-content\\/uploads\\/2012\\/07\\/maldives-map"
                                         },
                                         {
-                                            "label": "6 visits",
-                                            "nb_conversions": "0"
+                                            "label": "wp-content\\/uploads\\/2012\\/07\\/maldives-map",
+                                            "category": "Code301",
+                                            "inLinks": "0",
+                                            "responseCode": "301",
+                                            "url": "https:\\/\\/divezone.net\\/wp-content\\/uploads\\/2012\\/07\\/maldives-map"
                                         },
                                         {
-                                            "label": "7 visits",
-                                            "nb_conversions": "0"
+                                            "label": "wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11643.pdf",
+                                            "category": "BlockedByRobotsTxt",
+                                            "inLinks": "0",
+                                            "responseCode": "0",
+                                            "url": "https:\\/\\/divezone.net\\/wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11643.pdf"
                                         },
                                         {
-                                            "label": "8 visits",
-                                            "nb_conversions": "0"
+                                            "label": "wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11630.doc",
+                                            "category": "BlockedByRobotsTxt",
+                                            "inLinks": "0",
+                                            "responseCode": "0",
+                                            "url": "https:\\/\\/divezone.net\\/wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11630.doc"
                                         },
                                         {
-                                            "label": "9-14 visits",
-                                            "nb_conversions": "0"
+                                            "label": "wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11612.pdf",
+                                            "category": "BlockedByRobotsTxt",
+                                            "inLinks": "0",
+                                            "responseCode": "0",
+                                            "url": "https:\\/\\/divezone.net\\/wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11612.pdf"
                                         },
                                         {
-                                            "label": "15-25 visits",
-                                            "nb_conversions": "0"
+                                            "label": "wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11586.pdf",
+                                            "category": "BlockedByRobotsTxt",
+                                            "inLinks": "0",
+                                            "responseCode": "0",
+                                            "url": "https:\\/\\/divezone.net\\/wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11586.pdf"
                                         },
                                         {
-                                            "label": "26-50 visits",
-                                            "nb_conversions": "0"
+                                            "label": "wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11583.pdf",
+                                            "category": "BlockedByRobotsTxt",
+                                            "inLinks": "0",
+                                            "responseCode": "0",
+                                            "url": "https:\\/\\/divezone.net\\/wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11583.pdf"
                                         },
                                         {
-                                            "label": "51-100 visits",
-                                            "nb_conversions": "0"
+                                            "label": "wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11577.pdf",
+                                            "category": "BlockedByRobotsTxt",
+                                            "inLinks": "0",
+                                            "responseCode": "0",
+                                            "url": "https:\\/\\/divezone.net\\/wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11577.pdf"
                                         },
                                         {
-                                            "label": "101+ visits",
-                                            "nb_conversions": "1"
+                                            "label": "wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11575.docx",
+                                            "category": "BlockedByRobotsTxt",
+                                            "inLinks": "0",
+                                            "responseCode": "0",
+                                            "url": "https:\\/\\/divezone.net\\/wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11575.docx"
                                         }
                                     ]
                                 }
@@ -1405,8 +1182,17 @@
                                                     "label": {
                                                         "type": "string"
                                                     },
-                                                    "nb_conversions": {
+                                                    "category": {
+                                                        "type": "string"
+                                                    },
+                                                    "inLinks": {
                                                         "type": "integer"
+                                                    },
+                                                    "responseCode": {
+                                                        "type": "integer"
+                                                    },
+                                                    "url": {
+                                                        "type": "string"
                                                     }
                                                 },
                                                 "type": "object"
@@ -1418,61 +1204,100 @@
                                 },
                                 "example": [
                                     {
-                                        "label": "1 visit",
-                                        "nb_conversions": 0
+                                        "label": "wp-includes\\/js\\/tinymce",
+                                        "category": "Code301",
+                                        "inLinks": 0,
+                                        "responseCode": 301,
+                                        "url": "https:\\/\\/divezone.net\\/wp-includes\\/js\\/tinymce"
                                     },
                                     {
-                                        "label": "2 visits",
-                                        "nb_conversions": 0
+                                        "label": "wp-includes\\/js\\/jquery\\/ui\\/widget.min.js",
+                                        "category": "Code4xx",
+                                        "inLinks": 0,
+                                        "responseCode": 404,
+                                        "url": "https:\\/\\/divezone.net\\/wp-includes\\/js\\/jquery\\/ui\\/widget.min.js"
                                     },
                                     {
-                                        "label": "3 visits",
-                                        "nb_conversions": 0
+                                        "label": "wp-content\\/uploads\\/template-dive-sites-guest-divezone.xls",
+                                        "category": "Code301",
+                                        "inLinks": 0,
+                                        "responseCode": 301,
+                                        "url": "http:\\/\\/divezone.net\\/wp-content\\/uploads\\/template-dive-sites-guest-divezone.xls"
                                     },
                                     {
-                                        "label": "4 visits",
-                                        "nb_conversions": 0
+                                        "label": "wp-content\\/uploads\\/guidelines-guest-review-divezone.doc",
+                                        "category": "Code301",
+                                        "inLinks": 0,
+                                        "responseCode": 301,
+                                        "url": "http:\\/\\/divezone.net\\/wp-content\\/uploads\\/guidelines-guest-review-divezone.doc"
                                     },
                                     {
-                                        "label": "5 visits",
-                                        "nb_conversions": 0
+                                        "label": "wp-content\\/uploads\\/2012\\/07\\/maldives-map",
+                                        "category": "Code301",
+                                        "inLinks": 0,
+                                        "responseCode": 301,
+                                        "url": "http:\\/\\/divezone.net\\/wp-content\\/uploads\\/2012\\/07\\/maldives-map"
                                     },
                                     {
-                                        "label": "6 visits",
-                                        "nb_conversions": 0
+                                        "label": "wp-content\\/uploads\\/2012\\/07\\/maldives-map",
+                                        "category": "Code301",
+                                        "inLinks": 0,
+                                        "responseCode": 301,
+                                        "url": "https:\\/\\/divezone.net\\/wp-content\\/uploads\\/2012\\/07\\/maldives-map"
                                     },
                                     {
-                                        "label": "7 visits",
-                                        "nb_conversions": 0
+                                        "label": "wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11643.pdf",
+                                        "category": "BlockedByRobotsTxt",
+                                        "inLinks": 0,
+                                        "responseCode": 0,
+                                        "url": "https:\\/\\/divezone.net\\/wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11643.pdf"
                                     },
                                     {
-                                        "label": "8 visits",
-                                        "nb_conversions": 0
+                                        "label": "wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11630.doc",
+                                        "category": "BlockedByRobotsTxt",
+                                        "inLinks": 0,
+                                        "responseCode": 0,
+                                        "url": "https:\\/\\/divezone.net\\/wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11630.doc"
                                     },
                                     {
-                                        "label": "9-14 visits",
-                                        "nb_conversions": 0
+                                        "label": "wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11612.pdf",
+                                        "category": "BlockedByRobotsTxt",
+                                        "inLinks": 0,
+                                        "responseCode": 0,
+                                        "url": "https:\\/\\/divezone.net\\/wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11612.pdf"
                                     },
                                     {
-                                        "label": "15-25 visits",
-                                        "nb_conversions": 0
+                                        "label": "wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11586.pdf",
+                                        "category": "BlockedByRobotsTxt",
+                                        "inLinks": 0,
+                                        "responseCode": 0,
+                                        "url": "https:\\/\\/divezone.net\\/wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11586.pdf"
                                     },
                                     {
-                                        "label": "26-50 visits",
-                                        "nb_conversions": 0
+                                        "label": "wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11583.pdf",
+                                        "category": "BlockedByRobotsTxt",
+                                        "inLinks": 0,
+                                        "responseCode": 0,
+                                        "url": "https:\\/\\/divezone.net\\/wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11583.pdf"
                                     },
                                     {
-                                        "label": "51-100 visits",
-                                        "nb_conversions": 0
+                                        "label": "wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11577.pdf",
+                                        "category": "BlockedByRobotsTxt",
+                                        "inLinks": 0,
+                                        "responseCode": 0,
+                                        "url": "https:\\/\\/divezone.net\\/wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11577.pdf"
                                     },
                                     {
-                                        "label": "101+ visits",
-                                        "nb_conversions": 1
+                                        "label": "wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11575.docx",
+                                        "category": "BlockedByRobotsTxt",
+                                        "inLinks": 0,
+                                        "responseCode": 0,
+                                        "url": "https:\\/\\/divezone.net\\/wp-content\\/plugins\\/wpjobboard\\/environment\\/resumes\\/file_11575.docx"
                                     }
                                 ]
                             },
                             "application/vnd.ms-excel": {
-                                "example": "label\tnb_conversions\n1 visit\t0\n2 visits\t0\n3 visits\t0\n4 visits\t0\n5 visits\t0\n6 visits\t0\n7 visits\t0\n8 visits\t0\n9-14 visits\t0\n15-25 visits\t0\n26-50 visits\t0\n51-100 visits\t0\n101+ visits\t1"
+                                "example": "label\tcategory\tinLinks\tresponseCode\tmetadata_url\nwp-includes/js/tinymce\tCode301\t0\t301\thttps://divezone.net/wp-includes/js/tinymce\nwp-includes/js/jquery/ui/widget.min.js\tCode4xx\t0\t404\thttps://divezone.net/wp-includes/js/jquery/ui/widget.min.js\nwp-content/uploads/template-dive-sites-guest-divezone.xls\tCode301\t0\t301\thttp://divezone.net/wp-content/uploads/template-dive-sites-guest-divezone.xls\nwp-content/uploads/guidelines-guest-review-divezone.doc\tCode301\t0\t301\thttp://divezone.net/wp-content/uploads/guidelines-guest-review-divezone.doc\nwp-content/uploads/2012/07/maldives-map\tCode301\t0\t301\thttp://divezone.net/wp-content/uploads/2012/07/maldives-map\nwp-content/uploads/2012/07/maldives-map\tCode301\t0\t301\thttps://divezone.net/wp-content/uploads/2012/07/maldives-map\nwp-content/plugins/wpjobboard/environment/resumes/file_11643.pdf\tBlockedByRobotsTxt\t0\t0\thttps://divezone.net/wp-content/plugins/wpjobboard/environment/resumes/file_11643.pdf\nwp-content/plugins/wpjobboard/environment/resumes/file_11630.doc\tBlockedByRobotsTxt\t0\t0\thttps://divezone.net/wp-content/plugins/wpjobboard/environment/resumes/file_11630.doc\nwp-content/plugins/wpjobboard/environment/resumes/file_11612.pdf\tBlockedByRobotsTxt\t0\t0\thttps://divezone.net/wp-content/plugins/wpjobboard/environment/resumes/file_11612.pdf\nwp-content/plugins/wpjobboard/environment/resumes/file_11586.pdf\tBlockedByRobotsTxt\t0\t0\thttps://divezone.net/wp-content/plugins/wpjobboard/environment/resumes/file_11586.pdf\nwp-content/plugins/wpjobboard/environment/resumes/file_11583.pdf\tBlockedByRobotsTxt\t0\t0\thttps://divezone.net/wp-content/plugins/wpjobboard/environment/resumes/file_11583.pdf\nwp-content/plugins/wpjobboard/environment/resumes/file_11577.pdf\tBlockedByRobotsTxt\t0\t0\thttps://divezone.net/wp-content/plugins/wpjobboard/environment/resumes/file_11577.pdf\nwp-content/plugins/wpjobboard/environment/resumes/file_11575.docx\tBlockedByRobotsTxt\t0\t0\thttps://divezone.net/wp-content/plugins/wpjobboard/environment/resumes/file_11575.docx\nwp-content/plugins/wpjobboard/environment/resumes/file_11561.pdf\tBlockedByRobotsTxt\t0\t0\thttps://divezone.net/wp-content/plugins/wpjobboard/environment/resumes/file_11561.pdf\nwp-content/plugins/wpjobboard/environment/resumes/file_11484.pdf\tBlockedByRobotsTxt\t0\t0\thttps://divezone.net/wp-content/plugins/wpjobboard/environment/resumes/file_11484.pdf\nwp-content/plugins/wpjobboard/environment/resumes/file_11479.pdf\tBlockedByRobotsTxt\t0\t0\thttps://divezone.net/wp-content/plugins/wpjobboard/environment/resumes/file_11479.pdf\nwp-content/plugins/wpjobboard/environment/resumes/file_11435.pdf\tBlockedByRobotsTxt\t0\t0\thttps://divezone.net/wp-content/plugins/wpjobboard/environment/resumes/file_11435.pdf\nwp-content/plugins/wpjobboard/environment/resumes/file_10722.pdf\tBlockedByRobotsTxt\t0\t0\thttps://divezone.net/wp-content/plugins/wpjobboard/environment/resumes/file_10722.pdf"
                             }
                         }
                     },
@@ -2312,8 +2137,8 @@
     ],
     "tags": [
         {
-            "name": "Goals",
-            "description": "Goals API lets you Manage existing goals, via \"updateGoal\" and \"deleteGoal\", create new Goals via \"addGoal\", or list existing Goals for one or several websites via \"getGoals\"  If you are <a href='https://matomo.org/docs/ecommerce-analytics/' target='_blank'>tracking Ecommerce orders and products</a> on your site, the functions \"getItemsSku\", \"getItemsName\" and \"getItemsCategory\" will return the list of products purchased on your site, either grouped by Product SKU, Product Name or Product Category. For each name, SKU or category, the following metrics are returned: Total revenue, Total quantity, average price, average quantity, number of orders (or abandoned carts) containing this product, number of visits on the Product page, Conversion rate.  By default, these functions return the 'Products purchased'. These functions also accept an optional parameter &abandonedCarts=1. If the parameter is set, it will instead return the metrics for products that were left in an abandoned cart therefore not purchased.  The API also lets you request overall Goal metrics via the method \"get\": Conversions, Visits with at least one conversion, Conversion rate and Revenue. If you wish to request specific metrics about Ecommerce goals, you can set the parameter &idGoal=ecommerceAbandonedCart to get metrics about abandoned carts (including Lost revenue, and number of items left in the cart) or &idGoal=ecommerceOrder to get metrics about Ecommerce orders (number of orders, visits with an order, subtotal, tax, shipping, discount, revenue, items ordered)  See also the documentation about <a href='https://matomo.org/docs/tracking-goals-web-analytics/' rel='noreferrer' target='_blank'>Tracking Goals</a> in Matomo."
+            "name": "SearchEngineKeywordsPerformance",
+            "description": "The <a href='https://plugins.matomo.org/SearchEngineKeywordsPerformance' target='_blank'>SearchEngineKeywordsPerformance</a> API lets you download all your SEO search keywords from Google, Bing & Yahoo and Yandex, as well as getting a detailed overview of how search robots crawl your websites and any error they may encounter. <br/><br/> 1) download all your search keywords as they were searched on Google, Bing & Yahoo and Yandex. This includes Google Images, Google Videos and Google News. This lets you view all keywords normally hidden from view behind \"keyword not defined\". With this plugin you can view them all! <br/><br/> 2) download all crawling overview stats and metrics from Bring and Yahoo and Google. Many metrics are available such as: Crawled pages, Crawl errors, Connection timeouts, HTTP-Status Code 301 (Permanently moved), HTTP-Status Code 400-499 (Request errors), All other HTTP-Status Codes, Total pages in index, Robots.txt exclusion, DNS failures, HTTP-Status Code 200-299, HTTP-Status Code 301 (Temporarily moved), HTTP-Status Code 500-599 (Internal server errors), Malware infected sites, Total inbound links.  \\Plugins\\SearchEngineKeywordsPerformance"
         }
     ],
     "externalDocs": {

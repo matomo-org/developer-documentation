@@ -1,0 +1,3819 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Matomo Reporting API for Referrers plugin",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://5x-dev.ddev.site/",
+            "description": "Current Matomo instance"
+        },
+        {
+            "url": "https://demo.matomo.cloud/",
+            "description": "Matomo demo server"
+        }
+    ],
+    "paths": {
+        "/index.php?module=API&method=Referrers.get": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "",
+                "operationId": "Referrers.get",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    },
+                    {
+                        "name": "columns",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "Referrers_visitorsFromSearchEngines": "12",
+                                    "Referrers_visitorsFromSocialNetworks": "3",
+                                    "Referrers_visitorsFromAIAssistants": "0",
+                                    "Referrers_visitorsFromDirectEntry": "3",
+                                    "Referrers_visitorsFromWebsites": "2",
+                                    "Referrers_visitorsFromCampaigns": "0",
+                                    "Referrers_distinctSearchEngines": "1",
+                                    "Referrers_distinctSocialNetworks": "3",
+                                    "Referrers_distinctAIAssistants": "0",
+                                    "Referrers_distinctKeywords": "1",
+                                    "Referrers_distinctWebsites": "2",
+                                    "Referrers_distinctWebsitesUrls": "2",
+                                    "Referrers_distinctCampaigns": "0",
+                                    "Referrers_visitorsFromDirectEntry_percent": "15%",
+                                    "Referrers_visitorsFromSearchEngines_percent": "60%",
+                                    "Referrers_visitorsFromAIAssistants_percent": "0%",
+                                    "Referrers_visitorsFromCampaigns_percent": "0%",
+                                    "Referrers_visitorsFromSocialNetworks_percent": "15%",
+                                    "Referrers_visitorsFromWebsites_percent": "10%"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "Referrers_visitorsFromSearchEngines": {
+                                            "type": "integer"
+                                        },
+                                        "Referrers_visitorsFromSocialNetworks": {
+                                            "type": "integer"
+                                        },
+                                        "Referrers_visitorsFromAIAssistants": {
+                                            "type": "integer"
+                                        },
+                                        "Referrers_visitorsFromDirectEntry": {
+                                            "type": "integer"
+                                        },
+                                        "Referrers_visitorsFromWebsites": {
+                                            "type": "integer"
+                                        },
+                                        "Referrers_visitorsFromCampaigns": {
+                                            "type": "integer"
+                                        },
+                                        "Referrers_distinctSearchEngines": {
+                                            "type": "integer"
+                                        },
+                                        "Referrers_distinctSocialNetworks": {
+                                            "type": "integer"
+                                        },
+                                        "Referrers_distinctAIAssistants": {
+                                            "type": "integer"
+                                        },
+                                        "Referrers_distinctKeywords": {
+                                            "type": "integer"
+                                        },
+                                        "Referrers_distinctWebsites": {
+                                            "type": "integer"
+                                        },
+                                        "Referrers_distinctWebsitesUrls": {
+                                            "type": "integer"
+                                        },
+                                        "Referrers_distinctCampaigns": {
+                                            "type": "integer"
+                                        },
+                                        "Referrers_visitorsFromDirectEntry_percent": {
+                                            "type": "string"
+                                        },
+                                        "Referrers_visitorsFromSearchEngines_percent": {
+                                            "type": "string"
+                                        },
+                                        "Referrers_visitorsFromAIAssistants_percent": {
+                                            "type": "string"
+                                        },
+                                        "Referrers_visitorsFromCampaigns_percent": {
+                                            "type": "string"
+                                        },
+                                        "Referrers_visitorsFromSocialNetworks_percent": {
+                                            "type": "string"
+                                        },
+                                        "Referrers_visitorsFromWebsites_percent": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "Referrers_visitorsFromSearchEngines": 12,
+                                    "Referrers_visitorsFromSocialNetworks": 3,
+                                    "Referrers_visitorsFromAIAssistants": 0,
+                                    "Referrers_visitorsFromDirectEntry": 3,
+                                    "Referrers_visitorsFromWebsites": 2,
+                                    "Referrers_visitorsFromCampaigns": 0,
+                                    "Referrers_distinctSearchEngines": 1,
+                                    "Referrers_distinctSocialNetworks": 3,
+                                    "Referrers_distinctAIAssistants": 0,
+                                    "Referrers_distinctKeywords": 1,
+                                    "Referrers_distinctWebsites": 2,
+                                    "Referrers_distinctWebsitesUrls": 2,
+                                    "Referrers_distinctCampaigns": 0,
+                                    "Referrers_visitorsFromDirectEntry_percent": "15%",
+                                    "Referrers_visitorsFromSearchEngines_percent": "60%",
+                                    "Referrers_visitorsFromAIAssistants_percent": "0%",
+                                    "Referrers_visitorsFromCampaigns_percent": "0%",
+                                    "Referrers_visitorsFromSocialNetworks_percent": "15%",
+                                    "Referrers_visitorsFromWebsites_percent": "10%"
+                                }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "Referrers_visitorsFromSearchEngines\tReferrers_visitorsFromSocialNetworks\tReferrers_visitorsFromAIAssistants\tReferrers_visitorsFromDirectEntry\tReferrers_visitorsFromWebsites\tReferrers_visitorsFromCampaigns\tReferrers_distinctSearchEngines\tReferrers_distinctSocialNetworks\tReferrers_distinctAIAssistants\tReferrers_distinctKeywords\tReferrers_distinctWebsites\tReferrers_distinctWebsitesUrls\tReferrers_distinctCampaigns\tReferrers_visitorsFromDirectEntry_percent\tReferrers_visitorsFromSearchEngines_percent\tReferrers_visitorsFromAIAssistants_percent\tReferrers_visitorsFromCampaigns_percent\tReferrers_visitorsFromSocialNetworks_percent\tReferrers_visitorsFromWebsites_percent\n12\t3\t0\t3\t2\t0\t1\t3\t0\t1\t2\t2\t0\t15%\t60%\t0%\t0%\t15%\t10%"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getReferrerType": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "Returns a report describing visit information for each possible referrer type. The result is a datatable whose subtables are the reports for each parent row's referrer type.",
+                "operationId": "Referrers.getReferrerType",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idSite",
+                        "in": "query",
+                        "description": "The site ID.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": "The period to get data for, either 'day', 'week', 'month', 'year', or 'range'.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "description": "The date of the period.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "segment",
+                        "in": "query",
+                        "description": "The segment to use.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    },
+                    {
+                        "name": "typeReferrer",
+                        "in": "query",
+                        "description": "(deprecated) If you want to get data only for a specific referrer type, supply a type for this parameter.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "idSubtable",
+                        "in": "query",
+                        "description": "For this report this value is a referrer type ID and not an actual subtable ID. The result when using this parameter will be the specific report for the given referrer type.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "expanded",
+                        "in": "query",
+                        "description": "Whether to get report w/ subtables loaded or not.",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    },
+                    {
+                        "name": "_setReferrerTypeLabel",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": true
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "goals": {
+                                                        "properties": {
+                                                            "row": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "object",
+                                                                    "xml": {
+                                                                        "name": "row"
+                                                                    },
+                                                                    "additionalProperties": true
+                                                                }
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    }
+                                                },
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "label": "Search Engines",
+                                            "nb_uniq_visitors": "12",
+                                            "nb_visits": "12",
+                                            "nb_actions": "33",
+                                            "nb_users": "0",
+                                            "max_actions": "9",
+                                            "sum_visit_length": "440",
+                                            "bounce_count": "6",
+                                            "nb_visits_converted": "1",
+                                            "goals": {
+                                                "row": {
+                                                    "nb_conversions": "1",
+                                                    "nb_visits_converted": "1",
+                                                    "revenue": "1",
+                                                    "idgoal": "7"
+                                                }
+                                            },
+                                            "nb_conversions": "1",
+                                            "revenue": "1",
+                                            "segment": "referrerType==search",
+                                            "referrer_type": "2"
+                                        },
+                                        {
+                                            "label": "Direct Entry",
+                                            "nb_uniq_visitors": "3",
+                                            "nb_visits": "3",
+                                            "nb_actions": "3",
+                                            "nb_users": "0",
+                                            "max_actions": "1",
+                                            "sum_visit_length": "0",
+                                            "bounce_count": "3",
+                                            "nb_visits_converted": "0",
+                                            "segment": "referrerType==direct",
+                                            "referrer_type": "1"
+                                        },
+                                        {
+                                            "label": "Social Networks",
+                                            "nb_uniq_visitors": "3",
+                                            "nb_visits": "3",
+                                            "nb_actions": "12",
+                                            "nb_users": "0",
+                                            "max_actions": "5",
+                                            "sum_visit_length": "228",
+                                            "bounce_count": "0",
+                                            "nb_visits_converted": "0",
+                                            "goals": {
+                                                "row": {
+                                                    "nb_conversions": "2",
+                                                    "nb_visits_converted": "2",
+                                                    "revenue": "143.95",
+                                                    "items": "2",
+                                                    "idgoal": "ecommerceAbandonedCart"
+                                                }
+                                            },
+                                            "nb_conversions": "0",
+                                            "revenue": "0",
+                                            "segment": "referrerType==social",
+                                            "referrer_type": "7"
+                                        },
+                                        {
+                                            "label": "Websites",
+                                            "nb_uniq_visitors": "2",
+                                            "nb_visits": "2",
+                                            "nb_actions": "8",
+                                            "nb_users": "0",
+                                            "max_actions": "7",
+                                            "sum_visit_length": "311",
+                                            "bounce_count": "1",
+                                            "nb_visits_converted": "0",
+                                            "segment": "referrerType==website",
+                                            "referrer_type": "3"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_uniq_visitors": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_visits": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_actions": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_users": {
+                                                        "type": "integer"
+                                                    },
+                                                    "max_actions": {
+                                                        "type": "integer"
+                                                    },
+                                                    "sum_visit_length": {
+                                                        "type": "integer"
+                                                    },
+                                                    "bounce_count": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_visits_converted": {
+                                                        "type": "integer"
+                                                    },
+                                                    "goals": {
+                                                        "properties": {
+                                                            "idgoal=7": {
+                                                                "properties": {
+                                                                    "nb_conversions": {
+                                                                        "type": "integer"
+                                                                    },
+                                                                    "nb_visits_converted": {
+                                                                        "type": "integer"
+                                                                    },
+                                                                    "revenue": {
+                                                                        "type": "integer"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "nb_conversions": {
+                                                        "type": "integer"
+                                                    },
+                                                    "revenue": {
+                                                        "type": "integer"
+                                                    },
+                                                    "segment": {
+                                                        "type": "string"
+                                                    },
+                                                    "referrer_type": {
+                                                        "type": "integer"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "label": "Search Engines",
+                                        "nb_uniq_visitors": 12,
+                                        "nb_visits": 12,
+                                        "nb_actions": 33,
+                                        "nb_users": 0,
+                                        "max_actions": 9,
+                                        "sum_visit_length": 440,
+                                        "bounce_count": 6,
+                                        "nb_visits_converted": 1,
+                                        "goals": {
+                                            "idgoal=7": {
+                                                "nb_conversions": 1,
+                                                "nb_visits_converted": 1,
+                                                "revenue": 1
+                                            }
+                                        },
+                                        "nb_conversions": 1,
+                                        "revenue": 1,
+                                        "segment": "referrerType==search",
+                                        "referrer_type": 2
+                                    },
+                                    {
+                                        "label": "Direct Entry",
+                                        "nb_uniq_visitors": 3,
+                                        "nb_visits": 3,
+                                        "nb_actions": 3,
+                                        "nb_users": 0,
+                                        "max_actions": 1,
+                                        "sum_visit_length": 0,
+                                        "bounce_count": 3,
+                                        "nb_visits_converted": 0,
+                                        "segment": "referrerType==direct",
+                                        "referrer_type": 1
+                                    },
+                                    {
+                                        "label": "Social Networks",
+                                        "nb_uniq_visitors": 3,
+                                        "nb_visits": 3,
+                                        "nb_actions": 12,
+                                        "nb_users": 0,
+                                        "max_actions": 5,
+                                        "sum_visit_length": 228,
+                                        "bounce_count": 0,
+                                        "nb_visits_converted": 0,
+                                        "goals": {
+                                            "idgoal=ecommerceAbandonedCart": {
+                                                "nb_conversions": 2,
+                                                "nb_visits_converted": 2,
+                                                "revenue": 143.95,
+                                                "items": 2
+                                            }
+                                        },
+                                        "nb_conversions": 0,
+                                        "revenue": 0,
+                                        "segment": "referrerType==social",
+                                        "referrer_type": 7
+                                    },
+                                    {
+                                        "label": "Websites",
+                                        "nb_uniq_visitors": 2,
+                                        "nb_visits": 2,
+                                        "nb_actions": 8,
+                                        "nb_users": 0,
+                                        "max_actions": 7,
+                                        "sum_visit_length": 311,
+                                        "bounce_count": 1,
+                                        "nb_visits_converted": 0,
+                                        "segment": "referrerType==website",
+                                        "referrer_type": 3
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_uniq_visitors\tnb_visits\tnb_actions\tnb_users\tmax_actions\tsum_visit_length\tbounce_count\tnb_visits_converted\tgoals_idgoal=7_nb_conversions\tgoals_idgoal=7_nb_visits_converted\tgoals_idgoal=7_revenue\tnb_conversions\trevenue\tmetadata_segment\tmetadata_referrer_type\tgoals_idgoal=ecommerceAbandonedCart_nb_conversions\tgoals_idgoal=ecommerceAbandonedCart_nb_visits_converted\tgoals_idgoal=ecommerceAbandonedCart_revenue\tgoals_idgoal=ecommerceAbandonedCart_items\nSearch Engines\t12\t12\t33\t0\t9\t440\t6\t1\t1\t1\t1\t1\t1\treferrerType==search\t2\t\t\t\t\nDirect Entry\t3\t3\t3\t0\t1\t0\t3\t0\t\t\t\t\t\treferrerType==direct\t1\t\t\t\t\nSocial Networks\t3\t3\t12\t0\t5\t228\t0\t0\t\t\t\t0\t0\treferrerType==social\t7\t2\t2\t143.95\t2\nWebsites\t2\t2\t8\t0\t7\t311\t1\t0\t\t\t\t\t\treferrerType==website\t3\t\t\t\t"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getAll": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "Returns a report that shows",
+                "operationId": "Referrers.getAll",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "goals": {
+                                                        "properties": {
+                                                            "row": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "object",
+                                                                    "xml": {
+                                                                        "name": "row"
+                                                                    },
+                                                                    "additionalProperties": true
+                                                                }
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    }
+                                                },
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "label": "Facebook",
+                                            "nb_uniq_visitors": "1",
+                                            "nb_visits": "1",
+                                            "nb_actions": "3",
+                                            "nb_users": "0",
+                                            "max_actions": "3",
+                                            "sum_visit_length": "1",
+                                            "bounce_count": "0",
+                                            "nb_visits_converted": "0",
+                                            "url": "facebook.com",
+                                            "logo": "plugins\\/Morpheus\\/icons\\/dist\\/socials\\/facebook.com.png",
+                                            "segment": "referrerType==social;referrerName==Facebook",
+                                            "referer_type": "7"
+                                        },
+                                        {
+                                            "label": "Instagram",
+                                            "nb_uniq_visitors": "1",
+                                            "nb_visits": "1",
+                                            "nb_actions": "5",
+                                            "nb_users": "0",
+                                            "max_actions": "5",
+                                            "sum_visit_length": "108",
+                                            "bounce_count": "0",
+                                            "nb_visits_converted": "0",
+                                            "goals": {
+                                                "row": {
+                                                    "nb_conversions": "1",
+                                                    "nb_visits_converted": "1",
+                                                    "revenue": "89",
+                                                    "items": "1",
+                                                    "idgoal": "ecommerceAbandonedCart"
+                                                }
+                                            },
+                                            "nb_conversions": "0",
+                                            "revenue": "0",
+                                            "url": "instagram.com",
+                                            "logo": "plugins\\/Morpheus\\/icons\\/dist\\/socials\\/instagram.com.png",
+                                            "segment": "referrerType==social;referrerName==Instagram",
+                                            "referer_type": "7"
+                                        },
+                                        {
+                                            "label": "scubadiverlife.com",
+                                            "nb_uniq_visitors": "1",
+                                            "nb_visits": "1",
+                                            "nb_actions": "1",
+                                            "nb_users": "0",
+                                            "max_actions": "1",
+                                            "sum_visit_length": "121",
+                                            "bounce_count": "1",
+                                            "nb_visits_converted": "0",
+                                            "segment": "referrerName==scubadiverlife.com",
+                                            "referer_type": "3"
+                                        },
+                                        {
+                                            "label": "Twitter",
+                                            "nb_uniq_visitors": "1",
+                                            "nb_visits": "1",
+                                            "nb_actions": "4",
+                                            "nb_users": "0",
+                                            "max_actions": "4",
+                                            "sum_visit_length": "119",
+                                            "bounce_count": "0",
+                                            "nb_visits_converted": "0",
+                                            "goals": {
+                                                "row": {
+                                                    "nb_conversions": "1",
+                                                    "nb_visits_converted": "1",
+                                                    "revenue": "54.95",
+                                                    "items": "1",
+                                                    "idgoal": "ecommerceAbandonedCart"
+                                                }
+                                            },
+                                            "nb_conversions": "0",
+                                            "revenue": "0",
+                                            "url": "twitter.com",
+                                            "logo": "plugins\\/Morpheus\\/icons\\/dist\\/socials\\/twitter.com.png",
+                                            "segment": "referrerType==social;referrerName==Twitter",
+                                            "referer_type": "7"
+                                        },
+                                        {
+                                            "label": "www.scubadiving.com",
+                                            "nb_uniq_visitors": "1",
+                                            "nb_visits": "1",
+                                            "nb_actions": "7",
+                                            "nb_users": "0",
+                                            "max_actions": "7",
+                                            "sum_visit_length": "190",
+                                            "bounce_count": "0",
+                                            "nb_visits_converted": "0",
+                                            "segment": "referrerName==www.scubadiving.com",
+                                            "referer_type": "3"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_uniq_visitors": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_visits": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_actions": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_users": {
+                                                        "type": "integer"
+                                                    },
+                                                    "max_actions": {
+                                                        "type": "integer"
+                                                    },
+                                                    "sum_visit_length": {
+                                                        "type": "integer"
+                                                    },
+                                                    "bounce_count": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_visits_converted": {
+                                                        "type": "integer"
+                                                    },
+                                                    "url": {
+                                                        "type": "string"
+                                                    },
+                                                    "logo": {
+                                                        "type": "string"
+                                                    },
+                                                    "segment": {
+                                                        "type": "string"
+                                                    },
+                                                    "referer_type": {
+                                                        "type": "integer"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "label": "Facebook",
+                                        "nb_uniq_visitors": 1,
+                                        "nb_visits": 1,
+                                        "nb_actions": 3,
+                                        "nb_users": 0,
+                                        "max_actions": 3,
+                                        "sum_visit_length": 1,
+                                        "bounce_count": 0,
+                                        "nb_visits_converted": 0,
+                                        "url": "facebook.com",
+                                        "logo": "plugins\\/Morpheus\\/icons\\/dist\\/socials\\/facebook.com.png",
+                                        "segment": "referrerType==social;referrerName==Facebook",
+                                        "referer_type": 7
+                                    },
+                                    {
+                                        "label": "Instagram",
+                                        "nb_uniq_visitors": 1,
+                                        "nb_visits": 1,
+                                        "nb_actions": 5,
+                                        "nb_users": 0,
+                                        "max_actions": 5,
+                                        "sum_visit_length": 108,
+                                        "bounce_count": 0,
+                                        "nb_visits_converted": 0,
+                                        "goals": {
+                                            "idgoal=ecommerceAbandonedCart": {
+                                                "nb_conversions": 1,
+                                                "nb_visits_converted": 1,
+                                                "revenue": 89,
+                                                "items": 1
+                                            }
+                                        },
+                                        "nb_conversions": 0,
+                                        "revenue": 0,
+                                        "url": "instagram.com",
+                                        "logo": "plugins\\/Morpheus\\/icons\\/dist\\/socials\\/instagram.com.png",
+                                        "segment": "referrerType==social;referrerName==Instagram",
+                                        "referer_type": 7
+                                    },
+                                    {
+                                        "label": "scubadiverlife.com",
+                                        "nb_uniq_visitors": 1,
+                                        "nb_visits": 1,
+                                        "nb_actions": 1,
+                                        "nb_users": 0,
+                                        "max_actions": 1,
+                                        "sum_visit_length": 121,
+                                        "bounce_count": 1,
+                                        "nb_visits_converted": 0,
+                                        "segment": "referrerName==scubadiverlife.com",
+                                        "referer_type": 3
+                                    },
+                                    {
+                                        "label": "Twitter",
+                                        "nb_uniq_visitors": 1,
+                                        "nb_visits": 1,
+                                        "nb_actions": 4,
+                                        "nb_users": 0,
+                                        "max_actions": 4,
+                                        "sum_visit_length": 119,
+                                        "bounce_count": 0,
+                                        "nb_visits_converted": 0,
+                                        "goals": {
+                                            "idgoal=ecommerceAbandonedCart": {
+                                                "nb_conversions": 1,
+                                                "nb_visits_converted": 1,
+                                                "revenue": 54.95,
+                                                "items": 1
+                                            }
+                                        },
+                                        "nb_conversions": 0,
+                                        "revenue": 0,
+                                        "url": "twitter.com",
+                                        "logo": "plugins\\/Morpheus\\/icons\\/dist\\/socials\\/twitter.com.png",
+                                        "segment": "referrerType==social;referrerName==Twitter",
+                                        "referer_type": 7
+                                    },
+                                    {
+                                        "label": "www.scubadiving.com",
+                                        "nb_uniq_visitors": 1,
+                                        "nb_visits": 1,
+                                        "nb_actions": 7,
+                                        "nb_users": 0,
+                                        "max_actions": 7,
+                                        "sum_visit_length": 190,
+                                        "bounce_count": 0,
+                                        "nb_visits_converted": 0,
+                                        "segment": "referrerName==www.scubadiving.com",
+                                        "referer_type": 3
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_uniq_visitors\tnb_visits\tnb_actions\tnb_users\tmax_actions\tsum_visit_length\tbounce_count\tnb_visits_converted\tmetadata_url\tmetadata_logo\tmetadata_segment\tmetadata_referer_type\tgoals_idgoal=ecommerceAbandonedCart_nb_conversions\tgoals_idgoal=ecommerceAbandonedCart_nb_visits_converted\tgoals_idgoal=ecommerceAbandonedCart_revenue\tgoals_idgoal=ecommerceAbandonedCart_items\tnb_conversions\trevenue\nFacebook\t1\t1\t3\t0\t3\t1\t0\t0\tfacebook.com\tplugins/Morpheus/icons/dist/socials/facebook.com.png\t\"referrerType==social;referrerName==Facebook\"\t7\t\t\t\t\t\t\nInstagram\t1\t1\t5\t0\t5\t108\t0\t0\tinstagram.com\tplugins/Morpheus/icons/dist/socials/instagram.com.png\t\"referrerType==social;referrerName==Instagram\"\t7\t1\t1\t89\t1\t0\t0\nscubadiverlife.com\t1\t1\t1\t0\t1\t121\t1\t0\t\t\treferrerName==scubadiverlife.com\t3\t\t\t\t\t\t\nTwitter\t1\t1\t4\t0\t4\t119\t0\t0\ttwitter.com\tplugins/Morpheus/icons/dist/socials/twitter.com.png\t\"referrerType==social;referrerName==Twitter\"\t7\t1\t1\t54.95\t1\t0\t0\nwww.scubadiving.com\t1\t1\t7\t0\t7\t190\t0\t0\t\t\treferrerName==www.scubadiving.com\t3\t\t\t\t\t\t"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getKeywords": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "",
+                "operationId": "Referrers.getKeywords",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/expandedOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/flatOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "row": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "xml": {
+                                                                "name": "row"
+                                                            },
+                                                            "additionalProperties": true
+                                                        }
+                                                    }
+                                                },
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": {
+                                        "label": "Keyword not defined",
+                                        "nb_uniq_visitors": "12",
+                                        "nb_visits": "12",
+                                        "nb_actions": "33",
+                                        "nb_users": "0",
+                                        "max_actions": "9",
+                                        "sum_visit_length": "440",
+                                        "bounce_count": "6",
+                                        "nb_visits_converted": "1",
+                                        "goals": {
+                                            "row": {
+                                                "nb_conversions": "1",
+                                                "nb_visits_converted": "1",
+                                                "revenue": "1",
+                                                "idgoal": "7"
+                                            }
+                                        },
+                                        "nb_conversions": "1",
+                                        "revenue": "1",
+                                        "segment": "referrerType==search;referrerKeyword=="
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_uniq_visitors": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_visits": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_actions": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_users": {
+                                                        "type": "integer"
+                                                    },
+                                                    "max_actions": {
+                                                        "type": "integer"
+                                                    },
+                                                    "sum_visit_length": {
+                                                        "type": "integer"
+                                                    },
+                                                    "bounce_count": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_visits_converted": {
+                                                        "type": "integer"
+                                                    },
+                                                    "goals": {
+                                                        "properties": {
+                                                            "idgoal=7": {
+                                                                "properties": {
+                                                                    "nb_conversions": {
+                                                                        "type": "integer"
+                                                                    },
+                                                                    "nb_visits_converted": {
+                                                                        "type": "integer"
+                                                                    },
+                                                                    "revenue": {
+                                                                        "type": "integer"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "nb_conversions": {
+                                                        "type": "integer"
+                                                    },
+                                                    "revenue": {
+                                                        "type": "integer"
+                                                    },
+                                                    "segment": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "label": "Keyword not defined",
+                                        "nb_uniq_visitors": 12,
+                                        "nb_visits": 12,
+                                        "nb_actions": 33,
+                                        "nb_users": 0,
+                                        "max_actions": 9,
+                                        "sum_visit_length": 440,
+                                        "bounce_count": 6,
+                                        "nb_visits_converted": 1,
+                                        "goals": {
+                                            "idgoal=7": {
+                                                "nb_conversions": 1,
+                                                "nb_visits_converted": 1,
+                                                "revenue": 1
+                                            }
+                                        },
+                                        "nb_conversions": 1,
+                                        "revenue": 1,
+                                        "segment": "referrerType==search;referrerKeyword=="
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_uniq_visitors\tnb_visits\tnb_actions\tnb_users\tmax_actions\tsum_visit_length\tbounce_count\tnb_visits_converted\tgoals_idgoal=7_nb_conversions\tgoals_idgoal=7_nb_visits_converted\tgoals_idgoal=7_revenue\tnb_conversions\trevenue\tmetadata_segment\nKeyword not defined\t12\t12\t33\t0\t9\t440\t6\t1\t1\t1\t1\t1\t1\t\"referrerType==search;referrerKeyword==\""
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getSearchEnginesFromKeywordId": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "",
+                "operationId": "Referrers.getSearchEnginesFromKeywordId",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSubtableRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getSearchEngines": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "",
+                "operationId": "Referrers.getSearchEngines",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/expandedOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/flatOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "row": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "xml": {
+                                                                "name": "row"
+                                                            },
+                                                            "additionalProperties": true
+                                                        }
+                                                    }
+                                                },
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": {
+                                        "label": "Google",
+                                        "nb_visits": "12",
+                                        "nb_actions": "33",
+                                        "nb_users": "0",
+                                        "max_actions": "9",
+                                        "sum_visit_length": "440",
+                                        "bounce_count": "6",
+                                        "nb_visits_converted": "1",
+                                        "goals": {
+                                            "row": {
+                                                "nb_conversions": "1",
+                                                "nb_visits_converted": "1",
+                                                "revenue": "1",
+                                                "idgoal": "7"
+                                            }
+                                        },
+                                        "nb_conversions": "1",
+                                        "revenue": "1",
+                                        "segment": "referrerType==search;referrerName=@Google",
+                                        "url": "http:\\/\\/google.com",
+                                        "logo": "plugins\\/Morpheus\\/icons\\/dist\\/searchEngines\\/google.com.png"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_visits": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_actions": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_users": {
+                                                        "type": "integer"
+                                                    },
+                                                    "max_actions": {
+                                                        "type": "integer"
+                                                    },
+                                                    "sum_visit_length": {
+                                                        "type": "integer"
+                                                    },
+                                                    "bounce_count": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_visits_converted": {
+                                                        "type": "integer"
+                                                    },
+                                                    "goals": {
+                                                        "properties": {
+                                                            "idgoal=7": {
+                                                                "properties": {
+                                                                    "nb_conversions": {
+                                                                        "type": "integer"
+                                                                    },
+                                                                    "nb_visits_converted": {
+                                                                        "type": "integer"
+                                                                    },
+                                                                    "revenue": {
+                                                                        "type": "integer"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "nb_conversions": {
+                                                        "type": "integer"
+                                                    },
+                                                    "revenue": {
+                                                        "type": "integer"
+                                                    },
+                                                    "segment": {
+                                                        "type": "string"
+                                                    },
+                                                    "url": {
+                                                        "type": "string"
+                                                    },
+                                                    "logo": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "label": "Google",
+                                        "nb_visits": 12,
+                                        "nb_actions": 33,
+                                        "nb_users": 0,
+                                        "max_actions": 9,
+                                        "sum_visit_length": 440,
+                                        "bounce_count": 6,
+                                        "nb_visits_converted": 1,
+                                        "goals": {
+                                            "idgoal=7": {
+                                                "nb_conversions": 1,
+                                                "nb_visits_converted": 1,
+                                                "revenue": 1
+                                            }
+                                        },
+                                        "nb_conversions": 1,
+                                        "revenue": 1,
+                                        "segment": "referrerType==search;referrerName=@Google",
+                                        "url": "http:\\/\\/google.com",
+                                        "logo": "plugins\\/Morpheus\\/icons\\/dist\\/searchEngines\\/google.com.png"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_visits\tnb_actions\tnb_users\tmax_actions\tsum_visit_length\tbounce_count\tnb_visits_converted\tgoals_idgoal=7_nb_conversions\tgoals_idgoal=7_nb_visits_converted\tgoals_idgoal=7_revenue\tnb_conversions\trevenue\tmetadata_segment\tmetadata_url\tmetadata_logo\nGoogle\t12\t33\t0\t9\t440\t6\t1\t1\t1\t1\t1\t1\t\"referrerType==search;referrerName=@Google\"\thttp://google.com\tplugins/Morpheus/icons/dist/searchEngines/google.com.png"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getKeywordsFromSearchEngineId": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "",
+                "operationId": "Referrers.getKeywordsFromSearchEngineId",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSubtableRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getCampaigns": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "",
+                "operationId": "Referrers.getCampaigns",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/expandedOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getKeywordsFromCampaignId": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "",
+                "operationId": "Referrers.getKeywordsFromCampaignId",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSubtableRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getWebsites": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "",
+                "operationId": "Referrers.getWebsites",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/expandedOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/flatOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "label": "scubadiverlife.com",
+                                            "nb_uniq_visitors": "1",
+                                            "nb_visits": "1",
+                                            "nb_actions": "1",
+                                            "nb_users": "0",
+                                            "max_actions": "1",
+                                            "sum_visit_length": "121",
+                                            "bounce_count": "1",
+                                            "nb_visits_converted": "0",
+                                            "segment": "referrerName==scubadiverlife.com"
+                                        },
+                                        {
+                                            "label": "www.scubadiving.com",
+                                            "nb_uniq_visitors": "1",
+                                            "nb_visits": "1",
+                                            "nb_actions": "7",
+                                            "nb_users": "0",
+                                            "max_actions": "7",
+                                            "sum_visit_length": "190",
+                                            "bounce_count": "0",
+                                            "nb_visits_converted": "0",
+                                            "segment": "referrerName==www.scubadiving.com"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_uniq_visitors": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_visits": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_actions": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_users": {
+                                                        "type": "integer"
+                                                    },
+                                                    "max_actions": {
+                                                        "type": "integer"
+                                                    },
+                                                    "sum_visit_length": {
+                                                        "type": "integer"
+                                                    },
+                                                    "bounce_count": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_visits_converted": {
+                                                        "type": "integer"
+                                                    },
+                                                    "segment": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "label": "scubadiverlife.com",
+                                        "nb_uniq_visitors": 1,
+                                        "nb_visits": 1,
+                                        "nb_actions": 1,
+                                        "nb_users": 0,
+                                        "max_actions": 1,
+                                        "sum_visit_length": 121,
+                                        "bounce_count": 1,
+                                        "nb_visits_converted": 0,
+                                        "segment": "referrerName==scubadiverlife.com"
+                                    },
+                                    {
+                                        "label": "www.scubadiving.com",
+                                        "nb_uniq_visitors": 1,
+                                        "nb_visits": 1,
+                                        "nb_actions": 7,
+                                        "nb_users": 0,
+                                        "max_actions": 7,
+                                        "sum_visit_length": 190,
+                                        "bounce_count": 0,
+                                        "nb_visits_converted": 0,
+                                        "segment": "referrerName==www.scubadiving.com"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_uniq_visitors\tnb_visits\tnb_actions\tnb_users\tmax_actions\tsum_visit_length\tbounce_count\tnb_visits_converted\tmetadata_segment\nscubadiverlife.com\t1\t1\t1\t0\t1\t121\t1\t0\treferrerName==scubadiverlife.com\nwww.scubadiving.com\t1\t1\t7\t0\t7\t190\t0\t0\treferrerName==www.scubadiving.com"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getUrlsFromWebsiteId": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "",
+                "operationId": "Referrers.getUrlsFromWebsiteId",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSubtableRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getSocials": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "Returns report comparing the number of visits (and other info) for social network referrers.",
+                "operationId": "Referrers.getSocials",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/expandedOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/flatOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "goals": {
+                                                        "properties": {
+                                                            "row": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "object",
+                                                                    "xml": {
+                                                                        "name": "row"
+                                                                    },
+                                                                    "additionalProperties": true
+                                                                }
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    }
+                                                },
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "label": "Facebook",
+                                            "nb_uniq_visitors": "1",
+                                            "nb_visits": "1",
+                                            "nb_actions": "3",
+                                            "nb_users": "0",
+                                            "max_actions": "3",
+                                            "sum_visit_length": "1",
+                                            "bounce_count": "0",
+                                            "nb_visits_converted": "0",
+                                            "url": "facebook.com",
+                                            "logo": "plugins\\/Morpheus\\/icons\\/dist\\/socials\\/facebook.com.png",
+                                            "segment": "referrerType==social;referrerName==Facebook"
+                                        },
+                                        {
+                                            "label": "Instagram",
+                                            "nb_uniq_visitors": "1",
+                                            "nb_visits": "1",
+                                            "nb_actions": "5",
+                                            "nb_users": "0",
+                                            "max_actions": "5",
+                                            "sum_visit_length": "108",
+                                            "bounce_count": "0",
+                                            "nb_visits_converted": "0",
+                                            "goals": {
+                                                "row": {
+                                                    "nb_conversions": "1",
+                                                    "nb_visits_converted": "1",
+                                                    "revenue": "89",
+                                                    "items": "1",
+                                                    "idgoal": "ecommerceAbandonedCart"
+                                                }
+                                            },
+                                            "nb_conversions": "0",
+                                            "revenue": "0",
+                                            "url": "instagram.com",
+                                            "logo": "plugins\\/Morpheus\\/icons\\/dist\\/socials\\/instagram.com.png",
+                                            "segment": "referrerType==social;referrerName==Instagram"
+                                        },
+                                        {
+                                            "label": "Twitter",
+                                            "nb_uniq_visitors": "1",
+                                            "nb_visits": "1",
+                                            "nb_actions": "4",
+                                            "nb_users": "0",
+                                            "max_actions": "4",
+                                            "sum_visit_length": "119",
+                                            "bounce_count": "0",
+                                            "nb_visits_converted": "0",
+                                            "goals": {
+                                                "row": {
+                                                    "nb_conversions": "1",
+                                                    "nb_visits_converted": "1",
+                                                    "revenue": "54.95",
+                                                    "items": "1",
+                                                    "idgoal": "ecommerceAbandonedCart"
+                                                }
+                                            },
+                                            "nb_conversions": "0",
+                                            "revenue": "0",
+                                            "url": "twitter.com",
+                                            "logo": "plugins\\/Morpheus\\/icons\\/dist\\/socials\\/twitter.com.png",
+                                            "segment": "referrerType==social;referrerName==Twitter"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_uniq_visitors": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_visits": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_actions": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_users": {
+                                                        "type": "integer"
+                                                    },
+                                                    "max_actions": {
+                                                        "type": "integer"
+                                                    },
+                                                    "sum_visit_length": {
+                                                        "type": "integer"
+                                                    },
+                                                    "bounce_count": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_visits_converted": {
+                                                        "type": "integer"
+                                                    },
+                                                    "url": {
+                                                        "type": "string"
+                                                    },
+                                                    "logo": {
+                                                        "type": "string"
+                                                    },
+                                                    "segment": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "label": "Facebook",
+                                        "nb_uniq_visitors": 1,
+                                        "nb_visits": 1,
+                                        "nb_actions": 3,
+                                        "nb_users": 0,
+                                        "max_actions": 3,
+                                        "sum_visit_length": 1,
+                                        "bounce_count": 0,
+                                        "nb_visits_converted": 0,
+                                        "url": "facebook.com",
+                                        "logo": "plugins\\/Morpheus\\/icons\\/dist\\/socials\\/facebook.com.png",
+                                        "segment": "referrerType==social;referrerName==Facebook"
+                                    },
+                                    {
+                                        "label": "Instagram",
+                                        "nb_uniq_visitors": 1,
+                                        "nb_visits": 1,
+                                        "nb_actions": 5,
+                                        "nb_users": 0,
+                                        "max_actions": 5,
+                                        "sum_visit_length": 108,
+                                        "bounce_count": 0,
+                                        "nb_visits_converted": 0,
+                                        "goals": {
+                                            "idgoal=ecommerceAbandonedCart": {
+                                                "nb_conversions": 1,
+                                                "nb_visits_converted": 1,
+                                                "revenue": 89,
+                                                "items": 1
+                                            }
+                                        },
+                                        "nb_conversions": 0,
+                                        "revenue": 0,
+                                        "url": "instagram.com",
+                                        "logo": "plugins\\/Morpheus\\/icons\\/dist\\/socials\\/instagram.com.png",
+                                        "segment": "referrerType==social;referrerName==Instagram"
+                                    },
+                                    {
+                                        "label": "Twitter",
+                                        "nb_uniq_visitors": 1,
+                                        "nb_visits": 1,
+                                        "nb_actions": 4,
+                                        "nb_users": 0,
+                                        "max_actions": 4,
+                                        "sum_visit_length": 119,
+                                        "bounce_count": 0,
+                                        "nb_visits_converted": 0,
+                                        "goals": {
+                                            "idgoal=ecommerceAbandonedCart": {
+                                                "nb_conversions": 1,
+                                                "nb_visits_converted": 1,
+                                                "revenue": 54.95,
+                                                "items": 1
+                                            }
+                                        },
+                                        "nb_conversions": 0,
+                                        "revenue": 0,
+                                        "url": "twitter.com",
+                                        "logo": "plugins\\/Morpheus\\/icons\\/dist\\/socials\\/twitter.com.png",
+                                        "segment": "referrerType==social;referrerName==Twitter"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_uniq_visitors\tnb_visits\tnb_actions\tnb_users\tmax_actions\tsum_visit_length\tbounce_count\tnb_visits_converted\tmetadata_url\tmetadata_logo\tmetadata_segment\tgoals_idgoal=ecommerceAbandonedCart_nb_conversions\tgoals_idgoal=ecommerceAbandonedCart_nb_visits_converted\tgoals_idgoal=ecommerceAbandonedCart_revenue\tgoals_idgoal=ecommerceAbandonedCart_items\tnb_conversions\trevenue\nFacebook\t1\t1\t3\t0\t3\t1\t0\t0\tfacebook.com\tplugins/Morpheus/icons/dist/socials/facebook.com.png\t\"referrerType==social;referrerName==Facebook\"\t\t\t\t\t\t\nInstagram\t1\t1\t5\t0\t5\t108\t0\t0\tinstagram.com\tplugins/Morpheus/icons/dist/socials/instagram.com.png\t\"referrerType==social;referrerName==Instagram\"\t1\t1\t89\t1\t0\t0\nTwitter\t1\t1\t4\t0\t4\t119\t0\t0\ttwitter.com\tplugins/Morpheus/icons/dist/socials/twitter.com.png\t\"referrerType==social;referrerName==Twitter\"\t1\t1\t54.95\t1\t0\t0"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getAIAssistants": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "Returns report comparing the number of visits (and other info) for AI assistant referrers.",
+                "operationId": "Referrers.getAIAssistants",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/expandedOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/flatOptional"
+                    },
+                    {
+                        "name": "secondaryDimension",
+                        "in": "query",
+                        "description": "defaults to entryPageUrl if not provided",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getUrlsForSocial": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "Returns report containing individual referrer URLs for a specific social networking site.",
+                "operationId": "Referrers.getUrlsForSocial",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    },
+                    {
+                        "name": "idSubtable",
+                        "in": "query",
+                        "description": "This ID does not reference a real DataTable record. Instead, it is the array index of an item in the Socials list file. The urls are filtered by the social network at this index. If false, no filtering is done and every social URL is returned.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "label": "twitter.com\\/Divezone",
+                                            "nb_uniq_visitors": "1",
+                                            "nb_visits": "1",
+                                            "nb_actions": "4",
+                                            "nb_users": "0",
+                                            "max_actions": "4",
+                                            "sum_visit_length": "119",
+                                            "bounce_count": "0",
+                                            "nb_visits_converted": "0",
+                                            "segment": "referrerUrl==https%3A%2F%2Ftwitter.com%2FDivezone",
+                                            "url": "https:\\/\\/twitter.com\\/Divezone"
+                                        },
+                                        {
+                                            "label": "www.facebook.com\\/Divezone.net",
+                                            "nb_uniq_visitors": "1",
+                                            "nb_visits": "1",
+                                            "nb_actions": "3",
+                                            "nb_users": "0",
+                                            "max_actions": "3",
+                                            "sum_visit_length": "1",
+                                            "bounce_count": "0",
+                                            "nb_visits_converted": "0",
+                                            "segment": "referrerUrl==https%3A%2F%2Fwww.facebook.com%2FDivezone.net",
+                                            "url": "https:\\/\\/www.facebook.com\\/Divezone.net"
+                                        },
+                                        {
+                                            "label": "www.instagram.com\\/Divezone.net\\/",
+                                            "nb_uniq_visitors": "1",
+                                            "nb_visits": "1",
+                                            "nb_actions": "5",
+                                            "nb_users": "0",
+                                            "max_actions": "5",
+                                            "sum_visit_length": "108",
+                                            "bounce_count": "0",
+                                            "nb_visits_converted": "0",
+                                            "segment": "referrerUrl==https%3A%2F%2Fwww.instagram.com%2FDivezone.net%2F",
+                                            "url": "https:\\/\\/www.instagram.com\\/Divezone.net\\/"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_uniq_visitors": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_visits": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_actions": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_users": {
+                                                        "type": "integer"
+                                                    },
+                                                    "max_actions": {
+                                                        "type": "integer"
+                                                    },
+                                                    "sum_visit_length": {
+                                                        "type": "integer"
+                                                    },
+                                                    "bounce_count": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_visits_converted": {
+                                                        "type": "integer"
+                                                    },
+                                                    "segment": {
+                                                        "type": "string"
+                                                    },
+                                                    "url": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "label": "twitter.com\\/Divezone",
+                                        "nb_uniq_visitors": 1,
+                                        "nb_visits": 1,
+                                        "nb_actions": 4,
+                                        "nb_users": 0,
+                                        "max_actions": 4,
+                                        "sum_visit_length": 119,
+                                        "bounce_count": 0,
+                                        "nb_visits_converted": 0,
+                                        "segment": "referrerUrl==https%3A%2F%2Ftwitter.com%2FDivezone",
+                                        "url": "https:\\/\\/twitter.com\\/Divezone"
+                                    },
+                                    {
+                                        "label": "www.facebook.com\\/Divezone.net",
+                                        "nb_uniq_visitors": 1,
+                                        "nb_visits": 1,
+                                        "nb_actions": 3,
+                                        "nb_users": 0,
+                                        "max_actions": 3,
+                                        "sum_visit_length": 1,
+                                        "bounce_count": 0,
+                                        "nb_visits_converted": 0,
+                                        "segment": "referrerUrl==https%3A%2F%2Fwww.facebook.com%2FDivezone.net",
+                                        "url": "https:\\/\\/www.facebook.com\\/Divezone.net"
+                                    },
+                                    {
+                                        "label": "www.instagram.com\\/Divezone.net\\/",
+                                        "nb_uniq_visitors": 1,
+                                        "nb_visits": 1,
+                                        "nb_actions": 5,
+                                        "nb_users": 0,
+                                        "max_actions": 5,
+                                        "sum_visit_length": 108,
+                                        "bounce_count": 0,
+                                        "nb_visits_converted": 0,
+                                        "segment": "referrerUrl==https%3A%2F%2Fwww.instagram.com%2FDivezone.net%2F",
+                                        "url": "https:\\/\\/www.instagram.com\\/Divezone.net\\/"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_uniq_visitors\tnb_visits\tnb_actions\tnb_users\tmax_actions\tsum_visit_length\tbounce_count\tnb_visits_converted\tmetadata_segment\tmetadata_url\ntwitter.com/Divezone\t1\t1\t4\t0\t4\t119\t0\t0\treferrerUrl==https%3A%2F%2Ftwitter.com%2FDivezone\thttps://twitter.com/Divezone\nwww.facebook.com/Divezone.net\t1\t1\t3\t0\t3\t1\t0\t0\treferrerUrl==https%3A%2F%2Fwww.facebook.com%2FDivezone.net\thttps://www.facebook.com/Divezone.net\nwww.instagram.com/Divezone.net/\t1\t1\t5\t0\t5\t108\t0\t0\treferrerUrl==https%3A%2F%2Fwww.instagram.com%2FDivezone.net%2F\thttps://www.instagram.com/Divezone.net/"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getEntryPageUrlsForAIAssistant": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "Returns report containing individual entry page URLs for a specific AI assistant.",
+                "operationId": "Referrers.getEntryPageUrlsForAIAssistant",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    },
+                    {
+                        "name": "idSubtable",
+                        "in": "query",
+                        "description": "This ID does not reference a real DataTable record. Instead, it is the array index of an item in the AI list file. The urls are filtered by the AI at this index. If false, no filtering is done and every AI assistant URL is returned.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getEntryPageTitlesForAIAssistant": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "Returns report containing individual entry page names for a specific AI assistant.",
+                "operationId": "Referrers.getEntryPageTitlesForAIAssistant",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    },
+                    {
+                        "name": "idSubtable",
+                        "in": "query",
+                        "description": "This ID does not reference a real DataTable record. Instead, it is the array index of an item in the AI list file. The urls are filtered by the AI at this index. If false, no filtering is done and every AI assistant URL is returned.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getNumberOfDistinctSearchEngines": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "",
+                "operationId": "Referrers.getNumberOfDistinctSearchEngines",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": [
+                                    "1"
+                                ]
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "value": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "value": 1
+                                }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "value\n1"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getNumberOfDistinctSocialNetworks": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "",
+                "operationId": "Referrers.getNumberOfDistinctSocialNetworks",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": [
+                                    "3"
+                                ]
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "value": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "value": 3
+                                }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "value\n3"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getNumberOfDistinctKeywords": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "",
+                "operationId": "Referrers.getNumberOfDistinctKeywords",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": [
+                                    "1"
+                                ]
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "value": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "value": 1
+                                }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "value\n1"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getNumberOfDistinctCampaigns": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "",
+                "operationId": "Referrers.getNumberOfDistinctCampaigns",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": [
+                                    "0"
+                                ]
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "value": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "value": 0
+                                }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "value\n0"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getNumberOfDistinctWebsites": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "",
+                "operationId": "Referrers.getNumberOfDistinctWebsites",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": [
+                                    "2"
+                                ]
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "value": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "value": 2
+                                }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "value\n2"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getNumberOfDistinctAIAssistants": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "",
+                "operationId": "Referrers.getNumberOfDistinctAIAssistants",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": [
+                                    "0"
+                                ]
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "value": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "value": 0
+                                }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "value\n0"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Referrers.getNumberOfDistinctWebsitesUrls": {
+            "get": {
+                "tags": [
+                    "Referrers"
+                ],
+                "description": "",
+                "operationId": "Referrers.getNumberOfDistinctWebsitesUrls",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": [
+                                    "2"
+                                ]
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "value": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "value": 2
+                                }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "value\n2"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GenericSuccess": {
+                "description": "Generic Matomo success payload.",
+                "required": [
+                    "result",
+                    "message"
+                ],
+                "properties": {
+                    "result": {
+                        "type": "string",
+                        "example": "success"
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "ok"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "example": "200"
+                    }
+                },
+                "type": "object",
+                "example": {
+                    "result": "success",
+                    "message": "ok"
+                },
+                "additionalProperties": true
+            },
+            "GenericSuccessXml": {
+                "description": "Generic Matomo success payload in XML.",
+                "required": [
+                    "success"
+                ],
+                "properties": {
+                    "success": {
+                        "properties": {
+                            "message": {
+                                "type": "string",
+                                "xml": {
+                                    "attribute": true
+                                },
+                                "example": "ok"
+                            }
+                        },
+                        "type": "object",
+                        "xml": {
+                            "name": "success"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "result"
+                },
+                "example": {
+                    "success": {
+                        "message": "ok"
+                    }
+                },
+                "additionalProperties": true
+            },
+            "Error": {
+                "description": "Generic Matomo error payload.",
+                "required": [
+                    "result",
+                    "message"
+                ],
+                "properties": {
+                    "result": {
+                        "type": "string",
+                        "example": "error"
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "There was an error"
+                    },
+                    "code": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "additionalProperties": true
+            },
+            "ErrorXml": {
+                "description": "Generic Matomo error payload in XML.",
+                "properties": {
+                    "error": {
+                        "properties": {
+                            "message": {
+                                "type": "string",
+                                "xml": {
+                                    "attribute": true
+                                },
+                                "example": "There was an error"
+                            }
+                        },
+                        "type": "object",
+                        "xml": {
+                            "name": "error"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "result"
+                }
+            }
+        },
+        "responses": {
+            "BadRequest": {
+                "description": "Bad request (validation or missing parameters).",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: There was an error."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "There was an error."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "Unauthorized": {
+                "description": "Authentication failed or missing token.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: You must be logged in to access this functionality."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "You must be logged in to access this functionality."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "Forbidden": {
+                "description": "Authenticated but not allowed to access the resource.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: Not authorised."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Not authorised."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "NotFound": {
+                "description": "Resource not found.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: The method is not available."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "The method is not available."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "ServerError": {
+                "description": "Unexpected server error.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: There was an error."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "There was an error."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "DefaultError": {
+                "description": "Default error response (any non-2xx).",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: There was an error."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "There was an error."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "GenericSuccessNoBody": {
+                "description": "Generic 200 response with no body"
+            },
+            "GenericSuccess": {
+                "description": "Generic 200 response",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Success:ok"
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "<!-- Success: ok -->"
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/GenericSuccess"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/GenericSuccessXml"
+                        }
+                    }
+                }
+            },
+            "GenericString": {
+                "description": "Generic 200 response with only a string body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Result: success"
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "success"
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "GenericBoolean": {
+                "description": "Generic 200 response with only true or false as the body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                }
+            },
+            "GenericInteger": {
+                "description": "Generic 200 response with only an integer as the body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            },
+            "GenericArray": {
+                "description": "Generic 200 response with array body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "array",
+                            "items": []
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "array",
+                            "items": []
+                        }
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "moduleRequired": {
+                "name": "module",
+                "in": "query",
+                "description": "Always `API` for Reporting API requests.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "default": "API"
+                }
+            },
+            "methodRequired": {
+                "name": "method",
+                "in": "query",
+                "description": "API method, e.g. `VisitsSummary.get` or `CustomAlerts.getAlert`.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "example": "CustomAlerts.getAlert"
+                }
+            },
+            "formatRequired": {
+                "name": "format",
+                "in": "query",
+                "description": "Response format such as `xml` or `json`. Use `original` to get the original PHP data structure.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "default": "xml",
+                    "enum": [
+                        "xml",
+                        "json",
+                        "csv",
+                        "tsv",
+                        "html",
+                        "rss",
+                        "original"
+                    ]
+                }
+            },
+            "formatOptional": {
+                "name": "format",
+                "in": "query",
+                "description": "Response format. Defaults to `xml`. Use `original` to get the original PHP data structure.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "default": "xml",
+                    "enum": [
+                        "xml",
+                        "json",
+                        "csv",
+                        "tsv",
+                        "html",
+                        "rss",
+                        "original"
+                    ]
+                }
+            },
+            "idSiteRequired": {
+                "name": "idSite",
+                "in": "query",
+                "description": "Matomo site ID.",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "example": 1
+                }
+            },
+            "idSiteOptional": {
+                "name": "idSite",
+                "in": "query",
+                "description": "Matomo site ID.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "example": 1
+                }
+            },
+            "periodRequired": {
+                "name": "period",
+                "in": "query",
+                "description": "Reporting period.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "day",
+                        "week",
+                        "month",
+                        "year",
+                        "range"
+                    ],
+                    "example": "day"
+                }
+            },
+            "periodOptional": {
+                "name": "period",
+                "in": "query",
+                "description": "Reporting period.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "day",
+                        "week",
+                        "month",
+                        "year",
+                        "range"
+                    ],
+                    "example": "day"
+                }
+            },
+            "dateRequired": {
+                "name": "date",
+                "in": "query",
+                "description": "Date or range (e.g. `2025-08-01`, `yesterday`, `last30`, or `2025-08-01,2025-08-11`).",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "example": "today"
+                }
+            },
+            "dateOptional": {
+                "name": "date",
+                "in": "query",
+                "description": "Date or range (e.g. `2025-08-01`, `yesterday`, `last30`, or `2025-08-01,2025-08-11`).",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "today"
+                }
+            },
+            "segmentRequired": {
+                "name": "segment",
+                "in": "query",
+                "description": "Segment expression; see `API.getSegmentDimensionMetadata`.",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "segmentOptional": {
+                "name": "segment",
+                "in": "query",
+                "description": "Segment expression; see `API.getSegmentDimensionMetadata`.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "expandedOptional": {
+                "name": "expanded",
+                "in": "query",
+                "description": "If true, loads all subtables.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "default": 0,
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "idSubtableOptional": {
+                "name": "idSubtable",
+                "in": "query",
+                "description": "An in-database subtable ID.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "idSubtableRequired": {
+                "name": "idSubtable",
+                "in": "query",
+                "description": "An in-database subtable ID.",
+                "required": true,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "flatOptional": {
+                "name": "flat",
+                "in": "query",
+                "description": "Flatten subtables into the parent table.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "filter_patternOptional": {
+                "name": "filter_pattern",
+                "in": "query",
+                "description": "Regex to keep matching rows.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_columnOptional": {
+                "name": "filter_column",
+                "in": "query",
+                "description": "Column to apply the regex to (e.g., `label`).",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "label"
+                }
+            },
+            "filter_pattern_recursiveOptional": {
+                "name": "filter_pattern_recursive",
+                "in": "query",
+                "description": "Recursive regex filter.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_column_recursiveOptional": {
+                "name": "filter_column_recursive",
+                "in": "query",
+                "description": "Column for the recursive regex filter.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_excludelowpopOptional": {
+                "name": "filter_excludelowpop",
+                "in": "query",
+                "description": "Column to threshold and exclude low values.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_excludelowpop_valueOptional": {
+                "name": "filter_excludelowpop_value",
+                "in": "query",
+                "description": "Minimum value threshold for `filter_excludelowpop`.",
+                "required": false,
+                "schema": {
+                    "type": "number",
+                    "example": 0
+                }
+            },
+            "filter_sort_columnOptional": {
+                "name": "filter_sort_column",
+                "in": "query",
+                "description": "Column to sort by.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_sort_orderOptional": {
+                "name": "filter_sort_order",
+                "in": "query",
+                "description": "Sort direction.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "example": "desc"
+                }
+            },
+            "filter_truncateOptional": {
+                "name": "filter_truncate",
+                "in": "query",
+                "description": "Row index after which rows are removed.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "filter_limitOptional": {
+                "name": "filter_limit",
+                "in": "query",
+                "description": "Maximum number of rows to return.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "filter_offsetOptional": {
+                "name": "filter_offset",
+                "in": "query",
+                "description": "Row offset.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "keep_summary_rowOptional": {
+                "name": "keep_summary_row",
+                "in": "query",
+                "description": "Keep the summary row.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 1
+                }
+            },
+            "disable_generic_filtersOptional": {
+                "name": "disable_generic_filters",
+                "in": "query",
+                "description": "Disable generic filters (those above).",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "disable_queued_filtersOptional": {
+                "name": "disable_queued_filters",
+                "in": "query",
+                "description": "Skip queued filters.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "hideColumnsOptional": {
+                "name": "hideColumns",
+                "in": "query",
+                "description": "Comma-separated list of columns to hide.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "showColumnsOptional": {
+                "name": "showColumns",
+                "in": "query",
+                "description": "Comma-separated list of columns to include.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "labelOptional": {
+                "name": "label",
+                "in": "query",
+                "description": "Keep only rows with these label(s). Supports path via '>' and arrays.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "idGoalRequired": {
+                "name": "idGoal",
+                "in": "query",
+                "description": "The ID of a configured goal.",
+                "required": true,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "idGoalOptional": {
+                "name": "idGoal",
+                "in": "query",
+                "description": "The ID of a configured goal.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            }
+        },
+        "securitySchemes": {
+            "MatomoToken": {
+                "type": "http",
+                "description": "Matomo API token passed in the Authorization header as a bearer token. For demo.matomo.cloud requests, use the anonymous token value: anonymous.",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "security": [
+        {
+            "MatomoToken": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "Referrers",
+            "description": "The Referrers API lets you access reports about Websites, Search engines, Keywords, Campaigns used to access your website.  For example, \"getKeywords\" returns all search engine keywords (with <a href='https://developer.matomo.org/api-reference/reporting-api#api-response-metric-definitions' rel='noreferrer' target='_blank'>general analytics metrics</a> for each keyword), \"getWebsites\" returns referrer websites (along with the full Referrer URL if the parameter &expanded=1 is set). \"getReferrerType\" returns the Referrer overview report. \"getCampaigns\" returns the list of all campaigns (and all campaign keywords if the parameter &expanded=1 is set)."
+        }
+    ],
+    "externalDocs": {
+        "description": "Matomo Reporting API developer page",
+        "url": "https://developer.matomo.org/api-reference/reporting-api/"
+    }
+}

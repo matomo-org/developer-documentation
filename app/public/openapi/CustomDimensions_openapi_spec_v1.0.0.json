@@ -1,7 +1,7 @@
 {
     "openapi": "3.1.0",
     "info": {
-        "title": "Matomo Reporting API for Events plugin",
+        "title": "Matomo Reporting API for CustomDimensions plugin",
         "version": "1.0.0"
     },
     "servers": [
@@ -15,16 +15,24 @@
         }
     ],
     "paths": {
-        "/index.php?module=API&method=Events.getCategory": {
+        "/index.php?module=API&method=CustomDimensions.getCustomDimension": {
             "get": {
                 "tags": [
-                    "Events"
+                    "CustomDimensions"
                 ],
-                "description": "",
-                "operationId": "Events.getCategory",
+                "description": "Fetch a report for the given idDimension. Only reports for active dimensions can be fetched. Requires at least view access.",
+                "operationId": "CustomDimensions.getCustomDimension",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idDimension",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
                     },
                     {
                         "$ref": "#/components/parameters/idSiteRequired"
@@ -42,15 +50,10 @@
                         "$ref": "#/components/parameters/expandedOptional"
                     },
                     {
-                        "name": "secondaryDimension",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
+                        "$ref": "#/components/parameters/flatOptional"
                     },
                     {
-                        "$ref": "#/components/parameters/flatOptional"
+                        "$ref": "#/components/parameters/idSubtableOptional"
                     }
                 ],
                 "responses": {
@@ -63,6 +66,18 @@
                                         "row": {
                                             "type": "array",
                                             "items": {
+                                                "properties": {
+                                                    "row": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "xml": {
+                                                                "name": "row"
+                                                            },
+                                                            "additionalProperties": true
+                                                        }
+                                                    }
+                                                },
                                                 "type": "object",
                                                 "xml": {
                                                     "name": "row"
@@ -78,16 +93,28 @@
                                 },
                                 "example": {
                                     "row": {
-                                        "label": "Ecommerce",
-                                        "nb_uniq_visitors": "2",
-                                        "nb_visits": "2",
-                                        "nb_events": "2",
-                                        "nb_events_with_value": "2",
-                                        "sum_event_value": "2",
-                                        "min_event_value": "1",
-                                        "max_event_value": "1",
-                                        "avg_event_value": "1",
-                                        "segment": "eventCategory==Ecommerce"
+                                        "label": "guest",
+                                        "nb_uniq_visitors": "14",
+                                        "nb_visits": "14",
+                                        "nb_actions": "41",
+                                        "max_actions": "9",
+                                        "sum_visit_length": "630",
+                                        "bounce_count": "7",
+                                        "nb_visits_converted": "1",
+                                        "goals": {
+                                            "row": {
+                                                "nb_conversions": "1",
+                                                "nb_visits_converted": "1",
+                                                "revenue": "1",
+                                                "idgoal": "7"
+                                            }
+                                        },
+                                        "nb_conversions": "1",
+                                        "revenue": "1",
+                                        "avg_time_on_site": "45",
+                                        "bounce_rate": "50%",
+                                        "nb_actions_per_visit": "2.9",
+                                        "segment": "dimension1==guest"
                                     }
                                 }
                             },
@@ -102,28 +129,67 @@
                                                         "type": "string"
                                                     },
                                                     "nb_uniq_visitors": {
-                                                        "type": "integer"
+                                                        "type": "string"
                                                     },
                                                     "nb_visits": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_actions": {
+                                                        "type": "string"
+                                                    },
+                                                    "max_actions": {
                                                         "type": "integer"
                                                     },
-                                                    "nb_events": {
+                                                    "sum_visit_length": {
+                                                        "type": "string"
+                                                    },
+                                                    "bounce_count": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_visits_converted": {
+                                                        "type": "string"
+                                                    },
+                                                    "goals": {
+                                                        "properties": {
+                                                            "idgoal=7": {
+                                                                "properties": {
+                                                                    "nb_conversions": {
+                                                                        "type": "integer"
+                                                                    },
+                                                                    "nb_visits_converted": {
+                                                                        "type": "integer"
+                                                                    },
+                                                                    "revenue": {
+                                                                        "type": "integer"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "nb_conversions": {
                                                         "type": "integer"
                                                     },
-                                                    "nb_events_with_value": {
+                                                    "revenue": {
                                                         "type": "integer"
                                                     },
-                                                    "sum_event_value": {
+                                                    "avg_time_on_site": {
                                                         "type": "integer"
                                                     },
-                                                    "min_event_value": {
-                                                        "type": "integer"
+                                                    "bounce_rate": {
+                                                        "type": "string"
                                                     },
-                                                    "max_event_value": {
-                                                        "type": "integer"
-                                                    },
-                                                    "avg_event_value": {
-                                                        "type": "integer"
+                                                    "nb_actions_per_visit": {
+                                                        "type": [
+                                                            "string",
+                                                            "number",
+                                                            "integer",
+                                                            "boolean",
+                                                            "array",
+                                                            "object",
+                                                            "null"
+                                                        ]
                                                     },
                                                     "segment": {
                                                         "type": "string"
@@ -138,21 +204,29 @@
                                 },
                                 "example": [
                                     {
-                                        "label": "Ecommerce",
-                                        "nb_uniq_visitors": 2,
-                                        "nb_visits": 2,
-                                        "nb_events": 2,
-                                        "nb_events_with_value": 2,
-                                        "sum_event_value": 2,
-                                        "min_event_value": 1,
-                                        "max_event_value": 1,
-                                        "avg_event_value": 1,
-                                        "segment": "eventCategory==Ecommerce"
+                                        "label": "guest",
+                                        "nb_uniq_visitors": "14",
+                                        "nb_visits": "14",
+                                        "nb_actions": "41",
+                                        "max_actions": 9,
+                                        "sum_visit_length": "630",
+                                        "bounce_count": "7",
+                                        "nb_visits_converted": "1",
+                                        "goals": {
+                                            "idgoal=7": {
+                                                "nb_conversions": 1,
+                                                "nb_visits_converted": 1,
+                                                "revenue": 1
+                                            }
+                                        },
+                                        "nb_conversions": 1,
+                                        "revenue": 1,
+                                        "avg_time_on_site": 45,
+                                        "bounce_rate": "50%",
+                                        "nb_actions_per_visit": 2.9,
+                                        "segment": "dimension1==guest"
                                     }
                                 ]
-                            },
-                            "application/vnd.ms-excel": {
-                                "example": "label\tnb_uniq_visitors\tnb_visits\tnb_events\tnb_events_with_value\tsum_event_value\tmin_event_value\tmax_event_value\tavg_event_value\tmetadata_segment\nEcommerce\t2\t2\t2\t2\t2\t1\t1\t1\teventCategory==Ecommerce"
                             }
                         }
                     },
@@ -177,42 +251,213 @@
                 }
             }
         },
-        "/index.php?module=API&method=Events.getAction": {
+        "/index.php?module=API&method=CustomDimensions.configureNewCustomDimension": {
             "get": {
                 "tags": [
-                    "Events"
+                    "CustomDimensions"
                 ],
-                "description": "",
-                "operationId": "Events.getAction",
+                "description": "Configures a new Custom Dimension. Note that Custom Dimensions cannot be deleted, be careful when creating one as you might run quickly out of available Custom Dimension slots. Requires at least Admin access for the specified website. A current list of available `$scopes` can be fetched via the API method `CustomDimensions.getAvailableScopes()`. This method will also contain information whether actually Custom Dimension slots are available or whether they are all already in use.",
+                "operationId": "CustomDimensions.configureNewCustomDimension",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idSite",
+                        "in": "query",
+                        "description": "The idSite the dimension shall belong to",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "The name of the dimension",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "scope",
+                        "in": "query",
+                        "description": "Either 'visit' or 'action'. To get an up to date list of availabe scopes fetch the API method `CustomDimensions.getAvailableScopes`",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "active",
+                        "in": "query",
+                        "description": "'0' if dimension should be inactive, '1' if dimension should be active",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "extractions",
+                        "in": "query",
+                        "description": "Either an empty array or if extractions shall be used one or multiple extractions the format array(array('dimension' => 'url', 'pattern' => 'index_(.+).html'), array('dimension' => 'urlparam', 'pattern' => '...')) Supported dimensions are  eg 'url', 'urlparam' and 'action_name'. To get an up to date list of supported dimensions request the API method `CustomDimensions.getAvailableExtractionDimensions`. Note: Extractions can be only set for dimensions in scope 'action'.",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": [],
+                            "default": []
+                        }
+                    },
+                    {
+                        "name": "caseSensitive",
+                        "in": "query",
+                        "description": "'0' if extractions should be applied case insensitive, '1' if extractions should be applied case sensitive",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the ID of the configured dimension. Note that the same idDimension will be used for different websites."
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=CustomDimensions.configureExistingCustomDimension": {
+            "get": {
+                "tags": [
+                    "CustomDimensions"
+                ],
+                "description": "Updates an existing Custom Dimension. This method updates all values, you need to pass existing values of the dimension if you do not want to reset any value. Requires at least Admin access for the specified website.",
+                "operationId": "CustomDimensions.configureExistingCustomDimension",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idDimension",
+                        "in": "query",
+                        "description": "The id of a Custom Dimension.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "idSite",
+                        "in": "query",
+                        "description": "The idSite the dimension belongs to",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "The name of the dimension",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "active",
+                        "in": "query",
+                        "description": "'0' if dimension should be inactive, '1' if dimension should be active",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "extractions",
+                        "in": "query",
+                        "description": "Either an empty array or if extractions shall be used one or multiple extractions the format array(array('dimension' => 'url', 'pattern' => 'index_(.+).html'), array('dimension' => 'urlparam', 'pattern' => '...')) Supported dimensions are  eg 'url', 'urlparam' and 'action_name'. To get an up to date list of supported dimensions request the API method `CustomDimensions.getAvailableExtractionDimensions`. Note: Extractions can be only set for dimensions in scope 'action'.",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": [],
+                            "default": []
+                        }
+                    },
+                    {
+                        "name": "caseSensitive",
+                        "in": "query",
+                        "description": "'0' if extractions should be applied case insensitive, '1' if extractions should be applied case sensitive, null to keep case sensitive unchanged",
+                        "required": false,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "string",
+                                    "default": "null"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=CustomDimensions.getConfiguredCustomDimensions": {
+            "get": {
+                "tags": [
+                    "CustomDimensions"
+                ],
+                "description": "Get a list of all configured CustomDimensions for a given website. Requires at least Admin access for the specified website.",
+                "operationId": "CustomDimensions.getConfiguredCustomDimensions",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
                         "$ref": "#/components/parameters/idSiteRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/periodRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/dateRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/segmentOptional"
-                    },
-                    {
-                        "$ref": "#/components/parameters/expandedOptional"
-                    },
-                    {
-                        "name": "secondaryDimension",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "$ref": "#/components/parameters/flatOptional"
                     }
                 ],
                 "responses": {
@@ -225,6 +470,23 @@
                                         "row": {
                                             "type": "array",
                                             "items": {
+                                                "properties": {
+                                                    "extractions": {
+                                                        "properties": {
+                                                            "row": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "object",
+                                                                    "xml": {
+                                                                        "name": "row"
+                                                                    },
+                                                                    "additionalProperties": true
+                                                                }
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    }
+                                                },
                                                 "type": "object",
                                                 "xml": {
                                                     "name": "row"
@@ -239,18 +501,93 @@
                                     }
                                 },
                                 "example": {
-                                    "row": {
-                                        "label": "Cart change",
-                                        "nb_uniq_visitors": "2",
-                                        "nb_visits": "2",
-                                        "nb_events": "2",
-                                        "nb_events_with_value": "2",
-                                        "sum_event_value": "2",
-                                        "min_event_value": "1",
-                                        "max_event_value": "1",
-                                        "avg_event_value": "1",
-                                        "segment": "eventAction==Cart+change"
-                                    }
+                                    "row": [
+                                        {
+                                            "idcustomdimension": "1",
+                                            "idsite": "1",
+                                            "name": "User Type",
+                                            "index": "1",
+                                            "scope": "visit",
+                                            "active": "1",
+                                            "extractions": "",
+                                            "case_sensitive": "1"
+                                        },
+                                        {
+                                            "idcustomdimension": "2",
+                                            "idsite": "1",
+                                            "name": "Page Author",
+                                            "index": "1",
+                                            "scope": "action",
+                                            "active": "1",
+                                            "extractions": {
+                                                "row": {
+                                                    "dimension": "url",
+                                                    "pattern": ""
+                                                }
+                                            },
+                                            "case_sensitive": "1"
+                                        },
+                                        {
+                                            "idcustomdimension": "3",
+                                            "idsite": "1",
+                                            "name": "Page Age",
+                                            "index": "2",
+                                            "scope": "action",
+                                            "active": "0",
+                                            "extractions": {
+                                                "row": {
+                                                    "dimension": "url",
+                                                    "pattern": ""
+                                                }
+                                            },
+                                            "case_sensitive": "1"
+                                        },
+                                        {
+                                            "idcustomdimension": "4",
+                                            "idsite": "1",
+                                            "name": "Page Location",
+                                            "index": "3",
+                                            "scope": "action",
+                                            "active": "1",
+                                            "extractions": {
+                                                "row": {
+                                                    "dimension": "url",
+                                                    "pattern": ""
+                                                }
+                                            },
+                                            "case_sensitive": "1"
+                                        },
+                                        {
+                                            "idcustomdimension": "5",
+                                            "idsite": "1",
+                                            "name": "Page Type",
+                                            "index": "4",
+                                            "scope": "action",
+                                            "active": "1",
+                                            "extractions": {
+                                                "row": {
+                                                    "dimension": "url",
+                                                    "pattern": ""
+                                                }
+                                            },
+                                            "case_sensitive": "1"
+                                        },
+                                        {
+                                            "idcustomdimension": "6",
+                                            "idsite": "1",
+                                            "name": "Diving Rating",
+                                            "index": "5",
+                                            "scope": "action",
+                                            "active": "0",
+                                            "extractions": {
+                                                "row": {
+                                                    "dimension": "url",
+                                                    "pattern": ""
+                                                }
+                                            },
+                                            "case_sensitive": "1"
+                                        }
+                                    ]
                                 }
                             },
                             "application/json": {
@@ -260,35 +597,30 @@
                                         "properties": {
                                             "": {
                                                 "properties": {
-                                                    "label": {
+                                                    "idcustomdimension": {
                                                         "type": "string"
                                                     },
-                                                    "nb_uniq_visitors": {
-                                                        "type": "integer"
-                                                    },
-                                                    "nb_visits": {
-                                                        "type": "integer"
-                                                    },
-                                                    "nb_events": {
-                                                        "type": "integer"
-                                                    },
-                                                    "nb_events_with_value": {
-                                                        "type": "integer"
-                                                    },
-                                                    "sum_event_value": {
-                                                        "type": "integer"
-                                                    },
-                                                    "min_event_value": {
-                                                        "type": "integer"
-                                                    },
-                                                    "max_event_value": {
-                                                        "type": "integer"
-                                                    },
-                                                    "avg_event_value": {
-                                                        "type": "integer"
-                                                    },
-                                                    "segment": {
+                                                    "idsite": {
                                                         "type": "string"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "index": {
+                                                        "type": "string"
+                                                    },
+                                                    "scope": {
+                                                        "type": "string"
+                                                    },
+                                                    "active": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "extractions": {
+                                                        "type": "array",
+                                                        "items": []
+                                                    },
+                                                    "case_sensitive": {
+                                                        "type": "boolean"
                                                     }
                                                 },
                                                 "type": "object"
@@ -300,21 +632,91 @@
                                 },
                                 "example": [
                                     {
-                                        "label": "Cart change",
-                                        "nb_uniq_visitors": 2,
-                                        "nb_visits": 2,
-                                        "nb_events": 2,
-                                        "nb_events_with_value": 2,
-                                        "sum_event_value": 2,
-                                        "min_event_value": 1,
-                                        "max_event_value": 1,
-                                        "avg_event_value": 1,
-                                        "segment": "eventAction==Cart+change"
+                                        "idcustomdimension": "1",
+                                        "idsite": "1",
+                                        "name": "User Type",
+                                        "index": "1",
+                                        "scope": "visit",
+                                        "active": true,
+                                        "extractions": [],
+                                        "case_sensitive": true
+                                    },
+                                    {
+                                        "idcustomdimension": "2",
+                                        "idsite": "1",
+                                        "name": "Page Author",
+                                        "index": "1",
+                                        "scope": "action",
+                                        "active": true,
+                                        "extractions": [
+                                            {
+                                                "dimension": "url",
+                                                "pattern": ""
+                                            }
+                                        ],
+                                        "case_sensitive": true
+                                    },
+                                    {
+                                        "idcustomdimension": "3",
+                                        "idsite": "1",
+                                        "name": "Page Age",
+                                        "index": "2",
+                                        "scope": "action",
+                                        "active": false,
+                                        "extractions": [
+                                            {
+                                                "dimension": "url",
+                                                "pattern": ""
+                                            }
+                                        ],
+                                        "case_sensitive": true
+                                    },
+                                    {
+                                        "idcustomdimension": "4",
+                                        "idsite": "1",
+                                        "name": "Page Location",
+                                        "index": "3",
+                                        "scope": "action",
+                                        "active": true,
+                                        "extractions": [
+                                            {
+                                                "dimension": "url",
+                                                "pattern": ""
+                                            }
+                                        ],
+                                        "case_sensitive": true
+                                    },
+                                    {
+                                        "idcustomdimension": "5",
+                                        "idsite": "1",
+                                        "name": "Page Type",
+                                        "index": "4",
+                                        "scope": "action",
+                                        "active": true,
+                                        "extractions": [
+                                            {
+                                                "dimension": "url",
+                                                "pattern": ""
+                                            }
+                                        ],
+                                        "case_sensitive": true
+                                    },
+                                    {
+                                        "idcustomdimension": "6",
+                                        "idsite": "1",
+                                        "name": "Diving Rating",
+                                        "index": "5",
+                                        "scope": "action",
+                                        "active": false,
+                                        "extractions": [
+                                            {
+                                                "dimension": "url",
+                                                "pattern": ""
+                                            }
+                                        ],
+                                        "case_sensitive": true
                                     }
                                 ]
-                            },
-                            "application/vnd.ms-excel": {
-                                "example": "label\tnb_uniq_visitors\tnb_visits\tnb_events\tnb_events_with_value\tsum_event_value\tmin_event_value\tmax_event_value\tavg_event_value\tmetadata_segment\nCart change\t2\t2\t2\t2\t2\t1\t1\t1\teventAction==Cart+change"
                             }
                         }
                     },
@@ -339,42 +741,19 @@
                 }
             }
         },
-        "/index.php?module=API&method=Events.getName": {
+        "/index.php?module=API&method=CustomDimensions.getAvailableScopes": {
             "get": {
                 "tags": [
-                    "Events"
+                    "CustomDimensions"
                 ],
-                "description": "",
-                "operationId": "Events.getName",
+                "description": "Get a list of all supported scopes that can be used in the API method `CustomDimensions.configureNewCustomDimension`. The response also contains information whether more Custom Dimensions can be created or not. Requires at least Admin access for the specified website.",
+                "operationId": "CustomDimensions.getAvailableScopes",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
                         "$ref": "#/components/parameters/idSiteRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/periodRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/dateRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/segmentOptional"
-                    },
-                    {
-                        "$ref": "#/components/parameters/expandedOptional"
-                    },
-                    {
-                        "name": "secondaryDimension",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "$ref": "#/components/parameters/flatOptional"
                     }
                 ],
                 "responses": {
@@ -403,28 +782,20 @@
                                 "example": {
                                     "row": [
                                         {
-                                            "label": "added - Distance Line & Reel",
-                                            "nb_uniq_visitors": "1",
-                                            "nb_visits": "1",
-                                            "nb_events": "1",
-                                            "nb_events_with_value": "1",
-                                            "sum_event_value": "1",
-                                            "min_event_value": "1",
-                                            "max_event_value": "1",
-                                            "avg_event_value": "1",
-                                            "segment": "eventName==added+-+Distance+Line+%26amp%3B+Reel"
+                                            "value": "visit",
+                                            "name": "Visit",
+                                            "numSlotsAvailable": "15",
+                                            "numSlotsUsed": "1",
+                                            "numSlotsLeft": "14",
+                                            "supportsExtractions": "0"
                                         },
                                         {
-                                            "label": "added - Diving Tank",
-                                            "nb_uniq_visitors": "1",
-                                            "nb_visits": "1",
-                                            "nb_events": "1",
-                                            "nb_events_with_value": "1",
-                                            "sum_event_value": "1",
-                                            "min_event_value": "1",
-                                            "max_event_value": "1",
-                                            "avg_event_value": "1",
-                                            "segment": "eventName==added+-+Diving+Tank"
+                                            "value": "action",
+                                            "name": "Action",
+                                            "numSlotsAvailable": "15",
+                                            "numSlotsUsed": "5",
+                                            "numSlotsLeft": "10",
+                                            "supportsExtractions": "1"
                                         }
                                     ]
                                 }
@@ -436,35 +807,23 @@
                                         "properties": {
                                             "": {
                                                 "properties": {
-                                                    "label": {
+                                                    "value": {
                                                         "type": "string"
                                                     },
-                                                    "nb_uniq_visitors": {
-                                                        "type": "integer"
-                                                    },
-                                                    "nb_visits": {
+                                                    "name": {
                                                         "type": "string"
                                                     },
-                                                    "nb_events": {
-                                                        "type": "string"
-                                                    },
-                                                    "nb_events_with_value": {
-                                                        "type": "string"
-                                                    },
-                                                    "sum_event_value": {
+                                                    "numSlotsAvailable": {
                                                         "type": "integer"
                                                     },
-                                                    "min_event_value": {
+                                                    "numSlotsUsed": {
                                                         "type": "integer"
                                                     },
-                                                    "max_event_value": {
+                                                    "numSlotsLeft": {
                                                         "type": "integer"
                                                     },
-                                                    "avg_event_value": {
-                                                        "type": "integer"
-                                                    },
-                                                    "segment": {
-                                                        "type": "string"
+                                                    "supportsExtractions": {
+                                                        "type": "boolean"
                                                     }
                                                 },
                                                 "type": "object"
@@ -476,33 +835,25 @@
                                 },
                                 "example": [
                                     {
-                                        "label": "added - Distance Line & Reel",
-                                        "nb_uniq_visitors": 1,
-                                        "nb_visits": "1",
-                                        "nb_events": "1",
-                                        "nb_events_with_value": "1",
-                                        "sum_event_value": 1,
-                                        "min_event_value": 1,
-                                        "max_event_value": 1,
-                                        "avg_event_value": 1,
-                                        "segment": "eventName==added+-+Distance+Line+%26amp%3B+Reel"
+                                        "value": "visit",
+                                        "name": "Visit",
+                                        "numSlotsAvailable": 15,
+                                        "numSlotsUsed": 1,
+                                        "numSlotsLeft": 14,
+                                        "supportsExtractions": false
                                     },
                                     {
-                                        "label": "added - Diving Tank",
-                                        "nb_uniq_visitors": 1,
-                                        "nb_visits": "1",
-                                        "nb_events": "1",
-                                        "nb_events_with_value": "1",
-                                        "sum_event_value": 1,
-                                        "min_event_value": 1,
-                                        "max_event_value": 1,
-                                        "avg_event_value": 1,
-                                        "segment": "eventName==added+-+Diving+Tank"
+                                        "value": "action",
+                                        "name": "Action",
+                                        "numSlotsAvailable": 15,
+                                        "numSlotsUsed": 5,
+                                        "numSlotsLeft": 10,
+                                        "supportsExtractions": true
                                     }
                                 ]
                             },
                             "application/vnd.ms-excel": {
-                                "example": "label\tnb_uniq_visitors\tnb_visits\tnb_events\tnb_events_with_value\tsum_event_value\tmin_event_value\tmax_event_value\tavg_event_value\tmetadata_segment\nadded - Distance Line & Reel\t1\t1\t1\t1\t1\t1\t1\t1\teventName==added+-+Distance+Line+%26amp%3B+Reel\nadded - Diving Tank\t1\t1\t1\t1\t1\t1\t1\t1\teventName==added+-+Diving+Tank"
+                                "example": "value\tname\tnumSlotsAvailable\tnumSlotsUsed\tnumSlotsLeft\tsupportsExtractions\nvisit\tVisit\t15\t1\t14\t0\naction\tAction\t15\t5\t10\t1"
                             }
                         }
                     },
@@ -527,296 +878,98 @@
                 }
             }
         },
-        "/index.php?module=API&method=Events.getActionFromCategoryId": {
+        "/index.php?module=API&method=CustomDimensions.getAvailableExtractionDimensions": {
             "get": {
                 "tags": [
-                    "Events"
+                    "CustomDimensions"
                 ],
-                "description": "",
-                "operationId": "Events.getActionFromCategoryId",
+                "description": "Get a list of all available dimensions that can be used in an extraction. Requires at least Admin access to one website.",
+                "operationId": "CustomDimensions.getAvailableExtractionDimensions",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSiteRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/periodRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/dateRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSubtableRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/segmentOptional"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=Events.getNameFromCategoryId": {
-            "get": {
-                "tags": [
-                    "Events"
-                ],
-                "description": "",
-                "operationId": "Events.getNameFromCategoryId",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSiteRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/periodRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/dateRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSubtableRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/segmentOptional"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=Events.getCategoryFromActionId": {
-            "get": {
-                "tags": [
-                    "Events"
-                ],
-                "description": "",
-                "operationId": "Events.getCategoryFromActionId",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSiteRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/periodRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/dateRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSubtableRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/segmentOptional"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=Events.getNameFromActionId": {
-            "get": {
-                "tags": [
-                    "Events"
-                ],
-                "description": "",
-                "operationId": "Events.getNameFromActionId",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSiteRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/periodRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/dateRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSubtableRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/segmentOptional"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=Events.getActionFromNameId": {
-            "get": {
-                "tags": [
-                    "Events"
-                ],
-                "description": "",
-                "operationId": "Events.getActionFromNameId",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSiteRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/periodRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/dateRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSubtableRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/segmentOptional"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=Events.getCategoryFromNameId": {
-            "get": {
-                "tags": [
-                    "Events"
-                ],
-                "description": "",
-                "operationId": "Events.getCategoryFromNameId",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSiteRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/periodRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/dateRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSubtableRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/segmentOptional"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK"
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "value": "url",
+                                            "name": "Page URL"
+                                        },
+                                        {
+                                            "value": "urlparam",
+                                            "name": "Page URL Parameter"
+                                        },
+                                        {
+                                            "value": "action_name",
+                                            "name": "Page Title"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "value": {
+                                                        "type": "string"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "value": "url",
+                                        "name": "Page URL"
+                                    },
+                                    {
+                                        "value": "urlparam",
+                                        "name": "Page URL Parameter"
+                                    },
+                                    {
+                                        "value": "action_name",
+                                        "name": "Page Title"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "value\tname\nurl\tPage URL\nurlparam\tPage URL Parameter\naction_name\tPage Title"
+                            }
+                        }
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1654,8 +1807,8 @@
     ],
     "tags": [
         {
-            "name": "Events",
-            "description": "The Events API lets you request reports about your users' Custom Events.  Events are tracked using the Javascript Tracker trackEvent() function, or using the [Tracking HTTP API](https://developer.matomo.org/api-reference/tracking-api).  <br/>An event is defined by an event category (Videos, Music, Games...), an event action (Play, Pause, Duration, Add Playlist, Downloaded, Clicked...), and an optional event name (a movie name, a song title, etc.) and an optional numeric value.  <br/>This API exposes the following Custom Events reports: <code>getCategory</code> lists the top Event Categories, <code>getAction</code> lists the top Event Actions, <code>getName</code> lists the top Event Names.  <br/>These Events report define the following metrics: nb_uniq_visitors, nb_visits, nb_events. If you define values for your events, you can expect to see the following metrics: nb_events_with_value, sum_event_value, min_event_value, max_event_value, avg_event_value  <br/>The Events.get* reports can be used with an optional <code>&secondaryDimension</code> parameter. Secondary dimension is the dimension used in the sub-table of the Event report you are requesting.  <br/>Here are the possible values of <code>secondaryDimension</code>: <ul> <li>For <code>Events.getCategory</code> you can set <code>secondaryDimension</code> to <code>eventAction</code> or <code>eventName</code>.</li> <li>For <code>Events.getAction</code> you can set <code>secondaryDimension</code> to <code>eventName</code> or <code>eventCategory</code>.</li> <li>For <code>Events.getName</code> you can set <code>secondaryDimension</code> to <code>eventAction</code> or <code>eventCategory</code>.</li> </ul>  <br/>For example, to request all Custom Events Categories, and for each, the top Event actions, you would request: <code>method=Events.getCategory&secondaryDimension=eventAction&flat=1</code>. You may also omit <code>&flat=1</code> in which case, to get top Event actions for one Event category, use <code>method=Events.getActionFromCategoryId</code> passing it the <code>&idSubtable=</code> of this Event category."
+            "name": "CustomDimensions",
+            "description": "The Custom Dimensions API lets you manage and access reports for your configured Custom Dimensions."
         }
     ],
     "externalDocs": {

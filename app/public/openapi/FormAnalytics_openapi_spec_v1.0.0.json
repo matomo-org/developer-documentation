@@ -6,6 +6,10 @@
     },
     "servers": [
         {
+            "url": "https://5x-dev.ddev.site/",
+            "description": "Current Matomo instance"
+        },
+        {
             "url": "https://demo.matomo.cloud/",
             "description": "Matomo demo server"
         }
@@ -235,7 +239,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -336,52 +340,23 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "List of matching forms. Each form contains the same keys described in getForm().</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=FormAnalytics.getForms&idSite=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=FormAnalytics.getForms&idSite=1&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "List of matching forms. Each form contains the same keys described in getForm().",
                         "content": {
                             "text/xml": {
                                 "schema": {
                                     "properties": {
-                                        "row": {
-                                            "type": "array",
-                                            "items": {
-                                                "properties": {
-                                                    "match_form_rules": {
-                                                        "properties": {
-                                                            "row": {
-                                                                "type": "array",
-                                                                "items": {
-                                                                    "type": "object",
-                                                                    "xml": {
-                                                                        "name": "row"
-                                                                    },
-                                                                    "additionalProperties": true
-                                                                }
-                                                            }
-                                                        },
-                                                        "type": "object"
+                                        "item": {
+                                            "properties": {
+                                                "match_form_rules": {
+                                                    "properties": {
+                                                        "item": {
+                                                            "type": "object"
+                                                        }
                                                     },
-                                                    "fields": {
-                                                        "properties": {
-                                                            "row": {
-                                                                "type": "array",
-                                                                "items": {
-                                                                    "type": "object",
-                                                                    "xml": {
-                                                                        "name": "row"
-                                                                    },
-                                                                    "additionalProperties": true
-                                                                }
-                                                            }
-                                                        },
-                                                        "type": "object"
-                                                    }
-                                                },
-                                                "type": "object",
-                                                "xml": {
-                                                    "name": "row"
-                                                },
-                                                "additionalProperties": true
-                                            }
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "type": "object"
                                         }
                                     },
                                     "type": "object",
@@ -390,201 +365,29 @@
                                     }
                                 },
                                 "example": {
-                                    "row": [
-                                        {
-                                            "idsiteform": "2",
-                                            "idsite": "1",
-                                            "idgoal": "",
-                                            "name": "Comment Form",
-                                            "description": "Standard WordPress comment form on posts",
-                                            "status": "running",
-                                            "in_overview": "0",
-                                            "match_form_rules": {
-                                                "row": {
-                                                    "attribute": "form_id",
-                                                    "pattern": "equals_exactly",
-                                                    "value": "commentform"
-                                                }
-                                            },
-                                            "match_page_rules": "",
-                                            "conversion_rule_option": "page_visit",
-                                            "conversion_rules": "",
-                                            "fields": {
-                                                "row": [
-                                                    {
-                                                        "name": "comment",
-                                                        "type": "textarea",
-                                                        "displayName": "Comment"
-                                                    },
-                                                    {
-                                                        "name": "author",
-                                                        "type": "text",
-                                                        "displayName": "Name"
-                                                    },
-                                                    {
-                                                        "name": "email",
-                                                        "type": "text",
-                                                        "displayName": "Email"
-                                                    },
-                                                    {
-                                                        "name": "subscribe-reloaded",
-                                                        "type": "select",
-                                                        "displayName": ""
-                                                    },
-                                                    {
-                                                        "name": "g-recaptcha-response",
-                                                        "type": "textarea",
-                                                        "displayName": "Captcha"
-                                                    },
-                                                    {
-                                                        "name": "wprs_headline",
-                                                        "type": "text",
-                                                        "displayName": ""
-                                                    },
-                                                    {
-                                                        "name": "url",
-                                                        "type": "text",
-                                                        "displayName": ""
-                                                    },
-                                                    {
-                                                        "name": "wp-comment-cookies-consent",
-                                                        "type": "checkbox",
-                                                        "displayName": ""
-                                                    }
-                                                ]
-                                            },
-                                            "auto_created": "1",
-                                            "created_date": "2017-03-25 08:15:00",
-                                            "updated_date": "2019-08-04 04:35:51"
+                                    "item": {
+                                        "idsiteform": "1",
+                                        "idsite": "2",
+                                        "idgoal": "",
+                                        "name": "Signup Form",
+                                        "description": "second form on landing page",
+                                        "status": "running",
+                                        "in_overview": "0",
+                                        "match_form_rules": {
+                                            "item": {
+                                                "attribute": "form_id",
+                                                "pattern": "contains",
+                                                "value": "SignUpForm"
+                                            }
                                         },
-                                        {
-                                            "idsiteform": "7",
-                                            "idsite": "1",
-                                            "idgoal": "",
-                                            "name": "Apply to Job Form",
-                                            "description": "",
-                                            "status": "running",
-                                            "in_overview": "0",
-                                            "match_form_rules": {
-                                                "row": {
-                                                    "attribute": "form_id",
-                                                    "pattern": "equals",
-                                                    "value": "wpjb-apply-form"
-                                                }
-                                            },
-                                            "match_page_rules": "",
-                                            "conversion_rule_option": "page_visit",
-                                            "conversion_rules": "",
-                                            "fields": {
-                                                "row": [
-                                                    {
-                                                        "name": "applicant_name",
-                                                        "type": "text",
-                                                        "displayName": "Applicant name"
-                                                    },
-                                                    {
-                                                        "name": "email",
-                                                        "type": "text",
-                                                        "displayName": "Email"
-                                                    },
-                                                    {
-                                                        "name": "cv_file",
-                                                        "type": "file",
-                                                        "displayName": "CV file"
-                                                    },
-                                                    {
-                                                        "name": "resume",
-                                                        "type": "textarea",
-                                                        "displayName": "Resume textarea"
-                                                    },
-                                                    {
-                                                        "name": "resume_id",
-                                                        "type": "checkbox",
-                                                        "displayName": "resume id"
-                                                    }
-                                                ]
-                                            },
-                                            "auto_created": "1",
-                                            "created_date": "2017-03-25 11:53:57",
-                                            "updated_date": "2018-04-24 09:28:46"
-                                        },
-                                        {
-                                            "idsiteform": "29",
-                                            "idsite": "1",
-                                            "idgoal": "",
-                                            "name": "Add Job Form",
-                                            "description": "",
-                                            "status": "running",
-                                            "in_overview": "0",
-                                            "match_form_rules": {
-                                                "row": {
-                                                    "attribute": "form_name",
-                                                    "pattern": "equals",
-                                                    "value": "wpjb-form-job-add"
-                                                }
-                                            },
-                                            "match_page_rules": "",
-                                            "conversion_rule_option": "page_visit",
-                                            "conversion_rules": "",
-                                            "fields": {
-                                                "row": [
-                                                    {
-                                                        "name": "company_name",
-                                                        "type": "text",
-                                                        "displayName": ""
-                                                    },
-                                                    {
-                                                        "name": "company_email",
-                                                        "type": "text",
-                                                        "displayName": ""
-                                                    },
-                                                    {
-                                                        "name": "job_type",
-                                                        "type": "select",
-                                                        "displayName": ""
-                                                    },
-                                                    {
-                                                        "name": "job_category",
-                                                        "type": "select",
-                                                        "displayName": ""
-                                                    },
-                                                    {
-                                                        "name": "job_title",
-                                                        "type": "text",
-                                                        "displayName": ""
-                                                    },
-                                                    {
-                                                        "name": "job_description",
-                                                        "type": "textarea",
-                                                        "displayName": ""
-                                                    },
-                                                    {
-                                                        "name": "job_country",
-                                                        "type": "select",
-                                                        "displayName": ""
-                                                    },
-                                                    {
-                                                        "name": "job_location",
-                                                        "type": "text",
-                                                        "displayName": ""
-                                                    },
-                                                    {
-                                                        "name": "company_website",
-                                                        "type": "text",
-                                                        "displayName": ""
-                                                    },
-                                                    {
-                                                        "name": "company_logo",
-                                                        "type": "file",
-                                                        "displayName": ""
-                                                    }
-                                                ]
-                                            },
-                                            "auto_created": "0",
-                                            "created_date": "2018-03-28 20:49:04",
-                                            "updated_date": "2018-03-30 15:34:49"
-                                        }
-                                    ]
+                                        "match_page_rules": "",
+                                        "conversion_rule_option": "page_visit",
+                                        "conversion_rules": "",
+                                        "fields": "",
+                                        "auto_created": "false",
+                                        "created_date": "2015-01-02 03:04:05",
+                                        "updated_date": "2015-01-02 03:04:05"
+                                    }
                                 }
                             },
                             "application/json": {
@@ -625,26 +428,7 @@
                                                     },
                                                     "fields": {
                                                         "type": "array",
-                                                        "items": {
-                                                            "properties": {
-                                                                "": {
-                                                                    "properties": {
-                                                                        "name": {
-                                                                            "type": "string"
-                                                                        },
-                                                                        "type": {
-                                                                            "type": "string"
-                                                                        },
-                                                                        "displayName": {
-                                                                            "type": "string"
-                                                                        }
-                                                                    },
-                                                                    "type": "object"
-                                                                }
-                                                            },
-                                                            "type": "object",
-                                                            "additionalProperties": true
-                                                        }
+                                                        "items": []
                                                     },
                                                     "conversion_rule_option": {
                                                         "type": "string"
@@ -668,193 +452,32 @@
                                 },
                                 "example": [
                                     {
-                                        "idsiteform": 2,
-                                        "idsite": 1,
+                                        "idsiteform": 1,
+                                        "idsite": 2,
                                         "idgoal": null,
-                                        "name": "Comment Form",
-                                        "description": "Standard WordPress comment form on posts",
+                                        "name": "Signup Form",
+                                        "description": "second form on landing page",
                                         "status": "running",
                                         "in_overview": 0,
                                         "match_form_rules": [
                                             {
                                                 "attribute": "form_id",
-                                                "pattern": "equals_exactly",
-                                                "value": "commentform"
+                                                "pattern": "contains",
+                                                "value": "SignUpForm"
                                             }
                                         ],
                                         "match_page_rules": [],
                                         "conversion_rule_option": "page_visit",
                                         "conversion_rules": [],
-                                        "fields": [
-                                            {
-                                                "name": "comment",
-                                                "type": "textarea",
-                                                "displayName": "Comment"
-                                            },
-                                            {
-                                                "name": "author",
-                                                "type": "text",
-                                                "displayName": "Name"
-                                            },
-                                            {
-                                                "name": "email",
-                                                "type": "text",
-                                                "displayName": "Email"
-                                            },
-                                            {
-                                                "name": "subscribe-reloaded",
-                                                "type": "select",
-                                                "displayName": ""
-                                            },
-                                            {
-                                                "name": "g-recaptcha-response",
-                                                "type": "textarea",
-                                                "displayName": "Captcha"
-                                            },
-                                            {
-                                                "name": "wprs_headline",
-                                                "type": "text",
-                                                "displayName": ""
-                                            },
-                                            {
-                                                "name": "url",
-                                                "type": "text",
-                                                "displayName": ""
-                                            },
-                                            {
-                                                "name": "wp-comment-cookies-consent",
-                                                "type": "checkbox",
-                                                "displayName": ""
-                                            }
-                                        ],
-                                        "auto_created": true,
-                                        "created_date": "2017-03-25 08:15:00",
-                                        "updated_date": "2019-08-04 04:35:51"
-                                    },
-                                    {
-                                        "idsiteform": 7,
-                                        "idsite": 1,
-                                        "idgoal": null,
-                                        "name": "Apply to Job Form",
-                                        "description": "",
-                                        "status": "running",
-                                        "in_overview": 0,
-                                        "match_form_rules": [
-                                            {
-                                                "attribute": "form_id",
-                                                "pattern": "equals",
-                                                "value": "wpjb-apply-form"
-                                            }
-                                        ],
-                                        "match_page_rules": [],
-                                        "conversion_rule_option": "page_visit",
-                                        "conversion_rules": [],
-                                        "fields": [
-                                            {
-                                                "name": "applicant_name",
-                                                "type": "text",
-                                                "displayName": "Applicant name"
-                                            },
-                                            {
-                                                "name": "email",
-                                                "type": "text",
-                                                "displayName": "Email"
-                                            },
-                                            {
-                                                "name": "cv_file",
-                                                "type": "file",
-                                                "displayName": "CV file"
-                                            },
-                                            {
-                                                "name": "resume",
-                                                "type": "textarea",
-                                                "displayName": "Resume textarea"
-                                            },
-                                            {
-                                                "name": "resume_id",
-                                                "type": "checkbox",
-                                                "displayName": "resume id"
-                                            }
-                                        ],
-                                        "auto_created": true,
-                                        "created_date": "2017-03-25 11:53:57",
-                                        "updated_date": "2018-04-24 09:28:46"
-                                    },
-                                    {
-                                        "idsiteform": 29,
-                                        "idsite": 1,
-                                        "idgoal": null,
-                                        "name": "Add Job Form",
-                                        "description": "",
-                                        "status": "running",
-                                        "in_overview": 0,
-                                        "match_form_rules": [
-                                            {
-                                                "attribute": "form_name",
-                                                "pattern": "equals",
-                                                "value": "wpjb-form-job-add"
-                                            }
-                                        ],
-                                        "match_page_rules": [],
-                                        "conversion_rule_option": "page_visit",
-                                        "conversion_rules": [],
-                                        "fields": [
-                                            {
-                                                "name": "company_name",
-                                                "type": "text",
-                                                "displayName": ""
-                                            },
-                                            {
-                                                "name": "company_email",
-                                                "type": "text",
-                                                "displayName": ""
-                                            },
-                                            {
-                                                "name": "job_type",
-                                                "type": "select",
-                                                "displayName": ""
-                                            },
-                                            {
-                                                "name": "job_category",
-                                                "type": "select",
-                                                "displayName": ""
-                                            },
-                                            {
-                                                "name": "job_title",
-                                                "type": "text",
-                                                "displayName": ""
-                                            },
-                                            {
-                                                "name": "job_description",
-                                                "type": "textarea",
-                                                "displayName": ""
-                                            },
-                                            {
-                                                "name": "job_country",
-                                                "type": "select",
-                                                "displayName": ""
-                                            },
-                                            {
-                                                "name": "job_location",
-                                                "type": "text",
-                                                "displayName": ""
-                                            },
-                                            {
-                                                "name": "company_website",
-                                                "type": "text",
-                                                "displayName": ""
-                                            },
-                                            {
-                                                "name": "company_logo",
-                                                "type": "file",
-                                                "displayName": ""
-                                            }
-                                        ],
+                                        "fields": [],
                                         "auto_created": false,
-                                        "created_date": "2018-03-28 20:49:04",
-                                        "updated_date": "2018-03-30 15:34:49"
+                                        "created_date": "2015-01-02 03:04:05",
+                                        "updated_date": "2015-01-02 03:04:05"
                                     }
                                 ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "key\tvalue\n0.idsiteform\t1\n0.idsite\t2\n0.idgoal\tnull\n0.name\tSignup Form\n0.description\tsecond form on landing page\n0.status\trunning\n0.in_overview\t0\n0.match_form_rules.0.attribute\tform_id\n0.match_form_rules.0.pattern\tcontains\n0.match_form_rules.0.value\tSignUpForm\n0.conversion_rule_option\tpage_visit\n0.auto_created\tfalse\n0.created_date\t2015-01-02 03:04:05\n0.updated_date\t2015-01-02 03:04:05\n"
                             }
                         }
                     },
@@ -966,7 +589,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1021,7 +644,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1119,7 +742,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=FormAnalytics.get&idSite=1&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=FormAnalytics.get&idSite=1&period=day&date=today&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=FormAnalytics.get&idSite=1&period=day&date=today&format=Tsv&token_auth=anonymous)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -1129,22 +752,22 @@
                                     }
                                 },
                                 "example": {
-                                    "nb_form_views": "12202",
-                                    "nb_form_viewers": "8061",
-                                    "nb_form_starts": "499",
-                                    "nb_form_starters": "428",
-                                    "nb_form_submissions": "540",
-                                    "nb_form_submitters": "520",
-                                    "nb_form_resubmitters": "16",
-                                    "nb_form_conversions": "133",
-                                    "form_starters_rate": "5.3%",
-                                    "form_submitter_rate": "121.5%",
-                                    "form_conversion_rate": "31.1%",
-                                    "form_resubmitters_rate": "3.1%",
-                                    "avg_form_time_hesitation": "32.074",
-                                    "avg_form_time_spent": "105.504",
-                                    "avg_form_time_to_first_submission": "9.782",
-                                    "avg_form_time_to_conversion": "57.279"
+                                    "nb_form_views": "23",
+                                    "nb_form_viewers": "13",
+                                    "nb_form_starts": "1",
+                                    "nb_form_starters": "1",
+                                    "nb_form_submissions": "1",
+                                    "nb_form_submitters": "1",
+                                    "nb_form_resubmitters": "0",
+                                    "nb_form_conversions": "0",
+                                    "form_starters_rate": "7.7%",
+                                    "form_submitter_rate": "100%",
+                                    "form_conversion_rate": "0%",
+                                    "form_resubmitters_rate": "0%",
+                                    "avg_form_time_hesitation": "8.514",
+                                    "avg_form_time_spent": "30.374",
+                                    "avg_form_time_to_first_submission": "0.001",
+                                    "avg_form_time_to_conversion": "0"
                                 }
                             },
                             "application/json": {
@@ -1220,40 +843,32 @@
                                             ]
                                         },
                                         "avg_form_time_to_conversion": {
-                                            "type": [
-                                                "string",
-                                                "number",
-                                                "integer",
-                                                "boolean",
-                                                "array",
-                                                "object",
-                                                "null"
-                                            ]
+                                            "type": "integer"
                                         }
                                     },
                                     "type": "object"
                                 },
                                 "example": {
-                                    "nb_form_views": 12202,
-                                    "nb_form_viewers": 8061,
-                                    "nb_form_starts": 499,
-                                    "nb_form_starters": 428,
-                                    "nb_form_submissions": 540,
-                                    "nb_form_submitters": 520,
-                                    "nb_form_resubmitters": 16,
-                                    "nb_form_conversions": 133,
-                                    "form_starters_rate": "5.3%",
-                                    "form_submitter_rate": "121.5%",
-                                    "form_conversion_rate": "31.1%",
-                                    "form_resubmitters_rate": "3.1%",
-                                    "avg_form_time_hesitation": 32.074,
-                                    "avg_form_time_spent": 105.504,
-                                    "avg_form_time_to_first_submission": 9.782,
-                                    "avg_form_time_to_conversion": 57.279
+                                    "nb_form_views": 23,
+                                    "nb_form_viewers": 13,
+                                    "nb_form_starts": 1,
+                                    "nb_form_starters": 1,
+                                    "nb_form_submissions": 1,
+                                    "nb_form_submitters": 1,
+                                    "nb_form_resubmitters": 0,
+                                    "nb_form_conversions": 0,
+                                    "form_starters_rate": "7.7%",
+                                    "form_submitter_rate": "100%",
+                                    "form_conversion_rate": "0%",
+                                    "form_resubmitters_rate": "0%",
+                                    "avg_form_time_hesitation": 8.514,
+                                    "avg_form_time_spent": 30.374,
+                                    "avg_form_time_to_first_submission": 0.001,
+                                    "avg_form_time_to_conversion": 0
                                 }
                             },
                             "application/vnd.ms-excel": {
-                                "example": "nb_form_views\tnb_form_viewers\tnb_form_starts\tnb_form_starters\tnb_form_submissions\tnb_form_submitters\tnb_form_resubmitters\tnb_form_conversions\tform_starters_rate\tform_submitter_rate\tform_conversion_rate\tform_resubmitters_rate\tavg_form_time_hesitation\tavg_form_time_spent\tavg_form_time_to_first_submission\tavg_form_time_to_conversion\n12202\t8061\t499\t428\t540\t520\t16\t133\t5.3%\t121.5%\t31.1%\t3.1%\t32.074\t105.504\t9.782\t57.279"
+                                "example": "nb_form_views\tnb_form_viewers\tnb_form_starts\tnb_form_starters\tnb_form_submissions\tnb_form_submitters\tnb_form_resubmitters\tnb_form_conversions\tform_starters_rate\tform_submitter_rate\tform_conversion_rate\tform_resubmitters_rate\tavg_form_time_hesitation\tavg_form_time_spent\tavg_form_time_to_first_submission\tavg_form_time_to_conversion\n23\t13\t1\t1\t1\t1\t0\t0\t7.7%\t100%\t0%\t0%\t8.514\t30.374\t0.001\t0"
                             }
                         }
                     },
@@ -1501,7 +1116,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Report table containing page URL metrics and labels.</br>Example links: [XML](https://demo.matomo.cloud/index.php?module=API&method=FormAnalytics.getPageUrls&idSite=1&idForm=2&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/index.php?module=API&method=FormAnalytics.getPageUrls&idSite=1&idForm=2&period=day&date=today&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/index.php?module=API&method=FormAnalytics.getPageUrls&idSite=1&idForm=2&period=day&date=today&format=Tsv&token_auth=anonymous)",
+                        "description": "Report table containing page URL metrics and labels.",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -1525,27 +1140,9 @@
                                 "example": {
                                     "row": [
                                         {
-                                            "label": "divezone.net\\/about-us",
-                                            "nb_form_views": "7",
-                                            "nb_form_viewers": "7",
-                                            "nb_form_starts": "2",
-                                            "nb_form_starters": "1",
-                                            "nb_form_submissions": "0",
-                                            "nb_form_submitters": "0",
-                                            "nb_form_resubmitters": "0",
-                                            "nb_form_conversions": "0",
-                                            "form_starters_rate": "14.3%",
-                                            "form_conversion_rate": "0%",
-                                            "form_submitter_rate": "0%",
-                                            "avg_form_time_hesitation": "1.306",
-                                            "avg_form_time_to_first_submission": "0",
-                                            "avg_form_time_spent": "0",
-                                            "url": "divezone.net\\/about-us"
-                                        },
-                                        {
-                                            "label": "divezone.net\\/arctic-liveaboard",
-                                            "nb_form_views": "2",
-                                            "nb_form_viewers": "2",
+                                            "label": "divezone.net\\/caribbean-sea-liveaboard-diving",
+                                            "nb_form_views": "1",
+                                            "nb_form_viewers": "1",
                                             "nb_form_starts": "0",
                                             "nb_form_starters": "0",
                                             "nb_form_submissions": "0",
@@ -1558,12 +1155,12 @@
                                             "avg_form_time_hesitation": "0",
                                             "avg_form_time_to_first_submission": "0",
                                             "avg_form_time_spent": "0",
-                                            "url": "divezone.net\\/arctic-liveaboard"
+                                            "url": "divezone.net\\/caribbean-sea-liveaboard-diving"
                                         },
                                         {
-                                            "label": "divezone.net\\/australia-liveaboard",
-                                            "nb_form_views": "17",
-                                            "nb_form_viewers": "16",
+                                            "label": "divezone.net\\/cocos-islands-liveaboard",
+                                            "nb_form_views": "1",
+                                            "nb_form_viewers": "1",
                                             "nb_form_starts": "0",
                                             "nb_form_starters": "0",
                                             "nb_form_submissions": "0",
@@ -1576,12 +1173,12 @@
                                             "avg_form_time_hesitation": "0",
                                             "avg_form_time_to_first_submission": "0",
                                             "avg_form_time_spent": "0",
-                                            "url": "divezone.net\\/australia-liveaboard"
+                                            "url": "divezone.net\\/cocos-islands-liveaboard"
                                         },
                                         {
-                                            "label": "divezone.net\\/belize-liveaboard-reviews-2013",
-                                            "nb_form_views": "11",
-                                            "nb_form_viewers": "10",
+                                            "label": "divezone.net\\/divesite\\/air-wall",
+                                            "nb_form_views": "1",
+                                            "nb_form_viewers": "1",
                                             "nb_form_starts": "0",
                                             "nb_form_starters": "0",
                                             "nb_form_submissions": "0",
@@ -1594,12 +1191,12 @@
                                             "avg_form_time_hesitation": "0",
                                             "avg_form_time_to_first_submission": "0",
                                             "avg_form_time_spent": "0",
-                                            "url": "divezone.net\\/belize-liveaboard-reviews-2013"
+                                            "url": "divezone.net\\/divesite\\/air-wall"
                                         },
                                         {
-                                            "label": "divezone.net\\/best-dive-sites",
-                                            "nb_form_views": "165",
-                                            "nb_form_viewers": "131",
+                                            "label": "divezone.net\\/divesite\\/coral-fan",
+                                            "nb_form_views": "1",
+                                            "nb_form_viewers": "1",
                                             "nb_form_starts": "0",
                                             "nb_form_starters": "0",
                                             "nb_form_submissions": "0",
@@ -1612,12 +1209,12 @@
                                             "avg_form_time_hesitation": "0",
                                             "avg_form_time_to_first_submission": "0",
                                             "avg_form_time_spent": "0",
-                                            "url": "divezone.net\\/best-dive-sites"
+                                            "url": "divezone.net\\/divesite\\/coral-fan"
                                         },
                                         {
-                                            "label": "divezone.net\\/best-great-barrier-reef-australia-liveaboard-reviews-2013",
-                                            "nb_form_views": "31",
-                                            "nb_form_viewers": "25",
+                                            "label": "divezone.net\\/divesite\\/deep-turbo",
+                                            "nb_form_views": "1",
+                                            "nb_form_viewers": "1",
                                             "nb_form_starts": "0",
                                             "nb_form_starters": "0",
                                             "nb_form_submissions": "0",
@@ -1630,7 +1227,25 @@
                                             "avg_form_time_hesitation": "0",
                                             "avg_form_time_to_first_submission": "0",
                                             "avg_form_time_spent": "0",
-                                            "url": "divezone.net\\/best-great-barrier-reef-australia-liveaboard-reviews-2013"
+                                            "url": "divezone.net\\/divesite\\/deep-turbo"
+                                        },
+                                        {
+                                            "label": "divezone.net\\/diving\\/costa-rica",
+                                            "nb_form_views": "1",
+                                            "nb_form_viewers": "1",
+                                            "nb_form_starts": "0",
+                                            "nb_form_starters": "0",
+                                            "nb_form_submissions": "0",
+                                            "nb_form_submitters": "0",
+                                            "nb_form_resubmitters": "0",
+                                            "nb_form_conversions": "0",
+                                            "form_starters_rate": "0%",
+                                            "form_conversion_rate": "0%",
+                                            "form_submitter_rate": "0%",
+                                            "avg_form_time_hesitation": "0",
+                                            "avg_form_time_to_first_submission": "0",
+                                            "avg_form_time_spent": "0",
+                                            "url": "divezone.net\\/diving\\/costa-rica"
                                         }
                                     ]
                                 }
@@ -1679,15 +1294,7 @@
                                                         "type": "string"
                                                     },
                                                     "avg_form_time_hesitation": {
-                                                        "type": [
-                                                            "string",
-                                                            "number",
-                                                            "integer",
-                                                            "boolean",
-                                                            "array",
-                                                            "object",
-                                                            "null"
-                                                        ]
+                                                        "type": "integer"
                                                     },
                                                     "avg_form_time_to_first_submission": {
                                                         "type": "integer"
@@ -1708,27 +1315,9 @@
                                 },
                                 "example": [
                                     {
-                                        "label": "divezone.net\\/about-us",
-                                        "nb_form_views": "7",
-                                        "nb_form_viewers": 7,
-                                        "nb_form_starts": "2",
-                                        "nb_form_starters": "1",
-                                        "nb_form_submissions": "0",
-                                        "nb_form_submitters": "0",
-                                        "nb_form_resubmitters": "0",
-                                        "nb_form_conversions": "0",
-                                        "form_starters_rate": "14.3%",
-                                        "form_conversion_rate": "0%",
-                                        "form_submitter_rate": "0%",
-                                        "avg_form_time_hesitation": 1.306,
-                                        "avg_form_time_to_first_submission": 0,
-                                        "avg_form_time_spent": 0,
-                                        "url": "divezone.net\\/about-us"
-                                    },
-                                    {
-                                        "label": "divezone.net\\/arctic-liveaboard",
-                                        "nb_form_views": "2",
-                                        "nb_form_viewers": 2,
+                                        "label": "divezone.net\\/caribbean-sea-liveaboard-diving",
+                                        "nb_form_views": "1",
+                                        "nb_form_viewers": 1,
                                         "nb_form_starts": "0",
                                         "nb_form_starters": "0",
                                         "nb_form_submissions": "0",
@@ -1741,12 +1330,12 @@
                                         "avg_form_time_hesitation": 0,
                                         "avg_form_time_to_first_submission": 0,
                                         "avg_form_time_spent": 0,
-                                        "url": "divezone.net\\/arctic-liveaboard"
+                                        "url": "divezone.net\\/caribbean-sea-liveaboard-diving"
                                     },
                                     {
-                                        "label": "divezone.net\\/australia-liveaboard",
-                                        "nb_form_views": "17",
-                                        "nb_form_viewers": 16,
+                                        "label": "divezone.net\\/cocos-islands-liveaboard",
+                                        "nb_form_views": "1",
+                                        "nb_form_viewers": 1,
                                         "nb_form_starts": "0",
                                         "nb_form_starters": "0",
                                         "nb_form_submissions": "0",
@@ -1759,12 +1348,12 @@
                                         "avg_form_time_hesitation": 0,
                                         "avg_form_time_to_first_submission": 0,
                                         "avg_form_time_spent": 0,
-                                        "url": "divezone.net\\/australia-liveaboard"
+                                        "url": "divezone.net\\/cocos-islands-liveaboard"
                                     },
                                     {
-                                        "label": "divezone.net\\/belize-liveaboard-reviews-2013",
-                                        "nb_form_views": "11",
-                                        "nb_form_viewers": 10,
+                                        "label": "divezone.net\\/divesite\\/air-wall",
+                                        "nb_form_views": "1",
+                                        "nb_form_viewers": 1,
                                         "nb_form_starts": "0",
                                         "nb_form_starters": "0",
                                         "nb_form_submissions": "0",
@@ -1777,12 +1366,12 @@
                                         "avg_form_time_hesitation": 0,
                                         "avg_form_time_to_first_submission": 0,
                                         "avg_form_time_spent": 0,
-                                        "url": "divezone.net\\/belize-liveaboard-reviews-2013"
+                                        "url": "divezone.net\\/divesite\\/air-wall"
                                     },
                                     {
-                                        "label": "divezone.net\\/best-dive-sites",
-                                        "nb_form_views": "165",
-                                        "nb_form_viewers": 131,
+                                        "label": "divezone.net\\/divesite\\/coral-fan",
+                                        "nb_form_views": "1",
+                                        "nb_form_viewers": 1,
                                         "nb_form_starts": "0",
                                         "nb_form_starters": "0",
                                         "nb_form_submissions": "0",
@@ -1795,12 +1384,12 @@
                                         "avg_form_time_hesitation": 0,
                                         "avg_form_time_to_first_submission": 0,
                                         "avg_form_time_spent": 0,
-                                        "url": "divezone.net\\/best-dive-sites"
+                                        "url": "divezone.net\\/divesite\\/coral-fan"
                                     },
                                     {
-                                        "label": "divezone.net\\/best-great-barrier-reef-australia-liveaboard-reviews-2013",
-                                        "nb_form_views": "31",
-                                        "nb_form_viewers": 25,
+                                        "label": "divezone.net\\/divesite\\/deep-turbo",
+                                        "nb_form_views": "1",
+                                        "nb_form_viewers": 1,
                                         "nb_form_starts": "0",
                                         "nb_form_starters": "0",
                                         "nb_form_submissions": "0",
@@ -1813,12 +1402,27 @@
                                         "avg_form_time_hesitation": 0,
                                         "avg_form_time_to_first_submission": 0,
                                         "avg_form_time_spent": 0,
-                                        "url": "divezone.net\\/best-great-barrier-reef-australia-liveaboard-reviews-2013"
+                                        "url": "divezone.net\\/divesite\\/deep-turbo"
+                                    },
+                                    {
+                                        "label": "divezone.net\\/diving\\/costa-rica",
+                                        "nb_form_views": "1",
+                                        "nb_form_viewers": 1,
+                                        "nb_form_starts": "0",
+                                        "nb_form_starters": "0",
+                                        "nb_form_submissions": "0",
+                                        "nb_form_submitters": "0",
+                                        "nb_form_resubmitters": "0",
+                                        "nb_form_conversions": "0",
+                                        "form_starters_rate": "0%",
+                                        "form_conversion_rate": "0%",
+                                        "form_submitter_rate": "0%",
+                                        "avg_form_time_hesitation": 0,
+                                        "avg_form_time_to_first_submission": 0,
+                                        "avg_form_time_spent": 0,
+                                        "url": "divezone.net\\/diving\\/costa-rica"
                                     }
                                 ]
-                            },
-                            "application/vnd.ms-excel": {
-                                "example": "label\tnb_form_views\tnb_form_viewers\tnb_form_starts\tnb_form_starters\tnb_form_submissions\tnb_form_submitters\tnb_form_resubmitters\tnb_form_conversions\tform_starters_rate\tform_conversion_rate\tform_submitter_rate\tavg_form_time_hesitation\tavg_form_time_to_first_submission\tavg_form_time_spent\tmetadata_url\ndivezone.net/about-us\t7\t7\t2\t1\t0\t0\t0\t0\t14.3%\t0%\t0%\t1.306\t0\t0\tdivezone.net/about-us\ndivezone.net/arctic-liveaboard\t2\t2\t0\t0\t0\t0\t0\t0\t0%\t0%\t0%\t0\t0\t0\tdivezone.net/arctic-liveaboard\ndivezone.net/australia-liveaboard\t17\t16\t0\t0\t0\t0\t0\t0\t0%\t0%\t0%\t0\t0\t0\tdivezone.net/australia-liveaboard\ndivezone.net/belize-liveaboard-reviews-2013\t11\t10\t0\t0\t0\t0\t0\t0\t0%\t0%\t0%\t0\t0\t0\tdivezone.net/belize-liveaboard-reviews-2013\ndivezone.net/best-dive-sites\t165\t131\t0\t0\t0\t0\t0\t0\t0%\t0%\t0%\t0\t0\t0\tdivezone.net/best-dive-sites\ndivezone.net/best-great-barrier-reef-australia-liveaboard-reviews-2013\t31\t25\t0\t0\t0\t0\t0\t0\t0%\t0%\t0%\t0\t0\t0\tdivezone.net/best-great-barrier-reef-australia-liveaboard-reviews-2013\ndivezone.net/best-similan-islands-liveaboard-reviews-2013\t19\t16\t0\t0\t0\t0\t0\t0\t0%\t0%\t0%\t0\t0\t0\tdivezone.net/best-similan-islands-liveaboard-reviews-2013\ndivezone.net/blog/5-reasons-to-dive-in-the-philippines.htm\t2\t2\t0\t0\t0\t0\t0\t0\t0%\t0%\t0%\t0\t0\t0\tdivezone.net/blog/5-reasons-to-dive-in-the-philippines.htm\ndivezone.net/blog/10-most-luxurious-liveaboard-boats-in-the-world.htm\t6\t6\t0\t0\t0\t0\t0\t0\t0%\t0%\t0%\t0\t0\t0\tdivezone.net/blog/10-most-luxurious-liveaboard-boats-in-the-world.htm\ndivezone.net/blog/all-about-the-best-scuba-diving-insurance-plans.htm\t31\t25\t0\t0\t0\t0\t0\t0\t0%\t0%\t0%\t0\t0\t0\tdivezone.net/blog/all-about-the-best-scuba-diving-insurance-plans.htm\ndivezone.net/blog/best-5-off-the-beaten-path-scuba-diving-destinations.htm\t4\t4\t0\t0\t0\t0\t0\t0\t0%\t0%\t0%\t0\t0\t0\tdivezone.net/blog/best-5-off-the-beaten-path-scuba-diving-destinations.htm\ndivezone.net/blog/best-dive-sites-asia.htm\t4\t3\t0\t0\t0\t0\t0\t0\t0%\t0%\t0%\t0\t0\t0\tdivezone.net/blog/best-dive-sites-asia.htm\ndivezone.net/blog/best-liveaboards-in-indonesia.htm\t1\t1\t0\t0\t0\t0\t0\t0\t0%\t0%\t0%\t0\t0\t0\tdivezone.net/blog/best-liveaboards-in-indonesia.htm\ndivezone.net/blog/best-snorkeling-in-the-world.htm\t7\t6\t0\t0\t0\t0\t0\t0\t0%\t0%\t0%\t0\t0\t0\tdivezone.net/blog/best-snorkeling-in-the-world.htm\ndivezone.net/blog/dive-report-diving-at-moalboal-and-oslob-cebu-philippines.htm\t4\t4\t0\t0\t0\t0\t0\t0\t0%\t0%\t0%\t0\t0\t0\tdivezone.net/blog/dive-report-diving-at-moalboal-and-oslob-cebu-philippines.htm\ndivezone.net/blog/dive-with-giant-manta-rays-socorro-island.htm\t1\t1\t0\t0\t0\t0\t0\t0\t0%\t0%\t0%\t0\t0\t0\tdivezone.net/blog/dive-with-giant-manta-rays-socorro-island.htm\ndivezone.net/blog/diving-dolphins-tiputa-pass-rangiroa.htm\t1\t1\t0\t0\t0\t0\t0\t0\t0%\t0%\t0%\t0\t0\t0\tdivezone.net/blog/diving-dolphins-tiputa-pass-rangiroa.htm\ndivezone.net/blog/diving-in-cozumel-mexico.htm\t3\t3\t0\t0\t0\t0\t0\t0\t0%\t0%\t0%\t0\t0\t0\tdivezone.net/blog/diving-in-cozumel-mexico.htm\ndivezone.net/blog/diving-magnet-south-lombok-belongas-bay.htm\t3\t3\t0\t0\t0\t0\t0\t0\t0%\t0%\t0%\t0\t0\t0\tdivezone.net/blog/diving-magnet-south-lombok-belongas-bay.htm"
                             }
                         }
                     },
@@ -2270,7 +1874,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -2334,7 +1938,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Real-time counters for form interactions.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=FormAnalytics.getCounters&idSite=1&lastMinutes=30&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=FormAnalytics.getCounters&idSite=1&lastMinutes=30&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=FormAnalytics.getCounters&idSite=1&lastMinutes=30&format=Tsv&token_auth=anonymous)",
+                        "description": "Real-time counters for form interactions.",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -2344,16 +1948,16 @@
                                     }
                                 },
                                 "example": {
-                                    "nb_form_viewers": "49",
-                                    "nb_form_starters": "4",
-                                    "nb_form_submitters": "3",
+                                    "nb_form_viewers": "187",
+                                    "nb_form_starters": "5",
+                                    "nb_form_submitters": "4",
                                     "nb_form_resubmitters": "0",
-                                    "nb_form_conversions": "1",
-                                    "avg_form_time_spent": "15.443",
-                                    "form_starters_rate": "8.2%",
-                                    "form_submitter_rate": "75%",
+                                    "nb_form_conversions": "0",
+                                    "avg_form_time_spent": "47.666",
+                                    "form_starters_rate": "2.7%",
+                                    "form_submitter_rate": "80%",
                                     "form_resubmitters_rate": "0%",
-                                    "form_conversion_rate": "25%"
+                                    "form_conversion_rate": "0%"
                                 }
                             },
                             "application/json": {
@@ -2401,20 +2005,20 @@
                                     "type": "object"
                                 },
                                 "example": {
-                                    "nb_form_viewers": 49,
-                                    "nb_form_starters": "4",
-                                    "nb_form_submitters": "3",
+                                    "nb_form_viewers": 187,
+                                    "nb_form_starters": "5",
+                                    "nb_form_submitters": "4",
                                     "nb_form_resubmitters": "0",
-                                    "nb_form_conversions": "1",
-                                    "avg_form_time_spent": 15.443,
-                                    "form_starters_rate": "8.2%",
-                                    "form_submitter_rate": "75%",
+                                    "nb_form_conversions": "0",
+                                    "avg_form_time_spent": 47.666,
+                                    "form_starters_rate": "2.7%",
+                                    "form_submitter_rate": "80%",
                                     "form_resubmitters_rate": "0%",
-                                    "form_conversion_rate": "25%"
+                                    "form_conversion_rate": "0%"
                                 }
                             },
                             "application/vnd.ms-excel": {
-                                "example": "nb_form_viewers\tnb_form_starters\tnb_form_submitters\tnb_form_resubmitters\tnb_form_conversions\tavg_form_time_spent\tform_starters_rate\tform_submitter_rate\tform_resubmitters_rate\tform_conversion_rate\n49\t4\t3\t0\t1\t15.443\t8.2%\t75%\t0%\t25%"
+                                "example": "nb_form_viewers\tnb_form_starters\tnb_form_submitters\tnb_form_resubmitters\tnb_form_conversions\tavg_form_time_spent\tform_starters_rate\tform_submitter_rate\tform_resubmitters_rate\tform_conversion_rate\n187\t5\t4\t0\t0\t47.666\t2.7%\t80%\t0%\t0%"
                             }
                         }
                     },
@@ -2490,7 +2094,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Real-time list of the most popular forms.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=FormAnalytics.getCurrentMostPopularForms&idSite=1&lastMinutes=30&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=FormAnalytics.getCurrentMostPopularForms&idSite=1&lastMinutes=30&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=FormAnalytics.getCurrentMostPopularForms&idSite=1&lastMinutes=30&format=Tsv&token_auth=anonymous)",
+                        "description": "Real-time list of the most popular forms.",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -2514,9 +2118,22 @@
                                 "example": {
                                     "row": [
                                         {
-                                            "label": "Apply to Job Form",
-                                            "idsiteform": "7",
-                                            "nb_form_viewers": "1",
+                                            "label": "Checkout Form",
+                                            "idsiteform": "42",
+                                            "nb_form_viewers": "9",
+                                            "nb_form_starters": "5",
+                                            "nb_form_submitters": "4",
+                                            "nb_form_resubmitters": "0",
+                                            "nb_form_conversions": "0",
+                                            "form_starters_rate": "55.6%",
+                                            "form_submitter_rate": "80%",
+                                            "form_conversion_rate": "0%",
+                                            "form_resubmitters_rate": "0%"
+                                        },
+                                        {
+                                            "label": "Comment Form",
+                                            "idsiteform": "2",
+                                            "nb_form_viewers": "177",
                                             "nb_form_starters": "0",
                                             "nb_form_submitters": "0",
                                             "nb_form_resubmitters": "0",
@@ -2527,42 +2144,16 @@
                                             "form_resubmitters_rate": "0%"
                                         },
                                         {
-                                            "label": "Checkout Form",
-                                            "idsiteform": "42",
-                                            "nb_form_viewers": "4",
-                                            "nb_form_starters": "2",
-                                            "nb_form_submitters": "2",
-                                            "nb_form_resubmitters": "0",
-                                            "nb_form_conversions": "0",
-                                            "form_starters_rate": "50%",
-                                            "form_submitter_rate": "100%",
-                                            "form_conversion_rate": "0%",
-                                            "form_resubmitters_rate": "0%"
-                                        },
-                                        {
-                                            "label": "Comment Form",
-                                            "idsiteform": "2",
-                                            "nb_form_viewers": "42",
-                                            "nb_form_starters": "1",
+                                            "label": "Contact Us Form",
+                                            "idsiteform": "40",
+                                            "nb_form_viewers": "1",
+                                            "nb_form_starters": "0",
                                             "nb_form_submitters": "0",
                                             "nb_form_resubmitters": "0",
                                             "nb_form_conversions": "0",
-                                            "form_starters_rate": "2.4%",
+                                            "form_starters_rate": "0%",
                                             "form_submitter_rate": "0%",
                                             "form_conversion_rate": "0%",
-                                            "form_resubmitters_rate": "0%"
-                                        },
-                                        {
-                                            "label": "Newsletter Signup Form",
-                                            "idsiteform": "41",
-                                            "nb_form_viewers": "2",
-                                            "nb_form_starters": "1",
-                                            "nb_form_submitters": "1",
-                                            "nb_form_resubmitters": "0",
-                                            "nb_form_conversions": "1",
-                                            "form_starters_rate": "50%",
-                                            "form_submitter_rate": "100%",
-                                            "form_conversion_rate": "100%",
                                             "form_resubmitters_rate": "0%"
                                         }
                                     ]
@@ -2618,9 +2209,22 @@
                                 },
                                 "example": [
                                     {
-                                        "label": "Apply to Job Form",
-                                        "idsiteform": 7,
-                                        "nb_form_viewers": 1,
+                                        "label": "Checkout Form",
+                                        "idsiteform": 42,
+                                        "nb_form_viewers": 9,
+                                        "nb_form_starters": "5",
+                                        "nb_form_submitters": "4",
+                                        "nb_form_resubmitters": "0",
+                                        "nb_form_conversions": "0",
+                                        "form_starters_rate": "55.6%",
+                                        "form_submitter_rate": "80%",
+                                        "form_conversion_rate": "0%",
+                                        "form_resubmitters_rate": "0%"
+                                    },
+                                    {
+                                        "label": "Comment Form",
+                                        "idsiteform": 2,
+                                        "nb_form_viewers": 177,
                                         "nb_form_starters": "0",
                                         "nb_form_submitters": "0",
                                         "nb_form_resubmitters": "0",
@@ -2631,48 +2235,22 @@
                                         "form_resubmitters_rate": "0%"
                                     },
                                     {
-                                        "label": "Checkout Form",
-                                        "idsiteform": 42,
-                                        "nb_form_viewers": 4,
-                                        "nb_form_starters": "2",
-                                        "nb_form_submitters": "2",
-                                        "nb_form_resubmitters": "0",
-                                        "nb_form_conversions": "0",
-                                        "form_starters_rate": "50%",
-                                        "form_submitter_rate": "100%",
-                                        "form_conversion_rate": "0%",
-                                        "form_resubmitters_rate": "0%"
-                                    },
-                                    {
-                                        "label": "Comment Form",
-                                        "idsiteform": 2,
-                                        "nb_form_viewers": 42,
-                                        "nb_form_starters": "1",
+                                        "label": "Contact Us Form",
+                                        "idsiteform": 40,
+                                        "nb_form_viewers": 1,
+                                        "nb_form_starters": "0",
                                         "nb_form_submitters": "0",
                                         "nb_form_resubmitters": "0",
                                         "nb_form_conversions": "0",
-                                        "form_starters_rate": "2.4%",
+                                        "form_starters_rate": "0%",
                                         "form_submitter_rate": "0%",
                                         "form_conversion_rate": "0%",
-                                        "form_resubmitters_rate": "0%"
-                                    },
-                                    {
-                                        "label": "Newsletter Signup Form",
-                                        "idsiteform": 41,
-                                        "nb_form_viewers": 2,
-                                        "nb_form_starters": "1",
-                                        "nb_form_submitters": "1",
-                                        "nb_form_resubmitters": "0",
-                                        "nb_form_conversions": "1",
-                                        "form_starters_rate": "50%",
-                                        "form_submitter_rate": "100%",
-                                        "form_conversion_rate": "100%",
                                         "form_resubmitters_rate": "0%"
                                     }
                                 ]
                             },
                             "application/vnd.ms-excel": {
-                                "example": "label\tidsiteform\tnb_form_viewers\tnb_form_starters\tnb_form_submitters\tnb_form_resubmitters\tnb_form_conversions\tform_starters_rate\tform_submitter_rate\tform_conversion_rate\tform_resubmitters_rate\nApply to Job Form\t7\t1\t0\t0\t0\t0\t0%\t0%\t0%\t0%\nCheckout Form\t42\t4\t2\t2\t0\t0\t50%\t100%\t0%\t0%\nComment Form\t2\t42\t1\t0\t0\t0\t2.4%\t0%\t0%\t0%\nNewsletter Signup Form\t41\t2\t1\t1\t0\t1\t50%\t100%\t100%\t0%"
+                                "example": "label\tidsiteform\tnb_form_viewers\tnb_form_starters\tnb_form_submitters\tnb_form_resubmitters\tnb_form_conversions\tform_starters_rate\tform_submitter_rate\tform_conversion_rate\tform_resubmitters_rate\nCheckout Form\t42\t9\t5\t4\t0\t0\t55.6%\t80%\t0%\t0%\nComment Form\t2\t177\t0\t0\t0\t0\t0%\t0%\t0%\t0%\nContact Us Form\t40\t1\t0\t0\t0\t0\t0%\t0%\t0%\t0%"
                             }
                         }
                     },
@@ -2720,31 +2298,17 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "UI message describing the current auto-creation configuration.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=FormAnalytics.getAutoCreationSettings&idSite=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=FormAnalytics.getAutoCreationSettings&idSite=1&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "UI message describing the current auto-creation configuration.",
                         "content": {
                             "text/xml": {
                                 "schema": {
-                                    "properties": {
-                                        "row": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "xml": {
-                                                    "name": "row"
-                                                },
-                                                "additionalProperties": true
-                                            }
-                                        }
-                                    },
                                     "type": "object",
                                     "xml": {
                                         "name": "result"
                                     }
                                 },
                                 "example": {
-                                    "row": {
-                                        "message": "Matomo is currently configured to create up to 10 forms automatically. So far 0 forms have been created automatically for this site. A user with Super User access can change this setting and enable or disable the automatic creation of forms in \"General Settings\"."
-                                    }
+                                    "message": "Matomo is currently configured to create up to 10 forms automatically. So far 0 forms have been created automatically for this site. A user with Super User access can change this setting and enable or disable the automatic creation of forms in \"General Settings\"."
                                 }
                             },
                             "application/json": {
@@ -2759,6 +2323,9 @@
                                 "example": {
                                     "message": "Matomo is currently configured to create up to 10 forms automatically. So far 0 forms have been created automatically for this site. A user with Super User access can change this setting and enable or disable the automatic creation of forms in \"General Settings\"."
                                 }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "key\tvalue\nmessage\tMatomo is currently configured to create up to 10 forms automatically. So far 0 forms have been created automatically for this site. A user with Super User access can change this setting and enable or disable the automatic creation of forms in \"General Settings\".\n"
                             }
                         }
                     },
@@ -2797,17 +2364,17 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Available statuses with translated labels.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=FormAnalytics.getAvailableStatuses&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=FormAnalytics.getAvailableStatuses&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "Available statuses with translated labels.",
                         "content": {
                             "text/xml": {
                                 "schema": {
                                     "properties": {
-                                        "row": {
+                                        "item": {
                                             "type": "array",
                                             "items": {
                                                 "type": "object",
                                                 "xml": {
-                                                    "name": "row"
+                                                    "name": "item"
                                                 },
                                                 "additionalProperties": true
                                             }
@@ -2819,7 +2386,7 @@
                                     }
                                 },
                                 "example": {
-                                    "row": [
+                                    "item": [
                                         {
                                             "value": "running",
                                             "name": "Running"
@@ -2862,6 +2429,9 @@
                                         "name": "Archived"
                                     }
                                 ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "key\tvalue\n0.value\trunning\n0.name\tRunning\n1.value\tarchived\n1.name\tArchived\n"
                             }
                         }
                     },
@@ -2909,12 +2479,12 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Map of goal IDs to goal names, plus an empty default option.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=FormAnalytics.getAllGoals&idSite=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=FormAnalytics.getAllGoals&idSite=1&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "Map of goal IDs to goal names, plus an empty default option.",
                         "content": {
                             "text/xml": {
                                 "schema": {
                                     "properties": {
-                                        "row": {
+                                        "entry": {
                                             "type": "array",
                                             "items": {
                                                 "properties": {
@@ -2922,12 +2492,13 @@
                                                         "type": "string",
                                                         "xml": {
                                                             "attribute": true
-                                                        }
+                                                        },
+                                                        "example": "1"
                                                     }
                                                 },
                                                 "type": "object",
                                                 "xml": {
-                                                    "name": "row"
+                                                    "name": "entry"
                                                 },
                                                 "additionalProperties": true
                                             }
@@ -2939,16 +2510,14 @@
                                     }
                                 },
                                 "example": {
-                                    "row": {
-                                        "row": [
-                                            {
-                                                "key": ""
-                                            },
-                                            {
-                                                "key": "1"
-                                            }
-                                        ]
-                                    }
+                                    "entry": [
+                                        {
+                                            "key": ""
+                                        },
+                                        {
+                                            "key": "1"
+                                        }
+                                    ]
                                 }
                             },
                             "application/json": {
@@ -2965,8 +2534,11 @@
                                 },
                                 "example": {
                                     "": "",
-                                    "1": "Test"
+                                    "1": "MyName"
                                 }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "key\tvalue\n\"\"\t\n1\tMyName\n"
                             }
                         }
                     },
@@ -3005,7 +2577,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=FormAnalytics.getAvailableFormRules&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=FormAnalytics.getAvailableFormRules&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -3276,7 +2848,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=FormAnalytics.getAvailablePageRules&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=FormAnalytics.getAvailablePageRules&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -3635,7 +3207,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Map of conversion rule keys to translated labels.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=FormAnalytics.getAvailableConversionRuleOptions&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=FormAnalytics.getAvailableConversionRuleOptions&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "Map of conversion rule keys to translated labels.",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -3684,6 +3256,9 @@
                                     "page_visit": "When visitors view a conversion page",
                                     "manually": "Using Matomo Tag Manager or Direct JavaScript"
                                 }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "form_submit\tpage_visit\tmanually\nWhenever a form is submitted\tWhen visitors view a conversion page\tUsing Matomo Tag Manager or Direct JavaScript"
                             }
                         }
                     },
@@ -4104,13 +3679,13 @@
                     "application/json": {
                         "schema": {
                             "type": "array",
-                            "items": {}
+                            "items": []
                         }
                     },
                     "application/xml": {
                         "schema": {
                             "type": "array",
-                            "items": {}
+                            "items": []
                         }
                     }
                 }
@@ -4510,10 +4085,9 @@
         },
         "securitySchemes": {
             "MatomoToken": {
-                "type": "apiKey",
-                "description": "Matomo API token passed as the 'token_auth' query parameter.",
-                "name": "token_auth",
-                "in": "query"
+                "type": "http",
+                "description": "Matomo API token passed in the Authorization header as a bearer token. For demo.matomo.cloud requests, use the anonymous token value: anonymous.",
+                "scheme": "bearer"
             }
         }
     },
@@ -4525,7 +4099,7 @@
     "tags": [
         {
             "name": "FormAnalytics",
-            "description": "The <a href='http://plugins.matomo.org/FormAnalytics' target='_blank'>Form Analytics</a> API lets you 1) manage forms within Matomo and 2) request all your form analytics reports and metrics. <br/><br/> 1) You can create, update, delete forms, as well as request any form and also <a href='http://matomo.org/faq' target='_blank'>archive</a> them. <br/><br/> 2) Request all metrics and reports about how users interact with your forms: <br/>- Form usage by page URL to see whether the same form is used differently on different pages. <br/>- Entry fields to see where they start filling out your forms. <br/>- Drop off fields to see where your users leave your forms. <br/>- Field timings report to see where your users spent the most time. <br/>- Field size report to see how much text your users type. <br/>- Most corrected fields report to learn more about where users have problems filling out your form. <br/>- Unneeded fields report to see which fields are often left blank. <br/>- Several evolution reports of all metrics to see how your forms perform over time.  <br/><br/>And the following metrics: <br/>- How often was a form field interacted with (eg. focus or change). <br/>- Which fields did your visitors interact with first when they started filling out a form. <br/>- Which fields caused a visitor to stop filling out a form (drop offs). <br/>- How often your visitors changed a form field or made amendments. <br/>- How often a field was refocused or corrected (eg usage of backspace or delete key, cursor keys, …). <br/>- How much text they type into each of your text fields. <br/>- Which fields are unneeded and often left blank. <br/>- How long visitors hesitated (waited) before they started changing a field. <br/>- How much time your visitors spent on each field."
+            "description": "The <a href='http://plugins.matomo.org/FormAnalytics' target='_blank'>Form Analytics</a> API lets you 1) manage forms within Matomo and 2) request all your form analytics reports and metrics. <br/><br/> 1) You can create, update, delete forms, as well as request any form and also <a href='http://matomo.org/faq' target='_blank'>archive</a> them. <br/><br/> 2) Request all metrics and reports about how users interact with your forms: <br/>- Form usage by page URL to see whether the same form is used differently on different pages. <br/>- Entry fields to see where they start filling out your forms. <br/>- Drop off fields to see where your users leave your forms. <br/>- Field timings report to see where your users spent the most time. <br/>- Field size report to see how much text your users type. <br/>- Most corrected fields report to learn more about where users have problems filling out your form. <br/>- Unneeded fields report to see which fields are often left blank. <br/>- Several evolution reports of all metrics to see how your forms perform over time.  <br/><br/>And the following metrics: <br/>- How often was a form field interacted with (eg. focus or change). <br/>- Which fields did your visitors interact with first when they started filling out a form. <br/>- Which fields caused a visitor to stop filling out a form (drop offs). <br/>- How often your visitors changed a form field or made amendments. <br/>- How often a field was refocused or corrected (eg usage of backspace or delete key, cursor keys, \u2026). <br/>- How much text they type into each of your text fields. <br/>- Which fields are unneeded and often left blank. <br/>- How long visitors hesitated (waited) before they started changing a field. <br/>- How much time your visitors spent on each field."
         }
     ],
     "externalDocs": {

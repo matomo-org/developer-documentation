@@ -6,6 +6,10 @@
     },
     "servers": [
         {
+            "url": "https://5x-dev.ddev.site/",
+            "description": "Current Matomo instance"
+        },
+        {
             "url": "https://demo.matomo.cloud/",
             "description": "Matomo demo server"
         }
@@ -251,7 +255,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "array",
-                                    "items": {}
+                                    "items": []
                                 },
                                 "example": [
                                     "ApiError",
@@ -262,6 +266,9 @@
                                     "RangeError",
                                     "unknown"
                                 ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "ApiError\nError\nSyntaxError\nTypeError\nReferenceError\nRangeError\nunknown"
                             }
                         }
                     },
@@ -863,6 +870,9 @@
                                         "date_last_seen_pretty": "Feb 16, 2026"
                                     }
                                 ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "idlogcrash\tidsite\tcrash_type\tmessage\tresource_uri\tstack_trace\tresource_line\tresource_column\tdatetime_first_seen\tdatetime_ignored_error\tdatetime_last_seen\tdatetime_last_reappeared\tgroup_idlogcrash\tdatetime_first_seen_pretty\tdatetime_last_seen_pretty\tdatetime_last_reappeared_pretty\tdatetime_ignored_error_pretty\tdate_first_seen\tdate_first_seen_pretty\tdate_last_seen\tdate_last_seen_pretty\n25\t1\tRangeError\tprecision -2 out of range\thttp://anothersite.com/src/ReportMetadata.store.ts\t\"    at e.value (http://anothersite.com/src/ReportMetadata.store.ts:54:21)\n    at e.value (http://anothersite.com/src/ReportingPage.store.ts:157:35)\n    at Proxy.renderPage (http://anothersite.com/src/ReportingPage.vue?96fe:146:34)\n    at http://anothersite.com/src/ReportingPage.vue?96fe:86:12\n    at callWithErrorHandling (http://anothersite.com/src/vue.global.js?cb=6953:8407:24)\n    at callWithAsyncErrorHandling (http://anothersite.com/src/vue.global.js?cb=6953:8416:23)\n    at Array.job (http://anothersite.com/src/vue.global.js?cb=6953:8791:19)\n    at flushPreFlushCbs (http://anothersite.com/src/vue.global.js?cb=6953:8575:47)\n    at flushJobs (http://anothersite.com/src/vue.global.js?cb=6953:8615:7)\"\t54\t21\t2023-08-30 04:26:02\t\t2026-02-16 01:12:07\t\t\t\"Wednesday, August 30, 2023 04:26:02\"\t\"Monday, February 16, 2026 01:12:07\"\t\t\t2023-08-30\t\"Aug 30, 2023\"\t2026-02-16\t\"Feb 16, 2026\"\n125\t1\tError\tUnknown period type 'cycle'.\thttps://divezone.net/index.php?module=CoreHome&action=index&idSite=1&period=day&date=yesterday\t\"    at initializeWidgets (index.php?module=CoreHome&action=index&idSite=1&period=day&date=yesterday:375:36)\n    at setUpPage (index.php?module=CoreHome&action=index&idSite=1&period=day&date=yesterday:383:21)\n    at index.php?module=CoreHome&action=index&idSite=1&period=day&date=yesterday:386:17\n    at index.php?module=CoreHome&action=index&idSite=1&period=day&date=yesterday:387:15\"\t375\t36\t2023-08-30 11:51:11\t\t2026-02-16 01:10:38\t\t\t\"Wednesday, August 30, 2023 11:51:11\"\t\"Monday, February 16, 2026 01:10:38\"\t\t\t2023-08-30\t\"Aug 30, 2023\"\t2026-02-16\t\"Feb 16, 2026\"\n109\t1\tApiError\tError returned from API: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'description' in 'where clause'\thttps://dive-shop.net/ContentBlock.vue?./node_modules/@vue/cli-plugin-typescript/node_modules/cache-loader/dist/cjs.js??ref--14-0!./node_modules/babel-loader/lib!./node_modules/@vue/cli-plugin-typescript/node_modules/ts-loader??ref--14-2!./node_modules/@vue/cli-service/node_modules/cache-loader/dist\t\"at Proxy.mounted (ContentBlock.vue?./node_modules/@vue/cli-plugin-typescript/node_modules/cache-loader/dist/cjs.js??ref--14-0!./node_modules/babel-loader/lib!./node_modules/@vue/cli-plugin-typescript/node_modules/ts-loader??ref--14-2!./node_modules/@vue/cli-service/node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1:45:12)\n    at callWithErrorHandling (vue.global.js?cb=2596:8407:24)\n    at mount (vue.global.js?cb=2596:4966:27)"
                             }
                         }
                     },
@@ -1014,6 +1024,9 @@
                                     "nb_reappeared_crashes": 0,
                                     "visits_crash_rate": 0.1
                                 }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "nb_crash_occurrences\tnb_visits_with_crash\tnb_ignored_crashes\tnb_uniq_crashes\tnb_new_crashes\tnb_disappeared_crashes\tnb_reappeared_crashes\tvisits_crash_rate\n2\t2\t0\t2\t0\t0\t0\t0.1"
                             }
                         }
                     },
@@ -1098,7 +1111,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -1256,6 +1269,9 @@
                                         "segment": "crashId==99"
                                     }
                                 ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_crash_occurrences\tnb_visits_with_crash\tnb_new_crashes\tnb_reappeared_crashes\tcrash_type\tcrash_source\tvisits_crash_rate\tcrash_first_seen\tcrash_last_seen\tcrash_last_reappeared\tmetadata_idlogcrash\tmetadata_segment\nJSON.parse: unexpected character at line 1 column 13 of the JSON data\t1\t1\t0\t0\tSyntaxError\thttps://divezone.net/ContentBlock.vue?./node_modules/@vue/cli-plugin-typescript/node_modules/cache-loader/dist/cjs.js??ref--14-0!./node_modules/babel-loader/lib!./node_modules/@vue/cli-plugin-typescript/node_modules/ts-loader??ref--14-2!./node_modules/@vue/cli-service/node_modules/cache-loader/dist/\t0.05\t2023-08-30 11:45:14\t2026-02-15 23:01:28\t\t123\tcrashId==123\nprecision -2 out of range\t1\t1\t0\t0\tRangeError\tUnknown\t0.05\t2023-08-30 09:00:17\t2026-02-15 21:17:37\t\t99\tcrashId==99"
                             }
                         }
                     },
@@ -1340,7 +1356,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -1466,6 +1482,9 @@
                                         "segment": "crashId==123"
                                     }
                                 ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_crash_occurrences\tnb_visits_with_crash\tnb_new_crashes\tnb_reappeared_crashes\tcrash_type\tcrash_source\tvisits_crash_rate\tcrash_first_seen\tcrash_last_seen\tcrash_last_reappeared\tmetadata_idlogcrash\tmetadata_segment\nJSON.parse: unexpected character at line 1 column 13 of the JSON data\t1\t1\t0\t0\tSyntaxError\thttps://divezone.net/ContentBlock.vue?./node_modules/@vue/cli-plugin-typescript/node_modules/cache-loader/dist/cjs.js??ref--14-0!./node_modules/babel-loader/lib!./node_modules/@vue/cli-plugin-typescript/node_modules/ts-loader??ref--14-2!./node_modules/@vue/cli-service/node_modules/cache-loader/dist/\t0.05\t2023-08-30 11:45:14\t2026-02-15 23:01:28\t\t123\tcrashId==123"
                             }
                         }
                     },
@@ -1550,7 +1569,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -1676,6 +1695,9 @@
                                         "segment": "crashId==99"
                                     }
                                 ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_crash_occurrences\tnb_visits_with_crash\tnb_new_crashes\tnb_reappeared_crashes\tcrash_type\tvisits_crash_rate\tcrash_source\tcrash_first_seen\tcrash_last_seen\tcrash_last_reappeared\tmetadata_idlogcrash\tmetadata_segment\nprecision -2 out of range\t1\t1\t0\t0\tRangeError\t0.05\tUnknown\t2023-08-30 09:00:17\t2026-02-15 21:17:37\t\t99\tcrashId==99"
                             }
                         }
                     },
@@ -1750,7 +1772,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1823,7 +1845,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1896,7 +1918,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1987,7 +2009,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -2097,6 +2119,9 @@
                                         "segment": "pageUrl==divezone.net%2Fjobs"
                                     }
                                 ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_crash_occurrences\tnb_visits_with_crash\tnb_pageview_with_crash\tvisits_crash_rate\tnb_pageview_crash_rate\tmetadata_segment\tnb_hits\nUnknown\t1\t1\t1\t0.05\t0\tpageUrl==Unknown\t\ndivezone.net/jobs\t1\t1\t1\t0.05\t0.2\tpageUrl==divezone.net%2Fjobs\t5"
                             }
                         }
                     },
@@ -2180,7 +2205,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -2271,7 +2296,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -2381,6 +2406,9 @@
                                         "segment": "pageTitle==Diving+Jobs%2C+latest+Divemaster+and+Scuba+Dive+Instructor+Job+offers%21"
                                     }
                                 ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_crash_occurrences\tnb_visits_with_crash\tnb_pageview_with_crash\tvisits_crash_rate\tnb_pageview_crash_rate\tmetadata_segment\tnb_hits\nUnknown\t1\t1\t1\t0.05\t0\tpageTitle==Unknown\t\n\"Diving Jobs, latest Divemaster and Scuba Dive Instructor Job offers!\"\t1\t1\t1\t0.05\t0.14\tpageTitle==Diving+Jobs%2C+latest+Divemaster+and+Scuba+Dive+Instructor+Job+offers%21\t7"
                             }
                         }
                     },
@@ -2464,7 +2492,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -2555,7 +2583,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -2649,6 +2677,9 @@
                                         "segment": "crashSource==https%3A%2F%2Fdivezone.net%2FContentBlock.vue%3F.%2Fnode_modules%2F%40vue%2Fcli-plugin-typescript%2Fnode_modules%2Fcache-loader%2Fdist%2Fcjs.js%3F%3Fref--14-0%21.%2Fnode_modules%2Fbabel-loader%2Flib%21.%2Fnode_modules%2F%40vue%2Fcli-plugin-typescript%2Fnode_modules%2Fts-loader%3F%3Fref--14-2%21.%2Fnode_modules%2F%40vue%2Fcli-service%2Fnode_modules%2Fcache-loader%2Fdist%2F"
                                     }
                                 ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_crash_occurrences\tnb_visits_with_crash\tvisits_crash_rate\tmetadata_segment\nUnknown\t1\t1\t0.05\tcrashSource==Unknown\nhttps://divezone.net/ContentBlock.vue?./node_modules/@vue/cli-plugin-typescript/node_modules/cache-loader/dist/cjs.js??ref--14-0!./node_modules/babel-loader/lib!./node_modules/@vue/cli-plugin-typescript/node_modules/ts-loader??ref--14-2!./node_modules/@vue/cli-service/node_modules/cache-loader/dist/\t1\t1\t0.05\tcrashSource==https%3A%2F%2Fdivezone.net%2FContentBlock.vue%3F.%2Fnode_modules%2F%40vue%2Fcli-plugin-typescript%2Fnode_modules%2Fcache-loader%2Fdist%2Fcjs.js%3F%3Fref--14-0%21.%2Fnode_modules%2Fbabel-loader%2Flib%21.%2Fnode_modules%2F%40vue%2Fcli-plugin-typescript%2Fnode_modules%2Fts-loader%3F%3Fref--14-2%21.%2Fnode_modules%2F%40vue%2Fcli-service%2Fnode_modules%2Fcache-loader%2Fdist%2F"
                             }
                         }
                     },
@@ -2732,7 +2763,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -2823,7 +2854,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -2912,6 +2943,9 @@
                                         "segment": "crashCategory==contentviewer"
                                     }
                                 ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_crash_occurrences\tnb_visits_with_crash\tvisits_crash_rate\tmetadata_segment\nNo Category Set\t1\t1\t0.05\t\ncontentviewer\t1\t1\t0.05\tcrashCategory==contentviewer"
                             }
                         }
                     },
@@ -2995,7 +3029,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -3068,7 +3102,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -3194,6 +3228,9 @@
                                         "segment": "crashId==123"
                                     }
                                 ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_crash_occurrences\tnb_visits_with_crash\tnb_new_crashes\tnb_reappeared_crashes\tcrash_type\tcrash_source\tvisits_crash_rate\tcrash_first_seen\tcrash_last_seen\tcrash_last_reappeared\tmetadata_idlogcrash\tmetadata_segment\nJSON.parse: unexpected character at line 1 column 13 of the JSON data\t1\t1\t0\t0\tSyntaxError\thttps://divezone.net/ContentBlock.vue?./node_modules/@vue/cli-plugin-typescript/node_modules/cache-loader/dist/cjs.js??ref--14-0!./node_modules/babel-loader/lib!./node_modules/@vue/cli-plugin-typescript/node_modules/ts-loader??ref--14-2!./node_modules/@vue/cli-service/node_modules/cache-loader/dist/\t0.05\t2023-08-30 11:45:14\t2026-02-15 23:01:28\t\t123\tcrashId==123"
                             }
                         }
                     },
@@ -3268,7 +3305,319 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "label": "script error",
+                                            "nb_crash_occurrences": "18",
+                                            "nb_visits_with_crash": "18",
+                                            "nb_new_crashes": "0",
+                                            "nb_reappeared_crashes": "0",
+                                            "crash_type": "unknown",
+                                            "crash_source": "Unknown",
+                                            "visits_crash_rate": "0.002",
+                                            "crash_first_seen": "2023-08-30 04:26:46",
+                                            "crash_last_seen": "2026-03-18 19:46:28",
+                                            "crash_last_reappeared": "",
+                                            "idlogcrash": "28",
+                                            "segment": "crashId==28"
+                                        },
+                                        {
+                                            "label": "delta is null",
+                                            "nb_crash_occurrences": "15",
+                                            "nb_visits_with_crash": "15",
+                                            "nb_new_crashes": "0",
+                                            "nb_reappeared_crashes": "0",
+                                            "crash_type": "TypeError",
+                                            "crash_source": "http:\\/\\/anothersite.com\\/dist\\/bundle.min.js",
+                                            "visits_crash_rate": "0.0016",
+                                            "crash_first_seen": "2023-08-30 05:51:21",
+                                            "crash_last_seen": "2026-03-18 21:33:25",
+                                            "crash_last_reappeared": "",
+                                            "idlogcrash": "44",
+                                            "segment": "crashId==44"
+                                        },
+                                        {
+                                            "label": "NetworkError when attempting to fetch resource.",
+                                            "nb_crash_occurrences": "13",
+                                            "nb_visits_with_crash": "12",
+                                            "nb_new_crashes": "0",
+                                            "nb_reappeared_crashes": "0",
+                                            "crash_type": "TypeError",
+                                            "crash_source": "http:\\/\\/anothersite.com\\/dist\\/bundle.min.js",
+                                            "visits_crash_rate": "0.0013",
+                                            "crash_first_seen": "2023-08-30 07:20:59",
+                                            "crash_last_seen": "2026-03-18 15:26:24",
+                                            "crash_last_reappeared": "",
+                                            "idlogcrash": "73",
+                                            "segment": "crashId==73"
+                                        },
+                                        {
+                                            "label": "script error",
+                                            "nb_crash_occurrences": "12",
+                                            "nb_visits_with_crash": "12",
+                                            "nb_new_crashes": "0",
+                                            "nb_reappeared_crashes": "0",
+                                            "crash_type": "unknown",
+                                            "crash_source": "http:\\/\\/anothersite.com\\/dist\\/bundle.min.js",
+                                            "visits_crash_rate": "0.0013",
+                                            "crash_first_seen": "2023-08-30 09:01:22",
+                                            "crash_last_seen": "2026-03-18 19:15:48",
+                                            "crash_last_reappeared": "",
+                                            "idlogcrash": "100",
+                                            "segment": "crashId==100"
+                                        },
+                                        {
+                                            "label": "Cannot set 'value' of undefined",
+                                            "nb_crash_occurrences": "11",
+                                            "nb_visits_with_crash": "11",
+                                            "nb_new_crashes": "0",
+                                            "nb_reappeared_crashes": "0",
+                                            "crash_type": "TypeError",
+                                            "crash_source": "http:\\/\\/anothersite.com\\/src\\/ReportMetadata.store.ts",
+                                            "visits_crash_rate": "0.0012",
+                                            "crash_first_seen": "2023-08-30 04:51:08",
+                                            "crash_last_seen": "2026-03-18 17:01:52",
+                                            "crash_last_reappeared": "",
+                                            "idlogcrash": "33",
+                                            "segment": "crashId==33"
+                                        },
+                                        {
+                                            "label": "NetworkError when attempting to fetch resource.",
+                                            "nb_crash_occurrences": "11",
+                                            "nb_visits_with_crash": "11",
+                                            "nb_new_crashes": "0",
+                                            "nb_reappeared_crashes": "0",
+                                            "crash_type": "TypeError",
+                                            "crash_source": "http:\\/\\/anothersite.com\\/src\\/ReportMetadata.store.ts",
+                                            "visits_crash_rate": "0.0012",
+                                            "crash_first_seen": "2023-08-30 06:46:37",
+                                            "crash_last_seen": "2026-03-18 19:42:39",
+                                            "crash_last_reappeared": "",
+                                            "idlogcrash": "67",
+                                            "segment": "crashId==67"
+                                        },
+                                        {
+                                            "label": "Cannot read property 'length' of undefined",
+                                            "nb_crash_occurrences": "10",
+                                            "nb_visits_with_crash": "10",
+                                            "nb_new_crashes": "0",
+                                            "nb_reappeared_crashes": "0",
+                                            "crash_type": "TypeError",
+                                            "crash_source": "http:\\/\\/anothersite.com\\/dist\\/bundle.min.js",
+                                            "visits_crash_rate": "0.0011",
+                                            "crash_first_seen": "2023-08-30 05:56:12",
+                                            "crash_last_seen": "2026-03-18 21:33:06",
+                                            "crash_last_reappeared": "",
+                                            "idlogcrash": "46",
+                                            "segment": "crashId==46"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_crash_occurrences": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_visits_with_crash": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_new_crashes": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_reappeared_crashes": {
+                                                        "type": "integer"
+                                                    },
+                                                    "crash_type": {
+                                                        "type": "string"
+                                                    },
+                                                    "crash_source": {
+                                                        "type": "string"
+                                                    },
+                                                    "visits_crash_rate": {
+                                                        "type": [
+                                                            "string",
+                                                            "number",
+                                                            "integer",
+                                                            "boolean",
+                                                            "array",
+                                                            "object",
+                                                            "null"
+                                                        ]
+                                                    },
+                                                    "crash_first_seen": {
+                                                        "type": "string"
+                                                    },
+                                                    "crash_last_seen": {
+                                                        "type": "string"
+                                                    },
+                                                    "crash_last_reappeared": {
+                                                        "type": [
+                                                            "string",
+                                                            "number",
+                                                            "integer",
+                                                            "boolean",
+                                                            "array",
+                                                            "object",
+                                                            "null"
+                                                        ]
+                                                    },
+                                                    "idlogcrash": {
+                                                        "type": "string"
+                                                    },
+                                                    "segment": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "label": "script error",
+                                        "nb_crash_occurrences": "18",
+                                        "nb_visits_with_crash": 18,
+                                        "nb_new_crashes": 0,
+                                        "nb_reappeared_crashes": 0,
+                                        "crash_type": "unknown",
+                                        "crash_source": "Unknown",
+                                        "visits_crash_rate": 0.002,
+                                        "crash_first_seen": "2023-08-30 04:26:46",
+                                        "crash_last_seen": "2026-03-18 19:46:28",
+                                        "crash_last_reappeared": null,
+                                        "idlogcrash": "28",
+                                        "segment": "crashId==28"
+                                    },
+                                    {
+                                        "label": "delta is null",
+                                        "nb_crash_occurrences": "15",
+                                        "nb_visits_with_crash": 15,
+                                        "nb_new_crashes": 0,
+                                        "nb_reappeared_crashes": 0,
+                                        "crash_type": "TypeError",
+                                        "crash_source": "http:\\/\\/anothersite.com\\/dist\\/bundle.min.js",
+                                        "visits_crash_rate": 0.0016,
+                                        "crash_first_seen": "2023-08-30 05:51:21",
+                                        "crash_last_seen": "2026-03-18 21:33:25",
+                                        "crash_last_reappeared": null,
+                                        "idlogcrash": "44",
+                                        "segment": "crashId==44"
+                                    },
+                                    {
+                                        "label": "NetworkError when attempting to fetch resource.",
+                                        "nb_crash_occurrences": "13",
+                                        "nb_visits_with_crash": 12,
+                                        "nb_new_crashes": 0,
+                                        "nb_reappeared_crashes": 0,
+                                        "crash_type": "TypeError",
+                                        "crash_source": "http:\\/\\/anothersite.com\\/dist\\/bundle.min.js",
+                                        "visits_crash_rate": 0.0013,
+                                        "crash_first_seen": "2023-08-30 07:20:59",
+                                        "crash_last_seen": "2026-03-18 15:26:24",
+                                        "crash_last_reappeared": null,
+                                        "idlogcrash": "73",
+                                        "segment": "crashId==73"
+                                    },
+                                    {
+                                        "label": "script error",
+                                        "nb_crash_occurrences": "12",
+                                        "nb_visits_with_crash": 12,
+                                        "nb_new_crashes": 0,
+                                        "nb_reappeared_crashes": 0,
+                                        "crash_type": "unknown",
+                                        "crash_source": "http:\\/\\/anothersite.com\\/dist\\/bundle.min.js",
+                                        "visits_crash_rate": 0.0013,
+                                        "crash_first_seen": "2023-08-30 09:01:22",
+                                        "crash_last_seen": "2026-03-18 19:15:48",
+                                        "crash_last_reappeared": null,
+                                        "idlogcrash": "100",
+                                        "segment": "crashId==100"
+                                    },
+                                    {
+                                        "label": "Cannot set 'value' of undefined",
+                                        "nb_crash_occurrences": "11",
+                                        "nb_visits_with_crash": 11,
+                                        "nb_new_crashes": 0,
+                                        "nb_reappeared_crashes": 0,
+                                        "crash_type": "TypeError",
+                                        "crash_source": "http:\\/\\/anothersite.com\\/src\\/ReportMetadata.store.ts",
+                                        "visits_crash_rate": 0.0012,
+                                        "crash_first_seen": "2023-08-30 04:51:08",
+                                        "crash_last_seen": "2026-03-18 17:01:52",
+                                        "crash_last_reappeared": null,
+                                        "idlogcrash": "33",
+                                        "segment": "crashId==33"
+                                    },
+                                    {
+                                        "label": "NetworkError when attempting to fetch resource.",
+                                        "nb_crash_occurrences": "11",
+                                        "nb_visits_with_crash": 11,
+                                        "nb_new_crashes": 0,
+                                        "nb_reappeared_crashes": 0,
+                                        "crash_type": "TypeError",
+                                        "crash_source": "http:\\/\\/anothersite.com\\/src\\/ReportMetadata.store.ts",
+                                        "visits_crash_rate": 0.0012,
+                                        "crash_first_seen": "2023-08-30 06:46:37",
+                                        "crash_last_seen": "2026-03-18 19:42:39",
+                                        "crash_last_reappeared": null,
+                                        "idlogcrash": "67",
+                                        "segment": "crashId==67"
+                                    },
+                                    {
+                                        "label": "Cannot read property 'length' of undefined",
+                                        "nb_crash_occurrences": "10",
+                                        "nb_visits_with_crash": 10,
+                                        "nb_new_crashes": 0,
+                                        "nb_reappeared_crashes": 0,
+                                        "crash_type": "TypeError",
+                                        "crash_source": "http:\\/\\/anothersite.com\\/dist\\/bundle.min.js",
+                                        "visits_crash_rate": 0.0011,
+                                        "crash_first_seen": "2023-08-30 05:56:12",
+                                        "crash_last_seen": "2026-03-18 21:33:06",
+                                        "crash_last_reappeared": null,
+                                        "idlogcrash": "46",
+                                        "segment": "crashId==46"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_crash_occurrences\tnb_visits_with_crash\tnb_new_crashes\tnb_reappeared_crashes\tcrash_type\tcrash_source\tvisits_crash_rate\tcrash_first_seen\tcrash_last_seen\tcrash_last_reappeared\tmetadata_idlogcrash\tmetadata_segment\nscript error\t18\t18\t0\t0\tunknown\tUnknown\t0.002\t2023-08-30 04:26:46\t2026-03-18 19:46:28\t\t28\tcrashId==28\ndelta is null\t15\t15\t0\t0\tTypeError\thttp://anothersite.com/dist/bundle.min.js\t0.0016\t2023-08-30 05:51:21\t2026-03-18 21:33:25\t\t44\tcrashId==44\nNetworkError when attempting to fetch resource.\t13\t12\t0\t0\tTypeError\thttp://anothersite.com/dist/bundle.min.js\t0.0013\t2023-08-30 07:20:59\t2026-03-18 15:26:24\t\t73\tcrashId==73\nscript error\t12\t12\t0\t0\tunknown\thttp://anothersite.com/dist/bundle.min.js\t0.0013\t2023-08-30 09:01:22\t2026-03-18 19:15:48\t\t100\tcrashId==100\nCannot set 'value' of undefined\t11\t11\t0\t0\tTypeError\thttp://anothersite.com/src/ReportMetadata.store.ts\t0.0012\t2023-08-30 04:51:08\t2026-03-18 17:01:52\t\t33\tcrashId==33\nNetworkError when attempting to fetch resource.\t11\t11\t0\t0\tTypeError\thttp://anothersite.com/src/ReportMetadata.store.ts\t0.0012\t2023-08-30 06:46:37\t2026-03-18 19:42:39\t\t67\tcrashId==67\nCannot read property 'length' of undefined\t10\t10\t0\t0\tTypeError\thttp://anothersite.com/dist/bundle.min.js\t0.0011\t2023-08-30 05:56:12\t2026-03-18 21:33:06\t\t46\tcrashId==46\ndelta is null\t9\t9\t0\t0\tTypeError\thttp://anothersite.com/src/ReportMetadata.store.ts\t0.001\t2023-08-30 06:15:30\t2026-03-18 21:07:22\t\t57\tcrashId==57\nCannot read properties of null (reading 'length')\t8\t8\t0\t0\tTypeError\thttp://anothersite.com/src/ReportMetadata.store.ts\t0.0009\t2023-08-30 03:17:50\t2026-03-18 13:25:26\t\t4\tcrashId==4\nError returned from API: invalid value specified for user ID: user not found\t8\t8\t0\t0\tApiError\thttp://anothersite.com/dist/bundle.min.js\t0.0009\t2023-08-30 08:30:06\t2026-03-18 14:43:25\t\t93\tcrashId==93\nError returned from API: invalid value specified for user ID: user not found\t8\t8\t0\t0\tApiError\thttp://anothersite.com/src/ReportMetadata.store.ts\t0.0009\t2023-08-30 07:35:34\t2026-03-18 20:22:03\t\t78\tcrashId==78\nError returned from API: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'description' in 'where clause'\t8\t8\t0\t0\tApiError\thttp://anothersite.com/src/ReportMetadata.store.ts\t0.0009\t2023-08-30 08:16:34\t2026-03-18 15:46:53\t\t91\tcrashId==91\nUnknown period type 'cycle'.\t7\t7\t0\t0\tError\thttp://anothersite.com/src/ReportMetadata.store.ts\t0.0008\t2023-08-30 04:12:55\t2026-03-18 16:36:16\t\t21\tcrashId==21\nCannot read property 'length' of undefined\t6\t6\t0\t0\tTypeError\thttp://anothersite.com/src/ReportMetadata.store.ts\t0.0007\t2023-08-30 04:26:14\t2026-03-18 20:08:24\t\t27\tcrashId==27\ndashboard is not defined\t6\t6\t0\t0\tReferenceError\thttp://anothersite.com/src/ReportMetadata.store.ts\t0.0007\t2023-08-30 06:17:19\t2026-03-18 20:31:13\t\t60\tcrashId==60\nError returned from API: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'description' in 'where clause'\t6\t6\t0\t0\tApiError\thttp://anothersite.com/dist/bundle.min.js\t0.0007\t2023-08-30 03:07:37\t2026-03-18 19:42:53\t\t1\tcrashId==1"
+                            }
+                        }
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -3333,7 +3682,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -3416,6 +3765,9 @@
                                         "visits_crash_rate": 0.0653
                                     }
                                 ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "nb_crash_occurrences\tnb_visits_with_crash\tnb_new_crashes\tnb_reappeared_crashes\tnb_disappeared_crashes\tvisits_crash_rate\n17\t16\t0\t0\t0\t0.0653"
                             }
                         }
                     },
@@ -3492,7 +3844,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -3768,6 +4120,9 @@
                                         "segment": "crashId==25"
                                     }
                                 ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "crash_first_seen\tcrash_last_seen\tcrash_last_reappeared\tnb_crash_occurrences\tnb_visits_with_crash\tlabel\tcrash_source\tmetadata_idlogcrash\tmetadata_segment\n2023-08-30 06:03:06\t2026-02-16 00:48:38\t\t2\t2\tError returned from API: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'description' in 'where clause'\tUnknown\t49\tcrashId==49\n2023-08-30 09:52:02\t2026-02-16 00:56:07\t\t2\t2\tJSON.parse: unexpected character at line 1 column 13 of the JSON data\thttps://divezone.net/zenMode.ts\t106\tcrashId==106\n2023-08-30 03:33:01\t2026-02-16 00:46:30\t\t1\t1\tCannot read properties of null (reading 'length')\thttp://anothersite.com/dist/bundle.min.js\t9\tcrashId==9\n2023-08-30 13:10:24\t2026-02-16 01:02:03\t\t1\t1\tCannot read properties of null (reading 'length')\thttps://divezone.net/zenMode.ts\t130\tcrashId==130\n2023-08-30 11:16:42\t2026-02-16 00:48:39\t\t1\t1\tCannot read property 'length' of undefined\thttps://dive-shop.net/index.php?module=CoreHome&action=index&idSite=1&period=day&date=yesterday\t120\tcrashId==120\n2023-08-30 04:32:20\t2026-02-15 21:47:01\t\t1\t1\tCannot set 'value' of undefined\thttp://anothersite.com/dist/bundle.min.js\t29\tcrashId==29\n2023-08-30 04:51:08\t2026-02-16 00:15:09\t\t1\t1\tCannot set 'value' of undefined\thttp://anothersite.com/src/ReportMetadata.store.ts\t33\tcrashId==33\n2023-08-30 03:27:13\t2026-02-16 01:05:21\t\t1\t1\tdelta is null\thttps://dive-shop.net/index.php?module=Proxy&action=getUmdJs&chunk=0\t6\tcrashId==6\n2023-08-30 06:17:16\t2026-02-16 01:01:31\t\t1\t1\tError returned from API: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'description' in 'where clause'\thttps://divezone.net/index.php?module=Proxy&action=getUmdJs&chunk=0\t58\tcrashId==58\n2023-08-30 10:12:08\t2026-02-16 01:10:16\t\t1\t1\tError returned from API: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'description' in 'where clause'\thttps://dive-shop.net/ContentBlock.vue?./node_modules/@vue/cli-plugin-typescript/node_modules/cache-loader/dist/cjs.js??ref--14-0!./node_modules/babel-loader/lib!./node_modules/@vue/cli-plugin-typescript/node_modules/ts-loader??ref--14-2!./node_modules/@vue/cli-service/node_modules/cache-loader/dist\t109\tcrashId==109\n2023-08-30 04:07:44\t2026-02-16 00:57:32\t\t1\t1\tprecision -2 out of range\thttps://divezone.net/ContentBlock.vue?./node_modules/@vue/cli-plugin-typescript/node_modules/cache-loader/dist/cjs.js??ref--14-0!./node_modules/babel-loader/lib!./node_modules/@vue/cli-plugin-typescript/node_modules/ts-loader??ref--14-2!./node_modules/@vue/cli-service/node_modules/cache-loader/dist/\t18\tcrashId==18\n2023-08-30 04:26:02\t2026-02-16 01:12:07\t\t1\t1\tprecision -2 out of range\thttp://anothersite.com/src/ReportMetadata.store.ts\t25\tcrashId==25\n2023-08-30 07:00:56\t2026-02-16 01:08:43\t\t1\t1\tprecision -2 out of range\thttps://divezone.net/index.php?module=CoreHome&action=index&idSite=1&period=day&date=yesterday\t69\tcrashId==69\n2023-08-30 06:37:42\t2026-02-15 22:41:27\t\t1\t1\tUnknown period type 'cycle'.\thttps://dive-shop.net/index.php?module=Proxy&action=getUmdJs&chunk=0\t65\tcrashId==65"
                             }
                         }
                     },
@@ -3844,7 +4199,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -3919,7 +4274,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -3994,7 +4349,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -4413,13 +4768,13 @@
                     "application/json": {
                         "schema": {
                             "type": "array",
-                            "items": {}
+                            "items": []
                         }
                     },
                     "application/xml": {
                         "schema": {
                             "type": "array",
-                            "items": {}
+                            "items": []
                         }
                     }
                 }
@@ -4819,10 +5174,9 @@
         },
         "securitySchemes": {
             "MatomoToken": {
-                "type": "apiKey",
-                "description": "Matomo API token passed as the 'token_auth' query parameter.",
-                "name": "token_auth",
-                "in": "query"
+                "type": "http",
+                "description": "Matomo API token passed in the Authorization header as a bearer token. For demo.matomo.cloud requests, use the anonymous token value: anonymous.",
+                "scheme": "bearer"
             }
         }
     },

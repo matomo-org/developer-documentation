@@ -6,6 +6,10 @@
     },
     "servers": [
         {
+            "url": "https://5x-dev.ddev.site/",
+            "description": "Current Matomo instance"
+        },
+        {
             "url": "https://demo.matomo.cloud/",
             "description": "Matomo demo server"
         }
@@ -89,7 +93,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Alert definition.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=CustomAlerts.getAlert&idAlert=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=CustomAlerts.getAlert&idAlert=1&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "Alert definition.",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -173,7 +177,7 @@
                                         },
                                         "id_sites": {
                                             "type": "array",
-                                            "items": {}
+                                            "items": []
                                         },
                                         "metric": {
                                             "type": "string"
@@ -270,7 +274,7 @@
                                 },
                                 {
                                     "type": "array",
-                                    "items": {}
+                                    "items": []
                                 }
                             ]
                         }
@@ -288,7 +292,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Alerts accessible to the current user.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=CustomAlerts.getAlerts&idSites=1,2&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=CustomAlerts.getAlerts&idSites=1,2&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "Alerts accessible to the current user.",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -382,7 +386,7 @@
                                                     },
                                                     "id_sites": {
                                                         "type": "array",
-                                                        "items": {}
+                                                        "items": []
                                                     },
                                                     "metric": {
                                                         "type": "string"
@@ -495,7 +499,7 @@
                                 },
                                 {
                                     "type": "array",
-                                    "items": {}
+                                    "items": []
                                 }
                             ]
                         }
@@ -506,7 +510,12 @@
                         "description": "Alert period. Allowed values: day, week, month.",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "enum": [
+                                "day",
+                                "week",
+                                "month"
+                            ]
                         }
                     },
                     {
@@ -616,7 +625,7 @@
                         "required": false,
                         "schema": {
                             "type": "array",
-                            "items": {},
+                            "items": [],
                             "default": []
                         }
                     },
@@ -707,7 +716,7 @@
                                 },
                                 {
                                     "type": "array",
-                                    "items": {}
+                                    "items": []
                                 }
                             ]
                         }
@@ -718,7 +727,12 @@
                         "description": "Alert period. Allowed values: day, week, month.",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "enum": [
+                                "day",
+                                "week",
+                                "month"
+                            ]
                         }
                     },
                     {
@@ -828,7 +842,7 @@
                         "required": false,
                         "schema": {
                             "type": "array",
-                            "items": {},
+                            "items": [],
                             "default": []
                         }
                     },
@@ -901,7 +915,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -947,7 +961,7 @@
                                 },
                                 {
                                     "type": "array",
-                                    "items": {}
+                                    "items": []
                                 }
                             ]
                         }
@@ -955,7 +969,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Triggered alerts for the current user and requested sites.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=CustomAlerts.getTriggeredAlerts&idSites=1,2&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=CustomAlerts.getTriggeredAlerts&idSites=1,2&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "Triggered alerts for the current user and requested sites.",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -1143,7 +1157,7 @@
                                                     },
                                                     "id_sites": {
                                                         "type": "array",
-                                                        "items": {}
+                                                        "items": []
                                                     },
                                                     "metric": {
                                                         "type": "string"
@@ -1686,13 +1700,13 @@
                     "application/json": {
                         "schema": {
                             "type": "array",
-                            "items": {}
+                            "items": []
                         }
                     },
                     "application/xml": {
                         "schema": {
                             "type": "array",
-                            "items": {}
+                            "items": []
                         }
                     }
                 }
@@ -2092,10 +2106,9 @@
         },
         "securitySchemes": {
             "MatomoToken": {
-                "type": "apiKey",
-                "description": "Matomo API token passed as the 'token_auth' query parameter.",
-                "name": "token_auth",
-                "in": "query"
+                "type": "http",
+                "description": "Matomo API token passed in the Authorization header as a bearer token. For demo.matomo.cloud requests, use the anonymous token value: anonymous.",
+                "scheme": "bearer"
             }
         }
     },

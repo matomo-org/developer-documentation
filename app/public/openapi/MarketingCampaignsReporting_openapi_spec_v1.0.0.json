@@ -6,6 +6,10 @@
     },
     "servers": [
         {
+            "url": "https://5x-dev.ddev.site/",
+            "description": "Current Matomo instance"
+        },
+        {
             "url": "https://demo.matomo.cloud/",
             "description": "Matomo demo server"
         }
@@ -74,7 +78,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Campaign IDs report.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=MarketingCampaignsReporting.getId&idSite=1&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=MarketingCampaignsReporting.getId&idSite=1&period=day&date=today&format=JSON&token_auth=anonymous), TSV (N/A)"
+                        "description": "Campaign IDs report."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -180,7 +184,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Campaign names report.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=MarketingCampaignsReporting.getName&idSite=1&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=MarketingCampaignsReporting.getName&idSite=1&period=day&date=today&format=JSON&token_auth=anonymous), TSV (N/A)"
+                        "description": "Campaign names report."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -361,7 +365,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Campaign keywords report.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=MarketingCampaignsReporting.getKeyword&idSite=1&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=MarketingCampaignsReporting.getKeyword&idSite=1&period=day&date=today&format=JSON&token_auth=anonymous), TSV (N/A)"
+                        "description": "Campaign keywords report."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -447,7 +451,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Campaign sources report.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=MarketingCampaignsReporting.getSource&idSite=1&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=MarketingCampaignsReporting.getSource&idSite=1&period=day&date=today&format=JSON&token_auth=anonymous), TSV (N/A)"
+                        "description": "Campaign sources report."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -533,7 +537,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Campaign media report.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=MarketingCampaignsReporting.getMedium&idSite=1&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=MarketingCampaignsReporting.getMedium&idSite=1&period=day&date=today&format=JSON&token_auth=anonymous), TSV (N/A)"
+                        "description": "Campaign media report."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -619,7 +623,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Campaign contents report.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=MarketingCampaignsReporting.getContent&idSite=1&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=MarketingCampaignsReporting.getContent&idSite=1&period=day&date=today&format=JSON&token_auth=anonymous), TSV (N/A)"
+                        "description": "Campaign contents report."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -705,7 +709,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Campaign groups report.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=MarketingCampaignsReporting.getGroup&idSite=1&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=MarketingCampaignsReporting.getGroup&idSite=1&period=day&date=today&format=JSON&token_auth=anonymous), TSV (N/A)"
+                        "description": "Campaign groups report."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -791,7 +795,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Campaign placements report.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=MarketingCampaignsReporting.getPlacement&idSite=1&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=MarketingCampaignsReporting.getPlacement&idSite=1&period=day&date=today&format=JSON&token_auth=anonymous), TSV (N/A)"
+                        "description": "Campaign placements report."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -897,7 +901,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Hierarchical source/medium report.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=MarketingCampaignsReporting.getSourceMedium&idSite=1&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=MarketingCampaignsReporting.getSourceMedium&idSite=1&period=day&date=today&format=JSON&token_auth=anonymous), TSV (N/A)"
+                        "description": "Hierarchical source/medium report."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1411,13 +1415,13 @@
                     "application/json": {
                         "schema": {
                             "type": "array",
-                            "items": {}
+                            "items": []
                         }
                     },
                     "application/xml": {
                         "schema": {
                             "type": "array",
-                            "items": {}
+                            "items": []
                         }
                     }
                 }
@@ -1817,10 +1821,9 @@
         },
         "securitySchemes": {
             "MatomoToken": {
-                "type": "apiKey",
-                "description": "Matomo API token passed as the 'token_auth' query parameter.",
-                "name": "token_auth",
-                "in": "query"
+                "type": "http",
+                "description": "Matomo API token passed in the Authorization header as a bearer token. For demo.matomo.cloud requests, use the anonymous token value: anonymous.",
+                "scheme": "bearer"
             }
         }
     },

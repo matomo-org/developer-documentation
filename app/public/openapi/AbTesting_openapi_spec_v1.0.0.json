@@ -6,6 +6,10 @@
     },
     "servers": [
         {
+            "url": "https://5x-dev.ddev.site/",
+            "description": "Current Matomo instance"
+        },
+        {
             "url": "https://demo.matomo.cloud/",
             "description": "Matomo demo server"
         }
@@ -661,7 +665,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "HTML script tag or an empty string when the tracker is already included.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=AbTesting.getJsIncludeTemplate&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=AbTesting.getJsIncludeTemplate&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "HTML script tag or an empty string when the tracker is already included.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -780,7 +784,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "List of experiments for the site.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=AbTesting.getAllExperiments&idSite=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=AbTesting.getAllExperiments&idSite=1&format=JSON&token_auth=anonymous), TSV (N/A)"
+                        "description": "List of experiments for the site."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -826,7 +830,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "List of active experiments for the site.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=AbTesting.getActiveExperiments&idSite=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=AbTesting.getActiveExperiments&idSite=1&format=JSON&token_auth=anonymous), TSV (N/A)"
+                        "description": "List of active experiments for the site."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1037,7 +1041,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "List of valid experiment statuses.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=AbTesting.getAvailableStatuses&idSite=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=AbTesting.getAvailableStatuses&idSite=1&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=AbTesting.getAvailableStatuses&idSite=1&format=Tsv&token_auth=anonymous)",
+                        "description": "List of valid experiment statuses.",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -1168,7 +1172,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Available metric identifiers with display names.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=AbTesting.getAvailableSuccessMetrics&idSite=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=AbTesting.getAvailableSuccessMetrics&idSite=1&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=AbTesting.getAvailableSuccessMetrics&idSite=1&format=Tsv&token_auth=anonymous)",
+                        "description": "Available metric identifiers with display names.",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -1314,7 +1318,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Available target attributes with their supported types and example values.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=AbTesting.getAvailableTargetAttributes&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=AbTesting.getAvailableTargetAttributes&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "Available target attributes with their supported types and example values.",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -1983,13 +1987,13 @@
                     "application/json": {
                         "schema": {
                             "type": "array",
-                            "items": {}
+                            "items": []
                         }
                     },
                     "application/xml": {
                         "schema": {
                             "type": "array",
-                            "items": {}
+                            "items": []
                         }
                     }
                 }

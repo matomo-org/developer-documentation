@@ -6,6 +6,10 @@
     },
     "servers": [
         {
+            "url": "https://5x-dev.ddev.site/",
+            "description": "Current Matomo instance"
+        },
+        {
             "url": "https://demo.matomo.cloud/",
             "description": "Matomo demo server"
         }
@@ -16,6 +20,7 @@
                 "tags": [
                     "API"
                 ],
+                "description": "Get Matomo version",
                 "operationId": "API.getMatomoVersion",
                 "parameters": [
                     {
@@ -24,7 +29,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Matomo version.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=API.getMatomoVersion&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=API.getMatomoVersion&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=API.getMatomoVersion&format=Tsv&token_auth=anonymous)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -34,7 +39,7 @@
                                     }
                                 },
                                 "example": [
-                                    "5.7.0-b1.20260118013446"
+                                    "5.8.0-alpha.20260129013605"
                                 ]
                             },
                             "application/json": {
@@ -47,11 +52,11 @@
                                     "type": "object"
                                 },
                                 "example": {
-                                    "value": "5.7.0-b1.20260118013446"
+                                    "value": "5.8.0-alpha.20260129013605"
                                 }
                             },
                             "application/vnd.ms-excel": {
-                                "example": "value\n5.7.0-b1.20260118013446"
+                                "example": "value\n5.8.0-alpha.20260129013605"
                             }
                         }
                     },
@@ -81,6 +86,7 @@
                 "tags": [
                     "API"
                 ],
+                "description": "Get PHP version",
                 "operationId": "API.getPhpVersion",
                 "parameters": [
                     {
@@ -89,7 +95,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Version details.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=API.getPhpVersion&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=API.getPhpVersion&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=API.getPhpVersion&format=Tsv&token_auth=anonymous)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -185,6 +191,7 @@
                 "tags": [
                     "API"
                 ],
+                "description": "Returns the most accurate IP address available for the current user, in IPv4 format. This could be the proxy client's IP address.",
                 "operationId": "API.getIpFromHeader",
                 "parameters": [
                     {
@@ -193,7 +200,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "IP address in presentation format.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=API.getIpFromHeader&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=API.getIpFromHeader&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=API.getIpFromHeader&format=Tsv&token_auth=anonymous)",
+                        "description": "IP address in presentation format.",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -203,7 +210,7 @@
                                     }
                                 },
                                 "example": [
-                                    "116.206.161.255"
+                                    "103.77.4.166"
                                 ]
                             },
                             "application/json": {
@@ -216,11 +223,11 @@
                                     "type": "object"
                                 },
                                 "example": {
-                                    "value": "116.206.161.255"
+                                    "value": "103.77.4.166"
                                 }
                             },
                             "application/vnd.ms-excel": {
-                                "example": "value\n116.206.161.255"
+                                "example": "value\n103.77.4.166"
                             }
                         }
                     },
@@ -250,6 +257,7 @@
                 "tags": [
                     "API"
                 ],
+                "description": "",
                 "operationId": "API.getSegmentsMetadata",
                 "parameters": [
                     {
@@ -258,7 +266,6 @@
                     {
                         "name": "idSites",
                         "in": "query",
-                        "description": "One site ID, an array of site IDs, a comma-separated list of site IDs, or 'all' for all accessible sites.",
                         "required": false,
                         "schema": {
                             "type": "string",
@@ -268,27 +275,23 @@
                     {
                         "name": "_hideImplementationData",
                         "in": "query",
-                        "description": "Whether to hide implementation details like SQL snippets.",
                         "required": false,
                         "schema": {
-                            "type": "boolean",
-                            "default": true
+                            "type": "string"
                         }
                     },
                     {
                         "name": "_showAllSegments",
                         "in": "query",
-                        "description": "Whether to include internal segments.",
                         "required": false,
                         "schema": {
-                            "type": "boolean",
-                            "default": false
+                            "type": "string"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Segment metadata rows.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=API.getSegmentsMetadata&idSites=1,2&_hideImplementationData=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=API.getSegmentsMetadata&idSites=1,2&_hideImplementationData=1&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -404,6 +407,12 @@
                                         {
                                             "type": "dimension",
                                             "category": "Visitors",
+                                            "name": "AI Agent Name",
+                                            "segment": "aiAgentName"
+                                        },
+                                        {
+                                            "type": "dimension",
+                                            "category": "Visitors",
                                             "name": "Browser",
                                             "segment": "browserName",
                                             "acceptedValues": "FireFox, Internet Explorer, Chrome, Safari, Opera etc."
@@ -440,9 +449,10 @@
                                         {
                                             "type": "dimension",
                                             "category": "Visitors",
-                                            "name": "Device type",
-                                            "segment": "deviceType",
-                                            "acceptedValues": "desktop, smartphone, tablet, feature phone, console, tv, car browser, smart display, camera, portable media player, phablet, smart speaker, wearable, peripheral"
+                                            "name": "Fingerprint",
+                                            "segment": "fingerprint",
+                                            "acceptedValues": "1eceaa833348b187 - any 16 Hexadecimal chars ID, which can be fetched from API.getLastVisitsDetails",
+                                            "permission": "0"
                                         }
                                     ]
                                 }
@@ -568,6 +578,12 @@
                                     {
                                         "type": "dimension",
                                         "category": "Visitors",
+                                        "name": "AI Agent Name",
+                                        "segment": "aiAgentName"
+                                    },
+                                    {
+                                        "type": "dimension",
+                                        "category": "Visitors",
                                         "name": "Browser",
                                         "segment": "browserName",
                                         "acceptedValues": "FireFox, Internet Explorer, Chrome, Safari, Opera etc."
@@ -604,9 +620,10 @@
                                     {
                                         "type": "dimension",
                                         "category": "Visitors",
-                                        "name": "Device type",
-                                        "segment": "deviceType",
-                                        "acceptedValues": "desktop, smartphone, tablet, feature phone, console, tv, car browser, smart display, camera, portable media player, phablet, smart speaker, wearable, peripheral"
+                                        "name": "Fingerprint",
+                                        "segment": "fingerprint",
+                                        "acceptedValues": "1eceaa833348b187 - any 16 Hexadecimal chars ID, which can be fetched from API.getLastVisitsDetails",
+                                        "permission": false
                                     }
                                 ]
                             }
@@ -638,31 +655,18 @@
                 "tags": [
                     "API"
                 ],
+                "description": "Loads reports metadata, then return the requested one, matching optional API parameters.",
                 "operationId": "API.getMetadata",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "Site ID to scope metadata.",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "integer"
-                                },
-                                {
-                                    "type": "string"
-                                }
-                            ]
-                        }
+                        "$ref": "#/components/parameters/idSiteRequired"
                     },
                     {
                         "name": "apiModule",
                         "in": "query",
-                        "description": "API module name.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -671,7 +675,6 @@
                     {
                         "name": "apiAction",
                         "in": "query",
-                        "description": "API action name.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -680,7 +683,6 @@
                     {
                         "name": "apiParameters",
                         "in": "query",
-                        "description": "Optional parameters used to disambiguate reports.",
                         "required": false,
                         "schema": {
                             "type": "string",
@@ -690,54 +692,37 @@
                     {
                         "name": "language",
                         "in": "query",
-                        "description": "Locale code to translate labels, or false to use current language.",
                         "required": false,
                         "schema": {
                             "type": "string"
                         }
                     },
                     {
-                        "name": "period",
-                        "in": "query",
-                        "description": "Period identifier enabled for API requests (from General.enabled_periods_API), typically 'day', 'week', 'month', 'year', 'range', plus any custom enabled periods. Use false to omit period context.",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
+                        "$ref": "#/components/parameters/periodOptional"
                     },
                     {
-                        "name": "date",
-                        "in": "query",
-                        "description": "Date within the period or a range string. Supported keywords include 'today', 'yesterday', 'tomorrow', 'now', 'yesterdaySameTime', and 'last week'/'last month'/'last year'. Supported formats include 'YYYY-MM-DD', multiple-period shortcuts like 'lastN'/'previousN' (eg 'last7'), and ranges like 'YYYY-MM-DD,YYYY-MM-DD' or 'last month,today'. Relative keywords are evaluated in the site timezone when a single site is targeted; otherwise UTC is used.",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
+                        "$ref": "#/components/parameters/dateOptional"
                     },
                     {
                         "name": "hideMetricsDoc",
                         "in": "query",
-                        "description": "Whether to exclude metrics documentation from the result.",
                         "required": false,
                         "schema": {
-                            "type": "boolean",
-                            "default": false
+                            "type": "string"
                         }
                     },
                     {
                         "name": "showSubtableReports",
                         "in": "query",
-                        "description": "Whether to include subtable reports.",
                         "required": false,
                         "schema": {
-                            "type": "boolean",
-                            "default": false
+                            "type": "string"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Matching report metadata, or false if none.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=API.getMetadata&idSite=1&apiModule=UserCountry&apiAction=getCountry&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=API.getMetadata&idSite=1&apiModule=UserCountry&apiAction=getCountry&period=day&date=today&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -812,7 +797,7 @@
                                             "revenue": "money"
                                         },
                                         "imageGraphUrl": "index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=UserCountry&apiAction=getCountry&period=day&date=today",
-                                        "imageGraphEvolutionUrl": "index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=UserCountry&apiAction=getCountry&period=day&date=2025-12-29,2026-01-27",
+                                        "imageGraphEvolutionUrl": "index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=UserCountry&apiAction=getCountry&period=day&date=2026-01-18,2026-02-16",
                                         "uniqueId": "UserCountry_getCountry"
                                     }
                                 }
@@ -933,7 +918,7 @@
                                             "revenue": "money"
                                         },
                                         "imageGraphUrl": "index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=UserCountry&apiAction=getCountry&period=day&date=today",
-                                        "imageGraphEvolutionUrl": "index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=UserCountry&apiAction=getCountry&period=day&date=2025-12-29,2026-01-27",
+                                        "imageGraphEvolutionUrl": "index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=UserCountry&apiAction=getCountry&period=day&date=2026-01-18,2026-02-16",
                                         "uniqueId": "UserCountry_getCountry"
                                     }
                                 ]
@@ -966,6 +951,7 @@
                 "tags": [
                     "API"
                 ],
+                "description": "Triggers a hook to ask plugins for available Reports.",
                 "operationId": "API.getReportMetadata",
                 "parameters": [
                     {
@@ -974,42 +960,22 @@
                     {
                         "name": "idSites",
                         "in": "query",
-                        "description": "THIS PARAMETER IS DEPRECATED AND WILL BE REMOVED IN PIWIK 4. Accepts a site ID, a list of site IDs, or a comma-separated list.",
+                        "description": "THIS PARAMETER IS DEPRECATED AND WILL BE REMOVED IN PIWIK 4",
                         "required": false,
                         "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "integer"
-                                },
-                                {
-                                    "type": "string",
-                                    "default": ""
-                                }
-                            ]
+                            "type": "string",
+                            "default": ""
                         }
                     },
                     {
-                        "name": "period",
-                        "in": "query",
-                        "description": "Period identifier enabled for API requests (from General.enabled_periods_API), typically 'day', 'week', 'month', 'year', 'range', plus any custom enabled periods. Use false to omit period context.",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
+                        "$ref": "#/components/parameters/periodOptional"
                     },
                     {
-                        "name": "date",
-                        "in": "query",
-                        "description": "Date within the period or a range string. Supported keywords include 'today', 'yesterday', 'tomorrow', 'now', 'yesterdaySameTime', and 'last week'/'last month'/'last year'. Supported formats include 'YYYY-MM-DD', multiple-period shortcuts like 'lastN'/'previousN' (eg 'last7'), and ranges like 'YYYY-MM-DD,YYYY-MM-DD' or 'last month,today'. Relative keywords are evaluated in the site timezone when a single site is targeted; otherwise UTC is used.",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
+                        "$ref": "#/components/parameters/dateOptional"
                     },
                     {
                         "name": "hideMetricsDoc",
                         "in": "query",
-                        "description": "Whether to exclude metrics documentation from the result.",
                         "required": false,
                         "schema": {
                             "type": "boolean",
@@ -1019,7 +985,6 @@
                     {
                         "name": "showSubtableReports",
                         "in": "query",
-                        "description": "Whether to include subtable reports.",
                         "required": false,
                         "schema": {
                             "type": "boolean",
@@ -1027,25 +992,12 @@
                         }
                     },
                     {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "Site ID to scope metadata, or derive from $idSites.",
-                        "required": false,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "integer"
-                                },
-                                {
-                                    "type": "string"
-                                }
-                            ]
-                        }
+                        "$ref": "#/components/parameters/idSiteOptional"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Report metadata entries.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=API.getReportMetadata&idSites=1,2&period=day&date=today&idSite=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=API.getReportMetadata&idSites=1,2&period=day&date=today&idSite=1&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -1134,7 +1086,7 @@
                                                 "ecommerce_revenue_evolution": "percent"
                                             },
                                             "imageGraphUrl": "index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=MultiSites&apiAction=getAll&period=day&date=today",
-                                            "imageGraphEvolutionUrl": "index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=MultiSites&apiAction=getAll&period=day&date=2025-12-29,2026-01-27",
+                                            "imageGraphEvolutionUrl": "index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=MultiSites&apiAction=getAll&period=day&date=2026-01-18,2026-02-16",
                                             "uniqueId": "MultiSites_getAll"
                                         },
                                         {
@@ -1309,7 +1261,7 @@
                                             "ecommerce_revenue_evolution": "percent"
                                         },
                                         "imageGraphUrl": "index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=MultiSites&apiAction=getAll&period=day&date=today",
-                                        "imageGraphEvolutionUrl": "index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=MultiSites&apiAction=getAll&period=day&date=2025-12-29,2026-01-27",
+                                        "imageGraphEvolutionUrl": "index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=MultiSites&apiAction=getAll&period=day&date=2026-01-18,2026-02-16",
                                         "uniqueId": "MultiSites_getAll"
                                     },
                                     {
@@ -1363,42 +1315,24 @@
                 "tags": [
                     "API"
                 ],
+                "description": "",
                 "operationId": "API.getProcessedReport",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "Site ID to query.",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
+                        "$ref": "#/components/parameters/idSiteRequired"
                     },
                     {
-                        "name": "period",
-                        "in": "query",
-                        "description": "Period identifier enabled for API requests (from General.enabled_periods_API), typically 'day', 'week', 'month', 'year', 'range', plus any custom enabled periods.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
+                        "$ref": "#/components/parameters/periodRequired"
                     },
                     {
-                        "name": "date",
-                        "in": "query",
-                        "description": "Date within the period or a range string. Supported keywords include 'today', 'yesterday', 'tomorrow', 'now', 'yesterdaySameTime', and 'last week'/'last month'/'last year'. Supported formats include 'YYYY-MM-DD', multiple-period shortcuts like 'lastN'/'previousN' (eg 'last7'), and ranges like 'YYYY-MM-DD,YYYY-MM-DD' or 'last month,today'. Relative keywords are evaluated in the site timezone when a single site is targeted; otherwise UTC is used.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
+                        "$ref": "#/components/parameters/dateRequired"
                     },
                     {
                         "name": "apiModule",
                         "in": "query",
-                        "description": "API module name.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1407,50 +1341,28 @@
                     {
                         "name": "apiAction",
                         "in": "query",
-                        "description": "API action name.",
                         "required": true,
                         "schema": {
                             "type": "string"
                         }
                     },
                     {
-                        "name": "segment",
-                        "in": "query",
-                        "description": "Segment expression, or false for none.",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
+                        "$ref": "#/components/parameters/segmentOptional"
                     },
                     {
                         "name": "apiParameters",
                         "in": "query",
-                        "description": "Extra API parameters to include in the request.",
                         "required": false,
                         "schema": {
                             "type": "string"
                         }
                     },
                     {
-                        "name": "idGoal",
-                        "in": "query",
-                        "description": "Goal ID to use, or false to use default.",
-                        "required": false,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "integer"
-                                },
-                                {
-                                    "type": "string"
-                                }
-                            ]
-                        }
+                        "$ref": "#/components/parameters/idGoalOptional"
                     },
                     {
                         "name": "language",
                         "in": "query",
-                        "description": "Locale code to translate labels, or false to use current language.",
                         "required": false,
                         "schema": {
                             "type": "string"
@@ -1459,53 +1371,33 @@
                     {
                         "name": "showTimer",
                         "in": "query",
-                        "description": "Whether to include the processing timer in the response.",
                         "required": false,
                         "schema": {
-                            "type": "boolean",
-                            "default": true
+                            "type": "string"
                         }
                     },
                     {
                         "name": "hideMetricsDoc",
                         "in": "query",
-                        "description": "Whether to exclude metrics documentation from the report metadata.",
                         "required": false,
                         "schema": {
-                            "type": "boolean",
-                            "default": false
+                            "type": "string"
                         }
                     },
                     {
-                        "name": "idSubtable",
-                        "in": "query",
-                        "description": "Subtable ID to fetch, or false for top-level report.",
-                        "required": false,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "integer"
-                                },
-                                {
-                                    "type": "string"
-                                }
-                            ]
-                        }
+                        "$ref": "#/components/parameters/idSubtableOptional"
                     },
                     {
                         "name": "showRawMetrics",
                         "in": "query",
-                        "description": "Whether to include raw metrics in addition to processed metrics.",
                         "required": false,
                         "schema": {
-                            "type": "boolean",
-                            "default": false
+                            "type": "string"
                         }
                     },
                     {
                         "name": "format_metrics",
                         "in": "query",
-                        "description": "If null or 'bc', metrics are formatted as human-readable strings.",
                         "required": false,
                         "schema": {
                             "type": "string",
@@ -1515,23 +1407,15 @@
                     {
                         "name": "idDimension",
                         "in": "query",
-                        "description": "Dimension ID to use, or false to use default.",
                         "required": false,
                         "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "integer"
-                                },
-                                {
-                                    "type": "string"
-                                }
-                            ]
+                            "type": "string"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Processed report payload.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=API.getProcessedReport&idSite=1&period=day&date=today&apiModule=UserCountry&apiAction=getCountry&showTimer=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=API.getProcessedReport&idSite=1&period=day&date=today&apiModule=UserCountry&apiAction=getCountry&showTimer=1&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -1573,7 +1457,7 @@
                                 },
                                 "example": {
                                     "website": "Demo Site",
-                                    "prettyDate": "Tuesday, January 27, 2026",
+                                    "prettyDate": "Monday, February 16, 2026",
                                     "metadata": {
                                         "category": "Visitors",
                                         "subcategory": "Locations",
@@ -1627,7 +1511,7 @@
                                             "revenue": "money"
                                         },
                                         "imageGraphUrl": "index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=UserCountry&apiAction=getCountry&period=day&date=today",
-                                        "imageGraphEvolutionUrl": "index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=UserCountry&apiAction=getCountry&period=day&date=2025-12-29,2026-01-27",
+                                        "imageGraphEvolutionUrl": "index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=UserCountry&apiAction=getCountry&period=day&date=2026-01-18,2026-02-16",
                                         "uniqueId": "UserCountry_getCountry"
                                     },
                                     "columns": {
@@ -1641,7 +1525,7 @@
                                         "bounce_rate": "Bounce Rate",
                                         "revenue": "Revenue"
                                     },
-                                    "timerMillis": "148"
+                                    "timerMillis": "138"
                                 }
                             },
                             "application/json": {
@@ -1693,7 +1577,7 @@
                                 },
                                 "example": {
                                     "website": "Demo Site",
-                                    "prettyDate": "Tuesday, January 27, 2026",
+                                    "prettyDate": "Monday, February 16, 2026",
                                     "metadata": {
                                         "category": "Visitors",
                                         "subcategory": "Locations",
@@ -1747,7 +1631,7 @@
                                             "revenue": "money"
                                         },
                                         "imageGraphUrl": "index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=UserCountry&apiAction=getCountry&period=day&date=today",
-                                        "imageGraphEvolutionUrl": "index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=UserCountry&apiAction=getCountry&period=day&date=2025-12-29,2026-01-27",
+                                        "imageGraphEvolutionUrl": "index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=UserCountry&apiAction=getCountry&period=day&date=2026-01-18,2026-02-16",
                                         "uniqueId": "UserCountry_getCountry"
                                     },
                                     "columns": {
@@ -1761,7 +1645,7 @@
                                         "bounce_rate": "Bounce Rate",
                                         "revenue": "Revenue"
                                     },
-                                    "timerMillis": "147"
+                                    "timerMillis": "138"
                                 }
                             }
                         }
@@ -1792,6 +1676,7 @@
                 "tags": [
                     "API"
                 ],
+                "description": "Get a list of all pages that shall be shown in a Matomo UI including a list of all widgets that shall be shown within each page.",
                 "operationId": "API.getReportPagesMetadata",
                 "parameters": [
                     {
@@ -1803,7 +1688,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=API.getReportPagesMetadata&idSite=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=API.getReportPagesMetadata&idSite=1&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -1849,6 +1734,59 @@
                                 },
                                 "example": {
                                     "row": [
+                                        {
+                                            "uniqueId": "General_AIAssistants.AIAgents_AIAgentsOverview",
+                                            "category": {
+                                                "id": "General_AIAssistants",
+                                                "name": "AI Assistants",
+                                                "order": "80",
+                                                "icon": "icon-admin-platform",
+                                                "help": "",
+                                                "widget": ""
+                                            },
+                                            "subcategory": {
+                                                "id": "AIAgents_AIAgentsOverview",
+                                                "name": "AI Agents Overview",
+                                                "order": "10",
+                                                "help": "<p>Review how AI agents and human visitors engage with your site at a glance. This overview surfaces combined metrics and trends so you can quickly spot changes before exploring detailed reports.<\\/p>"
+                                            },
+                                            "widgets": {
+                                                "row": [
+                                                    {
+                                                        "name": "AI Agents Over Time",
+                                                        "module": "AIAgents",
+                                                        "action": "getEvolutionGraph",
+                                                        "order": "1",
+                                                        "parameters": {
+                                                            "forceView": "1",
+                                                            "viewDataTable": "graphEvolution",
+                                                            "module": "AIAgents",
+                                                            "action": "getEvolutionGraph"
+                                                        },
+                                                        "uniqueId": "widgetAIAgentsgetEvolutionGraphforceView1viewDataTablegraphEvolution",
+                                                        "isWide": "0",
+                                                        "viewDataTable": "graphEvolution",
+                                                        "isReport": "1"
+                                                    },
+                                                    {
+                                                        "name": "AI Agent Overview",
+                                                        "module": "AIAgents",
+                                                        "action": "get",
+                                                        "order": "2",
+                                                        "parameters": {
+                                                            "forceView": "1",
+                                                            "viewDataTable": "sparklines",
+                                                            "module": "AIAgents",
+                                                            "action": "get"
+                                                        },
+                                                        "uniqueId": "widgetAIAgentsgetforceView1viewDataTablesparklines",
+                                                        "isWide": "0",
+                                                        "viewDataTable": "sparklines",
+                                                        "isReport": "1"
+                                                    }
+                                                ]
+                                            }
+                                        },
                                         {
                                             "uniqueId": "General_Actions.customdimension2",
                                             "category": {
@@ -1950,37 +1888,6 @@
                                                     "isReport": "1"
                                                 }
                                             }
-                                        },
-                                        {
-                                            "uniqueId": "General_Actions.Transitions_Transitions",
-                                            "category": {
-                                                "id": "General_Actions",
-                                                "name": "Behaviour",
-                                                "order": "10",
-                                                "icon": "icon-reporting-actions",
-                                                "help": "",
-                                                "widget": ""
-                                            },
-                                            "subcategory": {
-                                                "id": "Transitions_Transitions",
-                                                "name": "Transitions",
-                                                "order": "46",
-                                                "help": "<p>Transitions is a report showing the things your visitors did directly before and after viewing a given page. This page explains how to access, understand, and use the powerful \"Transitions\" report.<\\/p><p><a target=\"_blank\" rel=\"noreferrer noopener\" href=\"https:\\/\\/matomo.org\\/docs\\/transitions\\/?mtm_campaign=Matomo_App&mtm_source=Matomo_App_Cloud&mtm_medium=App.Transitions.getTransitions\">More details<\\/a><\\/p>"
-                                            },
-                                            "widgets": {
-                                                "row": {
-                                                    "name": "Transitions",
-                                                    "module": "Transitions",
-                                                    "action": "getTransitions",
-                                                    "order": "99",
-                                                    "parameters": {
-                                                        "module": "Transitions",
-                                                        "action": "getTransitions"
-                                                    },
-                                                    "uniqueId": "widgetTransitionsgetTransitions",
-                                                    "isWide": "0"
-                                                }
-                                            }
                                         }
                                     ]
                                 }
@@ -2015,13 +1922,16 @@
                                                                         },
                                                                         "parameters": {
                                                                             "properties": {
+                                                                                "forceView": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "viewDataTable": {
+                                                                                    "type": "string"
+                                                                                },
                                                                                 "module": {
                                                                                     "type": "string"
                                                                                 },
                                                                                 "action": {
-                                                                                    "type": "string"
-                                                                                },
-                                                                                "idDimension": {
                                                                                     "type": "string"
                                                                                 }
                                                                             },
@@ -2056,6 +1966,57 @@
                                     }
                                 },
                                 "example": [
+                                    {
+                                        "uniqueId": "General_AIAssistants.AIAgents_AIAgentsOverview",
+                                        "category": {
+                                            "id": "General_AIAssistants",
+                                            "name": "AI Assistants",
+                                            "order": 80,
+                                            "icon": "icon-admin-platform",
+                                            "help": "",
+                                            "widget": null
+                                        },
+                                        "subcategory": {
+                                            "id": "AIAgents_AIAgentsOverview",
+                                            "name": "AI Agents Overview",
+                                            "order": 10,
+                                            "help": "<p>Review how AI agents and human visitors engage with your site at a glance. This overview surfaces combined metrics and trends so you can quickly spot changes before exploring detailed reports.<\\/p>"
+                                        },
+                                        "widgets": [
+                                            {
+                                                "name": "AI Agents Over Time",
+                                                "module": "AIAgents",
+                                                "action": "getEvolutionGraph",
+                                                "order": 1,
+                                                "parameters": {
+                                                    "forceView": "1",
+                                                    "viewDataTable": "graphEvolution",
+                                                    "module": "AIAgents",
+                                                    "action": "getEvolutionGraph"
+                                                },
+                                                "uniqueId": "widgetAIAgentsgetEvolutionGraphforceView1viewDataTablegraphEvolution",
+                                                "isWide": false,
+                                                "viewDataTable": "graphEvolution",
+                                                "isReport": true
+                                            },
+                                            {
+                                                "name": "AI Agent Overview",
+                                                "module": "AIAgents",
+                                                "action": "get",
+                                                "order": 2,
+                                                "parameters": {
+                                                    "forceView": "1",
+                                                    "viewDataTable": "sparklines",
+                                                    "module": "AIAgents",
+                                                    "action": "get"
+                                                },
+                                                "uniqueId": "widgetAIAgentsgetforceView1viewDataTablesparklines",
+                                                "isWide": false,
+                                                "viewDataTable": "sparklines",
+                                                "isReport": true
+                                            }
+                                        ]
+                                    },
                                     {
                                         "uniqueId": "General_Actions.customdimension2",
                                         "category": {
@@ -2157,37 +2118,6 @@
                                                 "isReport": true
                                             }
                                         ]
-                                    },
-                                    {
-                                        "uniqueId": "General_Actions.Transitions_Transitions",
-                                        "category": {
-                                            "id": "General_Actions",
-                                            "name": "Behaviour",
-                                            "order": 10,
-                                            "icon": "icon-reporting-actions",
-                                            "help": "",
-                                            "widget": null
-                                        },
-                                        "subcategory": {
-                                            "id": "Transitions_Transitions",
-                                            "name": "Transitions",
-                                            "order": 46,
-                                            "help": "<p>Transitions is a report showing the things your visitors did directly before and after viewing a given page. This page explains how to access, understand, and use the powerful \"Transitions\" report.<\\/p><p><a target=\"_blank\" rel=\"noreferrer noopener\" href=\"https:\\/\\/matomo.org\\/docs\\/transitions\\/?mtm_campaign=Matomo_App&mtm_source=Matomo_App_Cloud&mtm_medium=App.Transitions.getTransitions\">More details<\\/a><\\/p>"
-                                        },
-                                        "widgets": [
-                                            {
-                                                "name": "Transitions",
-                                                "module": "Transitions",
-                                                "action": "getTransitions",
-                                                "order": 99,
-                                                "parameters": {
-                                                    "module": "Transitions",
-                                                    "action": "getTransitions"
-                                                },
-                                                "uniqueId": "widgetTransitionsgetTransitions",
-                                                "isWide": false
-                                            }
-                                        ]
                                     }
                                 ]
                             }
@@ -2219,6 +2149,7 @@
                 "tags": [
                     "API"
                 ],
+                "description": "Get a list of all widgetizable widgets.",
                 "operationId": "API.getWidgetMetadata",
                 "parameters": [
                     {
@@ -2230,7 +2161,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=API.getWidgetMetadata&idSite=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=API.getWidgetMetadata&idSite=1&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -2506,51 +2437,27 @@
                 "tags": [
                     "API"
                 ],
+                "description": "Get a combined report of the *.get API methods.",
                 "operationId": "API.get",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "Site ID to query.",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
+                        "$ref": "#/components/parameters/idSiteRequired"
                     },
                     {
-                        "name": "period",
-                        "in": "query",
-                        "description": "Period identifier enabled for API requests (from General.enabled_periods_API), typically 'day', 'week', 'month', 'year', 'range', plus any custom enabled periods.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
+                        "$ref": "#/components/parameters/periodRequired"
                     },
                     {
-                        "name": "date",
-                        "in": "query",
-                        "description": "Date within the period or a range string. Supported keywords include 'today', 'yesterday', 'tomorrow', 'now', 'yesterdaySameTime', and 'last week'/'last month'/'last year'. Supported formats include 'YYYY-MM-DD', multiple-period shortcuts like 'lastN'/'previousN' (eg 'last7'), and ranges like 'YYYY-MM-DD,YYYY-MM-DD' or 'last month,today'. Relative keywords are evaluated in the site timezone when a single site is targeted; otherwise UTC is used.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
+                        "$ref": "#/components/parameters/dateRequired"
                     },
                     {
-                        "name": "segment",
-                        "in": "query",
-                        "description": "Segment expression, or false for none.",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
+                        "$ref": "#/components/parameters/segmentOptional"
                     },
                     {
                         "name": "columns",
                         "in": "query",
-                        "description": "Comma-separated column list, an array of column names, or false for all.",
                         "required": false,
                         "schema": {
                             "type": "string"
@@ -2559,7 +2466,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Combined report data table.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=API.get&idSite=1&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=API.get&idSite=1&period=day&date=today&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=API.get&idSite=1&period=day&date=today&format=Tsv&token_auth=anonymous)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -2569,42 +2476,42 @@
                                     }
                                 },
                                 "example": {
-                                    "nb_uniq_visitors": "9055",
-                                    "nb_visits": "10005",
-                                    "nb_users": "1",
-                                    "nb_actions": "29103",
-                                    "max_actions": "76",
-                                    "bounce_count": "5760",
-                                    "sum_visit_length": "2590948",
-                                    "nb_visits_new": "6",
-                                    "nb_actions_new": "6",
-                                    "nb_uniq_visitors_new": "6",
+                                    "nb_uniq_visitors": "20",
+                                    "nb_visits": "20",
+                                    "nb_users": "0",
+                                    "nb_actions": "56",
+                                    "max_actions": "9",
+                                    "bounce_count": "10",
+                                    "sum_visit_length": "979",
+                                    "nb_visits_new": "0",
+                                    "nb_actions_new": "0",
+                                    "nb_uniq_visitors_new": "0",
                                     "nb_users_new": "0",
-                                    "max_actions_new": "1",
-                                    "bounce_rate_new": "100%",
-                                    "nb_actions_per_visit_new": "1",
+                                    "max_actions_new": "0",
+                                    "bounce_rate_new": "0%",
+                                    "nb_actions_per_visit_new": "0",
                                     "avg_time_on_site_new": "0",
-                                    "nb_visits_returning": "9999",
-                                    "nb_actions_returning": "29097",
-                                    "nb_uniq_visitors_returning": "9049",
-                                    "nb_users_returning": "1",
-                                    "max_actions_returning": "76",
-                                    "bounce_rate_returning": "58%",
-                                    "nb_actions_per_visit_returning": "2.9",
-                                    "avg_time_on_site_returning": "259",
-                                    "Referrers_visitorsFromSearchEngines": "7333",
-                                    "Referrers_visitorsFromSocialNetworks": "1149",
+                                    "nb_visits_returning": "20",
+                                    "nb_actions_returning": "56",
+                                    "nb_uniq_visitors_returning": "20",
+                                    "nb_users_returning": "0",
+                                    "max_actions_returning": "9",
+                                    "bounce_rate_returning": "50%",
+                                    "nb_actions_per_visit_returning": "2.8",
+                                    "avg_time_on_site_returning": "49",
+                                    "Referrers_visitorsFromSearchEngines": "12",
+                                    "Referrers_visitorsFromSocialNetworks": "3",
                                     "Referrers_visitorsFromAIAssistants": "0",
-                                    "Referrers_visitorsFromDirectEntry": "653",
-                                    "Referrers_visitorsFromWebsites": "870",
+                                    "Referrers_visitorsFromDirectEntry": "3",
+                                    "Referrers_visitorsFromWebsites": "2",
                                     "Referrers_visitorsFromCampaigns": "0",
-                                    "Referrers_distinctSearchEngines": "16",
-                                    "Referrers_distinctSocialNetworks": "5",
+                                    "Referrers_distinctSearchEngines": "1",
+                                    "Referrers_distinctSocialNetworks": "3",
                                     "Referrers_distinctAIAssistants": "0",
-                                    "Referrers_distinctKeywords": "83",
-                                    "Referrers_distinctWebsites": "4",
-                                    "Referrers_distinctWebsitesUrls": "285",
-                                    "Referrers_distinctCampaigns": "1",
+                                    "Referrers_distinctKeywords": "1",
+                                    "Referrers_distinctWebsites": "2",
+                                    "Referrers_distinctWebsitesUrls": "2",
+                                    "Referrers_distinctCampaigns": "0",
                                     "PagePerformance_network_time": "0",
                                     "PagePerformance_network_hits": "0",
                                     "PagePerformance_servery_time": "0",
@@ -2626,49 +2533,55 @@
                                     "avg_time_dom_completion": "0",
                                     "avg_time_on_load": "0",
                                     "avg_page_load_time": "0",
-                                    "nb_plays": "237",
-                                    "nb_unique_visitors_plays": "201",
-                                    "nb_impressions": "1837",
-                                    "nb_unique_visitors_impressions": "1358",
-                                    "nb_finishes": "59",
-                                    "sum_total_time_watched": "3292444",
-                                    "sum_total_audio_plays": "19",
-                                    "sum_total_audio_impressions": "56",
-                                    "sum_total_video_plays": "218",
-                                    "sum_total_video_impressions": "1781",
-                                    "nb_conversions": "1032",
-                                    "nb_visits_converted": "989",
-                                    "revenue": "87049.3",
-                                    "conversion_rate": "9.89%",
+                                    "nb_plays": "0",
+                                    "nb_unique_visitors_plays": "0",
+                                    "nb_impressions": "2",
+                                    "nb_unique_visitors_impressions": "2",
+                                    "nb_finishes": "0",
+                                    "sum_total_time_watched": "0",
+                                    "sum_total_audio_plays": "0",
+                                    "sum_total_audio_impressions": "0",
+                                    "sum_total_video_plays": "0",
+                                    "sum_total_video_impressions": "2",
+                                    "nb_conversions": "1",
+                                    "nb_visits_converted": "1",
+                                    "revenue": "1",
+                                    "conversion_rate": "5%",
                                     "nb_conversions_new_visit": "0",
                                     "nb_visits_converted_new_visit": "0",
                                     "revenue_new_visit": "0",
                                     "conversion_rate_new_visit": "0%",
-                                    "nb_conversions_returning_visit": "1030",
-                                    "nb_visits_converted_returning_visit": "989",
-                                    "revenue_returning_visit": "86871.3",
-                                    "conversion_rate_returning_visit": "9.89%",
-                                    "nb_form_views": "12388",
-                                    "nb_form_viewers": "8188",
-                                    "nb_form_starts": "514",
-                                    "nb_form_starters": "439",
-                                    "nb_form_submissions": "540",
-                                    "nb_form_submitters": "520",
-                                    "nb_form_resubmitters": "16",
-                                    "nb_form_conversions": "141",
-                                    "nb_crash_occurrences": "959",
-                                    "nb_visits_with_crash": "839",
+                                    "nb_conversions_returning_visit": "1",
+                                    "nb_visits_converted_returning_visit": "1",
+                                    "revenue_returning_visit": "1",
+                                    "conversion_rate_returning_visit": "5%",
+                                    "nb_form_views": "23",
+                                    "nb_form_viewers": "13",
+                                    "nb_form_starts": "1",
+                                    "nb_form_starters": "1",
+                                    "nb_form_submissions": "1",
+                                    "nb_form_submitters": "1",
+                                    "nb_form_resubmitters": "0",
+                                    "nb_form_conversions": "0",
+                                    "nb_crash_occurrences": "2",
+                                    "nb_visits_with_crash": "2",
                                     "nb_ignored_crashes": "0",
-                                    "nb_uniq_crashes": "13",
+                                    "nb_uniq_crashes": "2",
                                     "nb_new_crashes": "0",
                                     "nb_disappeared_crashes": "0",
                                     "nb_reappeared_crashes": "0",
-                                    "nb_pageviews": "24688",
-                                    "nb_uniq_pageviews": "19324",
-                                    "nb_downloads": "14",
-                                    "nb_uniq_downloads": "14",
-                                    "nb_outlinks": "1459",
-                                    "nb_uniq_outlinks": "1353"
+                                    "nb_pageviews": "53",
+                                    "nb_uniq_pageviews": "41",
+                                    "nb_downloads": "0",
+                                    "nb_uniq_downloads": "0",
+                                    "nb_outlinks": "1",
+                                    "nb_uniq_outlinks": "1",
+                                    "nb_searches": "0",
+                                    "nb_keywords": "0",
+                                    "hits": "56",
+                                    "nb_visits_ai_agent": "0",
+                                    "nb_actions_ai_agent": "0",
+                                    "nb_uniq_visitors_ai_agent": "0"
                                 }
                             },
                             "application/json": {
@@ -2890,15 +2803,7 @@
                                             "type": "integer"
                                         },
                                         "revenue": {
-                                            "type": [
-                                                "string",
-                                                "number",
-                                                "integer",
-                                                "boolean",
-                                                "array",
-                                                "object",
-                                                "null"
-                                            ]
+                                            "type": "integer"
                                         },
                                         "conversion_rate": {
                                             "type": "string"
@@ -2922,15 +2827,7 @@
                                             "type": "integer"
                                         },
                                         "revenue_returning_visit": {
-                                            "type": [
-                                                "string",
-                                                "number",
-                                                "integer",
-                                                "boolean",
-                                                "array",
-                                                "object",
-                                                "null"
-                                            ]
+                                            "type": "integer"
                                         },
                                         "conversion_rate_returning_visit": {
                                             "type": "string"
@@ -3007,55 +2904,76 @@
                                         "hits": {
                                             "type": "integer"
                                         },
-                                        "Referrers_visitorsFromDirectEntry_percent": {
+                                        "nb_visits_ai_agent": {
+                                            "type": "integer"
+                                        },
+                                        "nb_actions_ai_agent": {
+                                            "type": "integer"
+                                        },
+                                        "nb_uniq_visitors_ai_agent": {
+                                            "type": "integer"
+                                        },
+                                        "nb_users_ai_agent": {
+                                            "type": "integer"
+                                        },
+                                        "max_actions_ai_agent": {
+                                            "type": "integer"
+                                        },
+                                        "bounce_rate_ai_agent": {
                                             "type": "string"
                                         },
-                                        "Referrers_visitorsFromSearchEngines_percent": {
-                                            "type": "string"
+                                        "nb_actions_per_visit_ai_agent": {
+                                            "type": "integer"
                                         },
-                                        "Referrers_visitorsFromAIAssistants_percent": {
-                                            "type": "string"
+                                        "avg_time_on_site_ai_agent": {
+                                            "type": "integer"
+                                        },
+                                        "nb_visits_human": {
+                                            "type": "integer"
+                                        },
+                                        "nb_actions_human": {
+                                            "type": "integer"
                                         }
                                     },
                                     "type": "object"
                                 },
                                 "example": {
-                                    "nb_uniq_visitors": 9055,
-                                    "nb_visits": 10005,
-                                    "nb_users": 1,
-                                    "nb_actions": 29103,
-                                    "max_actions": 76,
-                                    "bounce_count": 5760,
-                                    "sum_visit_length": 2590948,
-                                    "nb_visits_new": 6,
-                                    "nb_actions_new": 6,
-                                    "nb_uniq_visitors_new": 6,
+                                    "nb_uniq_visitors": 20,
+                                    "nb_visits": 20,
+                                    "nb_users": 0,
+                                    "nb_actions": 56,
+                                    "max_actions": 9,
+                                    "bounce_count": 10,
+                                    "sum_visit_length": 979,
+                                    "nb_visits_new": 0,
+                                    "nb_actions_new": 0,
+                                    "nb_uniq_visitors_new": 0,
                                     "nb_users_new": 0,
-                                    "max_actions_new": 1,
-                                    "bounce_rate_new": "100%",
-                                    "nb_actions_per_visit_new": 1,
+                                    "max_actions_new": 0,
+                                    "bounce_rate_new": "0%",
+                                    "nb_actions_per_visit_new": 0,
                                     "avg_time_on_site_new": 0,
-                                    "nb_visits_returning": 9999,
-                                    "nb_actions_returning": 29097,
-                                    "nb_uniq_visitors_returning": 9049,
-                                    "nb_users_returning": 1,
-                                    "max_actions_returning": 76,
-                                    "bounce_rate_returning": "58%",
-                                    "nb_actions_per_visit_returning": 2.9,
-                                    "avg_time_on_site_returning": 259,
-                                    "Referrers_visitorsFromSearchEngines": 7333,
-                                    "Referrers_visitorsFromSocialNetworks": 1149,
+                                    "nb_visits_returning": 20,
+                                    "nb_actions_returning": 56,
+                                    "nb_uniq_visitors_returning": 20,
+                                    "nb_users_returning": 0,
+                                    "max_actions_returning": 9,
+                                    "bounce_rate_returning": "50%",
+                                    "nb_actions_per_visit_returning": 2.8,
+                                    "avg_time_on_site_returning": 49,
+                                    "Referrers_visitorsFromSearchEngines": 12,
+                                    "Referrers_visitorsFromSocialNetworks": 3,
                                     "Referrers_visitorsFromAIAssistants": 0,
-                                    "Referrers_visitorsFromDirectEntry": 653,
-                                    "Referrers_visitorsFromWebsites": 870,
+                                    "Referrers_visitorsFromDirectEntry": 3,
+                                    "Referrers_visitorsFromWebsites": 2,
                                     "Referrers_visitorsFromCampaigns": 0,
-                                    "Referrers_distinctSearchEngines": 16,
-                                    "Referrers_distinctSocialNetworks": 5,
+                                    "Referrers_distinctSearchEngines": 1,
+                                    "Referrers_distinctSocialNetworks": 3,
                                     "Referrers_distinctAIAssistants": 0,
-                                    "Referrers_distinctKeywords": 83,
-                                    "Referrers_distinctWebsites": 4,
-                                    "Referrers_distinctWebsitesUrls": 285,
-                                    "Referrers_distinctCampaigns": 1,
+                                    "Referrers_distinctKeywords": 1,
+                                    "Referrers_distinctWebsites": 2,
+                                    "Referrers_distinctWebsitesUrls": 2,
+                                    "Referrers_distinctCampaigns": 0,
                                     "PagePerformance_network_time": 0,
                                     "PagePerformance_network_hits": 0,
                                     "PagePerformance_servery_time": 0,
@@ -3077,59 +2995,66 @@
                                     "avg_time_dom_completion": 0,
                                     "avg_time_on_load": 0,
                                     "avg_page_load_time": 0,
-                                    "nb_plays": 237,
-                                    "nb_unique_visitors_plays": 201,
-                                    "nb_impressions": 1837,
-                                    "nb_unique_visitors_impressions": 1358,
-                                    "nb_finishes": 59,
-                                    "sum_total_time_watched": 3292444,
-                                    "sum_total_audio_plays": 19,
-                                    "sum_total_audio_impressions": 56,
-                                    "sum_total_video_plays": 218,
-                                    "sum_total_video_impressions": 1781,
-                                    "nb_conversions": 1032,
-                                    "nb_visits_converted": 989,
-                                    "revenue": 87049.3,
-                                    "conversion_rate": "9.89%",
+                                    "nb_plays": 0,
+                                    "nb_unique_visitors_plays": 0,
+                                    "nb_impressions": 2,
+                                    "nb_unique_visitors_impressions": 2,
+                                    "nb_finishes": 0,
+                                    "sum_total_time_watched": 0,
+                                    "sum_total_audio_plays": 0,
+                                    "sum_total_audio_impressions": 0,
+                                    "sum_total_video_plays": 0,
+                                    "sum_total_video_impressions": 2,
+                                    "nb_conversions": 1,
+                                    "nb_visits_converted": 1,
+                                    "revenue": 1,
+                                    "conversion_rate": "5%",
                                     "nb_conversions_new_visit": 0,
                                     "nb_visits_converted_new_visit": 0,
                                     "revenue_new_visit": 0,
                                     "conversion_rate_new_visit": "0%",
-                                    "nb_conversions_returning_visit": 1030,
-                                    "nb_visits_converted_returning_visit": 989,
-                                    "revenue_returning_visit": 86871.3,
-                                    "conversion_rate_returning_visit": "9.89%",
-                                    "nb_form_views": 12388,
-                                    "nb_form_viewers": 8188,
-                                    "nb_form_starts": 514,
-                                    "nb_form_starters": 439,
-                                    "nb_form_submissions": 540,
-                                    "nb_form_submitters": 520,
-                                    "nb_form_resubmitters": 16,
-                                    "nb_form_conversions": 141,
-                                    "nb_crash_occurrences": 959,
-                                    "nb_visits_with_crash": 839,
+                                    "nb_conversions_returning_visit": 1,
+                                    "nb_visits_converted_returning_visit": 1,
+                                    "revenue_returning_visit": 1,
+                                    "conversion_rate_returning_visit": "5%",
+                                    "nb_form_views": 23,
+                                    "nb_form_viewers": 13,
+                                    "nb_form_starts": 1,
+                                    "nb_form_starters": 1,
+                                    "nb_form_submissions": 1,
+                                    "nb_form_submitters": 1,
+                                    "nb_form_resubmitters": 0,
+                                    "nb_form_conversions": 0,
+                                    "nb_crash_occurrences": 2,
+                                    "nb_visits_with_crash": 2,
                                     "nb_ignored_crashes": 0,
-                                    "nb_uniq_crashes": 13,
+                                    "nb_uniq_crashes": 2,
                                     "nb_new_crashes": 0,
                                     "nb_disappeared_crashes": 0,
                                     "nb_reappeared_crashes": 0,
-                                    "nb_pageviews": 24688,
-                                    "nb_uniq_pageviews": 19324,
-                                    "nb_downloads": 14,
-                                    "nb_uniq_downloads": 14,
-                                    "nb_outlinks": 1459,
-                                    "nb_uniq_outlinks": 1353,
-                                    "nb_searches": 176,
-                                    "nb_keywords": 66,
-                                    "hits": 29595,
-                                    "Referrers_visitorsFromDirectEntry_percent": "7%",
-                                    "Referrers_visitorsFromSearchEngines_percent": "73%",
-                                    "Referrers_visitorsFromAIAssistants_percent": "0%"
+                                    "nb_pageviews": 53,
+                                    "nb_uniq_pageviews": 41,
+                                    "nb_downloads": 0,
+                                    "nb_uniq_downloads": 0,
+                                    "nb_outlinks": 1,
+                                    "nb_uniq_outlinks": 1,
+                                    "nb_searches": 0,
+                                    "nb_keywords": 0,
+                                    "hits": 56,
+                                    "nb_visits_ai_agent": 0,
+                                    "nb_actions_ai_agent": 0,
+                                    "nb_uniq_visitors_ai_agent": 0,
+                                    "nb_users_ai_agent": 0,
+                                    "max_actions_ai_agent": 0,
+                                    "bounce_rate_ai_agent": "0%",
+                                    "nb_actions_per_visit_ai_agent": 0,
+                                    "avg_time_on_site_ai_agent": 0,
+                                    "nb_visits_human": 20,
+                                    "nb_actions_human": 56
                                 }
                             },
                             "application/vnd.ms-excel": {
-                                "example": "nb_uniq_visitors\tnb_visits\tnb_users\tnb_actions\tmax_actions\tbounce_count\tsum_visit_length\tnb_visits_new\tnb_actions_new\tnb_uniq_visitors_new\tnb_users_new\tmax_actions_new\tbounce_rate_new\tnb_actions_per_visit_new\tavg_time_on_site_new\tnb_visits_returning\tnb_actions_returning\tnb_uniq_visitors_returning\tnb_users_returning\tmax_actions_returning\tbounce_rate_returning\tnb_actions_per_visit_returning\tavg_time_on_site_returning\tReferrers_visitorsFromSearchEngines\tReferrers_visitorsFromSocialNetworks\tReferrers_visitorsFromAIAssistants\tReferrers_visitorsFromDirectEntry\tReferrers_visitorsFromWebsites\tReferrers_visitorsFromCampaigns\tReferrers_distinctSearchEngines\tReferrers_distinctSocialNetworks\tReferrers_distinctAIAssistants\tReferrers_distinctKeywords\tReferrers_distinctWebsites\tReferrers_distinctWebsitesUrls\tReferrers_distinctCampaigns\tPagePerformance_network_time\tPagePerformance_network_hits\tPagePerformance_servery_time\tPagePerformance_server_hits\tPagePerformance_transfer_time\tPagePerformance_transfer_hits\tPagePerformance_domprocessing_time\tPagePerformance_domprocessing_hits\tPagePerformance_domcompletion_time\tPagePerformance_domcompletion_hits\tPagePerformance_onload_time\tPagePerformance_onload_hits\tPagePerformance_pageload_time\tPagePerformance_pageload_hits\tavg_time_network\tavg_time_server\tavg_time_transfer\tavg_time_dom_processing\tavg_time_dom_completion\tavg_time_on_load\tavg_page_load_time\tnb_plays\tnb_unique_visitors_plays\tnb_impressions\tnb_unique_visitors_impressions\tnb_finishes\tsum_total_time_watched\tsum_total_audio_plays\tsum_total_audio_impressions\tsum_total_video_plays\tsum_total_video_impressions\tnb_conversions\tnb_visits_converted\trevenue\tconversion_rate\tnb_conversions_new_visit\tnb_visits_converted_new_visit\trevenue_new_visit\tconversion_rate_new_visit\tnb_conversions_returning_visit\tnb_visits_converted_returning_visit\trevenue_returning_visit\tconversion_rate_returning_visit\tnb_form_views\tnb_form_viewers\tnb_form_starts\tnb_form_starters\tnb_form_submissions\tnb_form_submitters\tnb_form_resubmitters\tnb_form_conversions\tnb_crash_occurrences\tnb_visits_with_crash\tnb_ignored_crashes\tnb_uniq_crashes\tnb_new_crashes\tnb_disappeared_crashes\tnb_reappeared_crashes\tnb_pageviews\tnb_uniq_pageviews\tnb_downloads\tnb_uniq_downloads\tnb_outlinks\tnb_uniq_outlinks\tnb_searches\tnb_keywords\thits\tReferrers_visitorsFromDirectEntry_percent\tReferrers_visitorsFromSearchEngines_percent\tReferrers_visitorsFromAIAssistants_percent\tReferrers_visitorsFromCampaigns_percent\tReferrers_visitorsFromSocialNetworks_percent\tReferrers_visitorsFromWebsites_percent\tvisits_crash_rate\tbounce_rate\tnb_actions_per_visit\tavg_time_on_site\tform_starters_rate\tform_submitter_rate\tform_conversion_rate\tform_resubmitters_rate\tavg_form_time_hesitation\tavg_form_time_spent\tavg_form_time_to_first_submission\tavg_form_time_to_conversion\tplay_rate\tfinish_rate\timpression_rate"
+                                "example": "20\t20\t0\t56\t9\t10\t979\t0\t0\t0\t0\t0\t0%\t0\t0\t20\t56\t20\t0\t9\t50%\t2.8\t49\t12\t3\t0\t3\t2\t0\t1\t3\t0\t1\t2\t2\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t2\t2\t0\t0\t0\t0\t0\t2\t1\t1\t1\t5%\t0\t0\t0\t0%\t1\t1\t1\t5%\t23\t13\t1\t1\t1\t1\t0\t0\t2\t2\t0\t2\t0\t0\t0\t53\t41\t0\t0\t1\t1\t0\t0\t56\t0\t0\t0\t0\t0\t0%\t0\t0\t20\t56\t20\t0\t9\t50%\t2.8\t49\t15%\t60%\t0%\t0%\t15%\t10%\t0.1\t50%\t2.8\t49\t7.7%\t100%\t0%\t0%\t8.514\t30.374\t0.001\t0\t0\t0\t0.1"
                             }
                         }
                     },
@@ -3159,6 +3084,7 @@
                 "tags": [
                     "API"
                 ],
+                "description": "Given an API report to query (eg. \"Referrers.getKeywords\", and a Label (eg. \"free%20software\"), this function will query the API for the previous days/weeks/etc. and will return a ready to use data structure containing the metrics for the requested Label, along with enriched information (min/max values, etc.)",
                 "operationId": "API.getRowEvolution",
                 "parameters": [
                     {
@@ -3168,22 +3094,10 @@
                         "$ref": "#/components/parameters/idSiteRequired"
                     },
                     {
-                        "name": "period",
-                        "in": "query",
-                        "description": "Period identifier enabled for API requests (from General.enabled_periods_API). If 'range' is supplied, it is treated as 'day' and the date must be a multi-period selector.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
+                        "$ref": "#/components/parameters/periodRequired"
                     },
                     {
-                        "name": "date",
-                        "in": "query",
-                        "description": "Must represent multiple periods, either a range such as 'YYYY-MM-DD,YYYY-MM-DD' or 'last month,today', or a multi-period shortcut like 'lastN'/'previousN' (eg 'last7'). Relative keywords are evaluated in the site timezone when a single site is targeted; otherwise UTC is used.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
+                        "$ref": "#/components/parameters/dateRequired"
                     },
                     {
                         "name": "apiModule",
@@ -3202,27 +3116,14 @@
                         }
                     },
                     {
-                        "name": "label",
-                        "in": "query",
-                        "description": "Label or labels to query, or false for all labels.",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
+                        "$ref": "#/components/parameters/labelOptional"
                     },
                     {
-                        "name": "segment",
-                        "in": "query",
-                        "description": "Segment expression, or false for none.",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
+                        "$ref": "#/components/parameters/segmentOptional"
                     },
                     {
                         "name": "column",
                         "in": "query",
-                        "description": "Metric column to evolve, or false to use the first metric.",
                         "required": false,
                         "schema": {
                             "type": "string"
@@ -3231,68 +3132,41 @@
                     {
                         "name": "language",
                         "in": "query",
-                        "description": "Locale code to translate labels, or false to use current language.",
                         "required": false,
                         "schema": {
                             "type": "string"
                         }
                     },
                     {
-                        "name": "idGoal",
-                        "in": "query",
-                        "description": "Goal ID to use, or false to use default.",
-                        "required": false,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "integer"
-                                },
-                                {
-                                    "type": "string"
-                                }
-                            ]
-                        }
+                        "$ref": "#/components/parameters/idGoalOptional"
                     },
                     {
                         "name": "legendAppendMetric",
                         "in": "query",
-                        "description": "Whether to append metric names to legend labels in multi-series results.",
                         "required": false,
                         "schema": {
-                            "type": "boolean",
-                            "default": true
+                            "type": "string"
                         }
                     },
                     {
                         "name": "labelUseAbsoluteUrl",
                         "in": "query",
-                        "description": "Whether to expand labels to absolute URLs where applicable.",
                         "required": false,
                         "schema": {
-                            "type": "boolean",
-                            "default": true
+                            "type": "string"
                         }
                     },
                     {
                         "name": "idDimension",
                         "in": "query",
-                        "description": "Dimension ID to use, or false to use default.",
                         "required": false,
                         "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "integer"
-                                },
-                                {
-                                    "type": "string"
-                                }
-                            ]
+                            "type": "integer"
                         }
                     },
                     {
                         "name": "labelSeries",
                         "in": "query",
-                        "description": "Optional label series indexes as a comma-separated string, or false for none.",
                         "required": false,
                         "schema": {
                             "type": "string"
@@ -3301,15 +3175,14 @@
                     {
                         "name": "showGoalMetricsForGoal",
                         "in": "query",
-                        "description": "Goal ID to use for goal metrics, or false to use standard metrics.",
                         "required": false,
                         "schema": {
                             "oneOf": [
                                 {
-                                    "type": "integer"
+                                    "type": "string"
                                 },
                                 {
-                                    "type": "string"
+                                    "type": "integer"
                                 }
                             ]
                         }
@@ -3317,7 +3190,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Row evolution data.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=API.getRowEvolution&idSite=1&period=day&date=today&apiModule=UserCountry&apiAction=getCountry&legendAppendMetric=1&labelUseAbsoluteUrl=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=API.getRowEvolution&idSite=1&period=day&date=today&apiModule=UserCountry&apiAction=getCountry&legendAppendMetric=1&labelUseAbsoluteUrl=1&format=JSON&token_auth=anonymous), TSV (N/A)"
+                        "$ref": "#/components/responses/GenericArray"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -3345,6 +3218,7 @@
                 "tags": [
                     "API"
                 ],
+                "description": "Performs multiple API requests at once and returns every result.",
                 "operationId": "API.getBulkRequest",
                 "parameters": [
                     {
@@ -3353,16 +3227,17 @@
                     {
                         "name": "urls",
                         "in": "query",
-                        "description": "The array of API request query strings.",
+                        "description": "The array of API requests.",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "type": "array",
+                            "items": []
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "List of decoded results for each request."
+                        "$ref": "#/components/responses/GenericArray"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -3390,6 +3265,7 @@
                 "tags": [
                     "API"
                 ],
+                "description": "Return true if plugin is activated, false otherwise",
                 "operationId": "API.isPluginActivated",
                 "parameters": [
                     {
@@ -3406,7 +3282,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Whether the plugin is activated."
+                        "$ref": "#/components/responses/GenericBoolean"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -3434,6 +3310,7 @@
                 "tags": [
                     "API"
                 ],
+                "description": "Given a segment, will return a list of the most used values for this particular segment.",
                 "operationId": "API.getSuggestedValuesForSegment",
                 "parameters": [
                     {
@@ -3442,32 +3319,18 @@
                     {
                         "name": "segmentName",
                         "in": "query",
-                        "description": "Segment identifier (eg, 'pageUrl').",
                         "required": true,
                         "schema": {
                             "type": "string"
                         }
                     },
                     {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "Site ID to query.",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "integer"
-                                },
-                                {
-                                    "type": "string"
-                                }
-                            ]
-                        }
+                        "$ref": "#/components/parameters/idSiteRequired"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Suggested values, most frequent first.</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=API.getSuggestedValuesForSegment&segmentName=pageTitle&idSite=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=API.getSuggestedValuesForSegment&segmentName=pageTitle&idSite=1&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=API.getSuggestedValuesForSegment&segmentName=pageTitle&idSite=1&format=Tsv&token_auth=anonymous)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -3521,7 +3384,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "array",
-                                    "items": {}
+                                    "items": []
                                 },
                                 "example": [
                                     "Cart - Divezone Store",
@@ -3556,7 +3419,7 @@
                                 ]
                             },
                             "application/vnd.ms-excel": {
-                                "example": "Cart - Divezone Store\n\"Diving Jobs, latest Divemaster and Scuba Dive Instructor Job offers!\"\nCheckout - Divezone Store\nBest Diving sites in Bali – Indonesia Scuba dive reviews by Divezone\nMy Account - Divezone Store\nDivezone Brand Diving Tank - Divezone Store\nDivezone Brand Basic Wetsuit - Divezone Store\nDivezone Store\nDivezone Free Guides: Running Your Own Dive Center - Divezone Store\nDivezone Brand Scuba Fins - Divezone Store\nBest Diving sites in Indonesia – Scuba dive reviews by Divezone\n\nBest Diving sites in Thailand – Scuba dive reviews by Divezone\nDivezone Brand Diving Boots - Divezone Store\nBest Diving sites in Philippines – Scuba dive reviews by Divezone\nScuba Diving Reviews & Best sites where to dive next!\nBest Diving sites in Red Sea – Scuba dive reviews by Divezone\nBest Diving sites in Komodo Island – Indonesia Scuba dive reviews by Divezone\nBest Diving sites in Malaysia – Scuba dive reviews by Divezone\nBest Diving sites in Australia – Scuba dive reviews by Divezone\n\"Komodo Island Travel Tips – Indonesia Things to do, Map and Best Time to visit Komodo Island\"\n\"USS Liberty Wreck Dive Site – Map & Review of USS Liberty Wreck in Tulamben, Bali\"\nProducts - Divezone Store\nDivezone Brand Silicone Grease - Divezone Store\nDivezone Brand Diving Accessory Starter Kit - Divezone Store\nDivezone Brand Distance Line & Reel - Divezone Store\nBest Diving sites in Maldives – Scuba dive reviews by Divezone\n\"Coron, Palawan Travel Tips – Philippines Things to do, Map and Best Time to visit Coron, Palawan\"\nManta Ray Facts and Information – Divezone"
+                                "example": "Cart - Divezone Store\n\"Diving Jobs, latest Divemaster and Scuba Dive Instructor Job offers!\"\nCheckout - Divezone Store\nBest Diving sites in Bali \u2013 Indonesia Scuba dive reviews by Divezone\nMy Account - Divezone Store\nDivezone Brand Diving Tank - Divezone Store\nDivezone Brand Basic Wetsuit - Divezone Store\nDivezone Store\nDivezone Free Guides: Running Your Own Dive Center - Divezone Store\nDivezone Brand Scuba Fins - Divezone Store\nBest Diving sites in Indonesia \u2013 Scuba dive reviews by Divezone\n\nBest Diving sites in Thailand \u2013 Scuba dive reviews by Divezone\nDivezone Brand Diving Boots - Divezone Store\nBest Diving sites in Philippines \u2013 Scuba dive reviews by Divezone\nScuba Diving Reviews & Best sites where to dive next!\nBest Diving sites in Red Sea \u2013 Scuba dive reviews by Divezone\nBest Diving sites in Komodo Island \u2013 Indonesia Scuba dive reviews by Divezone\nBest Diving sites in Malaysia \u2013 Scuba dive reviews by Divezone\nBest Diving sites in Australia \u2013 Scuba dive reviews by Divezone\n\"Komodo Island Travel Tips \u2013 Indonesia Things to do, Map and Best Time to visit Komodo Island\"\n\"USS Liberty Wreck Dive Site \u2013 Map & Review of USS Liberty Wreck in Tulamben, Bali\"\nProducts - Divezone Store\nDivezone Brand Silicone Grease - Divezone Store\nDivezone Brand Diving Accessory Starter Kit - Divezone Store\nDivezone Brand Distance Line & Reel - Divezone Store\nBest Diving sites in Maldives \u2013 Scuba dive reviews by Divezone\n\"Coron, Palawan Travel Tips \u2013 Philippines Things to do, Map and Best Time to visit Coron, Palawan\"\nManta Ray Facts and Information \u2013 Divezone"
                             }
                         }
                     },
@@ -3586,6 +3449,7 @@
                 "tags": [
                     "API"
                 ],
+                "description": "Returns category/subcategory pairs as \"CategoryId.SubcategoryId\" for whom comparison features should be disabled.",
                 "operationId": "API.getPagesComparisonsDisabledFor",
                 "parameters": [
                     {
@@ -3594,7 +3458,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=API.getPagesComparisonsDisabledFor&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=API.getPagesComparisonsDisabledFor&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=API.getPagesComparisonsDisabledFor&format=Tsv&token_auth=anonymous)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -3632,7 +3496,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "array",
-                                    "items": {}
+                                    "items": []
                                 },
                                 "example": [
                                     "General_Actions.Transitions_Transitions",
@@ -3681,24 +3545,19 @@
                 "tags": [
                     "API"
                 ],
+                "description": "A glossary of all reports and their definition",
                 "operationId": "API.getGlossaryReports",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "Site ID to scope glossary content.",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
+                        "$ref": "#/components/parameters/idSiteRequired"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=API.getGlossaryReports&idSite=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=API.getGlossaryReports&idSite=1&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=API.getGlossaryReports&idSite=1&format=Tsv&token_auth=anonymous)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -3887,24 +3746,19 @@
                 "tags": [
                     "API"
                 ],
+                "description": "A glossary of all metrics and their definition",
                 "operationId": "API.getGlossaryMetrics",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "Site ID to scope glossary content.",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
+                        "$ref": "#/components/parameters/idSiteRequired"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=API.getGlossaryMetrics&idSite=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=API.getGlossaryMetrics&idSite=1&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=API.getGlossaryMetrics&idSite=1&format=Tsv&token_auth=anonymous)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -4499,13 +4353,13 @@
                     "application/json": {
                         "schema": {
                             "type": "array",
-                            "items": {}
+                            "items": []
                         }
                     },
                     "application/xml": {
                         "schema": {
                             "type": "array",
-                            "items": {}
+                            "items": []
                         }
                     }
                 }
@@ -4682,6 +4536,15 @@
                 "in": "query",
                 "description": "An in-database subtable ID.",
                 "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "idSubtableRequired": {
+                "name": "idSubtable",
+                "in": "query",
+                "description": "An in-database subtable ID.",
+                "required": true,
                 "schema": {
                     "type": "integer"
                 }
@@ -4896,10 +4759,9 @@
         },
         "securitySchemes": {
             "MatomoToken": {
-                "type": "apiKey",
-                "description": "Matomo API token passed as the 'token_auth' query parameter.",
-                "name": "token_auth",
-                "in": "query"
+                "type": "http",
+                "description": "Matomo API token passed in the Authorization header as a bearer token. For demo.matomo.cloud requests, use the anonymous token value: anonymous.",
+                "scheme": "bearer"
             }
         }
     },
@@ -4910,7 +4772,8 @@
     ],
     "tags": [
         {
-            "name": "API"
+            "name": "API",
+            "description": "This API is the <a href='https://matomo.org/docs/analytics-api/metadata/' rel='noreferrer' target='_blank'>Metadata API</a>: it gives information about all other available APIs methods, as well as providing human readable and more complete outputs than normal API methods.  Some of the information that is returned by the Metadata API: <ul> <li>the dynamically generated list of all API methods via \"getReportMetadata\"</li> <li>the list of metrics that will be returned by each method, along with their human readable name, via \"getDefaultMetrics\" and \"getDefaultProcessedMetrics\"</li> <li>the list of segments metadata supported by all functions that have a 'segment' parameter</li> <li>the (truly magic) method \"getProcessedReport\" will return a human readable version of any other report, and include the processed metrics such as conversion rate, time on site, etc. which are not directly available in other methods.</li> <li>the method \"getSuggestedValuesForSegment\" returns top suggested values for a particular segment. It uses the Live.getLastVisitsDetails API to fetch the most recently used values, and will return the most often used values first.</li> </ul> The Metadata API is for example used by the Matomo Mobile App to automatically display all Matomo reports, with translated report & columns names and nicely formatted values. More information on the <a href='https://matomo.org/docs/analytics-api/metadata/' rel='noreferrer' target='_blank'>Metadata API documentation page</a>"
         }
     ],
     "externalDocs": {

@@ -1,7 +1,7 @@
 {
     "openapi": "3.1.0",
     "info": {
-        "title": "Matomo Reporting API for AdvertisingConversionExport plugin",
+        "title": "Matomo Reporting API for GithubAnalytics plugin",
         "version": "1.0.0"
     },
     "servers": [
@@ -15,13 +15,13 @@
         }
     ],
     "paths": {
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExports": {
+        "/index.php?module=API&method=GithubAnalytics.getReportTemplatesMetadata": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "GithubAnalytics"
                 ],
-                "description": "Returns all configured conversion exports for the given idSite if idSite is omitted, all conversion exports of sites, the current user has write access for, will be returned",
-                "operationId": "AdvertisingConversionExport.getConversionExports",
+                "description": "Returns report templates metadata available for a site.",
+                "operationId": "GithubAnalytics.getReportTemplatesMetadata",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
@@ -29,360 +29,361 @@
                     {
                         "name": "idSite",
                         "in": "query",
-                        "description": "id of the site conversion exports should be returned for",
-                        "required": false,
+                        "description": "The numeric ID of the website to query (for example, 1).",
+                        "required": true,
                         "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "integer"
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Report template definitions keyed by report metadata fields (for example: report_type, name, description, category, subcategory, dimensions, metrics, example_image, segment_filter).",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "metrics": {
+                                                        "type": "object"
+                                                    }
+                                                },
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
                                 },
-                                {
-                                    "type": "string",
-                                    "default": "null"
+                                "example": {
+                                    "row": [
+                                        {
+                                            "report_type": "evolution",
+                                            "name": "Created releases",
+                                            "description": "",
+                                            "category": "GithubAnalytics_GitHub",
+                                            "subcategory": "Releases",
+                                            "dimensions": "",
+                                            "metrics": {
+                                                "row": "hits"
+                                            },
+                                            "example_image": "plugins\\/GithubAnalytics\\/images\\/example-reports\\/1_Created_Releases.png",
+                                            "segment_filter": "eventCategory==github_release;eventAction==created",
+                                            "id": "8c1146b26e0253a04690a883f9a17013"
+                                        },
+                                        {
+                                            "report_type": "table",
+                                            "name": "Event overview",
+                                            "description": "",
+                                            "category": "GithubAnalytics_GitHub",
+                                            "subcategory": "Repository",
+                                            "dimensions": {
+                                                "row": [
+                                                    "Events.EventCategory",
+                                                    "Events.EventAction",
+                                                    "Events.EventName"
+                                                ]
+                                            },
+                                            "metrics": {
+                                                "row": "hits"
+                                            },
+                                            "example_image": "",
+                                            "segment_filter": "",
+                                            "id": "8ef9045fa2c2ca6a259c23bc9ca7c176"
+                                        },
+                                        {
+                                            "report_type": "evolution",
+                                            "name": "GitHub user reports",
+                                            "description": "",
+                                            "category": "GithubAnalytics_GitHub",
+                                            "subcategory": "Users",
+                                            "dimensions": "",
+                                            "metrics": {
+                                                "row": [
+                                                    "hits",
+                                                    "nb_uniq_corehome_userid"
+                                                ]
+                                            },
+                                            "example_image": "",
+                                            "segment_filter": "",
+                                            "id": "5a8570118a2a9a98e1be55c4af015557"
+                                        },
+                                        {
+                                            "report_type": "evolution",
+                                            "name": "Overall created PRs",
+                                            "description": "",
+                                            "category": "GithubAnalytics_GitHub",
+                                            "subcategory": "Pulls",
+                                            "dimensions": "",
+                                            "metrics": {
+                                                "row": "hits"
+                                            },
+                                            "example_image": "plugins\\/GithubAnalytics\\/images\\/example-reports\\/2_Created_PRs.png",
+                                            "segment_filter": "eventCategory==github_pull_request;eventAction==opened",
+                                            "id": "8774f0693f03e2c7e0536fccf65d7ac9"
+                                        },
+                                        {
+                                            "report_type": "evolution",
+                                            "name": "Overall issue comments",
+                                            "description": "",
+                                            "category": "GithubAnalytics_GitHub",
+                                            "subcategory": "Issues",
+                                            "dimensions": "",
+                                            "metrics": {
+                                                "row": "hits"
+                                            },
+                                            "example_image": "plugins\\/GithubAnalytics\\/images\\/example-reports\\/3_Issue_Comments.png",
+                                            "segment_filter": "eventCategory==github_issue_comment;eventAction==created",
+                                            "id": "a7ab5442aa3ab8612fd2cf3429bcf36e"
+                                        },
+                                        {
+                                            "report_type": "evolution",
+                                            "name": "Overall created PR review comments",
+                                            "description": "",
+                                            "category": "GithubAnalytics_GitHub",
+                                            "subcategory": "Pulls",
+                                            "dimensions": "",
+                                            "metrics": {
+                                                "row": "hits"
+                                            },
+                                            "example_image": "",
+                                            "segment_filter": "eventCategory==github_pull_request_review_comment;eventAction==created",
+                                            "id": "f29aebec50a2588a83f8978f1dfcc05f"
+                                        },
+                                        {
+                                            "report_type": "evolution",
+                                            "name": "Overall new created issues",
+                                            "description": "",
+                                            "category": "GithubAnalytics_GitHub",
+                                            "subcategory": "Issues",
+                                            "dimensions": "",
+                                            "metrics": {
+                                                "row": "hits"
+                                            },
+                                            "example_image": "",
+                                            "segment_filter": "eventCategory==github_issues;eventAction==opened",
+                                            "id": "6f387f122db3d32441e1a2b104c9c82f"
+                                        },
+                                        {
+                                            "report_type": "evolution",
+                                            "name": "Overall pushes",
+                                            "description": "",
+                                            "category": "GithubAnalytics_GitHub",
+                                            "subcategory": "Repository",
+                                            "dimensions": "",
+                                            "metrics": {
+                                                "row": "hits"
+                                            },
+                                            "example_image": "",
+                                            "segment_filter": "eventCategory==github_push",
+                                            "id": "492fefda7f85f401ef3391b4fa2ac083"
+                                        },
+                                        {
+                                            "report_type": "evolution",
+                                            "name": "New watches",
+                                            "description": "",
+                                            "category": "GithubAnalytics_GitHub",
+                                            "subcategory": "Repository",
+                                            "dimensions": "",
+                                            "metrics": {
+                                                "row": "hits"
+                                            },
+                                            "example_image": "",
+                                            "segment_filter": "eventCategory==github_watch;eventAction==started",
+                                            "id": "0c4ee66d253b7bd348058793609bea27"
+                                        }
+                                    ]
                                 }
-                            ]
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "list of conversion export configurations"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Returns the (configuration) data of a specific conversion export identified by its id",
-                "operationId": "AdvertisingConversionExport.getConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of an export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "conversion export configuration"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.deleteConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Removes the conversion export with the given idExport",
-                "operationId": "AdvertisingConversionExport.deleteConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of the export to delete",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the site owning the export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "$ref": "#/components/responses/GenericSuccess"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.addConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Creates a new conversion export",
-                "operationId": "AdvertisingConversionExport.addConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the website the export is for",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "name of the conversion export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "type",
-                        "in": "query",
-                        "description": "type of the export (e.g. GoogleAds, YandexAds,...)",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "parameters",
-                        "in": "query",
-                        "description": "configuration array of the export",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "string"
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "report_type": {
+                                                        "type": "string"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "description": {
+                                                        "type": "string"
+                                                    },
+                                                    "category": {
+                                                        "type": "string"
+                                                    },
+                                                    "subcategory": {
+                                                        "type": "string"
+                                                    },
+                                                    "metrics": {
+                                                        "type": "array",
+                                                        "items": []
+                                                    },
+                                                    "example_image": {
+                                                        "type": "string"
+                                                    },
+                                                    "segment_filter": {
+                                                        "type": "string"
+                                                    },
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
                                 },
-                                {
-                                    "type": "integer"
-                                }
-                            ]
+                                "example": [
+                                    {
+                                        "report_type": "evolution",
+                                        "name": "Created releases",
+                                        "description": "",
+                                        "category": "GithubAnalytics_GitHub",
+                                        "subcategory": "Releases",
+                                        "dimensions": [],
+                                        "metrics": [
+                                            "hits"
+                                        ],
+                                        "example_image": "plugins\\/GithubAnalytics\\/images\\/example-reports\\/1_Created_Releases.png",
+                                        "segment_filter": "eventCategory==github_release;eventAction==created",
+                                        "id": "8c1146b26e0253a04690a883f9a17013"
+                                    },
+                                    {
+                                        "report_type": "table",
+                                        "name": "Event overview",
+                                        "description": "",
+                                        "category": "GithubAnalytics_GitHub",
+                                        "subcategory": "Repository",
+                                        "dimensions": [
+                                            "Events.EventCategory",
+                                            "Events.EventAction",
+                                            "Events.EventName"
+                                        ],
+                                        "metrics": [
+                                            "hits"
+                                        ],
+                                        "example_image": "",
+                                        "segment_filter": "",
+                                        "id": "8ef9045fa2c2ca6a259c23bc9ca7c176"
+                                    },
+                                    {
+                                        "report_type": "evolution",
+                                        "name": "GitHub user reports",
+                                        "description": "",
+                                        "category": "GithubAnalytics_GitHub",
+                                        "subcategory": "Users",
+                                        "dimensions": [],
+                                        "metrics": [
+                                            "hits",
+                                            "nb_uniq_corehome_userid"
+                                        ],
+                                        "example_image": "",
+                                        "segment_filter": "",
+                                        "id": "5a8570118a2a9a98e1be55c4af015557"
+                                    },
+                                    {
+                                        "report_type": "evolution",
+                                        "name": "Overall created PRs",
+                                        "description": "",
+                                        "category": "GithubAnalytics_GitHub",
+                                        "subcategory": "Pulls",
+                                        "dimensions": [],
+                                        "metrics": [
+                                            "hits"
+                                        ],
+                                        "example_image": "plugins\\/GithubAnalytics\\/images\\/example-reports\\/2_Created_PRs.png",
+                                        "segment_filter": "eventCategory==github_pull_request;eventAction==opened",
+                                        "id": "8774f0693f03e2c7e0536fccf65d7ac9"
+                                    },
+                                    {
+                                        "report_type": "evolution",
+                                        "name": "Overall issue comments",
+                                        "description": "",
+                                        "category": "GithubAnalytics_GitHub",
+                                        "subcategory": "Issues",
+                                        "dimensions": [],
+                                        "metrics": [
+                                            "hits"
+                                        ],
+                                        "example_image": "plugins\\/GithubAnalytics\\/images\\/example-reports\\/3_Issue_Comments.png",
+                                        "segment_filter": "eventCategory==github_issue_comment;eventAction==created",
+                                        "id": "a7ab5442aa3ab8612fd2cf3429bcf36e"
+                                    },
+                                    {
+                                        "report_type": "evolution",
+                                        "name": "Overall created PR review comments",
+                                        "description": "",
+                                        "category": "GithubAnalytics_GitHub",
+                                        "subcategory": "Pulls",
+                                        "dimensions": [],
+                                        "metrics": [
+                                            "hits"
+                                        ],
+                                        "example_image": "",
+                                        "segment_filter": "eventCategory==github_pull_request_review_comment;eventAction==created",
+                                        "id": "f29aebec50a2588a83f8978f1dfcc05f"
+                                    },
+                                    {
+                                        "report_type": "evolution",
+                                        "name": "Overall new created issues",
+                                        "description": "",
+                                        "category": "GithubAnalytics_GitHub",
+                                        "subcategory": "Issues",
+                                        "dimensions": [],
+                                        "metrics": [
+                                            "hits"
+                                        ],
+                                        "example_image": "",
+                                        "segment_filter": "eventCategory==github_issues;eventAction==opened",
+                                        "id": "6f387f122db3d32441e1a2b104c9c82f"
+                                    },
+                                    {
+                                        "report_type": "evolution",
+                                        "name": "Overall pushes",
+                                        "description": "",
+                                        "category": "GithubAnalytics_GitHub",
+                                        "subcategory": "Repository",
+                                        "dimensions": [],
+                                        "metrics": [
+                                            "hits"
+                                        ],
+                                        "example_image": "",
+                                        "segment_filter": "eventCategory==github_push",
+                                        "id": "492fefda7f85f401ef3391b4fa2ac083"
+                                    },
+                                    {
+                                        "report_type": "table",
+                                        "name": "Overall issue types",
+                                        "description": "",
+                                        "category": "GithubAnalytics_GitHub",
+                                        "subcategory": "Issues",
+                                        "dimensions": [
+                                            "Events.EventName"
+                                        ],
+                                        "metrics": [
+                                            "hits"
+                                        ],
+                                        "example_image": "plugins\\/GithubAnalytics\\/images\\/example-reports\\/5_New_Issue_Types.png",
+                                        "segment_filter": "eventCategory==github_issues;eventAction==labeled",
+                                        "id": "e6b41b939de021976acd023010b99ae0"
+                                    }
+                                ]
+                            }
                         }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "description": "description of the export",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": ""
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "id of the newly added report and the access token"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.regenerateAccessToken": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Generates a new access token for the export identified by idExport",
-                "operationId": "AdvertisingConversionExport.regenerateAccessToken",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of an export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "new access token"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.updateConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Updates a conversion export with new configuration data",
-                "operationId": "AdvertisingConversionExport.updateConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of the export to change",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the website the export belongs to (needs to match)",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "new name of the export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "type",
-                        "in": "query",
-                        "description": "new type of the export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "parameters",
-                        "in": "query",
-                        "description": "new configuration array",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "integer"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "description": "new description of the export",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": ""
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "$ref": "#/components/responses/GenericSuccess"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1220,8 +1221,8 @@
     ],
     "tags": [
         {
-            "name": "AdvertisingConversionExport",
-            "description": "Public API for managing advertising conversion exports. Provides endpoints to list, create, update, and delete export configurations."
+            "name": "GithubAnalytics",
+            "description": "Reporting API endpoints for GithubAnalytics."
         }
     ],
     "externalDocs": {

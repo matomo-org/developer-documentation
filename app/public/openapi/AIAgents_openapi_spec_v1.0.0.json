@@ -1,7 +1,7 @@
 {
     "openapi": "3.1.0",
     "info": {
-        "title": "Matomo Reporting API for AdvertisingConversionExport plugin",
+        "title": "Matomo Reporting API for AIAgents plugin",
         "version": "1.0.0"
     },
     "servers": [
@@ -15,13 +15,13 @@
         }
     ],
     "paths": {
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExports": {
+        "/index.php?module=API&method=AIAgents.get": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "AIAgents"
                 ],
-                "description": "Returns all configured conversion exports for the given idSite if idSite is omitted, all conversion exports of sites, the current user has write access for, will be returned",
-                "operationId": "AdvertisingConversionExport.getConversionExports",
+                "description": "Returns visit summary metrics split between AI agents and human visitors.",
+                "operationId": "AIAgents.get",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
@@ -29,205 +29,64 @@
                     {
                         "name": "idSite",
                         "in": "query",
-                        "description": "id of the site conversion exports should be returned for",
-                        "required": false,
+                        "description": "Website ID(s) to query. - Single site ID (e.g. 1) - Multiple site IDs (e.g. [1, 4, 5]) - Comma-separated list (\"1,4,5\") or \"all\"",
+                        "required": true,
                         "schema": {
                             "oneOf": [
                                 {
                                     "type": "integer"
                                 },
-                                {
-                                    "type": "string",
-                                    "default": "null"
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "list of conversion export configurations"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Returns the (configuration) data of a specific conversion export identified by its id",
-                "operationId": "AdvertisingConversionExport.getConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of an export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "conversion export configuration"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.deleteConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Removes the conversion export with the given idExport",
-                "operationId": "AdvertisingConversionExport.deleteConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of the export to delete",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the site owning the export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "$ref": "#/components/responses/GenericSuccess"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.addConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Creates a new conversion export",
-                "operationId": "AdvertisingConversionExport.addConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the website the export is for",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "name of the conversion export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "type",
-                        "in": "query",
-                        "description": "type of the export (e.g. GoogleAds, YandexAds,...)",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "parameters",
-                        "in": "query",
-                        "description": "configuration array of the export",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
                                 {
                                     "type": "string"
                                 },
                                 {
-                                    "type": "integer"
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    }
                                 }
                             ]
                         }
                     },
                     {
-                        "name": "description",
+                        "name": "period",
                         "in": "query",
-                        "description": "description of the export",
+                        "description": "The period to process, processes data for the period containing the specified date.",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "day",
+                                "week",
+                                "month",
+                                "year",
+                                "range"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "description": "The date or date range to process. 'YYYY-MM-DD', magic keywords (today, yesterday, lastWeek, lastMonth, lastYear), or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD', lastX, previousX).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "segment",
+                        "in": "query",
+                        "description": "Custom segment to append to the AI-agent and human traffic filters.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    },
+                    {
+                        "name": "columns",
+                        "in": "query",
+                        "description": "Metrics to include in the response. Accepts a comma-separated list or array of metric names.",
                         "required": false,
                         "schema": {
                             "type": "string",
@@ -237,152 +96,149 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "id of the newly added report and the access token"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.regenerateAccessToken": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Generates a new access token for the export identified by idExport",
-                "operationId": "AdvertisingConversionExport.regenerateAccessToken",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of an export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "new access token"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.updateConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Updates a conversion export with new configuration data",
-                "operationId": "AdvertisingConversionExport.updateConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of the export to change",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the website the export belongs to (needs to match)",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "new name of the export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "type",
-                        "in": "query",
-                        "description": "new type of the export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "parameters",
-                        "in": "query",
-                        "description": "new configuration array",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "string"
+                        "description": "Visit summary metrics for the requested site and period, with AI-agent and human-specific column suffixes.",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
                                 },
-                                {
-                                    "type": "integer"
+                                "example": {
+                                    "nb_uniq_visitors_ai_agent": "0",
+                                    "nb_users_ai_agent": "0",
+                                    "nb_visits_ai_agent": "0",
+                                    "nb_actions_ai_agent": "0",
+                                    "nb_visits_converted_ai_agent": "0",
+                                    "bounce_count_ai_agent": "0",
+                                    "sum_visit_length_ai_agent": "0",
+                                    "max_actions_ai_agent": "0",
+                                    "bounce_rate_ai_agent": "0%",
+                                    "nb_actions_per_visit_ai_agent": "0",
+                                    "avg_time_on_site_ai_agent": "0",
+                                    "nb_uniq_visitors_human": "20",
+                                    "nb_users_human": "0",
+                                    "nb_visits_human": "20",
+                                    "nb_actions_human": "56",
+                                    "nb_visits_converted_human": "1",
+                                    "bounce_count_human": "10",
+                                    "sum_visit_length_human": "979",
+                                    "max_actions_human": "9",
+                                    "bounce_rate_human": "50%",
+                                    "nb_actions_per_visit_human": "2.8",
+                                    "avg_time_on_site_human": "49"
                                 }
-                            ]
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "nb_uniq_visitors_ai_agent": {
+                                            "type": "integer"
+                                        },
+                                        "nb_users_ai_agent": {
+                                            "type": "integer"
+                                        },
+                                        "nb_visits_ai_agent": {
+                                            "type": "integer"
+                                        },
+                                        "nb_actions_ai_agent": {
+                                            "type": "integer"
+                                        },
+                                        "nb_visits_converted_ai_agent": {
+                                            "type": "integer"
+                                        },
+                                        "bounce_count_ai_agent": {
+                                            "type": "integer"
+                                        },
+                                        "sum_visit_length_ai_agent": {
+                                            "type": "integer"
+                                        },
+                                        "max_actions_ai_agent": {
+                                            "type": "integer"
+                                        },
+                                        "bounce_rate_ai_agent": {
+                                            "type": "string"
+                                        },
+                                        "nb_actions_per_visit_ai_agent": {
+                                            "type": "integer"
+                                        },
+                                        "avg_time_on_site_ai_agent": {
+                                            "type": "integer"
+                                        },
+                                        "nb_uniq_visitors_human": {
+                                            "type": "integer"
+                                        },
+                                        "nb_users_human": {
+                                            "type": "integer"
+                                        },
+                                        "nb_visits_human": {
+                                            "type": "integer"
+                                        },
+                                        "nb_actions_human": {
+                                            "type": "integer"
+                                        },
+                                        "nb_visits_converted_human": {
+                                            "type": "integer"
+                                        },
+                                        "bounce_count_human": {
+                                            "type": "integer"
+                                        },
+                                        "sum_visit_length_human": {
+                                            "type": "integer"
+                                        },
+                                        "max_actions_human": {
+                                            "type": "integer"
+                                        },
+                                        "bounce_rate_human": {
+                                            "type": "string"
+                                        },
+                                        "nb_actions_per_visit_human": {
+                                            "type": [
+                                                "string",
+                                                "number",
+                                                "integer",
+                                                "boolean",
+                                                "array",
+                                                "object",
+                                                "null"
+                                            ]
+                                        },
+                                        "avg_time_on_site_human": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "nb_uniq_visitors_ai_agent": 0,
+                                    "nb_users_ai_agent": 0,
+                                    "nb_visits_ai_agent": 0,
+                                    "nb_actions_ai_agent": 0,
+                                    "nb_visits_converted_ai_agent": 0,
+                                    "bounce_count_ai_agent": 0,
+                                    "sum_visit_length_ai_agent": 0,
+                                    "max_actions_ai_agent": 0,
+                                    "bounce_rate_ai_agent": "0%",
+                                    "nb_actions_per_visit_ai_agent": 0,
+                                    "avg_time_on_site_ai_agent": 0,
+                                    "nb_uniq_visitors_human": 20,
+                                    "nb_users_human": 0,
+                                    "nb_visits_human": 20,
+                                    "nb_actions_human": 56,
+                                    "nb_visits_converted_human": 1,
+                                    "bounce_count_human": 10,
+                                    "sum_visit_length_human": 979,
+                                    "max_actions_human": 9,
+                                    "bounce_rate_human": "50%",
+                                    "nb_actions_per_visit_human": 2.8,
+                                    "avg_time_on_site_human": 49
+                                }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "nb_uniq_visitors_ai_agent\tnb_users_ai_agent\tnb_visits_ai_agent\tnb_actions_ai_agent\tnb_visits_converted_ai_agent\tbounce_count_ai_agent\tsum_visit_length_ai_agent\tmax_actions_ai_agent\tbounce_rate_ai_agent\tnb_actions_per_visit_ai_agent\tavg_time_on_site_ai_agent\tnb_uniq_visitors_human\tnb_users_human\tnb_visits_human\tnb_actions_human\tnb_visits_converted_human\tbounce_count_human\tsum_visit_length_human\tmax_actions_human\tbounce_rate_human\tnb_actions_per_visit_human\tavg_time_on_site_human\n0\t0\t0\t0\t0\t0\t0\t0\t0%\t0\t0\t20\t0\t20\t56\t1\t10\t979\t9\t50%\t2.8\t49"
+                            }
                         }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "description": "new description of the export",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": ""
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "$ref": "#/components/responses/GenericSuccess"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1220,8 +1076,8 @@
     ],
     "tags": [
         {
-            "name": "AdvertisingConversionExport",
-            "description": "Public API for managing advertising conversion exports. Provides endpoints to list, create, update, and delete export configurations."
+            "name": "AIAgents",
+            "description": "Provides reporting API methods for distinguishing AI agent traffic from human traffic."
         }
     ],
     "externalDocs": {
