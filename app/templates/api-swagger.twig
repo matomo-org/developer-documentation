@@ -22,6 +22,8 @@
         let pluginSpecJson = {{ pluginSpecJson|raw }};
         let proxyBaseUrl = '/demo';
         let summaryPrefix = '/index.php?module=API&method=';
+        let interactiveSwaggerSelector = '.opblock-tag, .opblock-summary, .expand-operation, .opblock-summary-control';
+        let flatTagHeaderSelector = '.opblock-tag-section.matomo-flat-tag > .opblock-tag';
 
         function clonePluginSpec(spec) {
             return JSON.parse(JSON.stringify(spec));
@@ -40,6 +42,84 @@
                 element.textContent = fullPath.substring(summaryPrefix.length);
                 element.setAttribute('title', fullPath);
             });
+        }
+
+        function normalizeSwaggerUi(swaggerRoot) {
+            if (!swaggerRoot) {
+                return;
+            }
+
+            shortenSummaryPaths();
+            updateFlatSingleTag(swaggerRoot);
+        }
+
+        function updateFlatSingleTag(swaggerRoot) {
+            let tagSections = swaggerRoot.querySelectorAll('.opblock-tag-section');
+
+            Array.prototype.forEach.call(tagSections, function (tagSection) {
+                tagSection.classList.remove('matomo-flat-tag');
+            });
+
+            if (tagSections.length !== 1) {
+                return;
+            }
+
+            let tagSection = tagSections[0];
+            if (tagSection.querySelector(':scope > .opblock-tag')) {
+                tagSection.classList.add('matomo-flat-tag');
+            }
+        }
+
+        function getSummaryPathCopyControl(target) {
+            return target.closest('.opblock-summary .view-line-link.copy-to-clipboard');
+        }
+
+        function getFlatTagHeader(target) {
+            return target.closest(flatTagHeaderSelector);
+        }
+
+        function getOriginalCopyControlMarkup(swaggerRoot, control) {
+            let state = swaggerRoot.__matomoActiveCopySuccessState;
+
+            if (state && state.element === control) {
+                return state.originalInnerHTML;
+            }
+
+            return control.innerHTML;
+        }
+
+        function clearCopySuccessState(swaggerRoot) {
+            let state = swaggerRoot.__matomoActiveCopySuccessState;
+
+            if (!state) {
+                return;
+            }
+
+            window.clearTimeout(state.resetTimeoutId);
+            state.element.innerHTML = state.originalInnerHTML;
+            state.element.classList.remove('matomo-copy-success');
+            state.element.classList.remove('matomo-copy-reset');
+            void state.element.offsetWidth;
+            state.element.classList.add('matomo-copy-reset');
+            swaggerRoot.__matomoActiveCopySuccessState = null;
+        }
+
+        function showCopySuccessState(swaggerRoot, control, originalInnerHTML) {
+            clearCopySuccessState(swaggerRoot);
+
+            control.innerHTML = '<i class="fa fa-check matomo-copy-success-icon" aria-hidden="true"></i>';
+            control.classList.remove('matomo-copy-reset');
+            control.classList.add('matomo-copy-success');
+
+            swaggerRoot.__matomoActiveCopySuccessState = {
+                element: control,
+                originalInnerHTML: originalInnerHTML,
+                resetTimeoutId: window.setTimeout(function () {
+                    if (swaggerRoot.__matomoActiveCopySuccessState && swaggerRoot.__matomoActiveCopySuccessState.element === control) {
+                        clearCopySuccessState(swaggerRoot);
+                    }
+                }, 3000),
+            };
         }
 
         function DisableAuthorizePlugin() {
@@ -77,7 +157,9 @@
 
                     // For some reason onComplete is not actually on complete
                     // this allows it to run when the paths are available
-                    window.setTimeout(shortenSummaryPaths, 0);
+                    window.setTimeout(function () {
+                        normalizeSwaggerUi(swaggerRoot);
+                    }, 0);
 
                     if (!swaggerRoot || swaggerRoot.__matomoSummaryPathClickHandlerAttached) {
                         return;
@@ -86,11 +168,38 @@
                     swaggerRoot.__matomoSummaryPathClickHandlerAttached = true;
                     // Opening path adds back in path with index.php?module=API..., need to shorten paths again
                     swaggerRoot.addEventListener('click', function (event) {
-                        if (!event.target.closest('.opblock-tag, .opblock-summary, .expand-operation, .opblock-summary-control')) {
+                        let flatTagHeader = getFlatTagHeader(event.target);
+
+                        if (flatTagHeader) {
+                            if (event.target.closest('a')) { // so we can click on a tags inside description
+                                event.stopPropagation();
+                            } else {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+
                             return;
                         }
-                        shortenSummaryPaths();
-                    });
+
+                        let summaryPathCopyControl = getSummaryPathCopyControl(event.target);
+
+                        if (summaryPathCopyControl) {
+                            let originalInnerHTML = getOriginalCopyControlMarkup(swaggerRoot, summaryPathCopyControl);
+
+                            window.setTimeout(function () {
+                                if (summaryPathCopyControl.isConnected) {
+                                    showCopySuccessState(swaggerRoot, summaryPathCopyControl, originalInnerHTML);
+                                }
+                            }, 0);
+                        }
+
+                        if (!event.target.closest(interactiveSwaggerSelector)) {
+                            return;
+                        }
+                        window.setTimeout(function () {
+                            normalizeSwaggerUi(swaggerRoot);
+                        }, 0);
+                    }, true);
                 },
                 layout: 'BaseLayout'
             });
