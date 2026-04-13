@@ -13,3 +13,4 @@
 /docs/changelog-*.md
 /docs/cache/
 /docs/*/cache/
+.codex

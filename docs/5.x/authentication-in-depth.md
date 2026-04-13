@@ -9,6 +9,7 @@ There are different ways a user can authenticate in Matomo:
 * Using username / password and the regular login form. 
 * The [logme](https://matomo.org/faq/how-to/faq_30/) feature can be used to log someone in using username and password in the URL. 
 * Using a `token_auth` URL parameter for our HTTP API's and widgets.
+* Using OAuth 2.0 bearer tokens for external applications when the OAuth 2.0 plugin is installed.
 
 ## Username and password login
 
@@ -63,6 +64,14 @@ When there is a request and we can use a session, then Matomo [checks first if t
 * Matomo has a brute force detection built-in and enabled by default. It can be configured in the Login plugin's System Settings ("Matomo Admin -> System -> General settings -> Login").
 * When a `token_auth` parameter is set by us, then we usually POST the token_auth. This is for security reasons so the token_auth won't appear in server logs. Otherwise a sysadmin could see the token in the logs and do all sort of actions on behalf of another user.
 * Remember that users should not share the token_auth as it is the same as them sharing their username/password.
+
+## OAuth 2.0
+
+If the [OAuth 2.0](/guides/oauth2) plugin is installed, external applications can authenticate against Matomo using OAuth 2.0 access tokens.
+
+This is mainly useful when integrating third-party or custom applications that should not receive a long-lived `token_auth`. In that case the application first obtains an access token through the plugin's OAuth 2.0 endpoints and then sends that token as a bearer token when calling supported Matomo APIs.
+
+Depending on the application type, you would typically use either the Authorization Code flow with PKCE or the Client Credentials flow. For the integration flow and request examples, see the [OAuth 2.0 guides](/guides/oauth2).
 
 ## Alternative login plugins
 
