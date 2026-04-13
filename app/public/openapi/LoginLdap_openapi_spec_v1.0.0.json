@@ -1,7 +1,7 @@
 {
     "openapi": "3.1.0",
     "info": {
-        "title": "Matomo Reporting API for AdvertisingConversionExport plugin",
+        "title": "Matomo Reporting API for LoginLdap plugin",
         "version": "1.0.0"
     },
     "servers": [
@@ -15,38 +15,30 @@
         }
     ],
     "paths": {
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExports": {
+        "/index.php?module=API&method=LoginLdap.saveLdapConfig": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "LoginLdap"
                 ],
-                "description": "Returns all configured conversion exports for the given idSite if idSite is omitted, all conversion exports of sites, the current user has write access for, will be returned",
-                "operationId": "AdvertisingConversionExport.getConversionExports",
+                "description": "Saves LoginLdap config.",
+                "operationId": "LoginLdap.saveLdapConfig",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idSite",
+                        "name": "data",
                         "in": "query",
-                        "description": "id of the site conversion exports should be returned for",
-                        "required": false,
+                        "description": "JSON encoded config array.",
+                        "required": true,
                         "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "integer"
-                                },
-                                {
-                                    "type": "string",
-                                    "default": "null"
-                                }
-                            ]
+                            "type": "string"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "list of conversion export configurations"
+                        "description": "Save status payload."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -69,30 +61,30 @@
                 }
             }
         },
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExport": {
+        "/index.php?module=API&method=LoginLdap.saveServersInfo": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "LoginLdap"
                 ],
-                "description": "Returns the (configuration) data of a specific conversion export identified by its id",
-                "operationId": "AdvertisingConversionExport.getConversionExport",
+                "description": "Saves LDAP server config.",
+                "operationId": "LoginLdap.saveServersInfo",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idExport",
+                        "name": "data",
                         "in": "query",
-                        "description": "id of an export",
+                        "description": "JSON encoded array w/ server info.",
                         "required": true,
                         "schema": {
-                            "type": "integer"
+                            "type": "string"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "conversion export configuration"
+                        "description": "Save status payload."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -115,33 +107,116 @@
                 }
             }
         },
-        "/index.php?module=API&method=AdvertisingConversionExport.deleteConversionExport": {
+        "/index.php?module=API&method=LoginLdap.getCountOfUsersMemberOf": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "LoginLdap"
                 ],
-                "description": "Removes the conversion export with the given idExport",
-                "operationId": "AdvertisingConversionExport.deleteConversionExport",
+                "description": "Returns count of users in LDAP that are member of a specific group of names. Uses a search filter with memberof=?.",
+                "operationId": "LoginLdap.getCountOfUsersMemberOf",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idExport",
+                        "name": "memberOf",
                         "in": "query",
-                        "description": "id of the export to delete",
+                        "description": "The group to check.",
                         "required": true,
                         "schema": {
-                            "type": "integer"
+                            "type": "string"
                         }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#/components/responses/GenericInteger"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=LoginLdap.getCountOfUsersMatchingFilter": {
+            "get": {
+                "tags": [
+                    "LoginLdap"
+                ],
+                "description": "Returns count of users in LDAP that match an LDAP filter.",
+                "operationId": "LoginLdap.getCountOfUsersMatchingFilter",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idSite",
+                        "name": "filter",
                         "in": "query",
-                        "description": "id of the site owning the export",
+                        "description": "The filter to match.",
                         "required": true,
                         "schema": {
-                            "type": "integer"
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=LoginLdap.synchronizeUser": {
+            "get": {
+                "tags": [
+                    "LoginLdap"
+                ],
+                "description": "Synchronizes a single user in LDAP. This method can be used by superusers to synchronize a user before (s)he logs in.",
+                "operationId": "LoginLdap.synchronizeUser",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "login",
+                        "in": "query",
+                        "description": "The login of the user.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
                         }
                     }
                 ],
@@ -170,219 +245,21 @@
                 }
             }
         },
-        "/index.php?module=API&method=AdvertisingConversionExport.addConversionExport": {
+        "/index.php?module=API&method=LoginLdap.getExistingLdapUsersFromDb": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "LoginLdap"
                 ],
-                "description": "Creates a new conversion export",
-                "operationId": "AdvertisingConversionExport.addConversionExport",
+                "description": "Get all existing LDAP user logins from the database.",
+                "operationId": "LoginLdap.getExistingLdapUsersFromDb",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the website the export is for",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "name of the conversion export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "type",
-                        "in": "query",
-                        "description": "type of the export (e.g. GoogleAds, YandexAds,...)",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "parameters",
-                        "in": "query",
-                        "description": "configuration array of the export",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "integer"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "description": "description of the export",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": ""
-                        }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "id of the newly added report and the access token"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.regenerateAccessToken": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Generates a new access token for the export identified by idExport",
-                "operationId": "AdvertisingConversionExport.regenerateAccessToken",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of an export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "new access token"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.updateConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Updates a conversion export with new configuration data",
-                "operationId": "AdvertisingConversionExport.updateConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of the export to change",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the website the export belongs to (needs to match)",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "new name of the export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "type",
-                        "in": "query",
-                        "description": "new type of the export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "parameters",
-                        "in": "query",
-                        "description": "new configuration array",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "integer"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "description": "new description of the export",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": ""
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "$ref": "#/components/responses/GenericSuccess"
+                        "description": "List of Matomo login names that are marked as LDAP users."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1220,8 +1097,8 @@
     ],
     "tags": [
         {
-            "name": "AdvertisingConversionExport",
-            "description": "Public API for managing advertising conversion exports. Provides endpoints to list, create, update, and delete export configurations."
+            "name": "LoginLdap",
+            "description": "API endpoints for configuring LDAP authentication and synchronizing LDAP users."
         }
     ],
     "externalDocs": {

@@ -1,7 +1,7 @@
 {
     "openapi": "3.1.0",
     "info": {
-        "title": "Matomo Reporting API for AdvertisingConversionExport plugin",
+        "title": "Matomo Reporting API for OpenApiDocs plugin",
         "version": "1.0.0"
     },
     "servers": [
@@ -15,38 +15,21 @@
         }
     ],
     "paths": {
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExports": {
+        "/index.php?module=API&method=OpenApiDocs.getPluginWhitelist": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "OpenApiDocs"
                 ],
-                "description": "Returns all configured conversion exports for the given idSite if idSite is omitted, all conversion exports of sites, the current user has write access for, will be returned",
-                "operationId": "AdvertisingConversionExport.getConversionExports",
+                "description": "Return the OpenApiDocs plugin whitelist from config/plugins.php.",
+                "operationId": "OpenApiDocs.getPluginWhitelist",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the site conversion exports should be returned for",
-                        "required": false,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "integer"
-                                },
-                                {
-                                    "type": "string",
-                                    "default": "null"
-                                }
-                            ]
-                        }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "list of conversion export configurations"
+                        "$ref": "#/components/responses/GenericArray"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -69,175 +52,40 @@
                 }
             }
         },
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExport": {
+        "/index.php?module=API&method=OpenApiDocs.getOpenApiSpec": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "OpenApiDocs"
                 ],
-                "description": "Returns the (configuration) data of a specific conversion export identified by its id",
-                "operationId": "AdvertisingConversionExport.getConversionExport",
+                "description": "Get a pre-generated OpenAPI spec file if it exists. This endpoint only reads the generated JSON file and does not trigger spec generation.",
+                "operationId": "OpenApiDocs.getOpenApiSpec",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idExport",
+                        "name": "pluginName",
                         "in": "query",
-                        "description": "id of an export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "conversion export configuration"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.deleteConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Removes the conversion export with the given idExport",
-                "operationId": "AdvertisingConversionExport.deleteConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of the export to delete",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the site owning the export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "$ref": "#/components/responses/GenericSuccess"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.addConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Creates a new conversion export",
-                "operationId": "AdvertisingConversionExport.addConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the website the export is for",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "name of the conversion export",
+                        "description": "Plugin name used in the generated filename.",
                         "required": true,
                         "schema": {
                             "type": "string"
                         }
                     },
                     {
-                        "name": "type",
+                        "name": "format",
                         "in": "query",
-                        "description": "type of the export (e.g. GoogleAds, YandexAds,...)",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "parameters",
-                        "in": "query",
-                        "description": "configuration array of the export",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "integer"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "description": "description of the export",
+                        "description": "Output format. Only `json` is supported.",
                         "required": false,
                         "schema": {
                             "type": "string",
-                            "default": ""
+                            "default": "json"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "id of the newly added report and the access token"
+                        "description": "The decoded OpenAPI specification payload."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -260,129 +108,39 @@
                 }
             }
         },
-        "/index.php?module=API&method=AdvertisingConversionExport.regenerateAccessToken": {
+        "/index.php?module=API&method=OpenApiDocs.getGeneratedOpenApiSpec": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "OpenApiDocs"
                 ],
-                "description": "Generates a new access token for the export identified by idExport",
-                "operationId": "AdvertisingConversionExport.regenerateAccessToken",
+                "description": "Get the generated API documentation data for the specified plugin.",
+                "operationId": "OpenApiDocs.getGeneratedOpenApiSpec",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idExport",
+                        "name": "plugin",
                         "in": "query",
-                        "description": "id of an export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "new access token"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.updateConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Updates a conversion export with new configuration data",
-                "operationId": "AdvertisingConversionExport.updateConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of the export to change",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the website the export belongs to (needs to match)",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "new name of the export",
+                        "description": "Name of the plugin to get the JSON for. E.g. TagManager or CustomerAlerts",
                         "required": true,
                         "schema": {
                             "type": "string"
                         }
                     },
                     {
-                        "name": "type",
+                        "name": "format",
                         "in": "query",
-                        "description": "new type of the export",
+                        "description": "String to indicate JSON or YAML.",
                         "required": true,
                         "schema": {
                             "type": "string"
-                        }
-                    },
-                    {
-                        "name": "parameters",
-                        "in": "query",
-                        "description": "new configuration array",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "integer"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "description": "new description of the export",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": ""
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "$ref": "#/components/responses/GenericSuccess"
+                        "description": "OK"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1220,8 +978,8 @@
     ],
     "tags": [
         {
-            "name": "AdvertisingConversionExport",
-            "description": "Public API for managing advertising conversion exports. Provides endpoints to list, create, update, and delete export configurations."
+            "name": "OpenApiDocs",
+            "description": "API for plugin OpenApiDocs  Exposes endpoints to fetch pre-generated OpenAPI specs or generate plugin-specific OpenAPI docs on demand."
         }
     ],
     "externalDocs": {

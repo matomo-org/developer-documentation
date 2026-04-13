@@ -1,7 +1,7 @@
 {
     "openapi": "3.1.0",
     "info": {
-        "title": "Matomo Reporting API for ActivityLog plugin",
+        "title": "Matomo Reporting API for Transitions plugin",
         "version": "1.0.0"
     },
     "servers": [
@@ -15,92 +15,160 @@
         }
     ],
     "paths": {
-        "/index.php?module=API&method=ActivityLog.getEntries": {
+        "/index.php?module=API&method=Transitions.getTransitionsForPageTitle": {
             "get": {
                 "tags": [
-                    "ActivityLog"
+                    "Transitions"
                 ],
-                "description": "Returns entries of activity log",
-                "operationId": "ActivityLog.getEntries",
+                "description": "",
+                "operationId": "Transitions.getTransitionsForPageTitle",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "offset",
+                        "name": "pageTitle",
                         "in": "query",
-                        "description": "offset to start at",
-                        "required": false,
+                        "required": true,
                         "schema": {
-                            "type": "integer",
-                            "default": 0
+                            "type": "string"
                         }
                     },
                     {
-                        "name": "limit",
-                        "in": "query",
-                        "description": "amount of entries to return",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "default": 25
-                        }
+                        "$ref": "#/components/parameters/idSiteRequired"
                     },
                     {
-                        "name": "filterByUserLogin",
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    },
+                    {
+                        "name": "limitBeforeGrouping",
                         "in": "query",
-                        "description": "user login to filter by, or null for the current user",
                         "required": false,
                         "schema": {
                             "type": "string",
-                            "default": "null"
-                        }
-                    },
-                    {
-                        "name": "filterByActivityType",
-                        "in": "query",
-                        "description": "activity type identifier to filter by",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": "null"
-                        }
-                    },
-                    {
-                        "name": "period",
-                        "in": "query",
-                        "description": "Reporting period (or a plugin-defined period).",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": "null"
-                        }
-                    },
-                    {
-                        "name": "date",
-                        "in": "query",
-                        "description": "Date string (`YYYY-MM-DD`, `now`, `today`, `tomorrow`, `yesterday`, `yesterdaySameTime`, `last week|month|year`, `lastN`, `previousN`) or date range (`YYYY-MM-DD,YYYY-MM-DD`). Timezone is not applied here unless the date is already resolved upstream.",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": "null"
+                            "default": "0"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "list of activity entries with formatted metadata",
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Transitions.getTransitionsForPageUrl": {
+            "get": {
+                "tags": [
+                    "Transitions"
+                ],
+                "description": "",
+                "operationId": "Transitions.getTransitionsForPageUrl",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "pageUrl",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    },
+                    {
+                        "name": "limitBeforeGrouping",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "0"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
                                     "properties": {
-                                        "row": {
-                                            "type": "array",
-                                            "items": {
-                                                "properties": {
-                                                    "parameters": {
+                                        "previousPages": {
+                                            "properties": {
+                                                "row": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "xml": {
+                                                            "name": "row"
+                                                        },
+                                                        "additionalProperties": true
+                                                    }
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "pageMetrics": {
+                                            "type": "object"
+                                        },
+                                        "followingPages": {
+                                            "properties": {
+                                                "row": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "xml": {
+                                                            "name": "row"
+                                                        },
+                                                        "additionalProperties": true
+                                                    }
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "referrers": {
+                                            "properties": {
+                                                "row": {
+                                                    "type": "array",
+                                                    "items": {
                                                         "properties": {
-                                                            "items": {
+                                                            "details": {
                                                                 "properties": {
                                                                     "row": {
                                                                         "type": "array",
@@ -116,9 +184,375 @@
                                                                 "type": "object"
                                                             }
                                                         },
+                                                        "type": "object",
+                                                        "xml": {
+                                                            "name": "row"
+                                                        },
+                                                        "additionalProperties": true
+                                                    }
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "date": "Mon, Feb 16",
+                                    "previousPages": {
+                                        "row": [
+                                            {
+                                                "label": "divezone.net\\/diving\\/bonaire",
+                                                "referrals": "1"
+                                            },
+                                            {
+                                                "label": "divezone.net\\/diving\\/indonesia",
+                                                "referrals": "1"
+                                            },
+                                            {
+                                                "label": "divezone.net\\/jobs",
+                                                "referrals": "1"
+                                            }
+                                        ]
+                                    },
+                                    "previousSiteSearches": "",
+                                    "pageMetrics": {
+                                        "loops": "2",
+                                        "pageviews": "14",
+                                        "entries": "9",
+                                        "exits": "6"
+                                    },
+                                    "followingPages": {
+                                        "row": [
+                                            {
+                                                "label": "divezone.net\\/jobs",
+                                                "referrals": "2"
+                                            },
+                                            {
+                                                "label": "divezone.net\\/diving\\/australia",
+                                                "referrals": "1"
+                                            },
+                                            {
+                                                "label": "divezone.net\\/diving\\/bonaire",
+                                                "referrals": "1"
+                                            },
+                                            {
+                                                "label": "divezone.net\\/diving\\/red-sea",
+                                                "referrals": "1"
+                                            },
+                                            {
+                                                "label": "divezone.net\\/diving\\/wakatobi",
+                                                "referrals": "1"
+                                            }
+                                        ]
+                                    },
+                                    "followingSiteSearches": "",
+                                    "outlinks": "",
+                                    "downloads": "",
+                                    "referrers": {
+                                        "row": [
+                                            {
+                                                "label": "Direct entries",
+                                                "shortName": "direct",
+                                                "visits": "4",
+                                                "details": ""
+                                            },
+                                            {
+                                                "label": "From search engines",
+                                                "shortName": "search",
+                                                "visits": "3",
+                                                "details": {
+                                                    "row": {
+                                                        "label": "Google",
+                                                        "referrals": "3"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "label": "From social networks",
+                                                "shortName": "social",
+                                                "visits": "1",
+                                                "details": {
+                                                    "row": {
+                                                        "label": "reddit",
+                                                        "referrals": "1"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "label": "From websites",
+                                                "shortName": "website",
+                                                "visits": "1",
+                                                "details": {
+                                                    "row": {
+                                                        "label": "http:\\/\\/diveadvisor.com\\/united-kingdom\\/reviews\\/36",
+                                                        "referrals": "1"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "date": {
+                                            "type": "string"
+                                        },
+                                        "referrers": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "": {
+                                                        "properties": {
+                                                            "label": {
+                                                                "type": "string"
+                                                            },
+                                                            "shortName": {
+                                                                "type": "string"
+                                                            },
+                                                            "visits": {
+                                                                "type": "integer"
+                                                            },
+                                                            "details": {
+                                                                "type": "array",
+                                                                "items": []
+                                                            }
+                                                        },
                                                         "type": "object"
                                                     }
                                                 },
+                                                "type": "object",
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "date": "Mon, Feb 16",
+                                    "previousPages": [
+                                        {
+                                            "label": "divezone.net\\/diving\\/bonaire",
+                                            "referrals": 1
+                                        },
+                                        {
+                                            "label": "divezone.net\\/diving\\/indonesia",
+                                            "referrals": 1
+                                        },
+                                        {
+                                            "label": "divezone.net\\/jobs",
+                                            "referrals": 1
+                                        }
+                                    ],
+                                    "previousSiteSearches": [],
+                                    "pageMetrics": {
+                                        "loops": 2,
+                                        "pageviews": 14,
+                                        "entries": 9,
+                                        "exits": 6
+                                    },
+                                    "followingPages": [
+                                        {
+                                            "label": "divezone.net\\/jobs",
+                                            "referrals": 2
+                                        },
+                                        {
+                                            "label": "divezone.net\\/diving\\/australia",
+                                            "referrals": 1
+                                        },
+                                        {
+                                            "label": "divezone.net\\/diving\\/bonaire",
+                                            "referrals": 1
+                                        },
+                                        {
+                                            "label": "divezone.net\\/diving\\/red-sea",
+                                            "referrals": 1
+                                        },
+                                        {
+                                            "label": "divezone.net\\/diving\\/wakatobi",
+                                            "referrals": 1
+                                        }
+                                    ],
+                                    "followingSiteSearches": [],
+                                    "outlinks": [],
+                                    "downloads": [],
+                                    "referrers": [
+                                        {
+                                            "label": "Direct entries",
+                                            "shortName": "direct",
+                                            "visits": 4,
+                                            "details": []
+                                        },
+                                        {
+                                            "label": "From search engines",
+                                            "shortName": "search",
+                                            "visits": 3,
+                                            "details": [
+                                                {
+                                                    "label": "Google",
+                                                    "referrals": "3"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "From social networks",
+                                            "shortName": "social",
+                                            "visits": 1,
+                                            "details": [
+                                                {
+                                                    "label": "reddit",
+                                                    "referrals": "1"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "From websites",
+                                            "shortName": "website",
+                                            "visits": 1,
+                                            "details": [
+                                                {
+                                                    "label": "http:\\/\\/diveadvisor.com\\/united-kingdom\\/reviews\\/36",
+                                                    "referrals": "1"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Transitions.getTransitionsForAction": {
+            "get": {
+                "tags": [
+                    "Transitions"
+                ],
+                "description": "General method to get transitions for an action",
+                "operationId": "Transitions.getTransitionsForAction",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "actionName",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "actionType",
+                        "in": "query",
+                        "description": "\"url\"|\"title\"",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    },
+                    {
+                        "name": "limitBeforeGrouping",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    },
+                    {
+                        "name": "parts",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "all"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#/components/responses/GenericArray"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Transitions.getTranslations": {
+            "get": {
+                "tags": [
+                    "Transitions"
+                ],
+                "description": "",
+                "operationId": "Transitions.getTranslations",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
                                                 "type": "object",
                                                 "xml": {
                                                     "name": "row"
@@ -133,395 +567,216 @@
                                     }
                                 },
                                 "example": {
-                                    "row": [
-                                        {
-                                            "id": "6107",
-                                            "user_login": "ironman",
-                                            "type": "ActivityLog\\/UserChanged",
-                                            "parameters": {
-                                                "password_changed": "1",
-                                                "items": {
-                                                    "row": {
-                                                        "type": "user",
-                                                        "data": {
-                                                            "login": "ironman",
-                                                            "email": "billionairephilanthropistplayboy@starkindustries.com"
-                                                        }
-                                                    }
-                                                }
-                                            },
-                                            "country": "",
-                                            "ip": "172.18.0.5",
-                                            "datetime": "2026-03-27 01:07:44",
-                                            "datetime_pretty": "Mar 27, 2026 01:07:44",
-                                            "time_relative_pretty": "",
-                                            "description": "updated personal data and set a new password",
-                                            "avatar": "plugins\\/ActivityLog\\/images\\/avatar5.png",
-                                            "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
-                                            "country_name": "Unknown"
-                                        },
-                                        {
-                                            "id": "6108",
-                                            "user_login": "Matomo System",
-                                            "type": "ActivityLog\\/UserSetPreference",
-                                            "parameters": {
-                                                "items": {
-                                                    "row": [
-                                                        {
-                                                            "type": "user",
-                                                            "data": {
-                                                                "login": "ironman",
-                                                                "email": "billionairephilanthropistplayboy@starkindustries.com"
-                                                            }
-                                                        },
-                                                        {
-                                                            "type": "setting",
-                                                            "data": {
-                                                                "name": "isLDAPUser",
-                                                                "value": "1"
-                                                            }
-                                                        }
-                                                    ]
-                                                }
-                                            },
-                                            "country": "",
-                                            "ip": "172.18.0.5",
-                                            "datetime": "2026-03-27 01:07:44",
-                                            "datetime_pretty": "Mar 27, 2026 01:07:44",
-                                            "time_relative_pretty": "",
-                                            "description": "updated a preference",
-                                            "avatar": "plugins\\/ActivityLog\\/images\\/avatar19.png",
-                                            "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
-                                            "country_name": "Unknown"
-                                        },
-                                        {
-                                            "id": "6103",
-                                            "user_login": "ironman",
-                                            "type": "ActivityLog\\/UserChanged",
-                                            "parameters": {
-                                                "password_changed": "1",
-                                                "items": {
-                                                    "row": {
-                                                        "type": "user",
-                                                        "data": {
-                                                            "login": "ironman",
-                                                            "email": "billionairephilanthropistplayboy@starkindustries.com"
-                                                        }
-                                                    }
-                                                }
-                                            },
-                                            "country": "",
-                                            "ip": "172.18.0.5",
-                                            "datetime": "2026-03-27 01:06:28",
-                                            "datetime_pretty": "Mar 27, 2026 01:06:28",
-                                            "time_relative_pretty": "1 min 16s ago",
-                                            "description": "updated personal data and set a new password",
-                                            "avatar": "plugins\\/ActivityLog\\/images\\/avatar5.png",
-                                            "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
-                                            "country_name": "Unknown"
-                                        },
-                                        {
-                                            "id": "6104",
-                                            "user_login": "Matomo System",
-                                            "type": "ActivityLog\\/UserSetPreference",
-                                            "parameters": {
-                                                "items": {
-                                                    "row": [
-                                                        {
-                                                            "type": "user",
-                                                            "data": {
-                                                                "login": "ironman",
-                                                                "email": "billionairephilanthropistplayboy@starkindustries.com"
-                                                            }
-                                                        },
-                                                        {
-                                                            "type": "setting",
-                                                            "data": {
-                                                                "name": "isLDAPUser",
-                                                                "value": "1"
-                                                            }
-                                                        }
-                                                    ]
-                                                }
-                                            },
-                                            "country": "",
-                                            "ip": "172.18.0.5",
-                                            "datetime": "2026-03-27 01:06:28",
-                                            "datetime_pretty": "Mar 27, 2026 01:06:28",
-                                            "time_relative_pretty": "1 min 16s ago",
-                                            "description": "updated a preference",
-                                            "avatar": "plugins\\/ActivityLog\\/images\\/avatar19.png",
-                                            "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
-                                            "country_name": "Unknown"
-                                        },
-                                        {
-                                            "id": "6105",
-                                            "user_login": "ironman",
-                                            "type": "ActivityLog\\/UserChanged",
-                                            "parameters": {
-                                                "password_changed": "1",
-                                                "items": {
-                                                    "row": {
-                                                        "type": "user",
-                                                        "data": {
-                                                            "login": "ironman",
-                                                            "email": "billionairephilanthropistplayboy@starkindustries.com"
-                                                        }
-                                                    }
-                                                }
-                                            },
-                                            "country": "",
-                                            "ip": "172.18.0.5",
-                                            "datetime": "2026-03-27 01:06:28",
-                                            "datetime_pretty": "Mar 27, 2026 01:06:28",
-                                            "time_relative_pretty": "1 min 16s ago",
-                                            "description": "updated personal data and set a new password",
-                                            "avatar": "plugins\\/ActivityLog\\/images\\/avatar5.png",
-                                            "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
-                                            "country_name": "Unknown"
-                                        }
-                                    ]
+                                    "row": {
+                                        "pageviewsInline": "%s pageviews",
+                                        "loopsInline": "%s page reloads",
+                                        "fromPreviousPages": "From internal pages",
+                                        "fromPreviousPagesInline": "%s from internal pages",
+                                        "fromPreviousSiteSearches": "From internal search",
+                                        "fromPreviousSiteSearchesInline": "%s from internal searches",
+                                        "fromSearchEngines": "From search engines",
+                                        "fromSearchEnginesInline": "%s from search engines",
+                                        "fromSocialNetworks": "From social networks",
+                                        "fromSocialNetworksInline": "%s from social networks",
+                                        "fromAIAssistants": "From AI assistants",
+                                        "fromAIAssistantsInline": "%s from AI assistants",
+                                        "fromWebsites": "From websites",
+                                        "fromWebsitesInline": "%s from websites",
+                                        "fromCampaigns": "From campaigns",
+                                        "fromCampaignsInline": "%s from campaigns",
+                                        "directEntries": "Direct entries",
+                                        "directEntriesInline": "%s direct entries",
+                                        "toFollowingPages": "To internal pages",
+                                        "toFollowingPagesInline": "%s to internal pages",
+                                        "toFollowingSiteSearches": "Internal searches",
+                                        "toFollowingSiteSearchesInline": "%s internal searches",
+                                        "downloads": "Downloads",
+                                        "downloadsInline": "%s downloads",
+                                        "outlinks": "Outlinks",
+                                        "outlinksInline": "%s outlinks",
+                                        "exits": "Exits",
+                                        "exitsInline": "%s exits",
+                                        "bouncesInline": "%s bounces",
+                                        "XOfY": "%1$s (out of %2$s)",
+                                        "XOfAllPageviews": "%s of all views of this page",
+                                        "NoDataForAction": "No data for %s",
+                                        "NoDataForActionDetails": "Either the action had no pageviews during the period, or it is invalid.",
+                                        "NoDataForActionBack": "Go back to the previous action",
+                                        "PeriodNotAllowed": "Select a valid time period",
+                                        "PeriodNotAllowedDetails": "Try selecting a period with fewer days for this feature.",
+                                        "PeriodNotAllowedBack": "Go back to the previous action",
+                                        "ShareOfAllPageviews": "This page had %1$s pageviews (%2$s of all pageviews)",
+                                        "DateRange": "Date range:"
+                                    }
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "properties": {
-                                            "": {
-                                                "properties": {
-                                                    "id": {
-                                                        "type": "integer"
-                                                    },
-                                                    "user_login": {
-                                                        "type": "string"
-                                                    },
-                                                    "type": {
-                                                        "type": "string"
-                                                    },
-                                                    "parameters": {
-                                                        "properties": {
-                                                            "password_changed": {
-                                                                "type": "boolean"
-                                                            },
-                                                            "items": {
-                                                                "type": "array",
-                                                                "items": {
-                                                                    "properties": {
-                                                                        "": {
-                                                                            "properties": {
-                                                                                "type": {
-                                                                                    "type": "string"
-                                                                                },
-                                                                                "data": {
-                                                                                    "properties": {
-                                                                                        "login": {
-                                                                                            "type": "string"
-                                                                                        },
-                                                                                        "email": {
-                                                                                            "type": "string"
-                                                                                        }
-                                                                                    },
-                                                                                    "type": "object"
-                                                                                }
-                                                                            },
-                                                                            "type": "object"
-                                                                        }
-                                                                    },
-                                                                    "type": "object",
-                                                                    "additionalProperties": true
-                                                                }
-                                                            }
-                                                        },
-                                                        "type": "object"
-                                                    },
-                                                    "country": {
-                                                        "type": [
-                                                            "string",
-                                                            "number",
-                                                            "integer",
-                                                            "boolean",
-                                                            "array",
-                                                            "object",
-                                                            "null"
-                                                        ]
-                                                    },
-                                                    "ip": {
-                                                        "type": "string"
-                                                    },
-                                                    "datetime": {
-                                                        "type": "string"
-                                                    },
-                                                    "datetime_pretty": {
-                                                        "type": "string"
-                                                    },
-                                                    "time_relative_pretty": {
-                                                        "type": "string"
-                                                    },
-                                                    "description": {
-                                                        "type": "string"
-                                                    },
-                                                    "avatar": {
-                                                        "type": "string"
-                                                    },
-                                                    "country_flag": {
-                                                        "type": "string"
-                                                    },
-                                                    "country_name": {
-                                                        "type": "string"
-                                                    }
-                                                },
-                                                "type": "object"
-                                            }
+                                    "properties": {
+                                        "pageviewsInline": {
+                                            "type": "string"
                                         },
-                                        "type": "object",
-                                        "additionalProperties": true
-                                    }
+                                        "loopsInline": {
+                                            "type": "string"
+                                        },
+                                        "fromPreviousPages": {
+                                            "type": "string"
+                                        },
+                                        "fromPreviousPagesInline": {
+                                            "type": "string"
+                                        },
+                                        "fromPreviousSiteSearches": {
+                                            "type": "string"
+                                        },
+                                        "fromPreviousSiteSearchesInline": {
+                                            "type": "string"
+                                        },
+                                        "fromSearchEngines": {
+                                            "type": "string"
+                                        },
+                                        "fromSearchEnginesInline": {
+                                            "type": "string"
+                                        },
+                                        "fromSocialNetworks": {
+                                            "type": "string"
+                                        },
+                                        "fromSocialNetworksInline": {
+                                            "type": "string"
+                                        },
+                                        "fromAIAssistants": {
+                                            "type": "string"
+                                        },
+                                        "fromAIAssistantsInline": {
+                                            "type": "string"
+                                        },
+                                        "fromWebsites": {
+                                            "type": "string"
+                                        },
+                                        "fromWebsitesInline": {
+                                            "type": "string"
+                                        },
+                                        "fromCampaigns": {
+                                            "type": "string"
+                                        },
+                                        "fromCampaignsInline": {
+                                            "type": "string"
+                                        },
+                                        "directEntries": {
+                                            "type": "string"
+                                        },
+                                        "directEntriesInline": {
+                                            "type": "string"
+                                        },
+                                        "toFollowingPages": {
+                                            "type": "string"
+                                        },
+                                        "toFollowingPagesInline": {
+                                            "type": "string"
+                                        },
+                                        "toFollowingSiteSearches": {
+                                            "type": "string"
+                                        },
+                                        "toFollowingSiteSearchesInline": {
+                                            "type": "string"
+                                        },
+                                        "downloads": {
+                                            "type": "string"
+                                        },
+                                        "downloadsInline": {
+                                            "type": "string"
+                                        },
+                                        "outlinks": {
+                                            "type": "string"
+                                        },
+                                        "outlinksInline": {
+                                            "type": "string"
+                                        },
+                                        "exits": {
+                                            "type": "string"
+                                        },
+                                        "exitsInline": {
+                                            "type": "string"
+                                        },
+                                        "bouncesInline": {
+                                            "type": "string"
+                                        },
+                                        "XOfY": {
+                                            "type": "string"
+                                        },
+                                        "XOfAllPageviews": {
+                                            "type": "string"
+                                        },
+                                        "NoDataForAction": {
+                                            "type": "string"
+                                        },
+                                        "NoDataForActionDetails": {
+                                            "type": "string"
+                                        },
+                                        "NoDataForActionBack": {
+                                            "type": "string"
+                                        },
+                                        "PeriodNotAllowed": {
+                                            "type": "string"
+                                        },
+                                        "PeriodNotAllowedDetails": {
+                                            "type": "string"
+                                        },
+                                        "PeriodNotAllowedBack": {
+                                            "type": "string"
+                                        },
+                                        "ShareOfAllPageviews": {
+                                            "type": "string"
+                                        },
+                                        "DateRange": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
                                 },
-                                "example": [
-                                    {
-                                        "id": 6113,
-                                        "user_login": "ironman",
-                                        "type": "ActivityLog\\/UserChanged",
-                                        "parameters": {
-                                            "password_changed": true,
-                                            "items": [
-                                                {
-                                                    "type": "user",
-                                                    "data": {
-                                                        "login": "ironman",
-                                                        "email": "billionairephilanthropistplayboy@starkindustries.com"
-                                                    }
-                                                }
-                                            ]
-                                        },
-                                        "country": null,
-                                        "ip": "172.18.0.5",
-                                        "datetime": "2026-03-27 01:07:45",
-                                        "datetime_pretty": "Mar 27, 2026 01:07:45",
-                                        "time_relative_pretty": "",
-                                        "description": "updated personal data and set a new password",
-                                        "avatar": "plugins\\/ActivityLog\\/images\\/avatar5.png",
-                                        "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
-                                        "country_name": "Unknown"
-                                    },
-                                    {
-                                        "id": 6114,
-                                        "user_login": "Matomo System",
-                                        "type": "ActivityLog\\/UserSetPreference",
-                                        "parameters": {
-                                            "items": [
-                                                {
-                                                    "type": "user",
-                                                    "data": {
-                                                        "login": "ironman",
-                                                        "email": "billionairephilanthropistplayboy@starkindustries.com"
-                                                    }
-                                                },
-                                                {
-                                                    "type": "setting",
-                                                    "data": {
-                                                        "name": "isLDAPUser",
-                                                        "value": 1
-                                                    }
-                                                }
-                                            ]
-                                        },
-                                        "country": null,
-                                        "ip": "172.18.0.5",
-                                        "datetime": "2026-03-27 01:07:45",
-                                        "datetime_pretty": "Mar 27, 2026 01:07:45",
-                                        "time_relative_pretty": "",
-                                        "description": "updated a preference",
-                                        "avatar": "plugins\\/ActivityLog\\/images\\/avatar19.png",
-                                        "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
-                                        "country_name": "Unknown"
-                                    },
-                                    {
-                                        "id": 6107,
-                                        "user_login": "ironman",
-                                        "type": "ActivityLog\\/UserChanged",
-                                        "parameters": {
-                                            "password_changed": true,
-                                            "items": [
-                                                {
-                                                    "type": "user",
-                                                    "data": {
-                                                        "login": "ironman",
-                                                        "email": "billionairephilanthropistplayboy@starkindustries.com"
-                                                    }
-                                                }
-                                            ]
-                                        },
-                                        "country": null,
-                                        "ip": "172.18.0.5",
-                                        "datetime": "2026-03-27 01:07:44",
-                                        "datetime_pretty": "Mar 27, 2026 01:07:44",
-                                        "time_relative_pretty": "1s ago",
-                                        "description": "updated personal data and set a new password",
-                                        "avatar": "plugins\\/ActivityLog\\/images\\/avatar5.png",
-                                        "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
-                                        "country_name": "Unknown"
-                                    },
-                                    {
-                                        "id": 6108,
-                                        "user_login": "Matomo System",
-                                        "type": "ActivityLog\\/UserSetPreference",
-                                        "parameters": {
-                                            "items": [
-                                                {
-                                                    "type": "user",
-                                                    "data": {
-                                                        "login": "ironman",
-                                                        "email": "billionairephilanthropistplayboy@starkindustries.com"
-                                                    }
-                                                },
-                                                {
-                                                    "type": "setting",
-                                                    "data": {
-                                                        "name": "isLDAPUser",
-                                                        "value": 1
-                                                    }
-                                                }
-                                            ]
-                                        },
-                                        "country": null,
-                                        "ip": "172.18.0.5",
-                                        "datetime": "2026-03-27 01:07:44",
-                                        "datetime_pretty": "Mar 27, 2026 01:07:44",
-                                        "time_relative_pretty": "1s ago",
-                                        "description": "updated a preference",
-                                        "avatar": "plugins\\/ActivityLog\\/images\\/avatar19.png",
-                                        "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
-                                        "country_name": "Unknown"
-                                    },
-                                    {
-                                        "id": 6109,
-                                        "user_login": "ironman",
-                                        "type": "ActivityLog\\/UserChanged",
-                                        "parameters": {
-                                            "password_changed": true,
-                                            "items": [
-                                                {
-                                                    "type": "user",
-                                                    "data": {
-                                                        "login": "ironman",
-                                                        "email": "billionairephilanthropistplayboy@starkindustries.com"
-                                                    }
-                                                }
-                                            ]
-                                        },
-                                        "country": null,
-                                        "ip": "172.18.0.5",
-                                        "datetime": "2026-03-27 01:07:44",
-                                        "datetime_pretty": "Mar 27, 2026 01:07:44",
-                                        "time_relative_pretty": "1s ago",
-                                        "description": "updated personal data and set a new password",
-                                        "avatar": "plugins\\/ActivityLog\\/images\\/avatar5.png",
-                                        "country_flag": "plugins\\/Morpheus\\/icons\\/dist\\/flags\\/xx.png",
-                                        "country_name": "Unknown"
-                                    }
-                                ]
+                                "example": {
+                                    "pageviewsInline": "%s pageviews",
+                                    "loopsInline": "%s page reloads",
+                                    "fromPreviousPages": "From internal pages",
+                                    "fromPreviousPagesInline": "%s from internal pages",
+                                    "fromPreviousSiteSearches": "From internal search",
+                                    "fromPreviousSiteSearchesInline": "%s from internal searches",
+                                    "fromSearchEngines": "From search engines",
+                                    "fromSearchEnginesInline": "%s from search engines",
+                                    "fromSocialNetworks": "From social networks",
+                                    "fromSocialNetworksInline": "%s from social networks",
+                                    "fromAIAssistants": "From AI assistants",
+                                    "fromAIAssistantsInline": "%s from AI assistants",
+                                    "fromWebsites": "From websites",
+                                    "fromWebsitesInline": "%s from websites",
+                                    "fromCampaigns": "From campaigns",
+                                    "fromCampaignsInline": "%s from campaigns",
+                                    "directEntries": "Direct entries",
+                                    "directEntriesInline": "%s direct entries",
+                                    "toFollowingPages": "To internal pages",
+                                    "toFollowingPagesInline": "%s to internal pages",
+                                    "toFollowingSiteSearches": "Internal searches",
+                                    "toFollowingSiteSearchesInline": "%s internal searches",
+                                    "downloads": "Downloads",
+                                    "downloadsInline": "%s downloads",
+                                    "outlinks": "Outlinks",
+                                    "outlinksInline": "%s outlinks",
+                                    "exits": "Exits",
+                                    "exitsInline": "%s exits",
+                                    "bouncesInline": "%s bounces",
+                                    "XOfY": "%1$s (out of %2$s)",
+                                    "XOfAllPageviews": "%s of all views of this page",
+                                    "NoDataForAction": "No data for %s",
+                                    "NoDataForActionDetails": "Either the action had no pageviews during the period, or it is invalid.",
+                                    "NoDataForActionBack": "Go back to the previous action",
+                                    "PeriodNotAllowed": "Select a valid time period",
+                                    "PeriodNotAllowedDetails": "Try selecting a period with fewer days for this feature.",
+                                    "PeriodNotAllowedBack": "Go back to the previous action",
+                                    "ShareOfAllPageviews": "This page had %1$s pageviews (%2$s of all pageviews)",
+                                    "DateRange": "Date range:"
+                                }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "pageviewsInline\tloopsInline\tfromPreviousPages\tfromPreviousPagesInline\tfromPreviousSiteSearches\tfromPreviousSiteSearchesInline\tfromSearchEngines\tfromSearchEnginesInline\tfromSocialNetworks\tfromSocialNetworksInline\tfromAIAssistants\tfromAIAssistantsInline\tfromWebsites\tfromWebsitesInline\tfromCampaigns\tfromCampaignsInline\tdirectEntries\tdirectEntriesInline\ttoFollowingPages\ttoFollowingPagesInline\ttoFollowingSiteSearches\ttoFollowingSiteSearchesInline\tdownloads\tdownloadsInline\toutlinks\toutlinksInline\texits\texitsInline\tbouncesInline\tXOfY\tXOfAllPageviews\tNoDataForAction\tNoDataForActionDetails\tNoDataForActionBack\tPeriodNotAllowed\tPeriodNotAllowedDetails\tPeriodNotAllowedBack\tShareOfAllPageviews\tDateRange\n%s pageviews\t%s page reloads\tFrom internal pages\t%s from internal pages\tFrom internal search\t%s from internal searches\tFrom search engines\t%s from search engines\tFrom social networks\t%s from social networks\tFrom AI assistants\t%s from AI assistants\tFrom websites\t%s from websites\tFrom campaigns\t%s from campaigns\tDirect entries\t%s direct entries\tTo internal pages\t%s to internal pages\tInternal searches\t%s internal searches\tDownloads\t%s downloads\tOutlinks\t%s outlinks\tExits\t%s exits\t%s bounces\t%1$s (out of %2$s)\t%s of all views of this page\tNo data for %s\t\"Either the action had no pageviews during the period, or it is invalid.\"\tGo back to the previous action\tSelect a valid time period\tTry selecting a period with fewer days for this feature.\tGo back to the previous action\tThis page had %1$s pageviews (%2$s of all pageviews)\tDate range:"
                             }
                         }
                     },
@@ -546,61 +801,30 @@
                 }
             }
         },
-        "/index.php?module=API&method=ActivityLog.getEntryCount": {
+        "/index.php?module=API&method=Transitions.isPeriodAllowed": {
             "get": {
                 "tags": [
-                    "ActivityLog"
+                    "Transitions"
                 ],
-                "description": "Returns count auf available entries",
-                "operationId": "ActivityLog.getEntryCount",
+                "description": "Check if a period is allowed by config settings",
+                "operationId": "Transitions.isPeriodAllowed",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "filterByUserLogin",
-                        "in": "query",
-                        "description": "user login to filter by, or null for the current user",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": "null"
-                        }
+                        "$ref": "#/components/parameters/idSiteRequired"
                     },
                     {
-                        "name": "filterByActivityType",
-                        "in": "query",
-                        "description": "activity type identifier to filter by",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": "null"
-                        }
+                        "$ref": "#/components/parameters/periodRequired"
                     },
                     {
-                        "name": "period",
-                        "in": "query",
-                        "description": "Reporting period (or a plugin-defined period).",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": "null"
-                        }
-                    },
-                    {
-                        "name": "date",
-                        "in": "query",
-                        "description": "Date string (`YYYY-MM-DD`, `now`, `today`, `tomorrow`, `yesterday`, `yesterdaySameTime`, `last week|month|year`, `lastN`, `previousN`) or date range (`YYYY-MM-DD,YYYY-MM-DD`). Timezone is not applied here unless the date is already resolved upstream.",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": "null"
-                        }
+                        "$ref": "#/components/parameters/dateRequired"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "number of matching entries",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -610,69 +834,26 @@
                                     }
                                 },
                                 "example": [
-                                    "0"
+                                    "1"
                                 ]
                             },
                             "application/json": {
                                 "schema": {
                                     "properties": {
                                         "value": {
-                                            "type": "integer"
+                                            "type": "boolean"
                                         }
                                     },
                                     "type": "object"
                                 },
                                 "example": {
-                                    "value": 0
+                                    "value": true
                                 }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "value\n1"
                             }
                         }
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=ActivityLog.getAllActivityTypes": {
-            "get": {
-                "tags": [
-                    "ActivityLog"
-                ],
-                "description": "Returns the available activity type metadata grouped by plugin.",
-                "operationId": "ActivityLog.getAllActivityTypes",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "filterLimit",
-                        "in": "query",
-                        "description": "maximum number of activity types to return, or -1 for no limit",
-                        "required": false,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "list of activity type labels"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1510,8 +1691,8 @@
     ],
     "tags": [
         {
-            "name": "ActivityLog",
-            "description": "The Activity Log API is used to get the activity logs for users in your Matomo instance. <br/><br/> The method <code>ActivityLog.getEntries</code> returns a list of the activities done by users in your Matomo instance.  <br/>The list of activities returned depends on which user is calling the API: <br/> - if you authenticate with a Super User access, the API will return activity logs for all users <br/> - if you authenticate as anonymous (no authentication), or a user with view or admin access, only this user's activity will be returned. <br/><br/> Each activity includes an activity ID, the user who initiated the activity, a list of parameters/metadata specific to this activity, the datetime (and pretty datetime), the activity description, and the URL to the colored avatar image for this user.  <br/><br/>The activity log includes over 80 different types of Matomo activities, for example: <br/> - See when a user logged in, failed to log in, or logged out <br/> - See when a user was created, updated or deleted by who <br/> - See when a website was created, updated or deleted by who <br/> - See when a Matomo setting, an <a href=\"https://www.ab-tests.net\">A/B Test</a>, a <a href=\"https://piwik.org/docs/email-reports/\">Scheduled Report</a>, or a <a href=\"https://piwik.org/docs/segmentation/\">Segment</a> was changed and by who"
+            "name": "Transitions",
+            "description": ""
         }
     ],
     "externalDocs": {

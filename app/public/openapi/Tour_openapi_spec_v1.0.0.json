@@ -1,7 +1,7 @@
 {
     "openapi": "3.1.0",
     "info": {
-        "title": "Matomo Reporting API for AdvertisingConversionExport plugin",
+        "title": "Matomo Reporting API for Tour plugin",
         "version": "1.0.0"
     },
     "servers": [
@@ -15,229 +15,214 @@
         }
     ],
     "paths": {
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExports": {
+        "/index.php?module=API&method=Tour.getChallenges": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "Tour"
                 ],
-                "description": "Returns all configured conversion exports for the given idSite if idSite is omitted, all conversion exports of sites, the current user has write access for, will be returned",
-                "operationId": "AdvertisingConversionExport.getConversionExports",
+                "description": "Get all challenges that can be completed by a super user.",
+                "operationId": "Tour.getChallenges",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the site conversion exports should be returned for",
-                        "required": false,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
                                 },
-                                {
-                                    "type": "string",
-                                    "default": "null"
+                                "example": {
+                                    "row": [
+                                        {
+                                            "id": "track_data",
+                                            "name": "Embed a tracking code",
+                                            "description": "Matomo offers you various ways to embed the tracking code for your website, mobile app, and even for any device or application.",
+                                            "isCompleted": "1",
+                                            "isSkipped": "0",
+                                            "url": "index.php?module=CoreAdminHome&method=Tour.getChallenges&format=xml&token_auth=b7248842857cff76b23896e76ff37b82&hideIdSubDatable=1&action=trackingCodeGenerator"
+                                        },
+                                        {
+                                            "id": "define_goal",
+                                            "name": "Add a goal",
+                                            "description": "Conversion tracking is a great way to identify whether you are meeting your current objectives, to identify new ones, view and analyse performance. You can also learn to increase your conversions, conversion rates, and revenue per visit.",
+                                            "isCompleted": "1",
+                                            "isSkipped": "0",
+                                            "url": "index.php?module=Goals&method=Tour.getChallenges&format=xml&token_auth=b7248842857cff76b23896e76ff37b82&hideIdSubDatable=1&action=manage"
+                                        },
+                                        {
+                                            "id": "custom_logo",
+                                            "name": "Upload your logo",
+                                            "description": "You can customize the Matomo logo which will be displayed in the user interface and email reports.",
+                                            "isCompleted": "0",
+                                            "isSkipped": "0",
+                                            "url": "index.php?module=CoreAdminHome&method=Tour.getChallenges&format=xml&token_auth=b7248842857cff76b23896e76ff37b82&hideIdSubDatable=1&action=generalSettings#\\/#useCustomLogo"
+                                        },
+                                        {
+                                            "id": "add_user",
+                                            "name": "Invite a user",
+                                            "description": "Users Management lets you add new users, edit existing users and give them access to view or administrate websites.",
+                                            "isCompleted": "1",
+                                            "isSkipped": "0",
+                                            "url": "index.php?module=UsersManager&method=Tour.getChallenges&format=xml&token_auth=b7248842857cff76b23896e76ff37b82&hideIdSubDatable=1&action=index"
+                                        },
+                                        {
+                                            "id": "add_website",
+                                            "name": "Add another website",
+                                            "description": "Websites management lets you add a new website and edit existing websites.",
+                                            "isCompleted": "1",
+                                            "isSkipped": "0",
+                                            "url": "index.php?module=SitesManager&method=Tour.getChallenges&format=xml&token_auth=b7248842857cff76b23896e76ff37b82&hideIdSubDatable=1&action=index"
+                                        },
+                                        {
+                                            "id": "flatten_actions",
+                                            "name": "Flatten a page report",
+                                            "description": "Go to Behaviour \\u2192 Pages and click the cog icon in the bottom of the report to flatten it. This changes the hierarchy from a grouped report to a list.",
+                                            "isCompleted": "1",
+                                            "isSkipped": "0",
+                                            "url": "https:\\/\\/matomo.org\\/faq\\/reports\\/graphs-and-visualisations-in-matomo\\/#flattening-reports"
+                                        },
+                                        {
+                                            "id": "change_visualisations",
+                                            "name": "Change a visualisation",
+                                            "description": "Browse a report and select the visualisation icon at the bottom of a report to change its visualisation.",
+                                            "isCompleted": "1",
+                                            "isSkipped": "0",
+                                            "url": "https:\\/\\/matomo.org\\/faq\\/reports\\/graphs-and-visualisations-in-matomo\\/"
+                                        },
+                                        {
+                                            "id": "customise_dashboard",
+                                            "name": "Set up your dashboard",
+                                            "description": "Add widgets to your dashboard to ensure it reports all your most important metrics.",
+                                            "isCompleted": "1",
+                                            "isSkipped": "0",
+                                            "url": "https:\\/\\/matomo.org\\/faq\\/dashboards\\/create-dashboards-and-customise-widgets-and-layout\\/"
+                                        }
+                                    ]
                                 }
-                            ]
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "list of conversion export configurations"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Returns the (configuration) data of a specific conversion export identified by its id",
-                "operationId": "AdvertisingConversionExport.getConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of an export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "conversion export configuration"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.deleteConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Removes the conversion export with the given idExport",
-                "operationId": "AdvertisingConversionExport.deleteConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of the export to delete",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the site owning the export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "$ref": "#/components/responses/GenericSuccess"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.addConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Creates a new conversion export",
-                "operationId": "AdvertisingConversionExport.addConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the website the export is for",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "name of the conversion export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "type",
-                        "in": "query",
-                        "description": "type of the export (e.g. GoogleAds, YandexAds,...)",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "parameters",
-                        "in": "query",
-                        "description": "configuration array of the export",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "string"
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "description": {
+                                                        "type": "string"
+                                                    },
+                                                    "isCompleted": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "isSkipped": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "url": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
                                 },
-                                {
-                                    "type": "integer"
-                                }
-                            ]
+                                "example": [
+                                    {
+                                        "id": "track_data",
+                                        "name": "Embed a tracking code",
+                                        "description": "Matomo offers you various ways to embed the tracking code for your website, mobile app, and even for any device or application.",
+                                        "isCompleted": true,
+                                        "isSkipped": false,
+                                        "url": "index.php?module=CoreAdminHome&method=Tour.getChallenges&format=JSON&token_auth=b7248842857cff76b23896e76ff37b82&hideIdSubDatable=1&action=trackingCodeGenerator"
+                                    },
+                                    {
+                                        "id": "define_goal",
+                                        "name": "Add a goal",
+                                        "description": "Conversion tracking is a great way to identify whether you are meeting your current objectives, to identify new ones, view and analyse performance. You can also learn to increase your conversions, conversion rates, and revenue per visit.",
+                                        "isCompleted": true,
+                                        "isSkipped": false,
+                                        "url": "index.php?module=Goals&method=Tour.getChallenges&format=JSON&token_auth=b7248842857cff76b23896e76ff37b82&hideIdSubDatable=1&action=manage"
+                                    },
+                                    {
+                                        "id": "custom_logo",
+                                        "name": "Upload your logo",
+                                        "description": "You can customize the Matomo logo which will be displayed in the user interface and email reports.",
+                                        "isCompleted": false,
+                                        "isSkipped": false,
+                                        "url": "index.php?module=CoreAdminHome&method=Tour.getChallenges&format=JSON&token_auth=b7248842857cff76b23896e76ff37b82&hideIdSubDatable=1&action=generalSettings#\\/#useCustomLogo"
+                                    },
+                                    {
+                                        "id": "add_user",
+                                        "name": "Invite a user",
+                                        "description": "Users Management lets you add new users, edit existing users and give them access to view or administrate websites.",
+                                        "isCompleted": true,
+                                        "isSkipped": false,
+                                        "url": "index.php?module=UsersManager&method=Tour.getChallenges&format=JSON&token_auth=b7248842857cff76b23896e76ff37b82&hideIdSubDatable=1&action=index"
+                                    },
+                                    {
+                                        "id": "add_website",
+                                        "name": "Add another website",
+                                        "description": "Websites management lets you add a new website and edit existing websites.",
+                                        "isCompleted": true,
+                                        "isSkipped": false,
+                                        "url": "index.php?module=SitesManager&method=Tour.getChallenges&format=JSON&token_auth=b7248842857cff76b23896e76ff37b82&hideIdSubDatable=1&action=index"
+                                    },
+                                    {
+                                        "id": "flatten_actions",
+                                        "name": "Flatten a page report",
+                                        "description": "Go to Behaviour \\u2192 Pages and click the cog icon in the bottom of the report to flatten it. This changes the hierarchy from a grouped report to a list.",
+                                        "isCompleted": true,
+                                        "isSkipped": false,
+                                        "url": "https:\\/\\/matomo.org\\/faq\\/reports\\/graphs-and-visualisations-in-matomo\\/#flattening-reports"
+                                    },
+                                    {
+                                        "id": "change_visualisations",
+                                        "name": "Change a visualisation",
+                                        "description": "Browse a report and select the visualisation icon at the bottom of a report to change its visualisation.",
+                                        "isCompleted": true,
+                                        "isSkipped": false,
+                                        "url": "https:\\/\\/matomo.org\\/faq\\/reports\\/graphs-and-visualisations-in-matomo\\/"
+                                    },
+                                    {
+                                        "id": "customise_dashboard",
+                                        "name": "Set up your dashboard",
+                                        "description": "Add widgets to your dashboard to ensure it reports all your most important metrics.",
+                                        "isCompleted": true,
+                                        "isSkipped": false,
+                                        "url": "https:\\/\\/matomo.org\\/faq\\/dashboards\\/create-dashboards-and-customise-widgets-and-layout\\/"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "id\tname\tdescription\tisCompleted\tisSkipped\turl\ntrack_data\tEmbed a tracking code\t\"Matomo offers you various ways to embed the tracking code for your website, mobile app, and even for any device or application.\"\t1\t0\tindex.php?module=CoreAdminHome&method=Tour.getChallenges&format=Tsv&token_auth=b7248842857cff76b23896e76ff37b82&convertToUnicode=0&hideIdSubDatable=1&action=trackingCodeGenerator\ndefine_goal\tAdd a goal\t\"Conversion tracking is a great way to identify whether you are meeting your current objectives, to identify new ones, view and analyse performance. You can also learn to increase your conversions, conversion rates, and revenue per visit.\"\t1\t0\tindex.php?module=Goals&method=Tour.getChallenges&format=Tsv&token_auth=b7248842857cff76b23896e76ff37b82&convertToUnicode=0&hideIdSubDatable=1&action=manage\ncustom_logo\tUpload your logo\tYou can customize the Matomo logo which will be displayed in the user interface and email reports.\t0\t0\tindex.php?module=CoreAdminHome&method=Tour.getChallenges&format=Tsv&token_auth=b7248842857cff76b23896e76ff37b82&convertToUnicode=0&hideIdSubDatable=1&action=generalSettings#/#useCustomLogo\nadd_user\tInvite a user\t\"Users Management lets you add new users, edit existing users and give them access to view or administrate websites.\"\t1\t0\tindex.php?module=UsersManager&method=Tour.getChallenges&format=Tsv&token_auth=b7248842857cff76b23896e76ff37b82&convertToUnicode=0&hideIdSubDatable=1&action=index\nadd_website\tAdd another website\tWebsites management lets you add a new website and edit existing websites.\t1\t0\tindex.php?module=SitesManager&method=Tour.getChallenges&format=Tsv&token_auth=b7248842857cff76b23896e76ff37b82&convertToUnicode=0&hideIdSubDatable=1&action=index\nflatten_actions\tFlatten a page report\tGo to Behaviour \u2192 Pages and click the cog icon in the bottom of the report to flatten it. This changes the hierarchy from a grouped report to a list.\t1\t0\thttps://matomo.org/faq/reports/graphs-and-visualisations-in-matomo/#flattening-reports\nchange_visualisations\tChange a visualisation\tBrowse a report and select the visualisation icon at the bottom of a report to change its visualisation.\t1\t0\thttps://matomo.org/faq/reports/graphs-and-visualisations-in-matomo/\nadd_scheduled_report\tAdd a scheduled report\t\"Create custom reports and schedule them to be emailed daily, weekly or monthly to one or several people. Several report formats are supported (html, pdf, csv, images).\"\t1\t0\tindex.php?module=ScheduledReports&method=Tour.getChallenges&format=Tsv&token_auth=b7248842857cff76b23896e76ff37b82&convertToUnicode=0&hideIdSubDatable=1&action=index\ncustomise_dashboard\tSet up your dashboard\tAdd widgets to your dashboard to ensure it reports all your most important metrics.\t1\t0\thttps://matomo.org/faq/dashboards/create-dashboards-and-customise-widgets-and-layout/\ndisable_browser_archiving\tTurn off web-browser archiving for better performance\t\t0\t0\thttps://matomo.org/docs/setup-auto-archiving/"
+                            }
                         }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "description": "description of the export",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": ""
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "id of the newly added report and the access token"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -260,30 +245,29 @@
                 }
             }
         },
-        "/index.php?module=API&method=AdvertisingConversionExport.regenerateAccessToken": {
+        "/index.php?module=API&method=Tour.skipChallenge": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "Tour"
                 ],
-                "description": "Generates a new access token for the export identified by idExport",
-                "operationId": "AdvertisingConversionExport.regenerateAccessToken",
+                "description": "Skip a specific challenge.",
+                "operationId": "Tour.skipChallenge",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idExport",
+                        "name": "id",
                         "in": "query",
-                        "description": "id of an export",
                         "required": true,
                         "schema": {
-                            "type": "integer"
+                            "type": "string"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "new access token"
+                        "$ref": "#/components/responses/GenericBoolean"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -306,83 +290,89 @@
                 }
             }
         },
-        "/index.php?module=API&method=AdvertisingConversionExport.updateConversionExport": {
+        "/index.php?module=API&method=Tour.getLevel": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "Tour"
                 ],
-                "description": "Updates a conversion export with new configuration data",
-                "operationId": "AdvertisingConversionExport.updateConversionExport",
+                "description": "Get details about the current level this user has progressed to.",
+                "operationId": "Tour.getLevel",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of the export to change",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the website the export belongs to (needs to match)",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "new name of the export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "type",
-                        "in": "query",
-                        "description": "new type of the export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "parameters",
-                        "in": "query",
-                        "description": "new configuration array",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
                                 },
-                                {
-                                    "type": "integer"
+                                "example": {
+                                    "row": {
+                                        "description": "You are on the right track admin. Continue, and become a Matomo expert.",
+                                        "currentLevel": "3",
+                                        "currentLevelName": "Matomo Talent",
+                                        "nextLevelName": "Matomo professional",
+                                        "numLevelsTotal": "5",
+                                        "challengesNeededForNextLevel": "3"
+                                    }
                                 }
-                            ]
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "description": {
+                                            "type": "string"
+                                        },
+                                        "currentLevel": {
+                                            "type": "integer"
+                                        },
+                                        "currentLevelName": {
+                                            "type": "string"
+                                        },
+                                        "nextLevelName": {
+                                            "type": "string"
+                                        },
+                                        "numLevelsTotal": {
+                                            "type": "integer"
+                                        },
+                                        "challengesNeededForNextLevel": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "description": "You are on the right track admin. Continue, and become a Matomo expert.",
+                                    "currentLevel": 3,
+                                    "currentLevelName": "Matomo Talent",
+                                    "nextLevelName": "Matomo professional",
+                                    "numLevelsTotal": 5,
+                                    "challengesNeededForNextLevel": 3
+                                }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "description\tcurrentLevel\tcurrentLevelName\tnextLevelName\tnumLevelsTotal\tchallengesNeededForNextLevel\n\"You are on the right track admin. Continue, and become a Matomo expert.\"\t3\tMatomo Talent\tMatomo professional\t5\t3"
+                            }
                         }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "description": "new description of the export",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": ""
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "$ref": "#/components/responses/GenericSuccess"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1220,8 +1210,8 @@
     ],
     "tags": [
         {
-            "name": "AdvertisingConversionExport",
-            "description": "Public API for managing advertising conversion exports. Provides endpoints to list, create, update, and delete export configurations."
+            "name": "Tour",
+            "description": "API for Tour plugin which helps you getting familiar with Matomo."
         }
     ],
     "externalDocs": {

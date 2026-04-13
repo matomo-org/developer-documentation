@@ -1,7 +1,7 @@
 {
     "openapi": "3.1.0",
     "info": {
-        "title": "Matomo Reporting API for AdvertisingConversionExport plugin",
+        "title": "Matomo Reporting API for SegmentEditor plugin",
         "version": "1.0.0"
     },
     "servers": [
@@ -15,13 +15,13 @@
         }
     ],
     "paths": {
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExports": {
+        "/index.php?module=API&method=SegmentEditor.isUserCanAddNewSegment": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "SegmentEditor"
                 ],
-                "description": "Returns all configured conversion exports for the given idSite if idSite is omitted, all conversion exports of sites, the current user has write access for, will be returned",
-                "operationId": "AdvertisingConversionExport.getConversionExports",
+                "description": "Returns whether the current user can create a new stored segment.",
+                "operationId": "SegmentEditor.isUserCanAddNewSegment",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
@@ -29,24 +29,45 @@
                     {
                         "name": "idSite",
                         "in": "query",
-                        "description": "id of the site conversion exports should be returned for",
+                        "description": "If supplied, checks permissions for this site; otherwise checks whether the user can create an all-websites segment.",
                         "required": false,
                         "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "integer"
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "`true` if the current user can add a segment for the requested scope, `false` otherwise.",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
                                 },
-                                {
-                                    "type": "string",
-                                    "default": "null"
+                                "example": [
+                                    "0"
+                                ]
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "value": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "value": false
                                 }
-                            ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "value\n0"
+                            }
                         }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "list of conversion export configurations"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -69,76 +90,21 @@
                 }
             }
         },
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExport": {
+        "/index.php?module=API&method=SegmentEditor.delete": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "SegmentEditor"
                 ],
-                "description": "Returns the (configuration) data of a specific conversion export identified by its id",
-                "operationId": "AdvertisingConversionExport.getConversionExport",
+                "description": "Deletes a stored segment.",
+                "operationId": "SegmentEditor.delete",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idExport",
+                        "name": "idSegment",
                         "in": "query",
-                        "description": "id of an export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "conversion export configuration"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.deleteConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Removes the conversion export with the given idExport",
-                "operationId": "AdvertisingConversionExport.deleteConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of the export to delete",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the site owning the export",
+                        "description": "The ID of the stored segment to delete.",
                         "required": true,
                         "schema": {
                             "type": "integer"
@@ -170,21 +136,21 @@
                 }
             }
         },
-        "/index.php?module=API&method=AdvertisingConversionExport.addConversionExport": {
+        "/index.php?module=API&method=SegmentEditor.update": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "SegmentEditor"
                 ],
-                "description": "Creates a new conversion export",
-                "operationId": "AdvertisingConversionExport.addConversionExport",
+                "description": "Modifies an existing stored segment.",
+                "operationId": "SegmentEditor.update",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idSite",
+                        "name": "idSegment",
                         "in": "query",
-                        "description": "id of the website the export is for",
+                        "description": "The ID of the stored segment to modify.",
                         "required": true,
                         "schema": {
                             "type": "integer"
@@ -193,196 +159,676 @@
                     {
                         "name": "name",
                         "in": "query",
-                        "description": "name of the conversion export",
+                        "description": "The new name of the segment.",
                         "required": true,
                         "schema": {
                             "type": "string"
                         }
                     },
                     {
-                        "name": "type",
+                        "name": "definition",
                         "in": "query",
-                        "description": "type of the export (e.g. GoogleAds, YandexAds,...)",
+                        "description": "The new definition of the segment.",
                         "required": true,
                         "schema": {
                             "type": "string"
-                        }
-                    },
-                    {
-                        "name": "parameters",
-                        "in": "query",
-                        "description": "configuration array of the export",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "integer"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "description": "description of the export",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": ""
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "id of the newly added report and the access token"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.regenerateAccessToken": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Generates a new access token for the export identified by idExport",
-                "operationId": "AdvertisingConversionExport.regenerateAccessToken",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of an export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "new access token"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.updateConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Updates a conversion export with new configuration data",
-                "operationId": "AdvertisingConversionExport.updateConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of the export to change",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
                         }
                     },
                     {
                         "name": "idSite",
                         "in": "query",
-                        "description": "id of the website the export belongs to (needs to match)",
-                        "required": true,
+                        "description": "If supplied, associates the stored segment with a single site.",
+                        "required": false,
                         "schema": {
                             "type": "integer"
                         }
                     },
                     {
-                        "name": "name",
+                        "name": "autoArchive",
                         "in": "query",
-                        "description": "new name of the export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "type",
-                        "in": "query",
-                        "description": "new type of the export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "parameters",
-                        "in": "query",
-                        "description": "new configuration array",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "integer"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "description": "new description of the export",
+                        "description": "Whether to automatically archive data with the segment or not.",
                         "required": false,
                         "schema": {
-                            "type": "string",
-                            "default": ""
+                            "type": "boolean",
+                            "default": false
+                        }
+                    },
+                    {
+                        "name": "enabledAllUsers",
+                        "in": "query",
+                        "description": "Whether the stored segment is viewable by all users or just the one that created it.",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
                         }
                     }
                 ],
                 "responses": {
                     "200": {
                         "$ref": "#/components/responses/GenericSuccess"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=SegmentEditor.add": {
+            "get": {
+                "tags": [
+                    "SegmentEditor"
+                ],
+                "description": "Adds a new stored segment.",
+                "operationId": "SegmentEditor.add",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "The new name of the segment.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "definition",
+                        "in": "query",
+                        "description": "The new definition of the segment.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idSite",
+                        "in": "query",
+                        "description": "If supplied, associates the stored segment with a single site.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "autoArchive",
+                        "in": "query",
+                        "description": "Whether to automatically archive data with the segment or not.",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    },
+                    {
+                        "name": "enabledAllUsers",
+                        "in": "query",
+                        "description": "Whether the stored segment is viewable by all users or just the one that created it.",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The newly created segment ID."
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=SegmentEditor.star": {
+            "get": {
+                "tags": [
+                    "SegmentEditor"
+                ],
+                "description": "Stars a stored segment.",
+                "operationId": "SegmentEditor.star",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idSegment",
+                        "in": "query",
+                        "description": "The ID of the stored segment to star.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The update result and new starred state."
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=SegmentEditor.unstar": {
+            "get": {
+                "tags": [
+                    "SegmentEditor"
+                ],
+                "description": "Unstars a stored segment.",
+                "operationId": "SegmentEditor.unstar",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idSegment",
+                        "in": "query",
+                        "description": "The ID of the stored segment to unstar.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The update result and new starred state."
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=SegmentEditor.get": {
+            "get": {
+                "tags": [
+                    "SegmentEditor"
+                ],
+                "description": "Returns a stored segment by ID.",
+                "operationId": "SegmentEditor.get",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idSegment",
+                        "in": "query",
+                        "description": "The ID of the stored segment to fetch.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The stored segment, or `null` if it does not exist."
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=SegmentEditor.getAll": {
+            "get": {
+                "tags": [
+                    "SegmentEditor"
+                ],
+                "description": "Returns all stored segments.",
+                "operationId": "SegmentEditor.getAll",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idSite",
+                        "in": "query",
+                        "description": "If supplied, returns stored segments for one site only; otherwise returns all visible stored segments.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Stored segments visible to the current user.",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "idsegment": "16",
+                                            "name": "Click liveaboard.com ad",
+                                            "definition": "visitConvertedGoalId==7",
+                                            "login": "admindz",
+                                            "enable_all_users": "1",
+                                            "enable_only_idsite": "1",
+                                            "auto_archive": "1",
+                                            "ts_created": "2017-01-25 10:18:01",
+                                            "ts_last_edit": "2017-01-25 10:20:01",
+                                            "deleted": "0",
+                                            "hash": "48b4361e2888dac452de11a8db8da931",
+                                            "starred": "0",
+                                            "starred_by": ""
+                                        },
+                                        {
+                                            "idsegment": "18",
+                                            "name": "Clicks to search.aspx",
+                                            "definition": "outlinkUrl=@pages%2Fsearch.aspx",
+                                            "login": "admindz",
+                                            "enable_all_users": "1",
+                                            "enable_only_idsite": "0",
+                                            "auto_archive": "1",
+                                            "ts_created": "2017-06-19 07:40:24",
+                                            "ts_last_edit": "",
+                                            "deleted": "0",
+                                            "hash": "153a58f5ca1ebe370714dd0bec1ba98b",
+                                            "starred": "0",
+                                            "starred_by": ""
+                                        },
+                                        {
+                                            "idsegment": "26",
+                                            "name": "issue #17388",
+                                            "definition": "dimension2==Git-17388",
+                                            "login": "dizzy",
+                                            "enable_all_users": "1",
+                                            "enable_only_idsite": "1",
+                                            "auto_archive": "1",
+                                            "ts_created": "2021-04-01 15:22:31",
+                                            "ts_last_edit": "",
+                                            "deleted": "0",
+                                            "hash": "e2f53910a23e67b7c8f324a744aace74",
+                                            "starred": "0",
+                                            "starred_by": ""
+                                        },
+                                        {
+                                            "idsegment": "1",
+                                            "name": "mobile users",
+                                            "definition": "deviceType==tablet,deviceType==Smartphone",
+                                            "login": "admindz",
+                                            "enable_all_users": "1",
+                                            "enable_only_idsite": "0",
+                                            "auto_archive": "1",
+                                            "ts_created": "2013-05-30 03:09:10",
+                                            "ts_last_edit": "2016-10-13 17:13:12",
+                                            "deleted": "0",
+                                            "hash": "afb8308bfbf44689918a62ca9943298a",
+                                            "starred": "0",
+                                            "starred_by": ""
+                                        },
+                                        {
+                                            "idsegment": "7",
+                                            "name": "NZ visitors",
+                                            "definition": "countryCode==nz",
+                                            "login": "admindz",
+                                            "enable_all_users": "1",
+                                            "enable_only_idsite": "1",
+                                            "auto_archive": "1",
+                                            "ts_created": "2015-03-30 07:03:43",
+                                            "ts_last_edit": "2017-11-21 21:09:21",
+                                            "deleted": "0",
+                                            "hash": "b92fbb3009b32cf632965802de2fb760",
+                                            "starred": "0",
+                                            "starred_by": ""
+                                        },
+                                        {
+                                            "idsegment": "2",
+                                            "name": "Returning users",
+                                            "definition": "visitorType==returning",
+                                            "login": "admindz",
+                                            "enable_all_users": "1",
+                                            "enable_only_idsite": "1",
+                                            "auto_archive": "1",
+                                            "ts_created": "2013-12-30 21:02:33",
+                                            "ts_last_edit": "2016-10-13 06:38:38",
+                                            "deleted": "0",
+                                            "hash": "8c9069e95de910a0ad5daa3e736ee7b8",
+                                            "starred": "0",
+                                            "starred_by": ""
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "idsegment": {
+                                                        "type": "integer"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "definition": {
+                                                        "type": "string"
+                                                    },
+                                                    "login": {
+                                                        "type": "string"
+                                                    },
+                                                    "enable_all_users": {
+                                                        "type": "integer"
+                                                    },
+                                                    "enable_only_idsite": {
+                                                        "type": "integer"
+                                                    },
+                                                    "auto_archive": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ts_created": {
+                                                        "type": "string"
+                                                    },
+                                                    "ts_last_edit": {
+                                                        "type": "string"
+                                                    },
+                                                    "deleted": {
+                                                        "type": "integer"
+                                                    },
+                                                    "hash": {
+                                                        "type": "string"
+                                                    },
+                                                    "starred": {
+                                                        "type": "integer"
+                                                    },
+                                                    "starred_by": {
+                                                        "type": [
+                                                            "string",
+                                                            "number",
+                                                            "integer",
+                                                            "boolean",
+                                                            "array",
+                                                            "object",
+                                                            "null"
+                                                        ]
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "idsegment": 16,
+                                        "name": "Click liveaboard.com ad",
+                                        "definition": "visitConvertedGoalId==7",
+                                        "login": "admindz",
+                                        "enable_all_users": 1,
+                                        "enable_only_idsite": 1,
+                                        "auto_archive": 1,
+                                        "ts_created": "2017-01-25 10:18:01",
+                                        "ts_last_edit": "2017-01-25 10:20:01",
+                                        "deleted": 0,
+                                        "hash": "48b4361e2888dac452de11a8db8da931",
+                                        "starred": 0,
+                                        "starred_by": null
+                                    },
+                                    {
+                                        "idsegment": 18,
+                                        "name": "Clicks to search.aspx",
+                                        "definition": "outlinkUrl=@pages%2Fsearch.aspx",
+                                        "login": "admindz",
+                                        "enable_all_users": 1,
+                                        "enable_only_idsite": 0,
+                                        "auto_archive": 1,
+                                        "ts_created": "2017-06-19 07:40:24",
+                                        "ts_last_edit": null,
+                                        "deleted": 0,
+                                        "hash": "153a58f5ca1ebe370714dd0bec1ba98b",
+                                        "starred": 0,
+                                        "starred_by": null
+                                    },
+                                    {
+                                        "idsegment": 26,
+                                        "name": "issue #17388",
+                                        "definition": "dimension2==Git-17388",
+                                        "login": "dizzy",
+                                        "enable_all_users": 1,
+                                        "enable_only_idsite": 1,
+                                        "auto_archive": 1,
+                                        "ts_created": "2021-04-01 15:22:31",
+                                        "ts_last_edit": null,
+                                        "deleted": 0,
+                                        "hash": "e2f53910a23e67b7c8f324a744aace74",
+                                        "starred": 0,
+                                        "starred_by": null
+                                    },
+                                    {
+                                        "idsegment": 1,
+                                        "name": "mobile users",
+                                        "definition": "deviceType==tablet,deviceType==Smartphone",
+                                        "login": "admindz",
+                                        "enable_all_users": 1,
+                                        "enable_only_idsite": 0,
+                                        "auto_archive": 1,
+                                        "ts_created": "2013-05-30 03:09:10",
+                                        "ts_last_edit": "2016-10-13 17:13:12",
+                                        "deleted": 0,
+                                        "hash": "afb8308bfbf44689918a62ca9943298a",
+                                        "starred": 0,
+                                        "starred_by": null
+                                    },
+                                    {
+                                        "idsegment": 7,
+                                        "name": "NZ visitors",
+                                        "definition": "countryCode==nz",
+                                        "login": "admindz",
+                                        "enable_all_users": 1,
+                                        "enable_only_idsite": 1,
+                                        "auto_archive": 1,
+                                        "ts_created": "2015-03-30 07:03:43",
+                                        "ts_last_edit": "2017-11-21 21:09:21",
+                                        "deleted": 0,
+                                        "hash": "b92fbb3009b32cf632965802de2fb760",
+                                        "starred": 0,
+                                        "starred_by": null
+                                    },
+                                    {
+                                        "idsegment": 2,
+                                        "name": "Returning users",
+                                        "definition": "visitorType==returning",
+                                        "login": "admindz",
+                                        "enable_all_users": 1,
+                                        "enable_only_idsite": 1,
+                                        "auto_archive": 1,
+                                        "ts_created": "2013-12-30 21:02:33",
+                                        "ts_last_edit": "2016-10-13 06:38:38",
+                                        "deleted": 0,
+                                        "hash": "8c9069e95de910a0ad5daa3e736ee7b8",
+                                        "starred": 0,
+                                        "starred_by": null
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "idsegment\tname\tdefinition\tlogin\tenable_all_users\tenable_only_idsite\tauto_archive\tts_created\tts_last_edit\tdeleted\thash\tstarred\tstarred_by\n16\tClick liveaboard.com ad\tvisitConvertedGoalId==7\tadmindz\t1\t1\t1\t2017-01-25 10:18:01\t2017-01-25 10:20:01\t0\t48b4361e2888dac452de11a8db8da931\t0\t\n18\tClicks to search.aspx\toutlinkUrl=@pages%2Fsearch.aspx\tadmindz\t1\t0\t1\t2017-06-19 07:40:24\t\t0\t153a58f5ca1ebe370714dd0bec1ba98b\t0\t\n26\tissue #17388\tdimension2==Git-17388\tdizzy\t1\t1\t1\t2021-04-01 15:22:31\t\t0\te2f53910a23e67b7c8f324a744aace74\t0\t\n1\tmobile users\t\"deviceType==tablet,deviceType==Smartphone\"\tadmindz\t1\t0\t1\t2013-05-30 03:09:10\t2016-10-13 17:13:12\t0\tafb8308bfbf44689918a62ca9943298a\t0\t\n7\tNZ visitors\tcountryCode==nz\tadmindz\t1\t1\t1\t2015-03-30 07:03:43\t2017-11-21 21:09:21\t0\tb92fbb3009b32cf632965802de2fb760\t0\t\n2\tReturning users\tvisitorType==returning\tadmindz\t1\t1\t1\t2013-12-30 21:02:33\t2016-10-13 06:38:38\t0\t8c9069e95de910a0ad5daa3e736ee7b8\t0\t"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=SegmentEditor.getSegmentData": {
+            "get": {
+                "tags": [
+                    "SegmentEditor"
+                ],
+                "description": "Returns visit and action totals for a pre-processed segment together with visit evolution.",
+                "operationId": "SegmentEditor.getSegmentData",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idSite",
+                        "in": "query",
+                        "description": "The numeric ID of the website to query.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": "The period to process, processes data for the period containing the specified date.",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "day",
+                                "week",
+                                "month",
+                                "year",
+                                "range"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "description": "The date or date range to process. 'YYYY-MM-DD', magic keywords (today, yesterday, lastWeek, lastMonth, lastYear), or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD', lastX, previousX).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "segment",
+                        "in": "query",
+                        "description": "Custom segment to filter the report. Example: \"referrerName==example.com\" Supports AND (;) and OR (,) operators.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Visit totals, action totals, and visit evolution metadata for the segment."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1220,8 +1666,8 @@
     ],
     "tags": [
         {
-            "name": "AdvertisingConversionExport",
-            "description": "Public API for managing advertising conversion exports. Provides endpoints to list, create, update, and delete export configurations."
+            "name": "SegmentEditor",
+            "description": "The SegmentEditor API lets you add, update, delete custom Segments, and list saved segments."
         }
     ],
     "externalDocs": {

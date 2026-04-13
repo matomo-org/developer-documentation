@@ -1,7 +1,7 @@
 {
     "openapi": "3.1.0",
     "info": {
-        "title": "Matomo Reporting API for Goals plugin",
+        "title": "Matomo Reporting API for VisitorInterest plugin",
         "version": "1.0.0"
     },
     "servers": [
@@ -15,844 +15,13 @@
         }
     ],
     "paths": {
-        "/index.php?module=API&method=Goals.getGoal": {
+        "/index.php?module=API&method=VisitorInterest.getNumberOfVisitsPerVisitDuration": {
             "get": {
                 "tags": [
-                    "Goals"
-                ],
-                "description": "Return a single goal.",
-                "operationId": "Goals.getGoal",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSiteRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idGoalRequired"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "An array of goal attributes."
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=Goals.getGoals": {
-            "get": {
-                "tags": [
-                    "Goals"
-                ],
-                "description": "Returns all Goals for a given website, or list of websites",
-                "operationId": "Goals.getGoals",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "Array or Comma separated list of website IDs to request the goals for",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": []
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "name": "orderByName",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean",
-                            "default": false
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Array of Goal attributes, indexed by \"idgoal\" when requesting a single site, no specific index when requesting multiple sites",
-                        "content": {
-                            "text/xml": {
-                                "schema": {
-                                    "properties": {
-                                        "row": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "xml": {
-                                                    "name": "row"
-                                                },
-                                                "additionalProperties": true
-                                            }
-                                        }
-                                    },
-                                    "type": "object",
-                                    "xml": {
-                                        "name": "result"
-                                    }
-                                },
-                                "example": {
-                                    "row": [
-                                        {
-                                            "idsite": "1",
-                                            "idgoal": "4",
-                                            "name": "New Job Application",
-                                            "description": "",
-                                            "match_attribute": "url",
-                                            "pattern": "\\/jobs\\/apply\\/",
-                                            "pattern_type": "contains",
-                                            "case_sensitive": "0",
-                                            "allow_multiple": "0",
-                                            "revenue": "1",
-                                            "deleted": "0",
-                                            "event_value_as_revenue": "0"
-                                        },
-                                        {
-                                            "idsite": "1",
-                                            "idgoal": "5",
-                                            "name": "View Submit Job",
-                                            "description": "",
-                                            "match_attribute": "url",
-                                            "pattern": "jobs\\/add",
-                                            "pattern_type": "contains",
-                                            "case_sensitive": "0",
-                                            "allow_multiple": "0",
-                                            "revenue": "5",
-                                            "deleted": "0",
-                                            "event_value_as_revenue": "0"
-                                        },
-                                        {
-                                            "idsite": "1",
-                                            "idgoal": "6",
-                                            "name": "New Resume",
-                                            "description": "",
-                                            "match_attribute": "url",
-                                            "pattern": "resumes\\/register",
-                                            "pattern_type": "contains",
-                                            "case_sensitive": "0",
-                                            "allow_multiple": "0",
-                                            "revenue": "2",
-                                            "deleted": "0",
-                                            "event_value_as_revenue": "0"
-                                        },
-                                        {
-                                            "idsite": "1",
-                                            "idgoal": "7",
-                                            "name": "Liveaboard.com click",
-                                            "description": "",
-                                            "match_attribute": "external_website",
-                                            "pattern": "liveaboard.com",
-                                            "pattern_type": "contains",
-                                            "case_sensitive": "0",
-                                            "allow_multiple": "0",
-                                            "revenue": "1",
-                                            "deleted": "0",
-                                            "event_value_as_revenue": "0"
-                                        },
-                                        {
-                                            "idsite": "1",
-                                            "idgoal": "8",
-                                            "name": "Agoda click",
-                                            "description": "",
-                                            "match_attribute": "external_website",
-                                            "pattern": "agoda",
-                                            "pattern_type": "contains",
-                                            "case_sensitive": "0",
-                                            "allow_multiple": "0",
-                                            "revenue": "0",
-                                            "deleted": "0",
-                                            "event_value_as_revenue": "0"
-                                        },
-                                        {
-                                            "idsite": "1",
-                                            "idgoal": "9",
-                                            "name": "User Comments",
-                                            "description": "",
-                                            "match_attribute": "manually",
-                                            "allow_multiple": "1",
-                                            "revenue": "0",
-                                            "deleted": "0",
-                                            "event_value_as_revenue": "0"
-                                        },
-                                        {
-                                            "idsite": "1",
-                                            "idgoal": "10",
-                                            "name": "Newsletter Signup",
-                                            "description": "",
-                                            "match_attribute": "url",
-                                            "pattern": "\\/newsletter\\/thank-you",
-                                            "pattern_type": "contains",
-                                            "case_sensitive": "0",
-                                            "allow_multiple": "0",
-                                            "revenue": "0",
-                                            "deleted": "0",
-                                            "event_value_as_revenue": "0"
-                                        }
-                                    ]
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "properties": {
-                                            "": {
-                                                "properties": {
-                                                    "idsite": {
-                                                        "type": "integer"
-                                                    },
-                                                    "idgoal": {
-                                                        "type": "integer"
-                                                    },
-                                                    "name": {
-                                                        "type": "string"
-                                                    },
-                                                    "description": {
-                                                        "type": "string"
-                                                    },
-                                                    "match_attribute": {
-                                                        "type": "string"
-                                                    },
-                                                    "pattern": {
-                                                        "type": "string"
-                                                    },
-                                                    "pattern_type": {
-                                                        "type": "string"
-                                                    },
-                                                    "case_sensitive": {
-                                                        "type": "integer"
-                                                    },
-                                                    "allow_multiple": {
-                                                        "type": "integer"
-                                                    },
-                                                    "revenue": {
-                                                        "type": "integer"
-                                                    },
-                                                    "deleted": {
-                                                        "type": "integer"
-                                                    },
-                                                    "event_value_as_revenue": {
-                                                        "type": "integer"
-                                                    }
-                                                },
-                                                "type": "object"
-                                            }
-                                        },
-                                        "type": "object",
-                                        "additionalProperties": true
-                                    }
-                                },
-                                "example": [
-                                    {
-                                        "idsite": 1,
-                                        "idgoal": 4,
-                                        "name": "New Job Application",
-                                        "description": "",
-                                        "match_attribute": "url",
-                                        "pattern": "\\/jobs\\/apply\\/",
-                                        "pattern_type": "contains",
-                                        "case_sensitive": 0,
-                                        "allow_multiple": 0,
-                                        "revenue": 1,
-                                        "deleted": 0,
-                                        "event_value_as_revenue": 0
-                                    },
-                                    {
-                                        "idsite": 1,
-                                        "idgoal": 5,
-                                        "name": "View Submit Job",
-                                        "description": "",
-                                        "match_attribute": "url",
-                                        "pattern": "jobs\\/add",
-                                        "pattern_type": "contains",
-                                        "case_sensitive": 0,
-                                        "allow_multiple": 0,
-                                        "revenue": 5,
-                                        "deleted": 0,
-                                        "event_value_as_revenue": 0
-                                    },
-                                    {
-                                        "idsite": 1,
-                                        "idgoal": 6,
-                                        "name": "New Resume",
-                                        "description": "",
-                                        "match_attribute": "url",
-                                        "pattern": "resumes\\/register",
-                                        "pattern_type": "contains",
-                                        "case_sensitive": 0,
-                                        "allow_multiple": 0,
-                                        "revenue": 2,
-                                        "deleted": 0,
-                                        "event_value_as_revenue": 0
-                                    },
-                                    {
-                                        "idsite": 1,
-                                        "idgoal": 7,
-                                        "name": "Liveaboard.com click",
-                                        "description": "",
-                                        "match_attribute": "external_website",
-                                        "pattern": "liveaboard.com",
-                                        "pattern_type": "contains",
-                                        "case_sensitive": 0,
-                                        "allow_multiple": 0,
-                                        "revenue": 1,
-                                        "deleted": 0,
-                                        "event_value_as_revenue": 0
-                                    },
-                                    {
-                                        "idsite": 1,
-                                        "idgoal": 8,
-                                        "name": "Agoda click",
-                                        "description": "",
-                                        "match_attribute": "external_website",
-                                        "pattern": "agoda",
-                                        "pattern_type": "contains",
-                                        "case_sensitive": 0,
-                                        "allow_multiple": 0,
-                                        "revenue": 0,
-                                        "deleted": 0,
-                                        "event_value_as_revenue": 0
-                                    },
-                                    {
-                                        "idsite": 1,
-                                        "idgoal": 9,
-                                        "name": "User Comments",
-                                        "description": "",
-                                        "match_attribute": "manually",
-                                        "allow_multiple": 1,
-                                        "revenue": 0,
-                                        "deleted": 0,
-                                        "event_value_as_revenue": 0
-                                    },
-                                    {
-                                        "idsite": 1,
-                                        "idgoal": 10,
-                                        "name": "Newsletter Signup",
-                                        "description": "",
-                                        "match_attribute": "url",
-                                        "pattern": "\\/newsletter\\/thank-you",
-                                        "pattern_type": "contains",
-                                        "case_sensitive": 0,
-                                        "allow_multiple": 0,
-                                        "revenue": 0,
-                                        "deleted": 0,
-                                        "event_value_as_revenue": 0
-                                    }
-                                ]
-                            },
-                            "application/vnd.ms-excel": {
-                                "example": "idsite\tidgoal\tname\tdescription\tmatch_attribute\tpattern\tpattern_type\tcase_sensitive\tallow_multiple\trevenue\tdeleted\tevent_value_as_revenue\n1\t4\tNew Job Application\t\turl\t/jobs/apply/\tcontains\t0\t0\t1\t0\t0\n1\t5\tView Submit Job\t\turl\tjobs/add\tcontains\t0\t0\t5\t0\t0\n1\t6\tNew Resume\t\turl\tresumes/register\tcontains\t0\t0\t2\t0\t0\n1\t7\tLiveaboard.com click\t\texternal_website\tliveaboard.com\tcontains\t0\t0\t1\t0\t0\n1\t8\tAgoda click\t\texternal_website\tagoda\tcontains\t0\t0\t0\t0\t0\n1\t9\tUser Comments\t\tmanually\t\t\t\t1\t0\t0\t0\n1\t10\tNewsletter Signup\t\turl\t/newsletter/thank-you\tcontains\t0\t0\t0\t0\t0"
-                            }
-                        }
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=Goals.addGoal": {
-            "get": {
-                "tags": [
-                    "Goals"
-                ],
-                "description": "Creates a Goal for a given website.",
-                "operationId": "Goals.addGoal",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSiteRequired"
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "matchAttribute",
-                        "in": "query",
-                        "description": "'url', 'title', 'file', 'external_website', 'manually', 'visit_duration', 'visit_total_actions', 'visit_total_pageviews', 'event_action', 'event_category' or 'event_name'",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "pattern",
-                        "in": "query",
-                        "description": "eg. purchase-confirmation.htm or numeric value if used with a numeric match attribute",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "patternType",
-                        "in": "query",
-                        "description": "'regex', 'contains', 'exact', or 'greater_than' for numeric match attributes",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "caseSensitive",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean",
-                            "default": false
-                        }
-                    },
-                    {
-                        "name": "revenue",
-                        "in": "query",
-                        "description": "If set, default revenue to assign to conversions",
-                        "required": false,
-                        "schema": {
-                            "type": "number"
-                        }
-                    },
-                    {
-                        "name": "allowMultipleConversionsPerVisit",
-                        "in": "query",
-                        "description": "By default, multiple conversions in the same visit will only record the first conversion. If set to true, multiple conversions will all be recorded within a visit (useful for Ecommerce goals)",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean",
-                            "default": false
-                        }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": ""
-                        }
-                    },
-                    {
-                        "name": "useEventValueAsRevenue",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "ID of the new goal"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=Goals.updateGoal": {
-            "get": {
-                "tags": [
-                    "Goals"
-                ],
-                "description": "Updates a Goal description.",
-                "operationId": "Goals.updateGoal",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSiteRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idGoalRequired"
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "matchAttribute",
-                        "in": "query",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "pattern",
-                        "in": "query",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "patternType",
-                        "in": "query",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "caseSensitive",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean",
-                            "default": false
-                        }
-                    },
-                    {
-                        "name": "revenue",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "number"
-                        }
-                    },
-                    {
-                        "name": "allowMultipleConversionsPerVisit",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean",
-                            "default": false
-                        }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": ""
-                        }
-                    },
-                    {
-                        "name": "useEventValueAsRevenue",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "$ref": "#/components/responses/GenericSuccess"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=Goals.deleteGoal": {
-            "get": {
-                "tags": [
-                    "Goals"
-                ],
-                "description": "Soft deletes a given Goal.",
-                "operationId": "Goals.deleteGoal",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSiteRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idGoalRequired"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "$ref": "#/components/responses/GenericSuccess"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=Goals.getItemsSku": {
-            "get": {
-                "tags": [
-                    "Goals"
+                    "VisitorInterest"
                 ],
                 "description": "",
-                "operationId": "Goals.getItemsSku",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSiteRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/periodRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/dateRequired"
-                    },
-                    {
-                        "name": "abandonedCarts",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "$ref": "#/components/parameters/segmentOptional"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=Goals.getItemsName": {
-            "get": {
-                "tags": [
-                    "Goals"
-                ],
-                "description": "",
-                "operationId": "Goals.getItemsName",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSiteRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/periodRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/dateRequired"
-                    },
-                    {
-                        "name": "abandonedCarts",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "$ref": "#/components/parameters/segmentOptional"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=Goals.getItemsCategory": {
-            "get": {
-                "tags": [
-                    "Goals"
-                ],
-                "description": "",
-                "operationId": "Goals.getItemsCategory",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idSiteRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/periodRequired"
-                    },
-                    {
-                        "$ref": "#/components/parameters/dateRequired"
-                    },
-                    {
-                        "name": "abandonedCarts",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "$ref": "#/components/parameters/segmentOptional"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=Goals.get": {
-            "get": {
-                "tags": [
-                    "Goals"
-                ],
-                "description": "Returns Goals data.",
-                "operationId": "Goals.get",
+                "operationId": "VisitorInterest.getNumberOfVisitsPerVisitDuration",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
@@ -868,204 +37,6 @@
                     },
                     {
                         "$ref": "#/components/parameters/segmentOptional"
-                    },
-                    {
-                        "$ref": "#/components/parameters/idGoalOptional"
-                    },
-                    {
-                        "name": "columns",
-                        "in": "query",
-                        "description": "Array of metrics to fetch: nb_conversions, conversion_rate, revenue",
-                        "required": false,
-                        "schema": {
-                            "type": "array",
-                            "items": [],
-                            "default": []
-                        }
-                    },
-                    {
-                        "name": "showAllGoalSpecificMetrics",
-                        "in": "query",
-                        "description": "whether to show all goal specific metrics when no goal is set",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean",
-                            "default": false
-                        }
-                    },
-                    {
-                        "name": "compare",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "text/xml": {
-                                "schema": {
-                                    "type": "object",
-                                    "xml": {
-                                        "name": "result"
-                                    }
-                                },
-                                "example": {
-                                    "nb_conversions": "1",
-                                    "nb_visits_converted": "1",
-                                    "revenue": "1",
-                                    "conversion_rate": "5%",
-                                    "nb_conversions_new_visit": "0",
-                                    "nb_visits_converted_new_visit": "0",
-                                    "revenue_new_visit": "0",
-                                    "conversion_rate_new_visit": "0%",
-                                    "nb_conversions_returning_visit": "1",
-                                    "nb_visits_converted_returning_visit": "1",
-                                    "revenue_returning_visit": "1",
-                                    "conversion_rate_returning_visit": "5%"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "nb_conversions": {
-                                            "type": "integer"
-                                        },
-                                        "nb_visits_converted": {
-                                            "type": "integer"
-                                        },
-                                        "revenue": {
-                                            "type": "integer"
-                                        },
-                                        "conversion_rate": {
-                                            "type": "string"
-                                        },
-                                        "nb_conversions_new_visit": {
-                                            "type": "integer"
-                                        },
-                                        "nb_visits_converted_new_visit": {
-                                            "type": "integer"
-                                        },
-                                        "revenue_new_visit": {
-                                            "type": "integer"
-                                        },
-                                        "conversion_rate_new_visit": {
-                                            "type": "string"
-                                        },
-                                        "nb_conversions_returning_visit": {
-                                            "type": "integer"
-                                        },
-                                        "nb_visits_converted_returning_visit": {
-                                            "type": "integer"
-                                        },
-                                        "revenue_returning_visit": {
-                                            "type": "integer"
-                                        },
-                                        "conversion_rate_returning_visit": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "type": "object"
-                                },
-                                "example": {
-                                    "nb_conversions": 1,
-                                    "nb_visits_converted": 1,
-                                    "revenue": 1,
-                                    "conversion_rate": "5%",
-                                    "nb_conversions_new_visit": 0,
-                                    "nb_visits_converted_new_visit": 0,
-                                    "revenue_new_visit": 0,
-                                    "conversion_rate_new_visit": "0%",
-                                    "nb_conversions_returning_visit": 1,
-                                    "nb_visits_converted_returning_visit": 1,
-                                    "revenue_returning_visit": 1,
-                                    "conversion_rate_returning_visit": "5%"
-                                }
-                            },
-                            "application/vnd.ms-excel": {
-                                "example": "nb_conversions\tnb_visits_converted\trevenue\tconversion_rate\tnb_conversions_new_visit\tnb_visits_converted_new_visit\trevenue_new_visit\tconversion_rate_new_visit\tnb_conversions_returning_visit\tnb_visits_converted_returning_visit\trevenue_returning_visit\tconversion_rate_returning_visit\n1\t1\t1\t5%\t0\t0\t0\t0%\t1\t1\t1\t5%"
-                            }
-                        }
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=Goals.getDaysToConversion": {
-            "get": {
-                "tags": [
-                    "Goals"
-                ],
-                "description": "Gets a DataTable that maps ranges of days to the number of conversions that occurred within those ranges, for the specified site, date range, segment and goal.",
-                "operationId": "Goals.getDaysToConversion",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "The site to select data from.",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "period",
-                        "in": "query",
-                        "description": "The period type.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "date",
-                        "in": "query",
-                        "description": "The date type.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "segment",
-                        "in": "query",
-                        "description": "The segment.",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "idGoal",
-                        "in": "query",
-                        "description": "The id of the goal to get data for. If this is set to false, data for every goal that belongs to $idSite is returned.",
-                        "required": false,
-                        "schema": {
-                            "type": "integer"
-                        }
                     }
                 ],
                 "responses": {
@@ -1094,60 +65,54 @@
                                 "example": {
                                     "row": [
                                         {
-                                            "label": "0 days",
-                                            "nb_conversions": "0"
+                                            "label": "0\\u201310s",
+                                            "nb_visits": "10",
+                                            "segment": "visitDuration>=0;visitDuration<=10"
                                         },
                                         {
-                                            "label": "1 day",
-                                            "nb_conversions": "0"
+                                            "label": "11\\u201330s",
+                                            "nb_visits": "2",
+                                            "segment": "visitDuration>=11;visitDuration<=30"
                                         },
                                         {
-                                            "label": "2 days",
-                                            "nb_conversions": "0"
+                                            "label": "31\\u201360s",
+                                            "nb_visits": "2",
+                                            "segment": "visitDuration>=31;visitDuration<=60"
                                         },
                                         {
-                                            "label": "3 days",
-                                            "nb_conversions": "0"
+                                            "label": "1-2 min",
+                                            "nb_visits": "3",
+                                            "segment": "visitDuration>=60;visitDuration<=120"
                                         },
                                         {
-                                            "label": "4 days",
-                                            "nb_conversions": "0"
+                                            "label": "2-4 min",
+                                            "nb_visits": "3",
+                                            "segment": "visitDuration>=120;visitDuration<=240"
                                         },
                                         {
-                                            "label": "5 days",
-                                            "nb_conversions": "0"
+                                            "label": "4-7 min",
+                                            "nb_visits": "0",
+                                            "segment": "visitDuration>=240;visitDuration<=420"
                                         },
                                         {
-                                            "label": "6 days",
-                                            "nb_conversions": "0"
+                                            "label": "7-10 min",
+                                            "nb_visits": "0",
+                                            "segment": "visitDuration>=420;visitDuration<=600"
                                         },
                                         {
-                                            "label": "7 days",
-                                            "nb_conversions": "0"
+                                            "label": "10-15 min",
+                                            "nb_visits": "0",
+                                            "segment": "visitDuration>=600;visitDuration<=900"
                                         },
                                         {
-                                            "label": "8-14 days",
-                                            "nb_conversions": "0"
+                                            "label": "15-30 min",
+                                            "nb_visits": "0",
+                                            "segment": "visitDuration>=900;visitDuration<=1800"
                                         },
                                         {
-                                            "label": "15-30 days",
-                                            "nb_conversions": "0"
-                                        },
-                                        {
-                                            "label": "31-60 days",
-                                            "nb_conversions": "0"
-                                        },
-                                        {
-                                            "label": "61-120 days",
-                                            "nb_conversions": "0"
-                                        },
-                                        {
-                                            "label": "121-364 days",
-                                            "nb_conversions": "0"
-                                        },
-                                        {
-                                            "label": "365+ days",
-                                            "nb_conversions": "1"
+                                            "label": "30+ min",
+                                            "nb_visits": "0",
+                                            "segment": "visitDuration>=1801"
                                         }
                                     ]
                                 }
@@ -1162,8 +127,11 @@
                                                     "label": {
                                                         "type": "string"
                                                     },
-                                                    "nb_conversions": {
-                                                        "type": "integer"
+                                                    "nb_visits": {
+                                                        "type": "string"
+                                                    },
+                                                    "segment": {
+                                                        "type": "string"
                                                     }
                                                 },
                                                 "type": "object"
@@ -1175,65 +143,59 @@
                                 },
                                 "example": [
                                     {
-                                        "label": "0 days",
-                                        "nb_conversions": 0
+                                        "label": "0\\u201310s",
+                                        "nb_visits": "10",
+                                        "segment": "visitDuration>=0;visitDuration<=10"
                                     },
                                     {
-                                        "label": "1 day",
-                                        "nb_conversions": 0
+                                        "label": "11\\u201330s",
+                                        "nb_visits": "2",
+                                        "segment": "visitDuration>=11;visitDuration<=30"
                                     },
                                     {
-                                        "label": "2 days",
-                                        "nb_conversions": 0
+                                        "label": "31\\u201360s",
+                                        "nb_visits": "2",
+                                        "segment": "visitDuration>=31;visitDuration<=60"
                                     },
                                     {
-                                        "label": "3 days",
-                                        "nb_conversions": 0
+                                        "label": "1-2 min",
+                                        "nb_visits": "3",
+                                        "segment": "visitDuration>=60;visitDuration<=120"
                                     },
                                     {
-                                        "label": "4 days",
-                                        "nb_conversions": 0
+                                        "label": "2-4 min",
+                                        "nb_visits": "3",
+                                        "segment": "visitDuration>=120;visitDuration<=240"
                                     },
                                     {
-                                        "label": "5 days",
-                                        "nb_conversions": 0
+                                        "label": "4-7 min",
+                                        "nb_visits": "0",
+                                        "segment": "visitDuration>=240;visitDuration<=420"
                                     },
                                     {
-                                        "label": "6 days",
-                                        "nb_conversions": 0
+                                        "label": "7-10 min",
+                                        "nb_visits": "0",
+                                        "segment": "visitDuration>=420;visitDuration<=600"
                                     },
                                     {
-                                        "label": "7 days",
-                                        "nb_conversions": 0
+                                        "label": "10-15 min",
+                                        "nb_visits": "0",
+                                        "segment": "visitDuration>=600;visitDuration<=900"
                                     },
                                     {
-                                        "label": "8-14 days",
-                                        "nb_conversions": 0
+                                        "label": "15-30 min",
+                                        "nb_visits": "0",
+                                        "segment": "visitDuration>=900;visitDuration<=1800"
                                     },
                                     {
-                                        "label": "15-30 days",
-                                        "nb_conversions": 0
-                                    },
-                                    {
-                                        "label": "31-60 days",
-                                        "nb_conversions": 0
-                                    },
-                                    {
-                                        "label": "61-120 days",
-                                        "nb_conversions": 0
-                                    },
-                                    {
-                                        "label": "121-364 days",
-                                        "nb_conversions": 0
-                                    },
-                                    {
-                                        "label": "365+ days",
-                                        "nb_conversions": 1
+                                        "label": "30+ min",
+                                        "nb_visits": "0",
+                                        "segment": "visitDuration>=1801"
                                     }
                                 ]
                             },
                             "application/vnd.ms-excel": {
-                                "example": "label\tnb_conversions\n0 days\t0\n1 day\t0\n2 days\t0\n3 days\t0\n4 days\t0\n5 days\t0\n6 days\t0\n7 days\t0\n8-14 days\t0\n15-30 days\t0\n31-60 days\t0\n61-120 days\t0\n121-364 days\t0\n365+ days\t1"
+                                "example": "label\tnb_visits\tmetadata_segment\n0\u201310s\t10\t\"visitDuration>=0;visitDuration<=10\"\n11\u201330s\t2\t\"visitDuration>=11;visitDuration<=30\"\n31\u201360s\t2\t\"visitDuration>=31;visitDuration<=60\"\n1-2 min\t3\t\"visitDuration>=60;visitDuration<=120\"\n2-4 min\t3\t\"visitDuration>=120;visitDuration<=240\"\n4-7 min\t0\t\"visitDuration>=240;visitDuration<=420\"\n7-10 min\t0\t\"visitDuration>=420;visitDuration<=600\"\n10-15 min\t0\t\"visitDuration>=600;visitDuration<=900\"\n15-30 min\t0\t\"visitDuration>=900;visitDuration<=1800\"\n30+ min\t0\tvisitDuration>=1801"
                             }
                         }
                     },
@@ -1258,13 +220,218 @@
                 }
             }
         },
-        "/index.php?module=API&method=Goals.getVisitsUntilConversion": {
+        "/index.php?module=API&method=VisitorInterest.getNumberOfVisitsPerPage": {
             "get": {
                 "tags": [
-                    "Goals"
+                    "VisitorInterest"
                 ],
-                "description": "Gets a DataTable that maps ranges of visit counts to the number of conversions that occurred on those visits for the specified site, date range, segment and goal.",
-                "operationId": "Goals.getVisitsUntilConversion",
+                "description": "",
+                "operationId": "VisitorInterest.getNumberOfVisitsPerPage",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "label": "1 page",
+                                            "nb_visits": "10",
+                                            "segment": "actions==1"
+                                        },
+                                        {
+                                            "label": "2 pages",
+                                            "nb_visits": "3",
+                                            "segment": "actions==2"
+                                        },
+                                        {
+                                            "label": "3 pages",
+                                            "nb_visits": "1",
+                                            "segment": "actions==3"
+                                        },
+                                        {
+                                            "label": "4 pages",
+                                            "nb_visits": "1",
+                                            "segment": "actions==4"
+                                        },
+                                        {
+                                            "label": "5 pages",
+                                            "nb_visits": "1",
+                                            "segment": "actions==5"
+                                        },
+                                        {
+                                            "label": "6-7 pages",
+                                            "nb_visits": "3",
+                                            "segment": "actions>=6;actions<=7"
+                                        },
+                                        {
+                                            "label": "8-10 pages",
+                                            "nb_visits": "1",
+                                            "segment": "actions>=8;actions<=10"
+                                        },
+                                        {
+                                            "label": "11-14 pages",
+                                            "nb_visits": "0",
+                                            "segment": "actions>=11;actions<=14"
+                                        },
+                                        {
+                                            "label": "15-20 pages",
+                                            "nb_visits": "0",
+                                            "segment": "actions>=15;actions<=20"
+                                        },
+                                        {
+                                            "label": "21+ pages",
+                                            "nb_visits": "0",
+                                            "segment": "actions>=21"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_visits": {
+                                                        "type": "string"
+                                                    },
+                                                    "segment": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "label": "1 page",
+                                        "nb_visits": "10",
+                                        "segment": "actions==1"
+                                    },
+                                    {
+                                        "label": "2 pages",
+                                        "nb_visits": "3",
+                                        "segment": "actions==2"
+                                    },
+                                    {
+                                        "label": "3 pages",
+                                        "nb_visits": "1",
+                                        "segment": "actions==3"
+                                    },
+                                    {
+                                        "label": "4 pages",
+                                        "nb_visits": "1",
+                                        "segment": "actions==4"
+                                    },
+                                    {
+                                        "label": "5 pages",
+                                        "nb_visits": "1",
+                                        "segment": "actions==5"
+                                    },
+                                    {
+                                        "label": "6-7 pages",
+                                        "nb_visits": "3",
+                                        "segment": "actions>=6;actions<=7"
+                                    },
+                                    {
+                                        "label": "8-10 pages",
+                                        "nb_visits": "1",
+                                        "segment": "actions>=8;actions<=10"
+                                    },
+                                    {
+                                        "label": "11-14 pages",
+                                        "nb_visits": "0",
+                                        "segment": "actions>=11;actions<=14"
+                                    },
+                                    {
+                                        "label": "15-20 pages",
+                                        "nb_visits": "0",
+                                        "segment": "actions>=15;actions<=20"
+                                    },
+                                    {
+                                        "label": "21+ pages",
+                                        "nb_visits": "0",
+                                        "segment": "actions>=21"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_visits\tmetadata_segment\n1 page\t10\tactions==1\n2 pages\t3\tactions==2\n3 pages\t1\tactions==3\n4 pages\t1\tactions==4\n5 pages\t1\tactions==5\n6-7 pages\t3\t\"actions>=6;actions<=7\"\n8-10 pages\t1\t\"actions>=8;actions<=10\"\n11-14 pages\t0\t\"actions>=11;actions<=14\"\n15-20 pages\t0\t\"actions>=15;actions<=20\"\n21+ pages\t0\tactions>=21"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=VisitorInterest.getNumberOfVisitsByDaysSinceLast": {
+            "get": {
+                "tags": [
+                    "VisitorInterest"
+                ],
+                "description": "Returns a DataTable that associates counts of days (N) with the count of visits that occurred within N days of the last visit.",
+                "operationId": "VisitorInterest.getNumberOfVisitsByDaysSinceLast",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
@@ -1304,20 +471,290 @@
                         "schema": {
                             "type": "string"
                         }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "the archived report data.",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "label": "New visits",
+                                            "nb_visits": "0",
+                                            "segment": "visitorType==new"
+                                        },
+                                        {
+                                            "label": "0 days",
+                                            "nb_visits": "3",
+                                            "segment": "daysSinceLastVisit==0"
+                                        },
+                                        {
+                                            "label": "1 day",
+                                            "nb_visits": "0",
+                                            "segment": "daysSinceLastVisit==1"
+                                        },
+                                        {
+                                            "label": "2 days",
+                                            "nb_visits": "0",
+                                            "segment": "daysSinceLastVisit==2"
+                                        },
+                                        {
+                                            "label": "3 days",
+                                            "nb_visits": "0",
+                                            "segment": "daysSinceLastVisit==3"
+                                        },
+                                        {
+                                            "label": "4 days",
+                                            "nb_visits": "0",
+                                            "segment": "daysSinceLastVisit==4"
+                                        },
+                                        {
+                                            "label": "5 days",
+                                            "nb_visits": "0",
+                                            "segment": "daysSinceLastVisit==5"
+                                        },
+                                        {
+                                            "label": "6 days",
+                                            "nb_visits": "0",
+                                            "segment": "daysSinceLastVisit==6"
+                                        },
+                                        {
+                                            "label": "7 days",
+                                            "nb_visits": "3",
+                                            "segment": "daysSinceLastVisit==7"
+                                        },
+                                        {
+                                            "label": "8-14 days",
+                                            "nb_visits": "0",
+                                            "segment": "daysSinceLastVisit>=8;daysSinceLastVisit<=14"
+                                        },
+                                        {
+                                            "label": "15-30 days",
+                                            "nb_visits": "0",
+                                            "segment": "daysSinceLastVisit>=15;daysSinceLastVisit<=30"
+                                        },
+                                        {
+                                            "label": "31-60 days",
+                                            "nb_visits": "0",
+                                            "segment": "daysSinceLastVisit>=31;daysSinceLastVisit<=60"
+                                        },
+                                        {
+                                            "label": "61-120 days",
+                                            "nb_visits": "0",
+                                            "segment": "daysSinceLastVisit>=61;daysSinceLastVisit<=120"
+                                        },
+                                        {
+                                            "label": "121-364 days",
+                                            "nb_visits": "0",
+                                            "segment": "daysSinceLastVisit>=121;daysSinceLastVisit<=364"
+                                        },
+                                        {
+                                            "label": "365+ days",
+                                            "nb_visits": "0",
+                                            "segment": "daysSinceLastVisit>=365"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_visits": {
+                                                        "type": "string"
+                                                    },
+                                                    "segment": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "label": "New visits",
+                                        "nb_visits": "0",
+                                        "segment": "visitorType==new"
+                                    },
+                                    {
+                                        "label": "0 days",
+                                        "nb_visits": "3",
+                                        "segment": "daysSinceLastVisit==0"
+                                    },
+                                    {
+                                        "label": "1 day",
+                                        "nb_visits": "0",
+                                        "segment": "daysSinceLastVisit==1"
+                                    },
+                                    {
+                                        "label": "2 days",
+                                        "nb_visits": "0",
+                                        "segment": "daysSinceLastVisit==2"
+                                    },
+                                    {
+                                        "label": "3 days",
+                                        "nb_visits": "0",
+                                        "segment": "daysSinceLastVisit==3"
+                                    },
+                                    {
+                                        "label": "4 days",
+                                        "nb_visits": "0",
+                                        "segment": "daysSinceLastVisit==4"
+                                    },
+                                    {
+                                        "label": "5 days",
+                                        "nb_visits": "0",
+                                        "segment": "daysSinceLastVisit==5"
+                                    },
+                                    {
+                                        "label": "6 days",
+                                        "nb_visits": "0",
+                                        "segment": "daysSinceLastVisit==6"
+                                    },
+                                    {
+                                        "label": "7 days",
+                                        "nb_visits": "3",
+                                        "segment": "daysSinceLastVisit==7"
+                                    },
+                                    {
+                                        "label": "8-14 days",
+                                        "nb_visits": "0",
+                                        "segment": "daysSinceLastVisit>=8;daysSinceLastVisit<=14"
+                                    },
+                                    {
+                                        "label": "15-30 days",
+                                        "nb_visits": "0",
+                                        "segment": "daysSinceLastVisit>=15;daysSinceLastVisit<=30"
+                                    },
+                                    {
+                                        "label": "31-60 days",
+                                        "nb_visits": "0",
+                                        "segment": "daysSinceLastVisit>=31;daysSinceLastVisit<=60"
+                                    },
+                                    {
+                                        "label": "61-120 days",
+                                        "nb_visits": "0",
+                                        "segment": "daysSinceLastVisit>=61;daysSinceLastVisit<=120"
+                                    },
+                                    {
+                                        "label": "121-364 days",
+                                        "nb_visits": "0",
+                                        "segment": "daysSinceLastVisit>=121;daysSinceLastVisit<=364"
+                                    },
+                                    {
+                                        "label": "365+ days",
+                                        "nb_visits": "0",
+                                        "segment": "daysSinceLastVisit>=365"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_visits\tmetadata_segment\nNew visits\t0\tvisitorType==new\n0 days\t3\tdaysSinceLastVisit==0\n1 day\t0\tdaysSinceLastVisit==1\n2 days\t0\tdaysSinceLastVisit==2\n3 days\t0\tdaysSinceLastVisit==3\n4 days\t0\tdaysSinceLastVisit==4\n5 days\t0\tdaysSinceLastVisit==5\n6 days\t0\tdaysSinceLastVisit==6\n7 days\t3\tdaysSinceLastVisit==7\n8-14 days\t0\t\"daysSinceLastVisit>=8;daysSinceLastVisit<=14\"\n15-30 days\t0\t\"daysSinceLastVisit>=15;daysSinceLastVisit<=30\"\n31-60 days\t0\t\"daysSinceLastVisit>=31;daysSinceLastVisit<=60\"\n61-120 days\t0\t\"daysSinceLastVisit>=61;daysSinceLastVisit<=120\"\n121-364 days\t0\t\"daysSinceLastVisit>=121;daysSinceLastVisit<=364\"\n365+ days\t0\tdaysSinceLastVisit>=365"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=VisitorInterest.getNumberOfVisitsByVisitCount": {
+            "get": {
+                "tags": [
+                    "VisitorInterest"
+                ],
+                "description": "Returns a DataTable that associates ranges of visit numbers with the count of visits whose visit number falls within those ranges.",
+                "operationId": "VisitorInterest.getNumberOfVisitsByVisitCount",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idGoal",
+                        "name": "idSite",
                         "in": "query",
-                        "description": "The id of the goal to get data for. If this is set to false, data for every goal that belongs to $idSite is returned.",
-                        "required": false,
+                        "description": "The site to select data from.",
+                        "required": true,
                         "schema": {
                             "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": "The period type.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "description": "The date type.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "segment",
+                        "in": "query",
+                        "description": "The segment.",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "the archived report data.",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -1342,55 +779,87 @@
                                     "row": [
                                         {
                                             "label": "1 visit",
-                                            "nb_conversions": "0"
+                                            "nb_visits": "0",
+                                            "nb_visits_percentage": "0%",
+                                            "segment": "visitCount==1"
                                         },
                                         {
                                             "label": "2 visits",
-                                            "nb_conversions": "0"
+                                            "nb_visits": "0",
+                                            "nb_visits_percentage": "0%",
+                                            "segment": "visitCount==2"
                                         },
                                         {
                                             "label": "3 visits",
-                                            "nb_conversions": "0"
+                                            "nb_visits": "0",
+                                            "nb_visits_percentage": "0%",
+                                            "segment": "visitCount==3"
                                         },
                                         {
                                             "label": "4 visits",
-                                            "nb_conversions": "0"
+                                            "nb_visits": "0",
+                                            "nb_visits_percentage": "0%",
+                                            "segment": "visitCount==4"
                                         },
                                         {
                                             "label": "5 visits",
-                                            "nb_conversions": "0"
+                                            "nb_visits": "0",
+                                            "nb_visits_percentage": "0%",
+                                            "segment": "visitCount==5"
                                         },
                                         {
                                             "label": "6 visits",
-                                            "nb_conversions": "0"
+                                            "nb_visits": "0",
+                                            "nb_visits_percentage": "0%",
+                                            "segment": "visitCount==6"
                                         },
                                         {
                                             "label": "7 visits",
-                                            "nb_conversions": "0"
+                                            "nb_visits": "0",
+                                            "nb_visits_percentage": "0%",
+                                            "segment": "visitCount==7"
                                         },
                                         {
                                             "label": "8 visits",
-                                            "nb_conversions": "0"
+                                            "nb_visits": "0",
+                                            "nb_visits_percentage": "0%",
+                                            "segment": "visitCount==8"
                                         },
                                         {
                                             "label": "9-14 visits",
-                                            "nb_conversions": "0"
+                                            "nb_visits": "0",
+                                            "nb_visits_percentage": "0%",
+                                            "segment": "visitCount>=9;visitCount<=14"
                                         },
                                         {
                                             "label": "15-25 visits",
-                                            "nb_conversions": "0"
+                                            "nb_visits": "0",
+                                            "nb_visits_percentage": "0%",
+                                            "segment": "visitCount>=15;visitCount<=25"
                                         },
                                         {
                                             "label": "26-50 visits",
-                                            "nb_conversions": "0"
+                                            "nb_visits": "0",
+                                            "nb_visits_percentage": "0%",
+                                            "segment": "visitCount>=26;visitCount<=50"
                                         },
                                         {
                                             "label": "51-100 visits",
-                                            "nb_conversions": "0"
+                                            "nb_visits": "0",
+                                            "nb_visits_percentage": "0%",
+                                            "segment": "visitCount>=51;visitCount<=100"
                                         },
                                         {
-                                            "label": "101+ visits",
-                                            "nb_conversions": "1"
+                                            "label": "101-200 visits",
+                                            "nb_visits": "4",
+                                            "nb_visits_percentage": "20%",
+                                            "segment": "visitCount>=101;visitCount<=200"
+                                        },
+                                        {
+                                            "label": "201+ visits",
+                                            "nb_visits": "16",
+                                            "nb_visits_percentage": "80%",
+                                            "segment": "visitCount>=201"
                                         }
                                     ]
                                 }
@@ -1405,8 +874,14 @@
                                                     "label": {
                                                         "type": "string"
                                                     },
-                                                    "nb_conversions": {
-                                                        "type": "integer"
+                                                    "nb_visits": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_visits_percentage": {
+                                                        "type": "string"
+                                                    },
+                                                    "segment": {
+                                                        "type": "string"
                                                     }
                                                 },
                                                 "type": "object"
@@ -1419,60 +894,92 @@
                                 "example": [
                                     {
                                         "label": "1 visit",
-                                        "nb_conversions": 0
+                                        "nb_visits": "0",
+                                        "nb_visits_percentage": "0%",
+                                        "segment": "visitCount==1"
                                     },
                                     {
                                         "label": "2 visits",
-                                        "nb_conversions": 0
+                                        "nb_visits": "0",
+                                        "nb_visits_percentage": "0%",
+                                        "segment": "visitCount==2"
                                     },
                                     {
                                         "label": "3 visits",
-                                        "nb_conversions": 0
+                                        "nb_visits": "0",
+                                        "nb_visits_percentage": "0%",
+                                        "segment": "visitCount==3"
                                     },
                                     {
                                         "label": "4 visits",
-                                        "nb_conversions": 0
+                                        "nb_visits": "0",
+                                        "nb_visits_percentage": "0%",
+                                        "segment": "visitCount==4"
                                     },
                                     {
                                         "label": "5 visits",
-                                        "nb_conversions": 0
+                                        "nb_visits": "0",
+                                        "nb_visits_percentage": "0%",
+                                        "segment": "visitCount==5"
                                     },
                                     {
                                         "label": "6 visits",
-                                        "nb_conversions": 0
+                                        "nb_visits": "0",
+                                        "nb_visits_percentage": "0%",
+                                        "segment": "visitCount==6"
                                     },
                                     {
                                         "label": "7 visits",
-                                        "nb_conversions": 0
+                                        "nb_visits": "0",
+                                        "nb_visits_percentage": "0%",
+                                        "segment": "visitCount==7"
                                     },
                                     {
                                         "label": "8 visits",
-                                        "nb_conversions": 0
+                                        "nb_visits": "0",
+                                        "nb_visits_percentage": "0%",
+                                        "segment": "visitCount==8"
                                     },
                                     {
                                         "label": "9-14 visits",
-                                        "nb_conversions": 0
+                                        "nb_visits": "0",
+                                        "nb_visits_percentage": "0%",
+                                        "segment": "visitCount>=9;visitCount<=14"
                                     },
                                     {
                                         "label": "15-25 visits",
-                                        "nb_conversions": 0
+                                        "nb_visits": "0",
+                                        "nb_visits_percentage": "0%",
+                                        "segment": "visitCount>=15;visitCount<=25"
                                     },
                                     {
                                         "label": "26-50 visits",
-                                        "nb_conversions": 0
+                                        "nb_visits": "0",
+                                        "nb_visits_percentage": "0%",
+                                        "segment": "visitCount>=26;visitCount<=50"
                                     },
                                     {
                                         "label": "51-100 visits",
-                                        "nb_conversions": 0
+                                        "nb_visits": "0",
+                                        "nb_visits_percentage": "0%",
+                                        "segment": "visitCount>=51;visitCount<=100"
                                     },
                                     {
-                                        "label": "101+ visits",
-                                        "nb_conversions": 1
+                                        "label": "101-200 visits",
+                                        "nb_visits": "4",
+                                        "nb_visits_percentage": "20%",
+                                        "segment": "visitCount>=101;visitCount<=200"
+                                    },
+                                    {
+                                        "label": "201+ visits",
+                                        "nb_visits": "16",
+                                        "nb_visits_percentage": "80%",
+                                        "segment": "visitCount>=201"
                                     }
                                 ]
                             },
                             "application/vnd.ms-excel": {
-                                "example": "label\tnb_conversions\n1 visit\t0\n2 visits\t0\n3 visits\t0\n4 visits\t0\n5 visits\t0\n6 visits\t0\n7 visits\t0\n8 visits\t0\n9-14 visits\t0\n15-25 visits\t0\n26-50 visits\t0\n51-100 visits\t0\n101+ visits\t1"
+                                "example": "label\tnb_visits\tnb_visits_percentage\tmetadata_segment\n1 visit\t0\t0%\tvisitCount==1\n2 visits\t0\t0%\tvisitCount==2\n3 visits\t0\t0%\tvisitCount==3\n4 visits\t0\t0%\tvisitCount==4\n5 visits\t0\t0%\tvisitCount==5\n6 visits\t0\t0%\tvisitCount==6\n7 visits\t0\t0%\tvisitCount==7\n8 visits\t0\t0%\tvisitCount==8\n9-14 visits\t0\t0%\t\"visitCount>=9;visitCount<=14\"\n15-25 visits\t0\t0%\t\"visitCount>=15;visitCount<=25\"\n26-50 visits\t0\t0%\t\"visitCount>=26;visitCount<=50\"\n51-100 visits\t0\t0%\t\"visitCount>=51;visitCount<=100\"\n101-200 visits\t4\t20%\t\"visitCount>=101;visitCount<=200\"\n201+ visits\t16\t80%\tvisitCount>=201"
                             }
                         }
                     },
@@ -2312,8 +1819,8 @@
     ],
     "tags": [
         {
-            "name": "Goals",
-            "description": "Goals API lets you Manage existing goals, via \"updateGoal\" and \"deleteGoal\", create new Goals via \"addGoal\", or list existing Goals for one or several websites via \"getGoals\"  If you are <a href='https://matomo.org/docs/ecommerce-analytics/' target='_blank'>tracking Ecommerce orders and products</a> on your site, the functions \"getItemsSku\", \"getItemsName\" and \"getItemsCategory\" will return the list of products purchased on your site, either grouped by Product SKU, Product Name or Product Category. For each name, SKU or category, the following metrics are returned: Total revenue, Total quantity, average price, average quantity, number of orders (or abandoned carts) containing this product, number of visits on the Product page, Conversion rate.  By default, these functions return the 'Products purchased'. These functions also accept an optional parameter &abandonedCarts=1. If the parameter is set, it will instead return the metrics for products that were left in an abandoned cart therefore not purchased.  The API also lets you request overall Goal metrics via the method \"get\": Conversions, Visits with at least one conversion, Conversion rate and Revenue. If you wish to request specific metrics about Ecommerce goals, you can set the parameter &idGoal=ecommerceAbandonedCart to get metrics about abandoned carts (including Lost revenue, and number of items left in the cart) or &idGoal=ecommerceOrder to get metrics about Ecommerce orders (number of orders, visits with an order, subtotal, tax, shipping, discount, revenue, items ordered)  See also the documentation about <a href='https://matomo.org/docs/tracking-goals-web-analytics/' rel='noreferrer' target='_blank'>Tracking Goals</a> in Matomo."
+            "name": "VisitorInterest",
+            "description": "VisitorInterest API lets you access two Visitor Engagement reports: number of visits per number of pages, and number of visits per visit duration."
         }
     ],
     "externalDocs": {

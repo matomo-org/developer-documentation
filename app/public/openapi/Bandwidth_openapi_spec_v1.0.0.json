@@ -1,7 +1,7 @@
 {
     "openapi": "3.1.0",
     "info": {
-        "title": "Matomo Reporting API for AdvertisingConversionExport plugin",
+        "title": "Matomo Reporting API for Bandwidth plugin",
         "version": "1.0.0"
     },
     "servers": [
@@ -15,13 +15,13 @@
         }
     ],
     "paths": {
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExports": {
+        "/index.php?module=API&method=Bandwidth.get": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "Bandwidth"
                 ],
-                "description": "Returns all configured conversion exports for the given idSite if idSite is omitted, all conversion exports of sites, the current user has write access for, will be returned",
-                "operationId": "AdvertisingConversionExport.getConversionExports",
+                "description": "Returns bandwidth metrics for the requested site, period, and segment.",
+                "operationId": "Bandwidth.get",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
@@ -29,360 +29,112 @@
                     {
                         "name": "idSite",
                         "in": "query",
-                        "description": "id of the site conversion exports should be returned for",
-                        "required": false,
+                        "description": "Website ID(s) to query. - Single site ID (e.g. 1) - Multiple site IDs (e.g. [1, 4, 5]) - Comma-separated list (\"1,4,5\") or \"all\"",
+                        "required": true,
                         "schema": {
                             "oneOf": [
                                 {
                                     "type": "integer"
                                 },
                                 {
-                                    "type": "string",
-                                    "default": "null"
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    }
                                 }
                             ]
                         }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "list of conversion export configurations"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Returns the (configuration) data of a specific conversion export identified by its id",
-                "operationId": "AdvertisingConversionExport.getConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idExport",
+                        "name": "period",
                         "in": "query",
-                        "description": "id of an export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "conversion export configuration"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.deleteConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Removes the conversion export with the given idExport",
-                "operationId": "AdvertisingConversionExport.deleteConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of the export to delete",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the site owning the export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "$ref": "#/components/responses/GenericSuccess"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.addConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Creates a new conversion export",
-                "operationId": "AdvertisingConversionExport.addConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the website the export is for",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "name of the conversion export",
+                        "description": "The period to process, processes data for the period containing the specified date. Allowed values: \"day\", \"week\", \"month\", \"year\", \"range\".",
                         "required": true,
                         "schema": {
                             "type": "string"
                         }
                     },
                     {
-                        "name": "type",
+                        "name": "date",
                         "in": "query",
-                        "description": "type of the export (e.g. GoogleAds, YandexAds,...)",
+                        "description": "The date or date range to process. 'YYYY-MM-DD', magic keywords (today, yesterday, lastWeek, lastMonth, lastYear), or date range (ie, 'YYYY-MM-DD,YYYY-MM-DD', lastX, previousX).",
                         "required": true,
                         "schema": {
                             "type": "string"
                         }
                     },
                     {
-                        "name": "parameters",
+                        "name": "segment",
                         "in": "query",
-                        "description": "configuration array of the export",
-                        "required": true,
+                        "description": "(Optional) Custom segment to filter the report. Example: \"referrerName==twitter.com\" Supports AND (;) and OR (,) operators. [See documentation:](https://developer.matomo.org/api-reference/reporting-api-segmentation)",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "columns",
+                        "in": "query",
+                        "description": "Optional metric columns to return. Accepts a comma-separated list, an array of metric names, or false to return all available metrics.",
+                        "required": false,
                         "schema": {
                             "oneOf": [
                                 {
                                     "type": "string"
                                 },
                                 {
-                                    "type": "integer"
+                                    "type": "array",
+                                    "items": []
                                 }
                             ]
                         }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "description": "description of the export",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": ""
-                        }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "id of the newly added report and the access token"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.regenerateAccessToken": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Generates a new access token for the export identified by idExport",
-                "operationId": "AdvertisingConversionExport.regenerateAccessToken",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of an export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "new access token"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.updateConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Updates a conversion export with new configuration data",
-                "operationId": "AdvertisingConversionExport.updateConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of the export to change",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the website the export belongs to (needs to match)",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "new name of the export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "type",
-                        "in": "query",
-                        "description": "new type of the export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "parameters",
-                        "in": "query",
-                        "description": "new configuration array",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "string"
+                        "description": "Bandwidth metrics with integer values.",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
                                 },
-                                {
-                                    "type": "integer"
+                                "example": {
+                                    "nb_total_overall_bandwidth": "0",
+                                    "nb_total_pageview_bandwidth": "0",
+                                    "nb_total_download_bandwidth": "0"
                                 }
-                            ]
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "nb_total_overall_bandwidth": {
+                                            "type": "integer"
+                                        },
+                                        "nb_total_pageview_bandwidth": {
+                                            "type": "integer"
+                                        },
+                                        "nb_total_download_bandwidth": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "nb_total_overall_bandwidth": 0,
+                                    "nb_total_pageview_bandwidth": 0,
+                                    "nb_total_download_bandwidth": 0
+                                }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "nb_total_overall_bandwidth\tnb_total_pageview_bandwidth\tnb_total_download_bandwidth\n0\t0\t0"
+                            }
                         }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "description": "new description of the export",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": ""
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "$ref": "#/components/responses/GenericSuccess"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1220,8 +972,8 @@
     ],
     "tags": [
         {
-            "name": "AdvertisingConversionExport",
-            "description": "Public API for managing advertising conversion exports. Provides endpoints to list, create, update, and delete export configurations."
+            "name": "Bandwidth",
+            "description": "Bandwidth API lets you request bandwidth metrics for page views and downloads."
         }
     ],
     "externalDocs": {

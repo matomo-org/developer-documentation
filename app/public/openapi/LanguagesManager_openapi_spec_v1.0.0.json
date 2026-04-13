@@ -1,0 +1,2521 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Matomo Reporting API for LanguagesManager plugin",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://5x-dev.ddev.site/",
+            "description": "Current Matomo instance"
+        },
+        {
+            "url": "https://demo.matomo.cloud/",
+            "description": "Matomo demo server"
+        }
+    ],
+    "paths": {
+        "/index.php?module=API&method=LanguagesManager.isLanguageAvailable": {
+            "get": {
+                "tags": [
+                    "LanguagesManager"
+                ],
+                "description": "Returns whether a language code can be used in the current Matomo instance.",
+                "operationId": "LanguagesManager.isLanguageAvailable",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "languageCode",
+                        "in": "query",
+                        "description": "The ISO language code to validate.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "_ignoreConfig",
+                        "in": "query",
+                        "description": "Whether to ignore the configured language allowlist.",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "True if the language is available, `false` otherwise.",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": [
+                                    "1"
+                                ]
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "value": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "value": true
+                                }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "value\n1"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=LanguagesManager.getAvailableLanguages": {
+            "get": {
+                "tags": [
+                    "LanguagesManager"
+                ],
+                "description": "Returns the available Matomo language codes.",
+                "operationId": "LanguagesManager.getAvailableLanguages",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "_ignoreConfig",
+                        "in": "query",
+                        "description": "Whether to ignore the configured language allowlist.",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Available ISO language codes.",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        "am",
+                                        "ar",
+                                        "be",
+                                        "bg",
+                                        "bn",
+                                        "bs",
+                                        "ca",
+                                        "cs",
+                                        "cy",
+                                        "da",
+                                        "de",
+                                        "el",
+                                        "en",
+                                        "eo",
+                                        "es-ar",
+                                        "es",
+                                        "et",
+                                        "eu",
+                                        "fa",
+                                        "fi",
+                                        "fr",
+                                        "gl",
+                                        "gu",
+                                        "he",
+                                        "hi",
+                                        "hr",
+                                        "hu",
+                                        "id",
+                                        "is",
+                                        "it",
+                                        "ja",
+                                        "ka",
+                                        "ko",
+                                        "ku",
+                                        "lt",
+                                        "lv",
+                                        "nb",
+                                        "nl",
+                                        "nn",
+                                        "pl",
+                                        "pt-br",
+                                        "pt",
+                                        "ro",
+                                        "ru",
+                                        "sk",
+                                        "sl",
+                                        "sq",
+                                        "sr",
+                                        "sv",
+                                        "ta",
+                                        "te",
+                                        "th",
+                                        "tl",
+                                        "tr",
+                                        "uk",
+                                        "vi",
+                                        "zh-cn",
+                                        "zh-tw"
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": []
+                                },
+                                "example": [
+                                    "am",
+                                    "ar",
+                                    "be",
+                                    "bg",
+                                    "bn",
+                                    "bs",
+                                    "ca",
+                                    "cs",
+                                    "cy",
+                                    "da",
+                                    "de",
+                                    "el",
+                                    "en",
+                                    "eo",
+                                    "es-ar",
+                                    "es",
+                                    "et",
+                                    "eu",
+                                    "fa",
+                                    "fi",
+                                    "fr",
+                                    "gl",
+                                    "gu",
+                                    "he",
+                                    "hi",
+                                    "hr",
+                                    "hu",
+                                    "id",
+                                    "is",
+                                    "it",
+                                    "ja",
+                                    "ka",
+                                    "ko",
+                                    "ku",
+                                    "lt",
+                                    "lv",
+                                    "nb",
+                                    "nl",
+                                    "nn",
+                                    "pl",
+                                    "pt-br",
+                                    "pt",
+                                    "ro",
+                                    "ru",
+                                    "sk",
+                                    "sl",
+                                    "sq",
+                                    "sr",
+                                    "sv",
+                                    "ta",
+                                    "te",
+                                    "th",
+                                    "tl",
+                                    "tr",
+                                    "uk",
+                                    "vi",
+                                    "zh-cn",
+                                    "zh-tw"
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "am\nar\nbe\nbg\nbn\nbs\nca\ncs\ncy\nda\nde\nel\nen\neo\nes-ar\nes\net\neu\nfa\nfi\nfr\ngl\ngu\nhe\nhi\nhr\nhu\nid\nis\nit\nja\nka\nko\nku\nlt\nlv\nnb\nnl\nnn\npl\npt-br\npt\nro\nru\nsk\nsl\nsq\nsr\nsv\nta\nte\nth\ntl\ntr\nuk\nvi\nzh-cn\nzh-tw"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=LanguagesManager.getAvailableLanguagesInfo": {
+            "get": {
+                "tags": [
+                    "LanguagesManager"
+                ],
+                "description": "Returns translation coverage information for each available language.",
+                "operationId": "LanguagesManager.getAvailableLanguagesInfo",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "excludeNonCorePlugins",
+                        "in": "query",
+                        "description": "Whether to exclude non-core plugins from the translation percentage calculation.",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": true
+                        }
+                    },
+                    {
+                        "name": "_ignoreConfig",
+                        "in": "query",
+                        "description": "Whether to ignore the configured language allowlist.",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Translation metadata for each available language, including code, names, translators, and completion percentage.",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "code": "am",
+                                            "name": "\\u12a0\\u121b\\u122d\\u129b",
+                                            "english_name": "Amharic",
+                                            "translators": "Alazar Tekle \\/ Ethiopia Map",
+                                            "percentage_complete": "21%"
+                                        },
+                                        {
+                                            "code": "ar",
+                                            "name": "\\u0627\\u0644\\u0639\\u0631\\u0628\\u064a\\u0629",
+                                            "english_name": "Arabic",
+                                            "translators": "Mustafa Rawi, Benkheil Abdelouali",
+                                            "percentage_complete": "38%"
+                                        },
+                                        {
+                                            "code": "be",
+                                            "name": "\\u0411\\u0435\\u043b\\u0430\\u0440\\u0443\\u0441\\u043a\\u0430\\u044f",
+                                            "english_name": "Belarusian",
+                                            "translators": "Marcis G, Alban 'r4bble' Ardua, Iflexion design",
+                                            "percentage_complete": "29%"
+                                        },
+                                        {
+                                            "code": "bg",
+                                            "name": "\\u0411\\u044a\\u043b\\u0433\\u0430\\u0440\\u0441\\u043a\\u0438",
+                                            "english_name": "Bulgarian",
+                                            "translators": "Kristalin Chavdarov, \\u0410\\u043d\\u0434\\u043e\\u043d \\u0418\\u0432\\u0430\\u043d\\u043e\\u0432, Tom Atanasov, Dimitar Stamenov, \\u041f\\u0430\\u043d\\u0430\\u0439\\u043e\\u0442\\u0438\\u0441 \\u041a\\u043e\\u043d\\u0434\\u043e\\u044f\\u043d\\u0438\\u0441",
+                                            "percentage_complete": "82%"
+                                        },
+                                        {
+                                            "code": "bn",
+                                            "name": "\\u09ac\\u09be\\u0982\\u09b2\\u09be",
+                                            "english_name": "Bangla",
+                                            "translators": "Anjan Dutta, Rezaul Hasan",
+                                            "percentage_complete": "18%"
+                                        },
+                                        {
+                                            "code": "bs",
+                                            "name": "Bosanski",
+                                            "english_name": "Bosnian",
+                                            "translators": "Matomo",
+                                            "percentage_complete": "24%"
+                                        },
+                                        {
+                                            "code": "ca",
+                                            "name": "Catal\\u00e0",
+                                            "english_name": "Catalan",
+                                            "translators": "Isaac S\\u00e1nchez Barrera, Joan Juvanteny",
+                                            "percentage_complete": "99%"
+                                        },
+                                        {
+                                            "code": "cs",
+                                            "name": "\\u010ce\\u0161tina",
+                                            "english_name": "Czech",
+                                            "translators": "Filip Bartmann, Jakub Bal\\u00e1\\u0161, Michal \\u010ciha\\u0159, <a href=\"https:\\/\\/www.openhub.net\\/accounts\\/svetlemodry\">Jaroslav Lichtblau<\\/a>",
+                                            "percentage_complete": "65%"
+                                        },
+                                        {
+                                            "code": "cy",
+                                            "name": "Cymraeg",
+                                            "english_name": "Welsh",
+                                            "translators": "Hefin Williams",
+                                            "percentage_complete": "19%"
+                                        },
+                                        {
+                                            "code": "da",
+                                            "name": "Dansk",
+                                            "english_name": "Danish",
+                                            "translators": "<a href=\"http:\\/\\/danieljuhl.dk\\/\">Daniel Juhl<\\/a>, jan madsen",
+                                            "percentage_complete": "56%"
+                                        },
+                                        {
+                                            "code": "de",
+                                            "name": "Deutsch",
+                                            "english_name": "German",
+                                            "translators": "Frank Bueltge, Thorsten Taube, Arthur W. Borens, Marco Ziesing, Andreas Just, Fabian Becker, Henry M\\u00fcller, Pascal Herbert, Christian W. Schneider, Michael Stenz, Itransition, Timo Besenreuther, Stefan Giehl",
+                                            "percentage_complete": "94%"
+                                        },
+                                        {
+                                            "code": "el",
+                                            "name": "\\u0395\\u03bb\\u03bb\\u03b7\\u03bd\\u03b9\\u03ba\\u03ac",
+                                            "english_name": "Greek",
+                                            "translators": "Jim Black, \\u0393\\u03b5\\u03ce\\u03c1\\u03b3\\u03b9\\u03bf\\u03c2 \\u03a4\\u03ad\\u03bb\\u03bb\\u03bf\\u03c2 OnSite.Net VoIP & IT Solutions, \\u03a0\\u03b1\\u03bd\\u03b1\\u03b3\\u03b9\\u03ce\\u03c4\\u03b7\\u03c2 \\u03a0\\u03b1\\u03c0\\u03ac\\u03b6\\u03bf\\u03b3\\u03bb\\u03bf\\u03c5 \\u0394\\u03c1. \\u0394\\u03b1\\u03c3\\u03bf\\u03bb\\u03cc\\u03b3\\u03bf\\u03c2-\\u03a0\\u03b5\\u03c1\\u03b9\\u03b2\\u03b1\\u03bb\\u03bb\\u03bf\\u03bd\\u03c4\\u03bf\\u03bb\\u03cc\\u03b3\\u03bf\\u03c2, \\u039b\\u03bf\\u03cd\\u03c1\\u03b4\\u03b1\\u03c2 \\u0392\\u03b1\\u03c3\\u03af\\u03bb\\u03b5\\u03b9\\u03bf\\u03c2, <a href=\"https:\\/\\/gr.linkedin.com\\/in\\/lourdas\">Vasilis Lourdas<\\/a>",
+                                            "percentage_complete": "99%"
+                                        },
+                                        {
+                                            "code": "en",
+                                            "name": "English",
+                                            "english_name": "English",
+                                            "translators": "-",
+                                            "percentage_complete": "100%"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "code": {
+                                                        "type": "string"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "english_name": {
+                                                        "type": "string"
+                                                    },
+                                                    "translators": {
+                                                        "type": "string"
+                                                    },
+                                                    "percentage_complete": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "code": "am",
+                                        "name": "\\u12a0\\u121b\\u122d\\u129b",
+                                        "english_name": "Amharic",
+                                        "translators": "Alazar Tekle \\/ Ethiopia Map",
+                                        "percentage_complete": "21%"
+                                    },
+                                    {
+                                        "code": "ar",
+                                        "name": "\\u0627\\u0644\\u0639\\u0631\\u0628\\u064a\\u0629",
+                                        "english_name": "Arabic",
+                                        "translators": "Mustafa Rawi, Benkheil Abdelouali",
+                                        "percentage_complete": "38%"
+                                    },
+                                    {
+                                        "code": "be",
+                                        "name": "\\u0411\\u0435\\u043b\\u0430\\u0440\\u0443\\u0441\\u043a\\u0430\\u044f",
+                                        "english_name": "Belarusian",
+                                        "translators": "Marcis G, Alban 'r4bble' Ardua, Iflexion design",
+                                        "percentage_complete": "29%"
+                                    },
+                                    {
+                                        "code": "bg",
+                                        "name": "\\u0411\\u044a\\u043b\\u0433\\u0430\\u0440\\u0441\\u043a\\u0438",
+                                        "english_name": "Bulgarian",
+                                        "translators": "Kristalin Chavdarov, \\u0410\\u043d\\u0434\\u043e\\u043d \\u0418\\u0432\\u0430\\u043d\\u043e\\u0432, Tom Atanasov, Dimitar Stamenov, \\u041f\\u0430\\u043d\\u0430\\u0439\\u043e\\u0442\\u0438\\u0441 \\u041a\\u043e\\u043d\\u0434\\u043e\\u044f\\u043d\\u0438\\u0441",
+                                        "percentage_complete": "82%"
+                                    },
+                                    {
+                                        "code": "bn",
+                                        "name": "\\u09ac\\u09be\\u0982\\u09b2\\u09be",
+                                        "english_name": "Bangla",
+                                        "translators": "Anjan Dutta, Rezaul Hasan",
+                                        "percentage_complete": "18%"
+                                    },
+                                    {
+                                        "code": "bs",
+                                        "name": "Bosanski",
+                                        "english_name": "Bosnian",
+                                        "translators": "Matomo",
+                                        "percentage_complete": "24%"
+                                    },
+                                    {
+                                        "code": "ca",
+                                        "name": "Catal\\u00e0",
+                                        "english_name": "Catalan",
+                                        "translators": "Isaac S\\u00e1nchez Barrera, Joan Juvanteny",
+                                        "percentage_complete": "99%"
+                                    },
+                                    {
+                                        "code": "cs",
+                                        "name": "\\u010ce\\u0161tina",
+                                        "english_name": "Czech",
+                                        "translators": "Filip Bartmann, Jakub Bal\\u00e1\\u0161, Michal \\u010ciha\\u0159, <a href=\"https:\\/\\/www.openhub.net\\/accounts\\/svetlemodry\">Jaroslav Lichtblau<\\/a>",
+                                        "percentage_complete": "65%"
+                                    },
+                                    {
+                                        "code": "cy",
+                                        "name": "Cymraeg",
+                                        "english_name": "Welsh",
+                                        "translators": "Hefin Williams",
+                                        "percentage_complete": "19%"
+                                    },
+                                    {
+                                        "code": "da",
+                                        "name": "Dansk",
+                                        "english_name": "Danish",
+                                        "translators": "<a href=\"http:\\/\\/danieljuhl.dk\\/\">Daniel Juhl<\\/a>, jan madsen",
+                                        "percentage_complete": "56%"
+                                    },
+                                    {
+                                        "code": "de",
+                                        "name": "Deutsch",
+                                        "english_name": "German",
+                                        "translators": "Frank Bueltge, Thorsten Taube, Arthur W. Borens, Marco Ziesing, Andreas Just, Fabian Becker, Henry M\\u00fcller, Pascal Herbert, Christian W. Schneider, Michael Stenz, Itransition, Timo Besenreuther, Stefan Giehl",
+                                        "percentage_complete": "94%"
+                                    },
+                                    {
+                                        "code": "el",
+                                        "name": "\\u0395\\u03bb\\u03bb\\u03b7\\u03bd\\u03b9\\u03ba\\u03ac",
+                                        "english_name": "Greek",
+                                        "translators": "Jim Black, \\u0393\\u03b5\\u03ce\\u03c1\\u03b3\\u03b9\\u03bf\\u03c2 \\u03a4\\u03ad\\u03bb\\u03bb\\u03bf\\u03c2 OnSite.Net VoIP & IT Solutions, \\u03a0\\u03b1\\u03bd\\u03b1\\u03b3\\u03b9\\u03ce\\u03c4\\u03b7\\u03c2 \\u03a0\\u03b1\\u03c0\\u03ac\\u03b6\\u03bf\\u03b3\\u03bb\\u03bf\\u03c5 \\u0394\\u03c1. \\u0394\\u03b1\\u03c3\\u03bf\\u03bb\\u03cc\\u03b3\\u03bf\\u03c2-\\u03a0\\u03b5\\u03c1\\u03b9\\u03b2\\u03b1\\u03bb\\u03bb\\u03bf\\u03bd\\u03c4\\u03bf\\u03bb\\u03cc\\u03b3\\u03bf\\u03c2, \\u039b\\u03bf\\u03cd\\u03c1\\u03b4\\u03b1\\u03c2 \\u0392\\u03b1\\u03c3\\u03af\\u03bb\\u03b5\\u03b9\\u03bf\\u03c2, <a href=\"https:\\/\\/gr.linkedin.com\\/in\\/lourdas\">Vasilis Lourdas<\\/a>",
+                                        "percentage_complete": "99%"
+                                    },
+                                    {
+                                        "code": "en",
+                                        "name": "English",
+                                        "english_name": "English",
+                                        "translators": "-",
+                                        "percentage_complete": "100%"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "code\tname\tenglish_name\ttranslators\tpercentage_complete\nam\t\u12a0\u121b\u122d\u129b\tAmharic\tAlazar Tekle / Ethiopia Map\t21%\nar\t\u0627\u0644\u0639\u0631\u0628\u064a\u0629\tArabic\t\"Mustafa Rawi, Benkheil Abdelouali\"\t38%\nbe\t\u0411\u0435\u043b\u0430\u0440\u0443\u0441\u043a\u0430\u044f\tBelarusian\t\"Marcis G, Alban 'r4bble' Ardua, Iflexion design\"\t29%\nbg\t\u0411\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u0438\tBulgarian\t\"Kristalin Chavdarov, \u0410\u043d\u0434\u043e\u043d \u0418\u0432\u0430\u043d\u043e\u0432, Tom Atanasov, Dimitar Stamenov, \u041f\u0430\u043d\u0430\u0439\u043e\u0442\u0438\u0441 \u041a\u043e\u043d\u0434\u043e\u044f\u043d\u0438\u0441\"\t82%\nbn\t\u09ac\u09be\u0982\u09b2\u09be\tBangla\t\"Anjan Dutta, Rezaul Hasan\"\t18%\nbs\tBosanski\tBosnian\tMatomo\t24%\nca\tCatal\u00e0\tCatalan\t\"Isaac S\u00e1nchez Barrera, Joan Juvanteny\"\t99%\ncs\t\u010ce\u0161tina\tCzech\t\"Filip Bartmann, Jakub Bal\u00e1\u0161, Michal \u010ciha\u0159, <a href=\"\"https://www.openhub.net/accounts/svetlemodry\"\">Jaroslav Lichtblau</a>\"\t65%\ncy\tCymraeg\tWelsh\tHefin Williams\t19%\nda\tDansk\tDanish\t\"<a href=\"\"http://danieljuhl.dk/\"\">Daniel Juhl</a>, jan madsen\"\t56%\nde\tDeutsch\tGerman\t\"Frank Bueltge, Thorsten Taube, Arthur W. Borens, Marco Ziesing, Andreas Just, Fabian Becker, Henry M\u00fcller, Pascal Herbert, Christian W. Schneider, Michael Stenz, Itransition, Timo Besenreuther, Stefan Giehl\"\t94%\nel\t\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac\tGreek\t\"Jim Black, \u0393\u03b5\u03ce\u03c1\u03b3\u03b9\u03bf\u03c2 \u03a4\u03ad\u03bb\u03bb\u03bf\u03c2 OnSite.Net VoIP & IT Solutions, \u03a0\u03b1\u03bd\u03b1\u03b3\u03b9\u03ce\u03c4\u03b7\u03c2 \u03a0\u03b1\u03c0\u03ac\u03b6\u03bf\u03b3\u03bb\u03bf\u03c5 \u0394\u03c1. \u0394\u03b1\u03c3\u03bf\u03bb\u03cc\u03b3\u03bf\u03c2-\u03a0\u03b5\u03c1\u03b9\u03b2\u03b1\u03bb\u03bb\u03bf\u03bd\u03c4\u03bf\u03bb\u03cc\u03b3\u03bf\u03c2, \u039b\u03bf\u03cd\u03c1\u03b4\u03b1\u03c2 \u0392\u03b1\u03c3\u03af\u03bb\u03b5\u03b9\u03bf\u03c2, <a href=\"\"https://gr.linkedin.com/in/lourdas\"\">Vasilis Lourdas</a>\"\t99%\nen\tEnglish\tEnglish\t'-\t100%\neo\tEsperanto\tEsperanto\t\"David de Ugarte, Manuel Ortega\"\t23%\nes-ar\tEspa\u00f1ol (Argentina)\tSpanish (Argentina)\tKNTRO\t70%\nes\tEspa\u00f1ol\tSpanish\t\"Marcos Alberto Sanmart\u00edn Pereira, David Ernesto Soto V\u00e1squez, Fernando SFEIR, Dar\u00edo Here\u00f1u, David \u00c1lvarez Robert, Adri\u00e1n Seldes, H\u00e9ctor Nicol\u00e1s Suero, <a href=\"\"https://twitter.com/evelascosilva\"\">Enrique Velasco</a>\"\t76%\net\tEesti\tEstonian\t\"<a href=\"\"http://ee.linkedin.com/in/aivokoger/\"\">Aivo Koger</a>, Kaido Toomingas\"\t38%\neu\tEuskara\tBasque\tLibrezale.org\t89%\nfa\t\u0641\u0627\u0631\u0633\u06cc\tPersian\t\"reza abbasi, ParsiGate and Sweddata, Hojat Ghanad\"\t46%\nfi\tSuomi\tFinnish\t\"<a href=\"\"http://olli.jarva.fi/\"\">Olli Jarva</a>\"\t66%\nfr\tFran\u00e7ais\tFrench\t\"Vincent BIRET, Ludovic Evrard, Daniel Castronovo\"\t98%\ngl\tGalego\tGalician\t\"OUSLI - Ourense Software Libre, Antonio Andina\"\t22%\ngu\t\u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0ac0\tGujarati\tKalpesh Mahida\t77%\nhe\t\u05e2\u05d1\u05e8\u05d9\u05ea\tHebrew\tNirlah - Nir Lahad\t31%\nhi\t\u0939\u093f\u0928\u094d\u0926\u0940\tHindi\t\"Ajoft Softwares , Ritesh Kumar , Rahul Patil\"\t42%\nhr\tHrvatski\tCroatian\t\"Tomislav Ribi\u010di\u0107, Mirko Lednicki\"\t39%\nhu\tMagyar\tHungarian\t\"J\u00f3zsef J\u00e1roli, Viktor Horvath & Mr. Balu, KardiWeb\"\t33%\nid\tIndonesia\tIndonesian\t\"Bayu Aditya H, Djaka PM, Hendry Lee\"\t80%\nis\t\u00cdslenska\tIcelandic\t\"Anna Jonna \u00c1rmannsd\u00f3ttir, \u00cdvar Bj\u00f6rn Hilmarsson, J\u00f3hann B. Gu\u00f0mundsson\"\t22%\nit\tItaliano\tItalian\t\"Alessandro Coscia, Giovdi, Yusef Maali, Andrea Marchitelli (CILEA), <a href=\"\"https://www.fabriziorocca.it/\"\">Fabrizio Rocca</a>, Ted Mosby, Alfio E. Fresta, Giovanni Matina, Blau, Enzo Ferrara\"\t87%\nka\t\u1ca5\u10d0\u10e0\u10d7\u10e3\u10da\u10d8\tGeorgian\tKasia\t26%"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=LanguagesManager.getAvailableLanguageNames": {
+            "get": {
+                "tags": [
+                    "LanguagesManager"
+                ],
+                "description": "Returns the available languages with their localized and English names.",
+                "operationId": "LanguagesManager.getAvailableLanguageNames",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "_ignoreConfig",
+                        "in": "query",
+                        "description": "Whether to ignore the configured language allowlist.",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Available languages with `code`, `name`, and `english_name` fields.",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "code": "am",
+                                            "name": "\\u12a0\\u121b\\u122d\\u129b",
+                                            "english_name": "Amharic"
+                                        },
+                                        {
+                                            "code": "ar",
+                                            "name": "\\u0627\\u0644\\u0639\\u0631\\u0628\\u064a\\u0629",
+                                            "english_name": "Arabic"
+                                        },
+                                        {
+                                            "code": "be",
+                                            "name": "\\u0411\\u0435\\u043b\\u0430\\u0440\\u0443\\u0441\\u043a\\u0430\\u044f",
+                                            "english_name": "Belarusian"
+                                        },
+                                        {
+                                            "code": "bg",
+                                            "name": "\\u0411\\u044a\\u043b\\u0433\\u0430\\u0440\\u0441\\u043a\\u0438",
+                                            "english_name": "Bulgarian"
+                                        },
+                                        {
+                                            "code": "bn",
+                                            "name": "\\u09ac\\u09be\\u0982\\u09b2\\u09be",
+                                            "english_name": "Bangla"
+                                        },
+                                        {
+                                            "code": "bs",
+                                            "name": "Bosanski",
+                                            "english_name": "Bosnian"
+                                        },
+                                        {
+                                            "code": "ca",
+                                            "name": "Catal\\u00e0",
+                                            "english_name": "Catalan"
+                                        },
+                                        {
+                                            "code": "cs",
+                                            "name": "\\u010ce\\u0161tina",
+                                            "english_name": "Czech"
+                                        },
+                                        {
+                                            "code": "cy",
+                                            "name": "Cymraeg",
+                                            "english_name": "Welsh"
+                                        },
+                                        {
+                                            "code": "da",
+                                            "name": "Dansk",
+                                            "english_name": "Danish"
+                                        },
+                                        {
+                                            "code": "de",
+                                            "name": "Deutsch",
+                                            "english_name": "German"
+                                        },
+                                        {
+                                            "code": "el",
+                                            "name": "\\u0395\\u03bb\\u03bb\\u03b7\\u03bd\\u03b9\\u03ba\\u03ac",
+                                            "english_name": "Greek"
+                                        },
+                                        {
+                                            "code": "en",
+                                            "name": "English",
+                                            "english_name": "English"
+                                        },
+                                        {
+                                            "code": "eo",
+                                            "name": "Esperanto",
+                                            "english_name": "Esperanto"
+                                        },
+                                        {
+                                            "code": "es-ar",
+                                            "name": "Espa\\u00f1ol (Argentina)",
+                                            "english_name": "Spanish (Argentina)"
+                                        },
+                                        {
+                                            "code": "es",
+                                            "name": "Espa\\u00f1ol",
+                                            "english_name": "Spanish"
+                                        },
+                                        {
+                                            "code": "et",
+                                            "name": "Eesti",
+                                            "english_name": "Estonian"
+                                        },
+                                        {
+                                            "code": "eu",
+                                            "name": "Euskara",
+                                            "english_name": "Basque"
+                                        },
+                                        {
+                                            "code": "fa",
+                                            "name": "\\u0641\\u0627\\u0631\\u0633\\u06cc",
+                                            "english_name": "Persian"
+                                        },
+                                        {
+                                            "code": "fi",
+                                            "name": "Suomi",
+                                            "english_name": "Finnish"
+                                        },
+                                        {
+                                            "code": "fr",
+                                            "name": "Fran\\u00e7ais",
+                                            "english_name": "French"
+                                        },
+                                        {
+                                            "code": "gl",
+                                            "name": "Galego",
+                                            "english_name": "Galician"
+                                        },
+                                        {
+                                            "code": "gu",
+                                            "name": "\\u0a97\\u0ac1\\u0a9c\\u0ab0\\u0abe\\u0aa4\\u0ac0",
+                                            "english_name": "Gujarati"
+                                        },
+                                        {
+                                            "code": "he",
+                                            "name": "\\u05e2\\u05d1\\u05e8\\u05d9\\u05ea",
+                                            "english_name": "Hebrew"
+                                        },
+                                        {
+                                            "code": "hi",
+                                            "name": "\\u0939\\u093f\\u0928\\u094d\\u0926\\u0940",
+                                            "english_name": "Hindi"
+                                        },
+                                        {
+                                            "code": "hr",
+                                            "name": "Hrvatski",
+                                            "english_name": "Croatian"
+                                        },
+                                        {
+                                            "code": "hu",
+                                            "name": "Magyar",
+                                            "english_name": "Hungarian"
+                                        },
+                                        {
+                                            "code": "id",
+                                            "name": "Indonesia",
+                                            "english_name": "Indonesian"
+                                        },
+                                        {
+                                            "code": "is",
+                                            "name": "\\u00cdslenska",
+                                            "english_name": "Icelandic"
+                                        },
+                                        {
+                                            "code": "it",
+                                            "name": "Italiano",
+                                            "english_name": "Italian"
+                                        },
+                                        {
+                                            "code": "ja",
+                                            "name": "\\u65e5\\u672c\\u8a9e",
+                                            "english_name": "Japanese"
+                                        },
+                                        {
+                                            "code": "ka",
+                                            "name": "\\u1ca5\\u10d0\\u10e0\\u10d7\\u10e3\\u10da\\u10d8",
+                                            "english_name": "Georgian"
+                                        },
+                                        {
+                                            "code": "ko",
+                                            "name": "\\ud55c\\uad6d\\uc5b4",
+                                            "english_name": "Korean"
+                                        },
+                                        {
+                                            "code": "ku",
+                                            "name": "Kurd\\u00ee (kurmanc\\u00ee)",
+                                            "english_name": "Kurdish"
+                                        },
+                                        {
+                                            "code": "lt",
+                                            "name": "Lietuvi\\u0173",
+                                            "english_name": "Lithuanian"
+                                        },
+                                        {
+                                            "code": "lv",
+                                            "name": "Latvie\\u0161u",
+                                            "english_name": "Latvian"
+                                        },
+                                        {
+                                            "code": "nb",
+                                            "name": "Norsk bokm\\u00e5l",
+                                            "english_name": "Norwegian Bokm\\u00e5l"
+                                        },
+                                        {
+                                            "code": "nl",
+                                            "name": "Nederlands",
+                                            "english_name": "Dutch"
+                                        },
+                                        {
+                                            "code": "nn",
+                                            "name": "Norsk nynorsk",
+                                            "english_name": "Norwegian Nynorsk"
+                                        },
+                                        {
+                                            "code": "pl",
+                                            "name": "Polski",
+                                            "english_name": "Polish"
+                                        },
+                                        {
+                                            "code": "pt-br",
+                                            "name": "Portugu\\u00eas",
+                                            "english_name": "Brazilian Portuguese"
+                                        },
+                                        {
+                                            "code": "pt",
+                                            "name": "Portugu\\u00eas europeu",
+                                            "english_name": "Portuguese"
+                                        },
+                                        {
+                                            "code": "ro",
+                                            "name": "Rom\\u00e2n\\u0103",
+                                            "english_name": "Romanian"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "code": {
+                                                        "type": "string"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "english_name": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "code": "am",
+                                        "name": "\\u12a0\\u121b\\u122d\\u129b",
+                                        "english_name": "Amharic"
+                                    },
+                                    {
+                                        "code": "ar",
+                                        "name": "\\u0627\\u0644\\u0639\\u0631\\u0628\\u064a\\u0629",
+                                        "english_name": "Arabic"
+                                    },
+                                    {
+                                        "code": "be",
+                                        "name": "\\u0411\\u0435\\u043b\\u0430\\u0440\\u0443\\u0441\\u043a\\u0430\\u044f",
+                                        "english_name": "Belarusian"
+                                    },
+                                    {
+                                        "code": "bg",
+                                        "name": "\\u0411\\u044a\\u043b\\u0433\\u0430\\u0440\\u0441\\u043a\\u0438",
+                                        "english_name": "Bulgarian"
+                                    },
+                                    {
+                                        "code": "bn",
+                                        "name": "\\u09ac\\u09be\\u0982\\u09b2\\u09be",
+                                        "english_name": "Bangla"
+                                    },
+                                    {
+                                        "code": "bs",
+                                        "name": "Bosanski",
+                                        "english_name": "Bosnian"
+                                    },
+                                    {
+                                        "code": "ca",
+                                        "name": "Catal\\u00e0",
+                                        "english_name": "Catalan"
+                                    },
+                                    {
+                                        "code": "cs",
+                                        "name": "\\u010ce\\u0161tina",
+                                        "english_name": "Czech"
+                                    },
+                                    {
+                                        "code": "cy",
+                                        "name": "Cymraeg",
+                                        "english_name": "Welsh"
+                                    },
+                                    {
+                                        "code": "da",
+                                        "name": "Dansk",
+                                        "english_name": "Danish"
+                                    },
+                                    {
+                                        "code": "de",
+                                        "name": "Deutsch",
+                                        "english_name": "German"
+                                    },
+                                    {
+                                        "code": "el",
+                                        "name": "\\u0395\\u03bb\\u03bb\\u03b7\\u03bd\\u03b9\\u03ba\\u03ac",
+                                        "english_name": "Greek"
+                                    },
+                                    {
+                                        "code": "en",
+                                        "name": "English",
+                                        "english_name": "English"
+                                    },
+                                    {
+                                        "code": "eo",
+                                        "name": "Esperanto",
+                                        "english_name": "Esperanto"
+                                    },
+                                    {
+                                        "code": "es-ar",
+                                        "name": "Espa\\u00f1ol (Argentina)",
+                                        "english_name": "Spanish (Argentina)"
+                                    },
+                                    {
+                                        "code": "es",
+                                        "name": "Espa\\u00f1ol",
+                                        "english_name": "Spanish"
+                                    },
+                                    {
+                                        "code": "et",
+                                        "name": "Eesti",
+                                        "english_name": "Estonian"
+                                    },
+                                    {
+                                        "code": "eu",
+                                        "name": "Euskara",
+                                        "english_name": "Basque"
+                                    },
+                                    {
+                                        "code": "fa",
+                                        "name": "\\u0641\\u0627\\u0631\\u0633\\u06cc",
+                                        "english_name": "Persian"
+                                    },
+                                    {
+                                        "code": "fi",
+                                        "name": "Suomi",
+                                        "english_name": "Finnish"
+                                    },
+                                    {
+                                        "code": "fr",
+                                        "name": "Fran\\u00e7ais",
+                                        "english_name": "French"
+                                    },
+                                    {
+                                        "code": "gl",
+                                        "name": "Galego",
+                                        "english_name": "Galician"
+                                    },
+                                    {
+                                        "code": "gu",
+                                        "name": "\\u0a97\\u0ac1\\u0a9c\\u0ab0\\u0abe\\u0aa4\\u0ac0",
+                                        "english_name": "Gujarati"
+                                    },
+                                    {
+                                        "code": "he",
+                                        "name": "\\u05e2\\u05d1\\u05e8\\u05d9\\u05ea",
+                                        "english_name": "Hebrew"
+                                    },
+                                    {
+                                        "code": "hi",
+                                        "name": "\\u0939\\u093f\\u0928\\u094d\\u0926\\u0940",
+                                        "english_name": "Hindi"
+                                    },
+                                    {
+                                        "code": "hr",
+                                        "name": "Hrvatski",
+                                        "english_name": "Croatian"
+                                    },
+                                    {
+                                        "code": "hu",
+                                        "name": "Magyar",
+                                        "english_name": "Hungarian"
+                                    },
+                                    {
+                                        "code": "id",
+                                        "name": "Indonesia",
+                                        "english_name": "Indonesian"
+                                    },
+                                    {
+                                        "code": "is",
+                                        "name": "\\u00cdslenska",
+                                        "english_name": "Icelandic"
+                                    },
+                                    {
+                                        "code": "it",
+                                        "name": "Italiano",
+                                        "english_name": "Italian"
+                                    },
+                                    {
+                                        "code": "ja",
+                                        "name": "\\u65e5\\u672c\\u8a9e",
+                                        "english_name": "Japanese"
+                                    },
+                                    {
+                                        "code": "ka",
+                                        "name": "\\u1ca5\\u10d0\\u10e0\\u10d7\\u10e3\\u10da\\u10d8",
+                                        "english_name": "Georgian"
+                                    },
+                                    {
+                                        "code": "ko",
+                                        "name": "\\ud55c\\uad6d\\uc5b4",
+                                        "english_name": "Korean"
+                                    },
+                                    {
+                                        "code": "ku",
+                                        "name": "Kurd\\u00ee (kurmanc\\u00ee)",
+                                        "english_name": "Kurdish"
+                                    },
+                                    {
+                                        "code": "lt",
+                                        "name": "Lietuvi\\u0173",
+                                        "english_name": "Lithuanian"
+                                    },
+                                    {
+                                        "code": "lv",
+                                        "name": "Latvie\\u0161u",
+                                        "english_name": "Latvian"
+                                    },
+                                    {
+                                        "code": "nb",
+                                        "name": "Norsk bokm\\u00e5l",
+                                        "english_name": "Norwegian Bokm\\u00e5l"
+                                    },
+                                    {
+                                        "code": "nl",
+                                        "name": "Nederlands",
+                                        "english_name": "Dutch"
+                                    },
+                                    {
+                                        "code": "nn",
+                                        "name": "Norsk nynorsk",
+                                        "english_name": "Norwegian Nynorsk"
+                                    },
+                                    {
+                                        "code": "pl",
+                                        "name": "Polski",
+                                        "english_name": "Polish"
+                                    },
+                                    {
+                                        "code": "pt-br",
+                                        "name": "Portugu\\u00eas",
+                                        "english_name": "Brazilian Portuguese"
+                                    },
+                                    {
+                                        "code": "pt",
+                                        "name": "Portugu\\u00eas europeu",
+                                        "english_name": "Portuguese"
+                                    },
+                                    {
+                                        "code": "ro",
+                                        "name": "Rom\\u00e2n\\u0103",
+                                        "english_name": "Romanian"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "code\tname\tenglish_name\nam\t\u12a0\u121b\u122d\u129b\tAmharic\nar\t\u0627\u0644\u0639\u0631\u0628\u064a\u0629\tArabic\nbe\t\u0411\u0435\u043b\u0430\u0440\u0443\u0441\u043a\u0430\u044f\tBelarusian\nbg\t\u0411\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u0438\tBulgarian\nbn\t\u09ac\u09be\u0982\u09b2\u09be\tBangla\nbs\tBosanski\tBosnian\nca\tCatal\u00e0\tCatalan\ncs\t\u010ce\u0161tina\tCzech\ncy\tCymraeg\tWelsh\nda\tDansk\tDanish\nde\tDeutsch\tGerman\nel\t\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac\tGreek\nen\tEnglish\tEnglish\neo\tEsperanto\tEsperanto\nes-ar\tEspa\u00f1ol (Argentina)\tSpanish (Argentina)\nes\tEspa\u00f1ol\tSpanish\net\tEesti\tEstonian\neu\tEuskara\tBasque\nfa\t\u0641\u0627\u0631\u0633\u06cc\tPersian\nfi\tSuomi\tFinnish\nfr\tFran\u00e7ais\tFrench\ngl\tGalego\tGalician\ngu\t\u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0ac0\tGujarati\nhe\t\u05e2\u05d1\u05e8\u05d9\u05ea\tHebrew\nhi\t\u0939\u093f\u0928\u094d\u0926\u0940\tHindi\nhr\tHrvatski\tCroatian\nhu\tMagyar\tHungarian\nid\tIndonesia\tIndonesian\nis\t\u00cdslenska\tIcelandic\nit\tItaliano\tItalian\nja\t\u65e5\u672c\u8a9e\tJapanese\nka\t\u1ca5\u10d0\u10e0\u10d7\u10e3\u10da\u10d8\tGeorgian\nko\t\ud55c\uad6d\uc5b4\tKorean\nku\tKurd\u00ee (kurmanc\u00ee)\tKurdish\nlt\tLietuvi\u0173\tLithuanian\nlv\tLatvie\u0161u\tLatvian\nnb\tNorsk bokm\u00e5l\tNorwegian Bokm\u00e5l\nnl\tNederlands\tDutch\nnn\tNorsk nynorsk\tNorwegian Nynorsk\npl\tPolski\tPolish\npt-br\tPortugu\u00eas\tBrazilian Portuguese\npt\tPortugu\u00eas europeu\tPortuguese\nro\tRom\u00e2n\u0103\tRomanian\nru\t\u0420\u0443\u0441\u0441\u043a\u0438\u0439\tRussian\nsk\tSloven\u010dina\tSlovak\nsl\tSloven\u0161\u010dina\tSlovenian\nsq\tShqip\tAlbanian\nsr\t\u0421\u0440\u043f\u0441\u043a\u0438\tSerbian\nsv\tSvenska\tSwedish\nta\t\u0ba4\u0bae\u0bbf\u0bb4\u0bcd\tTamil\nte\t\u0c24\u0c46\u0c32\u0c41\u0c17\u0c41\tTelugu\nth\t\u0e44\u0e17\u0e22\tThai\ntl\tTagalog\tTagalog\ntr\tT\u00fcrk\u00e7e\tTurkish\nuk\t\u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430\tUkrainian\nvi\tTi\u1ebfng Vi\u1ec7t\tVietnamese\nzh-cn\t\u7b80\u4f53\u4e2d\u6587\tSimplified Chinese\nzh-tw\t\u7e41\u9ad4\u4e2d\u6587\tTraditional Chinese"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=LanguagesManager.getTranslationsForLanguage": {
+            "get": {
+                "tags": [
+                    "LanguagesManager"
+                ],
+                "description": "Returns translation strings for a specific language across core and loaded plugins.",
+                "operationId": "LanguagesManager.getTranslationsForLanguage",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "languageCode",
+                        "in": "query",
+                        "description": "The ISO language code to load.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Translation entries with `label` and `value` keys, or `false` if the language is unavailable.",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "label": "General_12HourClock",
+                                            "value": "Syst\\u00e8me horaire sur 12 heures"
+                                        },
+                                        {
+                                            "label": "General_24HourClock",
+                                            "value": "Syst\\u00e8me horaire sur 24 heures"
+                                        },
+                                        {
+                                            "label": "General_AIAssistants",
+                                            "value": "Assistants IA"
+                                        },
+                                        {
+                                            "label": "General_API",
+                                            "value": "API"
+                                        },
+                                        {
+                                            "label": "General_AbandonedCarts",
+                                            "value": "Paniers abandonn\\u00e9s"
+                                        },
+                                        {
+                                            "label": "General_AboutPiwikX",
+                                            "value": "\\u00c0 propos de Matomo %s"
+                                        },
+                                        {
+                                            "label": "General_Action",
+                                            "value": "Action"
+                                        },
+                                        {
+                                            "label": "General_Actions",
+                                            "value": "Actions"
+                                        },
+                                        {
+                                            "label": "General_Add",
+                                            "value": "Ajouter"
+                                        },
+                                        {
+                                            "label": "General_AfterEntry",
+                                            "value": "apr\\u00e8s \\u00eatre entr\\u00e9 ici"
+                                        },
+                                        {
+                                            "label": "General_All",
+                                            "value": "Tous"
+                                        },
+                                        {
+                                            "label": "General_AllWebsitesDashboard",
+                                            "value": "Tableau de bord de tous les sites web"
+                                        },
+                                        {
+                                            "label": "General_AllowPiwikArchivingToTriggerBrowser",
+                                            "value": "Archiver les rapports lorsqu'ils sont affich\\u00e9s depuis le navigateur"
+                                        },
+                                        {
+                                            "label": "General_And",
+                                            "value": "et"
+                                        },
+                                        {
+                                            "label": "General_AnyPositiveInteger",
+                                            "value": "Tout entier positif"
+                                        },
+                                        {
+                                            "label": "General_Apply",
+                                            "value": "Appliquer"
+                                        },
+                                        {
+                                            "label": "General_ArchivingInlineHelp",
+                                            "value": "Pour les sites web au trafic moyen \\u00e0 \\u00e9lev\\u00e9, il est recommand\\u00e9 de d\\u00e9sactiver l'archivage de Matomo depuis le navigateur. Nous vous recommandons de mettre en place une t\\u00e2che planifi\\u00e9e cron pour traiter les rapports Matomo toutes les heures."
+                                        },
+                                        {
+                                            "label": "General_ArchivingTriggerDescription",
+                                            "value": "Recommand\\u00e9 pour les installations importantes de Matomo, vous devriez %1$s mettre en place une t\\u00e2che planifi\\u00e9e cron %2$s pour g\\u00e9n\\u00e9rer les rapports automatiquement."
+                                        },
+                                        {
+                                            "label": "General_ArchivingTriggerSegment",
+                                            "value": "L'utilisation de segments personnalis\\u00e9s d\\u00e9clenchera toujours le traitement des archives."
+                                        },
+                                        {
+                                            "label": "General_AuthenticationMethodSmtp",
+                                            "value": "M\\u00e9thode d'authentification pour le serveur SMTP"
+                                        },
+                                        {
+                                            "label": "General_AverageOrderValue",
+                                            "value": "Valeur moyenne d'une commande"
+                                        },
+                                        {
+                                            "label": "General_AveragePrice",
+                                            "value": "Prix moyen"
+                                        },
+                                        {
+                                            "label": "General_AverageQuantity",
+                                            "value": "Quantit\\u00e9 moyenne"
+                                        },
+                                        {
+                                            "label": "General_AverageX",
+                                            "value": "Moy. %s"
+                                        },
+                                        {
+                                            "label": "General_BackToPiwik",
+                                            "value": "Retourner \\u00e0 Matomo"
+                                        },
+                                        {
+                                            "label": "General_Broken",
+                                            "value": "Divis\\u00e9"
+                                        },
+                                        {
+                                            "label": "General_BrokenDownReportDocumentation",
+                                            "value": "Il est divis\\u00e9 en plusieurs rapports, qui sont affich\\u00e9s en lignes de tendance en bas de la page. Vous pouvez agrandir le graphique en cliquant sur le rapport que vous souhaitez voir."
+                                        },
+                                        {
+                                            "label": "General_Cancel",
+                                            "value": "Annuler"
+                                        },
+                                        {
+                                            "label": "General_CannotUnzipFile",
+                                            "value": "Impossible de d\\u00e9compresser le ficher %1$s\\u00a0: %2$s"
+                                        },
+                                        {
+                                            "label": "General_ChangeInX",
+                                            "value": "Variation en %1$s"
+                                        },
+                                        {
+                                            "label": "General_ChangePassword",
+                                            "value": "Modifier le mot de passe"
+                                        },
+                                        {
+                                            "label": "General_ChangeTagCloudView",
+                                            "value": "Veuillez noter que vous pouvez visualiser le rapport sous une autre forme qu'un nuage d'\\u00e9tiquettes. Pour cela, utilisez les options en dessous du rapport."
+                                        },
+                                        {
+                                            "label": "General_Close",
+                                            "value": "Fermer"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "value": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "label": "General_12HourClock",
+                                        "value": "Syst\\u00e8me horaire sur 12 heures"
+                                    },
+                                    {
+                                        "label": "General_24HourClock",
+                                        "value": "Syst\\u00e8me horaire sur 24 heures"
+                                    },
+                                    {
+                                        "label": "General_AIAssistants",
+                                        "value": "Assistants IA"
+                                    },
+                                    {
+                                        "label": "General_API",
+                                        "value": "API"
+                                    },
+                                    {
+                                        "label": "General_AbandonedCarts",
+                                        "value": "Paniers abandonn\\u00e9s"
+                                    },
+                                    {
+                                        "label": "General_AboutPiwikX",
+                                        "value": "\\u00c0 propos de Matomo %s"
+                                    },
+                                    {
+                                        "label": "General_Action",
+                                        "value": "Action"
+                                    },
+                                    {
+                                        "label": "General_Actions",
+                                        "value": "Actions"
+                                    },
+                                    {
+                                        "label": "General_Add",
+                                        "value": "Ajouter"
+                                    },
+                                    {
+                                        "label": "General_AfterEntry",
+                                        "value": "apr\\u00e8s \\u00eatre entr\\u00e9 ici"
+                                    },
+                                    {
+                                        "label": "General_All",
+                                        "value": "Tous"
+                                    },
+                                    {
+                                        "label": "General_AllWebsitesDashboard",
+                                        "value": "Tableau de bord de tous les sites web"
+                                    },
+                                    {
+                                        "label": "General_AllowPiwikArchivingToTriggerBrowser",
+                                        "value": "Archiver les rapports lorsqu'ils sont affich\\u00e9s depuis le navigateur"
+                                    },
+                                    {
+                                        "label": "General_And",
+                                        "value": "et"
+                                    },
+                                    {
+                                        "label": "General_AnyPositiveInteger",
+                                        "value": "Tout entier positif"
+                                    },
+                                    {
+                                        "label": "General_Apply",
+                                        "value": "Appliquer"
+                                    },
+                                    {
+                                        "label": "General_ArchivingInlineHelp",
+                                        "value": "Pour les sites web au trafic moyen \\u00e0 \\u00e9lev\\u00e9, il est recommand\\u00e9 de d\\u00e9sactiver l'archivage de Matomo depuis le navigateur. Nous vous recommandons de mettre en place une t\\u00e2che planifi\\u00e9e cron pour traiter les rapports Matomo toutes les heures."
+                                    },
+                                    {
+                                        "label": "General_ArchivingTriggerDescription",
+                                        "value": "Recommand\\u00e9 pour les installations importantes de Matomo, vous devriez %1$s mettre en place une t\\u00e2che planifi\\u00e9e cron %2$s pour g\\u00e9n\\u00e9rer les rapports automatiquement."
+                                    },
+                                    {
+                                        "label": "General_ArchivingTriggerSegment",
+                                        "value": "L'utilisation de segments personnalis\\u00e9s d\\u00e9clenchera toujours le traitement des archives."
+                                    },
+                                    {
+                                        "label": "General_AuthenticationMethodSmtp",
+                                        "value": "M\\u00e9thode d'authentification pour le serveur SMTP"
+                                    },
+                                    {
+                                        "label": "General_AverageOrderValue",
+                                        "value": "Valeur moyenne d'une commande"
+                                    },
+                                    {
+                                        "label": "General_AveragePrice",
+                                        "value": "Prix moyen"
+                                    },
+                                    {
+                                        "label": "General_AverageQuantity",
+                                        "value": "Quantit\\u00e9 moyenne"
+                                    },
+                                    {
+                                        "label": "General_AverageX",
+                                        "value": "Moy. %s"
+                                    },
+                                    {
+                                        "label": "General_BackToPiwik",
+                                        "value": "Retourner \\u00e0 Matomo"
+                                    },
+                                    {
+                                        "label": "General_Broken",
+                                        "value": "Divis\\u00e9"
+                                    },
+                                    {
+                                        "label": "General_BrokenDownReportDocumentation",
+                                        "value": "Il est divis\\u00e9 en plusieurs rapports, qui sont affich\\u00e9s en lignes de tendance en bas de la page. Vous pouvez agrandir le graphique en cliquant sur le rapport que vous souhaitez voir."
+                                    },
+                                    {
+                                        "label": "General_Cancel",
+                                        "value": "Annuler"
+                                    },
+                                    {
+                                        "label": "General_CannotUnzipFile",
+                                        "value": "Impossible de d\\u00e9compresser le ficher %1$s\\u00a0: %2$s"
+                                    },
+                                    {
+                                        "label": "General_ChangeInX",
+                                        "value": "Variation en %1$s"
+                                    },
+                                    {
+                                        "label": "General_ChangePassword",
+                                        "value": "Modifier le mot de passe"
+                                    },
+                                    {
+                                        "label": "General_ChangeTagCloudView",
+                                        "value": "Veuillez noter que vous pouvez visualiser le rapport sous une autre forme qu'un nuage d'\\u00e9tiquettes. Pour cela, utilisez les options en dessous du rapport."
+                                    },
+                                    {
+                                        "label": "General_Close",
+                                        "value": "Fermer"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tvalue\nGeneral_12HourClock\tSyst\u00e8me horaire sur 12 heures\nGeneral_24HourClock\tSyst\u00e8me horaire sur 24 heures\nGeneral_AIAssistants\tAssistants IA\nGeneral_API\tAPI\nGeneral_AbandonedCarts\tPaniers abandonn\u00e9s\nGeneral_AboutPiwikX\t\u00c0 propos de Matomo %s\nGeneral_Action\tAction\nGeneral_Actions\tActions\nGeneral_Add\tAjouter\nGeneral_AfterEntry\tapr\u00e8s \u00eatre entr\u00e9 ici\nGeneral_All\tTous\nGeneral_AllWebsitesDashboard\tTableau de bord de tous les sites web\nGeneral_AllowPiwikArchivingToTriggerBrowser\tArchiver les rapports lorsqu'ils sont affich\u00e9s depuis le navigateur\nGeneral_And\tet\nGeneral_AnyPositiveInteger\tTout entier positif\nGeneral_Apply\tAppliquer\nGeneral_ArchivingInlineHelp\t\"Pour les sites web au trafic moyen \u00e0 \u00e9lev\u00e9, il est recommand\u00e9 de d\u00e9sactiver l'archivage de Matomo depuis le navigateur. Nous vous recommandons de mettre en place une t\u00e2che planifi\u00e9e cron pour traiter les rapports Matomo toutes les heures.\"\nGeneral_ArchivingTriggerDescription\t\"Recommand\u00e9 pour les installations importantes de Matomo, vous devriez %1$s mettre en place une t\u00e2che planifi\u00e9e cron %2$s pour g\u00e9n\u00e9rer les rapports automatiquement.\"\nGeneral_ArchivingTriggerSegment\tL'utilisation de segments personnalis\u00e9s d\u00e9clenchera toujours le traitement des archives.\nGeneral_AuthenticationMethodSmtp\tM\u00e9thode d'authentification pour le serveur SMTP\nGeneral_AverageOrderValue\tValeur moyenne d'une commande\nGeneral_AveragePrice\tPrix moyen\nGeneral_AverageQuantity\tQuantit\u00e9 moyenne\nGeneral_AverageX\tMoy. %s\nGeneral_BackToPiwik\tRetourner \u00e0 Matomo\nGeneral_Broken\tDivis\u00e9\nGeneral_BrokenDownReportDocumentation\t\"Il est divis\u00e9 en plusieurs rapports, qui sont affich\u00e9s en lignes de tendance en bas de la page. Vous pouvez agrandir le graphique en cliquant sur le rapport que vous souhaitez voir.\"\nGeneral_Cancel\tAnnuler\nGeneral_CannotUnzipFile\tImpossible de d\u00e9compresser le ficher %1$s\u00a0: %2$s\nGeneral_ChangeInX\tVariation en %1$s\nGeneral_ChangePassword\tModifier le mot de passe\nGeneral_ChangeTagCloudView\t\"Veuillez noter que vous pouvez visualiser le rapport sous une autre forme qu'un nuage d'\u00e9tiquettes. Pour cela, utilisez les options en dessous du rapport.\"\nGeneral_ChooseDate\t\"Choisissez une date, la date actuellement s\u00e9lectionn\u00e9e est\u00a0: %s\"\nGeneral_ChooseLanguage\tS\u00e9lectionnez la langue\nGeneral_ChoosePeriod\tS\u00e9lectionnez la p\u00e9riode\nGeneral_Clear\tR\u00e9initialiser\nGeneral_ClickHere\tCliquez ici pour plus d'informations.\nGeneral_ClickToRemoveComp\tCliquez pour supprimer cette comparaison.\nGeneral_ClickToSearch\tCliquez pour effectuer une recherche\nGeneral_ClickX\t\"Cliquez sur \"\"%1$s\"\".\"\nGeneral_Close\tFermer\nGeneral_ColumnActionsPerVisit\tActions par visite\nGeneral_ColumnActionsPerVisitDocumentation\t\"Nombre moyen d'actions (affichages de page, recherches, t\u00e9l\u00e9chargements ou liens sortants) qui ont \u00e9t\u00e9 effectu\u00e9es durant les visites.\"\nGeneral_ColumnAverageGenerationTime\tTemps moyen de g\u00e9n\u00e9ration\nGeneral_ColumnAverageTimeOnPage\tTemps moyen sur la page\nGeneral_ColumnBounceRate\tTaux de rebond"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=LanguagesManager.getLanguageForUser": {
+            "get": {
+                "tags": [
+                    "LanguagesManager"
+                ],
+                "description": "Returns the saved language preference for a user.",
+                "operationId": "LanguagesManager.getLanguageForUser",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "login",
+                        "in": "query",
+                        "description": "The user login to read the language for.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The saved language code, or `false` for the anonymous user."
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=LanguagesManager.setLanguageForUser": {
+            "get": {
+                "tags": [
+                    "LanguagesManager"
+                ],
+                "description": "Stores the language preference for a user.",
+                "operationId": "LanguagesManager.setLanguageForUser",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "login",
+                        "in": "query",
+                        "description": "The user login to update.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "languageCode",
+                        "in": "query",
+                        "description": "The ISO language code to store.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "`true` if the language was stored, `false` if the language code is unavailable."
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=LanguagesManager.uses12HourClockForUser": {
+            "get": {
+                "tags": [
+                    "LanguagesManager"
+                ],
+                "description": "Returns whether a user prefers 12-hour time formatting.",
+                "operationId": "LanguagesManager.uses12HourClockForUser",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "login",
+                        "in": "query",
+                        "description": "The user login to query.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "`true` if the user uses a 12-hour clock, `false` otherwise or for the anonymous user."
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=LanguagesManager.set12HourClockForUser": {
+            "get": {
+                "tags": [
+                    "LanguagesManager"
+                ],
+                "description": "Stores whether a user prefers 12-hour time formatting.",
+                "operationId": "LanguagesManager.set12HourClockForUser",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "login",
+                        "in": "query",
+                        "description": "The user login to update.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "use12HourClock",
+                        "in": "query",
+                        "description": "Whether to enable 12-hour clock formatting.",
+                        "required": true,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "`true` if the preference was stored, `false` for the anonymous user."
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GenericSuccess": {
+                "description": "Generic Matomo success payload.",
+                "required": [
+                    "result",
+                    "message"
+                ],
+                "properties": {
+                    "result": {
+                        "type": "string",
+                        "example": "success"
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "ok"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "example": "200"
+                    }
+                },
+                "type": "object",
+                "example": {
+                    "result": "success",
+                    "message": "ok"
+                },
+                "additionalProperties": true
+            },
+            "GenericSuccessXml": {
+                "description": "Generic Matomo success payload in XML.",
+                "required": [
+                    "success"
+                ],
+                "properties": {
+                    "success": {
+                        "properties": {
+                            "message": {
+                                "type": "string",
+                                "xml": {
+                                    "attribute": true
+                                },
+                                "example": "ok"
+                            }
+                        },
+                        "type": "object",
+                        "xml": {
+                            "name": "success"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "result"
+                },
+                "example": {
+                    "success": {
+                        "message": "ok"
+                    }
+                },
+                "additionalProperties": true
+            },
+            "Error": {
+                "description": "Generic Matomo error payload.",
+                "required": [
+                    "result",
+                    "message"
+                ],
+                "properties": {
+                    "result": {
+                        "type": "string",
+                        "example": "error"
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "There was an error"
+                    },
+                    "code": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "additionalProperties": true
+            },
+            "ErrorXml": {
+                "description": "Generic Matomo error payload in XML.",
+                "properties": {
+                    "error": {
+                        "properties": {
+                            "message": {
+                                "type": "string",
+                                "xml": {
+                                    "attribute": true
+                                },
+                                "example": "There was an error"
+                            }
+                        },
+                        "type": "object",
+                        "xml": {
+                            "name": "error"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "result"
+                }
+            }
+        },
+        "responses": {
+            "BadRequest": {
+                "description": "Bad request (validation or missing parameters).",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: There was an error."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "There was an error."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "Unauthorized": {
+                "description": "Authentication failed or missing token.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: You must be logged in to access this functionality."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "You must be logged in to access this functionality."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "Forbidden": {
+                "description": "Authenticated but not allowed to access the resource.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: Not authorised."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Not authorised."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "NotFound": {
+                "description": "Resource not found.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: The method is not available."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "The method is not available."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "ServerError": {
+                "description": "Unexpected server error.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: There was an error."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "There was an error."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "DefaultError": {
+                "description": "Default error response (any non-2xx).",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: There was an error."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "There was an error."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "GenericSuccessNoBody": {
+                "description": "Generic 200 response with no body"
+            },
+            "GenericSuccess": {
+                "description": "Generic 200 response",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Success:ok"
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "<!-- Success: ok -->"
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/GenericSuccess"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/GenericSuccessXml"
+                        }
+                    }
+                }
+            },
+            "GenericString": {
+                "description": "Generic 200 response with only a string body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Result: success"
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "success"
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "GenericBoolean": {
+                "description": "Generic 200 response with only true or false as the body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                }
+            },
+            "GenericInteger": {
+                "description": "Generic 200 response with only an integer as the body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            },
+            "GenericArray": {
+                "description": "Generic 200 response with array body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "array",
+                            "items": []
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "array",
+                            "items": []
+                        }
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "moduleRequired": {
+                "name": "module",
+                "in": "query",
+                "description": "Always `API` for Reporting API requests.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "default": "API"
+                }
+            },
+            "methodRequired": {
+                "name": "method",
+                "in": "query",
+                "description": "API method, e.g. `VisitsSummary.get` or `CustomAlerts.getAlert`.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "example": "CustomAlerts.getAlert"
+                }
+            },
+            "formatRequired": {
+                "name": "format",
+                "in": "query",
+                "description": "Response format such as `xml` or `json`. Use `original` to get the original PHP data structure.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "default": "xml",
+                    "enum": [
+                        "xml",
+                        "json",
+                        "csv",
+                        "tsv",
+                        "html",
+                        "rss",
+                        "original"
+                    ]
+                }
+            },
+            "formatOptional": {
+                "name": "format",
+                "in": "query",
+                "description": "Response format. Defaults to `xml`. Use `original` to get the original PHP data structure.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "default": "xml",
+                    "enum": [
+                        "xml",
+                        "json",
+                        "csv",
+                        "tsv",
+                        "html",
+                        "rss",
+                        "original"
+                    ]
+                }
+            },
+            "idSiteRequired": {
+                "name": "idSite",
+                "in": "query",
+                "description": "Matomo site ID.",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "example": 1
+                }
+            },
+            "idSiteOptional": {
+                "name": "idSite",
+                "in": "query",
+                "description": "Matomo site ID.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "example": 1
+                }
+            },
+            "periodRequired": {
+                "name": "period",
+                "in": "query",
+                "description": "Reporting period.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "day",
+                        "week",
+                        "month",
+                        "year",
+                        "range"
+                    ],
+                    "example": "day"
+                }
+            },
+            "periodOptional": {
+                "name": "period",
+                "in": "query",
+                "description": "Reporting period.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "day",
+                        "week",
+                        "month",
+                        "year",
+                        "range"
+                    ],
+                    "example": "day"
+                }
+            },
+            "dateRequired": {
+                "name": "date",
+                "in": "query",
+                "description": "Date or range (e.g. `2025-08-01`, `yesterday`, `last30`, or `2025-08-01,2025-08-11`).",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "example": "today"
+                }
+            },
+            "dateOptional": {
+                "name": "date",
+                "in": "query",
+                "description": "Date or range (e.g. `2025-08-01`, `yesterday`, `last30`, or `2025-08-01,2025-08-11`).",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "today"
+                }
+            },
+            "segmentRequired": {
+                "name": "segment",
+                "in": "query",
+                "description": "Segment expression; see `API.getSegmentDimensionMetadata`.",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "segmentOptional": {
+                "name": "segment",
+                "in": "query",
+                "description": "Segment expression; see `API.getSegmentDimensionMetadata`.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "expandedOptional": {
+                "name": "expanded",
+                "in": "query",
+                "description": "If true, loads all subtables.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "default": 0,
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "idSubtableOptional": {
+                "name": "idSubtable",
+                "in": "query",
+                "description": "An in-database subtable ID.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "idSubtableRequired": {
+                "name": "idSubtable",
+                "in": "query",
+                "description": "An in-database subtable ID.",
+                "required": true,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "flatOptional": {
+                "name": "flat",
+                "in": "query",
+                "description": "Flatten subtables into the parent table.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "filter_patternOptional": {
+                "name": "filter_pattern",
+                "in": "query",
+                "description": "Regex to keep matching rows.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_columnOptional": {
+                "name": "filter_column",
+                "in": "query",
+                "description": "Column to apply the regex to (e.g., `label`).",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "label"
+                }
+            },
+            "filter_pattern_recursiveOptional": {
+                "name": "filter_pattern_recursive",
+                "in": "query",
+                "description": "Recursive regex filter.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_column_recursiveOptional": {
+                "name": "filter_column_recursive",
+                "in": "query",
+                "description": "Column for the recursive regex filter.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_excludelowpopOptional": {
+                "name": "filter_excludelowpop",
+                "in": "query",
+                "description": "Column to threshold and exclude low values.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_excludelowpop_valueOptional": {
+                "name": "filter_excludelowpop_value",
+                "in": "query",
+                "description": "Minimum value threshold for `filter_excludelowpop`.",
+                "required": false,
+                "schema": {
+                    "type": "number",
+                    "example": 0
+                }
+            },
+            "filter_sort_columnOptional": {
+                "name": "filter_sort_column",
+                "in": "query",
+                "description": "Column to sort by.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_sort_orderOptional": {
+                "name": "filter_sort_order",
+                "in": "query",
+                "description": "Sort direction.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "example": "desc"
+                }
+            },
+            "filter_truncateOptional": {
+                "name": "filter_truncate",
+                "in": "query",
+                "description": "Row index after which rows are removed.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "filter_limitOptional": {
+                "name": "filter_limit",
+                "in": "query",
+                "description": "Maximum number of rows to return.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "filter_offsetOptional": {
+                "name": "filter_offset",
+                "in": "query",
+                "description": "Row offset.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "keep_summary_rowOptional": {
+                "name": "keep_summary_row",
+                "in": "query",
+                "description": "Keep the summary row.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 1
+                }
+            },
+            "disable_generic_filtersOptional": {
+                "name": "disable_generic_filters",
+                "in": "query",
+                "description": "Disable generic filters (those above).",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "disable_queued_filtersOptional": {
+                "name": "disable_queued_filters",
+                "in": "query",
+                "description": "Skip queued filters.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "hideColumnsOptional": {
+                "name": "hideColumns",
+                "in": "query",
+                "description": "Comma-separated list of columns to hide.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "showColumnsOptional": {
+                "name": "showColumns",
+                "in": "query",
+                "description": "Comma-separated list of columns to include.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "labelOptional": {
+                "name": "label",
+                "in": "query",
+                "description": "Keep only rows with these label(s). Supports path via '>' and arrays.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "idGoalRequired": {
+                "name": "idGoal",
+                "in": "query",
+                "description": "The ID of a configured goal.",
+                "required": true,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "idGoalOptional": {
+                "name": "idGoal",
+                "in": "query",
+                "description": "The ID of a configured goal.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            }
+        },
+        "securitySchemes": {
+            "MatomoToken": {
+                "type": "http",
+                "description": "Matomo API token passed in the Authorization header as a bearer token. For demo.matomo.cloud requests, use the anonymous token value: anonymous.",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "security": [
+        {
+            "MatomoToken": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "LanguagesManager",
+            "description": "The LanguagesManager API lets you access existing Matomo translations, and change Users languages preferences.  \"getTranslationsForLanguage\" will return all translation strings for a given language, so you can leverage Matomo translations in your application (and automatically benefit from the <a href='https://matomo.org/translations/' rel='noreferrer' target='_blank'>40+ translations</a>!). This is mostly useful to developers who integrate Matomo API results in their own application.  You can also request the default language to load for a user via \"getLanguageForUser\", or update it via \"setLanguageForUser\"."
+        }
+    ],
+    "externalDocs": {
+        "description": "Matomo Reporting API developer page",
+        "url": "https://developer.matomo.org/api-reference/reporting-api/"
+    }
+}

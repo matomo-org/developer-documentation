@@ -1,7 +1,7 @@
 {
     "openapi": "3.1.0",
     "info": {
-        "title": "Matomo Reporting API for AdvertisingConversionExport plugin",
+        "title": "Matomo Reporting API for UserLanguage plugin",
         "version": "1.0.0"
     },
     "servers": [
@@ -15,229 +15,132 @@
         }
     ],
     "paths": {
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExports": {
+        "/index.php?module=API&method=UserLanguage.getLanguage": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "UserLanguage"
                 ],
-                "description": "Returns all configured conversion exports for the given idSite if idSite is omitted, all conversion exports of sites, the current user has write access for, will be returned",
-                "operationId": "AdvertisingConversionExport.getConversionExports",
+                "description": "",
+                "operationId": "UserLanguage.getLanguage",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the site conversion exports should be returned for",
-                        "required": false,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "integer"
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
                                 },
-                                {
-                                    "type": "string",
-                                    "default": "null"
+                                "example": {
+                                    "row": {
+                                        "label": "Unknown",
+                                        "nb_uniq_visitors": "20",
+                                        "nb_visits": "20",
+                                        "nb_actions": "56",
+                                        "nb_users": "0",
+                                        "max_actions": "9",
+                                        "sum_visit_length": "979",
+                                        "bounce_count": "10",
+                                        "nb_visits_converted": "1",
+                                        "segment": "languageCode==xx"
+                                    }
                                 }
-                            ]
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "list of conversion export configurations"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Returns the (configuration) data of a specific conversion export identified by its id",
-                "operationId": "AdvertisingConversionExport.getConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of an export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "conversion export configuration"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.deleteConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Removes the conversion export with the given idExport",
-                "operationId": "AdvertisingConversionExport.deleteConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of the export to delete",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the site owning the export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "$ref": "#/components/responses/GenericSuccess"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.addConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Creates a new conversion export",
-                "operationId": "AdvertisingConversionExport.addConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the website the export is for",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "name of the conversion export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "type",
-                        "in": "query",
-                        "description": "type of the export (e.g. GoogleAds, YandexAds,...)",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "parameters",
-                        "in": "query",
-                        "description": "configuration array of the export",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "string"
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_uniq_visitors": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_visits": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_actions": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_users": {
+                                                        "type": "integer"
+                                                    },
+                                                    "max_actions": {
+                                                        "type": "integer"
+                                                    },
+                                                    "sum_visit_length": {
+                                                        "type": "string"
+                                                    },
+                                                    "bounce_count": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_visits_converted": {
+                                                        "type": "string"
+                                                    },
+                                                    "segment": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
                                 },
-                                {
-                                    "type": "integer"
-                                }
-                            ]
+                                "example": [
+                                    {
+                                        "label": "Unknown",
+                                        "nb_uniq_visitors": 20,
+                                        "nb_visits": 20,
+                                        "nb_actions": "56",
+                                        "nb_users": 0,
+                                        "max_actions": 9,
+                                        "sum_visit_length": "979",
+                                        "bounce_count": "10",
+                                        "nb_visits_converted": "1",
+                                        "segment": "languageCode==xx"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_uniq_visitors\tnb_visits\tnb_actions\tnb_users\tmax_actions\tsum_visit_length\tbounce_count\tnb_visits_converted\tmetadata_segment\nUnknown\t20\t20\t56\t0\t9\t979\t10\t1\tlanguageCode==xx"
+                            }
                         }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "description": "description of the export",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": ""
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "id of the newly added report and the access token"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -260,129 +163,132 @@
                 }
             }
         },
-        "/index.php?module=API&method=AdvertisingConversionExport.regenerateAccessToken": {
+        "/index.php?module=API&method=UserLanguage.getLanguageCode": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "UserLanguage"
                 ],
-                "description": "Generates a new access token for the export identified by idExport",
-                "operationId": "AdvertisingConversionExport.regenerateAccessToken",
+                "description": "",
+                "operationId": "UserLanguage.getLanguageCode",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of an export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/periodRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/dateRequired"
+                    },
+                    {
+                        "$ref": "#/components/parameters/segmentOptional"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "new access token"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.updateConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Updates a conversion export with new configuration data",
-                "operationId": "AdvertisingConversionExport.updateConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of the export to change",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the website the export belongs to (needs to match)",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "new name of the export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "type",
-                        "in": "query",
-                        "description": "new type of the export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "parameters",
-                        "in": "query",
-                        "description": "new configuration array",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "string"
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
                                 },
-                                {
-                                    "type": "integer"
+                                "example": {
+                                    "row": {
+                                        "label": "Unknown (xx)",
+                                        "nb_uniq_visitors": "20",
+                                        "nb_visits": "20",
+                                        "nb_actions": "56",
+                                        "nb_users": "0",
+                                        "max_actions": "9",
+                                        "sum_visit_length": "979",
+                                        "bounce_count": "10",
+                                        "nb_visits_converted": "1",
+                                        "segment": "languageCode==xx"
+                                    }
                                 }
-                            ]
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_uniq_visitors": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_visits": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nb_actions": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_users": {
+                                                        "type": "integer"
+                                                    },
+                                                    "max_actions": {
+                                                        "type": "integer"
+                                                    },
+                                                    "sum_visit_length": {
+                                                        "type": "string"
+                                                    },
+                                                    "bounce_count": {
+                                                        "type": "string"
+                                                    },
+                                                    "nb_visits_converted": {
+                                                        "type": "string"
+                                                    },
+                                                    "segment": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "label": "Unknown (xx)",
+                                        "nb_uniq_visitors": 20,
+                                        "nb_visits": 20,
+                                        "nb_actions": "56",
+                                        "nb_users": 0,
+                                        "max_actions": 9,
+                                        "sum_visit_length": "979",
+                                        "bounce_count": "10",
+                                        "nb_visits_converted": "1",
+                                        "segment": "languageCode==xx"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "label\tnb_uniq_visitors\tnb_visits\tnb_actions\tnb_users\tmax_actions\tsum_visit_length\tbounce_count\tnb_visits_converted\tmetadata_segment\nUnknown (xx)\t20\t20\t56\t0\t9\t979\t10\t1\tlanguageCode==xx"
+                            }
                         }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "description": "new description of the export",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": ""
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "$ref": "#/components/responses/GenericSuccess"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1220,8 +1126,8 @@
     ],
     "tags": [
         {
-            "name": "AdvertisingConversionExport",
-            "description": "Public API for managing advertising conversion exports. Provides endpoints to list, create, update, and delete export configurations."
+            "name": "UserLanguage",
+            "description": "The UserLanguage API lets you access reports about your Visitors language setting"
         }
     ],
     "externalDocs": {

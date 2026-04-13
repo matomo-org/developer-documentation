@@ -1,7 +1,7 @@
 {
     "openapi": "3.1.0",
     "info": {
-        "title": "Matomo Reporting API for AdvertisingConversionExport plugin",
+        "title": "Matomo Reporting API for Dashboard plugin",
         "version": "1.0.0"
     },
     "servers": [
@@ -15,38 +15,199 @@
         }
     ],
     "paths": {
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExports": {
+        "/index.php?module=API&method=Dashboard.getDashboards": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "Dashboard"
                 ],
-                "description": "Returns all configured conversion exports for the given idSite if idSite is omitted, all conversion exports of sites, the current user has write access for, will be returned",
-                "operationId": "AdvertisingConversionExport.getConversionExports",
+                "description": "Get each dashboard that belongs to a user including the containing widgets that are placed within each dashboard.",
+                "operationId": "Dashboard.getDashboards",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idSite",
+                        "name": "login",
                         "in": "query",
-                        "description": "id of the site conversion exports should be returned for",
+                        "description": "Login of the user [defaults to current user]",
                         "required": false,
                         "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "integer"
+                            "type": "string",
+                            "default": ""
+                        }
+                    },
+                    {
+                        "name": "returnDefaultIfEmpty",
+                        "in": "query",
+                        "description": "disable return of default dashboard",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": true
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "row": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "xml": {
+                                                                "name": "row"
+                                                            },
+                                                            "additionalProperties": true
+                                                        }
+                                                    }
+                                                },
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
                                 },
-                                {
-                                    "type": "string",
-                                    "default": "null"
+                                "example": {
+                                    "row": {
+                                        "name": "Dashboard",
+                                        "id": "1",
+                                        "widgets": {
+                                            "row": [
+                                                {
+                                                    "module": "Live",
+                                                    "action": "widget"
+                                                },
+                                                {
+                                                    "module": "CoreHome",
+                                                    "action": "getPromoVideo"
+                                                },
+                                                {
+                                                    "module": "VisitsSummary",
+                                                    "action": "getEvolutionGraph"
+                                                },
+                                                {
+                                                    "module": "Insights",
+                                                    "action": "getOverallMoversAndShakers"
+                                                },
+                                                {
+                                                    "module": "VisitsSummary",
+                                                    "action": "get"
+                                                },
+                                                {
+                                                    "module": "UserCountryMap",
+                                                    "action": "visitorMap"
+                                                },
+                                                {
+                                                    "module": "Referrers",
+                                                    "action": "getReferrerType"
+                                                },
+                                                {
+                                                    "module": "RssWidget",
+                                                    "action": "rssPiwik"
+                                                }
+                                            ]
+                                        }
+                                    }
                                 }
-                            ]
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "id": {
+                                                        "type": "integer"
+                                                    },
+                                                    "widgets": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "properties": {
+                                                                "": {
+                                                                    "properties": {
+                                                                        "module": {
+                                                                            "type": "string"
+                                                                        },
+                                                                        "action": {
+                                                                            "type": "string"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                }
+                                                            },
+                                                            "type": "object",
+                                                            "additionalProperties": true
+                                                        }
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "name": "Dashboard",
+                                        "id": 1,
+                                        "widgets": [
+                                            {
+                                                "module": "Live",
+                                                "action": "widget"
+                                            },
+                                            {
+                                                "module": "CoreHome",
+                                                "action": "getPromoVideo"
+                                            },
+                                            {
+                                                "module": "VisitsSummary",
+                                                "action": "getEvolutionGraph"
+                                            },
+                                            {
+                                                "module": "Insights",
+                                                "action": "getOverallMoversAndShakers"
+                                            },
+                                            {
+                                                "module": "VisitsSummary",
+                                                "action": "get"
+                                            },
+                                            {
+                                                "module": "UserCountryMap",
+                                                "action": "visitorMap"
+                                            },
+                                            {
+                                                "module": "Referrers",
+                                                "action": "getReferrerType"
+                                            },
+                                            {
+                                                "module": "RssWidget",
+                                                "action": "rssPiwik"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
                         }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "list of conversion export configurations"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -69,165 +230,96 @@
                 }
             }
         },
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExport": {
+        "/index.php?module=API&method=Dashboard.createNewDashboardForUser": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "Dashboard"
                 ],
-                "description": "Returns the (configuration) data of a specific conversion export identified by its id",
-                "operationId": "AdvertisingConversionExport.getConversionExport",
+                "description": "Creates a new dashboard for the given login",
+                "operationId": "Dashboard.createNewDashboardForUser",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idExport",
+                        "name": "login",
                         "in": "query",
-                        "description": "id of an export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "conversion export configuration"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.deleteConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Removes the conversion export with the given idExport",
-                "operationId": "AdvertisingConversionExport.deleteConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of the export to delete",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the site owning the export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "$ref": "#/components/responses/GenericSuccess"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.addConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Creates a new conversion export",
-                "operationId": "AdvertisingConversionExport.addConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the website the export is for",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "name of the conversion export",
+                        "description": "login of the user that dashboard should be created for",
                         "required": true,
                         "schema": {
                             "type": "string"
                         }
                     },
                     {
-                        "name": "type",
+                        "name": "dashboardName",
                         "in": "query",
-                        "description": "type of the export (e.g. GoogleAds, YandexAds,...)",
-                        "required": true,
+                        "description": "name of the new dashboard",
+                        "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "default": ""
                         }
                     },
                     {
-                        "name": "parameters",
+                        "name": "addDefaultWidgets",
                         "in": "query",
-                        "description": "configuration array of the export",
+                        "description": "whether to add the current default widget collection or not",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": true
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Dashboard.removeDashboard": {
+            "get": {
+                "tags": [
+                    "Dashboard"
+                ],
+                "description": "Removes a dashboard according to given dashboard id and login",
+                "operationId": "Dashboard.removeDashboard",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idDashboard",
+                        "in": "query",
+                        "description": "id of the dashboard to be removed",
                         "required": true,
                         "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "integer"
-                                }
-                            ]
+                            "type": "integer"
                         }
                     },
                     {
-                        "name": "description",
+                        "name": "login",
                         "in": "query",
-                        "description": "description of the export",
+                        "description": "Login of the dashboard user [defaults to current user]",
                         "required": false,
                         "schema": {
                             "type": "string",
@@ -237,7 +329,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "id of the newly added report and the access token"
+                        "description": "OK"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -260,119 +352,39 @@
                 }
             }
         },
-        "/index.php?module=API&method=AdvertisingConversionExport.regenerateAccessToken": {
+        "/index.php?module=API&method=Dashboard.copyDashboardToUser": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "Dashboard"
                 ],
-                "description": "Generates a new access token for the export identified by idExport",
-                "operationId": "AdvertisingConversionExport.regenerateAccessToken",
+                "description": "Copy a dashboard of current user to another user",
+                "operationId": "Dashboard.copyDashboardToUser",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idExport",
+                        "name": "idDashboard",
                         "in": "query",
-                        "description": "id of an export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "new access token"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.updateConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Updates a conversion export with new configuration data",
-                "operationId": "AdvertisingConversionExport.updateConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of the export to change",
+                        "description": "Id of the dashboard that should be copied",
                         "required": true,
                         "schema": {
                             "type": "integer"
                         }
                     },
                     {
-                        "name": "idSite",
+                        "name": "copyToUser",
                         "in": "query",
-                        "description": "id of the website the export belongs to (needs to match)",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "new name of the export",
+                        "description": "User the dashboard should be copied to",
                         "required": true,
                         "schema": {
                             "type": "string"
                         }
                     },
                     {
-                        "name": "type",
+                        "name": "dashboardName",
                         "in": "query",
-                        "description": "new type of the export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "parameters",
-                        "in": "query",
-                        "description": "new configuration array",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "integer"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "description": "new description of the export",
+                        "description": "Name of the new dashboard (defaults to 'Dashboard of {user}')",
                         "required": false,
                         "schema": {
                             "type": "string",
@@ -382,7 +394,63 @@
                 ],
                 "responses": {
                     "200": {
-                        "$ref": "#/components/responses/GenericSuccess"
+                        "description": "id of the new dashboard"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=Dashboard.resetDashboardLayout": {
+            "get": {
+                "tags": [
+                    "Dashboard"
+                ],
+                "description": "Resets a dashboard to the default widget configuration",
+                "operationId": "Dashboard.resetDashboardLayout",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idDashboard",
+                        "in": "query",
+                        "description": "dashboard id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "login",
+                        "in": "query",
+                        "description": "user the dashboard belongs",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1220,8 +1288,8 @@
     ],
     "tags": [
         {
-            "name": "AdvertisingConversionExport",
-            "description": "Public API for managing advertising conversion exports. Provides endpoints to list, create, update, and delete export configurations."
+            "name": "Dashboard",
+            "description": "This API is the <a href='https://matomo.org/docs/analytics-api/reference/' rel='noreferrer' target='_blank'>Dashboard API</a>: it gives information about dashboards."
         }
     ],
     "externalDocs": {

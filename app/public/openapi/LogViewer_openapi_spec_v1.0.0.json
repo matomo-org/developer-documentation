@@ -1,7 +1,7 @@
 {
     "openapi": "3.1.0",
     "info": {
-        "title": "Matomo Reporting API for AdvertisingConversionExport plugin",
+        "title": "Matomo Reporting API for LogViewer plugin",
         "version": "1.0.0"
     },
     "servers": [
@@ -15,374 +15,400 @@
         }
     ],
     "paths": {
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExports": {
+        "/index.php?module=API&method=LogViewer.getLogEntries": {
             "get": {
                 "tags": [
-                    "AdvertisingConversionExport"
+                    "LogViewer"
                 ],
-                "description": "Returns all configured conversion exports for the given idSite if idSite is omitted, all conversion exports of sites, the current user has write access for, will be returned",
-                "operationId": "AdvertisingConversionExport.getConversionExports",
+                "description": "Get log entries.",
+                "operationId": "LogViewer.getLogEntries",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idSite",
+                        "name": "query",
                         "in": "query",
-                        "description": "id of the site conversion exports should be returned for",
-                        "required": false,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "integer"
-                                },
-                                {
-                                    "type": "string",
-                                    "default": "null"
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "list of conversion export configurations"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.getConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Returns the (configuration) data of a specific conversion export identified by its id",
-                "operationId": "AdvertisingConversionExport.getConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of an export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "conversion export configuration"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.deleteConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Removes the conversion export with the given idExport",
-                "operationId": "AdvertisingConversionExport.deleteConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of the export to delete",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the site owning the export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "$ref": "#/components/responses/GenericSuccess"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.addConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Creates a new conversion export",
-                "operationId": "AdvertisingConversionExport.addConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the website the export is for",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "name of the conversion export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "type",
-                        "in": "query",
-                        "description": "type of the export (e.g. GoogleAds, YandexAds,...)",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "parameters",
-                        "in": "query",
-                        "description": "configuration array of the export",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "integer"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "description": "description of the export",
+                        "description": "A search query. If given, the search is performed case insensitive and query is interpreted as a regular expression. Characters like `[` might need to be escaped as `\\[`.",
                         "required": false,
                         "schema": {
                             "type": "string",
                             "default": ""
                         }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "id of the newly added report and the access token"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.regenerateAccessToken": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Generates a new access token for the export identified by idExport",
-                "operationId": "AdvertisingConversionExport.regenerateAccessToken",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
                     },
                     {
-                        "name": "idExport",
+                        "name": "source",
                         "in": "query",
-                        "description": "id of an export",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "new access token"
-                    },
-                    "400": {
-                        "$ref": "#/components/responses/BadRequest"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthorized"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/Forbidden"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/NotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/ServerError"
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/DefaultError"
-                    }
-                }
-            }
-        },
-        "/index.php?module=API&method=AdvertisingConversionExport.updateConversionExport": {
-            "get": {
-                "tags": [
-                    "AdvertisingConversionExport"
-                ],
-                "description": "Updates a conversion export with new configuration data",
-                "operationId": "AdvertisingConversionExport.updateConversionExport",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/formatOptional"
-                    },
-                    {
-                        "name": "idExport",
-                        "in": "query",
-                        "description": "id of the export to change",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "idSite",
-                        "in": "query",
-                        "description": "id of the website the export belongs to (needs to match)",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "new name of the export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "type",
-                        "in": "query",
-                        "description": "new type of the export",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "parameters",
-                        "in": "query",
-                        "description": "new configuration array",
-                        "required": true,
-                        "schema": {
-                            "oneOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "integer"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "name": "description",
-                        "in": "query",
-                        "description": "new description of the export",
+                        "description": "The log reader to use. Either 'file' or 'database'. By default we try to detect the best reader automatically.",
                         "required": false,
                         "schema": {
-                            "type": "string",
-                            "default": ""
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The page that should be returned.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    },
+                    {
+                        "name": "limitPerPage",
+                        "in": "query",
+                        "description": "Defines how many log entries should be returned per page.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 10
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "$ref": "#/components/responses/GenericSuccess"
+                        "description": "Parsed log entries ordered from newest to oldest.",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "severity": "",
+                                            "tag": "",
+                                            "datetime": "",
+                                            "requestId": "",
+                                            "message": ""
+                                        },
+                                        {
+                                            "severity": "ERROR",
+                                            "tag": "API",
+                                            "datetime": "2026-02-16 01:11:37 UTC",
+                                            "requestId": "2f4c6",
+                                            "message": "\\/plugins\\/SEOWebVitals\\/API.php(67): Some URLs are already configured, cannot set top urls  #0 {internal function}: Piwik\\\\Plugins\\\\SEOWebVitals\\\\API->configureTopPageUrls('1')  #1 \\/core\\/API\\/Proxy.php(256): call_user_func_array(Array, Array)  #2 \\/core\\/Context.php(29): Piwik\\\\API\\\\Proxy->Piwik\\\\API\\\\{closure}()  #3 \\/core\\/API\\/Proxy.php(159): Piwik\\\\Context::executeWithQueryParameters(Array, Object(Closure))  #4 \\/core\\/API\\/Request.php(278): Piwik\\\\API\\\\Proxy->call('\\\\\\\\Piwik\\\\\\\\Plugins\\\\\\\\...', 'configureTopPag...', Array)  #5 \\/plugins\\/API\\/Controller.php(48): Piwik\\\\API\\\\Request->process()  #6 {internal function}: Piwik\\\\Plugins\\\\API\\\\Controller->index()  #7 \\/core\\/FrontController.php(667): call_user_func_array(Array, Array)  #8 \\/core\\/FrontController.php(179): Piwik\\\\FrontController->doDispatch('API', false, Array)  #9 \\/core\\/dispatch.php(33): Piwik\\\\FrontController->dispatch()  #10 \\/index.php(25): require_once('\\/c...')  #11 {main} {Query: ?module=API&method=SEOWebVitals.configureTopPageUrls&idSite=1&format=Tsv&token_auth=tokenauth&convertToUnicode=0&hideIdSubDatable=1, CLI mode: 0}"
+                                        },
+                                        {
+                                            "severity": "ERROR",
+                                            "tag": "API",
+                                            "datetime": "2026-02-16 01:11:36 UTC",
+                                            "requestId": "df9cb",
+                                            "message": "\\/plugins\\/SEOWebVitals\\/API.php(67): Some URLs are already configured, cannot set top urls  #0 {internal function}: Piwik\\\\Plugins\\\\SEOWebVitals\\\\API->configureTopPageUrls('1')  #1 \\/core\\/API\\/Proxy.php(256): call_user_func_array(Array, Array)  #2 \\/core\\/Context.php(29): Piwik\\\\API\\\\Proxy->Piwik\\\\API\\\\{closure}()  #3 \\/core\\/API\\/Proxy.php(159): Piwik\\\\Context::executeWithQueryParameters(Array, Object(Closure))  #4 \\/core\\/API\\/Request.php(278): Piwik\\\\API\\\\Proxy->call('\\\\\\\\Piwik\\\\\\\\Plugins\\\\\\\\...', 'configureTopPag...', Array)  #5 \\/plugins\\/API\\/Controller.php(48): Piwik\\\\API\\\\Request->process()  #6 {internal function}: Piwik\\\\Plugins\\\\API\\\\Controller->index()  #7 \\/core\\/FrontController.php(667): call_user_func_array(Array, Array)  #8 \\/core\\/FrontController.php(179): Piwik\\\\FrontController->doDispatch('API', false, Array)  #9 \\/core\\/dispatch.php(33): Piwik\\\\FrontController->dispatch()  #10 \\/index.php(25): require_once('\\/c...')  #11 {main} {Query: ?module=API&method=SEOWebVitals.configureTopPageUrls&idSite=1&format=JSON&token_auth=tokenauth&hideIdSubDatable=1, CLI mode: 0}"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "severity": {
+                                                        "type": "string"
+                                                    },
+                                                    "tag": {
+                                                        "type": "string"
+                                                    },
+                                                    "datetime": {
+                                                        "type": "string"
+                                                    },
+                                                    "requestId": {
+                                                        "type": "string"
+                                                    },
+                                                    "message": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "severity": "",
+                                        "tag": "",
+                                        "datetime": "",
+                                        "requestId": "",
+                                        "message": ""
+                                    },
+                                    {
+                                        "severity": "ERROR",
+                                        "tag": "API",
+                                        "datetime": "2026-02-16 01:11:37 UTC",
+                                        "requestId": "2f4c6",
+                                        "message": "\\/plugins\\/SEOWebVitals\\/API.php(67): Some URLs are already configured, cannot set top urls  #0 {internal function}: Piwik\\\\Plugins\\\\SEOWebVitals\\\\API->configureTopPageUrls('1')  #1 \\/core\\/API\\/Proxy.php(256): call_user_func_array(Array, Array)  #2 \\/core\\/Context.php(29): Piwik\\\\API\\\\Proxy->Piwik\\\\API\\\\{closure}()  #3 \\/core\\/API\\/Proxy.php(159): Piwik\\\\Context::executeWithQueryParameters(Array, Object(Closure))  #4 \\/core\\/API\\/Request.php(278): Piwik\\\\API\\\\Proxy->call('\\\\\\\\Piwik\\\\\\\\Plugins\\\\\\\\...', 'configureTopPag...', Array)  #5 \\/plugins\\/API\\/Controller.php(48): Piwik\\\\API\\\\Request->process()  #6 {internal function}: Piwik\\\\Plugins\\\\API\\\\Controller->index()  #7 \\/core\\/FrontController.php(667): call_user_func_array(Array, Array)  #8 \\/core\\/FrontController.php(179): Piwik\\\\FrontController->doDispatch('API', false, Array)  #9 \\/core\\/dispatch.php(33): Piwik\\\\FrontController->dispatch()  #10 \\/index.php(25): require_once('\\/c...')  #11 {main} {Query: ?module=API&method=SEOWebVitals.configureTopPageUrls&idSite=1&format=Tsv&token_auth=tokenauth&convertToUnicode=0&hideIdSubDatable=1, CLI mode: 0}"
+                                    },
+                                    {
+                                        "severity": "ERROR",
+                                        "tag": "API",
+                                        "datetime": "2026-02-16 01:11:36 UTC",
+                                        "requestId": "df9cb",
+                                        "message": "\\/plugins\\/SEOWebVitals\\/API.php(67): Some URLs are already configured, cannot set top urls  #0 {internal function}: Piwik\\\\Plugins\\\\SEOWebVitals\\\\API->configureTopPageUrls('1')  #1 \\/core\\/API\\/Proxy.php(256): call_user_func_array(Array, Array)  #2 \\/core\\/Context.php(29): Piwik\\\\API\\\\Proxy->Piwik\\\\API\\\\{closure}()  #3 \\/core\\/API\\/Proxy.php(159): Piwik\\\\Context::executeWithQueryParameters(Array, Object(Closure))  #4 \\/core\\/API\\/Request.php(278): Piwik\\\\API\\\\Proxy->call('\\\\\\\\Piwik\\\\\\\\Plugins\\\\\\\\...', 'configureTopPag...', Array)  #5 \\/plugins\\/API\\/Controller.php(48): Piwik\\\\API\\\\Request->process()  #6 {internal function}: Piwik\\\\Plugins\\\\API\\\\Controller->index()  #7 \\/core\\/FrontController.php(667): call_user_func_array(Array, Array)  #8 \\/core\\/FrontController.php(179): Piwik\\\\FrontController->doDispatch('API', false, Array)  #9 \\/core\\/dispatch.php(33): Piwik\\\\FrontController->dispatch()  #10 \\/index.php(25): require_once('\\/c...')  #11 {main} {Query: ?module=API&method=SEOWebVitals.configureTopPageUrls&idSite=1&format=JSON&token_auth=tokenauth&hideIdSubDatable=1, CLI mode: 0}"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "severity\ttag\tdatetime\trequestId\tmessage\n\t\t\t\t\nERROR\tAPI\t2026-02-16 01:11:37 UTC\t2f4c6\t\"/plugins/SEOWebVitals/API.php(67): Some URLs are already configured, cannot set top urls  #0 [internal function]: Piwik\\Plugins\\SEOWebVitals\\API->configureTopPageUrls('1')  #1 /core/API/Proxy.php(256): call_user_func_array(Array, Array)  #2 /core/Context.php(29): Piwik\\API\\Proxy->Piwik\\API\\{closure}()  #3 /core/API/Proxy.php(159): Piwik\\Context::executeWithQueryParameters(Array, Object(Closure))  #4 /core/API/Request.php(278): Piwik\\API\\Proxy->call('\\\\Piwik\\\\Plugins\\\\...', 'configureTopPag...', Array)  #5 /plugins/API/Controller.php(48): Piwik\\API\\Request->process()  #6 [internal function]: Piwik\\Plugins\\API\\Controller->index()  #7 /core/FrontController.php(667): call_user_func_array(Array, Array)  #8 /core/FrontController.php(179): Piwik\\FrontController->doDispatch('API', false, Array)  #9 /core/dispatch.php(33): Piwik\\FrontController->dispatch()  #10 /index.php(25): require_once('/c...')  #11 {main} [Query: ?module=API&method=SEOWebVitals.configureTopPageUrls&idSite=1&format=Tsv&token_auth=tokenauth&convertToUnicode=0&hideIdSubDatable=1, CLI mode: 0]\"\nERROR\tAPI\t2026-02-16 01:11:36 UTC\tdf9cb\t\"/plugins/SEOWebVitals/API.php(67): Some URLs are already configured, cannot set top urls  #0 [internal function]: Piwik\\Plugins\\SEOWebVitals\\API->configureTopPageUrls('1')  #1 /core/API/Proxy.php(256): call_user_func_array(Array, Array)  #2 /core/Context.php(29): Piwik\\API\\Proxy->Piwik\\API\\{closure}()  #3 /core/API/Proxy.php(159): Piwik\\Context::executeWithQueryParameters(Array, Object(Closure))  #4 /core/API/Request.php(278): Piwik\\API\\Proxy->call('\\\\Piwik\\\\Plugins\\\\...', 'configureTopPag...', Array)  #5 /plugins/API/Controller.php(48): Piwik\\API\\Request->process()  #6 [internal function]: Piwik\\Plugins\\API\\Controller->index()  #7 /core/FrontController.php(667): call_user_func_array(Array, Array)  #8 /core/FrontController.php(179): Piwik\\FrontController->doDispatch('API', false, Array)  #9 /core/dispatch.php(33): Piwik\\FrontController->dispatch()  #10 /index.php(25): require_once('/c...')  #11 {main} [Query: ?module=API&method=SEOWebVitals.configureTopPageUrls&idSite=1&format=JSON&token_auth=tokenauth&hideIdSubDatable=1, CLI mode: 0]\""
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=LogViewer.getAvailableLogReaders": {
+            "get": {
+                "tags": [
+                    "LogViewer"
+                ],
+                "description": "Returns a list of all available log readers.",
+                "operationId": "LogViewer.getAvailableLogReaders",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        "file",
+                                        "database"
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": []
+                                },
+                                "example": [
+                                    "file",
+                                    "database"
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "file\ndatabase"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=LogViewer.getConfiguredLogReaders": {
+            "get": {
+                "tags": [
+                    "LogViewer"
+                ],
+                "description": "Returns a list of all configured log readers that are supported (available).",
+                "operationId": "LogViewer.getConfiguredLogReaders",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": "file"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": []
+                                },
+                                "example": [
+                                    "file"
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "file"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=LogViewer.getLogConfig": {
+            "get": {
+                "tags": [
+                    "LogViewer"
+                ],
+                "description": "Returns the configured log section from Matomo config.",
+                "operationId": "LogViewer.getLogConfig",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "log_writers": {
+                                            "properties": {
+                                                "row": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "log_writers": {
+                                        "row": [
+                                            "screen",
+                                            "file"
+                                        ]
+                                    },
+                                    "log_level": "WARN",
+                                    "logger_file_path": "tmp\\/logs\\/matomo.log",
+                                    "logger_syslog_ident": "matomo"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "log_writers": {
+                                            "type": "array",
+                                            "items": []
+                                        },
+                                        "log_level": {
+                                            "type": "string"
+                                        },
+                                        "logger_file_path": {
+                                            "type": "string"
+                                        },
+                                        "logger_syslog_ident": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "log_writers": [
+                                        "screen",
+                                        "file"
+                                    ],
+                                    "log_level": "WARN",
+                                    "logger_file_path": "tmp\\/logs\\/matomo.log",
+                                    "logger_syslog_ident": "matomo"
+                                }
+                            }
+                        }
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1220,8 +1246,8 @@
     ],
     "tags": [
         {
-            "name": "AdvertisingConversionExport",
-            "description": "Public API for managing advertising conversion exports. Provides endpoints to list, create, update, and delete export configurations."
+            "name": "LogViewer",
+            "description": "Reporting API endpoints for reading Matomo log entries and reader configuration."
         }
     ],
     "externalDocs": {

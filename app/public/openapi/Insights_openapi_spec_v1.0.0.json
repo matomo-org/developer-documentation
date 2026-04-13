@@ -6,6 +6,10 @@
     },
     "servers": [
         {
+            "url": "https://5x-dev.ddev.site/",
+            "description": "Current Matomo instance"
+        },
+        {
             "url": "https://demo.matomo.cloud/",
             "description": "Matomo demo server"
         }
@@ -43,7 +47,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=Insights.canGenerateInsights&date=today&period=day&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=Insights.canGenerateInsights&date=today&period=day&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -118,185 +122,170 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "A map containing a dataTable for each insight report. See {@link getInsights()} for more\ninformation</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=Insights.getInsightsOverview&idSite=1&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=Insights.getInsightsOverview&idSite=1&period=day&date=today&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=Insights.getInsightsOverview&idSite=1&period=day&date=today&format=Tsv&token_auth=anonymous)",
+                        "description": "A map containing a dataTable for each insight report. See %1$s for more information",
                         "content": {
-                            "text/xml": {
-                                "schema": {
-                                    "properties": {
-                                        "result": {
-                                            "type": "array",
-                                            "items": {
-                                                "properties": {
-                                                    "defaultKeyName": {
-                                                        "type": "string",
-                                                        "xml": {
-                                                            "attribute": true
-                                                        },
-                                                        "example": "Campaign Names"
-                                                    },
-                                                    "row": {
-                                                        "type": "array",
-                                                        "items": {
-                                                            "type": "object",
-                                                            "xml": {
-                                                                "name": "row"
-                                                            },
-                                                            "additionalProperties": true
-                                                        }
-                                                    }
-                                                },
-                                                "type": "object",
-                                                "xml": {
-                                                    "name": "result"
-                                                },
-                                                "additionalProperties": true
-                                            }
-                                        }
-                                    },
-                                    "type": "object",
-                                    "xml": {
-                                        "name": "result"
-                                    }
-                                },
-                                "example": {
-                                    "result": [
-                                        {
-                                            "defaultKeyName": "Page URLs"
-                                        },
-                                        {
-                                            "defaultKeyName": "Page titles"
-                                        },
-                                        {
-                                            "row": {
-                                                "label": "divezone.net",
-                                                "nb_visits": "14",
-                                                "growth_percent": "-50%",
-                                                "growth_percent_numeric": "-50",
-                                                "grown": "0",
-                                                "value_old": "28",
-                                                "value_new": "14",
-                                                "difference": "-14",
-                                                "importance": "14",
-                                                "isDisappeared": "0",
-                                                "isNew": "0",
-                                                "isMover": "1",
-                                                "isMoverAndShaker": "0",
-                                                "label1": "divezone.net"
-                                            },
-                                            "defaultKeyName": "Downloads"
-                                        },
-                                        {
-                                            "defaultKeyName": "Websites"
-                                        },
-                                        {
-                                            "defaultKeyName": "Social Networks"
-                                        },
-                                        {
-                                            "row": [
-                                                {
-                                                    "label": "Bing & Yahoo!",
-                                                    "nb_visits": "305",
-                                                    "growth_percent": "100%",
-                                                    "growth_percent_numeric": "100",
-                                                    "grown": "1",
-                                                    "value_old": "0",
-                                                    "value_new": "305",
-                                                    "difference": "305",
-                                                    "importance": "305",
-                                                    "isDisappeared": "0",
-                                                    "isNew": "1",
-                                                    "isMover": "0",
-                                                    "isMoverAndShaker": "0"
-                                                },
-                                                {
-                                                    "label": "Bing & Yahoo!",
-                                                    "nb_visits": "281",
-                                                    "growth_percent": "-100%",
-                                                    "growth_percent_numeric": "-100",
-                                                    "grown": "0",
-                                                    "value_old": "281",
-                                                    "value_new": "0",
-                                                    "difference": "-281",
-                                                    "importance": "281",
-                                                    "isDisappeared": "1",
-                                                    "isNew": "0",
-                                                    "isMover": "0",
-                                                    "isMoverAndShaker": "0"
-                                                }
-                                            ],
-                                            "defaultKeyName": "Search Engines"
-                                        },
-                                        {
-                                            "defaultKeyName": "AI Assistants"
-                                        },
-                                        {
-                                            "defaultKeyName": "Country"
-                                        },
-                                        {
-                                            "defaultKeyName": "Campaign Names"
-                                        }
-                                    ]
-                                }
-                            },
                             "application/json": {
                                 "schema": {
                                     "properties": {
                                         "Campaign Names": {
                                             "type": "array",
-                                            "items": {}
+                                            "items": []
                                         }
                                     },
                                     "type": "object"
                                 },
                                 "example": {
-                                    "Page URLs": [],
-                                    "Page titles": [],
-                                    "Downloads": [
+                                    "Page URLs": [
                                         {
-                                            "label": "divezone.net",
-                                            "nb_visits": 14,
-                                            "growth_percent": "-50%",
-                                            "growth_percent_numeric": "-50",
+                                            "label": "diving",
+                                            "nb_visits": 7,
+                                            "growth_percent": "-99.9%",
+                                            "growth_percent_numeric": "-99.9",
                                             "grown": false,
-                                            "value_old": 28,
-                                            "value_new": 14,
-                                            "difference": -14,
-                                            "importance": 14,
+                                            "value_old": 6441,
+                                            "value_new": 7,
+                                            "difference": -6434,
+                                            "importance": 6434,
                                             "isDisappeared": false,
                                             "isNew": false,
                                             "isMover": true,
+                                            "isMoverAndShaker": false
+                                        },
+                                        {
+                                            "label": "products",
+                                            "nb_visits": 5,
+                                            "growth_percent": "-99.8%",
+                                            "growth_percent_numeric": "-99.8",
+                                            "grown": false,
+                                            "value_old": 2383,
+                                            "value_new": 5,
+                                            "difference": -2378,
+                                            "importance": 2378,
+                                            "isDisappeared": false,
+                                            "isNew": false,
+                                            "isMover": true,
+                                            "isMoverAndShaker": false
+                                        },
+                                        {
+                                            "label": "jobs",
+                                            "nb_visits": 10,
+                                            "growth_percent": "-99.4%",
+                                            "growth_percent_numeric": "-99.4",
+                                            "grown": false,
+                                            "value_old": 1697,
+                                            "value_new": 10,
+                                            "difference": -1687,
+                                            "importance": 1687,
+                                            "isDisappeared": false,
+                                            "isNew": false,
+                                            "isMover": true,
+                                            "isMoverAndShaker": false
+                                        },
+                                        {
+                                            "label": "divesite",
+                                            "nb_visits": 3,
+                                            "growth_percent": "-99.8%",
+                                            "growth_percent_numeric": "-99.8",
+                                            "grown": false,
+                                            "value_old": 1397,
+                                            "value_new": 3,
+                                            "difference": -1394,
+                                            "importance": 1394,
+                                            "isDisappeared": false,
+                                            "isNew": false,
+                                            "isMover": true,
+                                            "isMoverAndShaker": false
+                                        },
+                                        {
+                                            "label": "my-account",
+                                            "nb_visits": 2,
+                                            "growth_percent": "-99.8%",
+                                            "growth_percent_numeric": "-99.8",
+                                            "grown": false,
+                                            "value_old": 1228,
+                                            "value_new": 2,
+                                            "difference": -1226,
+                                            "importance": 1226,
+                                            "isDisappeared": false,
+                                            "isNew": false,
+                                            "isMover": true,
+                                            "isMoverAndShaker": false
+                                        }
+                                    ],
+                                    "Downloads": [
+                                        {
+                                            "label": "divezone.net",
+                                            "nb_visits": 8,
+                                            "growth_percent": "-100%",
+                                            "growth_percent_numeric": "-100",
+                                            "grown": false,
+                                            "value_old": 8,
+                                            "value_new": 0,
+                                            "difference": -8,
+                                            "importance": 8,
+                                            "isDisappeared": true,
+                                            "isNew": false,
+                                            "isMover": false,
                                             "isMoverAndShaker": false,
                                             "label1": "divezone.net"
                                         }
                                     ],
-                                    "Websites": [],
-                                    "Social Networks": [],
-                                    "Search Engines": [
+                                    "Websites": [
                                         {
-                                            "label": "Bing & Yahoo!",
-                                            "nb_visits": 305,
-                                            "growth_percent": "100%",
-                                            "growth_percent_numeric": "100",
-                                            "grown": true,
-                                            "value_old": 0,
-                                            "value_new": 305,
-                                            "difference": 305,
-                                            "importance": 305,
-                                            "isDisappeared": false,
-                                            "isNew": true,
+                                            "label": "diveadvisor.com",
+                                            "nb_visits": 337,
+                                            "growth_percent": "-100%",
+                                            "growth_percent_numeric": "-100",
+                                            "grown": false,
+                                            "value_old": 337,
+                                            "value_new": 0,
+                                            "difference": -337,
+                                            "importance": 337,
+                                            "isDisappeared": true,
+                                            "isNew": false,
                                             "isMover": false,
                                             "isMoverAndShaker": false
                                         },
                                         {
-                                            "label": "Bing & Yahoo!",
-                                            "nb_visits": 281,
+                                            "label": "www.scubadiving.com",
+                                            "nb_visits": 1,
+                                            "growth_percent": "-99.6%",
+                                            "growth_percent_numeric": "-99.6",
+                                            "grown": false,
+                                            "value_old": 282,
+                                            "value_new": 1,
+                                            "difference": -281,
+                                            "importance": 281,
+                                            "isDisappeared": false,
+                                            "isNew": false,
+                                            "isMover": true,
+                                            "isMoverAndShaker": false
+                                        },
+                                        {
+                                            "label": "scubadiverlife.com",
+                                            "nb_visits": 1,
+                                            "growth_percent": "-99.6%",
+                                            "growth_percent_numeric": "-99.6",
+                                            "grown": false,
+                                            "value_old": 252,
+                                            "value_new": 1,
+                                            "difference": -251,
+                                            "importance": 251,
+                                            "isDisappeared": false,
+                                            "isNew": false,
+                                            "isMover": true,
+                                            "isMoverAndShaker": false
+                                        },
+                                        {
+                                            "label": "www.emperordivers.com",
+                                            "nb_visits": 116,
                                             "growth_percent": "-100%",
                                             "growth_percent_numeric": "-100",
                                             "grown": false,
-                                            "value_old": 281,
+                                            "value_old": 116,
                                             "value_new": 0,
-                                            "difference": -281,
-                                            "importance": 281,
+                                            "difference": -116,
+                                            "importance": 116,
                                             "isDisappeared": true,
                                             "isNew": false,
                                             "isMover": false,
@@ -304,12 +293,11 @@
                                         }
                                     ],
                                     "AI Assistants": [],
-                                    "Country": [],
                                     "Campaign Names": []
                                 }
                             },
                             "application/vnd.ms-excel": {
-                                "example": "defaultKeyName\tlabel\tnb_visits\tgrowth_percent\tgrowth_percent_numeric\tgrown\tvalue_old\tvalue_new\tdifference\timportance\tisDisappeared\tisNew\tisMover\tisMoverAndShaker\tmetadata_label1\nDownloads\tdivezone.net\t14\t-50%\t-50\t0\t28\t14\t-14\t14\t0\t0\t1\t0\tdivezone.net\nSearch Engines\tBing & Yahoo!\t305\t100%\t100\t1\t0\t305\t305\t305\t0\t1\t0\t0\t\nSearch Engines\tBing & Yahoo!\t281\t-100%\t-100\t0\t281\t0\t-281\t281\t1\t0\t0\t0\t"
+                                "example": "defaultKeyName\tlabel\tnb_visits\tgrowth_percent\tgrowth_percent_numeric\tgrown\tvalue_old\tvalue_new\tdifference\timportance\tisDisappeared\tisNew\tisMover\tisMoverAndShaker\tmetadata_label1\nPage URLs\tdiving\t7\t-99.9%\t-99.9\t0\t6441\t7\t-6434\t6434\t0\t0\t1\t0\nPage URLs\tproducts\t5\t-99.8%\t-99.8\t0\t2383\t5\t-2378\t2378\t0\t0\t1\t0\nPage URLs\tjobs\t10\t-99.4%\t-99.4\t0\t1697\t10\t-1687\t1687\t0\t0\t1\t0\nPage URLs\tdivesite\t3\t-99.8%\t-99.8\t0\t1397\t3\t-1394\t1394\t0\t0\t1\t0\nPage URLs\tmy-account\t2\t-99.8%\t-99.8\t0\t1228\t2\t-1226\t1226\t0\t0\t1\t0\nPage titles\t\" Coral Fan Dive Site \u2013 Map & Review of Coral Fan in Gili Islands, Lombok, Indonesia\"\t1\t100%\t100\t1\t0\t1\t1\t1\t0\t1\t0\t0\nPage titles\t German speaking instructor at Dive Center DR \u2013 Divemaster jobs and Dive Instructor Jobs!\t1\t100%\t100\t1\t0\t1\t1\t1\t0\t1\t0\t0\nPage titles\t WANTED: German-speaking instructor for Tenerife at Diveria Diving Center \u2013 Divemaster jobs and Dive Instructor Jobs!\t1\t100%\t100\t1\t0\t1\t1\t1\t0\t1\t0\t0\nPage titles\tOthers\t1254\t-100%\t-100\t0\t1254\t0\t-1254\t1254\t1\t0\t0\t0\nPage titles\t Cart - Divezone Store\t2\t-99.8%\t-99.8\t0\t1074\t2\t-1072\t1072\t0\t0\t1\t0\nPage titles\t\" Diving Jobs, latest Divemaster and Scuba Dive Instructor Job offers!\"\t4\t-99.6%\t-99.6\t0\t967\t4\t-963\t963\t0\t0\t1\t0\nPage titles\t Checkout - Divezone Store\t825\t-100%\t-100\t0\t825\t0\t-825\t825\t1\t0\t0\t0\nPage titles\t Best Diving sites in Bali \u2013 Indonesia Scuba dive reviews by Divezone\t621\t-100%\t-100\t0\t621\t0\t-621\t621\t1\t0\t0\t0\nDownloads\tdivezone.net\t8\t-100%\t-100\t0\t8\t0\t-8\t8\t1\t0\t0\t0\tdivezone.net\nWebsites\tdiveadvisor.com\t337\t-100%\t-100\t0\t337\t0\t-337\t337\t1\t0\t0\t0\t\nWebsites\twww.scubadiving.com\t1\t-99.6%\t-99.6\t0\t282\t1\t-281\t281\t0\t0\t1\t0\t\nWebsites\tscubadiverlife.com\t1\t-99.6%\t-99.6\t0\t252\t1\t-251\t251\t0\t0\t1\t0\t\nWebsites\twww.emperordivers.com\t116\t-100%\t-100\t0\t116\t0\t-116\t116\t1\t0\t0\t0\t\nSocial Networks\treddit\t594\t-100%\t-100\t0\t594\t0\t-594\t594\t1\t0\t0\t0\t\nSocial Networks\tFacebook\t1\t-99.4%\t-99.4\t0\t177\t1\t-176\t176\t0\t0\t1\t0\t\nSocial Networks\tTwitter\t1\t-99.4%\t-99.4\t0\t172\t1\t-171\t171\t0\t0\t1\t0\t\nSocial Networks\tInstagram\t1\t-99.4%\t-99.4\t0\t162\t1\t-161\t161\t0\t0\t1\t0\t\nSocial Networks\tPinterest\t152\t-100%\t-100\t0\t152\t0\t-152\t152\t1\t0\t0\t0\t\nSearch Engines\tGoogle\t12\t-99.8%\t-99.8\t0\t7290\t12\t-7278\t7278\t0\t0\t1\t0\t\nSearch Engines\tBing & Yahoo!\t323\t-100%\t-100\t0\t323\t0\t-323\t323\t1\t0\t0\t0\t\nSearch Engines\tDuckDuckGo\t150\t-100%\t-100\t0\t150\t0\t-150\t150\t1\t0\t0\t0\t\nSearch Engines\tQwant\t63\t-100%\t-100\t0\t63\t0\t-63\t63\t1\t0\t0\t0\t\nSearch Engines\tEcosia\t11\t-100%\t-100\t0\t11\t0\t-11\t11\t1\t0\t0\t0\t\nCountry\tUnited States\t6\t-99.7%\t-99.7\t0\t1985\t6\t-1979\t1979\t0\t0\t1\t0\t\nCountry\tUnited Kingdom\t1\t-99.9%\t-99.9\t0\t918\t1\t-917\t917\t0\t0\t1\t0\t\nCountry\tAustralia\t916\t-100%\t-100\t0\t916\t0\t-916\t916\t1\t0\t0\t0\t\nCountry\tGermany\t1\t-99.8%\t-99.8\t0\t620\t1\t-619\t619\t0\t0\t1\t0\t\nCountry\tIndonesia\t1\t-99.8%\t-99.8\t0\t595\t1\t-594\t594\t0\t0\t1\t0\t"
                             }
                         }
                     },
@@ -360,7 +348,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "A map containing a dataTable for each movers and shakers report. See\n{@link getMoversAndShakers()} for more information</br>Example links: [XML](https://demo.matomo.cloud/?module=API&method=Insights.getMoversAndShakersOverview&idSite=1&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=Insights.getMoversAndShakersOverview&idSite=1&period=day&date=today&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=Insights.getMoversAndShakersOverview&idSite=1&period=day&date=today&format=Tsv&token_auth=anonymous)",
+                        "description": "A map containing a dataTable for each movers and shakers report. See %1$s for more information",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -427,7 +415,7 @@
                                     "properties": {
                                         "Campaign Names": {
                                             "type": "array",
-                                            "items": {}
+                                            "items": []
                                         }
                                     },
                                     "type": "object"
@@ -534,7 +522,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -662,7 +650,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1081,13 +1069,13 @@
                     "application/json": {
                         "schema": {
                             "type": "array",
-                            "items": {}
+                            "items": []
                         }
                     },
                     "application/xml": {
                         "schema": {
                             "type": "array",
-                            "items": {}
+                            "items": []
                         }
                     }
                 }
@@ -1264,6 +1252,15 @@
                 "in": "query",
                 "description": "An in-database subtable ID.",
                 "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "idSubtableRequired": {
+                "name": "idSubtable",
+                "in": "query",
+                "description": "An in-database subtable ID.",
+                "required": true,
                 "schema": {
                     "type": "integer"
                 }
@@ -1478,10 +1475,9 @@
         },
         "securitySchemes": {
             "MatomoToken": {
-                "type": "apiKey",
-                "description": "Matomo API token passed as the 'token_auth' query parameter.",
-                "name": "token_auth",
-                "in": "query"
+                "type": "http",
+                "description": "Matomo API token passed in the Authorization header as a bearer token. For demo.matomo.cloud requests, use the anonymous token value: anonymous.",
+                "scheme": "bearer"
             }
         }
     },

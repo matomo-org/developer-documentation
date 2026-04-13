@@ -6,6 +6,10 @@
     },
     "servers": [
         {
+            "url": "https://5x-dev.ddev.site/",
+            "description": "Current Matomo instance"
+        },
+        {
             "url": "https://demo.matomo.cloud/",
             "description": "Matomo demo server"
         }
@@ -16,7 +20,7 @@
                 "tags": [
                     "CustomReports"
                 ],
-                "summary": "Copies a specified custom report to one or more sites. If a custom report with the same name already exists, the new custom report\nwill have an automatically adjusted name to make it unique to the assigned site.",
+                "description": "Copies a specified custom report to one or more sites. If a custom report with the same name already exists, the new custom report will have an automatically adjusted name to make it unique to the assigned site.",
                 "operationId": "CustomReports.duplicateCustomReport",
                 "parameters": [
                     {
@@ -50,73 +54,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response indicating success and containing the ID of the newly created report.",
-                        "content": {
-                            "text/xml": {
-                                "schema": {
-                                    "properties": {
-                                        "additionalData": {
-                                            "type": "object"
-                                        }
-                                    },
-                                    "type": "object",
-                                    "xml": {
-                                        "name": "result"
-                                    }
-                                },
-                                "example": {
-                                    "success": "1",
-                                    "message": "The custom report has been successfully copied.",
-                                    "additionalData": {
-                                        "idSite": "1",
-                                        "idDestinationSites": "",
-                                        "idCustomReport": "1",
-                                        "newIds": "9"
-                                    }
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "success": {
-                                            "type": "boolean"
-                                        },
-                                        "message": {
-                                            "type": "string"
-                                        },
-                                        "additionalData": {
-                                            "properties": {
-                                                "idSite": {
-                                                    "type": "integer"
-                                                },
-                                                "idDestinationSites": {
-                                                    "type": "array",
-                                                    "items": {}
-                                                },
-                                                "idCustomReport": {
-                                                    "type": "integer"
-                                                },
-                                                "newIds": {
-                                                    "type": "integer"
-                                                }
-                                            },
-                                            "type": "object"
-                                        }
-                                    },
-                                    "type": "object"
-                                },
-                                "example": {
-                                    "success": true,
-                                    "message": "The custom report has been successfully copied.",
-                                    "additionalData": {
-                                        "idSite": 1,
-                                        "idDestinationSites": [],
-                                        "idCustomReport": 1,
-                                        "newIds": 9
-                                    }
-                                }
-                            }
-                        }
+                        "description": "Response indicating success and containing the ID of the newly created report."
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -144,7 +82,7 @@
                 "tags": [
                     "CustomReports"
                 ],
-                "summary": "Adds a new custom report",
+                "description": "Adds a new custom report",
                 "operationId": "CustomReports.addCustomReport",
                 "parameters": [
                     {
@@ -278,7 +216,7 @@
                 "tags": [
                     "CustomReports"
                 ],
-                "summary": "Updates an existing custom report. Be aware that if you change metrics, dimensions, the report type or the segment filter,\npreviously processed/archived reports may become unavailable and would need to be re-processed.",
+                "description": "Updates an existing custom report. Be aware that if you change metrics, dimensions, the report type or the segment filter, previously processed/archived reports may become unavailable and would need to be re-processed.",
                 "operationId": "CustomReports.updateCustomReport",
                 "parameters": [
                     {
@@ -351,7 +289,7 @@
                     {
                         "name": "subcategoryId",
                         "in": "query",
-                        "description": "By default, a new reporting page will be created for this report unless you specifiy a specific name or subcategoryID. For a list of available subcategories call 'CustomReports.getAvailableCategories'.",
+                        "description": "By default, a new reporting page will be created for this report unless you specify a specific name or subcategoryID. For a list of available subcategories call 'CustomReports.getAvailableCategories'.",
                         "required": false,
                         "schema": {
                             "type": "string"
@@ -393,7 +331,7 @@
                     {
                         "name": "multipleIdSites",
                         "in": "query",
-                        "description": "An optional list of idsites for which we need to execute the report",
+                        "description": "An optional list of idSites for which we need to execute the report",
                         "required": false,
                         "schema": {
                             "type": "array",
@@ -434,7 +372,7 @@
                 "tags": [
                     "CustomReports"
                 ],
-                "summary": "Get all custom report configurations for a specific site.",
+                "description": "Get all custom report configurations for a specific site.",
                 "operationId": "CustomReports.getConfiguredReports",
                 "parameters": [
                     {
@@ -456,7 +394,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Example links: [XML](https://demo.matomo.cloud/?module=API&method=CustomReports.getConfiguredReports&idSite=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=CustomReports.getConfiguredReports&idSite=1&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "The list of configured custom reports.",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -466,17 +404,6 @@
                                             "items": {
                                                 "properties": {
                                                     "category": {
-                                                        "type": "object"
-                                                    },
-                                                    "dimensions": {
-                                                        "properties": {
-                                                            "row": {
-                                                                "type": "array",
-                                                                "items": {
-                                                                    "type": "string"
-                                                                }
-                                                            }
-                                                        },
                                                         "type": "object"
                                                     },
                                                     "metrics": {
@@ -917,7 +844,7 @@
                 "tags": [
                     "CustomReports"
                 ],
-                "summary": "Get a specific custom report configuration.",
+                "description": "Get a specific custom report configuration.",
                 "operationId": "CustomReports.getConfiguredReport",
                 "parameters": [
                     {
@@ -939,7 +866,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Example links: [XML](https://demo.matomo.cloud/?module=API&method=CustomReports.getConfiguredReport&idSite=1&idCustomReport=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=CustomReports.getConfiguredReport&idSite=1&idCustomReport=1&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "The details of the configured custom report.",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -952,11 +879,7 @@
                                                 "row": {
                                                     "type": "array",
                                                     "items": {
-                                                        "type": "object",
-                                                        "xml": {
-                                                            "name": "row"
-                                                        },
-                                                        "additionalProperties": true
+                                                        "type": "string"
                                                     }
                                                 }
                                             },
@@ -967,11 +890,7 @@
                                                 "row": {
                                                     "type": "array",
                                                     "items": {
-                                                        "type": "object",
-                                                        "xml": {
-                                                            "name": "row"
-                                                        },
-                                                        "additionalProperties": true
+                                                        "type": "string"
                                                     }
                                                 }
                                             },
@@ -1051,7 +970,7 @@
                                         },
                                         "multipleIdSites": {
                                             "type": "array",
-                                            "items": {}
+                                            "items": []
                                         },
                                         "subcategory": {
                                             "type": [
@@ -1162,8 +1081,7 @@
                 "tags": [
                     "CustomReports"
                 ],
-                "summary": "Deletes the given custom report.",
-                "description": "When a custom report is deleted, its report will be no longer available in the API and tracked data for this\nreport might be removed at some point by the system.",
+                "description": "Deletes the given custom report.",
                 "operationId": "CustomReports.deleteCustomReport",
                 "parameters": [
                     {
@@ -1178,43 +1096,13 @@
                         "description": "The ID of the custom report to duplicate.",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "type": "integer"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
-                        "content": {
-                            "text/xml": {
-                                "schema": {
-                                    "type": "object",
-                                    "xml": {
-                                        "name": "result"
-                                    }
-                                },
-                                "example": {
-                                    "success": ""
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "result": {
-                                            "type": "string"
-                                        },
-                                        "message": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "type": "object"
-                                },
-                                "example": {
-                                    "result": "success",
-                                    "message": "ok"
-                                }
-                            }
-                        }
+                        "$ref": "#/components/responses/GenericSuccess"
                     },
                     "400": {
                         "$ref": "#/components/responses/BadRequest"
@@ -1242,8 +1130,7 @@
                 "tags": [
                     "CustomReports"
                 ],
-                "summary": "Pauses the given custom report.",
-                "description": "When a custom report is paused, its report will be no longer be archived",
+                "description": "Pauses the given custom report.",
                 "operationId": "CustomReports.pauseCustomReport",
                 "parameters": [
                     {
@@ -1292,8 +1179,7 @@
                 "tags": [
                     "CustomReports"
                 ],
-                "summary": "Resumes the given custom report.",
-                "description": "When a custom report is resumed, its report will start archiving again",
+                "description": "Resumes the given custom report.",
                 "operationId": "CustomReports.resumeCustomReport",
                 "parameters": [
                     {
@@ -1342,7 +1228,7 @@
                 "tags": [
                     "CustomReports"
                 ],
-                "summary": "Get a list of available categories that can be used in custom reports.",
+                "description": "Get a list of available categories that can be used in custom reports.",
                 "operationId": "CustomReports.getAvailableCategories",
                 "parameters": [
                     {
@@ -1354,7 +1240,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Example links: [XML](https://demo.matomo.cloud/?module=API&method=CustomReports.getAvailableCategories&idSite=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=CustomReports.getAvailableCategories&idSite=1&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -1394,6 +1280,16 @@
                                 },
                                 "example": {
                                     "row": [
+                                        {
+                                            "uniqueId": "General_AIAssistants",
+                                            "name": "AI Assistants",
+                                            "subcategories": {
+                                                "row": {
+                                                    "uniqueId": "AIAgents_AIAgentsOverview",
+                                                    "name": "AI Agents Overview"
+                                                }
+                                            }
+                                        },
                                         {
                                             "uniqueId": "General_Actions",
                                             "name": "Behaviour",
@@ -1571,45 +1467,21 @@
                                             }
                                         },
                                         {
-                                            "uniqueId": "Goals_Goals",
-                                            "name": "Goals",
+                                            "uniqueId": "CrashAnalytics_Crashes",
+                                            "name": "Crashes",
                                             "subcategories": {
                                                 "row": [
                                                     {
-                                                        "uniqueId": "8",
-                                                        "name": "Agoda click"
+                                                        "uniqueId": "CrashAnalytics_AllCrashes",
+                                                        "name": "All Crashes"
                                                     },
                                                     {
-                                                        "uniqueId": "7",
-                                                        "name": "Liveaboard.com click"
-                                                    },
-                                                    {
-                                                        "uniqueId": "4",
-                                                        "name": "New Job Application"
-                                                    },
-                                                    {
-                                                        "uniqueId": "6",
-                                                        "name": "New Resume"
-                                                    },
-                                                    {
-                                                        "uniqueId": "10",
-                                                        "name": "Newsletter Signup"
-                                                    },
-                                                    {
-                                                        "uniqueId": "9",
-                                                        "name": "User Comments"
-                                                    },
-                                                    {
-                                                        "uniqueId": "5",
-                                                        "name": "View Submit Job"
-                                                    },
-                                                    {
-                                                        "uniqueId": "General_Overview",
+                                                        "uniqueId": "CrashAnalytics_Overview",
                                                         "name": "Overview"
                                                     },
                                                     {
-                                                        "uniqueId": "MultiChannelConversionAttribution_MultiAttribution",
-                                                        "name": "Multi Attribution"
+                                                        "uniqueId": "CrashAnalytics_RealTime",
+                                                        "name": "Real-time"
                                                     }
                                                 ]
                                             }
@@ -1659,6 +1531,16 @@
                                     }
                                 },
                                 "example": [
+                                    {
+                                        "uniqueId": "General_AIAssistants",
+                                        "name": "AI Assistants",
+                                        "subcategories": [
+                                            {
+                                                "uniqueId": "AIAgents_AIAgentsOverview",
+                                                "name": "AI Agents Overview"
+                                            }
+                                        ]
+                                    },
                                     {
                                         "uniqueId": "General_Actions",
                                         "name": "Behaviour",
@@ -1830,40 +1712,24 @@
                                         ]
                                     },
                                     {
-                                        "uniqueId": "Goals_Goals",
-                                        "name": "Goals",
+                                        "uniqueId": "Goals_Ecommerce",
+                                        "name": "Ecommerce",
                                         "subcategories": [
                                             {
-                                                "uniqueId": "8",
-                                                "name": "Agoda click"
-                                            },
-                                            {
-                                                "uniqueId": "7",
-                                                "name": "Liveaboard.com click"
-                                            },
-                                            {
-                                                "uniqueId": "4",
-                                                "name": "New Job Application"
-                                            },
-                                            {
-                                                "uniqueId": "6",
-                                                "name": "New Resume"
-                                            },
-                                            {
-                                                "uniqueId": "10",
-                                                "name": "Newsletter Signup"
-                                            },
-                                            {
-                                                "uniqueId": "9",
-                                                "name": "User Comments"
-                                            },
-                                            {
-                                                "uniqueId": "5",
-                                                "name": "View Submit Job"
+                                                "uniqueId": "Goals_EcommerceLog",
+                                                "name": "Ecommerce Log"
                                             },
                                             {
                                                 "uniqueId": "General_Overview",
                                                 "name": "Overview"
+                                            },
+                                            {
+                                                "uniqueId": "Goals_Products",
+                                                "name": "Products"
+                                            },
+                                            {
+                                                "uniqueId": "Ecommerce_Sales",
+                                                "name": "Sales"
                                             },
                                             {
                                                 "uniqueId": "MultiChannelConversionAttribution_MultiAttribution",
@@ -1901,7 +1767,7 @@
                 "tags": [
                     "CustomReports"
                 ],
-                "summary": "Get a list of available report types that can be used in custom reports.",
+                "description": "Get a list of available report types that can be used in custom reports.",
                 "operationId": "CustomReports.getAvailableReportTypes",
                 "parameters": [
                     {
@@ -1910,7 +1776,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Example links: [XML](https://demo.matomo.cloud/?module=API&method=CustomReports.getAvailableReportTypes&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=CustomReports.getAvailableReportTypes&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/?module=API&method=CustomReports.getAvailableReportTypes&format=Tsv&token_auth=anonymous)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -1977,7 +1843,7 @@
                                 ]
                             },
                             "application/vnd.ms-excel": {
-                                "example": "key    value\n     * table    Table\n     * evolution    Evolution"
+                                "example": "key\tvalue\ntable\tTable\nevolution\tEvolution"
                             }
                         }
                     },
@@ -2007,7 +1873,7 @@
                 "tags": [
                     "CustomReports"
                 ],
-                "summary": "Get a list of available dimensions that can be used in custom reports.",
+                "description": "Get a list of available dimensions that can be used in custom reports.",
                 "operationId": "CustomReports.getAvailableDimensions",
                 "parameters": [
                     {
@@ -2019,7 +1885,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Example links: [XML](https://demo.matomo.cloud/?module=API&method=CustomReports.getAvailableDimensions&idSite=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=CustomReports.getAvailableDimensions&idSite=1&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -2094,6 +1960,11 @@
                                                         "sqlSegment": "log_visit.location_longitude"
                                                     },
                                                     {
+                                                        "uniqueId": "Provider.Provider",
+                                                        "name": "Provider",
+                                                        "sqlSegment": "log_visit.location_provider"
+                                                    },
+                                                    {
                                                         "uniqueId": "UserCountry.Region",
                                                         "name": "Region",
                                                         "sqlSegment": "log_visit.location_region"
@@ -2136,82 +2007,65 @@
                                             "orderId": "12"
                                         },
                                         {
-                                            "category": "Acquisition",
+                                            "category": "Goals",
                                             "dimensions": {
                                                 "row": [
                                                     {
-                                                        "uniqueId": "AdvertisingConversionExport.AdClickId",
-                                                        "name": "Ad Click ID",
-                                                        "sqlSegment": "log_clickid.adclickid"
+                                                        "uniqueId": "Goals.Revenue",
+                                                        "name": "Overall Revenue",
+                                                        "sqlSegment": "log_conversion.revenue"
                                                     },
                                                     {
-                                                        "uniqueId": "AdvertisingConversionExport.AdProvider",
-                                                        "name": "Ad Provider",
-                                                        "sqlSegment": "log_clickid.adprovider"
-                                                    },
-                                                    {
-                                                        "uniqueId": "MarketingCampaignsReporting.CampaignContent",
-                                                        "name": "Campaign Content",
-                                                        "sqlSegment": "log_visit.campaign_content"
-                                                    },
-                                                    {
-                                                        "uniqueId": "MarketingCampaignsReporting.CampaignGroup",
-                                                        "name": "Campaign Group",
-                                                        "sqlSegment": "log_visit.campaign_group"
-                                                    },
-                                                    {
-                                                        "uniqueId": "MarketingCampaignsReporting.CampaignId",
-                                                        "name": "Campaign Id",
-                                                        "sqlSegment": "log_visit.campaign_id"
-                                                    },
-                                                    {
-                                                        "uniqueId": "MarketingCampaignsReporting.CampaignKeyword",
-                                                        "name": "Campaign Keyword",
-                                                        "sqlSegment": "log_visit.campaign_keyword"
-                                                    },
-                                                    {
-                                                        "uniqueId": "MarketingCampaignsReporting.CampaignMedium",
-                                                        "name": "Campaign Medium",
-                                                        "sqlSegment": "log_visit.campaign_medium"
-                                                    },
-                                                    {
-                                                        "uniqueId": "MarketingCampaignsReporting.CampaignName",
-                                                        "name": "Campaign Name",
-                                                        "sqlSegment": "log_visit.campaign_name"
-                                                    },
-                                                    {
-                                                        "uniqueId": "MarketingCampaignsReporting.CampaignPlacement",
-                                                        "name": "Campaign Placement",
-                                                        "sqlSegment": "log_visit.campaign_placement"
-                                                    },
-                                                    {
-                                                        "uniqueId": "MarketingCampaignsReporting.CampaignSource",
-                                                        "name": "Campaign Source",
-                                                        "sqlSegment": "log_visit.campaign_source"
-                                                    },
-                                                    {
-                                                        "uniqueId": "Referrers.ReferrerType",
-                                                        "name": "Channel Type",
-                                                        "sqlSegment": "log_visit.referer_type"
-                                                    },
-                                                    {
-                                                        "uniqueId": "Referrers.Keyword",
-                                                        "name": "Keyword",
-                                                        "sqlSegment": "log_visit.referer_keyword"
-                                                    },
-                                                    {
-                                                        "uniqueId": "Referrers.ReferrerName",
-                                                        "name": "Referrer Name",
-                                                        "sqlSegment": "log_visit.referer_name"
-                                                    },
-                                                    {
-                                                        "uniqueId": "Referrers.ReferrerUrl",
-                                                        "name": "Referrer URL",
-                                                        "sqlSegment": "log_visit.referer_url"
+                                                        "uniqueId": "Goals.PageviewsBefore",
+                                                        "name": "Pageviews Before Conversion",
+                                                        "sqlSegment": "log_conversion.pageviews_before"
                                                     }
                                                 ]
                                             },
-                                            "orderId": "15"
+                                            "orderId": "25"
+                                        },
+                                        {
+                                            "category": "Forms",
+                                            "dimensions": {
+                                                "row": [
+                                                    {
+                                                        "uniqueId": "FormAnalytics.FormConverted",
+                                                        "name": "Form Conversions",
+                                                        "sqlSegment": "log_form.converted"
+                                                    },
+                                                    {
+                                                        "uniqueId": "FormAnalytics.FormStarts",
+                                                        "name": "Form Starts",
+                                                        "sqlSegment": "log_form.num_starts"
+                                                    },
+                                                    {
+                                                        "uniqueId": "FormAnalytics.FormSubmissions",
+                                                        "name": "Form Submissions",
+                                                        "sqlSegment": "log_form.num_submissions"
+                                                    },
+                                                    {
+                                                        "uniqueId": "FormAnalytics.FormViews",
+                                                        "name": "Form Views",
+                                                        "sqlSegment": "log_form.num_views"
+                                                    },
+                                                    {
+                                                        "uniqueId": "FormAnalytics.FormTimeHesitation",
+                                                        "name": "Hesitation Time",
+                                                        "sqlSegment": "log_form.time_hesitation"
+                                                    },
+                                                    {
+                                                        "uniqueId": "FormAnalytics.FormTimeSpent",
+                                                        "name": "Time Spent",
+                                                        "sqlSegment": "log_form.time_spent"
+                                                    },
+                                                    {
+                                                        "uniqueId": "FormAnalytics.FormTimeToFirstSubmission",
+                                                        "name": "Time To First Submit",
+                                                        "sqlSegment": "log_form.time_to_first_submission"
+                                                    }
+                                                ]
+                                            },
+                                            "orderId": "49"
                                         }
                                     ]
                                 }
@@ -2295,6 +2149,11 @@
                                                 "sqlSegment": "log_visit.location_longitude"
                                             },
                                             {
+                                                "uniqueId": "Provider.Provider",
+                                                "name": "Provider",
+                                                "sqlSegment": "log_visit.location_provider"
+                                            },
+                                            {
                                                 "uniqueId": "UserCountry.Region",
                                                 "name": "Region",
                                                 "sqlSegment": "log_visit.location_region"
@@ -2334,80 +2193,61 @@
                                         "orderId": 12
                                     },
                                     {
-                                        "category": "Acquisition",
+                                        "category": "Goals",
                                         "dimensions": [
                                             {
-                                                "uniqueId": "AdvertisingConversionExport.AdClickId",
-                                                "name": "Ad Click ID",
-                                                "sqlSegment": "log_clickid.adclickid"
+                                                "uniqueId": "Goals.Revenue",
+                                                "name": "Overall Revenue",
+                                                "sqlSegment": "log_conversion.revenue"
                                             },
                                             {
-                                                "uniqueId": "AdvertisingConversionExport.AdProvider",
-                                                "name": "Ad Provider",
-                                                "sqlSegment": "log_clickid.adprovider"
-                                            },
-                                            {
-                                                "uniqueId": "MarketingCampaignsReporting.CampaignContent",
-                                                "name": "Campaign Content",
-                                                "sqlSegment": "log_visit.campaign_content"
-                                            },
-                                            {
-                                                "uniqueId": "MarketingCampaignsReporting.CampaignGroup",
-                                                "name": "Campaign Group",
-                                                "sqlSegment": "log_visit.campaign_group"
-                                            },
-                                            {
-                                                "uniqueId": "MarketingCampaignsReporting.CampaignId",
-                                                "name": "Campaign Id",
-                                                "sqlSegment": "log_visit.campaign_id"
-                                            },
-                                            {
-                                                "uniqueId": "MarketingCampaignsReporting.CampaignKeyword",
-                                                "name": "Campaign Keyword",
-                                                "sqlSegment": "log_visit.campaign_keyword"
-                                            },
-                                            {
-                                                "uniqueId": "MarketingCampaignsReporting.CampaignMedium",
-                                                "name": "Campaign Medium",
-                                                "sqlSegment": "log_visit.campaign_medium"
-                                            },
-                                            {
-                                                "uniqueId": "MarketingCampaignsReporting.CampaignName",
-                                                "name": "Campaign Name",
-                                                "sqlSegment": "log_visit.campaign_name"
-                                            },
-                                            {
-                                                "uniqueId": "MarketingCampaignsReporting.CampaignPlacement",
-                                                "name": "Campaign Placement",
-                                                "sqlSegment": "log_visit.campaign_placement"
-                                            },
-                                            {
-                                                "uniqueId": "MarketingCampaignsReporting.CampaignSource",
-                                                "name": "Campaign Source",
-                                                "sqlSegment": "log_visit.campaign_source"
-                                            },
-                                            {
-                                                "uniqueId": "Referrers.ReferrerType",
-                                                "name": "Channel Type",
-                                                "sqlSegment": "log_visit.referer_type"
-                                            },
-                                            {
-                                                "uniqueId": "Referrers.Keyword",
-                                                "name": "Keyword",
-                                                "sqlSegment": "log_visit.referer_keyword"
-                                            },
-                                            {
-                                                "uniqueId": "Referrers.ReferrerName",
-                                                "name": "Referrer Name",
-                                                "sqlSegment": "log_visit.referer_name"
-                                            },
-                                            {
-                                                "uniqueId": "Referrers.ReferrerUrl",
-                                                "name": "Referrer URL",
-                                                "sqlSegment": "log_visit.referer_url"
+                                                "uniqueId": "Goals.PageviewsBefore",
+                                                "name": "Pageviews Before Conversion",
+                                                "sqlSegment": "log_conversion.pageviews_before"
                                             }
                                         ],
-                                        "orderId": 15
+                                        "orderId": 25
+                                    },
+                                    {
+                                        "category": "Forms",
+                                        "dimensions": [
+                                            {
+                                                "uniqueId": "FormAnalytics.FormConverted",
+                                                "name": "Form Conversions",
+                                                "sqlSegment": "log_form.converted"
+                                            },
+                                            {
+                                                "uniqueId": "FormAnalytics.FormStarts",
+                                                "name": "Form Starts",
+                                                "sqlSegment": "log_form.num_starts"
+                                            },
+                                            {
+                                                "uniqueId": "FormAnalytics.FormSubmissions",
+                                                "name": "Form Submissions",
+                                                "sqlSegment": "log_form.num_submissions"
+                                            },
+                                            {
+                                                "uniqueId": "FormAnalytics.FormViews",
+                                                "name": "Form Views",
+                                                "sqlSegment": "log_form.num_views"
+                                            },
+                                            {
+                                                "uniqueId": "FormAnalytics.FormTimeHesitation",
+                                                "name": "Hesitation Time",
+                                                "sqlSegment": "log_form.time_hesitation"
+                                            },
+                                            {
+                                                "uniqueId": "FormAnalytics.FormTimeSpent",
+                                                "name": "Time Spent",
+                                                "sqlSegment": "log_form.time_spent"
+                                            },
+                                            {
+                                                "uniqueId": "FormAnalytics.FormTimeToFirstSubmission",
+                                                "name": "Time To First Submit",
+                                                "sqlSegment": "log_form.time_to_first_submission"
+                                            }
+                                        ],
+                                        "orderId": 49
                                     }
                                 ]
                             }
@@ -2439,7 +2279,7 @@
                 "tags": [
                     "CustomReports"
                 ],
-                "summary": "Get a list of available metrics that can be used in custom reports.",
+                "description": "Get a list of available metrics that can be used in custom reports.",
                 "operationId": "CustomReports.getAvailableMetrics",
                 "parameters": [
                     {
@@ -2451,7 +2291,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Example links: [XML](https://demo.matomo.cloud/?module=API&method=CustomReports.getAvailableMetrics&idSite=1&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/?module=API&method=CustomReports.getAvailableMetrics&idSite=1&format=JSON&token_auth=anonymous), TSV (N/A)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -2492,47 +2332,57 @@
                                 "example": {
                                     "row": [
                                         {
-                                            "category": "Visitor location",
+                                            "category": "Events",
                                             "metrics": {
                                                 "row": [
                                                     {
-                                                        "uniqueId": "nb_uniq_usercountry_city",
-                                                        "name": "Unique Cities",
-                                                        "description": "The unique number of Cities. When viewing a period that is not day, then this metric will become \"Sum of Unique Cities\". In such case, if the same Cities appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
+                                                        "uniqueId": "avg_event_value",
+                                                        "name": "Average Value",
+                                                        "description": "Average value of \"Event value\" per \"Events with a value\"."
                                                     },
                                                     {
-                                                        "uniqueId": "nb_uniq_usercountry_continent",
-                                                        "name": "Unique Continents",
-                                                        "description": "The unique number of Continents. When viewing a period that is not day, then this metric will become \"Sum of Unique Continents\". In such case, if the same Continents appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
+                                                        "uniqueId": "events_with_event_value",
+                                                        "name": "Events With A Value",
+                                                        "description": "Number of events where an Event value was set"
                                                     },
                                                     {
-                                                        "uniqueId": "nb_uniq_usercountry_country",
-                                                        "name": "Unique Countries",
-                                                        "description": "The unique number of Countries. When viewing a period that is not day, then this metric will become \"Sum of Unique Countries\". In such case, if the same Countries appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
+                                                        "uniqueId": "max_events_eventvalue",
+                                                        "name": "Max Event Value",
+                                                        "description": "The maximum value for this event"
                                                     },
                                                     {
-                                                        "uniqueId": "nb_uniq_userlanguage_language",
-                                                        "name": "Unique Languages",
-                                                        "description": "The unique number of Languages. When viewing a period that is not day, then this metric will become \"Sum of Unique Languages\". In such case, if the same Languages appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
+                                                        "uniqueId": "min_events_eventvalue",
+                                                        "name": "Min Event Value",
+                                                        "description": "The minimum value for this event"
                                                     },
                                                     {
-                                                        "uniqueId": "nb_uniq_usercountry_latitude",
-                                                        "name": "Unique Latitudes",
-                                                        "description": "The unique number of Latitudes. When viewing a period that is not day, then this metric will become \"Sum of Unique Latitudes\". In such case, if the same Latitudes appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
+                                                        "uniqueId": "sum_events_eventvalue",
+                                                        "name": "Total Event Value",
+                                                        "description": "The total number (sum) of Event value"
                                                     },
                                                     {
-                                                        "uniqueId": "nb_uniq_usercountry_longitude",
-                                                        "name": "Unique Longitudes",
-                                                        "description": "The unique number of Longitudes. When viewing a period that is not day, then this metric will become \"Sum of Unique Longitudes\". In such case, if the same Longitudes appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
+                                                        "uniqueId": "nb_uniq_events_eventaction",
+                                                        "name": "Unique Event Actions",
+                                                        "description": "The unique number of Event Actions. When viewing a period that is not day, then this metric will become \"Sum of Unique Event Actions\". In such case, if the same Event Actions appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
                                                     },
                                                     {
-                                                        "uniqueId": "nb_uniq_usercountry_region",
-                                                        "name": "Unique Regions",
-                                                        "description": "The unique number of Regions. When viewing a period that is not day, then this metric will become \"Sum of Unique Regions\". In such case, if the same Regions appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
+                                                        "uniqueId": "nb_uniq_events_eventcategory",
+                                                        "name": "Unique Event Categories",
+                                                        "description": "The unique number of Event Categories. When viewing a period that is not day, then this metric will become \"Sum of Unique Event Categories\". In such case, if the same Event Categories appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
+                                                    },
+                                                    {
+                                                        "uniqueId": "nb_uniq_events_eventname",
+                                                        "name": "Unique Event Names",
+                                                        "description": "The unique number of Event Names. When viewing a period that is not day, then this metric will become \"Sum of Unique Event Names\". In such case, if the same Event Names appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
+                                                    },
+                                                    {
+                                                        "uniqueId": "nb_uniq_events_eventurl",
+                                                        "name": "Unique Event URLs",
+                                                        "description": "The unique number of Event URLs. When viewing a period that is not day, then this metric will become \"Sum of Unique Event URLs\". In such case, if the same Event URLs appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
                                                     }
                                                 ]
                                             },
-                                            "orderId": "7"
+                                            "orderId": "12"
                                         }
                                     ]
                                 }
@@ -2583,45 +2433,55 @@
                                 },
                                 "example": [
                                     {
-                                        "category": "Visitor location",
+                                        "category": "Events",
                                         "metrics": [
                                             {
-                                                "uniqueId": "nb_uniq_usercountry_city",
-                                                "name": "Unique Cities",
-                                                "description": "The unique number of Cities. When viewing a period that is not day, then this metric will become \"Sum of Unique Cities\". In such case, if the same Cities appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
+                                                "uniqueId": "avg_event_value",
+                                                "name": "Average Value",
+                                                "description": "Average value of \"Event value\" per \"Events with a value\"."
                                             },
                                             {
-                                                "uniqueId": "nb_uniq_usercountry_continent",
-                                                "name": "Unique Continents",
-                                                "description": "The unique number of Continents. When viewing a period that is not day, then this metric will become \"Sum of Unique Continents\". In such case, if the same Continents appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
+                                                "uniqueId": "events_with_event_value",
+                                                "name": "Events With A Value",
+                                                "description": "Number of events where an Event value was set"
                                             },
                                             {
-                                                "uniqueId": "nb_uniq_usercountry_country",
-                                                "name": "Unique Countries",
-                                                "description": "The unique number of Countries. When viewing a period that is not day, then this metric will become \"Sum of Unique Countries\". In such case, if the same Countries appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
+                                                "uniqueId": "max_events_eventvalue",
+                                                "name": "Max Event Value",
+                                                "description": "The maximum value for this event"
                                             },
                                             {
-                                                "uniqueId": "nb_uniq_userlanguage_language",
-                                                "name": "Unique Languages",
-                                                "description": "The unique number of Languages. When viewing a period that is not day, then this metric will become \"Sum of Unique Languages\". In such case, if the same Languages appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
+                                                "uniqueId": "min_events_eventvalue",
+                                                "name": "Min Event Value",
+                                                "description": "The minimum value for this event"
                                             },
                                             {
-                                                "uniqueId": "nb_uniq_usercountry_latitude",
-                                                "name": "Unique Latitudes",
-                                                "description": "The unique number of Latitudes. When viewing a period that is not day, then this metric will become \"Sum of Unique Latitudes\". In such case, if the same Latitudes appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
+                                                "uniqueId": "sum_events_eventvalue",
+                                                "name": "Total Event Value",
+                                                "description": "The total number (sum) of Event value"
                                             },
                                             {
-                                                "uniqueId": "nb_uniq_usercountry_longitude",
-                                                "name": "Unique Longitudes",
-                                                "description": "The unique number of Longitudes. When viewing a period that is not day, then this metric will become \"Sum of Unique Longitudes\". In such case, if the same Longitudes appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
+                                                "uniqueId": "nb_uniq_events_eventaction",
+                                                "name": "Unique Event Actions",
+                                                "description": "The unique number of Event Actions. When viewing a period that is not day, then this metric will become \"Sum of Unique Event Actions\". In such case, if the same Event Actions appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
                                             },
                                             {
-                                                "uniqueId": "nb_uniq_usercountry_region",
-                                                "name": "Unique Regions",
-                                                "description": "The unique number of Regions. When viewing a period that is not day, then this metric will become \"Sum of Unique Regions\". In such case, if the same Regions appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
+                                                "uniqueId": "nb_uniq_events_eventcategory",
+                                                "name": "Unique Event Categories",
+                                                "description": "The unique number of Event Categories. When viewing a period that is not day, then this metric will become \"Sum of Unique Event Categories\". In such case, if the same Event Categories appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
+                                            },
+                                            {
+                                                "uniqueId": "nb_uniq_events_eventname",
+                                                "name": "Unique Event Names",
+                                                "description": "The unique number of Event Names. When viewing a period that is not day, then this metric will become \"Sum of Unique Event Names\". In such case, if the same Event Names appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
+                                            },
+                                            {
+                                                "uniqueId": "nb_uniq_events_eventurl",
+                                                "name": "Unique Event URLs",
+                                                "description": "The unique number of Event URLs. When viewing a period that is not day, then this metric will become \"Sum of Unique Event URLs\". In such case, if the same Event URLs appear in 2 or more days within the selected period, then it will be counted as 2 or the total number of days it has appeared and not 1."
                                             }
                                         ],
-                                        "orderId": 7
+                                        "orderId": 12
                                     }
                                 ]
                             }
@@ -2653,7 +2513,7 @@
                 "tags": [
                     "CustomReports"
                 ],
-                "summary": "Get report data for a previously created custom report.",
+                "description": "Get report data for a previously created custom report.",
                 "operationId": "CustomReports.getCustomReport",
                 "parameters": [
                     {
@@ -2663,21 +2523,10 @@
                         "$ref": "#/components/parameters/idSiteRequired"
                     },
                     {
-                        "name": "period",
-                        "in": "query",
-                        "description": "The ID of the custom report to look up data for.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
+                        "$ref": "#/components/parameters/periodRequired"
                     },
                     {
-                        "name": "date",
-                        "in": "query",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
+                        "$ref": "#/components/parameters/dateRequired"
                     },
                     {
                         "name": "idCustomReport",
@@ -2689,38 +2538,16 @@
                         }
                     },
                     {
-                        "name": "segment",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
+                        "$ref": "#/components/parameters/segmentOptional"
                     },
                     {
-                        "name": "expanded",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean",
-                            "default": false
-                        }
+                        "$ref": "#/components/parameters/expandedOptional"
                     },
                     {
-                        "name": "flat",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean",
-                            "default": false
-                        }
+                        "$ref": "#/components/parameters/flatOptional"
                     },
                     {
-                        "name": "idSubtable",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "integer"
-                        }
+                        "$ref": "#/components/parameters/idSubtableOptional"
                     },
                     {
                         "name": "columns",
@@ -2733,7 +2560,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Example links: [XML](https://demo.matomo.cloud/index.php?module=API&method=CustomReports.getCustomReport&idSite=1&idCustomReport=5&period=day&date=today&format=xml&token_auth=anonymous), [JSON](https://demo.matomo.cloud/index.php?module=API&method=CustomReports.getCustomReport&idSite=1&idCustomReport=5&period=day&date=today&format=JSON&token_auth=anonymous), [TSV (Excel)](https://demo.matomo.cloud/index.php?module=API&method=CustomReports.getCustomReport&idSite=1&idCustomReport=5&period=day&date=today&format=Tsv&token_auth=anonymous)",
+                        "description": "OK",
                         "content": {
                             "text/xml": {
                                 "schema": {
@@ -2757,20 +2584,100 @@
                                 "example": {
                                     "row": [
                                         {
-                                            "label": "Australia",
-                                            "nb_uniq_visitors": "1",
-                                            "goal_7_conversion": "0",
-                                            "level": "1",
-                                            "goal_7_conversion_uniq_visitors_rate": "0",
-                                            "segment": "countryCode==au;countryCode!=pl"
-                                        },
-                                        {
                                             "label": "United States",
-                                            "nb_uniq_visitors": "1",
+                                            "nb_uniq_visitors": "6",
                                             "goal_7_conversion": "0",
                                             "level": "1",
                                             "goal_7_conversion_uniq_visitors_rate": "0",
                                             "segment": "countryCode==us;countryCode!=pl"
+                                        },
+                                        {
+                                            "label": "Canada",
+                                            "nb_uniq_visitors": "2",
+                                            "goal_7_conversion": "1",
+                                            "level": "1",
+                                            "goal_7_conversion_uniq_visitors_rate": "0.5",
+                                            "segment": "countryCode==ca;countryCode!=pl"
+                                        },
+                                        {
+                                            "label": "Singapore",
+                                            "nb_uniq_visitors": "2",
+                                            "goal_7_conversion": "0",
+                                            "level": "1",
+                                            "goal_7_conversion_uniq_visitors_rate": "0",
+                                            "segment": "countryCode==sg;countryCode!=pl"
+                                        },
+                                        {
+                                            "label": "Spain",
+                                            "nb_uniq_visitors": "2",
+                                            "goal_7_conversion": "0",
+                                            "level": "1",
+                                            "goal_7_conversion_uniq_visitors_rate": "0",
+                                            "segment": "countryCode==es;countryCode!=pl"
+                                        },
+                                        {
+                                            "label": "France",
+                                            "nb_uniq_visitors": "1",
+                                            "goal_7_conversion": "0",
+                                            "level": "1",
+                                            "goal_7_conversion_uniq_visitors_rate": "0",
+                                            "segment": "countryCode==fr;countryCode!=pl"
+                                        },
+                                        {
+                                            "label": "Germany",
+                                            "nb_uniq_visitors": "1",
+                                            "goal_7_conversion": "0",
+                                            "level": "1",
+                                            "goal_7_conversion_uniq_visitors_rate": "0",
+                                            "segment": "countryCode==de;countryCode!=pl"
+                                        },
+                                        {
+                                            "label": "Indonesia",
+                                            "nb_uniq_visitors": "1",
+                                            "goal_7_conversion": "0",
+                                            "level": "1",
+                                            "goal_7_conversion_uniq_visitors_rate": "0",
+                                            "segment": "countryCode==id;countryCode!=pl"
+                                        },
+                                        {
+                                            "label": "Netherlands",
+                                            "nb_uniq_visitors": "1",
+                                            "goal_7_conversion": "0",
+                                            "level": "1",
+                                            "goal_7_conversion_uniq_visitors_rate": "0",
+                                            "segment": "countryCode==nl;countryCode!=pl"
+                                        },
+                                        {
+                                            "label": "Norway",
+                                            "nb_uniq_visitors": "1",
+                                            "goal_7_conversion": "0",
+                                            "level": "1",
+                                            "goal_7_conversion_uniq_visitors_rate": "0",
+                                            "segment": "countryCode==no;countryCode!=pl"
+                                        },
+                                        {
+                                            "label": "Philippines",
+                                            "nb_uniq_visitors": "1",
+                                            "goal_7_conversion": "0",
+                                            "level": "1",
+                                            "goal_7_conversion_uniq_visitors_rate": "0",
+                                            "segment": "countryCode==ph;countryCode!=pl"
+                                        },
+                                        {
+                                            "label": "Portugal",
+                                            "nb_uniq_visitors": "1",
+                                            "goal_7_conversion": "0",
+                                            "level": "1",
+                                            "goal_7_conversion_uniq_visitors_rate": "0",
+                                            "segment": "countryCode==pt;countryCode!=pl"
+                                        },
+                                        {
+                                            "label": "United Kingdom",
+                                            "nb_uniq_visitors": "1",
+                                            "goal_7_conversion": "0",
+                                            "level": "1",
+                                            "goal_7_conversion_uniq_visitors_rate": "0",
+                                            "segment": "countryCode==gb;countryCode!=pl"
                                         }
                                     ]
                                 }
@@ -2810,25 +2717,102 @@
                                 },
                                 "example": [
                                     {
-                                        "label": "Australia",
-                                        "nb_uniq_visitors": 1,
-                                        "goal_7_conversion": 0,
-                                        "level": 1,
-                                        "goal_7_conversion_uniq_visitors_rate": 0,
-                                        "segment": "countryCode==au;countryCode!=pl"
-                                    },
-                                    {
                                         "label": "United States",
-                                        "nb_uniq_visitors": 1,
+                                        "nb_uniq_visitors": 6,
                                         "goal_7_conversion": 0,
                                         "level": 1,
                                         "goal_7_conversion_uniq_visitors_rate": 0,
                                         "segment": "countryCode==us;countryCode!=pl"
+                                    },
+                                    {
+                                        "label": "Canada",
+                                        "nb_uniq_visitors": 2,
+                                        "goal_7_conversion": 1,
+                                        "level": 1,
+                                        "goal_7_conversion_uniq_visitors_rate": 0.5,
+                                        "segment": "countryCode==ca;countryCode!=pl"
+                                    },
+                                    {
+                                        "label": "Singapore",
+                                        "nb_uniq_visitors": 2,
+                                        "goal_7_conversion": 0,
+                                        "level": 1,
+                                        "goal_7_conversion_uniq_visitors_rate": 0,
+                                        "segment": "countryCode==sg;countryCode!=pl"
+                                    },
+                                    {
+                                        "label": "Spain",
+                                        "nb_uniq_visitors": 2,
+                                        "goal_7_conversion": 0,
+                                        "level": 1,
+                                        "goal_7_conversion_uniq_visitors_rate": 0,
+                                        "segment": "countryCode==es;countryCode!=pl"
+                                    },
+                                    {
+                                        "label": "France",
+                                        "nb_uniq_visitors": 1,
+                                        "goal_7_conversion": 0,
+                                        "level": 1,
+                                        "goal_7_conversion_uniq_visitors_rate": 0,
+                                        "segment": "countryCode==fr;countryCode!=pl"
+                                    },
+                                    {
+                                        "label": "Germany",
+                                        "nb_uniq_visitors": 1,
+                                        "goal_7_conversion": 0,
+                                        "level": 1,
+                                        "goal_7_conversion_uniq_visitors_rate": 0,
+                                        "segment": "countryCode==de;countryCode!=pl"
+                                    },
+                                    {
+                                        "label": "Indonesia",
+                                        "nb_uniq_visitors": 1,
+                                        "goal_7_conversion": 0,
+                                        "level": 1,
+                                        "goal_7_conversion_uniq_visitors_rate": 0,
+                                        "segment": "countryCode==id;countryCode!=pl"
+                                    },
+                                    {
+                                        "label": "Netherlands",
+                                        "nb_uniq_visitors": 1,
+                                        "goal_7_conversion": 0,
+                                        "level": 1,
+                                        "goal_7_conversion_uniq_visitors_rate": 0,
+                                        "segment": "countryCode==nl;countryCode!=pl"
+                                    },
+                                    {
+                                        "label": "Norway",
+                                        "nb_uniq_visitors": 1,
+                                        "goal_7_conversion": 0,
+                                        "level": 1,
+                                        "goal_7_conversion_uniq_visitors_rate": 0,
+                                        "segment": "countryCode==no;countryCode!=pl"
+                                    },
+                                    {
+                                        "label": "Philippines",
+                                        "nb_uniq_visitors": 1,
+                                        "goal_7_conversion": 0,
+                                        "level": 1,
+                                        "goal_7_conversion_uniq_visitors_rate": 0,
+                                        "segment": "countryCode==ph;countryCode!=pl"
+                                    },
+                                    {
+                                        "label": "Portugal",
+                                        "nb_uniq_visitors": 1,
+                                        "goal_7_conversion": 0,
+                                        "level": 1,
+                                        "goal_7_conversion_uniq_visitors_rate": 0,
+                                        "segment": "countryCode==pt;countryCode!=pl"
+                                    },
+                                    {
+                                        "label": "United Kingdom",
+                                        "nb_uniq_visitors": 1,
+                                        "goal_7_conversion": 0,
+                                        "level": 1,
+                                        "goal_7_conversion_uniq_visitors_rate": 0,
+                                        "segment": "countryCode==gb;countryCode!=pl"
                                     }
                                 ]
-                            },
-                            "application/vnd.ms-excel": {
-                                "example": "label    nb_uniq_visitors    goal_7_conversion    level    goal_7_conversion_uniq_visitors_rate    metadata_segment\n     * Australia    1    0    1    0    \"countryCode==au;countryCode!=pl\"\n     * United States    1    0    1    0    \"countryCode==us;countryCode!=pl\""
                             }
                         }
                     },
@@ -3249,13 +3233,13 @@
                     "application/json": {
                         "schema": {
                             "type": "array",
-                            "items": {}
+                            "items": []
                         }
                     },
                     "application/xml": {
                         "schema": {
                             "type": "array",
-                            "items": {}
+                            "items": []
                         }
                     }
                 }
@@ -3432,6 +3416,15 @@
                 "in": "query",
                 "description": "An in-database subtable ID.",
                 "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "idSubtableRequired": {
+                "name": "idSubtable",
+                "in": "query",
+                "description": "An in-database subtable ID.",
+                "required": true,
                 "schema": {
                     "type": "integer"
                 }
@@ -3646,10 +3639,9 @@
         },
         "securitySchemes": {
             "MatomoToken": {
-                "type": "apiKey",
-                "description": "Matomo API token passed as the 'token_auth' query parameter.",
-                "name": "token_auth",
-                "in": "query"
+                "type": "http",
+                "description": "Matomo API token passed in the Authorization header as a bearer token. For demo.matomo.cloud requests, use the anonymous token value: anonymous.",
+                "scheme": "bearer"
             }
         }
     },
@@ -3661,7 +3653,7 @@
     "tags": [
         {
             "name": "CustomReports",
-            "description": "The <a href='https://plugins.matomo.org/CustomReports' target='_blank'>Custom Reports</a> API lets you 1) create custom\nreports within Matomo and 2) view the created reports in the Matomo Reporting UI or consume them via the API.\n<br/><br/>\nYou can choose between different visualizations (eg table or evolution graph) and combine hundreds of dimensions\nand metrics to get the data you need."
+            "description": "The <a href='https://plugins.matomo.org/CustomReports' target='_blank'>Custom Reports</a> API lets you 1) create custom reports within Matomo and 2) view the created reports in the Matomo Reporting UI or consume them via the API. <br/><br/> You can choose between different visualizations (eg table or evolution graph) and combine hundreds of dimensions and metrics to get the data you need.   @OA\\Tag(name=\"CustomReports\")"
         }
     ],
     "externalDocs": {

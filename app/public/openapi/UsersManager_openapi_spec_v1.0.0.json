@@ -1,0 +1,3866 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Matomo Reporting API for UsersManager plugin",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://5x-dev.ddev.site/",
+            "description": "Current Matomo instance"
+        },
+        {
+            "url": "https://demo.matomo.cloud/",
+            "description": "Matomo demo server"
+        }
+    ],
+    "paths": {
+        "/index.php?module=API&method=UsersManager.getAvailableRoles": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Get the list of all available roles.",
+                "operationId": "UsersManager.getAvailableRoles",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns an array containing information about each role",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "id": "view",
+                                            "name": "View",
+                                            "description": "A user with this role can view all reports.",
+                                            "helpUrl": "https:\\/\\/matomo.org\\/faq\\/general\\/faq_70\\/"
+                                        },
+                                        {
+                                            "id": "write",
+                                            "name": "Write",
+                                            "description": "Users with this role can view all content plus create, manage and delete entities such as Goals, Funnels, Heatmaps, Session Recordings and Forms for this website.",
+                                            "helpUrl": "https:\\/\\/matomo.org\\/faq\\/general\\/faq_26910"
+                                        },
+                                        {
+                                            "id": "admin",
+                                            "name": "Admin",
+                                            "description": "Users with this role can manage a website and give other users access to the website. They can also do everything the Write role can do.",
+                                            "helpUrl": "https:\\/\\/matomo.org\\/faq\\/general\\/faq_69\\/"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "description": {
+                                                        "type": "string"
+                                                    },
+                                                    "helpUrl": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "id": "view",
+                                        "name": "View",
+                                        "description": "A user with this role can view all reports.",
+                                        "helpUrl": "https:\\/\\/matomo.org\\/faq\\/general\\/faq_70\\/"
+                                    },
+                                    {
+                                        "id": "write",
+                                        "name": "Write",
+                                        "description": "Users with this role can view all content plus create, manage and delete entities such as Goals, Funnels, Heatmaps, Session Recordings and Forms for this website.",
+                                        "helpUrl": "https:\\/\\/matomo.org\\/faq\\/general\\/faq_26910"
+                                    },
+                                    {
+                                        "id": "admin",
+                                        "name": "Admin",
+                                        "description": "Users with this role can manage a website and give other users access to the website. They can also do everything the Write role can do.",
+                                        "helpUrl": "https:\\/\\/matomo.org\\/faq\\/general\\/faq_69\\/"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "id\tname\tdescription\thelpUrl\nview\tView\tA user with this role can view all reports.\thttps://matomo.org/faq/general/faq_70/\nwrite\tWrite\t\"Users with this role can view all content plus create, manage and delete entities such as Goals, Funnels, Heatmaps, Session Recordings and Forms for this website.\"\thttps://matomo.org/faq/general/faq_26910\nadmin\tAdmin\tUsers with this role can manage a website and give other users access to the website. They can also do everything the Write role can do.\thttps://matomo.org/faq/general/faq_69/"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.getAvailableCapabilities": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Get the list of all available capabilities.",
+                "operationId": "UsersManager.getAvailableCapabilities",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns an array containing information about each capability",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "includedInRoles": {
+                                                        "type": "object"
+                                                    }
+                                                },
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "id": "tagmanager_write",
+                                            "name": "Write",
+                                            "description": "Grants the ability to use the Tag Manager. For example create, delete, and manage containers, tags, triggers, and variables, versions, etc.",
+                                            "helpUrl": "",
+                                            "includedInRoles": {
+                                                "row": [
+                                                    "write",
+                                                    "admin"
+                                                ]
+                                            },
+                                            "category": "Tag Manager"
+                                        },
+                                        {
+                                            "id": "tagmanager_publish_live_container",
+                                            "name": "Publish Live Container",
+                                            "description": "Grants the ability to publish a container to the live environment.",
+                                            "helpUrl": "",
+                                            "includedInRoles": {
+                                                "row": "admin"
+                                            },
+                                            "category": "Tag Manager"
+                                        },
+                                        {
+                                            "id": "tagmanager_use_custom_templates",
+                                            "name": "Use Custom Templates",
+                                            "description": "Grants the ability to write HTML\\/JavaScript that will be executed on the website. Grant this capability only to users you trust as custom templates can be misused to steal for example sensitive information.",
+                                            "helpUrl": "",
+                                            "includedInRoles": {
+                                                "row": "admin"
+                                            },
+                                            "category": "Tag Manager"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "description": {
+                                                        "type": "string"
+                                                    },
+                                                    "helpUrl": {
+                                                        "type": "string"
+                                                    },
+                                                    "includedInRoles": {
+                                                        "type": "array",
+                                                        "items": []
+                                                    },
+                                                    "category": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "id": "tagmanager_write",
+                                        "name": "Write",
+                                        "description": "Grants the ability to use the Tag Manager. For example create, delete, and manage containers, tags, triggers, and variables, versions, etc.",
+                                        "helpUrl": "",
+                                        "includedInRoles": [
+                                            "write",
+                                            "admin"
+                                        ],
+                                        "category": "Tag Manager"
+                                    },
+                                    {
+                                        "id": "tagmanager_publish_live_container",
+                                        "name": "Publish Live Container",
+                                        "description": "Grants the ability to publish a container to the live environment.",
+                                        "helpUrl": "",
+                                        "includedInRoles": [
+                                            "admin"
+                                        ],
+                                        "category": "Tag Manager"
+                                    },
+                                    {
+                                        "id": "tagmanager_use_custom_templates",
+                                        "name": "Use Custom Templates",
+                                        "description": "Grants the ability to write HTML\\/JavaScript that will be executed on the website. Grant this capability only to users you trust as custom templates can be misused to steal for example sensitive information.",
+                                        "helpUrl": "",
+                                        "includedInRoles": [
+                                            "admin"
+                                        ],
+                                        "category": "Tag Manager"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.setUserPreference": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Sets a user preference. Plugins can add custom preference names by declaring them in their plugin config/config.php like this:",
+                "operationId": "UsersManager.setUserPreference",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "userLogin",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "preferenceName",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "preferenceValue",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#/components/responses/GenericSuccess"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.getUserPreference": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Gets a user preference",
+                "operationId": "UsersManager.getUserPreference",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "preferenceName",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "userLogin",
+                        "in": "query",
+                        "description": "Optional, defaults to current user log in when set to false.",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.getUsersPlusRole": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Returns all users with their role for $idSite.",
+                "operationId": "UsersManager.getUsersPlusRole",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "string",
+                                    "default": "null"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "integer",
+                                    "default": 0
+                                },
+                                {
+                                    "type": "string",
+                                    "default": "0"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "filter_search",
+                        "in": "query",
+                        "description": "text to search for in the user's login and email (if any)",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    },
+                    {
+                        "name": "filter_access",
+                        "in": "query",
+                        "description": "only select users with this access to $idSite. can be 'noaccess', 'some', 'view', 'admin', 'superuser' Filtering by 'superuser' is only allowed for other superusers.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    },
+                    {
+                        "name": "filter_status",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "login": "admin",
+                                            "email": "admin@example.com",
+                                            "superuser_access": "1",
+                                            "date_registered": "2023-11-21 11:08:26",
+                                            "invited_by": "",
+                                            "invite_expired_at": "",
+                                            "invite_accept_at": "",
+                                            "role": "superuser",
+                                            "capabilities": "",
+                                            "last_seen": "2026-02-15 21:49:17",
+                                            "last_seen_ago": "03:29:51",
+                                            "invite_status": "active",
+                                            "uses_2fa": "0"
+                                        },
+                                        {
+                                            "login": "anonymous",
+                                            "email": "anonymous@example.org",
+                                            "superuser_access": "0",
+                                            "date_registered": "2023-11-21 11:08:06",
+                                            "invited_by": "",
+                                            "invite_expired_at": "",
+                                            "invite_accept_at": "",
+                                            "role": "noaccess",
+                                            "capabilities": "",
+                                            "invite_status": "active",
+                                            "uses_2fa": "0"
+                                        },
+                                        {
+                                            "login": "Test",
+                                            "email": "lachlan.reynolds@innocraft.com",
+                                            "superuser_access": "0",
+                                            "date_registered": "2026-01-05 20:31:03",
+                                            "invited_by": "admin",
+                                            "invite_expired_at": "",
+                                            "invite_accept_at": "2026-01-05 20:32:29",
+                                            "role": "admin",
+                                            "capabilities": "",
+                                            "last_seen": "2026-02-13 02:56:18",
+                                            "last_seen_ago": "2 days 22:22:50",
+                                            "invite_status": "active",
+                                            "uses_2fa": "0"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "login": {
+                                                        "type": "string"
+                                                    },
+                                                    "email": {
+                                                        "type": "string"
+                                                    },
+                                                    "superuser_access": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "date_registered": {
+                                                        "type": "string"
+                                                    },
+                                                    "invited_by": {
+                                                        "type": [
+                                                            "string",
+                                                            "number",
+                                                            "integer",
+                                                            "boolean",
+                                                            "array",
+                                                            "object",
+                                                            "null"
+                                                        ]
+                                                    },
+                                                    "invite_expired_at": {
+                                                        "type": [
+                                                            "string",
+                                                            "number",
+                                                            "integer",
+                                                            "boolean",
+                                                            "array",
+                                                            "object",
+                                                            "null"
+                                                        ]
+                                                    },
+                                                    "invite_accept_at": {
+                                                        "type": [
+                                                            "string",
+                                                            "number",
+                                                            "integer",
+                                                            "boolean",
+                                                            "array",
+                                                            "object",
+                                                            "null"
+                                                        ]
+                                                    },
+                                                    "role": {
+                                                        "type": "string"
+                                                    },
+                                                    "capabilities": {
+                                                        "type": "array",
+                                                        "items": []
+                                                    },
+                                                    "last_seen": {
+                                                        "type": "string"
+                                                    },
+                                                    "last_seen_ago": {
+                                                        "type": "string"
+                                                    },
+                                                    "invite_status": {
+                                                        "type": "string"
+                                                    },
+                                                    "uses_2fa": {
+                                                        "type": "boolean"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "login": "admin",
+                                        "email": "admin@example.com",
+                                        "superuser_access": true,
+                                        "date_registered": "2023-11-21 11:08:26",
+                                        "invited_by": null,
+                                        "invite_expired_at": null,
+                                        "invite_accept_at": null,
+                                        "role": "superuser",
+                                        "capabilities": [],
+                                        "last_seen": "2026-02-15 21:49:17",
+                                        "last_seen_ago": "03:29:52",
+                                        "invite_status": "active",
+                                        "uses_2fa": false
+                                    },
+                                    {
+                                        "login": "anonymous",
+                                        "email": "anonymous@example.org",
+                                        "superuser_access": false,
+                                        "date_registered": "2023-11-21 11:08:06",
+                                        "invited_by": null,
+                                        "invite_expired_at": null,
+                                        "invite_accept_at": null,
+                                        "role": "noaccess",
+                                        "capabilities": [],
+                                        "invite_status": "active",
+                                        "uses_2fa": false
+                                    },
+                                    {
+                                        "login": "Test",
+                                        "email": "lachlan.reynolds@innocraft.com",
+                                        "superuser_access": false,
+                                        "date_registered": "2026-01-05 20:31:03",
+                                        "invited_by": "admin",
+                                        "invite_expired_at": null,
+                                        "invite_accept_at": "2026-01-05 20:32:29",
+                                        "role": "admin",
+                                        "capabilities": [],
+                                        "last_seen": "2026-02-13 02:56:18",
+                                        "last_seen_ago": "2 days 22:22:51",
+                                        "invite_status": "active",
+                                        "uses_2fa": false
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.getUsers": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Returns the list of all the users",
+                "operationId": "UsersManager.getUsers",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "userLogins",
+                        "in": "query",
+                        "description": "Comma separated list of users to select. If not specified, will return all users",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "the list of all the users",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "login": "admin",
+                                            "email": "admin@example.com",
+                                            "superuser_access": "1",
+                                            "date_registered": "2023-11-21 11:08:26",
+                                            "invited_by": "",
+                                            "invite_expired_at": "",
+                                            "invite_accept_at": "",
+                                            "last_seen": "2026-02-15 21:49:17",
+                                            "last_seen_ago": "03:29:54",
+                                            "invite_status": "active",
+                                            "uses_2fa": "0"
+                                        },
+                                        {
+                                            "login": "anonymous",
+                                            "email": "anonymous@example.org",
+                                            "superuser_access": "0",
+                                            "date_registered": "2023-11-21 11:08:06",
+                                            "invited_by": "",
+                                            "invite_expired_at": "",
+                                            "invite_accept_at": "",
+                                            "invite_status": "active",
+                                            "uses_2fa": "0"
+                                        },
+                                        {
+                                            "login": "Test",
+                                            "email": "lachlan.reynolds@innocraft.com",
+                                            "superuser_access": "0",
+                                            "date_registered": "2026-01-05 20:31:03",
+                                            "invited_by": "admin",
+                                            "invite_expired_at": "",
+                                            "invite_accept_at": "2026-01-05 20:32:29",
+                                            "last_seen": "2026-02-13 02:56:18",
+                                            "last_seen_ago": "2 days 22:22:53",
+                                            "invite_status": "active",
+                                            "uses_2fa": "0"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "login": {
+                                                        "type": "string"
+                                                    },
+                                                    "email": {
+                                                        "type": "string"
+                                                    },
+                                                    "superuser_access": {
+                                                        "type": "integer"
+                                                    },
+                                                    "date_registered": {
+                                                        "type": "string"
+                                                    },
+                                                    "invited_by": {
+                                                        "type": [
+                                                            "string",
+                                                            "number",
+                                                            "integer",
+                                                            "boolean",
+                                                            "array",
+                                                            "object",
+                                                            "null"
+                                                        ]
+                                                    },
+                                                    "invite_expired_at": {
+                                                        "type": [
+                                                            "string",
+                                                            "number",
+                                                            "integer",
+                                                            "boolean",
+                                                            "array",
+                                                            "object",
+                                                            "null"
+                                                        ]
+                                                    },
+                                                    "invite_accept_at": {
+                                                        "type": [
+                                                            "string",
+                                                            "number",
+                                                            "integer",
+                                                            "boolean",
+                                                            "array",
+                                                            "object",
+                                                            "null"
+                                                        ]
+                                                    },
+                                                    "last_seen": {
+                                                        "type": "string"
+                                                    },
+                                                    "last_seen_ago": {
+                                                        "type": "string"
+                                                    },
+                                                    "invite_status": {
+                                                        "type": "string"
+                                                    },
+                                                    "uses_2fa": {
+                                                        "type": "boolean"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "login": "admin",
+                                        "email": "admin@example.com",
+                                        "superuser_access": 1,
+                                        "date_registered": "2023-11-21 11:08:26",
+                                        "invited_by": null,
+                                        "invite_expired_at": null,
+                                        "invite_accept_at": null,
+                                        "last_seen": "2026-02-15 21:49:17",
+                                        "last_seen_ago": "03:29:55",
+                                        "invite_status": "active",
+                                        "uses_2fa": false
+                                    },
+                                    {
+                                        "login": "anonymous",
+                                        "email": "anonymous@example.org",
+                                        "superuser_access": 0,
+                                        "date_registered": "2023-11-21 11:08:06",
+                                        "invited_by": null,
+                                        "invite_expired_at": null,
+                                        "invite_accept_at": null,
+                                        "invite_status": "active",
+                                        "uses_2fa": false
+                                    },
+                                    {
+                                        "login": "Test",
+                                        "email": "lachlan.reynolds@innocraft.com",
+                                        "superuser_access": 0,
+                                        "date_registered": "2026-01-05 20:31:03",
+                                        "invited_by": "admin",
+                                        "invite_expired_at": null,
+                                        "invite_accept_at": "2026-01-05 20:32:29",
+                                        "last_seen": "2026-02-13 02:56:18",
+                                        "last_seen_ago": "2 days 22:22:54",
+                                        "invite_status": "active",
+                                        "uses_2fa": false
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "login\temail\tsuperuser_access\tdate_registered\tinvited_by\tinvite_expired_at\tinvite_accept_at\tlast_seen\tlast_seen_ago\tinvite_status\tuses_2fa\nadmin\tadmin@example.com\t1\t2023-11-21 11:08:26\t\t\t\t2026-02-15 21:49:17\t03:29:56\tactive\t0\nanonymous\tanonymous@example.org\t0\t2023-11-21 11:08:06\t\t\t\t\t\tactive\t0\nTest\tlachlan.reynolds@innocraft.com\t0\t2026-01-05 20:31:03\tadmin\t\t2026-01-05 20:32:29\t2026-02-13 02:56:18\t2 days 22:22:55\tactive\t0"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.getUsersLogin": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Returns the list of all the users login",
+                "operationId": "UsersManager.getUsersLogin",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "the list of all the users login",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        "admin",
+                                        "anonymous",
+                                        "Test"
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": []
+                                },
+                                "example": [
+                                    "admin",
+                                    "anonymous",
+                                    "Test"
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "admin\nanonymous\nTest"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.getUsersSitesFromAccess": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "For each user, returns the list of website IDs where the user has the supplied $access level.",
+                "operationId": "UsersManager.getUsersSitesFromAccess",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "access",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The returned array has the format array(     login1 => array ( idsite1,idsite2),     login2 => array(idsite2),     ... )"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.getUsersAccessFromSite": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "For each user, returns their access level for the given $idSite.",
+                "operationId": "UsersManager.getUsersAccessFromSite",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "idSite",
+                        "in": "query",
+                        "description": "website ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The returned array has the format array(     login1 => 'view',     login2 => 'admin',     login3 => 'view',     ... )",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": {
+                                        "Test": "admin"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "Test": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "Test": "admin"
+                                }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "Test\nadmin"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.getUsersWithSiteAccess": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "",
+                "operationId": "UsersManager.getUsersWithSiteAccess",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "$ref": "#/components/parameters/idSiteRequired"
+                    },
+                    {
+                        "name": "access",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.getSitesAccessFromUser": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "For each website ID, returns the access level of the given $userLogin.",
+                "operationId": "UsersManager.getSitesAccessFromUser",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "userLogin",
+                        "in": "query",
+                        "description": "User that has to be valid",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The returned array has the format array(     idsite1 => 'view',     idsite2 => 'admin',     idsite3 => 'view',     ... )",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "site": "1",
+                                            "access": "admin"
+                                        },
+                                        {
+                                            "site": "2",
+                                            "access": "write"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "site": {
+                                                        "type": "integer"
+                                                    },
+                                                    "access": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "site": 1,
+                                        "access": "admin"
+                                    },
+                                    {
+                                        "site": 2,
+                                        "access": "write"
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "site\taccess\n1\tadmin\n2\twrite"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.getSitesAccessForUser": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "For each website ID, returns the access level of the given $userLogin (if the user is not a superuser).",
+                "operationId": "UsersManager.getSitesAccessForUser",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "userLogin",
+                        "in": "query",
+                        "description": "User that has to be valid",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "string",
+                                    "default": "null"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "integer",
+                                    "default": 0
+                                },
+                                {
+                                    "type": "string",
+                                    "default": "0"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "filter_search",
+                        "in": "query",
+                        "description": "text to search for in site name, URLs, or group.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    },
+                    {
+                        "name": "filter_access",
+                        "in": "query",
+                        "description": "access level to select for, can be 'some', 'view' or 'admin' (by default 'some')",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The returned array has the format array(     ['idsite' => 1, 'site_name' => 'the site', 'access' => 'admin'],     ['idsite' => 2, 'site_name' => 'the other site', 'access' => 'view'],     ... )",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": [
+                                        {
+                                            "idsite": "3",
+                                            "site_name": "Drupal Test",
+                                            "role": "noaccess",
+                                            "capabilities": ""
+                                        },
+                                        {
+                                            "idsite": "1",
+                                            "site_name": "example.com",
+                                            "role": "admin",
+                                            "capabilities": ""
+                                        },
+                                        {
+                                            "idsite": "2",
+                                            "site_name": "Test",
+                                            "role": "write",
+                                            "capabilities": ""
+                                        },
+                                        {
+                                            "idsite": "4",
+                                            "site_name": "test",
+                                            "role": "noaccess",
+                                            "capabilities": ""
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "idsite": {
+                                                        "type": "integer"
+                                                    },
+                                                    "site_name": {
+                                                        "type": "string"
+                                                    },
+                                                    "role": {
+                                                        "type": "string"
+                                                    },
+                                                    "capabilities": {
+                                                        "type": "array",
+                                                        "items": []
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "idsite": 3,
+                                        "site_name": "Drupal Test",
+                                        "role": "noaccess",
+                                        "capabilities": []
+                                    },
+                                    {
+                                        "idsite": 1,
+                                        "site_name": "example.com",
+                                        "role": "admin",
+                                        "capabilities": []
+                                    },
+                                    {
+                                        "idsite": 2,
+                                        "site_name": "Test",
+                                        "role": "write",
+                                        "capabilities": []
+                                    },
+                                    {
+                                        "idsite": 4,
+                                        "site_name": "test",
+                                        "role": "noaccess",
+                                        "capabilities": []
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.getUser": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Returns the user information (login, password hash, email, date_registered, etc.)",
+                "operationId": "UsersManager.getUser",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "userLogin",
+                        "in": "query",
+                        "description": "the user login",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "the user information",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": {
+                                        "login": "Test",
+                                        "email": "lachlan.reynolds@innocraft.com",
+                                        "superuser_access": "0",
+                                        "date_registered": "2026-01-05 20:31:03",
+                                        "invited_by": "admin",
+                                        "invite_expired_at": "",
+                                        "invite_accept_at": "2026-01-05 20:32:29",
+                                        "last_seen": "2026-02-13 02:56:18",
+                                        "last_seen_ago": "2 days 22:23:15",
+                                        "invite_status": "active",
+                                        "uses_2fa": "0"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "login": {
+                                            "type": "string"
+                                        },
+                                        "email": {
+                                            "type": "string"
+                                        },
+                                        "superuser_access": {
+                                            "type": "integer"
+                                        },
+                                        "date_registered": {
+                                            "type": "string"
+                                        },
+                                        "invited_by": {
+                                            "type": "string"
+                                        },
+                                        "invite_expired_at": {
+                                            "type": [
+                                                "string",
+                                                "number",
+                                                "integer",
+                                                "boolean",
+                                                "array",
+                                                "object",
+                                                "null"
+                                            ]
+                                        },
+                                        "invite_accept_at": {
+                                            "type": "string"
+                                        },
+                                        "last_seen": {
+                                            "type": "string"
+                                        },
+                                        "last_seen_ago": {
+                                            "type": "string"
+                                        },
+                                        "invite_status": {
+                                            "type": "string"
+                                        },
+                                        "uses_2fa": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "login": "Test",
+                                    "email": "lachlan.reynolds@innocraft.com",
+                                    "superuser_access": 0,
+                                    "date_registered": "2026-01-05 20:31:03",
+                                    "invited_by": "admin",
+                                    "invite_expired_at": null,
+                                    "invite_accept_at": "2026-01-05 20:32:29",
+                                    "last_seen": "2026-02-13 02:56:18",
+                                    "last_seen_ago": "2 days 22:23:16",
+                                    "invite_status": "active",
+                                    "uses_2fa": false
+                                }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "login\temail\tsuperuser_access\tdate_registered\tinvited_by\tinvite_expired_at\tinvite_accept_at\tlast_seen\tlast_seen_ago\tinvite_status\tuses_2fa\nTest\tlachlan.reynolds@innocraft.com\t0\t2026-01-05 20:31:03\tadmin\t\t2026-01-05 20:32:29\t2026-02-13 02:56:18\t2 days 22:23:17\tactive\t0"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.getUserByEmail": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Returns the user information (login, password hash, email, date_registered, etc.)",
+                "operationId": "UsersManager.getUserByEmail",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "userEmail",
+                        "in": "query",
+                        "description": "the user email",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "the user information"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.addUser": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Add a user in the database.",
+                "operationId": "UsersManager.addUser",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "userLogin",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "_isPasswordHashed",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "initialIdSite",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    },
+                    {
+                        "name": "passwordConfirmation",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.inviteUser": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "",
+                "operationId": "UsersManager.inviteUser",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "userLogin",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "initialIdSite",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    },
+                    {
+                        "name": "expiryInDays",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    },
+                    {
+                        "name": "passwordConfirmation",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.setSuperUserAccess": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Enable or disable Super user access to the given user login. Note: When granting Super User access all previous permissions of the user will be removed as the user gains access to everything.",
+                "operationId": "UsersManager.setSuperUserAccess",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "userLogin",
+                        "in": "query",
+                        "description": "the user login.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "hasSuperUserAccess",
+                        "in": "query",
+                        "description": "true or '1' to grant Super User access, false or '0' to remove Super User access.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "passwordConfirmation",
+                        "in": "query",
+                        "description": "the current user's password. For security purposes, this value should be sent as a POST parameter.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.hasSuperUserAccess": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Detect whether the current user has super user access or not.",
+                "operationId": "UsersManager.hasSuperUserAccess",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": [
+                                    "0"
+                                ]
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "value": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "value": false
+                                }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "value\n0"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.getUsersHavingSuperUserAccess": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Returns a list of all Super Users containing there userLogin and email address.",
+                "operationId": "UsersManager.getUsersHavingSuperUserAccess",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": {
+                                        "login": "admin",
+                                        "email": "admin@example.com",
+                                        "superuser_access": "1",
+                                        "invite_status": "active",
+                                        "uses_2fa": "0"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "": {
+                                                "properties": {
+                                                    "login": {
+                                                        "type": "string"
+                                                    },
+                                                    "email": {
+                                                        "type": "string"
+                                                    },
+                                                    "superuser_access": {
+                                                        "type": "integer"
+                                                    },
+                                                    "invite_status": {
+                                                        "type": "string"
+                                                    },
+                                                    "uses_2fa": {
+                                                        "type": "boolean"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object",
+                                        "additionalProperties": true
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "login": "admin",
+                                        "email": "admin@example.com",
+                                        "superuser_access": 1,
+                                        "invite_status": "active",
+                                        "uses_2fa": false
+                                    }
+                                ]
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "login\temail\tsuperuser_access\tinvite_status\tuses_2fa\nadmin\tadmin@example.com\t1\tactive\t0"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.updateUser": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Updates a user in the database.",
+                "operationId": "UsersManager.updateUser",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "userLogin",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "_isPasswordHashed",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "passwordConfirmation",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.deleteUser": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Delete one or more users and all its access, given its login.",
+                "operationId": "UsersManager.deleteUser",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "userLogin",
+                        "in": "query",
+                        "description": "the user login(s).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "passwordConfirmation",
+                        "in": "query",
+                        "description": "the currents users password, only required when request is authenticated with session token auth",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.logoutUser": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Signs a user out of all active sessions. Requires super user access.",
+                "operationId": "UsersManager.logoutUser",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "userLogin",
+                        "in": "query",
+                        "description": "The login of the user to sign out",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "passwordConfirmation",
+                        "in": "query",
+                        "description": "the current user's password, only required when request is authenticated with session token auth",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#/components/responses/GenericSuccess"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.userExists": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Returns true if the given userLogin is known in the database",
+                "operationId": "UsersManager.userExists",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "userLogin",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "true if the user is known",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": [
+                                    "1"
+                                ]
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "value": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "value": true
+                                }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "value\n1"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.userEmailExists": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Returns true if user with given email (userEmail) is known in the database, or the Super User",
+                "operationId": "UsersManager.userEmailExists",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "userEmail",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "true if the user is known"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.getUserLoginFromUserEmail": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Returns the first login name of an existing user that has the given email address. If no user can be found for this user an error will be returned.",
+                "operationId": "UsersManager.getUserLoginFromUserEmail",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "userEmail",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "true if the user is known"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.setUserAccess": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Set an access level to a given user for a list of websites ID.",
+                "operationId": "UsersManager.setUserAccess",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "userLogin",
+                        "in": "query",
+                        "description": "The user login",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "access",
+                        "in": "query",
+                        "description": "Access to grant. Must have one of the following value : noaccess, view, write, admin. May also be an array to sent additional capabilities",
+                        "required": true,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": []
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "idSites",
+                        "in": "query",
+                        "description": "The array of idSites on which to apply the access level for the user. If the value is \"all\" then we apply the access level to all the websites ID for which the current authentificated user has an 'admin' access.",
+                        "required": true,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": []
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "passwordConfirmation",
+                        "in": "query",
+                        "description": "password confirmation. only required when setting view access for anonymous user through session auth",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.addCapabilities": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Adds the given capabilities to the given user for the given sites.",
+                "operationId": "UsersManager.addCapabilities",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "userLogin",
+                        "in": "query",
+                        "description": "The user login",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "capabilities",
+                        "in": "query",
+                        "description": "To fetch a list of available capabilities call \"UsersManager.getAvailableCapabilities\".",
+                        "required": true,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "idSites",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.removeCapabilities": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Removes the given capabilities from the given user for the given sites.",
+                "operationId": "UsersManager.removeCapabilities",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "userLogin",
+                        "in": "query",
+                        "description": "The user login",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "capabilities",
+                        "in": "query",
+                        "description": "To fetch a list of available capabilities call \"UsersManager.getAvailableCapabilities\".",
+                        "required": true,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "idSites",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.createAppSpecificTokenAuth": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "Generates an app specific API token every time you call this method. You should ideally store this token securely in your app and not generate a new token every time.",
+                "operationId": "UsersManager.createAppSpecificTokenAuth",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "userLogin",
+                        "in": "query",
+                        "description": "Login or Email address",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "passwordConfirmation",
+                        "in": "query",
+                        "description": "the current user's password. For security purposes, this value should be sent as a POST parameter.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "The description for this app specific password, for example your app name. Max 100 characters are allowed",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "expireDate",
+                        "in": "query",
+                        "description": "Optionally a date when the token should expire",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    },
+                    {
+                        "name": "expireHours",
+                        "in": "query",
+                        "description": "Optionally number of hours for how long the token should be valid before it expires. If expireDate is set and expireHours, then expireDate will be used. If expireDate is set and expireHours, then expireDate will be used.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "0"
+                        }
+                    },
+                    {
+                        "name": "secureOnly",
+                        "in": "query",
+                        "description": "Defines if the token can be used securely only (if true, token can't be provided as param in GET requests)",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#/components/responses/GenericString"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.newsletterSignup": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "",
+                "operationId": "UsersManager.newsletterSignup",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/xml": {
+                                "schema": {
+                                    "properties": {
+                                        "row": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "xml": {
+                                                    "name": "row"
+                                                },
+                                                "additionalProperties": true
+                                            }
+                                        }
+                                    },
+                                    "type": "object",
+                                    "xml": {
+                                        "name": "result"
+                                    }
+                                },
+                                "example": {
+                                    "row": {
+                                        "success": "1"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "success": true
+                                }
+                            },
+                            "application/vnd.ms-excel": {
+                                "example": "success\n1"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.resendInvite": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "resend the invite email to user",
+                "operationId": "UsersManager.resendInvite",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "userLogin",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "expiryInDays",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 7
+                        }
+                    },
+                    {
+                        "name": "passwordConfirmation",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        },
+        "/index.php?module=API&method=UsersManager.generateInviteLink": {
+            "get": {
+                "tags": [
+                    "UsersManager"
+                ],
+                "description": "",
+                "operationId": "UsersManager.generateInviteLink",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/formatOptional"
+                    },
+                    {
+                        "name": "userLogin",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "expiryInDays",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 7
+                        }
+                    },
+                    {
+                        "name": "passwordConfirmation",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "null"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#/components/responses/GenericString"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/NotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/ServerError"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GenericSuccess": {
+                "description": "Generic Matomo success payload.",
+                "required": [
+                    "result",
+                    "message"
+                ],
+                "properties": {
+                    "result": {
+                        "type": "string",
+                        "example": "success"
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "ok"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "example": "200"
+                    }
+                },
+                "type": "object",
+                "example": {
+                    "result": "success",
+                    "message": "ok"
+                },
+                "additionalProperties": true
+            },
+            "GenericSuccessXml": {
+                "description": "Generic Matomo success payload in XML.",
+                "required": [
+                    "success"
+                ],
+                "properties": {
+                    "success": {
+                        "properties": {
+                            "message": {
+                                "type": "string",
+                                "xml": {
+                                    "attribute": true
+                                },
+                                "example": "ok"
+                            }
+                        },
+                        "type": "object",
+                        "xml": {
+                            "name": "success"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "result"
+                },
+                "example": {
+                    "success": {
+                        "message": "ok"
+                    }
+                },
+                "additionalProperties": true
+            },
+            "Error": {
+                "description": "Generic Matomo error payload.",
+                "required": [
+                    "result",
+                    "message"
+                ],
+                "properties": {
+                    "result": {
+                        "type": "string",
+                        "example": "error"
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "There was an error"
+                    },
+                    "code": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "additionalProperties": true
+            },
+            "ErrorXml": {
+                "description": "Generic Matomo error payload in XML.",
+                "properties": {
+                    "error": {
+                        "properties": {
+                            "message": {
+                                "type": "string",
+                                "xml": {
+                                    "attribute": true
+                                },
+                                "example": "There was an error"
+                            }
+                        },
+                        "type": "object",
+                        "xml": {
+                            "name": "error"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "result"
+                }
+            }
+        },
+        "responses": {
+            "BadRequest": {
+                "description": "Bad request (validation or missing parameters).",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: There was an error."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "There was an error."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "Unauthorized": {
+                "description": "Authentication failed or missing token.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: You must be logged in to access this functionality."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "You must be logged in to access this functionality."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "Forbidden": {
+                "description": "Authenticated but not allowed to access the resource.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: Not authorised."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Not authorised."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "NotFound": {
+                "description": "Resource not found.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: The method is not available."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "The method is not available."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "ServerError": {
+                "description": "Unexpected server error.",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: There was an error."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "There was an error."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "DefaultError": {
+                "description": "Default error response (any non-2xx).",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Error: There was an error."
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "There was an error."
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorXml"
+                        }
+                    }
+                }
+            },
+            "GenericSuccessNoBody": {
+                "description": "Generic 200 response with no body"
+            },
+            "GenericSuccess": {
+                "description": "Generic 200 response",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Success:ok"
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "<!-- Success: ok -->"
+                    },
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/GenericSuccess"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "$ref": "#/components/schemas/GenericSuccessXml"
+                        }
+                    }
+                }
+            },
+            "GenericString": {
+                "description": "Generic 200 response with only a string body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Result: success"
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "success"
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "GenericBoolean": {
+                "description": "Generic 200 response with only true or false as the body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                }
+            },
+            "GenericInteger": {
+                "description": "Generic 200 response with only an integer as the body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            },
+            "GenericArray": {
+                "description": "Generic 200 response with array body",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "text/html": {
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "application/json": {
+                        "schema": {
+                            "type": "array",
+                            "items": []
+                        }
+                    },
+                    "application/xml": {
+                        "schema": {
+                            "type": "array",
+                            "items": []
+                        }
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "moduleRequired": {
+                "name": "module",
+                "in": "query",
+                "description": "Always `API` for Reporting API requests.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "default": "API"
+                }
+            },
+            "methodRequired": {
+                "name": "method",
+                "in": "query",
+                "description": "API method, e.g. `VisitsSummary.get` or `CustomAlerts.getAlert`.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "example": "CustomAlerts.getAlert"
+                }
+            },
+            "formatRequired": {
+                "name": "format",
+                "in": "query",
+                "description": "Response format such as `xml` or `json`. Use `original` to get the original PHP data structure.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "default": "xml",
+                    "enum": [
+                        "xml",
+                        "json",
+                        "csv",
+                        "tsv",
+                        "html",
+                        "rss",
+                        "original"
+                    ]
+                }
+            },
+            "formatOptional": {
+                "name": "format",
+                "in": "query",
+                "description": "Response format. Defaults to `xml`. Use `original` to get the original PHP data structure.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "default": "xml",
+                    "enum": [
+                        "xml",
+                        "json",
+                        "csv",
+                        "tsv",
+                        "html",
+                        "rss",
+                        "original"
+                    ]
+                }
+            },
+            "idSiteRequired": {
+                "name": "idSite",
+                "in": "query",
+                "description": "Matomo site ID.",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "example": 1
+                }
+            },
+            "idSiteOptional": {
+                "name": "idSite",
+                "in": "query",
+                "description": "Matomo site ID.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "example": 1
+                }
+            },
+            "periodRequired": {
+                "name": "period",
+                "in": "query",
+                "description": "Reporting period.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "day",
+                        "week",
+                        "month",
+                        "year",
+                        "range"
+                    ],
+                    "example": "day"
+                }
+            },
+            "periodOptional": {
+                "name": "period",
+                "in": "query",
+                "description": "Reporting period.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "day",
+                        "week",
+                        "month",
+                        "year",
+                        "range"
+                    ],
+                    "example": "day"
+                }
+            },
+            "dateRequired": {
+                "name": "date",
+                "in": "query",
+                "description": "Date or range (e.g. `2025-08-01`, `yesterday`, `last30`, or `2025-08-01,2025-08-11`).",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "example": "today"
+                }
+            },
+            "dateOptional": {
+                "name": "date",
+                "in": "query",
+                "description": "Date or range (e.g. `2025-08-01`, `yesterday`, `last30`, or `2025-08-01,2025-08-11`).",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "today"
+                }
+            },
+            "segmentRequired": {
+                "name": "segment",
+                "in": "query",
+                "description": "Segment expression; see `API.getSegmentDimensionMetadata`.",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "segmentOptional": {
+                "name": "segment",
+                "in": "query",
+                "description": "Segment expression; see `API.getSegmentDimensionMetadata`.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "expandedOptional": {
+                "name": "expanded",
+                "in": "query",
+                "description": "If true, loads all subtables.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "default": 0,
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "idSubtableOptional": {
+                "name": "idSubtable",
+                "in": "query",
+                "description": "An in-database subtable ID.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "idSubtableRequired": {
+                "name": "idSubtable",
+                "in": "query",
+                "description": "An in-database subtable ID.",
+                "required": true,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "flatOptional": {
+                "name": "flat",
+                "in": "query",
+                "description": "Flatten subtables into the parent table.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "filter_patternOptional": {
+                "name": "filter_pattern",
+                "in": "query",
+                "description": "Regex to keep matching rows.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_columnOptional": {
+                "name": "filter_column",
+                "in": "query",
+                "description": "Column to apply the regex to (e.g., `label`).",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "label"
+                }
+            },
+            "filter_pattern_recursiveOptional": {
+                "name": "filter_pattern_recursive",
+                "in": "query",
+                "description": "Recursive regex filter.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_column_recursiveOptional": {
+                "name": "filter_column_recursive",
+                "in": "query",
+                "description": "Column for the recursive regex filter.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_excludelowpopOptional": {
+                "name": "filter_excludelowpop",
+                "in": "query",
+                "description": "Column to threshold and exclude low values.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_excludelowpop_valueOptional": {
+                "name": "filter_excludelowpop_value",
+                "in": "query",
+                "description": "Minimum value threshold for `filter_excludelowpop`.",
+                "required": false,
+                "schema": {
+                    "type": "number",
+                    "example": 0
+                }
+            },
+            "filter_sort_columnOptional": {
+                "name": "filter_sort_column",
+                "in": "query",
+                "description": "Column to sort by.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "filter_sort_orderOptional": {
+                "name": "filter_sort_order",
+                "in": "query",
+                "description": "Sort direction.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "example": "desc"
+                }
+            },
+            "filter_truncateOptional": {
+                "name": "filter_truncate",
+                "in": "query",
+                "description": "Row index after which rows are removed.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "filter_limitOptional": {
+                "name": "filter_limit",
+                "in": "query",
+                "description": "Maximum number of rows to return.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "filter_offsetOptional": {
+                "name": "filter_offset",
+                "in": "query",
+                "description": "Row offset.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "keep_summary_rowOptional": {
+                "name": "keep_summary_row",
+                "in": "query",
+                "description": "Keep the summary row.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 1
+                }
+            },
+            "disable_generic_filtersOptional": {
+                "name": "disable_generic_filters",
+                "in": "query",
+                "description": "Disable generic filters (those above).",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "disable_queued_filtersOptional": {
+                "name": "disable_queued_filters",
+                "in": "query",
+                "description": "Skip queued filters.",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                }
+            },
+            "hideColumnsOptional": {
+                "name": "hideColumns",
+                "in": "query",
+                "description": "Comma-separated list of columns to hide.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "showColumnsOptional": {
+                "name": "showColumns",
+                "in": "query",
+                "description": "Comma-separated list of columns to include.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "labelOptional": {
+                "name": "label",
+                "in": "query",
+                "description": "Keep only rows with these label(s). Supports path via '>' and arrays.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "idGoalRequired": {
+                "name": "idGoal",
+                "in": "query",
+                "description": "The ID of a configured goal.",
+                "required": true,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "idGoalOptional": {
+                "name": "idGoal",
+                "in": "query",
+                "description": "The ID of a configured goal.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            }
+        },
+        "securitySchemes": {
+            "MatomoToken": {
+                "type": "http",
+                "description": "Matomo API token passed in the Authorization header as a bearer token. For demo.matomo.cloud requests, use the anonymous token value: anonymous.",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "security": [
+        {
+            "MatomoToken": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "UsersManager",
+            "description": "The UsersManager API lets you Manage Users and their permissions to access specific websites.  You can create users via \"addUser\", update existing users via \"updateUser\" and delete users via \"deleteUser\". There are many ways to list users based on their login \"getUser\" and \"getUsers\", their email \"getUserByEmail\", or which users have permission (view or admin) to access the specified websites \"getUsersWithSiteAccess\".  Existing Permissions are listed given a login via \"getSitesAccessFromUser\", or a website ID via \"getUsersAccessFromSite\", or you can list all users and websites for a given permission via \"getUsersSitesFromAccess\". Permissions are set and updated via the method \"setUserAccess\". See also the documentation about <a href='https://matomo.org/docs/manage-users/' rel='noreferrer' target='_blank'>Managing Users</a> in Matomo."
+        }
+    ],
+    "externalDocs": {
+        "description": "Matomo Reporting API developer page",
+        "url": "https://developer.matomo.org/api-reference/reporting-api/"
+    }
+}
