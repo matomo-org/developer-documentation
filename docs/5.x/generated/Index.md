@@ -703,6 +703,7 @@ Index
 - [`getDescription()`](Piwik/Plugins/Tour/Engagement/Challenge.md#getdescription) &mdash; *Method in class* [`Challenge`](Piwik/Plugins/Tour/Engagement/Challenge.md)
 - [`getUrl()`](Piwik/Plugins/Tour/Engagement/Challenge.md#geturl) &mdash; *Method in class* [`Challenge`](Piwik/Plugins/Tour/Engagement/Challenge.md)
 - [`getDefaultWebsiteId()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultwebsiteid) &mdash; *Method in class* [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
+- [`getThemeMode()`](Piwik/Plugins/UsersManager/UserPreferences.md#getthememode) &mdash; *Method in class* [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`getDefaultReport()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultreport) &mdash; *Method in class* [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`getDefaultDate()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultdate) &mdash; *Method in class* [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)
 - [`getDefaultPeriod()`](Piwik/Plugins/UsersManager/UserPreferences.md#getdefaultperiod) &mdash; *Method in class* [`UserPreferences`](Piwik/Plugins/UsersManager/UserPreferences.md)

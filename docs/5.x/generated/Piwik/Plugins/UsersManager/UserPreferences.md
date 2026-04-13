@@ -9,6 +9,7 @@ Methods
 The class defines the following methods:
 
 - [`getDefaultWebsiteId()`](#getdefaultwebsiteid) &mdash; Returns default site ID that Piwik should load.
+- [`getThemeMode()`](#getthememode) &mdash; Returns user light/dark mode preference.
 - [`getDefaultReport()`](#getdefaultreport) &mdash; Returns default site ID that Piwik should load.
 - [`getDefaultDate()`](#getdefaultdate) &mdash; Returns default date for Piwik reports.
 - [`getDefaultPeriod()`](#getdefaultperiod) &mdash; Returns default period type for Piwik reports.
@@ -26,6 +27,16 @@ _Note: This value is a Piwik setting set by each user._
 
 - *Returns:*  `bool`|`int` &mdash;
     
+
+<a name="getthememode" id="getthememode"></a>
+<a name="getThemeMode" id="getThemeMode"></a>
+### `getThemeMode()`
+
+Returns user light/dark mode preference.
+
+#### Signature
+
+- It returns a `string` value.
 
 <a name="getdefaultreport" id="getdefaultreport"></a>
 <a name="getDefaultReport" id="getDefaultReport"></a>
