@@ -67,11 +67,9 @@ folder will be assumed.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$pluginName`
+    - `$pluginName` (`string`) &mdash;
       
-
-- *Returns:*  `mixed`|`string` &mdash;
-    
+- It returns a `string` value.
 
 <a name="getthemeenabled" id="getthemeenabled"></a>
 <a name="getThemeEnabled" id="getThemeEnabled"></a>
@@ -117,7 +115,7 @@ Return names of all installed plugins.
 
 #### Signature
 
-- It returns a `array` value.
+- It returns a `Piwik\Plugin\list&lt;string&gt;` value.
 
 <a name="getmissingplugins" id="getmissingplugins"></a>
 <a name="getMissingPlugins" id="getMissingPlugins"></a>
@@ -128,5 +126,5 @@ files cannot be found.
 
 #### Signature
 
-- It returns a `array` value.
+- It returns a `Piwik\Plugin\list&lt;string&gt;` value.
 

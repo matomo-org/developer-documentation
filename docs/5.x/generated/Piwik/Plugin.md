@@ -346,7 +346,7 @@ Detect whether there are any missing dependencies.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$piwikVersion` (`null`) &mdash;
+    - `$piwikVersion` (`string`|`null`) &mdash;
        Defaults to the current Piwik version
 - It returns a `bool` value.
 
