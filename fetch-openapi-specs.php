@@ -12,6 +12,11 @@ if (!is_dir($targetDirectory)) {
     exit(1);
 }
 
+if (!function_exists('curl_init')) {
+    fwrite(STDERR, "The curl extension is required to fetch OpenAPI specs.\n");
+    exit(1);
+}
+
 function fetchJson(string $baseUrl, string $tokenAuth, array $params): array
 {
     $params['module'] = 'API';
@@ -19,10 +24,30 @@ function fetchJson(string $baseUrl, string $tokenAuth, array $params): array
     $params['token_auth'] = $tokenAuth;
 
     $url = $baseUrl . '/index.php?' . http_build_query($params);
-    $response = @file_get_contents($url);
+    $ch = curl_init($url);
+    if ($ch === false) {
+        throw new RuntimeException("Failed to initialize curl for $url");
+    }
 
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_CONNECTTIMEOUT => 10,
+        CURLOPT_TIMEOUT => 60,
+    ]);
+
+    $response = curl_exec($ch);
     if ($response === false) {
-        throw new RuntimeException("Request failed: $url");
+        $error = curl_error($ch);
+        curl_close($ch);
+        throw new RuntimeException("Request failed for $url: $error");
+    }
+
+    $statusCode = curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
+    curl_close($ch);
+
+    if ($statusCode < 200 || $statusCode >= 300) {
+        throw new RuntimeException("Request failed for $url with HTTP status $statusCode");
     }
 
     $decoded = json_decode($response, true);
@@ -67,14 +92,25 @@ foreach ($plugins as $plugin) {
         }
 
         $json .= "\n";
+        $tempPath = tempnam($targetDirectory, $plugin . '_openapi_');
+        if ($tempPath === false) {
+            throw new RuntimeException("Failed to create temporary file for plugin $plugin");
+        }
 
-        if (file_put_contents($path, $json) === false) {
+        if (file_put_contents($tempPath, $json) === false) {
+            @unlink($tempPath);
             throw new RuntimeException("Failed to write file: $path");
+        }
+
+        if (!rename($tempPath, $path)) {
+            @unlink($tempPath);
+            throw new RuntimeException("Failed to move temporary file into place: $path");
         }
 
         $written++;
     } catch (Throwable $e) {
         fwrite(STDERR, "Failed for $plugin: {$e->getMessage()}\n");
+        exit(1);
     }
 }
 
