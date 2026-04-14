@@ -17,16 +17,58 @@ if (!function_exists('curl_init')) {
     exit(1);
 }
 
+function buildRequestUrl(string $baseUrl, array $params): string
+{
+    return $baseUrl . '/index.php?' . http_build_query($params);
+}
+
+function describeRequest(string $baseUrl, array $params): string
+{
+    $descriptionParams = $params;
+    unset($descriptionParams['token_auth']);
+
+    return buildRequestUrl($baseUrl, $descriptionParams);
+}
+
+/**
+ * @return list<string>
+ */
+function findExistingSpecFiles(string $targetDirectory): array
+{
+    $files = glob($targetDirectory . '/*_openapi_spec_v*.json');
+    if ($files === false) {
+        throw new RuntimeException("Failed to list existing OpenAPI spec files in $targetDirectory");
+    }
+
+    return array_values($files);
+}
+
+function removeStaleSpecFiles(string $targetDirectory, array $expectedPaths): void
+{
+    $expectedPaths = array_fill_keys($expectedPaths, true);
+
+    foreach (findExistingSpecFiles($targetDirectory) as $existingPath) {
+        if (isset($expectedPaths[$existingPath])) {
+            continue;
+        }
+
+        if (!unlink($existingPath)) {
+            throw new RuntimeException("Failed to remove stale file: $existingPath");
+        }
+    }
+}
+
 function fetchJson(string $baseUrl, string $tokenAuth, array $params): array
 {
     $params['module'] = 'API';
     $params['format'] = 'JSON';
     $params['token_auth'] = $tokenAuth;
 
-    $url = $baseUrl . '/index.php?' . http_build_query($params);
+    $url = buildRequestUrl($baseUrl, $params);
+    $requestDescription = describeRequest($baseUrl, $params);
     $ch = curl_init($url);
     if ($ch === false) {
-        throw new RuntimeException("Failed to initialize curl for $url");
+        throw new RuntimeException("Failed to initialize curl for $requestDescription");
     }
 
     curl_setopt_array($ch, [
@@ -40,19 +82,19 @@ function fetchJson(string $baseUrl, string $tokenAuth, array $params): array
     if ($response === false) {
         $error = curl_error($ch);
         curl_close($ch);
-        throw new RuntimeException("Request failed for $url: $error");
+        throw new RuntimeException("Request failed for $requestDescription: $error");
     }
 
     $statusCode = curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
     curl_close($ch);
 
     if ($statusCode < 200 || $statusCode >= 300) {
-        throw new RuntimeException("Request failed for $url with HTTP status $statusCode");
+        throw new RuntimeException("Request failed for $requestDescription with HTTP status $statusCode");
     }
 
     $decoded = json_decode($response, true);
     if (!is_array($decoded)) {
-        throw new RuntimeException("Invalid JSON response: $url");
+        throw new RuntimeException("Invalid JSON response for $requestDescription");
     }
 
     if (isset($decoded['result']) && $decoded['result'] === 'error') {
@@ -73,6 +115,7 @@ try {
 }
 
 $written = 0;
+$expectedPaths = [];
 
 foreach ($plugins as $plugin) {
     if (!is_string($plugin) || $plugin === '') {
@@ -86,6 +129,7 @@ foreach ($plugins as $plugin) {
         ]);
 
         $path = sprintf('%s/%s_openapi_spec_v%s.json', $targetDirectory, $plugin, $version);
+        $expectedPaths[] = $path;
         $json = json_encode($spec, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
         if ($json === false) {
             throw new RuntimeException("Failed to encode JSON for plugin $plugin");
@@ -112,6 +156,13 @@ foreach ($plugins as $plugin) {
         fwrite(STDERR, "Failed for $plugin: {$e->getMessage()}\n");
         exit(1);
     }
+}
+
+try {
+    removeStaleSpecFiles($targetDirectory, $expectedPaths);
+} catch (Throwable $e) {
+    fwrite(STDERR, "Failed to clean up stale spec files: {$e->getMessage()}\n");
+    exit(1);
 }
 
 echo "Wrote $written spec file(s) to $targetDirectory\n";
