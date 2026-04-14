@@ -36,12 +36,10 @@ class MarkdownParserFactory
     public static function buildForMenu()
     {
         return new ReplaceBrand(
-            new ProcessLinks(
-                new ExtractSectionsPostprocessor(
-                    new TitleIdPreprocessor(
-                        new FrontYamlParser(
-                            new MichelfMarkdown()
-                        )
+            new ExtractSectionsPostprocessor(
+                new TitleIdPreprocessor(
+                    new FrontYamlParser(
+                        new MichelfMarkdown()
                     )
                 )
             )
