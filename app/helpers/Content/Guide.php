@@ -22,14 +22,24 @@ class Guide implements MenuItem
      */
     protected $document;
 
+    /**
+     * @var string
+     */
+    private $markdown;
+
+    /**
+     * @var bool
+     */
+    private $isFullyParsed = false;
+
     public function __construct($name)
     {
         $this->name = $name;
 
         $this->validateName();
 
-        $markdownParser = MarkdownParserFactory::build();
-        $this->document = $markdownParser->parse($this->getMarkdown());
+        $this->markdown = $this->getMarkdown();
+        $this->document = MarkdownParserFactory::buildForMenu()->parse($this->markdown);
     }
 
     /**
@@ -37,6 +47,8 @@ class Guide implements MenuItem
      */
     public function getRenderedContent()
     {
+        $this->ensureFullyParsed();
+
         return $this->document->htmlContent;
     }
 
@@ -64,6 +76,8 @@ class Guide implements MenuItem
 
     public function getSections()
     {
+        $this->ensureFullyParsed();
+
         return $this->document->sections;
     }
 
@@ -200,6 +214,16 @@ class Guide implements MenuItem
         }
 
         return file_get_contents($path);
+    }
+
+    private function ensureFullyParsed()
+    {
+        if ($this->isFullyParsed) {
+            return;
+        }
+
+        $this->document = MarkdownParserFactory::build()->parse($this->markdown);
+        $this->isFullyParsed = true;
     }
 
     /**

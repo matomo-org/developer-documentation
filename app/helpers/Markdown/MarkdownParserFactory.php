@@ -29,4 +29,22 @@ class MarkdownParserFactory
             )
         );
     }
+
+    /**
+     * @return MarkdownParserInterface
+     */
+    public static function buildForMenu()
+    {
+        return new ReplaceBrand(
+            new ProcessLinks(
+                new ExtractSectionsPostprocessor(
+                    new TitleIdPreprocessor(
+                        new FrontYamlParser(
+                            new MichelfMarkdown()
+                        )
+                    )
+                )
+            )
+        );
+    }
 }
