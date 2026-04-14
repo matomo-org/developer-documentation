@@ -73,3 +73,60 @@
 .guide-sections .panel-heading {
     background: white;
 }
+
+/*TODO MAKE RESPONSIVE*/
+.documentation #api-docs-list {
+    columns: 3;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.documentation .collapsed {
+    display: none;
+}
+
+.documentation h2.api-swagger-index-heading {
+    padding-bottom: 0;
+}
+
+.documentation .api-swagger-index-toggle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 32px 9px 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    text-align: left;
+}
+
+.documentation .api-swagger-index-toggle:focus {
+    outline: 2px solid #337ab7;
+    outline-offset: 2px;
+}
+
+.documentation .api-swagger-index-toggle-label {
+    min-width: 0;
+}
+
+.documentation .api-swagger-index-toggle-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    display: block;
+    width: 24px;
+    margin-top: -12px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1;
+    font-family: monospace;
+    text-align: center;
+}
+
+.documentation.api-swagger-index-collapsible-ready .api-swagger-index-collapsed {
+    display: none;
+}

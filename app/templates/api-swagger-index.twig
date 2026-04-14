@@ -6,8 +6,8 @@
     {% if pluginSpecs is empty %}
         <p>No API modules are currently available.</p>
     {% else %}
-        <h2>Available API modules</h2>
-        <ul>
+        <h2>Quick access to APIs</h2>
+        <ul id="api-docs-list">
             {% for pluginSpec in pluginSpecs %}
                 <li>
                     <a href="{{ ('/api-reference/api/' ~ pluginSpec.slug)|completeUrl }}">{{ pluginSpec.name }}</a>
@@ -15,4 +15,116 @@
             {% endfor %}
         </ul>
     {% endif %}
+{% endblock %}
+
+{% block footer %}
+
+    <script type="text/javascript">
+        (function () {
+            let collapsedIndicator = '+';
+            let expandedIndicator = '−';
+
+            function setSectionCollapsedState(section, isCollapsed) {
+                section.button.setAttribute('aria-expanded', isCollapsed ? 'false' : 'true');
+                section.heading.classList.toggle('api-swagger-index-heading-collapsed', isCollapsed);
+                section.indicator.textContent = isCollapsed ? collapsedIndicator : expandedIndicator;
+
+                section.elements.forEach(function (element) {
+                    element.classList.toggle('api-swagger-index-collapsed', isCollapsed);
+                    element.setAttribute('aria-hidden', isCollapsed ? 'true' : 'false');
+                });
+            }
+
+            function createSectionButton(heading, sectionId) {
+                let button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'api-swagger-index-toggle';
+                button.setAttribute('aria-expanded', 'false');
+                button.setAttribute('data-section-id', sectionId);
+
+                let label = document.createElement('span');
+                label.className = 'api-swagger-index-toggle-label';
+
+                while (heading.firstChild) {
+                    label.appendChild(heading.firstChild);
+                }
+
+                let indicator = document.createElement('span');
+                indicator.className = 'api-swagger-index-toggle-icon';
+                indicator.setAttribute('aria-hidden', 'true');
+                indicator.textContent = collapsedIndicator;
+
+                button.appendChild(label);
+                button.appendChild(indicator);
+
+                heading.appendChild(button);
+
+                return button;
+            }
+
+            function initCollapsibleSections() {
+                let docsParent = document.querySelector('.documentation');
+                if (!docsParent) {
+                    return;
+                }
+
+                let sections = {};
+                let currentSection = null;
+
+                Array.prototype.forEach.call(docsParent.children, function (child) {
+                    if (child.tagName === 'H2') {
+                        currentSection = child.id || null;
+
+                        if (currentSection) {
+                            sections[currentSection] = {
+                                heading: child,
+                                elements: []
+                            };
+                        }
+
+                        return;
+                    }
+
+                    if (currentSection) {
+                        sections[currentSection].elements.push(child);
+                    }
+                });
+
+                let collapsibleSections = Object.keys(sections).map(function (sectionId) {
+                    let section = sections[sectionId];
+                    if (!section.elements.length) {
+                        return null;
+                    }
+
+                    section.heading.classList.add('api-swagger-index-heading');
+                    section.button = createSectionButton(section.heading, sectionId);
+                    section.indicator = section.button.querySelector('.api-swagger-index-toggle-icon');
+
+                    section.button.addEventListener('click', function () {
+                        let isExpanded = section.button.getAttribute('aria-expanded') === 'true';
+                        setSectionCollapsedState(section, isExpanded);
+                    });
+
+                    return section;
+                }).filter(Boolean);
+
+                if (!collapsibleSections.length) {
+                    return;
+                }
+
+                docsParent.classList.add('api-swagger-index-collapsible-ready');
+
+                collapsibleSections.forEach(function (section) {
+                    setSectionCollapsedState(section, true);
+                });
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initCollapsibleSections);
+            } else {
+                initCollapsibleSections();
+            }
+        })();
+
+    </script>
 {% endblock %}
