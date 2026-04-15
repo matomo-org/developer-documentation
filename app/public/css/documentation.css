@@ -74,12 +74,17 @@
     background: white;
 }
 
-/*TODO MAKE RESPONSIVE*/
 .documentation #api-docs-list {
     columns: 3;
+    column-gap: 24px;
     list-style-type: none;
     padding: 0;
     margin: 0;
+}
+
+.documentation #api-docs-list li {
+    break-inside: avoid;
+    margin-bottom: 8px;
 }
 
 .documentation .collapsed {
@@ -129,4 +134,16 @@
 
 .documentation.api-swagger-index-collapsible-ready .api-swagger-index-collapsed {
     display: none;
+}
+
+@media (max-width: 991px) {
+    .documentation #api-docs-list {
+        columns: 2;
+    }
+}
+
+@media (max-width: 767px) {
+    .documentation #api-docs-list {
+        columns: 1;
+    }
 }
