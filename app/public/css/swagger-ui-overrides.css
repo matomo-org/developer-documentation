@@ -185,6 +185,11 @@
     display: none;
 }
 
+/*Matomo body css makes fonts too large*/
+.swagger-ui .parameters-col_description {
+    font-size: 14px;
+}
+
 /* Revert bootstrap global <pre> styles for Swagger version badges only. */
 .swagger-ui .info .title small pre.version {
     background-color: transparent;
