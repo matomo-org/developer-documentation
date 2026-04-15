@@ -116,7 +116,6 @@ $app->get('/api-reference/api', function (Request $request, Response $response, 
         'selectedPiwikVersion' => Environment::getPiwikVersion(),
         'urlIfAvailableInNewerVersion' => (Environment::isLatestPiwikVersion() ? false : Url::getUrlIfDocumentIsAvailableInPiwikVersion($request->getUri()->getPath(), LATEST_PIWIK_DOCS_VERSION)),
         'pluginSpecs' => $pluginSpecs,
-        'hideGuideSections' => true,
     ]);
 });
 

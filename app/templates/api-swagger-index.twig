@@ -62,6 +62,52 @@
                 return button;
             }
 
+            function sectionContainsTarget(section, targetId) {
+                if (section.heading.id === targetId) {
+                    return true;
+                }
+
+                return section.elements.some(function (element) {
+                    if (element.id === targetId) {
+                        return true;
+                    }
+
+                    return Array.prototype.some.call(element.querySelectorAll('[id]'), function (child) {
+                        return child.id === targetId;
+                    });
+                });
+            }
+
+            function scrollToHashTarget(targetId) {
+                let target = document.getElementById(targetId);
+                if (!target) {
+                    return;
+                }
+
+                target.scrollIntoView();
+            }
+
+            function expandSectionForHash(sections, hash) {
+                let targetId = (hash || '').replace(/^#/, '');
+                if (!targetId) {
+                    return;
+                }
+
+                let didExpand = false;
+                sections.forEach(function (section) {
+                    if (sectionContainsTarget(section, targetId)) {
+                        setSectionCollapsedState(section, false);
+                        didExpand = true;
+                    }
+                });
+
+                if (didExpand) {
+                    window.requestAnimationFrame(function () {
+                        scrollToHashTarget(targetId);
+                    });
+                }
+            }
+
             function initCollapsibleSections() {
                 let docsParent = document.querySelector('.documentation');
                 if (!docsParent) {
@@ -116,6 +162,12 @@
 
                 collapsibleSections.forEach(function (section) {
                     setSectionCollapsedState(section, true);
+                });
+
+                expandSectionForHash(collapsibleSections, window.location.hash);
+
+                window.addEventListener('hashchange', function () {
+                    expandSectionForHash(collapsibleSections, window.location.hash);
                 });
             }
 
