@@ -9,6 +9,7 @@
 /app/tmp/cache/*
 /app/tmp/logs/*
 /app/tmp/templates/*
+/app/public/openapi/*
 /docs/changelog.md
 /docs/changelog-*.md
 /docs/cache/
