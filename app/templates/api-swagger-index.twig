@@ -6,7 +6,6 @@
     {% if pluginSpecs is empty %}
         <p>No API modules are currently available.</p>
     {% else %}
-        <h2>Quick access to APIs</h2>
         <ul id="api-docs-list">
             {% for pluginSpec in pluginSpecs %}
                 <li>
@@ -36,12 +35,11 @@
                 });
             }
 
-            function createSectionButton(heading, sectionId) {
+            function createSectionButton(heading) {
                 let button = document.createElement('button');
                 button.type = 'button';
                 button.className = 'api-swagger-index-toggle';
                 button.setAttribute('aria-expanded', 'false');
-                button.setAttribute('data-section-id', sectionId);
 
                 let label = document.createElement('span');
                 label.className = 'api-swagger-index-toggle-label';
@@ -61,6 +59,12 @@
                 heading.appendChild(button);
 
                 return button;
+            }
+
+            function shouldStartCollapsed(section) {
+                return !section.elements.some(function (element) {
+                    return element.id === 'api-docs-list';
+                });
             }
 
             function sectionContainsTarget(section, targetId) {
@@ -115,36 +119,32 @@
                     return;
                 }
 
-                let sections = {};
+                let sections = [];
                 let currentSection = null;
 
                 Array.prototype.forEach.call(docsParent.children, function (child) {
                     if (child.tagName === 'H2') {
-                        currentSection = child.id || null;
-
-                        if (currentSection) {
-                            sections[currentSection] = {
-                                heading: child,
-                                elements: []
-                            };
-                        }
+                        currentSection = {
+                            heading: child,
+                            elements: []
+                        };
+                        sections.push(currentSection);
 
                         return;
                     }
 
                     if (currentSection) {
-                        sections[currentSection].elements.push(child);
+                        currentSection.elements.push(child);
                     }
                 });
 
-                let collapsibleSections = Object.keys(sections).map(function (sectionId) {
-                    let section = sections[sectionId];
+                let collapsibleSections = sections.map(function (section) {
                     if (!section.elements.length) {
                         return null;
                     }
 
                     section.heading.classList.add('api-swagger-index-heading');
-                    section.button = createSectionButton(section.heading, sectionId);
+                    section.button = createSectionButton(section.heading);
                     section.indicator = section.button.querySelector('.api-swagger-index-toggle-icon');
 
                     section.button.addEventListener('click', function () {
@@ -162,7 +162,7 @@
                 docsParent.classList.add('api-swagger-index-collapsible-ready');
 
                 collapsibleSections.forEach(function (section) {
-                    setSectionCollapsedState(section, true);
+                    setSectionCollapsedState(section, shouldStartCollapsed(section));
                 });
 
                 expandSectionForHash(collapsibleSections, window.location.hash);

@@ -235,3 +235,4 @@ Here is a list of metrics returned by the API and their definition.
 
 All the commonly used terms in Matomo Analytics are documented in the [Glossary](https://glossary.matomo.org) including all metrics and reports.
 
+## Quick access to APIs
