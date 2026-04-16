@@ -128,8 +128,8 @@ by [execute()](/api-reference/Piwik/RankingQuery#execute).
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$column`
-       string Name of the column.
+    - `$column` (`string`) &mdash;
+       Name of the column.
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; if method is used more than once.
@@ -154,9 +154,9 @@ rows `log_action.type = TYPE_DOWNLOAD`.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$partitionColumn`
-       string The column name to partition by.
-    - `$possibleValues`
+    - `$partitionColumn` (`string`) &mdash;
+       The column name to partition by.
+    - `$possibleValues` (`array`) &mdash;
        Array of possible column values.
 - It does not return anything or a mixed result.
 - It throws one of the following exceptions:
@@ -173,10 +173,10 @@ The object has to be configured first using the other methods.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$innerQuery`
-       string The "payload" query that does the actual data aggregation. The ordering has to be specified in this query. [RankingQuery](/api-reference/Piwik/RankingQuery) cannot apply ordering itself.
-    - `$bind`
-       array Bindings for the inner query.
+    - `$innerQuery` (`string`) &mdash;
+       The "payload" query that does the actual data aggregation. The ordering has to be specified in this query. [RankingQuery](/api-reference/Piwik/RankingQuery) cannot apply ordering itself.
+    - `$bind` (`array`) &mdash;
+       Bindings for the inner query.
     - `$timeLimit` (`int`) &mdash;
        Adds a MAX_EXECUTION_TIME query hint to the query if $timeLimit > 0 for more details see DbHelper::addMaxExecutionTimeHintToQuery
 
@@ -196,10 +196,10 @@ yourself, use this method.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$innerQuery`
-       string The "payload" query that does the actual data aggregation. The ordering has to be specified in this query. [RankingQuery](/api-reference/Piwik/RankingQuery) cannot apply ordering itself.
+    - `$innerQuery` (`string`) &mdash;
+       The "payload" query that does the actual data aggregation. The ordering has to be specified in this query. [RankingQuery](/api-reference/Piwik/RankingQuery) cannot apply ordering itself.
     - `$withRollup` (`bool`) &mdash;
-       bool A flag which determines whether to generate the SQL query using ROLLUP
+       A flag which determines whether to generate the SQL query using ROLLUP
 
 - *Returns:*  `string` &mdash;
     The entire ranking query SQL.

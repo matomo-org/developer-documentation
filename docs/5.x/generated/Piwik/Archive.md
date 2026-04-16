@@ -360,7 +360,7 @@ query parameter data. API methods can use this method to reduce code redundancy.
        @see [build()](/api-reference/Piwik/Archive#build)
     - `$date` (`string`) &mdash;
        @see [build()](/api-reference/Piwik/Archive#build)
-    - `$segment` (`string`) &mdash;
+    - `$segment` (`string`|`null`) &mdash;
        @see [build()](/api-reference/Piwik/Archive#build)
     - `$expanded` (`bool`) &mdash;
        If true, loads all subtables. See [getDataTableExpanded()](/api-reference/Piwik/Archive#getdatatableexpanded)

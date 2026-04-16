@@ -205,7 +205,7 @@ Returns the current API method being executed, if the current request is an API 
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$request` (`array`) &mdash;
+    - `$request` (`array`|`null`) &mdash;
        eg array('module' => 'API', 'method' => 'Test.getMethod')
 
 - *Returns:*  `string`|`null` &mdash;
