@@ -42,7 +42,7 @@
         </div>
     {% endif %}
 
-    {% if pluginSpecs is defined and pluginSpecs is not empty %}
+    {% if pluginSpecs is defined and pluginSpecs is not empty and hideGuideSections|default(false) %}
         <div class="guide-sections panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
