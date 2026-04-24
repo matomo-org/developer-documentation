@@ -6,6 +6,13 @@ $baseUrl = rtrim(getenv('MATOMO_BASE_URL') ?: 'https://demo.matomo.cloud/', '/')
 $tokenAuth = getenv('MATOMO_TOKEN_AUTH') ?: 'anonymous';
 $targetDirectory = __DIR__ . '/app/public/openapi';
 $version = '1.0.0';
+$excludedPlugins = [
+    'LogViewer',
+    'TreemapVisualization',
+    'GithubAnalytics',
+    'LoginLdap',
+    'CustomTranslations',
+];
 
 if (!is_dir($targetDirectory)) {
     fwrite(STDERR, "Target directory does not exist: $targetDirectory\n");
@@ -56,6 +63,11 @@ function removeStaleSpecFiles(string $targetDirectory, array $expectedPaths): vo
             throw new RuntimeException("Failed to remove stale file: $existingPath");
         }
     }
+}
+
+function getSpecPath(string $targetDirectory, string $plugin, string $version): string
+{
+    return sprintf('%s/%s_openapi_spec_v%s.json', $targetDirectory, $plugin, $version);
 }
 
 function fetchJson(string $baseUrl, string $tokenAuth, array $params): array
@@ -116,9 +128,19 @@ try {
 
 $written = 0;
 $expectedPaths = [];
+$excludedPlugins = array_fill_keys($excludedPlugins, true);
 
 foreach ($plugins as $plugin) {
     if (!is_string($plugin) || $plugin === '') {
+        continue;
+    }
+
+    if (isset($excludedPlugins[$plugin])) {
+        $existingPath = getSpecPath($targetDirectory, $plugin, $version);
+        if (is_file($existingPath)) {
+            $expectedPaths[] = $existingPath;
+        }
+
         continue;
     }
 
@@ -128,7 +150,7 @@ foreach ($plugins as $plugin) {
             'plugin' => $plugin,
         ]);
 
-        $path = sprintf('%s/%s_openapi_spec_v%s.json', $targetDirectory, $plugin, $version);
+        $path = getSpecPath($targetDirectory, $plugin, $version);
         $expectedPaths[] = $path;
         $json = json_encode($spec, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
         if ($json === false) {
