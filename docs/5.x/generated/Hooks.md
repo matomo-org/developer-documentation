@@ -1317,7 +1317,7 @@ Callback Signature:
 
 ### CustomAlerts.validateReportParameters
 
-*Defined in [Piwik/Plugins/CustomAlerts/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/API.php) in line [220](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/API.php#L220)*
+*Defined in [Piwik/Plugins/CustomAlerts/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/API.php) in line [221](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/API.php#L221)*
 
 
 
