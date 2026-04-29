@@ -36,6 +36,10 @@ The class defines the following methods:
 - [`isWidgetizeable()`](#iswidgetizeable) &mdash; Detect whether the widget is widgetizable meaning it won't be able to add it to the dashboard and it won't be possible to export the widget via an iframe if it is not widgetizable.
 - [`setMiddlewareParameters()`](#setmiddlewareparameters) &mdash; If middleware parameters are specified, the corresponding action will be executed before showing the actual widget in the UI.
 - [`getMiddlewareParameters()`](#getmiddlewareparameters) &mdash; Get defined middleware parameters (if any).
+- [`setClientSideComponent()`](#setclientsidecomponent) &mdash; Marks this widget as client-rendered by a Vue component exported by the given plugin bundle.
+- [`getClientSideComponent()`](#getclientsidecomponent) &mdash; Returns the configured client-rendered component definition.
+- [`setClientSideProps()`](#setclientsideprops) &mdash; Sets static props that should be passed to the client-rendered Vue widget.
+- [`getClientSideProps()`](#getclientsideprops) &mdash; Returns props configured for the client-rendered Vue widget.
 - [`setIsWide()`](#setiswide) &mdash; Marks this widget as a "wide" widget that requires the full width.
 - [`isWide()`](#iswide) &mdash; Detect whether the widget should be shown wide or not.
 
@@ -143,6 +147,10 @@ widget. You can access these parameters via `Piwik\Common::getRequestVar(.
 
 ..)`.
 
+This applies to widgets rendered through their controller/action request. Client-rendered widgets do not receive
+these parameters automatically and should instead derive request state from the browser context or load data via
+API requests.
+
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -155,6 +163,9 @@ widget. You can access these parameters via `Piwik\Common::getRequestVar(.
 ### `addParameters()`
 
 Add new parameters and only overwrite parameters that have the same name. See [setParameters()](/api-reference/Piwik/Widget/WidgetConfig#setparameters)
+
+Like [setParameters()](/api-reference/Piwik/Widget/WidgetConfig#setparameters), these parameters are only used for widgets rendered through their
+controller/action request and are not forwarded automatically to client-rendered widgets.
 
 #### Signature
 
@@ -361,6 +372,70 @@ checked once on the initial Piwik page load.
 ### `getMiddlewareParameters()`
 
 Get defined middleware parameters (if any).
+
+#### Signature
+
+- It returns a `array` value.
+
+<a name="setclientsidecomponent" id="setclientsidecomponent"></a>
+<a name="setClientSideComponent" id="setClientSideComponent"></a>
+### `setClientSideComponent()`
+
+Since Matomo 5.10.0
+
+Marks this widget as client-rendered by a Vue component exported by the given plugin bundle.
+
+Client-rendered widgets do not execute the widget controller/action in a separate request before rendering.
+They should derive dynamic state from the current browser request or load data through API requests instead.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$plugin` (`string`) &mdash;
+       eg 'Transitions'
+    - `$component` (`string`) &mdash;
+       eg 'TransitionsPage'
+- It returns a [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md) value.
+
+<a name="getclientsidecomponent" id="getclientsidecomponent"></a>
+<a name="getClientSideComponent" id="getClientSideComponent"></a>
+### `getClientSideComponent()`
+
+Since Matomo 5.10.0
+
+Returns the configured client-rendered component definition.
+
+#### Signature
+
+
+- *Returns:*  `array` &mdash;
+    string, name: string}
+
+<a name="setclientsideprops" id="setclientsideprops"></a>
+<a name="setClientSideProps" id="setClientSideProps"></a>
+### `setClientSideProps()`
+
+Since Matomo 5.10.0
+
+Sets static props that should be passed to the client-rendered Vue widget.
+
+Use this for configuration known when the widget is registered. Request-specific widget parameters are not
+forwarded to client-rendered widgets through this mechanism.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$props` (`array`) &mdash;
+      
+- It returns a [`WidgetConfig`](../../Piwik/Widget/WidgetConfig.md) value.
+
+<a name="getclientsideprops" id="getclientsideprops"></a>
+<a name="getClientSideProps" id="getClientSideProps"></a>
+### `getClientSideProps()`
+
+Since Matomo 5.10.0
+
+Returns props configured for the client-rendered Vue widget.
 
 #### Signature
 
