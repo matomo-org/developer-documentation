@@ -3671,6 +3671,24 @@ Callback Signature:
 
 - array `&$providers` Contains an array of Piwik\Plugins\SEO\Metric\MetricsProvider instances.
 
+## Session
+
+- [Session.shouldSendSameSiteCookieAsNoneForcefully](#sessionshouldsendsamesitecookieasnoneforcefully)
+
+### Session.shouldSendSameSiteCookieAsNoneForcefully
+
+*Defined in [Piwik/Session](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Session.php) in line [202](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Session.php#L202)*
+
+Triggered to determine whether the session cookie SameSite value should be forced to None. Plugins can set `$shouldUseNoneForcefully` to true when the session cookie needs to be
+sent in a third-party context that is not covered by Matomo's built-in iframe, opt-out,
+or Overlay detection. The final cookie value is still only set to `None` when the request
+is served over HTTPS.
+
+Callback Signature:
+<pre><code>function(&amp;$shouldUseNoneForcefully]</code></pre>
+
+- bool &$shouldUseNoneForcefully Set this to true to force the session cookie SameSite value to None.
+
 ## SitesManager
 
 - [SitesManager.addSite.end](#sitesmanageraddsiteend)
