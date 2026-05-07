@@ -82,7 +82,11 @@ class CacheMiddleware
 
     private function shouldCache(Request $req)
     {
-        return $req->getMethod() == "GET";
+        if ($req->getMethod() !== "GET") {
+            return false;
+        }
+
+        return strpos($req->getUri()->getPath(), '/demo/') !== 0;
     }
 
     private function getCacheKey(Request $req)
