@@ -284,7 +284,10 @@ $app->get('/demo/{path:.*}', function (Request $request, Response $response, $ar
     }
 
     $response->getBody()->write($proxiedResponse['body']);
-    return $response->withStatus($proxiedResponse['statusCode']);
+    return $response->withHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
+        ->withHeader('Pragma', 'no-cache')
+        ->withHeader('Expires', '0')
+        ->withStatus($proxiedResponse['statusCode']);
 });
 
 $app->post('/receive-commit-hook', function (Request $request, Response $response, $args) {
