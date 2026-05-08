@@ -273,14 +273,20 @@ $app->get('/demo/{path:.*}', function (Request $request, Response $response, $ar
         $targetUrl = DemoProxy::buildValidatedApiUrl($path, $request->getQueryParams());
     } catch (\InvalidArgumentException $e) {
         $response->getBody()->write($e->getMessage());
-        return $response->withStatus(400);
+        return $response->withHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
+            ->withHeader('Pragma', 'no-cache')
+            ->withHeader('Expires', '0')
+            ->withStatus(400);
     }
 
     try {
         $proxiedResponse = DemoProxy::get($targetUrl);
     } catch (\RuntimeException $e) {
         $response->getBody()->write('Could not proxy demo request');
-        return $response->withStatus(502);
+        return $response->withHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
+            ->withHeader('Pragma', 'no-cache')
+            ->withHeader('Expires', '0')
+            ->withStatus(502);
     }
 
     $response->getBody()->write($proxiedResponse['body']);
