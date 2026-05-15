@@ -6,13 +6,17 @@
     {% if pluginSpecs is empty %}
         <p>No API modules are currently available.</p>
     {% else %}
-        <ul id="api-docs-list">
+        <ul class="api-docs-summary-list" id="api-docs-summary-list">
             {% for pluginSpec in pluginSpecs %}
-                <li>
-                    <a href="{{ ('/api-reference/api/' ~ pluginSpec.slug)|completeUrl }}">{{ pluginSpec.name }}</a>
+                <li class="api-docs-summary-row">
+                    <span class="api-docs-summary-content">
+                        <span class="api-docs-summary-name"><a href="{{ ('/api-reference/api/' ~ pluginSpec.slug)|completeUrl }}">{{ pluginSpec.name }}</a><span class="api-docs-summary-separator">:</span></span>
+                        <span class="api-docs-summary-description">{{ pluginSpec.summary }}</span>
+                    </span>
                 </li>
             {% endfor %}
         </ul>
+        <p class="old-api-docs-paragraph">Looking for the legacy API reference? The <a href="https://developer.matomo.org/api-reference/reporting-api">legacy API reference</a> page is still available while we continue improving the new API documentation. If anything is missing or behaving unexpectedly in this new version, <a href="https://matomo.org/support/">please let us know</a> so we can improve the experience.</p>
     {% endif %}
 {% endblock %}
 

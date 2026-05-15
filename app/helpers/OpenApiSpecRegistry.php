@@ -7,6 +7,7 @@ namespace helpers;
  */
 class OpenApiSpecRegistry
 {
+
     /**
      * @return string
      */
@@ -16,7 +17,15 @@ class OpenApiSpecRegistry
     }
 
     /**
-     * @return array<int, array{name: string, slug: string, file: string, url: string}>
+     * @return string
+     */
+    public static function getPluginMetadataPath()
+    {
+        return self::getOpenApiDirectory() . '/plugin_metadata_v1.0.0.json';
+    }
+
+    /**
+     * @return array<int, array{name: string, slug: string, file: string, url: string, summary: string}>
      */
     public static function getPluginSpecs()
     {
@@ -25,6 +34,7 @@ class OpenApiSpecRegistry
             return [];
         }
 
+        $pluginMetadata = self::getPluginMetadata();
         $specs = [];
         foreach ($files as $file) {
             $basename = basename($file);
@@ -43,6 +53,7 @@ class OpenApiSpecRegistry
                 'slug' => self::toSlug($name),
                 'file' => $basename,
                 'url' => '/openapi/' . $basename,
+                'summary' => self::getPluginSummary($pluginMetadata, $name),
             ];
         }
 
@@ -55,7 +66,7 @@ class OpenApiSpecRegistry
 
     /**
      * @param string $slug
-     * @return array{name: string, slug: string, file: string, url: string}|null
+     * @return array{name: string, slug: string, file: string, url: string, summary: string}|null
      */
     public static function getPluginSpecBySlug($slug)
     {
@@ -70,7 +81,7 @@ class OpenApiSpecRegistry
 
     /**
      * @param string $slug
-     * @return array{pluginSpec: array{name: string, slug: string, file: string, url: string}, pluginSpecData: array<mixed>}|null
+     * @return array{pluginSpec: array{name: string, slug: string, file: string, url: string, summary: string}, pluginSpecData: array<mixed>}|null
      */
     public static function getPluginSpecDocumentBySlug($slug)
     {
@@ -127,5 +138,34 @@ class OpenApiSpecRegistry
             ' ',
             $value
         ));
+    }
+
+    /**
+     * @return array<string, array{description?: mixed}>
+     */
+    private static function getPluginMetadata(): array
+    {
+        $metadataContents = @file_get_contents(self::getPluginMetadataPath());
+        if ($metadataContents === false) {
+            return [];
+        }
+
+        $metadata = json_decode($metadataContents, true);
+
+        return is_array($metadata) ? $metadata : [];
+    }
+
+    /**
+     * @param array<string, array{description?: mixed}> $metadataByPlugin
+     */
+    private static function getPluginSummary(array $metadataByPlugin, string $pluginName): string
+    {
+        $summary = $metadataByPlugin[$pluginName]['description'] ?? '';
+
+        if (is_string($summary)) {
+            return trim($summary);
+        }
+
+        return '';
     }
 }
