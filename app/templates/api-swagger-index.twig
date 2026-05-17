@@ -10,8 +10,8 @@
             {% for pluginSpec in pluginSpecs %}
                 <li class="api-docs-summary-row">
                     <span class="api-docs-summary-content">
-                        <span class="api-docs-summary-name"><a href="{{ ('/api-reference/api/' ~ pluginSpec.slug)|completeUrl }}">{{ pluginSpec.name }}</a><span class="api-docs-summary-separator">:</span></span>
-                        <span class="api-docs-summary-description">{{ pluginSpec.summary }}</span>
+                        <span class="api-docs-summary-name"><a href="{{ ('/api-reference/api/' ~ pluginSpec.slug)|completeUrl }}">{{ pluginSpec.name }}</a>{% if pluginSpec.summary is not empty %}<span class="api-docs-summary-separator">:</span>{% endif %}</span>
+                        {% if pluginSpec.summary is not empty %}<span class="api-docs-summary-description">{{ pluginSpec.summary }}</span>{% endif %}
                     </span>
                 </li>
             {% endfor %}
