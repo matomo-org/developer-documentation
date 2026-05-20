@@ -5,6 +5,7 @@ declare(strict_types=1);
 $baseUrl = rtrim(getenv('MATOMO_BASE_URL') ?: 'https://demo.matomo.cloud/', '/');
 $tokenAuth = getenv('MATOMO_TOKEN_AUTH') ?: 'anonymous';
 $targetDirectory = __DIR__ . '/app/public/openapi';
+$metadataPath = $targetDirectory . '/plugin_metadata_v1.0.0.json';
 $version = '1.0.0';
 $excludedPlugins = [
     'LogViewer',
@@ -70,6 +71,31 @@ function getSpecPath(string $targetDirectory, string $plugin, string $version): 
     return sprintf('%s/%s_openapi_spec_v%s.json', $targetDirectory, $plugin, $version);
 }
 
+function writeJsonFile(string $path, array $data, string $errorContext): void
+{
+    $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+    if ($json === false) {
+        throw new RuntimeException("Failed to encode JSON for $errorContext");
+    }
+
+    $json .= "\n";
+    $directory = dirname($path);
+    $tempPath = tempnam($directory, 'openapi_');
+    if ($tempPath === false) {
+        throw new RuntimeException("Failed to create temporary file for $errorContext");
+    }
+
+    if (file_put_contents($tempPath, $json) === false) {
+        @unlink($tempPath);
+        throw new RuntimeException("Failed to write file: $path");
+    }
+
+    if (!rename($tempPath, $path)) {
+        @unlink($tempPath);
+        throw new RuntimeException("Failed to move temporary file into place: $path");
+    }
+}
+
 function fetchJson(string $baseUrl, string $tokenAuth, array $params): array
 {
     $params['module'] = 'API';
@@ -119,10 +145,19 @@ function fetchJson(string $baseUrl, string $tokenAuth, array $params): array
 
 try {
     $plugins = fetchJson($baseUrl, $tokenAuth, [
-        'method' => 'OpenApiDocs.getPluginWhitelist',
+        'method' => 'OpenApiDocs.getAllowedPlugins',
     ]);
 } catch (Throwable $e) {
     fwrite(STDERR, "Failed to fetch plugin whitelist: {$e->getMessage()}\n");
+    exit(1);
+}
+
+try {
+    $pluginMetadata = fetchJson($baseUrl, $tokenAuth, [
+        'method' => 'OpenApiDocs.getAllowedPluginMetadata',
+    ]);
+} catch (Throwable $e) {
+    fwrite(STDERR, "Failed to fetch plugin metadata: {$e->getMessage()}\n");
     exit(1);
 }
 
@@ -152,26 +187,7 @@ foreach ($plugins as $plugin) {
 
         $path = getSpecPath($targetDirectory, $plugin, $version);
         $expectedPaths[] = $path;
-        $json = json_encode($spec, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-        if ($json === false) {
-            throw new RuntimeException("Failed to encode JSON for plugin $plugin");
-        }
-
-        $json .= "\n";
-        $tempPath = tempnam($targetDirectory, $plugin . '_openapi_');
-        if ($tempPath === false) {
-            throw new RuntimeException("Failed to create temporary file for plugin $plugin");
-        }
-
-        if (file_put_contents($tempPath, $json) === false) {
-            @unlink($tempPath);
-            throw new RuntimeException("Failed to write file: $path");
-        }
-
-        if (!rename($tempPath, $path)) {
-            @unlink($tempPath);
-            throw new RuntimeException("Failed to move temporary file into place: $path");
-        }
+        writeJsonFile($path, $spec, "plugin $plugin");
 
         $written++;
     } catch (Throwable $e) {
@@ -184,6 +200,13 @@ try {
     removeStaleSpecFiles($targetDirectory, $expectedPaths);
 } catch (Throwable $e) {
     fwrite(STDERR, "Failed to clean up stale spec files: {$e->getMessage()}\n");
+    exit(1);
+}
+
+try {
+    writeJsonFile($metadataPath, $pluginMetadata, 'plugin metadata');
+} catch (Throwable $e) {
+    fwrite(STDERR, "Failed to write plugin metadata: {$e->getMessage()}\n");
     exit(1);
 }
 
