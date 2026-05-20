@@ -273,8 +273,10 @@ Index
 - [`executeMigration()`](Piwik/Updater.md#executemigration) &mdash; *Method in class* [`Updater`](Piwik/Updater.md)
 - [`exec()`](Piwik/Updater/Migration.md#exec) &mdash; *Method in class* [`Migration`](Piwik/Updater/Migration.md)
 - [`exec()`](Piwik/Updater/Migration/Custom.md#exec) &mdash; *Method in class* [`Custom`](Piwik/Updater/Migration/Custom.md)
+- [`$export_parameters_to_modify`](Piwik/ViewDataTable/Config.md#$export_parameters_to_modify) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$enable_sort`](Piwik/ViewDataTable/Config.md#$enable_sort) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$expanded`](Piwik/ViewDataTable/RequestConfig.md#$expanded) &mdash; *Property in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
+- [`$export_parameters_to_modify`](Piwik/ViewDataTable/RequestConfig.md#$export_parameters_to_modify) &mdash; *Property in class* [`RequestConfig`](Piwik/ViewDataTable/RequestConfig.md)
 - [`enable()`](Piwik/Widget/WidgetConfig.md#enable) &mdash; *Method in class* [`WidgetConfig`](Piwik/Widget/WidgetConfig.md)
 
 ## F
@@ -1097,6 +1099,7 @@ Index
 - [`redirectToReferrer()`](Piwik/Url.md#redirecttoreferrer) &mdash; *Method in class* [`Url`](Piwik/Url.md)
 - [`redirectToUrl()`](Piwik/Url.md#redirecttourl) &mdash; *Method in class* [`Url`](Piwik/Url.md)
 - [`render()`](Piwik/View.md#render) &mdash; *Method in class* [`View`](Piwik/View.md)
+- [`$report_supports_flatten`](Piwik/ViewDataTable/Config.md#$report_supports_flatten) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$related_reports`](Piwik/ViewDataTable/Config.md#$related_reports) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$related_reports_title`](Piwik/ViewDataTable/Config.md#$related_reports_title) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$report_id`](Piwik/ViewDataTable/Config.md#$report_id) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
@@ -1262,6 +1265,7 @@ Index
 - [`$show_insights`](Piwik/ViewDataTable/Config.md#$show_insights) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_exclude_low_population`](Piwik/ViewDataTable/Config.md#$show_exclude_low_population) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_flatten_table`](Piwik/ViewDataTable/Config.md#$show_flatten_table) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
+- [`$show_flatten_table_export`](Piwik/ViewDataTable/Config.md#$show_flatten_table_export) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_pivot_by_subtable`](Piwik/ViewDataTable/Config.md#$show_pivot_by_subtable) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_table`](Piwik/ViewDataTable/Config.md#$show_table) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
 - [`$show_table_all_columns`](Piwik/ViewDataTable/Config.md#$show_table_all_columns) &mdash; *Property in class* [`Config`](Piwik/ViewDataTable/Config.md)
