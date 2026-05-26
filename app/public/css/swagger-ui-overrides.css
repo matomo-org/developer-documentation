@@ -203,3 +203,7 @@
     word-break: normal;
     word-wrap: normal;
 }
+
+#swagger-ui + .old-api-docs-paragraph {
+    margin-top: 18px;
+}

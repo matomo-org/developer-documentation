@@ -19,6 +19,8 @@ class Redirects
             '/api-reference/PHP-Piwik-Tracker/' => '/api-reference/PHP-Matomo-Tracker/',
             '/api-reference/php-piwik-tracker/' => '/api-reference/PHP-Matomo-Tracker/',
             '/api-reference/php-piwik-tracker' => '/api-reference/PHP-Matomo-Tracker/',
+            '/api-reference/reporting-api/' => '/api-reference/reporting-api',
+            '/api-reference/reporting-api-legacy/' => '/api-reference/reporting-api-legacy',
             '/contributing'                    => '/guides/contributing-to-piwik-core',
             '/plugins'                         => '/develop',
             '/core'                            => '/piwik-in-depth',

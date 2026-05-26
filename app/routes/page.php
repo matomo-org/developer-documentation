@@ -119,6 +119,32 @@ $app->get('/api-reference/api', function (Request $request, Response $response, 
     ]);
 });
 
+$app->get('/api-reference/reporting-api', function (Request $request, Response $response, $args) {
+    $category = new ApiReferenceCategory();
+    $guide = new ApiReferenceGuide('api');
+
+    return $this->get("view")->render($response, 'api-legacy-redirect.twig', [
+        'category' => $category,
+        'guide' => $guide,
+        'linkToEditDocument' => $guide->linkToEdit(),
+        'activeMenu' => $category->getName(),
+        'currentPath' => $request->getUri()->getPath(),
+        'selectedPiwikVersion' => Environment::getPiwikVersion(),
+        'urlIfAvailableInNewerVersion' => (Environment::isLatestPiwikVersion() ? false : Url::getUrlIfDocumentIsAvailableInPiwikVersion($request->getUri()->getPath(), LATEST_PIWIK_DOCS_VERSION)),
+        'pluginSpecs' => OpenApiSpecRegistry::getPluginSpecs(),
+    ]);
+});
+
+$app->get('/api-reference/reporting-api-legacy', function (Request $request, Response $response, $args) {
+    return renderGuide(
+        $this->get("view"),
+        $response,
+        $request->getUri(),
+        new ApiReferenceGuide('reporting-api'),
+        new ApiReferenceCategory()
+    );
+});
+
 $app->get('/api-reference/api/{plugin}', function (Request $request, Response $response, $args) {
     $pluginSpecs = OpenApiSpecRegistry::getPluginSpecs();
     $pluginSpecDocument = OpenApiSpecRegistry::getPluginSpecDocumentBySlug($args['plugin']);

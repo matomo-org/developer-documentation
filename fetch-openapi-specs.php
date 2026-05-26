@@ -145,7 +145,7 @@ function fetchJson(string $baseUrl, string $tokenAuth, array $params): array
 
 try {
     $plugins = fetchJson($baseUrl, $tokenAuth, [
-        'method' => 'OpenApiDocs.getAllowedPlugins',
+        'method' => 'ApiReference.getAllowedPlugins',
     ]);
 } catch (Throwable $e) {
     fwrite(STDERR, "Failed to fetch plugin whitelist: {$e->getMessage()}\n");
@@ -154,7 +154,7 @@ try {
 
 try {
     $pluginMetadata = fetchJson($baseUrl, $tokenAuth, [
-        'method' => 'OpenApiDocs.getAllowedPluginMetadata',
+        'method' => 'ApiReference.getAllowedPluginMetadata',
     ]);
 } catch (Throwable $e) {
     fwrite(STDERR, "Failed to fetch plugin metadata: {$e->getMessage()}\n");
@@ -181,7 +181,7 @@ foreach ($plugins as $plugin) {
 
     try {
         $spec = fetchJson($baseUrl, $tokenAuth, [
-            'method' => 'OpenApiDocs.getGeneratedOpenApiSpec',
+            'method' => 'ApiReference.getGeneratedOpenApiSpec',
             'plugin' => $plugin,
         ]);
 
