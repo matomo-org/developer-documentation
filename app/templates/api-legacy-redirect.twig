@@ -1,0 +1,38 @@
+{% extends 'guide.twig' %}
+
+{% set title = 'API Reference' %}
+
+{% block meta %}
+    <noscript>
+        <meta http-equiv="refresh" content="0;url={{ '/api-reference/api'|completeUrl }}">
+    </noscript>
+    <script type="text/javascript">
+        (function () {
+            let defaultUrl = '{{ '/api-reference/api'|completeUrl }}';
+            let legacyUrl = '{{ '/api-reference/reporting-api-legacy'|completeUrl }}';
+            let pluginSlugByLegacyHash = {
+{% for pluginSpec in pluginSpecs %}
+                '{{ pluginSpec.pluginName }}': '{{ pluginSpec.slug }}'{% if not loop.last %},{% endif %}
+{% endfor %}
+            };
+
+            let hash = window.location.hash.replace(/^#/, '');
+            let targetUrl = defaultUrl;
+
+            if (hash && pluginSlugByLegacyHash[hash]) {
+                targetUrl = '{{ '/api-reference/api/'|completeUrl }}' + pluginSlugByLegacyHash[hash];
+            } else if (hash === 'api-method-list') {
+                targetUrl = legacyUrl + '#' + hash;
+            } else if (hash) {
+                targetUrl = defaultUrl + '#' + hash;
+            }
+
+            window.location.replace(targetUrl);
+        })();
+    </script>
+{% endblock %}
+
+{% block guideContent %}
+    <p>Redirecting to the new API documentation.</p>
+    <p><a href="{{ '/api-reference/api'|completeUrl }}">Continue to the API reference</a></p>
+{% endblock %}

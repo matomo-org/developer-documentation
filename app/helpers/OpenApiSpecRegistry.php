@@ -25,7 +25,7 @@ class OpenApiSpecRegistry
     }
 
     /**
-     * @return array<int, array{name: string, slug: string, file: string, url: string, summary: string}>
+     * @return array<int, array{name: string, pluginName: string, slug: string, file: string, url: string, summary: string}>
      */
     public static function getPluginSpecs()
     {
@@ -50,6 +50,7 @@ class OpenApiSpecRegistry
             $name = $matches[1];
             $specs[] = [
                 'name' => self::splitCamelCase($name),
+                'pluginName' => $name,
                 'slug' => self::toSlug($name),
                 'file' => $basename,
                 'url' => '/openapi/' . $basename,
@@ -66,7 +67,7 @@ class OpenApiSpecRegistry
 
     /**
      * @param string $slug
-     * @return array{name: string, slug: string, file: string, url: string, summary: string}|null
+     * @return array{name: string, pluginName: string, slug: string, file: string, url: string, summary: string}|null
      */
     public static function getPluginSpecBySlug($slug)
     {
@@ -81,7 +82,7 @@ class OpenApiSpecRegistry
 
     /**
      * @param string $slug
-     * @return array{pluginSpec: array{name: string, slug: string, file: string, url: string, summary: string}, pluginSpecData: array<mixed>}|null
+     * @return array{pluginSpec: array{name: string, pluginName: string, slug: string, file: string, url: string, summary: string}, pluginSpecData: array<mixed>}|null
      */
     public static function getPluginSpecDocumentBySlug($slug)
     {
