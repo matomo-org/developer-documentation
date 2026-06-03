@@ -1317,7 +1317,7 @@ Callback Signature:
 
 ### CustomAlerts.validateReportParameters
 
-*Defined in [Piwik/Plugins/CustomAlerts/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/API.php) in line [221](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/API.php#L221)*
+*Defined in [Piwik/Plugins/CustomAlerts/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/API.php) in line [224](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/API.php#L224)*
 
 
 
@@ -1326,7 +1326,7 @@ Callback Signature:
 
 Usages:
 
-[CustomAlerts::validateReportParameters](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/CustomAlerts.php#L288)
+[CustomAlerts::validateReportParameters](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/CustomAlerts.php#L294)
 
 ## CustomJsTracker
 
@@ -4955,7 +4955,7 @@ Callback Signature:
 
 Usages:
 
-[CustomAlerts::removeAlertsForUser](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/CustomAlerts.php#L311), [ScheduledReports::deleteUserReportForSites](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ScheduledReports/ScheduledReports.php#L656)
+[CustomAlerts::removeAlertsForUser](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/CustomAlerts.php#L317), [ScheduledReports::deleteUserReportForSites](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ScheduledReports/ScheduledReports.php#L656)
 
 
 ### UsersManager.removeSiteAccess
@@ -4969,7 +4969,7 @@ Callback Signature:
 
 Usages:
 
-[CustomAlerts::removeAlertsForUser](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/CustomAlerts.php#L311), [ScheduledReports::deleteUserReportForSites](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ScheduledReports/ScheduledReports.php#L656)
+[CustomAlerts::removeAlertsForUser](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/CustomAlerts.php#L317), [ScheduledReports::deleteUserReportForSites](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ScheduledReports/ScheduledReports.php#L656)
 
 
 ### UsersManager.removeSiteAccess
@@ -4983,7 +4983,7 @@ Callback Signature:
 
 Usages:
 
-[CustomAlerts::removeAlertsForUser](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/CustomAlerts.php#L311), [ScheduledReports::deleteUserReportForSites](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ScheduledReports/ScheduledReports.php#L656)
+[CustomAlerts::removeAlertsForUser](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/CustomAlerts.php#L317), [ScheduledReports::deleteUserReportForSites](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ScheduledReports/ScheduledReports.php#L656)
 
 
 ### UsersManager.removeSiteAccess
@@ -4997,7 +4997,7 @@ Callback Signature:
 
 Usages:
 
-[CustomAlerts::removeAlertsForUser](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/CustomAlerts.php#L311), [ScheduledReports::deleteUserReportForSites](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ScheduledReports/ScheduledReports.php#L656)
+[CustomAlerts::removeAlertsForUser](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/CustomAlerts.php#L317), [ScheduledReports::deleteUserReportForSites](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ScheduledReports/ScheduledReports.php#L656)
 
 
 ### UsersManager.updateUser.end
