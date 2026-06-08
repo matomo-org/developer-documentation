@@ -21,7 +21,7 @@ class DemoProxy
      * Fetches a demo API GET response and returns the body and status code.
      *
      * @param string $url Demo API URL to request.
-     * @return array{body: string, statusCode: int}
+     * @return array{body: string, statusCode: int, contentType: string}
      */
     public static function get(string $url): array
     {
@@ -115,7 +115,7 @@ class DemoProxy
     {
         foreach ($responseHeaders as $header) {
             if (stripos($header, "Content-Type:") !== false) {
-                return $header;
+                return trim(substr($header, strlen('Content-Type:')));
             }
         }
         return '';
