@@ -28,10 +28,12 @@ class DemoProxy
         $context = self::createContext();
         $proxiedResponse = self::fetchResponse($url, $context);
         $statusCode = self::parseStatusCode($proxiedResponse['responseHeaders']);
+        $contentType = self::parseContentType($proxiedResponse['responseHeaders']);
 
         return [
             'body' => $proxiedResponse['body'],
             'statusCode' => $statusCode,
+            'contentType' => $contentType,
         ];
     }
 
@@ -107,5 +109,15 @@ class DemoProxy
         }
 
         return 200;
+    }
+
+    private static function parseContentType(array $responseHeaders): string
+    {
+        foreach ($responseHeaders as $header) {
+            if (stripos($header, "Content-Type:") !== false) {
+                return $header;
+            }
+        }
+        return '';
     }
 }
