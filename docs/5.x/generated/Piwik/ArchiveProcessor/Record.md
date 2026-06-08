@@ -34,6 +34,10 @@ The class defines the following methods:
 - [`getBlobColumnAggregationOps()`](#getblobcolumnaggregationops)
 - [`setMultiplePeriodTransform()`](#setmultipleperiodtransform)
 - [`getMultiplePeriodTransform()`](#getmultipleperiodtransform)
+- [`setBuiltFromFlatRecord()`](#setbuiltfromflatrecord) &mdash; Marks this blob record as being derived from a flat blob record during non-day aggregation.
+- [`getBuiltFromFlatRecord()`](#getbuiltfromflatrecord)
+- [`getFlatToHierarchyPathCallback()`](#getflattohierarchypathcallback)
+- [`getLegacyHierarchyToFlatReducerCallback()`](#getlegacyhierarchytoflatreducercallback)
 
 <a name="make" id="make"></a>
 <a name="make" id="make"></a>
@@ -276,6 +280,64 @@ The class defines the following methods:
 <a name="getmultipleperiodtransform" id="getmultipleperiodtransform"></a>
 <a name="getMultiplePeriodTransform" id="getMultiplePeriodTransform"></a>
 ### `getMultiplePeriodTransform()`
+
+#### Signature
+
+
+- *Returns:*  `callable`|`null` &mdash;
+    
+
+<a name="setbuiltfromflatrecord" id="setbuiltfromflatrecord"></a>
+<a name="setBuiltFromFlatRecord" id="setBuiltFromFlatRecord"></a>
+### `setBuiltFromFlatRecord()`
+
+Marks this blob record as being derived from a flat blob record during non-day aggregation.
+
+Use this when day archives store a flat representation and non-day archives should rebuild
+hierarchy from it. The flat record must be present in getRecordMetadata().
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$flatRecordName` (`string`) &mdash;
+       Name of the flat blob record to aggregate first.
+    - `$flatToHierarchyPathCallback` (`callable`) &mdash;
+       Callback used when rebuilding hierarchy. Signature: function (Row $flatRow, ArchiveProcessor $archiveProcessor, Record $hierarchicalRecord): ?array Return value is the path of labels to map the flat row into the hierarchy.
+    - `$legacyHierarchyToFlatReducerCallback` (`callable`|`null`) &mdash;
+       Optional callback that can merge legacy hierarchical aggregates into the flat table when some periods do not have the flat record yet. Signature: function (DataTable $legacyHierarchy, DataTable $flatTable, ArchiveProcessor $archiveProcessor, Record $hierarchicalRecord): void The callback is invoked once per legacy source period hierarchy table.
+- It returns a [`Record`](../../Piwik/ArchiveProcessor/Record.md) value.
+
+<a name="getbuiltfromflatrecord" id="getbuiltfromflatrecord"></a>
+<a name="getBuiltFromFlatRecord" id="getBuiltFromFlatRecord"></a>
+### `getBuiltFromFlatRecord()`
+
+#### Signature
+
+
+- *Returns:*  `string`|`null` &mdash;
+    
+
+<a name="getflattohierarchypathcallback" id="getflattohierarchypathcallback"></a>
+<a name="getFlatToHierarchyPathCallback" id="getFlatToHierarchyPathCallback"></a>
+### `getFlatToHierarchyPathCallback()`
+
+#### See Also
+
+- `setBuiltFromFlatRecord()`
+
+#### Signature
+
+
+- *Returns:*  `callable`|`null` &mdash;
+    
+
+<a name="getlegacyhierarchytoflatreducercallback" id="getlegacyhierarchytoflatreducercallback"></a>
+<a name="getLegacyHierarchyToFlatReducerCallback" id="getLegacyHierarchyToFlatReducerCallback"></a>
+### `getLegacyHierarchyToFlatReducerCallback()`
+
+#### See Also
+
+- `setBuiltFromFlatRecord()`
 
 #### Signature
 

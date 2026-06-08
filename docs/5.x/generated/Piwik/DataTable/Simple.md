@@ -73,6 +73,7 @@ The class defines the following methods:
 - [`addRowFromArray()`](#addrowfromarray) &mdash; Adds a new row from an array. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`addRowFromSimpleArray()`](#addrowfromsimplearray) &mdash; Adds a new row a from an array of column values. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getRows()`](#getrows) &mdash; Returns the array of Rows. Inherited from [`DataTable`](../../Piwik/DataTable.md)
+- [`shiftRow()`](#shiftrow) &mdash; Removes and returns the first non-summary row in this table. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getColumn()`](#getcolumn) &mdash; Returns an array containing all column values for the requested column. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getColumnsStartingWith()`](#getcolumnsstartingwith) &mdash; Returns an array containing all column values of columns whose name starts with `$name`. Inherited from [`DataTable`](../../Piwik/DataTable.md)
 - [`getColumns()`](#getcolumns) &mdash; Returns the names of every column this DataTable contains. Inherited from [`DataTable`](../../Piwik/DataTable.md)
@@ -537,6 +538,18 @@ row manually.
 #### Signature
 
 - It returns a [`Row[]`](../../Piwik/DataTable/Row.md) value.
+
+<a name="shiftrow" id="shiftrow"></a>
+<a name="shiftRow" id="shiftRow"></a>
+### `shiftRow()`
+
+Removes and returns the first non-summary row in this table.
+
+#### Signature
+
+
+- *Returns:*  [`Row`](../../Piwik/DataTable/Row.md)|`null` &mdash;
+    
 
 <a name="getcolumn" id="getcolumn"></a>
 <a name="getColumn" id="getColumn"></a>

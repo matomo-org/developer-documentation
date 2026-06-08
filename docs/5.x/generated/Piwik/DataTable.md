@@ -203,6 +203,7 @@ The class defines the following methods:
 - [`addRowFromArray()`](#addrowfromarray) &mdash; Adds a new row from an array.
 - [`addRowFromSimpleArray()`](#addrowfromsimplearray) &mdash; Adds a new row a from an array of column values.
 - [`getRows()`](#getrows) &mdash; Returns the array of Rows.
+- [`shiftRow()`](#shiftrow) &mdash; Removes and returns the first non-summary row in this table.
 - [`getColumn()`](#getcolumn) &mdash; Returns an array containing all column values for the requested column.
 - [`getColumnsStartingWith()`](#getcolumnsstartingwith) &mdash; Returns an array containing all column values of columns whose name starts with `$name`.
 - [`getColumns()`](#getcolumns) &mdash; Returns the names of every column this DataTable contains.
@@ -667,6 +668,18 @@ row manually.
 #### Signature
 
 - It returns a [`Row[]`](../Piwik/DataTable/Row.md) value.
+
+<a name="shiftrow" id="shiftrow"></a>
+<a name="shiftRow" id="shiftRow"></a>
+### `shiftRow()`
+
+Removes and returns the first non-summary row in this table.
+
+#### Signature
+
+
+- *Returns:*  [`Row`](../Piwik/DataTable/Row.md)|`null` &mdash;
+    
 
 <a name="getcolumn" id="getcolumn"></a>
 <a name="getColumn" id="getColumn"></a>
