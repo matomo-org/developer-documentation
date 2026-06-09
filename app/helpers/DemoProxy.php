@@ -21,17 +21,19 @@ class DemoProxy
      * Fetches a demo API GET response and returns the body and status code.
      *
      * @param string $url Demo API URL to request.
-     * @return array{body: string, statusCode: int}
+     * @return array{body: string, statusCode: int, contentType: string}
      */
     public static function get(string $url): array
     {
         $context = self::createContext();
         $proxiedResponse = self::fetchResponse($url, $context);
         $statusCode = self::parseStatusCode($proxiedResponse['responseHeaders']);
+        $contentType = self::parseContentType($proxiedResponse['responseHeaders']);
 
         return [
             'body' => $proxiedResponse['body'],
             'statusCode' => $statusCode,
+            'contentType' => $contentType,
         ];
     }
 
@@ -107,5 +109,15 @@ class DemoProxy
         }
 
         return 200;
+    }
+
+    private static function parseContentType(array $responseHeaders): string
+    {
+        foreach ($responseHeaders as $header) {
+            if (stripos($header, "Content-Type:") !== false) {
+                return trim(substr($header, strlen('Content-Type:')));
+            }
+        }
+        return '';
     }
 }
