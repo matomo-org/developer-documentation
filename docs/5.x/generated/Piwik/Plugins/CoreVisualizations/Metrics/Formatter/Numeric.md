@@ -46,7 +46,7 @@ Returns a prettified time value (in seconds).
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$numberOfSeconds` (`int`) &mdash;
+    - `$numberOfSeconds` (`int`|`float`) &mdash;
        The number of seconds.
     - `$displayTimeAsSentence` (`bool`) &mdash;
        If set to true, will output `"5min 17s"`, if false `"00:05:17"`.

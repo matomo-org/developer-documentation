@@ -124,10 +124,15 @@
 ## Plugins\Bandwidth\Columns\Metrics\PageviewBandwidth
 ## Plugins\Bandwidth\Columns\Metrics\SumBandwidth
 ## Plugins\BotTracking\Columns\Metrics\AcquiredVisits
+## Plugins\BotTracking\Columns\Metrics\AvgResponseSize
+## Plugins\BotTracking\Columns\Metrics\AvgServerTime
 ## Plugins\BotTracking\Columns\Metrics\ClickThroughRate
 ## Plugins\BotTracking\Columns\Metrics\DocumentRequests
+## Plugins\BotTracking\Columns\Metrics\PageNotFound404Requests
 ## Plugins\BotTracking\Columns\Metrics\PageRequests
 ## Plugins\BotTracking\Columns\Metrics\Requests
+## Plugins\BotTracking\Columns\Metrics\ServerError5xxRequests
+## Plugins\BotTracking\Columns\Metrics\TotalBrokenRequests
 ## Plugins\Contents\Columns\Metrics\InteractionRate
 ## Plugins\CoreHome\Columns\Metrics\ActionsPerVisit
 ## Plugins\CoreHome\Columns\Metrics\AverageTimeOnSite

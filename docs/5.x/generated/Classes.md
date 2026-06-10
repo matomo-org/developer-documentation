@@ -128,10 +128,15 @@ This is a complete list of available classes:
 - [`Plugins\Bandwidth\Columns\Metrics\PageviewBandwidth`](Piwik/Plugins/Bandwidth/Columns/Metrics/PageviewBandwidth.md) &mdash; The total amount bandwidth used for page views.
 - [`Plugins\Bandwidth\Columns\Metrics\SumBandwidth`](Piwik/Plugins/Bandwidth/Columns/Metrics/SumBandwidth.md) &mdash; The sum amount bandwidth of a pages.
 - [`Plugins\BotTracking\Columns\Metrics\AcquiredVisits`](Piwik/Plugins/BotTracking/Columns/Metrics/AcquiredVisits.md)
+- [`Plugins\BotTracking\Columns\Metrics\AvgResponseSize`](Piwik/Plugins/BotTracking/Columns/Metrics/AvgResponseSize.md)
+- [`Plugins\BotTracking\Columns\Metrics\AvgServerTime`](Piwik/Plugins/BotTracking/Columns/Metrics/AvgServerTime.md)
 - [`Plugins\BotTracking\Columns\Metrics\ClickThroughRate`](Piwik/Plugins/BotTracking/Columns/Metrics/ClickThroughRate.md)
 - [`Plugins\BotTracking\Columns\Metrics\DocumentRequests`](Piwik/Plugins/BotTracking/Columns/Metrics/DocumentRequests.md)
+- [`Plugins\BotTracking\Columns\Metrics\PageNotFound404Requests`](Piwik/Plugins/BotTracking/Columns/Metrics/PageNotFound404Requests.md)
 - [`Plugins\BotTracking\Columns\Metrics\PageRequests`](Piwik/Plugins/BotTracking/Columns/Metrics/PageRequests.md)
 - [`Plugins\BotTracking\Columns\Metrics\Requests`](Piwik/Plugins/BotTracking/Columns/Metrics/Requests.md)
+- [`Plugins\BotTracking\Columns\Metrics\ServerError5xxRequests`](Piwik/Plugins/BotTracking/Columns/Metrics/ServerError5xxRequests.md)
+- [`Plugins\BotTracking\Columns\Metrics\TotalBrokenRequests`](Piwik/Plugins/BotTracking/Columns/Metrics/TotalBrokenRequests.md)
 - [`Plugins\Contents\Columns\Metrics\InteractionRate`](Piwik/Plugins/Contents/Columns/Metrics/InteractionRate.md) &mdash; The content interaction rate.
 - [`Plugins\CoreHome\Columns\Metrics\ActionsPerVisit`](Piwik/Plugins/CoreHome/Columns/Metrics/ActionsPerVisit.md) &mdash; The average number of actions per visit.
 - [`Plugins\CoreHome\Columns\Metrics\AverageTimeOnSite`](Piwik/Plugins/CoreHome/Columns/Metrics/AverageTimeOnSite.md) &mdash; The average number of seconds spent on the site per visit.
