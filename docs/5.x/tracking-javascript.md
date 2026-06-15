@@ -96,6 +96,8 @@ Read also the **[JavaScript Tracking Client](/guides/tracking-javascript-guide)*
 *   `setCampaignKeywordKey( keyword )` - Set campaign keyword parameter(s). (Help: [Customize Campaign keyword parameter names](https://matomo.org/faq/how-to/faq_120))
 *   `setConversionAttributionFirstReferrer( bool )` - Set to true to attribute a conversion to the first referrer. By default, conversion is attributed to the most recent referrer.
 *   `setIgnoreCampaignsForReferrers( string | array )` - Set array with hostnames or domains for referrers where campaign parameters should be ignored. For wildcard subdomains, you can use: `setIgnoreCampaignsForReferrers('.referrer.com');` or `setIgnoreCampaignsForReferrers('*.referrer.com');`. You can also specify a path along a domain: `setIgnoreCampaignsForReferrers('*.referrer.com/subsite1');`. This method is available as of Matomo 5.4.
+*   `setIgnoreCampaignAttributionForSources( string | array )` - Set sources whose campaign values in the current URL should be ignored for attribution. Matching campaign parameters are still kept in the tracked URL/request.
+*   `getIgnoreCampaignAttributionForSources()` - Retrieve the sources whose campaign values should be ignored for attribution.
 
 ### Ecommerce
 
