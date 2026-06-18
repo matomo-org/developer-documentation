@@ -116,7 +116,7 @@ The class defines the following methods:
 - [`setXFrameOptions()`](#setxframeoptions) &mdash; Set X-Frame-Options field in the HTTP response. Inherited from [`View`](../../Piwik/View.md)
 - [`singleReport()`](#singlereport) &mdash; Creates a View for and then renders the single report template. Inherited from [`View`](../../Piwik/View.md)
 - [`getUseStrictReferrerPolicy()`](#getusestrictreferrerpolicy) &mdash; Returns whether a strict Referrer-Policy header will be sent. Inherited from [`View`](../../Piwik/View.md)
-- [`setUseStrictReferrerPolicy()`](#setusestrictreferrerpolicy) &mdash; Sets whether a strict Referrer-Policy header will be sent (if not, nothing is sent). Inherited from [`View`](../../Piwik/View.md)
+- [`setUseStrictReferrerPolicy()`](#setusestrictreferrerpolicy) &mdash; Sets whether a strict Referrer-Policy header will be sent. Inherited from [`View`](../../Piwik/View.md)
 - [`getClientSideProperties()`](#getclientsideproperties) &mdash; Returns the array of property names whose values are passed to the UIControl JavaScript class.
 - [`getClientSideParameters()`](#getclientsideparameters) &mdash; Returns an array of property names whose values are passed to the UIControl JavaScript class.
 
@@ -296,7 +296,16 @@ Returns whether a strict Referrer-Policy header will be sent. Generally this sho
 <a name="setUseStrictReferrerPolicy" id="setUseStrictReferrerPolicy"></a>
 ### `setUseStrictReferrerPolicy()`
 
-Sets whether a strict Referrer-Policy header will be sent (if not, nothing is sent).
+Sets whether a strict Referrer-Policy header will be sent.
+
+Passing `false` relaxes the response policy to `no-referrer-when-downgrade`, which exposes
+the full request URL — including its query string — as the outgoing `Referer` header on the
+next navigation, even across origins. Callers that disable the strict policy MUST ensure
+the current request URL carries no credentials (e.g. `token_auth`) or other sensitive
+parameters at the moment any subsequent cross-origin navigation runs. The established
+pattern is to rewrite the URL down to its required handshake fields before redirecting;
+see `plugins/Overlay/templates/startOverlaySession.twig` (`canonicalizeOverlayUrl()`) and
+`plugins/Overlay/Controller.php::startOverlaySession()` for a worked example.
 
 #### Signature
 
