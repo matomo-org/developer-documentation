@@ -502,7 +502,7 @@ Callback Signature:
 
 ### ArchiveProcessor.ComputeNbUniques.getIdSites
 
-*Defined in [Piwik/ArchiveProcessor](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor.php) in line [547](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor.php#L547)*
+*Defined in [Piwik/ArchiveProcessor](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor.php) in line [557](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor.php#L557)*
 
 Triggered to change which site ids should be looked at when processing unique visitors and users.
 

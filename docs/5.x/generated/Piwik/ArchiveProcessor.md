@@ -119,6 +119,8 @@ DataTables are summed recursively so subtables will be summed as well.
        array of recordNames that defines for which ones you need a recursive row count, or true if it should be done for all
     - `$countLeafRows` (`array`) &mdash;
        array of recordNames that defines for which ones you need a leaf row count.
+    - `$postAggregationTransform` (`callable`|`null`) &mdash;
+       Optional callback applied to each aggregated DataTable after the subperiods have been aggregated together and before it is truncated and stored. Signature: function (DataTable $table): void; the callback mutates $table in place. Use it to recompute columns that cannot be summed across periods.
 
 - *Returns:*  `array` &mdash;
     Returns the row counts of each aggregated report before truncation, eg,

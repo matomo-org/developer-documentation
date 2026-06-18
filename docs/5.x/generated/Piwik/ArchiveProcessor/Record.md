@@ -34,6 +34,8 @@ The class defines the following methods:
 - [`getBlobColumnAggregationOps()`](#getblobcolumnaggregationops)
 - [`setMultiplePeriodTransform()`](#setmultipleperiodtransform)
 - [`getMultiplePeriodTransform()`](#getmultipleperiodtransform)
+- [`setAggregatedRecordTransform()`](#setaggregatedrecordtransform) &mdash; Sets a transform applied to this blob record's aggregated table during non-day archiving, after the day blobs have been aggregated together (additive columns summed, columns marked 'skip' in the aggregation ops left untouched) and before the table is truncated and stored.
+- [`getAggregatedRecordTransform()`](#getaggregatedrecordtransform)
 - [`setBuiltFromFlatRecord()`](#setbuiltfromflatrecord) &mdash; Marks this blob record as being derived from a flat blob record during non-day aggregation.
 - [`getBuiltFromFlatRecord()`](#getbuiltfromflatrecord)
 - [`getFlatToHierarchyPathCallback()`](#getflattohierarchypathcallback)
@@ -280,6 +282,44 @@ The class defines the following methods:
 <a name="getmultipleperiodtransform" id="getmultipleperiodtransform"></a>
 <a name="getMultiplePeriodTransform" id="getMultiplePeriodTransform"></a>
 ### `getMultiplePeriodTransform()`
+
+#### Signature
+
+
+- *Returns:*  `callable`|`null` &mdash;
+    
+
+<a name="setaggregatedrecordtransform" id="setaggregatedrecordtransform"></a>
+<a name="setAggregatedRecordTransform" id="setAggregatedRecordTransform"></a>
+### `setAggregatedRecordTransform()`
+
+Sets a transform applied to this blob record's aggregated table during non-day archiving,
+after the day blobs have been aggregated together (additive columns summed, columns marked
+'skip' in the aggregation ops left untouched) and before the table is truncated and stored.
+
+Use this for columns that cannot be summed across child periods and must be recomputed from
+the aggregated additive columns — for example a table-relative ratio, index or score. Mark
+such a column 'skip' via {@see setBlobColumnAggregationOps()} so it is not summed, then
+recompute it here. Because the transform runs before truncation, a column it (re)computes can
+be used as {@see setColumnToSortByBeforeTruncation()}.
+
+Only used for non-day periods; the day archive builds the record from logs via the
+RecordBuilder's aggregate() and should apply any equivalent computation there.
+
+Applies on both the standard blob path and the built-from-flat path ({@see setBuiltFromFlatRecord()}):
+each record's transform runs on that record's own aggregated table, so a flat base record and the
+hierarchy rebuilt from it are each transformed (the hierarchy after it is built) before being stored.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$transform` (`callable`|`null`) &mdash;
+       Signature: function (\Piwik\DataTable $table, ArchiveProcessor $archiveProcessor, Record $record): void The callback mutates $table in place.
+- It returns a [`Record`](../../Piwik/ArchiveProcessor/Record.md) value.
+
+<a name="getaggregatedrecordtransform" id="getaggregatedrecordtransform"></a>
+<a name="getAggregatedRecordTransform" id="getAggregatedRecordTransform"></a>
+### `getAggregatedRecordTransform()`
 
 #### Signature
 
