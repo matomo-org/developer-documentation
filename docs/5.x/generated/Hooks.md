@@ -703,7 +703,7 @@ Callback Signature:
 
 Usages:
 
-[CoreHome::addStylesheets](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/CoreHome.php#L74)
+[CoreHome::addStylesheets](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/CoreHome.php#L74), [Morpheus::addStylesheets](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Morpheus/Morpheus.php#L29)
 
 
 ### AssetManager.filterMergedJavaScripts
