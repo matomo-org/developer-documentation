@@ -611,7 +611,7 @@ Callback Signature:
 
 ### Archiving.getIdSitesToArchiveWhenNoVisits
 
-*Defined in [Piwik/ArchiveProcessor/Loader](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor/Loader.php) in line [444](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor/Loader.php#L444)*
+*Defined in [Piwik/ArchiveProcessor/Loader](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor/Loader.php) in line [447](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor/Loader.php#L447)*
 
 
 
@@ -663,7 +663,7 @@ Callback Signature:
 
 ### Archiving.makeNewArchiverObject
 
-*Defined in [Piwik/ArchiveProcessor/PluginsArchiver](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor/PluginsArchiver.php) in line [364](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor/PluginsArchiver.php#L364)*
+*Defined in [Piwik/ArchiveProcessor/PluginsArchiver](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor/PluginsArchiver.php) in line [365](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor/PluginsArchiver.php#L365)*
 
 Triggered right after a new **plugin archiver instance** is created. Subscribers to this event can configure the plugin archiver, for example prevent the archiving of a plugin's data
 by calling `$archiver->disable()` method.
@@ -1273,7 +1273,7 @@ Callback Signature:
 
 ### CronArchive.getIdSitesNotUsingTracker
 
-*Defined in [Piwik/ArchiveProcessor/Loader](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor/Loader.php) in line [672](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor/Loader.php#L672)*
+*Defined in [Piwik/ArchiveProcessor/Loader](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor/Loader.php) in line [675](https://github.com/matomo-org/matomo/blob/5.x-dev/core/ArchiveProcessor/Loader.php#L675)*
 
 This event is triggered when detecting whether there are sites that do not use the tracker. By default we only archive a site when there was actually any visit since the last archiving.
 However, some plugins do import data from another source instead of using the tracker and therefore
