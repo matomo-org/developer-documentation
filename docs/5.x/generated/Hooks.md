@@ -1100,7 +1100,7 @@ eg `Notification\Manager::cancel($notificationId)`.
 
 ### Core.configFileChanged
 
-*Defined in [Piwik/Config](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config.php) in line [431](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config.php#L431)*
+*Defined in [Piwik/Config](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config.php) in line [430](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config.php#L430)*
 
 Triggered when a INI config file is changed on disk.
 
@@ -1112,7 +1112,7 @@ Callback Signature:
 
 ### Core.configFileDeleted
 
-*Defined in [Piwik/Config/Cache](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config/Cache.php) in line [87](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config/Cache.php#L87)*
+*Defined in [Piwik/Config/Cache](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config/Cache.php) in line [88](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config/Cache.php#L88)*
 
 
 
@@ -1122,7 +1122,7 @@ Callback Signature:
 
 ### Core.configFileSanityCheckFailed
 
-*Defined in [Piwik/Config](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config.php) in line [500](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config.php#L500)*
+*Defined in [Piwik/Config](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config.php) in line [499](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Config.php#L499)*
 
 Triggered when the INI config file was not written correctly with the expected content.
 
