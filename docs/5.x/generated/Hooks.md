@@ -1259,7 +1259,7 @@ Callback Signature:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php) in line [902](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php#L902)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php) in line [903](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive.php#L903)*
 
 Triggered by the **core:archive** console command so plugins can modify the priority of
 websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
