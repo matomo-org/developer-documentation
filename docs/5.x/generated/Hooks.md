@@ -45,7 +45,7 @@ Triggered to add new capabilities. **Example**
 Callback Signature:
 <pre><code>function(&amp;$capabilities)</code></pre>
 
-- \Capability `$reports` An array of reports
+- \Capability `&$capabilities` An array of capabilities
 
 Usages:
 
@@ -70,7 +70,7 @@ Triggered to filter / restrict capabilities. **Example**
 Callback Signature:
 <pre><code>function(&amp;$capabilities)</code></pre>
 
-- \Capability `$reports` An array of reports
+- \Capability `&$capabilities` An array of capabilities
 
 
 ### Access.modifyUserAccess
