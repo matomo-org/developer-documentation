@@ -3,7 +3,7 @@
 Config
 ======
 
-DataTable Visualization that derives from HtmlTable and sets show_extra_columns to true.
+Configuration for the HtmlTable visualization.
 
 Properties
 ----------

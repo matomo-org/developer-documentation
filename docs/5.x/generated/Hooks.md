@@ -1197,7 +1197,7 @@ Usages:
 
 ### CoreUpdater.update.end
 
-*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Updater.php) in line [529](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Updater.php#L529)*
+*Defined in [Piwik/Updater](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Updater.php) in line [528](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Updater.php#L528)*
 
 Triggered after Piwik has been updated.
 
@@ -1219,7 +1219,7 @@ Usages:
 
 *Defined in [Piwik/CronArchive/QueueConsumer](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive/QueueConsumer.php) in line [312](https://github.com/matomo-org/matomo/blob/5.x-dev/core/CronArchive/QueueConsumer.php#L312)*
 
-This event is triggered immediately after the cron archiving process starts archiving data for a single
+This event is triggered immediately after the cron archiving process finishes archiving data for a single
 site. Note: multiple archiving processes can post this event.
 
 Callback Signature:
