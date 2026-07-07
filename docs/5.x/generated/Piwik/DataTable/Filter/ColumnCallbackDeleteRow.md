@@ -33,7 +33,7 @@ The class defines the following methods:
       
     - `$columnsToFilter` (`array`|`string`) &mdash;
        The column or array of columns that should be passed to the callback.
-    - `$function` (`Piwik\DataTable\Filter\callback`) &mdash;
+    - `$function` (`callable`) &mdash;
        The callback that determines whether a row should be deleted or not. Should return `true` if the row should be deleted.
     - `$functionParams` (`array`) &mdash;
        deprecated - use an [anonymous function](https://php.net/manual/en/functions.anonymous.php) instead.

@@ -329,8 +329,6 @@ Display a meaningful error message when any invalid parameter is being set.
     - `$overrideParams`
       
 - It does not return anything or a mixed result.
-- It throws one of the following exceptions:
-    - ``
 
 <a name="getnonoverridableparams" id="getnonoverridableparams"></a>
 <a name="getNonOverridableParams" id="getNonOverridableParams"></a>

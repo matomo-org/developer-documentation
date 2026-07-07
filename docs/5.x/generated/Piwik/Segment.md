@@ -171,26 +171,26 @@ Extend an SQL query that aggregates data over one of the 'log_' tables with segm
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$select` (`string`) &mdash;
-       The select clause. Should NOT include the **SELECT** just the columns, eg, `'t1.col1 as col1, t2.col2 as col2'`.
-    - `$from` (`array`|`string`) &mdash;
-       Array of table names (without prefix), eg, `array('log_visit', 'log_conversion')`.
-    - `$where` (`false`|`string`) &mdash;
-       (optional) Where clause, eg, `'t1.col1 = ? AND t2.col2 = ?'`.
-    - `$bind` (`array`|`string`) &mdash;
-       (optional) Bind parameters, eg, `array($col1Value, $col2Value)`.
-    - `$orderBy` (`false`|`string`) &mdash;
-       (optional) Order by clause, eg, `"t1.col1 ASC"`.
-    - `$groupBy` (`false`|`string`) &mdash;
-       (optional) Group by clause, eg, `"t2.col2"`.
-    - `$limit` (`int`) &mdash;
-       Limit number of result to $limit
-    - `$offset` (`int`) &mdash;
-       Specified the offset of the first row to return
-    - `$forceGroupBy` (`bool`) &mdash;
-       Force the group by and not using a subquery. Note: This may make the query slower see https://github.com/matomo-org/matomo/issues/9200#issuecomment-183641293 A $groupBy value needs to be set for this to work.
+    - `$select`
+      
+    - `$from`
+      
+    - `$where`
+      
+    - `$bind`
+      
+    - `$orderBy`
+      
+    - `$groupBy`
+      
+    - `$limit`
+      
+    - `$offset`
+      
+    - `$forceGroupBy`
+      
     - `$withRollup` (`bool`) &mdash;
-       If set to value >= 1 then the Select query (and All inner queries) will be LIMIT'ed by this value. Use only when you're not aggregating or it will sample the data.
+      
 
 - *Returns:*  `Piwik\array{sql:` &mdash;
     string, bind: array<scalar>} The entire select query.

@@ -2700,7 +2700,7 @@ Callback Signature:
 
 - array &$results An array storing the result of how much data was deleted for each plugin.
 
-- array &$visits An array with multiple visit entries containing an idvisit and idsite each. The data
+- array `$visits` An array with multiple visit entries containing an idvisit and idsite each. The data
                       for these visits is requested to be deleted.
 
 
@@ -2780,7 +2780,7 @@ Callback Signature:
 
 - array &$results An array containing the exported data subjects.
 
-- array &$visits An array with multiple visit entries containing an idvisit and idsite each. The data
+- array `$visits` An array with multiple visit entries containing an idvisit and idsite each. The data
                       for these visits is requested to be exported.
 
 
@@ -4801,7 +4801,7 @@ Usages:
 
 ### UsersManager.getDefaultDates
 
-*Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Controller.php) in line [233](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Controller.php#L233)*
+*Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Controller.php) in line [232](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Controller.php#L232)*
 
 Triggered when the list of available dates is requested, for example for the
 User Settings > Report date to load by default.

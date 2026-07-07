@@ -34,7 +34,7 @@ The class defines the following methods:
        Whether to use a natural sort or not (see [https://php.net/natsort](https://php.net/natsort)).
     - `$recursiveSort` (`bool`) &mdash;
        Whether to sort all subtables or not.
-    - `$doSortBySecondaryColumn` (`bool`|`Piwik\DataTable\Filter\callback`) &mdash;
+    - `$doSortBySecondaryColumn` (`bool`|`callable`) &mdash;
        If true will sort by a secondary column. The column is automatically detected and will be either nb_visits or label, if possible. If callback given it will sort by the column returned by the callback (if any) callback will be called with 2 parameters: primaryColumnToSort and table
 
 <a name="filter" id="filter"></a>
