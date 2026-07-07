@@ -5150,7 +5150,7 @@ your widget renders the full HTML itself. **Example**
 Callback Signature:
 <pre><code>function(&amp;$shouldEmbedEmpty, $controllerName, $actionName)</code></pre>
 
-- string &$shouldEmbedEmpty Defines whether the iframe should be embedded empty or wrapped within the widgetized html.
+- bool &$shouldEmbedEmpty Defines whether the iframe should be embedded empty or wrapped within the widgetized html.
 
 - string `$controllerName` The name of the controller that will be executed.
 
