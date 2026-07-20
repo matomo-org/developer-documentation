@@ -147,33 +147,61 @@ _paq.push(['trackGoal', 1, <?php echo $cart->getCartValue(); ?>]);
 
 Find more information about goal tracking in Matomo in the [**Tracking Goals**](https://matomo.org/docs/tracking-goals-web-analytics/) documentation.
 
-### Accurately measure the time spent on each page
+### Improve visit duration accuracy with the Heartbeat Timer
 
-By default, when a user visits only one page view during a visit, Matomo will assume that the visitor has spent 0 second on the website. This has a few consequences:
+By default, Matomo calculates visit duration from the time between tracked actions. If no later tracking request is sent:
 
-* when the visitor views only one page view, the "Visit duration" will be 0 second.
-* when the visitor views more than one page, then the last page view of the visit will have a "Time spent on page" of 0 second.
+* A visit containing only one page view has a visit duration of 0 seconds.
+* The final page in a visit has no recorded time on page because there is no subsequent tracked action from which Matomo can calculate its duration.
 
-It is possible to configure Matomo so that it accurately measures the time spent in the visit. To better measure time spent in the visit, add to your JavaScript code the following:
+You can enable the Heartbeat Timer to improve visit duration tracking by sending a heartbeat ping when the visitor leaves or hides the page.
+
+**Enable the Heartbeat Timer**
+
+Add the following command to your Matomo JavaScript tracking code:
 
 ```javascript
-// accurately measure the time spent in the visit
+// Improve visit duration calculations
 _paq.push(['enableHeartBeatTimer']);
 ```
+The Heartbeat Timer becomes active only after Matomo has sent the initial page view tracking request.
 
-Matomo will then send requests to count the actual time spent in the visit, as long as the user is actively viewing the page (i.e. when the tab is active and in focus). The heart beat request is executed when:
+**Configure the minimum request interval**
 
- * switching to another browser tab after the current tab was active for at least 15 seconds (can be configured see below).
- * navigating to another page within the same tab. 
- * closing the tab.
+By default, Matomo sends a heartbeat request only if at least 15 seconds have passed since the previous tracking request. You can specify a different interval in seconds. The minimum supported value is 5 seconds:
 
 ```javascript
-// Change how long a tab needs to be active to be counted as viewed in seconds/
-// Requires a page to be actively viewed for 30 seconds for any heart beat request to be sent.
+// Require at least 30 seconds between tracking requests/
 _paq.push(['enableHeartBeatTimer', 30]);
 ```
+The interval limits how frequently Matomo can send heartbeat pings. It does not define how long a visitor must remain on a page before a heartbeat ping can be sent.
 
-Note: When testing the heart beat timer, remember to make sure the browser tab has focus and not eg. the developer tools or another panel.
+**How the Heartbeat Timer works**
+
+The Heartbeat Timer responds to browser events and does not send requests continuously at fixed intervals. A heartbeat ping is sent only when all of the following conditions are met:
+
+* the initial page view has been tracked, and
+* the configured minimum interval has elapsed, and
+* the visitor switches to another browser tab, minimises the browser, or
+* switches to another application or browser window, or
+* closes the tab, refreshes the page, or navigates to another page.
+
+**What the Heartbeat Timer improves**
+
+A heartbeat ping updates the recorded duration of the visit but does not change how Matomo calculates page-level duration metrics. The Heartbeat Timer improves:
+
+* The Visit duration, particularly for single-page visits and the final page of a visit.
+* The last-page time shown in **Visitors** > [Visits Log](https://matomo.org/faq/reports/the-visits-log-report/), which Matomo derives from the visit duration.
+
+The heartbeat ping does not create a new page view, action, or conversion.
+
+**Heartbeat Timer Limitations**
+
+* The Heartbeat Timer does not improve the `Avg. time on page` metric in **Behaviour** > [Pages](https://matomo.org/faq/introduction-to-page-analytics-reports/) report. Matomo calculates this metric from the time between tracked page views. The heartbeat pings do not update the underlying page-level value.
+* It does not resolve attribution between multiple open tabs. If a visitor opens the same website in several tabs or switches between them, Matomo may attribute time to the wrong page. Browser-based analytics cannot reliably determine which page the visitor is reading.
+
+**Testing the Heartbeat Timer**
+To test the Heartbeat Timer, leave the page open for longer than the configured minimum interval, then switch tabs, minimise the browser, refresh the page, close the tab, or navigate away. These actions trigger a heartbeat ping. Inspect the Network tab in your browser's developer tools and look for a request containing `ping=1`.
 
 ## Ecommerce tracking
 
@@ -545,7 +573,7 @@ _paq.push(['trackPageView']);
 ```
 ### Tracking your visitors across multiple domain names in the same website
 
-To accurately track a visitor across different domain names into a single visit within one Matomo website, we need to set up what is called Cross Domain linking. Cross domain tracking in Piwik makes sure that when the visitor visits multiple websites and domain names, the visitor data will be stored in the same visit and that the visitor ID is reused across domain names. A typical use case where cross domain is needed is, for example, when an ecommerce online store is on `www.awesome-shop.com` and the ecommerce shopping cart technology is on another domain such as `secure.cart.com`.
+To accurately track a visitor across different domain names into a single visit within one Matomo website, we need to set up what is called Cross Domain linking. Cross domain tracking in Matomo makes sure that when the visitor visits multiple websites and domain names, the visitor data will be stored in the same visit and that the visitor ID is reused across domain names. A typical use case where cross domain is needed is, for example, when an ecommerce online store is on `www.awesome-shop.com` and the ecommerce shopping cart technology is on another domain such as `secure.cart.com`.
 
 Cross domain linking uses a combination of the two tracker methods `setDomains` and `enableCrossDomainLinking`. Learn how to set up cross-domain linking in our guide: [How do I accurately measure a same visitor across multiple domain names (cross domain linking)?](https://matomo.org/faq/how-to/faq_23654/)
 
@@ -892,16 +920,16 @@ Alternative to using the RollUp Reporting plugin, you can duplicate the tracking
 
   // We will also collect the website data into Website ID = 7
   var websiteIdDuplicate = 7;
-  // The data will be duplicated into `piwik.example.org/matomo.php`
+  // The data will be duplicated into `matomo.example.org/matomo.php`
   _paq.push(['addTracker', u+'matomo.php', websiteIdDuplicate]);
-  // Your data is now tracked in both website ID 1 and website 7 into your piwik.example.org server!
+  // Your data is now tracked in both website ID 1 and website 7 into your matomo.example.org server!
 ```
 
 As this solution causes every visitor's event, pageview, etc. to be tracked twice in your Matomo server, we generally do not recommend it.
 
 ### Collect your analytics data into two or more Matomo servers
 
-The example below shows how to use `addTracker`  method to track the same analytics data into a second Matomo server. The main Matomo server is `piwik.example.org/matomo.php` where the data is stored into website ID `1`. The second Matomo server is `analytics.example.com/matomo.php` where the data is stored into website ID `77`. When you implement this in your website, please replace these two Matomo URLs and Matomo website IDs with your own Matomo URLs and website IDs.
+The example below shows how to use `addTracker`  method to track the same analytics data into a second Matomo server. The main Matomo server is `matomo.example.org/matomo.php` where the data is stored into website ID `1`. The second Matomo server is `analytics.example.com/matomo.php` where the data is stored into website ID `77`. When you implement this in your website, please replace these two Matomo URLs and Matomo website IDs with your own Matomo URLs and website IDs.
 
 ```html
 <script type="text/javascript">
@@ -930,7 +958,7 @@ The example below shows how to use `addTracker`  method to track the same analyt
 
 ### Customise one of the tracker object instances
 
-Note: by default any tracker added via `addTracker` is configured the same as the main default tracker object (regarding cookies, custom dimensions, user id, download & link tracking, domains and sub-domains, etc.). If you want to configure one of the Matomo tracker object instances that was added via `addTracker`, you may call the `Matomo.getAsyncTracker(optionalMatomoUrl, optionalPiwikSiteId)`  method. This method returns the tracker instance object which you can configure differently than the main JavaScript tracker object instance.
+Note: by default any tracker added via `addTracker` is configured the same as the main default tracker object (regarding cookies, custom dimensions, user id, download & link tracking, domains and sub-domains, etc.). If you want to configure one of the Matomo tracker object instances that was added via `addTracker`, you may call the `Matomo.getAsyncTracker(optionalMatomoUrl, optionalMatomoSiteId)`  method. This method returns the tracker instance object which you can configure differently than the main JavaScript tracker object instance.
 
 ### Duplicate the tracking data when calling the JavaScript API directly (not via `_paq.push`)
 
@@ -942,8 +970,8 @@ It is possible to track your analytics data into either a different website ID o
         try {
             var matomoTracker = Matomo.getTracker("https://URL_1/matomo.php", 1);
             matomoTracker.trackPageView();
-            var piwik2 = Matomo.getTracker("https://URL_2/matomo.php", 4);
-            piwik2.trackPageView();
+            var matomo2 = Matomo.getTracker("https://URL_2/matomo.php", 4);
+            matomo2.trackPageView();
         } catch( err ) {}
     };
 </script>
