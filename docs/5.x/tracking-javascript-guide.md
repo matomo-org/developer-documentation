@@ -164,7 +164,7 @@ Add the following command to your Matomo JavaScript tracking code:
 // Improve visit duration calculations
 _paq.push(['enableHeartBeatTimer']);
 ```
-The Heartbeat Timer becomes active only after Matomo has sent the initial page view tracking request.
+The Heartbeat Timer becomes active only after Matomo has sent the first tracking request.
 
 **Configure the minimum request interval**
 
@@ -174,7 +174,11 @@ By default, Matomo sends a heartbeat request only if at least 15 seconds have pa
 // Require at least 30 seconds between tracking requests/
 _paq.push(['enableHeartBeatTimer', 30]);
 ```
-The interval limits how frequently Matomo can send heartbeat pings. It does not define how long a visitor must remain on a page before a heartbeat ping can be sent.
+The interval sets the minimum time before Matomo can send a heartbeat ping. During this time, the tab must remain active and in focus. For example, with a 15-second interval, Matomo can send a heartbeat ping when:
+
+* The tab has remained active and in focus for at least 15 seconds.
+* The visitor then switches tabs, hides the page, navigates away, or closes it.
+* At least 15 seconds have passed since the previous tracking request.
 
 **How the Heartbeat Timer works**
 
