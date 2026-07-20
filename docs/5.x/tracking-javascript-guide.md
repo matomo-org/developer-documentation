@@ -205,6 +205,7 @@ The heartbeat ping does not create a new page view, action, or conversion.
 * It does not resolve attribution between multiple open tabs. If a visitor opens the same website in several tabs or switches between them, Matomo may attribute time to the wrong page. Browser-based analytics cannot reliably determine which page the visitor is reading.
 
 **Testing the Heartbeat Timer**
+
 To test the Heartbeat Timer, leave the page open for longer than the configured minimum interval, then switch tabs, minimise the browser, refresh the page, close the tab, or navigate away. These actions trigger a heartbeat ping. Inspect the Network tab in your browser's developer tools and look for a request containing `ping=1`.
 
 ## Ecommerce tracking
