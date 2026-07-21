@@ -171,7 +171,7 @@ The interval sets the minimum time before Matomo can send a heartbeat ping. Duri
 
 The Heartbeat Timer responds to browser events and does not send requests continuously at fixed intervals. A heartbeat ping is sent only when all of the following conditions are met:
 
-* the initial page view has been tracked, and
+* the previous tracking request has been sent, and
 * the configured minimum interval has elapsed, and
 * the visitor switches to another browser tab, minimises the browser, or
 * switches to another application or browser window, or
