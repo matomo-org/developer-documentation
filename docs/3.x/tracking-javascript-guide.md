@@ -141,7 +141,7 @@ By default, Matomo calculates visit duration from the time between tracked actio
 * A visit containing only one page view has a visit duration of 0 seconds.
 * The final page in a visit has no recorded time on page because there is no subsequent tracked action from which Matomo can calculate its duration.
 
-You can enable the Heartbeat Timer to improve visit duration tracking by sending a heartbeat ping when the visitor leaves or hides the page.
+You can enable the Heartbeat Timer to improve visit duration tracking by sending a heartbeat ping when the page loses focus or is unloaded.
 
 **Enable the Heartbeat Timer**
 
@@ -164,18 +164,16 @@ _paq.push(['enableHeartBeatTimer', 30]);
 The interval sets the minimum time before Matomo can send a heartbeat ping. During this time, the tab must remain active and in focus. For example, with a 15-second interval, Matomo can send a heartbeat ping when:
 
 * The tab has remained active and in focus for at least 15 seconds.
-* The visitor then switches tabs, hides the page, navigates away, or closes it.
+* The page then loses focus or is unloaded.
 * At least 15 seconds have passed since the previous tracking request.
 
 **How the Heartbeat Timer works**
 
 The Heartbeat Timer responds to browser events and does not send requests continuously at fixed intervals. A heartbeat ping is sent only when all of the following conditions are met:
 
-* the previous tracking request has been sent, and
+* a previous tracking request has been sent, and
 * the configured minimum interval has elapsed, and
-* the visitor switches to another browser tab, minimises the browser, or
-* switches to another application or browser window, or
-* closes the tab, refreshes the page, or navigates to another page.
+* the page loses focus or the page is unloaded.
 
 **What the Heartbeat Timer improves**
 
