@@ -86,7 +86,7 @@ If your computer is using a Debian based operating system, you can install all t
 <!-- NOTE TO YOU :-) Please also update the instructions here: https://matomo.org/docs/requirements/ -->
 
 
-### Get & Install Matomo
+### Get & install Matomo
 
 We'll get the latest version of Matomo's source code using git.
 
@@ -100,15 +100,15 @@ Open a terminal, `cd` into the directory where you want to install Matomo, and t
 
 Next, we will install all the libraries that Matomo needs using Composer.
 
- * Follow the [download instructions for Composer](https://getcomposer.org/download/) in order to get composer on your machine
+ * Follow the [download instructions for Composer](https://getcomposer.org/download/) to get composer on your machine.
 
  * Then run this command to download all PHP packages that Matomo requires:
 
         $ php composer.phar install
 
- On Windows, you will likely need to add an option `--no-script`:
+ On Windows, you will likely need to add an option `--no-scripts`. Some Composer “scripts” defined in `composer.json` may rely on Unix-like shell behaviour or tools that are not available or behave differently on Windows environments. Using `--no-scripts` prevents Composer from ignoring these scripts and allows the installation to complete without being interrupted by Windows-specific compatibility issues:
 
-        $ php composer.phar install --no-script
+        $ php composer.phar install --no-scripts
 
 ### Get a web server
 
