@@ -2204,7 +2204,7 @@ Callback Signature:
 
 ### Login.resetPassword.cancelled
 
-*Defined in [Piwik/Plugins/Login/PasswordResetter](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/PasswordResetter.php) in line [187](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/PasswordResetter.php#L187)*
+*Defined in [Piwik/Plugins/Login/PasswordResetter](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/PasswordResetter.php) in line [192](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/PasswordResetter.php#L192)*
 
 Triggered after a user cancelled a password reset process.
 
@@ -2216,7 +2216,7 @@ Callback Signature:
 
 ### Login.resetPassword.confirmed
 
-*Defined in [Piwik/Plugins/Login/PasswordResetter](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/PasswordResetter.php) in line [306](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/PasswordResetter.php#L306)*
+*Defined in [Piwik/Plugins/Login/PasswordResetter](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/PasswordResetter.php) in line [316](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/PasswordResetter.php#L316)*
 
 Triggered after a user confirmed/completed a password reset process.
 
@@ -2228,7 +2228,7 @@ Callback Signature:
 
 ### Login.resetPassword.initiated
 
-*Defined in [Piwik/Plugins/Login/PasswordResetter](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/PasswordResetter.php) in line [246](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/PasswordResetter.php#L246)*
+*Defined in [Piwik/Plugins/Login/PasswordResetter](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/PasswordResetter.php) in line [256](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/PasswordResetter.php#L256)*
 
 Triggered after a user initiated a password reset process.
 
@@ -4783,7 +4783,7 @@ Usages:
 
 ### UsersManager.deleteUser
 
-*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php) in line [856](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php#L856)*
+*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php) in line [885](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php#L885)*
 
 
 
