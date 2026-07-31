@@ -14,6 +14,7 @@ The class defines the following methods:
 - [`getTable()`](#gettable) Inherited from [`Join`](../../../Piwik/Columns/Join.md)
 - [`getColumn()`](#getcolumn) Inherited from [`Join`](../../../Piwik/Columns/Join.md)
 - [`getTargetColumn()`](#gettargetcolumn) Inherited from [`Join`](../../../Piwik/Columns/Join.md)
+- [`getAdditionalKeyColumns()`](#getadditionalkeycolumns) &mdash; Columns that must additionally match between the joined-from table and the joined table to identify a row, given as column names present on both tables.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -49,4 +50,16 @@ Join constructor.
 #### Signature
 
 - It returns a `string` value.
+
+<a name="getadditionalkeycolumns" id="getadditionalkeycolumns"></a>
+<a name="getAdditionalKeyColumns" id="getAdditionalKeyColumns"></a>
+### `getAdditionalKeyColumns()`
+
+Columns that must additionally match between the joined-from table and the joined table
+to identify a row, given as column names present on both tables. Use this when the primary
+join column is not unique on its own and needs a composite key (for example the site id).
+
+#### Signature
+
+- It returns a `string[]` value.
 
