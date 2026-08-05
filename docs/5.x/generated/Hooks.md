@@ -1647,7 +1647,7 @@ Usages:
 
 ### Http.sendHttpRequest
 
-*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Http.php) in line [354](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Http.php#L354)*
+*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Http.php) in line [440](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Http.php#L440)*
 
 Triggered to send an HTTP request. Allows plugins to resolve the HTTP request themselves or to find out
 when an HTTP request is triggered to log this information for example to a monitoring tool.
@@ -1665,6 +1665,8 @@ Callback Signature:
                      - 'headers' An array of header strings like array('Accept-Language: en', '...')
                      - 'verifySsl' A boolean whether SSL certificate should be verified
                      - 'destinationPath' If set, the response of the HTTP request should be saved to this file
+                     - 'validateEgressIp' Whether the caller asked for SSRF-safe semantics. A listener
+                       resolving the request itself must honour them or leave it unhandled
 
 - string &$response A plugin listening to this event should assign the HTTP response it received to this variable, for example "{value: true}"
 
@@ -1675,7 +1677,7 @@ Callback Signature:
 
 ### Http.sendHttpRequest.end
 
-*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Http.php) in line [846](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Http.php#L846)*
+*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Http.php) in line [1006](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Http.php#L1006)*
 
 Triggered when an HTTP request finished. A plugin can for example listen to this and alter the response,
 status code, or finish a timer in case the plugin is measuring how long it took to execute the request
@@ -1693,6 +1695,8 @@ Callback Signature:
                      - 'headers' An array of header strings like array('Accept-Language: en', '...')
                      - 'verifySsl' A boolean whether SSL certificate should be verified
                      - 'destinationPath' If set, the response of the HTTP request should be saved to this file
+                     - 'validateEgressIp' Whether the caller asked for SSRF-safe semantics. A listener
+                       resolving the request itself must honour them or leave it unhandled
 
 - string &$response The response of the HTTP request, for example "{value: true}"
 

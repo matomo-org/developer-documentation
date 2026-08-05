@@ -62,6 +62,8 @@ Sends an HTTP request using best available transport method.
        HTTP Auth password
     - `$checkHostIsAllowed` (`bool`) &mdash;
        whether we should check if the target host is allowed or not. This should only be set to false when using a hardcoded URL.
+    - `$validateEgressIp` (`bool`) &mdash;
+       when true, serves the request over the SSRF-safe path: the resolved host must be a public IP (or covered by `[General] allowed_private_egress_ranges`), every redirect hop is re-validated and the connection pinned to it. Use this whenever the URL comes from untrusted input (e.g. a site's own configured URL). Requires curl, bypasses any configured or environment proxy, retains the method and body across same-origin hops, drops credentials, caller headers and the body on an origin change, and does not follow redirects when downloading to a file. A refused target or unmet precondition throws {@see EgressBlockedException}.
 
 - *Returns:*  `string`|`array`|`bool` &mdash;
     If `$destinationPath` is not specified the HTTP response is returned on success. `false`
