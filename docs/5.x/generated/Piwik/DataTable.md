@@ -144,7 +144,8 @@ Constants
 This class defines the following constants:
 
 - [`COLUMN_AGGREGATION_OPS_METADATA_NAME`](#column_aggregation_ops_metadata_name) — Name for metadata that describes how individual columns should be aggregated when [addDataTable()](/api-reference/Piwik/DataTable#adddatatable)
-or [Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) is called. Inherited from [`DataTable`](../Piwik/DataTable.md)- [`ID_ARCHIVED_METADATA_ROW`](#id_archived_metadata_row) — The ID of the special metadata row. This row only exists in the serialized row data and stores the datatable metadata. Inherited from [`DataTable`](../Piwik/DataTable.md)- [`EXTRA_PROCESSED_METRICS_METADATA_NAME`](#extra_processed_metrics_metadata_name) — Name for metadata that contains extra [ProcessedMetric](/api-reference/Piwik/Plugin/ProcessedMetric)s for a DataTable. Inherited from [`DataTable`](../Piwik/DataTable.md)
+or [Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) is called. Inherited from [`DataTable`](../Piwik/DataTable.md)- [`TOTALS_ROW_IS_FILTERED_METADATA_NAME`](#totals_row_is_filtered_metadata_name) — Name for metadata that describes whether the totals row only totals the rows matching the
+table search of the request, instead of every row of the report. Inherited from [`DataTable`](../Piwik/DataTable.md)- [`ID_ARCHIVED_METADATA_ROW`](#id_archived_metadata_row) — The ID of the special metadata row. This row only exists in the serialized row data and stores the datatable metadata. Inherited from [`DataTable`](../Piwik/DataTable.md)- [`EXTRA_PROCESSED_METRICS_METADATA_NAME`](#extra_processed_metrics_metadata_name) — Name for metadata that contains extra [ProcessedMetric](/api-reference/Piwik/Plugin/ProcessedMetric)s for a DataTable. Inherited from [`DataTable`](../Piwik/DataTable.md)
 <a name="column_aggregation_ops_metadata_name" id="column_aggregation_ops_metadata_name"></a>
 <a name="COLUMN_AGGREGATION_OPS_METADATA_NAME" id="COLUMN_AGGREGATION_OPS_METADATA_NAME"></a>
 ### `COLUMN_AGGREGATION_OPS_METADATA_NAME`
@@ -157,6 +158,11 @@ This metadata value must be an array that maps column names with valid operation
 - `'sum'`: does `$column1 + $column2`
 
 See [addDataTable()](/api-reference/Piwik/DataTable#adddatatable) and [Row::sumRow()](/api-reference/Piwik/DataTable/Row#sumrow) for more information.
+<a name="totals_row_is_filtered_metadata_name" id="totals_row_is_filtered_metadata_name"></a>
+<a name="TOTALS_ROW_IS_FILTERED_METADATA_NAME" id="TOTALS_ROW_IS_FILTERED_METADATA_NAME"></a>
+### `TOTALS_ROW_IS_FILTERED_METADATA_NAME`
+
+The report totals stay available in the `totals` metadata when this is set.
 <a name="id_archived_metadata_row" id="id_archived_metadata_row"></a>
 <a name="ID_ARCHIVED_METADATA_ROW" id="ID_ARCHIVED_METADATA_ROW"></a>
 ### `ID_ARCHIVED_METADATA_ROW`
