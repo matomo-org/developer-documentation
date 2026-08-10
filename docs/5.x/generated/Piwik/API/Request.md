@@ -64,6 +64,7 @@ The class defines the following methods:
 - [`getClassNameAPI()`](#getclassnameapi) &mdash; Returns the name of a plugin's API class by plugin name.
 - [`isRootRequestApiRequest()`](#isrootrequestapirequest) &mdash; Detect if the root request (the actual request) is an API request or not.
 - [`isCurrentApiRequestTheRootApiRequest()`](#iscurrentapirequesttherootapirequest) &mdash; Checks if the currently executing API request is the root API request or not.
+- [`isCurrentApiRequestNestedInAnotherApiRequest()`](#iscurrentapirequestnestedinanotherapirequest) &mdash; Checks if the currently executing API request is running inside another API request.
 - [`isApiRequest()`](#isapirequest) &mdash; Detect if request is an API request.
 - [`getMethodIfApiRequest()`](#getmethodifapirequest) &mdash; Returns the current API method being executed, if the current request is an API request.
 - [`isTokenAuthProvidedSecurely()`](#istokenauthprovidedsecurely) &mdash; Returns true if a token_auth parameter was supplied via a secure mechanism and is not present as a URL parameter At the moment POST requests are checked, but in future other mechanism such as Authorisation HTTP header and bearer tokens might be used as well.
@@ -176,6 +177,21 @@ can be called programmatically. These requests are considered "child" API reques
 - It returns a `bool` value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
+
+<a name="iscurrentapirequestnestedinanotherapirequest" id="iscurrentapirequestnestedinanotherapirequest"></a>
+<a name="isCurrentApiRequestNestedInAnotherApiRequest" id="isCurrentApiRequestNestedInAnotherApiRequest"></a>
+### `isCurrentApiRequestNestedInAnotherApiRequest()`
+
+Checks if the currently executing API request is running inside another API request.
+
+This is true only for "child" API requests, i.e. requests that were dispatched
+programmatically from within another API method (for example the sub-requests run by
+\Piwik\Plugins\API\API::getBulkRequest()). It is false for the root request and
+when no API request is currently being processed.
+
+#### Signature
+
+- It returns a `bool` value.
 
 <a name="isapirequest" id="isapirequest"></a>
 <a name="isApiRequest" id="isApiRequest"></a>
