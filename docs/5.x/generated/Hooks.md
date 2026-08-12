@@ -456,7 +456,7 @@ Callback Signature:
 
 Usages:
 
-[Login::apiRequestAuthenticate](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Login.php#L333), [LoginLdap::apiRequestAuthenticate](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/LoginLdap/LoginLdap.php#L233)
+[Login::apiRequestAuthenticate](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Login.php#L334), [LoginLdap::apiRequestAuthenticate](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/LoginLdap/LoginLdap.php#L233)
 
 
 ### API.Request.dispatch
@@ -2250,7 +2250,7 @@ Usages:
 
 ### Login.logout
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [658](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L658)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [688](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L688)*
 
 
 
@@ -4241,7 +4241,7 @@ Usages:
 
 ### Template.loginCancelResetPasswordContent
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [557](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L557)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [583](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L583)*
 
 Overwrite the content displayed on the "reset password process cancelled page". Will display default content if no event content returned.
 
@@ -4657,7 +4657,7 @@ Callback Signature:
 
 ### TwoFactorAuth.enabled
 
-*Defined in [Piwik/Plugins/TwoFactorAuth/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TwoFactorAuth/Controller.php) in line [250](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TwoFactorAuth/Controller.php#L250)*
+*Defined in [Piwik/Plugins/TwoFactorAuth/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TwoFactorAuth/Controller.php) in line [276](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/TwoFactorAuth/Controller.php#L276)*
 
 
 
@@ -4754,7 +4754,7 @@ Callback Signature:
 
 Usages:
 
-[Login::noAccess](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Login.php#L312)
+[Login::noAccess](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Login.php#L313)
 
 ## UserSettings
 
@@ -4876,7 +4876,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.accepted
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [780](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L780)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [810](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L810)*
 
 Triggered after a user accepted an invite
 
@@ -4892,7 +4892,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.declined
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [851](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L851)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [881](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L881)*
 
 Triggered after a user accepted an invite
 
