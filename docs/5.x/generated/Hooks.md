@@ -1225,7 +1225,7 @@ Callback Signature:
 
 ### CoreAdminHome.archiveReports.complete
 
-*Defined in [Piwik/Plugins/CoreAdminHome/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreAdminHome/API.php) in line [370](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreAdminHome/API.php#L370)*
+*Defined in [Piwik/Plugins/CoreAdminHome/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreAdminHome/API.php) in line [380](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreAdminHome/API.php#L380)*
 
 Triggered after a full archiveReports run completes. Usage example:
 Piwik::addAction('CoreAdminHome.archiveReports.complete', function ($idSite, $period, $segment, $plugin, $report, $isArchivePhpTriggered, $idArchives, $wasCached) { ... });
@@ -1240,7 +1240,7 @@ Usages:
 
 ### CoreAdminHome.archiveReports.start
 
-*Defined in [Piwik/Plugins/CoreAdminHome/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreAdminHome/API.php) in line [339](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreAdminHome/API.php#L339)*
+*Defined in [Piwik/Plugins/CoreAdminHome/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreAdminHome/API.php) in line [349](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreAdminHome/API.php#L349)*
 
 Triggered before a full archiveReports run starts. Usage example:
 Piwik::addAction('CoreAdminHome.archiveReports.start', function ($idSite, $period, $segment, $plugin, $report, $isArchivePhpTriggered) { ... });
