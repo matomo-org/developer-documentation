@@ -3723,6 +3723,7 @@ Callback Signature:
 - [SitesManager.getImageTrackingCode](#sitesmanagergetimagetrackingcode)
 - [SitesManager.getMessagesToWarnOnSiteRemoval](#sitesmanagergetmessagestowarnonsiteremoval)
 - [SitesManager.shouldPerformEmptySiteCheck](#sitesmanagershouldperformemptysitecheck)
+- [SitesManager.siteWithoutData.showInviteTeamMemberLink](#sitesmanagersitewithoutdatashowinviteteammemberlink)
 
 ### SitesManager.addSite.end
 
@@ -3808,6 +3809,19 @@ Callback Signature:
                                           check, false if otherwise.
 
 - int `$siteId` The ID of the site we would perform a check for.
+
+
+### SitesManager.siteWithoutData.showInviteTeamMemberLink
+
+*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/Controller.php) in line [359](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/Controller.php#L359)*
+
+Triggered before rendering the invite team member link on the no data page. This event can be used to hide the link, for example if inviting users is handled
+outside of Matomo.
+
+Callback Signature:
+<pre><code>function(&amp;$showInviteTeamMemberLink]</code></pre>
+
+- bool `&$showInviteTeamMemberLink` Whether the invite team member link should be shown. Defaults to `true`.
 
 ## System
 
@@ -4131,6 +4145,7 @@ Callback Signature:
 - [Template.jsGlobalVariables](#templatejsglobalvariables)
 - [Template.jsGlobalVariables](#templatejsglobalvariables)
 - [Template.loginCancelResetPasswordContent](#templatelogincancelresetpasswordcontent)
+- [Template.siteWithoutData.afterTrackingMethods](#templatesitewithoutdataaftertrackingmethods)
 - [Template.siteWithoutDataTab. . $obj::getId() . .content](#templatesitewithoutdatatabobjgetidcontent)
 - [Template.siteWithoutDataTab. . $obj::getId() . .others](#templatesitewithoutdatatabobjgetidothers)
 
@@ -4270,9 +4285,24 @@ Callback Signature:
 - string `&$cancelResetPasswordContent` The content to render.
 
 
+### Template.siteWithoutData.afterTrackingMethods
+
+*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/Controller.php) in line [342](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/Controller.php#L342)*
+
+Triggered on the no data page after the list of tracking methods and the section
+allowing users to temporarily hide the page. This event can be used to render additional content at the bottom of the no data page.
+The content is shown on the standalone page as well as when the page is embedded in the
+reporting UI.
+
+Callback Signature:
+<pre><code>function(&amp;$content]</code></pre>
+
+- string `&$content` Additional HTML content to render after the tracking methods.
+
+
 ### Template.siteWithoutDataTab. . $obj::getId() . .content
 
-*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/Controller.php) in line [196](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/Controller.php#L196)*
+*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/Controller.php) in line [198](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/Controller.php#L198)*
 
 Event that can be used to manipulate the content of a certain tab on the no data page
 
@@ -4286,7 +4316,7 @@ Callback Signature:
 
 ### Template.siteWithoutDataTab. . $obj::getId() . .others
 
-*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/Controller.php) in line [203](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/Controller.php#L203)*
+*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/Controller.php) in line [205](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SitesManager/Controller.php#L205)*
 
 Event that can be used to manipulate the content of a record on the others tab on the no data page
 
