@@ -68,7 +68,7 @@ If your API method is able to handle multiple types for one parameter, you may d
 #### Parameter sanitizing
 
 Since the early days Matomo automatically sanitizes all parameters that are passed to an API method using [`Common::sanitizeInputValues`](/api-reference/Piwik/Common#sanitizeinputvalues). That way all input parameters could be used without thinking much about security, as risky content is automatically escaped. 
-With Matomo 5 we started to deprecate this automatic sanitizing. At least until Matomo 6 all API parameters will still be sanitized automatically. But there are now possibilities to disable this behaviour for certain API classes and even single API methods.
+With Matomo 5 we started to deprecate this automatic sanitizing. It is still applied by default in Matomo 6, but there are possibilities to disable this behaviour for certain API classes and even single API methods.
 
 To disable the automatic sanitizing for a whole API class, you simply need to set the API class' property `$autoSanitizeInputParams`:
 ```php
