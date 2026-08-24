@@ -47,7 +47,7 @@ ajax.send().then(function (response) {
 });
 ```
 
-The **`ajaxHelper`** JavaScript class is stored in the [piwik/plugins/CoreHome/vue/src/AjaxHelper/AjaxHelper.ts](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/vue/src/AjaxHelper/AjaxHelper.ts) file.
+The **`ajaxHelper`** JavaScript class is stored in the [piwik/plugins/CoreHome/vue/src/AjaxHelper/AjaxHelper.ts](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreHome/vue/src/AjaxHelper/AjaxHelper.ts) file.
 
 ## Controller method conventions
 
@@ -84,7 +84,7 @@ public function myControllerAction()
 
 ### Calling API methods
 
-Since controller methods do not take query parameter values as method parameters it can sometimes be a pain to invoke API methods within controller methods. In this case, controllers make use of the [Piwik\API\Request](/api-reference/Piwik/API/Request) class which will forward all query parameters to an API method. For example, let's look at some of the code in the `saveAnnotation()` method in the [Annotations](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Annotations/Controller.php) plugin controller:
+Since controller methods do not take query parameter values as method parameters it can sometimes be a pain to invoke API methods within controller methods. In this case, controllers make use of the [Piwik\API\Request](/api-reference/Piwik/API/Request) class which will forward all query parameters to an API method. For example, let's look at some of the code in the `saveAnnotation()` method in the [Annotations](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Annotations/Controller.php) plugin controller:
 
 ```php
 $view = new View('@Annotations/saveAnnotation');

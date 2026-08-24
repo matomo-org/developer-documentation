@@ -107,7 +107,7 @@ Plugin controllers return a **string** (usually HTML content) which is sent in t
 
 If the specified controller action cannot be found, then Matomo checks if there is a matching widget or report having this name.
 
-If one is found, it will call the `render()` method of the widget or alternatively the report. This is done in the `CoreHome.renderWidget` and `CoreHome.renderReportWidget` controller action and the matching widget or report is found in the [ControllerResolver](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Http/ControllerResolver.php).
+If one is found, it will call the `render()` method of the widget or alternatively the report. This is done in the `CoreHome.renderWidget` and `CoreHome.renderReportWidget` controller action and the matching widget or report is found in the [ControllerResolver](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Http/ControllerResolver.php).
 
 ### The HTTP Reporting API
 
