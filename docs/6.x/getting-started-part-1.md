@@ -57,8 +57,8 @@ If you can't think of an idea for a plugin, you can check the *[New plugin](http
 Before we start extending Matomo, let's make sure you have the tools needed. You will need the following:
 
 - **A PHP IDE or a text editor.** We recommend using [PhpStorm](https://www.jetbrains.com/phpstorm/), a powerful IDE built specifically for developing in PHP.
-- **A webserver,** such as [Apache](https://www.apache.org/) or [Nginx](https://nginx.org/). You can also use [PHP's built-in webserver](https://www.php.net/manual/en/features.commandline.webserver.php) on your development machine if you have PHP 7.2.5 or higher installed.
-- **A MySQL database**
+- **A webserver,** such as [Apache](https://www.apache.org/) or [Nginx](https://nginx.org/). You can also use [PHP's built-in webserver](https://www.php.net/manual/en/features.commandline.webserver.php) on your development machine if you have PHP 8.1 or higher installed.
+- **A MySQL 8.0 or higher, or MariaDB 10.6 or higher, database**
 - **[git](https://git-scm.com/)** so you can work with the latest Matomo source code.
 - **[Composer](https://getcomposer.org/)** so you can install the PHP libraries needed by Matomo.
 - **A browser,** such as [Firefox](https://www.mozilla.org/en-US/firefox/new/) or [Chrome](https://www.google.com/chrome). Ok, you've probably got this.
@@ -114,7 +114,7 @@ Next, we will install all the libraries that Matomo needs using Composer.
 
 Now that you've got a copy of Matomo, you'll need to point your web server to it. If you use Apache or Nginx, the specific instructions for configuring your web server depend on the web server itself.
 
-If your PHP version is 7.2.5 or greater, you can also use [PHP's built-in web server](https://www.php.net/manual/en/features.commandline.webserver.php) which requires no installation. Simply run the following command:
+If your PHP version is 8.1 or greater, you can also use [PHP's built-in web server](https://www.php.net/manual/en/features.commandline.webserver.php) which requires no installation. Simply run the following command:
 
     $ php -S 0.0.0.0:8000
 
@@ -127,7 +127,7 @@ When you install Matomo, at the database creation step, you will need to specify
 [-> Click here to see how to create a new user in MySQL](https://matomo.org/faq/how-to-install/faq_23484/).
 
 
-In Ubuntu systems running MySQL 5.7 (and later versions), the root MySQL user is set to authenticate using the `auth_socket` plugin by default rather than with a password. To use a password to connect to MySQL as root, you will need to switch its authentication method to `mysql_native_password`. To configure the root account to authenticate with a password, run the following ALTER USER command, and replace `my secure password` by a secure password:
+In Ubuntu systems, the root MySQL user is set to authenticate using the `auth_socket` plugin by default rather than with a password. To use a password to connect to MySQL as root, you will need to switch its authentication method to `mysql_native_password`. To configure the root account to authenticate with a password, run the following ALTER USER command, and replace `my secure password` by a secure password:
 
 ```sql
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'my secure password';

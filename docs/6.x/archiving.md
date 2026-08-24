@@ -270,24 +270,13 @@ Currently, they are only created when plugins want to archive a single report in
 
 ### For plugins: supporting partial archives
 
-Partial archives are not automatically created when a single report is requested for archiving. Plugin `Archiver`s have to
-specifically support this workflow like so:
+An archive is marked as partial automatically whenever a single report is requested for archiving. A plugin `Archiver`
+only has to respect the requested report:
 
 ```
 class Archiver extends \Piwik\Plugin\Archiver
 {
     // ...
-
-    public function __construct(ArchiveProcessor $processor)
-    {
-        parent::__construct($processor);
-
-        // if a single report is requested, mark the archive we're creating as partial
-        $requestedReport = $processor->getParams()->getArchiveOnlyReport();
-        if ($requestedReport) {
-            $processor->getParams()->setIsPartialArchive(true);
-        }
-    }
 
     public function aggregateDayReport()
     {
