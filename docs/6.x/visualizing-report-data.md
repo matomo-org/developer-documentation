@@ -277,7 +277,7 @@ Visualizations that are exposed this way must have the `FOOTER_ICON` and `FOOTER
 
 Unless your visualization is very simple or builds on another visualization (such as the "table" visualization) you will probably need to extend ViewDataTable's client-side logic.
 
-All of `ViewDataTable` client side logic is encapsulated within the **`DataTable` JavaScript class** (located in the [dataTable.js](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/javascripts/dataTable.js) file). If you are extending `Visualization` directly, you should extend **DataTable** to add your own client-side logic. If you're extending another visualization, you will have to extend that visualization's JavaScript class. For example:
+All of `ViewDataTable` client side logic is encapsulated within the **`DataTable` JavaScript class** (located in the [dataTable.js](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreHome/javascripts/dataTable.js) file). If you are extending `Visualization` directly, you should extend **DataTable** to add your own client-side logic. If you're extending another visualization, you will have to extend that visualization's JavaScript class. For example:
 
 ```javascript
 (function ($, require) {
@@ -336,7 +336,7 @@ New controls can be added one of two ways:
 
 - they can be added entirely through JavaScript (as is done with the *series picker*)
 
-    To achieve this, create HTML elements dynamically within your visualization's JavaScript class' `init()` method. See [the series picker source code](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreVisualizations/javascripts/seriesPicker.js) for an example.
+    To achieve this, create HTML elements dynamically within your visualization's JavaScript class' `init()` method. See [the series picker source code](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreVisualizations/javascripts/seriesPicker.js) for an example.
 
 - or the HTML for a control can be rendered with a visualization and the visualization's JavaScript class can attach some logic to the HTML
 

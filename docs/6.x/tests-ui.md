@@ -253,9 +253,9 @@ public function addTestHooks($testingEnvironment) {
 
 The following are examples of test environment manipulation:
 
- * [Overlay_spec.js](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Overlay/tests/UI/Overlay_spec.js)
- * [Dashboard_spec.js](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Dashboard/tests/UI/Dashboard_spec.js)
- * [Login_spec.js](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/tests/UI/Login_spec.js)
+ * [Overlay_spec.js](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Overlay/tests/UI/Overlay_spec.js)
+ * [Dashboard_spec.js](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Dashboard/tests/UI/Dashboard_spec.js)
+ * [Login_spec.js](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/tests/UI/Login_spec.js)
 
 #### Dependency injection configuration
 

@@ -121,7 +121,7 @@ the `plugin.json` file.
 
 # Dimension Column Management
 
-Dimension column types are defined within the individual Dimension types themselves, for example: [https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/DevicesDetection/Columns/DeviceBrand.php#L21](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/DevicesDetection/Columns/DeviceBrand.php#L21).
+Dimension column types are defined within the individual Dimension types themselves, for example: [https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/DevicesDetection/Columns/DeviceBrand.php#L21](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/DevicesDetection/Columns/DeviceBrand.php#L21).
 
 The creation and updating of dimension columns in log tables is handled automatically by the updater. When the column
 is created, we create an entry in the `option` table with a name like `version_log_table.dimension_column_name` for the column
