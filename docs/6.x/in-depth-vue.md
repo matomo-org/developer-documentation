@@ -7,28 +7,21 @@ This documents advanced and/or uncommon patterns found in Matomo's use of Vue.
 
 ## Vue compilation
 
-Plugin UMD modules are compiled through the Vue CLI tool. This tool uses Webpack and passes the code in a plugin's `vue/`
-directory through the TypeScript compiler, then passes that output through babel to generate the final
-UMD modules.
+Plugin UMD modules are compiled with [Vite](https://vite.dev/), which passes the code in a plugin's `vue/` directory
+through esbuild and, for production builds, minifies it with terser to generate the final UMD modules.
 
-The base configuration for webpack is determined by the Vue CLI tool, but it is customized in the `vue.config.js`
-file. The webpack configuration is also partially where the TypeScript compiler is configured (the main place
-being the tsconfig.json file). Babel is configured primarily in the `babel.config.js` file.
+The configuration lives in `vite.config.ts` in Matomo's root folder, and TypeScript is configured in `tsconfig.json`.
+Each plugin is built on its own: `vue:build` invokes `plugins/CoreVue/scripts/vite-runner.mjs` once per plugin, passing
+the plugin path through the `MATOMO_CURRENT_PLUGIN` environment variable and the artifact to produce through
+`MATOMO_VUE_PHASE`.
 
-During development, TypeScript is configured to do a passthrough transpile only. This means it does very little
-type checking to keep compilation times fast. For the production UMD files however, we turn on full type checking.
-The output of this type information is stored in the `@types` directory, and is only needed and present during
-development.
+The phase controls what is emitted:
 
-### cli-service-proxy.js
+* `min` produces `<Plugin>.umd.min.js` and generates TypeScript declarations into `@types/<Plugin>`;
+* `dev` produces the unminified `<Plugin>.development.umd.js` used by `vue:build --watch`, and skips declarations to
+  keep rebuilds fast.
 
-When compiling .vue files, the Vue CLI service splits out the TypeScript part of the file before feeding it into
-the TypeScript compiler. If errors are detected in this part of the file, the line numbers in the output will
-correspond to the location in the `<script>` element, not to the whole .vue file, which is not especially
-convenient.
-
-The `cli-service-proxy.js` file in the CoreVue plugins invokes the Vue CLI service and corrects these line numbers
-in the TypeScript output. `vue:build` invokes the proxy script.
+The declarations in `@types` are only needed and present during development.
 
 ## Stateful Directives
 

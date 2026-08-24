@@ -13,8 +13,8 @@ Matomo can handle and process many different types of frontend assets, including
 * vanilla CSS
 * LESS
 * vanilla JavaScript
-* ECMAScript (processed by babel)
-* TypeScript (processed by the TypeScript compiler, then babel)
+* ECMAScript (processed by Vite)
+* TypeScript (processed by the TypeScript compiler, then Vite)
 * Vue files (where the specific language is chosen within the file)
 
 ### Vanilla JavaScript, CSS and LESS files
@@ -41,31 +41,26 @@ included like a file you'd specify through [`AssetManager.getJavaScriptFiles`](/
 
 ### Building UMD modules
 
-Matomo uses the [Vue CLI](https://cli.vuejs.org/) tool to bundle advanced assets. There is one global configuration that
-is used for every Matomo plugin.
+Matomo uses [Vite](https://vite.dev/) to bundle advanced assets. There is one global configuration, `vite.config.ts` in
+Matomo's root folder, that is used for every Matomo plugin.
 
-The build process is initiated through the Matomo command `vue:build`. Internally, this invokes the Vue CLI service, which
-in turn, invokes many separate tools that process individual files. These tools are:
+The build process is initiated through the Matomo command `vue:build`. Internally, the command loops over the plugins to
+build and invokes `plugins/CoreVue/scripts/vite-runner.mjs` once per plugin, passing the plugin through the
+`MATOMO_CURRENT_PLUGIN` environment variable. Each plugin's Vue library is therefore built on its own. The tools involved are:
 
-- [the TypeScript compiler](https://www.typescriptlang.org/): used to compile TypeScript and Vue files into ES files. The
-  configuration for this tool is stored in the `tsconfig.json` file in Matomo's root folder. Individual plugins can
-  extend and/or override this file by placing their own `tsconfig.json` in their `vue` folder.
+- [the TypeScript compiler](https://www.typescriptlang.org/): used to type check and to emit declarations into the
+  `@types/<Plugin>` folder. The configuration is stored in the `tsconfig.json` file in Matomo's root folder. Individual
+  plugins can extend and/or override this file by placing their own `tsconfig.json` in their `vue` folder.
+- [Vite](https://vite.dev/): the bundler. It converts ES modules into UMD files that can be loaded directly in the browser.
+  Matomo's `vite.config.ts` keeps `vue`, `tslib` and every other plugin's Vue library external, so that plugin UMD modules
+  can be accessed from other plugins at runtime rather than being bundled into each other.
+- [esbuild](https://esbuild.github.io/) and [terser](https://terser.org/): used by Vite to transform and minify the output.
+  The compile target is set with the `build.target` option in `vite.config.ts`.
 - [ESLint](https://eslint.org/): used to lint our TypeScript, Vue and ES files. Currently we use the
   [https://github.com/airbnb/javascript](Airbnb ESlint ruleset). Base configuration for this tool is stored in the
   `.eslintrc.js` file in Matomo's root folder. Plugins can extend or override this file by placing their own `.eslintrc.js`
-  file in their `vue` folder.
-- [Babel](https://babeljs.io/): used to compile the ES that the TypeScript compiler emits into JavaScript that
-  can be consumed by the browsers we support. Technically, the TypeScript compiler can do this too, but babel is included
-  as well, since it provides some features the TypeScript compiler does not, such as [modern mode](https://cli.vuejs.org/guide/browser-compatibility.html#modern-mode).
-  Babel is also extensible in a way TypeScript is not, so overall it provides more power and possibility.
-  Babel configuration is stored in the `babel.config.js` file.
-- [Webpack](https://webpack.js.org/): the bundler used by Vue CLI, webpack converts ES modules into UMD files that can
-  be loaded directly in the browser. Webpack config is stored in the `vue.config.js` file. Vue CLI uses the [webpack-chain](https://github.com/neutrinojs/webpack-chain)
-  tool to allow users to add custom webpack config. Matomo adds some extra config to make sure plugin UMD modules
-  can be accessed from other plugins at runtime.
-- [browserslist](https://github.com/browserslist/browserslist): this tool is used to specify what browsers we want our
-  compiled JavaScript to be compatible with, and is used by babel to understand which advanced ES features need to be
-  transpiled and which do not. Configuration for this tool is in the `.browserslistrc` file.
+  file in their `vue` folder. Unlike the previous Vue CLI setup, linting is **not** part of `vue:build`; run it separately
+  with `npm run eslint`.
 
 ### UMD Module Dependencies
 
@@ -85,8 +80,8 @@ the UMD modules that get loaded.
 
 Detecting plugin dependencies is done by:
 
-* using a function in the `externals` webpack config. When a request for a plugin UMD is detected,
-  we save it in an array.
+* using the `external` callback in `vite.config.ts`. When a request for a plugin UMD is detected,
+  we save it in a set.
 * Later, after compilation has ended, we output the array to a metadata JSON file (`plugins/MyPlugin/vue/dist/umd.metadata.json`).
 
 Ordering of plugins is done in PluginUmdAssetFetcher.php by:
@@ -96,22 +91,15 @@ Ordering of plugins is done in PluginUmdAssetFetcher.php by:
 
 ### Browser support
 
-As stated above, `browserslist` is used to control what browsers our compiled JavaScript supports. In the `.browserslistrc`
-file we specify some generic parameters, like `> 0.05%` (we want to support browsers with an overall usage of over 0.05%) and
-`last 2 versions` (we want to support the last two versions of every browser).
+The `build.target` option in `vite.config.ts` controls what browsers our compiled JavaScript supports. Vite uses this
+target to decide which language features have to be transformed and which can be emitted as they are.
 
-Browserslist takes this description and creates the list of browsers and browser versions that must be supported. To
-see this list yourself, run the following command:
-
-`npx browserslist`
-
-Based on the features these browsers support and do not support, `babel` will determine exactly how to compile our
-ES files.
+The browsers Matomo officially supports are listed separately in `core/SupportedBrowser.php`.
 
 **Polyfills**
 
-Some advanced ES features need polyfills in order to be available in older browsers. These polyfills unfortunately 
-cannot be automatically detected using babel, since we do not know exactly what features every plugin developer will want to
+Some advanced ES features need polyfills in order to be available in older browsers. These polyfills unfortunately
+cannot be detected automatically, since we do not know exactly what features every plugin developer will want to
 use.
 
 So instead we allow a specific set of polyfills to be included and disallow all others. We don't include every possible
@@ -126,33 +114,26 @@ to use this command and only when adding or removing polyfills.
 
 ### Updating Browser Support
 
-browserslist uses an npm package to determine the usage statistics of browsers. As long as it doesn't change, the
-list of minimum supported browsers Matomo supports will stay the same. browserslist is in turn installed as a dependency of @vue/cli-service.
+The compile target is set explicitly with the `build.target` option in `vite.config.ts` (and in
+`plugins/CoreVue/polyfills/vite.config.ts` for the polyfill project).
 
-When it's time to update the minimum supported browser versions, which happens before every major release, all
-that's needed is to upgrade the @vue/cli-service package to the latest version. Then, based on the `npx browserslist`
-output & some manual testing to double check, change the versions in core/SupportedBrowser.php.
+When it's time to update the minimum supported browser versions, which happens before every major release, raise
+`build.target` in both files and, after some manual testing to double check, change the versions in
+`core/SupportedBrowser.php`.
 
-### Async components and chunking
+### Async components and dynamic imports
 
 A note concerning [async components](https://v3.vuejs.org/guide/migration/async-components.html#introduction) in Vue:
-Vue allows developers to define components but not include them in the final bundle, instead loading them dynamically
-via a network request. This is done via the magic `import()` function. This section describes how this is done, so it
-is not so magical.
+Vue allows developers to define components that are loaded lazily via the
+[import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) function.
 
-[import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) is an advanced ES
-feature that dynamically loads an ES module over a network, returning a promise that resolves to the ES module object.
-Older browsers do not support this natively, so it is polyfilled by webpack.
+Plugin Vue libraries are built as a single UMD bundle, and UMD has no mechanism for loading additional chunks at
+runtime. Matomo's `vite.config.ts` therefore sets `inlineDynamicImports: true`: anything reached through an `import()`
+call is inlined into the plugin's one `<Plugin>.umd.min.js` file rather than emitted as a separate chunk.
 
-When webpack processes a file to create a bundle, it will notice these `import()` calls and handle them. First,
-it creates a separate bundle (called a **chunk**) for the ES module that is imported. This is outputted as a file like,
-`MyPlugin.umd.1.js`. Then, the `import()` call is replaced with a call to a function provided by webpack, which creates
-a `<script>` element to dynamically load the JavaScript chunk file.
-
-All of this happens transparently to the developer.
-
-_Note: these files, unlike all other JavaScript assets in Matomo, cannot be requested with our cache buster as the
-URL used to load them is, more or less, hardcoded by Webpack._
+The practical consequence is that an async component still works, but it is **not** a separate network request and
+does not reduce the size of the bundle. No extra chunk files are produced, so every asset a plugin ships goes through
+Matomo's normal cache buster.
 
 ### Discovering UMD files
 
