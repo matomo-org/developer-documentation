@@ -115,11 +115,11 @@ The [HTTP reporting API](/api-reference/reporting-api) works similarly to the we
 
 It has the same entry point and is also dispatched by the front controller.
 
-    /index.php?module=API&method=SEO.getRank&…
+    /index.php?module=API&method=UserCountry.getCountry&…
 
 This HTTP request will be processed like any other call to a controller: the plugin name is `API` and no `action` is given, which will fall back to `index`.
 
-The `Piwik\Plugins\API\Controller` class will be called, and it will dispatch the call to the targeted API, acting as a second front controller for API calls. In our example, the method `SEO.getRank` means that the `Piwik\Plugins\SEO\API::getRank()` method will be called.
+The `Piwik\Plugins\API\Controller` class will be called, and it will dispatch the call to the targeted API, acting as a second front controller for API calls. In our example, the method `UserCountry.getCountry` means that the `Piwik\Plugins\UserCountry\API::getCountry()` method will be called.
 
 API requests are authenticated using a `token_auth` URL parameter and usually don't have a session loaded unless the `force_api_session=1` parameter is present. Learn more about [Authentication in Matomo](/guides/authentication-in-depth).
 
