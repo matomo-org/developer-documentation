@@ -11,7 +11,7 @@ next: tests-troubleshooting
 
 Matomo uses GitHub Actions to automatically run its test suite for every pull requests, as well as for every commit to a development branch. All tests are run on the [matomo-org/matomo](https://github.com/matomo-org/matomo/actions/workflows/matomo-tests.yml) actions
 
-Current status for 5.x-dev branch: [![Matomo Tests](https://github.com/matomo-org/matomo/actions/workflows/matomo-tests.yml/badge.svg?branch=5.x-dev)](https://github.com/matomo-org/matomo/actions/workflows/matomo-tests.yml)
+Current status for 6.x-dev branch: [![Matomo Tests](https://github.com/matomo-org/matomo/actions/workflows/matomo-tests.yml/badge.svg?branch=6.x-dev)](https://github.com/matomo-org/matomo/actions/workflows/matomo-tests.yml)
 
 Each developer is responsible to keep the build green.
 

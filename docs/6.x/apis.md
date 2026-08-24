@@ -26,7 +26,7 @@ Everything below is what we consider API.
 -   JavaScript variables in global `piwik.*` object
     -   as [documented here](https://developer.matomo.org/guides/working-with-piwiks-ui#global-variables-defined-by-piwik)
 -   LESS variables used for Theming
-    -   when [writing a theme for Matomo](/guides/theming) we announce that LESS variables in [theme.less](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ExampleTheme/stylesheets/theme.less) are API
+    -   when [writing a theme for Matomo](/guides/theming) we announce that LESS variables in [theme.less](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ExampleTheme/stylesheets/theme.less) are API
 -   INI Config settings names in `config/global.ini.php` are API
     -   we should not rename INI config settings as users may have overridden them in `config/config.ini.php`
 -   Widgets embed URLs are API
@@ -76,7 +76,7 @@ In most case, we should be able to remove the `@api` tag starting from the next 
 
 ## Developer changelog
 
-When we are adding a new API or when we are breaking or deprecating an existing API, then we change our [Developer Changelog](https://github.com/matomo-org/matomo/blob/5.x-dev/CHANGELOG.md). We also mention library updates and on occasion internal changes that may be interesting for developers.
+When we are adding a new API or when we are breaking or deprecating an existing API, then we change our [Developer Changelog](https://github.com/matomo-org/matomo/blob/6.x-dev/CHANGELOG.md). We also mention library updates and on occasion internal changes that may be interesting for developers.
 
 ### Examples when to update the developer changelog
 

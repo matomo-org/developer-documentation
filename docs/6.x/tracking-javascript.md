@@ -172,7 +172,7 @@ Piwik uses first party cookies to keep track of some user information over time.
 
 ## Using Matomo Tag Manager?
 
-If you use [Matomo Tag Manager](https://matomo.org/guide/tag-manager/) and you are trying to use one of these JavaScript functions above, you may find that they are not yet available in the Matomo Configuration Variables. When that happens, please [open an issue here](https://github.com/matomo-org/tag-manager/issues/new) (or open a Pull Request to implement the new feature [here](https://github.com/matomo-org/tag-manager/blob/5.x-dev/Template/Tag/MatomoTag.web.js))
+If you use [Matomo Tag Manager](https://matomo.org/guide/tag-manager/) and you are trying to use one of these JavaScript functions above, you may find that they are not yet available in the Matomo Configuration Variables. When that happens, please [open an issue here](https://github.com/matomo-org/tag-manager/issues/new) (or open a Pull Request to implement the new feature [here](https://github.com/matomo-org/tag-manager/blob/6.x-dev/Template/Tag/MatomoTag.web.js))
 
 
 ## Unit Tests Covering matomo.js
@@ -183,4 +183,4 @@ The Piwik JavaScript API has been tested with numerous web browsers. To maximize
 
 ## Minify matomo.js
 
-The matomo.js is minified to reduce the size that your website visitors will have to download. The YUI Compressor is used to minify the JavaScript ([more information](https://github.com/matomo-org/matomo/blob/5.x-dev/js/README.md#introduction)). You can find the original non minified version in [/js/piwik.js](https://github.com/matomo-org/matomo/blob/5.x-dev/js/piwik.js#L1).
+The matomo.js is minified to reduce the size that your website visitors will have to download. The YUI Compressor is used to minify the JavaScript ([more information](https://github.com/matomo-org/matomo/blob/6.x-dev/js/README.md#introduction)). You can find the original non minified version in [/js/piwik.js](https://github.com/matomo-org/matomo/blob/6.x-dev/js/piwik.js#L1).

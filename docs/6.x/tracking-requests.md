@@ -15,7 +15,7 @@ category: DevelopInDepth
 
 Plugins can define so called "request processors" to manipulate a tracking request at various stages of a tracking request.
 
-They are currently only documented in the [RequestProcessor class itself](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/RequestProcessor.php). You can use this to change/modify/remove/add tracking request parameters, to discard tracking requests, to record additional data, and more.
+They are currently only documented in the [RequestProcessor class itself](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/RequestProcessor.php). You can use this to change/modify/remove/add tracking request parameters, to discard tracking requests, to record additional data, and more.
 
 For example, the Privacy Manager plugin uses a request processor to anonymise certain data automatically. Some tracking plugins like Media Analytics or Form Analytics use them to track additional data.
 
@@ -33,7 +33,7 @@ class RequestProcessor extends RequestProcessor
 }
 ```
 
-Within this class you can then overwrite various methods of the extended [RequestProcessor class](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/RequestProcessor.php).
+Within this class you can then overwrite various methods of the extended [RequestProcessor class](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/RequestProcessor.php).
 
 #### Manipulating a request
 
@@ -94,7 +94,7 @@ The `Tracker.PageUrl.getQueryParametersToExclude` can be used to dynamically exc
 
 ## Action classes
 
-Every tracking request gets assigned an action class. The action defines basically what kind of tracking request the current request is. For example, is it a page view, an outlink, a download, an event, a media analytics request, etc. All these classes have in common that they share the same [base class Piwik\Tracker\Action](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Tracker/Action.php).
+Every tracking request gets assigned an action class. The action defines basically what kind of tracking request the current request is. For example, is it a page view, an outlink, a download, an event, a media analytics request, etc. All these classes have in common that they share the same [base class Piwik\Tracker\Action](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/Action.php).
 
 When we added event tracking or content tracking, we basically simply added a new action type, gave it an ID, and most things work then out of the box within Matomo.
 

@@ -26,7 +26,7 @@ Every plugin on the marketplace has a unique name. Make sure the name you chose 
 
 ### Prepare your plugin
 
-Two files are required to be present in your plugin before you can publish: the **README.md** file and the **[plugin.json](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ExamplePlugin/plugin.json)** file.
+Two files are required to be present in your plugin before you can publish: the **README.md** file and the **[plugin.json](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ExamplePlugin/plugin.json)** file.
 
 #### README.md file
 
@@ -65,7 +65,7 @@ The `plugin.json` file must contain the following information:
 
     ```json
     "require": {
-        "matomo": ">=5.0.3,<6.0.0-b1", // requires at least Matomo 5.0.3 but lower than Matomo 6.0.0
+        "matomo": ">=6.0.0-b1,<7.0.0-b1", // requires at least Matomo 6.0.0 but lower than Matomo 7.0.0
         "php": ">=8.0.21" // requires at least PHP 8.0.21
     }
     ```
@@ -76,12 +76,12 @@ The `plugin.json` file must contain the following information:
 
     ```json
     "require": {
-        "matomo": ">=5.0.3,<6.0.0-b1", // requires at least Matomo 5.0.3 but lower than Matomo 6.0.0
+        "matomo": ">=6.0.0-b1,<7.0.0-b1", // requires at least Matomo 6.0.0 but lower than Matomo 7.0.0
         "php": ">8.0.21" // requires at least PHP 8.0.22
     }
     ```
 
-    For `matomo` requirement it is required to define a lower and upper limit. For example would it be recommended to use `>=4.0.0-b1,<5.0.0-b1` for a plugin that is compatible with Matomo 4.
+    For `matomo` requirement it is required to define a lower and upper limit. For example would it be recommended to use `>=6.0.0-b1,<7.0.0-b1` for a plugin that is compatible with Matomo 6.
     For plugins that target Matomo 3 or newer read the [Composer Versions documentation](https://getcomposer.org/doc/articles/versions.md) for more information.
 
 
@@ -201,7 +201,7 @@ Here is a complete example to get you started:
         "rss": "https://piwik.org/feed/"
     },
     "require": {
-        "matomo": ">=5.0.0"
+        "matomo": ">=6.0.0-b1,<7.0.0-b1"
     }
 }
 ```
