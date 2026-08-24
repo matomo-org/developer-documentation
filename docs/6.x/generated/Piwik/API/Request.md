@@ -67,7 +67,6 @@ The class defines the following methods:
 - [`isCurrentApiRequestNestedInAnotherApiRequest()`](#iscurrentapirequestnestedinanotherapirequest) &mdash; Checks if the currently executing API request is running inside another API request.
 - [`isApiRequest()`](#isapirequest) &mdash; Detect if request is an API request.
 - [`getMethodIfApiRequest()`](#getmethodifapirequest) &mdash; Returns the current API method being executed, if the current request is an API request.
-- [`isTokenAuthProvidedSecurely()`](#istokenauthprovidedsecurely) &mdash; Returns true if a token_auth parameter was supplied via a secure mechanism and is not present as a URL parameter At the moment POST requests are checked, but in future other mechanism such as Authorisation HTTP header and bearer tokens might be used as well.
 - [`processRequest()`](#processrequest) &mdash; Helper method that processes an API request in one line using the variables in `$_GET` and `$_POST`.
 - [`getRequestParametersGET()`](#getrequestparametersget) &mdash; Returns the original request parameters in the current query string as an array mapping query parameter names with values.
 - [`getBaseReportUrl()`](#getbasereporturl) &mdash; Returns the URL for the current requested report w/o any filter parameters.
@@ -206,11 +205,9 @@ request or not, call [isRootRequestApiRequest()](/api-reference/Piwik/API/Reques
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$request` (`array`) &mdash;
-       eg array('module' => 'API', 'method' => 'Test.getMethod')
+    - `$request` (`array`|`null`) &mdash;
+       eg array('module' => 'API', 'method' => 'Test.getMethod'), or null to read them from the query string and the request body
 - It returns a `bool` value.
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
 
 <a name="getmethodifapirequest" id="getmethodifapirequest"></a>
 <a name="getMethodIfApiRequest" id="getMethodIfApiRequest"></a>
@@ -228,20 +225,6 @@ Returns the current API method being executed, if the current request is an API 
     
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
-
-<a name="istokenauthprovidedsecurely" id="istokenauthprovidedsecurely"></a>
-<a name="isTokenAuthProvidedSecurely" id="isTokenAuthProvidedSecurely"></a>
-### `isTokenAuthProvidedSecurely()`
-
-Returns true if a token_auth parameter was supplied via a secure mechanism and is not present as a URL parameter
-At the moment POST requests are checked, but in future other mechanism such as Authorisation HTTP header
-and bearer tokens might be used as well.
-
-#### Signature
-
-
-- *Returns:*  `bool` &mdash;
-    True if token was supplied in a secure way
 
 <a name="processrequest" id="processrequest"></a>
 <a name="processRequest" id="processRequest"></a>

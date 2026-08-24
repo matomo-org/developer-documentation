@@ -36,7 +36,9 @@ Public so tests can simulate the situation where the lock tables privilege isn't
 
 #### Signature
 
-- It is a `bool` value.
+- It can be one of the following types:
+    - `bool`
+    - `null`
 
 Methods
 -------
@@ -56,7 +58,6 @@ The class defines the following methods:
 - [`fetchOne()`](#fetchone) &mdash; Executes an SQL `SELECT` statement and returns the first column value of the first row in the result set.
 - [`fetchAssoc()`](#fetchassoc) &mdash; Executes an SQL `SELECT` statement and returns the entire result set indexed by the first selected field.
 - [`deleteAllRows()`](#deleteallrows) &mdash; Deletes all desired rows in a table, while using a limit.
-- [`optimizeTables()`](#optimizetables) &mdash; Runs an `OPTIMIZE TABLE` query on the supplied table or tables.
 - [`dropTables()`](#droptables) &mdash; Drops the supplied table or tables.
 - [`dropAllTables()`](#dropalltables) &mdash; Drops all tables
 - [`lockTables()`](#locktables) &mdash; Locks the supplied table or tables.
@@ -70,7 +71,6 @@ The class defines the following methods:
 - [`isLockPrivilegeGranted()`](#islockprivilegegranted) &mdash; Checks whether the database user is allowed to lock tables.
 - [`enableQueryLog()`](#enablequerylog)
 - [`isQueryLogEnabled()`](#isquerylogenabled)
-- [`isOptimizeInnoDBSupported()`](#isoptimizeinnodbsupported)
 
 <a name="get" id="get"></a>
 <a name="get" id="get"></a>
@@ -125,7 +125,7 @@ Shouldn't be called directly, use [get()](/api-reference/Piwik/Db#get) instead.
 -  It accepts the following parameter(s):
     - `$dbConfig` (`array`|`null`) &mdash;
        Connection parameters in an array. Defaults to the `[database]` INI config section.
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="createreaderdatabaseobject" id="createreaderdatabaseobject"></a>
 <a name="createReaderDatabaseObject" id="createReaderDatabaseObject"></a>
@@ -142,7 +142,7 @@ Shouldn't be called directly, use [get()](/api-reference/Piwik/Db#get) instead.
 -  It accepts the following parameter(s):
     - `$dbConfig` (`array`|`null`) &mdash;
        Connection parameters in an array. Defaults to the `[database]` INI config section.
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="destroydatabaseobject" id="destroydatabaseobject"></a>
 <a name="destroyDatabaseObject" id="destroyDatabaseObject"></a>
@@ -154,16 +154,16 @@ For tests.
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="exec" id="exec"></a>
 <a name="exec" id="exec"></a>
 ### `exec()`
 
 Executes an unprepared SQL query. Recommended for DDL statements like `CREATE`,
-`DROP` and `ALTER`. The return value is DBMS-specific. For MySQLI, it returns the
-number of rows affected. For PDO, it returns a
-[Zend_Db_Statement](https://framework.zend.com/manual/1.12/en/zend.db.statement.html) object.
+`DROP` and `ALTER`.
+
+Must not be used during tracker requests, as the tracker database does not provide a profiler.
 
 #### Signature
 
@@ -171,8 +171,8 @@ number of rows affected. For PDO, it returns a
     - `$sql` (`string`) &mdash;
        The SQL query.
 
-- *Returns:*  `integer`|`Zend_Db_Statement` &mdash;
-    
+- *Returns:*  `int` &mdash;
+    The number of rows affected.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is an error in the SQL.
 
@@ -211,9 +211,9 @@ Executes an SQL `SELECT` statement and returns all fetched rows from the result 
     - `$parameters` (`array`) &mdash;
        Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.
 
-- *Returns:*  `array` &mdash;
-    The fetched rows, each element is an associative array mapping column names
-              with column values.
+- *Returns:*  `Piwik\list&lt;array&lt;array-key,` &mdash;
+    string|int|float|null>> The fetched rows, each an associative array of column => value.
+                                                      Numeric column names, eg, `SELECT 1`, yield integer keys.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
 
@@ -231,9 +231,10 @@ Executes an SQL `SELECT` statement and returns the first row of the result set.
     - `$parameters` (`array`) &mdash;
        Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.
 
-- *Returns:*  `array` &mdash;
-    The fetched row, each element is an associative array mapping column names
-              with column values.
+- *Returns:*  `Piwik\array&lt;array-key,` &mdash;
+    string|int|float|null>|false The fetched row as column => value, or false when the result
+                                                      set is empty. Numeric column names, eg, `SELECT 1`, yield
+                                                      integer keys.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
 
@@ -251,7 +252,9 @@ row in the result set.
        The SQL query.
     - `$parameters` (`array`) &mdash;
        Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.
-- It returns a `string` value.
+
+- *Returns:*  `string`|`int`|`float`|`null`|`false` &mdash;
+    The first column of the first row, or `false` when the result set is empty.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
 
@@ -270,12 +273,9 @@ selected field.
     - `$parameters` (`array`) &mdash;
        Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`.
 
-- *Returns:*  `array` &mdash;
-    eg,
-              ```
-              array('col1value1' => array('col2' => '...', 'col3' => ...),
-                    'col1value2' => array('col2' => '...', 'col3' => ...))
-              ```
+- *Returns:*  `Piwik\array&lt;array-key,` &mdash;
+    array<array-key, string|int|float|null>> The rows indexed by the first selected column,
+                                                                 each row an associative array of column => value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If there is a problem with the SQL or bind parameters.
 
@@ -312,24 +312,6 @@ locking the table for too long.
 - *Returns:*  `int` &mdash;
     The total number of rows deleted.
 
-<a name="optimizetables" id="optimizetables"></a>
-<a name="optimizeTables" id="optimizeTables"></a>
-### `optimizeTables()`
-
-Runs an `OPTIMIZE TABLE` query on the supplied table or tables.
-
-Tables will only be optimized if the `[General] enable_sql_optimize_queries` INI config option is
-set to **1**.
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$tables` (`string`|`array`) &mdash;
-       The name of the table to optimize or an array of tables to optimize. Table names must be prefixed (see [Common::prefixTable()](/api-reference/Piwik/Common#prefixtable)).
-    - `$force` (`bool`) &mdash;
-       If true, the `OPTIMIZE TABLE` query will be run even if InnoDB tables are being used.
-- It returns a `bool` value.
-
 <a name="droptables" id="droptables"></a>
 <a name="dropTables" id="dropTables"></a>
 ### `dropTables()`
@@ -351,7 +333,7 @@ Drops all tables
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="locktables" id="locktables"></a>
 <a name="lockTables" id="lockTables"></a>
@@ -369,7 +351,9 @@ should still work if it has not been granted.
        The table or tables to obtain 'read' locks on. Table names must be prefixed (see [Common::prefixTable()](/api-reference/Piwik/Common#prefixtable)).
     - `$tablesToWrite` (`string`|`array`) &mdash;
        The table or tables to obtain 'write' locks on. Table names must be prefixed (see [Common::prefixTable()](/api-reference/Piwik/Common#prefixtable)).
-- It returns a `Zend_Db_Statement` value.
+
+- *Returns:*  `int` &mdash;
+    The number of rows affected, see [exec()](/api-reference/Piwik/Db#exec).
 
 <a name="unlockalltables" id="unlockalltables"></a>
 <a name="unlockAllTables" id="unlockAllTables"></a>
@@ -382,7 +366,9 @@ should still work if it has not been granted.
 
 #### Signature
 
-- It returns a `Zend_Db_Statement` value.
+
+- *Returns:*  `int` &mdash;
+    The number of rows affected, see [exec()](/api-reference/Piwik/Db#exec).
 
 <a name="segmentedfetchfirst" id="segmentedfetchfirst"></a>
 <a name="segmentedFetchFirst" id="segmentedFetchFirst"></a>
@@ -428,7 +414,10 @@ for too long.
        The maximum number of rows to scan in one query.
     - `$params` (`array`) &mdash;
        Parameters to bind in the query, eg, `array(param1 => value1, param2 => value2)`
-- It returns a `string` value.
+
+- *Returns:*  `string`|`int`|`float`|`null`|`false` &mdash;
+    The first value fetched that is not `false`, or `false` if no chunk
+                                    returned a value.
 
 <a name="segmentedfetchone" id="segmentedfetchone"></a>
 <a name="segmentedFetchOne" id="segmentedFetchOne"></a>
@@ -459,8 +448,8 @@ the table will not be locked for too long.
     - `$params` (`array`) &mdash;
        Parameters to bind in the query, `array(param1 => value1, param2 => value2)`
 
-- *Returns:*  `array` &mdash;
-    An array of primitive values.
+- *Returns:*  `Piwik\list&lt;string`|`int`|`float`|`null`|`Piwik\false&gt;` &mdash;
+    One fetched value per chunk.
 
 <a name="segmentedfetchall" id="segmentedfetchall"></a>
 <a name="segmentedFetchAll" id="segmentedFetchAll"></a>
@@ -491,9 +480,9 @@ the table will not be locked for too long.
     - `$params` (`array`) &mdash;
        Parameters to bind in the query, array( param1 => value1, param2 => value2)
 
-- *Returns:*  `array` &mdash;
-    An array of rows that includes the result set of every smaller
-              query.
+- *Returns:*  `Piwik\list&lt;array&lt;array-key,` &mdash;
+    string|int|float|null>> An array of rows that includes the result set of every
+                                                      smaller query.
 
 <a name="segmentedquery" id="segmentedquery"></a>
 <a name="segmentedQuery" id="segmentedQuery"></a>
@@ -521,7 +510,7 @@ the table will not be locked for too long.
        The maximum number of rows to scan in one query.
     - `$params` (`array`) &mdash;
        Parameters to bind in the query, `array(param1 => value1, param2 => value2)`
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="getdblock" id="getdblock"></a>
 <a name="getDbLock" id="getDbLock"></a>
@@ -577,7 +566,7 @@ Checks whether the database user is allowed to lock tables.
 -  It accepts the following parameter(s):
     - `$enable` (`bool`) &mdash;
       
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="isquerylogenabled" id="isquerylogenabled"></a>
 <a name="isQueryLogEnabled" id="isQueryLogEnabled"></a>
@@ -585,16 +574,5 @@ Checks whether the database user is allowed to lock tables.
 
 #### Signature
 
-- It returns a `boolean` value.
-
-<a name="isoptimizeinnodbsupported" id="isoptimizeinnodbsupported"></a>
-<a name="isOptimizeInnoDBSupported" id="isOptimizeInnoDBSupported"></a>
-### `isOptimizeInnoDBSupported()`
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$version`
-      
-- It does not return anything or a mixed result.
+- It returns a `bool` value.
 

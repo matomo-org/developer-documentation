@@ -366,7 +366,9 @@ Dimension ID to pivot by. See Piwik\DataTable\Filter\PivotByDimension for more i
 
 #### Signature
 
-- It is a `string` value.
+- It can be one of the following types:
+    - `string`
+    - `false`
 
 <a name="$pivotbycolumn" id="$pivotbycolumn"></a>
 <a name="pivotByColumn" id="pivotByColumn"></a>
@@ -377,7 +379,9 @@ for more info.
 
 #### Signature
 
-- It is a `string` value.
+- It can be one of the following types:
+    - `string`
+    - `false`
 
 <a name="$pivotbycolumnlimit" id="$pivotbycolumnlimit"></a>
 <a name="pivotByColumnLimit" id="pivotByColumnLimit"></a>
@@ -388,7 +392,9 @@ for more info.
 
 #### Signature
 
-- It is a `int` value.
+- It can be one of the following types:
+    - `int`
+    - `false`
 
 <a name="$comparesegments" id="$comparesegments"></a>
 <a name="compareSegments" id="compareSegments"></a>

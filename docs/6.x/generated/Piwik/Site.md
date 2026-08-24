@@ -403,7 +403,7 @@ Returns whether the site with the specified ID is ecommerce enabled or not.
 -  It accepts the following parameter(s):
     - `$idsite` (`int`) &mdash;
        The site ID.
-- It returns a `string` value.
+- It returns a `bool` value.
 
 <a name="issitesearchenabledfor" id="issitesearchenabledfor"></a>
 <a name="isSiteSearchEnabledFor" id="isSiteSearchEnabledFor"></a>
@@ -416,7 +416,7 @@ Returns whether the site with the specified ID is Site Search enabled.
 -  It accepts the following parameter(s):
     - `$idsite` (`int`) &mdash;
        The site ID.
-- It returns a `string` value.
+- It returns a `bool` value.
 
 <a name="getcurrencyfor" id="getcurrencyfor"></a>
 <a name="getCurrencyFor" id="getCurrencyFor"></a>

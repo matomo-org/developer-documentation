@@ -208,7 +208,6 @@ The class defines the following methods:
 - [`getRelatedReports()`](#getrelatedreports) &mdash; Get the list of related reports if there are any.
 - [`getParameters()`](#getparameters)
 - [`getSubtableDimension()`](#getsubtabledimension) &mdash; Returns the Dimension instance of this report's subtable report.
-- [`getThirdLeveltableDimension()`](#getthirdleveltabledimension) &mdash; Returns the Dimension instance of the subtable report of this report's subtable report.
 - [`getNthLevelTableDimension()`](#getnthleveltabledimension) &mdash; Returns the Dimension instance of the subtable report of this report's subtable report based on level.
 - [`isSubtableReport()`](#issubtablereport) &mdash; Returns true if the report is for another report's subtable, false if otherwise.
 - [`fetch()`](#fetch) &mdash; Fetches the report represented by this instance.
@@ -557,19 +556,6 @@ Returns the Dimension instance of this report's subtable report.
 
 - *Returns:*  [`Dimension`](../../Piwik/Columns/Dimension.md)|`null` &mdash;
     The subtable report's dimension or null if there is subtable report or
-                       no dimension for the subtable report.
-
-<a name="getthirdleveltabledimension" id="getthirdleveltabledimension"></a>
-<a name="getThirdLeveltableDimension" id="getThirdLeveltableDimension"></a>
-### `getThirdLeveltableDimension()`
-
-Returns the Dimension instance of the subtable report of this report's subtable report.
-
-#### Signature
-
-
-- *Returns:*  [`Dimension`](../../Piwik/Columns/Dimension.md)|`null` &mdash;
-    The subtable report's dimension or null if there is no subtable report or
                        no dimension for the subtable report.
 
 <a name="getnthleveltabledimension" id="getnthleveltabledimension"></a>
