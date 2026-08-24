@@ -69,7 +69,7 @@ This way JavaScript files won't be merged and you can debug the original JavaScr
 Since version 4.5.0 it is possible to create components for the UI using Vue and TypeScript (though note that you do not have to use both;
 you can use Vue with ESnext (the most advanced version of EcmaScript) or just write plain TypeScript without using Vue).
 
-Vue and TypeScript files are processed via webpack using the Vue CLI service, which is configured globally in Matomo. To take advantage of
+Vue and TypeScript files are processed with Vite, which is configured globally in Matomo. To take advantage of
 this, create `vue` and `vue/src` subfolders in your plugin. Then add your code (TypeScript, ES, Vue) to the `src` subfolder. Make sure to
 add an `index.ts` or `index.js` file to the subfolder and export everything you'd like to be programmatically accessible in the browser
 (for example, by other plugins).
@@ -88,8 +88,8 @@ automatically detect if one is there and use it (if the plugin is activated).
 
 **eslint**
 
-The Vue CLI is configured to run ESlint on files while building UMDs. If ESlint finds a style problem based on one of the
-rules we configure, it will be printed out in the output of `vue:build`. Sometimes the actual problem or way to fix it
+ESLint is not run as part of `vue:build`. Run it separately with `npm run eslint`. If ESLint finds a style problem based
+on one of the rules we configure, it will be printed out in the output. Sometimes the actual problem or way to fix it
 is not clear from the error message.
 
 The easiest thing to do in this situation is to search for the rule name in a search engine. Each rule has associated
@@ -188,9 +188,9 @@ For example:
 Below are some solutions to common problems that may occur during development:
 
 * If working on Vue code and `vue:build --watch` is running but the JavaScript isn't being built properly, try restarting the command with the
-  `--clear-webpack-cache` flag, which will clear the webpack cache before watching again and can solve some problems.
-* If working on frontend unit tests that use Jest and you are seeing strange errors, clearing Jest's cache can sometimes help. To do this,
-  run the `npm test -- --clearCache` command.
+  `--clear-cache` flag, which will clear Vite's cache in `node_modules/.vite` before watching again and can solve some problems.
+* If working on frontend unit tests and you are seeing strange errors, the same Vite cache can be at fault. Remove
+  `node_modules/.vite` and run the tests again.
 
 ## Learn more
 
