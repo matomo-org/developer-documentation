@@ -32,7 +32,7 @@ Go to [Matomo-org secrets](https://github.com/organizations/matomo-org/settings/
 
 ### New plugin checklist
 
-* The new plugin has a `LICENSE` file similar to https://github.com/matomo-org/plugin-QueuedTracking/blob/5.x-dev/LICENSE
+* The new plugin has a `LICENSE` file similar to https://github.com/matomo-org/plugin-QueuedTracking/blob/6.x-dev/LICENSE
 * The same license is also defined in `plugin.json`
 * A descriptive description and useful keywords are configured in `plugin.json`. Same for other values in the plugin JSON file.
 * If any possible screenshots are defined in the `screenshots` folder.
