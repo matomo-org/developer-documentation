@@ -99,14 +99,12 @@ The class defines the following methods:
 - [`factory()`](#factory) &mdash; Returns a new Archive instance that will query archive data for the given set of sites and periods, using an optional segment.
 - [`shouldSkipArchiveIfSkippingSegmentArchiveForToday()`](#shouldskiparchiveifskippingsegmentarchivefortoday)
 - [`getNumeric()`](#getnumeric) &mdash; Queries and returns metric data in an array.
-- [`getBlob()`](#getblob) &mdash; Queries and returns blob records without turning them into DataTables.
 - [`getDataTableFromNumeric()`](#getdatatablefromnumeric) &mdash; Queries and returns metric data in a DataTable instance.
 - [`getDataTable()`](#getdatatable) &mdash; Queries and returns one or more reports as DataTable instances.
 - [`getDataTableExpanded()`](#getdatatableexpanded) &mdash; Queries and returns one report with all of its subtables loaded.
 - [`getParams()`](#getparams) &mdash; Returns an object describing the set of sites, the set of periods and the segment this Archive will query data for.
 - [`createDataTableFromArchive()`](#createdatatablefromarchive) &mdash; Helper function that creates an Archive instance and queries for report data using query parameter data.
 - [`getPluginForReport()`](#getpluginforreport) &mdash; Returns the name of the plugin that archives a given report.
-- [`clearStaticCache()`](#clearstaticcache) &mdash; Only kept for BC
 - [`forceFetchingWithoutLaunchingArchiving()`](#forcefetchingwithoutlaunchingarchiving)
 
 <a name="__construct" id="__construct"></a>
@@ -219,26 +217,6 @@ will be indexed by site ID first, then period.
     `false` if there is no data to return, a single numeric value if we're not querying
                             for multiple sites/periods, or an array if multiple sites, periods or names are
                             queried for.
-
-<a name="getblob" id="getblob"></a>
-<a name="getBlob" id="getBlob"></a>
-### `getBlob()`
-
-Queries and returns blob records without turning them into DataTables.
-
-Unlike other methods, this returns a DataCollection instance directly. Use it to directly access
-and process blob data.
-
-#### Signature
-
--  It accepts the following parameter(s):
-    - `$names` (`string`|`string[]`) &mdash;
-       One or more archive names, eg, `'nb_visits'`, `'Referrers_distinctKeywords'`, etc.
-    - `$idSubtable` (`int`|`string`|`null`) &mdash;
-      
-
-- *Returns:*  `Piwik\Archive\DataCollection` &mdash;
-    the queried data.
 
 <a name="getdatatablefromnumeric" id="getdatatablefromnumeric"></a>
 <a name="getDataTableFromNumeric" id="getDataTableFromNumeric"></a>
@@ -391,16 +369,6 @@ Returns the name of the plugin that archives a given report.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception) &mdash; If a plugin cannot be found or if the plugin for the report isn&#039;t
                    activated.
-
-<a name="clearstaticcache" id="clearstaticcache"></a>
-<a name="clearStaticCache" id="clearStaticCache"></a>
-### `clearStaticCache()`
-
-Only kept for BC
-
-#### Signature
-
-- It returns a `void` value.
 
 <a name="forcefetchingwithoutlaunchingarchiving" id="forcefetchingwithoutlaunchingarchiving"></a>
 <a name="forceFetchingWithoutLaunchingArchiving" id="forceFetchingWithoutLaunchingArchiving"></a>

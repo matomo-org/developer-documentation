@@ -52,7 +52,7 @@ The class defines the following methods:
       
     - `$name`
       
-- It does not return anything or a mixed result.
+- It returns a [`Record`](../../Piwik/ArchiveProcessor/Record.md) value.
 
 <a name="setplugin" id="setplugin"></a>
 <a name="setPlugin" id="setPlugin"></a>

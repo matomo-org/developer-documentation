@@ -69,6 +69,7 @@
 ## Filesystem
 ## FrontController
 ## Http
+## Http\SecurityHeaders
 ## IP
 ## Intl\Data\Provider\CurrencyDataProvider
 ## Intl\Data\Provider\LanguageDataProvider
@@ -143,6 +144,7 @@
 ## Plugins\CoreHome\Columns\Metrics\CallableProcessedMetric
 ## Plugins\CoreHome\Columns\Metrics\ConversionRate
 ## Plugins\CoreHome\Columns\Metrics\EvolutionMetric
+## Plugins\CoreHome\Columns\Metrics\PercentOfReportTotal
 ## Plugins\CoreHome\Columns\Metrics\VisitsPercent
 ## Plugins\CoreHome\SystemSummary\Item
 ## Plugins\CoreVisualizations\Metrics\Formatter\Numeric

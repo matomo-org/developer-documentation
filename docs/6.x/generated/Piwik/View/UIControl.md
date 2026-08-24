@@ -96,7 +96,7 @@ HTML Attributes for the root element
 
 #### Signature
 
-- It is a `string` value.
+- It is a `array` value.
 
 Methods
 -------

@@ -56,8 +56,8 @@ The class defines the following methods:
 -  It accepts the following parameter(s):
     - `$label` (`string`) &mdash;
       
-    - `$comment` (`string`) &mdash;
-      
+    - `$comment` (`string`|`bool`) &mdash;
+       A boolean is rendered as '1' (true) or '0' (false).
     - `$escapeComment` (`bool`) &mdash;
       
 - It returns a [`DiagnosticResult`](../../../../Piwik/Plugins/Diagnostics/Diagnostic/DiagnosticResult.md) value.
