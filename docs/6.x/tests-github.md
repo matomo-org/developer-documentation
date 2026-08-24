@@ -20,7 +20,7 @@ Each developer is responsible to keep the build green.
 Plugins can do the same if they include a GitHub action file in their GitHub repository. You can generate this file using the `generate:test-action` console command:
 
 ```
-$ ./console generate:test-action --plugin="MyPlugin" --php-versions="7.2,8.1"
+$ ./console generate:test-action --plugin="MyPlugin" --php-versions="matomo6_min_php,matomo6_max_php"
 ```
 
 The command will automatically detect if you have PHP, Client and/or UI tests in your plugin's directory and create a `.github/workflows/matomo-tests.yml` file that will run them. The tests will be run against the minimal required Matomo version, as defined in your `plugin.json`, as well as against the latest development branch or the latest version your plugin is marked as compatible with.
@@ -36,8 +36,10 @@ You can control how the generated action file behaves, by providing certain opti
 
   * **--php-versions**
 
-    Allows to specify the PHP versions the tests should be run with. You can provide all versions as a comma separated list. e.g. "7.2,8.1" or "7.2,7.4,8.2"
-    
+    Allows to specify the PHP versions the tests should be run with. You can provide all versions as a comma separated list. e.g. "8.1,8.5" or "8.1,8.3,8.5"
+
+    Instead of literal versions you can use the aliases `matomo6_min_php` and `matomo6_max_php` (or `matomo5_min_php` / `matomo5_max_php` for a Matomo 5 branch). These resolve to the centrally managed minimum and maximum PHP versions supported by Matomo tests, so they follow the floor when it moves. The alias table lives in `scripts/bash/resolve_php_version.sh` of the [github-action-tests](https://github.com/matomo-org/github-action-tests) repository.
+
     PHP tests will automatically run against all versions, while UI tests will always be run on the first version provided in the list. 
 
     We recommend to run UI tests on the minimal require PHP version of your plugin (or Matomo) to ensure everything works.
