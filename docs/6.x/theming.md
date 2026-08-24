@@ -54,7 +54,7 @@ public function configureThemeVariables(Plugin\ThemeStyles $vars)
 
 You get the point. The list of all variables that you can override is defined in the Morpheus plugin:
 
-- [ThemeStyles](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Plugin/ThemeStyles.php)
+- [ThemeStyles](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Plugin/ThemeStyles.php)
 
 Although we do not recommend doing so, you can change the colors of a specific element directly, for example:
 
@@ -70,7 +70,7 @@ Please use this method only if needed. Element ids or classes might change in th
 
 Overriding icons is fairly easy: create a folder named `images` in your theme's directory and place an icon having the same file name as the icon you want to override.
 
-For a complete list of icons you can override have a look at the [Morpheus theme](https://github.com/matomo-org/matomo/tree/5.x-dev/plugins/Morpheus/images). It is not yet possible to override icons used in reports such as browser or search engine icons, but if you have suggestions, you can [open an issue in the piwik-icon repository](https://github.com/matomo-org/matomo-icons).
+For a complete list of icons you can override have a look at the [Morpheus theme](https://github.com/matomo-org/matomo/tree/6.x-dev/plugins/Morpheus/images). It is not yet possible to override icons used in reports such as browser or search engine icons, but if you have suggestions, you can [open an issue in the piwik-icon repository](https://github.com/matomo-org/matomo-icons).
 
 ### Logo and favicon
 

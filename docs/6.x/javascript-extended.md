@@ -74,7 +74,7 @@ Then, when you want to launch a popover call the `propagateNewPopoverParameter()
 ```
 
 
-To learn more about the object, see the documentation in the source code (located in [`plugins/CoreHome/javascripts/popover.js`](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/javascripts/popover.js)).
+To learn more about the object, see the documentation in the source code (located in [`plugins/CoreHome/javascripts/popover.js`](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreHome/javascripts/popover.js)).
 
 ### ColorManager
 
@@ -104,7 +104,7 @@ In your JavaScript, you can use **ColorManager** to access these colors:
 })(require);
 ```
 
-To learn more about the singleton, read the source code documentation (located in [`plugins/CoreHome/javascripts/color_manager.js`](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/javascripts/color_manager.js)).
+To learn more about the singleton, read the source code documentation (located in [`plugins/CoreHome/javascripts/color_manager.js`](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreHome/javascripts/color_manager.js)).
 
 _Learn more about theming in our [Theming](/guides/theming) guide._
 
@@ -144,7 +144,7 @@ public function myWidget() {
 <div vue-entry="CoreHome.WidgetLoader" widget-params="{&quot;module&quot;:&quot;MyPlugin&quot;,&quot;action&quot;:&quot;myWidget&quot;}"></div>
 ```
 
-For the Vue.js component, see [WidgetLoader.vue](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/vue/src/WidgetLoader/WidgetLoader.vue#L3).
+For the Vue.js component, see [WidgetLoader.vue](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreHome/vue/src/WidgetLoader/WidgetLoader.vue#L3).
 
 ## Learn more
 

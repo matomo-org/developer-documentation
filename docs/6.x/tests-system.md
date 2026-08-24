@@ -21,7 +21,7 @@ Otherwise, if you didn't expect to modify the API outputs, it might be that your
 
 System tests use Fixtures to generate controlled web usage data (visits, goals, pageviews, events, site searches, content tracking, custom variables, etc.).
 
-Fixtures are stored in [tests/PHPUnit/Fixtures](https://github.com/matomo-org/matomo/tree/5.x-dev/tests/PHPUnit/Fixtures)
+Fixtures are stored in [tests/PHPUnit/Fixtures](https://github.com/matomo-org/matomo/tree/6.x-dev/tests/PHPUnit/Fixtures)
 
 ### OmniFixture
 
@@ -29,7 +29,7 @@ We also have an OmniFixture that includes all other Fixtures. OmniFixture is use
 
 ### Keep OmniFixture up to date
 
-Remember to update the [Omnifixture SQL dump](https://github.com/matomo-org/matomo/blob/5.x-dev/tests/resources/OmniFixture-dump.sql) whenever you make any change to any fixture. You can use:
+Remember to update the [Omnifixture SQL dump](https://github.com/matomo-org/matomo/blob/6.x-dev/tests/resources/OmniFixture-dump.sql) whenever you make any change to any fixture. You can use:
 
     ./console tests:setup-fixture OmniFixture --sqldump=OmniFixture-dump.sql
 

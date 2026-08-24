@@ -103,11 +103,11 @@ Each visit contains the following information:
 - `config_cookie`: whether the visitor's browser has cookies enabled or not
 - `location_ip`: the IP address of the computer that the visit was made from. Can be [anonymized](https://matomo.org/docs/privacy/#step-1-automatically-anonymize-visitor-ips)
 - `location_browser_lang`: a string describing the language used in the visitor's browser
-- `location_country`: a two character string describing the country the visitor was located in while visiting the site. Set by the [UserCountry](https://github.com/matomo-org/matomo/tree/5.x-dev/plugins/UserCountry) plugin.
-- `location_region`: a two character string describing the region of the country the visitor was in. Set by the [UserCountry](https://github.com/matomo-org/matomo/tree/5.x-dev/plugins/UserCountry) plugin.
-- `location_city`: a string naming the city the visitor was in while visiting the site. Set by the [UserCountry](https://github.com/matomo-org/matomo/tree/5.x-dev/plugins/UserCountry) plugin.
-- `location_latitude`: the latitude of the visitor while he/she visited the site. Set by the [UserCountry](https://github.com/matomo-org/matomo/tree/5.x-dev/plugins/UserCountry) plugin.
-- `location_longitude`: the longitude of the visitor while he/she visited the site. Set by the [UserCountry](https://github.com/matomo-org/matomo/tree/5.x-dev/plugins/UserCountry) plugin.
+- `location_country`: a two character string describing the country the visitor was located in while visiting the site. Set by the [UserCountry](https://github.com/matomo-org/matomo/tree/6.x-dev/plugins/UserCountry) plugin.
+- `location_region`: a two character string describing the region of the country the visitor was in. Set by the [UserCountry](https://github.com/matomo-org/matomo/tree/6.x-dev/plugins/UserCountry) plugin.
+- `location_city`: a string naming the city the visitor was in while visiting the site. Set by the [UserCountry](https://github.com/matomo-org/matomo/tree/6.x-dev/plugins/UserCountry) plugin.
+- `location_latitude`: the latitude of the visitor while he/she visited the site. Set by the [UserCountry](https://github.com/matomo-org/matomo/tree/6.x-dev/plugins/UserCountry) plugin.
+- `location_longitude`: the longitude of the visitor while he/she visited the site. Set by the [UserCountry](https://github.com/matomo-org/matomo/tree/6.x-dev/plugins/UserCountry) plugin.
 - `custom_var_k1`: the custom variable name of the visit in the first slot for visit custom variables.
 - `custom_var_v1`: the custom variable value of the visit in the first slot for visit custom variables.
 - `custom_var_k2`: the custom variable name of the visit in the second slot for visit custom variables.
@@ -119,7 +119,7 @@ Each visit contains the following information:
 - `custom_var_k5`: the custom variable name of the visit in the fifth slot for visit custom variables.
 - `custom_var_v5`: the custom variable value of the visit in the fifth slot for visit custom variables.
 
-Some plugins, such as the [Provider](https://github.com/matomo-org/matomo/tree/5.x-dev/plugins/Provider) plugin, will add new information to visits.
+Some plugins, such as the [Provider](https://github.com/matomo-org/matomo/tree/6.x-dev/plugins/Provider) plugin, will add new information to visits.
 
 #### Table details
 
@@ -363,7 +363,7 @@ Site entities are stored in the `site` table and contain the following informati
 
 Site entities also contain a list of extra URLs that can be used to access the website. These are not stored within site entities themselves: they are stored in the `site_url` table.
 
-Site entity data access occurs primarily through the [Piwik\Site](/api-reference/Piwik/Site) class. Anything that cannot be queried through that class can be queried through the [SitesManager](https://github.com/matomo-org/matomo/tree/5.x-dev/plugins/SitesManager) core plugin.
+Site entity data access occurs primarily through the [Piwik\Site](/api-reference/Piwik/Site) class. Anything that cannot be queried through that class can be queried through the [SitesManager](https://github.com/matomo-org/matomo/tree/6.x-dev/plugins/SitesManager) core plugin.
 
 <a name="other-data-goals"></a>
 ### Goals
@@ -477,7 +477,7 @@ Piwik will also persist each user's language of choice in the table `user_langua
 - `language`: a language code string representing the preferred user's language. 
 - `use_12_hour_clock`: whether the user prefers a 12 hour clock VS 24 hours.
 
-_This association and the persistence logic is implemented by the [LanguagesManager](https://github.com/matomo-org/matomo/tree/5.x-dev/plugins/LanguagesManager) plugin._
+_This association and the persistence logic is implemented by the [LanguagesManager](https://github.com/matomo-org/matomo/tree/6.x-dev/plugins/LanguagesManager) plugin._
 
 ### User dashboards
 
