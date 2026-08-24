@@ -14,7 +14,7 @@ if (! defined('MIN_PIWIK_DOCS_VERSION')) {
 }
 
 if (! defined('LATEST_PIWIK_DOCS_VERSION')) {
-    define('LATEST_PIWIK_DOCS_VERSION', 5);
+    define('LATEST_PIWIK_DOCS_VERSION', 6);
 }
 
 if (! defined('DOCS_DOMAIN')) {
