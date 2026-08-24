@@ -217,6 +217,22 @@ if ($clientToUse == 'mySeoProvider') {
 // ... use $client ...
 ```
 
+## Preventing Server-Side Request Forgery
+
+[Server-Side Request Forgery](https://en.wikipedia.org/wiki/Server-side_request_forgery) happens when Matomo is made to fetch a URL chosen by a user, letting them reach hosts that are only reachable from the server — internal services, cloud metadata endpoints, or loopback.
+
+Whenever the target URL derives from untrusted input, such as a site's configured URL, pass `$validateEgressIp = true` to [`Http::sendHttpRequest()`](/api-reference/Piwik/Http#sendhttprequest). This validates that the target resolves to a public IP, re-validates redirects, and pins the resolved IP for the request. Available as of Matomo 5.13.0:
+
+```php
+$response = \Piwik\Http::sendHttpRequest($url, timeout: 5, validateEgressIp: true);
+```
+
+A refused target or an unmet precondition throws `Piwik\Http\EgressBlockedException`, so a policy rejection can be told apart from a transient network failure. The safe path requires the curl extension and does not fall back to the `fopen` or `socket` transports.
+
+Installations that legitimately need to reach private addresses — for example tracking intranet sites — can allowlist ranges with the `[General] allowed_private_egress_ranges` INI setting. Note that a configured `[proxy] host` makes these requests fail closed, because the proxy resolves the target itself and the validated IP cannot be pinned. Where the site host is reachable directly, add it to `[proxy] exclude` (exact hostnames, no wildcards).
+
+If your plugin listens to the `Http.sendHttpRequest` event and resolves the request itself, it must either honour the same semantics (public-IP-only target, re-validated redirects) or leave the request unhandled. The event's params array carries a `validateEgressIp` entry telling you which mode was requested.
+
 ## 🔍 Dependency and Package Security
 
 - Lock versions in `composer.json` and `package.json`.
@@ -263,6 +279,7 @@ By no means is below a complete checklist. You'll always be required to still th
 
 * **Authorisation checks**: Any controller action or api method has an access/permission check
 * **CSRF checks**: Any form or action or api that changes data has a CSRF nonce or token check
+* **SSRF checks**: Any request to a URL that derives from user input passes `$validateEgressIp = true` see SSRF section in this guide
 * **SQL injection checks**: Database parameters use bound parameters or cast values to int
 * **XSS checks**: User input is escaped (also in JavaScript) see XSS section in this guide. Ensure the [correct escaping strategy](https://twig.symfony.com/doc/3.x/filters/escape.html) is used
 * **Timing attack checks**: For sensitive equal comparisons `Common::hashEquals` is used

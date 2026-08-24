@@ -131,6 +131,23 @@ If your parameters does not have a specific type you may use the following metho
 As mention in the introduction, values returned by a request object are not sanitized automatically. Only null byte sequences are removed for security reasons.
 When using parameters of type string, array, json or with unspecific type you need to ensure to sanitize/escape the content, where ever those values are used in output.
 
+### Whitespace and types are preserved
+
+As of Matomo 6, request parameters are no longer trimmed while a request is parsed. `Piwik\API\Request::getRequestArrayFromString()` used to apply `trim((string) $value)` to every non-array parameter. Leading and trailing whitespace in values such as a `label` or a segment operand is therefore preserved, and scalars keep their original type instead of being cast to string.
+
+This matters when passing parameters through [`Request::processRequest()`](/api-reference/Piwik/API/Request#processrequest). A boolean no longer arrives as `'1'` or `''`, so a parameter read with `Common::getRequestVar($name, $default, 'string')` or `$request->getStringParameter()` falls back to its default. Either pass a string, or read the value with `$request->getBoolParameter()`, which accepts real booleans:
+
+```php
+// a real boolean no longer reads back as a string
+Request::processRequest('MyPlugin.myMethod', ['flat' => true]);
+
+// either pass a string ...
+Request::processRequest('MyPlugin.myMethod', ['flat' => '1']);
+
+// ... or read it with getBoolParameter()
+$flat = $request->getBoolParameter('flat', false);
+```
+
 ## Using `Common::getRequestVar` (deprecated)
 
 Before Matomo 5 we provided another possibility only, that is still available and can be used. We nevertheless recommend to use the Request class instead.
