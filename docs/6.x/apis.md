@@ -21,7 +21,7 @@ Everything below is what we consider API.
     -   They are tagged with `@api` in our sourcecode. (these docs are automatically generated on each commit.)
     -   Since PHP 8 argument names of public API's are also considered API
 -   A few console commands are API (the command name and parameter names should not change)
-    -   so far we only consider public APIs these commands: `core:archive`, `core:update`, `plugin:activate`, `plugin:deactivate`, `git:pull`, `development:enable`, `development:disable`, `customvariables:set-max-custom-variables`.
+    -   so far we only consider public APIs these commands: `core:archive`, `core:update`, `plugin:activate`, `plugin:deactivate`, `development:enable`, `development:disable`.
     -   some of these commands are setup in crontabs and we shouldn't break them.
 -   JavaScript variables in global `piwik.*` object
     -   as [documented here](https://developer.matomo.org/guides/working-with-piwiks-ui#global-variables-defined-by-piwik)

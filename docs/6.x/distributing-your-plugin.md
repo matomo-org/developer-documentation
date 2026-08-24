@@ -66,7 +66,7 @@ The `plugin.json` file must contain the following information:
     ```json
     "require": {
         "matomo": ">=6.0.0-b1,<7.0.0-b1", // requires at least Matomo 6.0.0 but lower than Matomo 7.0.0
-        "php": ">=8.0.21" // requires at least PHP 8.0.21
+        "php": ">=8.1.0" // requires at least PHP 8.1.0
     }
     ```
 
@@ -77,7 +77,7 @@ The `plugin.json` file must contain the following information:
     ```json
     "require": {
         "matomo": ">=6.0.0-b1,<7.0.0-b1", // requires at least Matomo 6.0.0 but lower than Matomo 7.0.0
-        "php": ">8.0.21" // requires at least PHP 8.0.22
+        "php": ">8.1.0" // requires at least PHP 8.1.1
     }
     ```
 
