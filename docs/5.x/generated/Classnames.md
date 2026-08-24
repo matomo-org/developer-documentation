@@ -69,6 +69,7 @@
 ## Filesystem
 ## FrontController
 ## Http
+## Http\SecurityHeaders
 ## IP
 ## Intl\Data\Provider\CurrencyDataProvider
 ## Intl\Data\Provider\LanguageDataProvider

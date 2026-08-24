@@ -15,6 +15,7 @@ This is a complete list of available namespaces:
 - [`Piwik\DataAccess`](Piwik/DataAccess)
 - [`Piwik\DataTable`](Piwik/DataTable)
 - [`Piwik\DataTable\Filter`](Piwik/DataTable/Filter)
+- [`Piwik\Http`](Piwik/Http)
 - [`Piwik\Intl`](Piwik/Intl)
 - [`Piwik\Intl\Data`](Piwik/Intl/Data)
 - [`Piwik\Intl\Data\Provider`](Piwik/Intl/Data/Provider)

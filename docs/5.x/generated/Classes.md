@@ -73,6 +73,7 @@ This is a complete list of available classes:
 - [`Filesystem`](Piwik/Filesystem.md) &mdash; Contains helper functions that deal with the filesystem.
 - [`FrontController`](Piwik/FrontController.md) &mdash; This singleton dispatches requests to the appropriate plugin Controller.
 - [`Http`](Piwik/Http.md) &mdash; Contains HTTP client related helper methods that can retrieve content from remote servers and optionally save to a local file.
+- [`Http\SecurityHeaders`](Piwik/Http/SecurityHeaders.md) &mdash; Sends the response headers for a data response: one that carries data rather than application UI.
 - [`IP`](Piwik/IP.md) &mdash; Contains IP address helper functions (for both IPv4 and IPv6).
 - [`Intl\Data\Provider\CurrencyDataProvider`](Piwik/Intl/Data/Provider/CurrencyDataProvider.md) &mdash; Provides currency data.
 - [`Intl\Data\Provider\LanguageDataProvider`](Piwik/Intl/Data/Provider/LanguageDataProvider.md) &mdash; Provides language data.

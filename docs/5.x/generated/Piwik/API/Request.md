@@ -206,11 +206,9 @@ request or not, call [isRootRequestApiRequest()](/api-reference/Piwik/API/Reques
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$request` (`array`) &mdash;
-       eg array('module' => 'API', 'method' => 'Test.getMethod')
+    - `$request` (`array`|`null`) &mdash;
+       eg array('module' => 'API', 'method' => 'Test.getMethod'), or null to read them from the query string and the request body
 - It returns a `bool` value.
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
 
 <a name="getmethodifapirequest" id="getmethodifapirequest"></a>
 <a name="getMethodIfApiRequest" id="getMethodIfApiRequest"></a>
