@@ -484,7 +484,9 @@ URL linking to an online guide for this report (or plugin).
 
 #### Signature
 
-- It is a `string` value.
+- It can be one of the following types:
+    - `string`
+    - `false`
 
 <a name="$custom_parameters" id="$custom_parameters"></a>
 <a name="custom_parameters" id="custom_parameters"></a>

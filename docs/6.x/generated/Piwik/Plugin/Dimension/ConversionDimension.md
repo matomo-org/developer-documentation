@@ -87,8 +87,7 @@ define a segment for this dimension, simply leave the name empty.
 
 #### Signature
 
-- Its type is not specified.
-
+- It is a `string` value.
 
 <a name="$suggestedvaluescallback" id="$suggestedvaluescallback"></a>
 <a name="suggestedValuesCallback" id="suggestedValuesCallback"></a>

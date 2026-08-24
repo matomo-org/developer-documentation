@@ -26,6 +26,7 @@ This class defines the following properties:
 - [`$pageCustomVar`](#$pagecustomvar)
 - [`$ecommerceView`](#$ecommerceview)
 - [`$customParameters`](#$customparameters)
+- [`$debugParameters`](#$debugparameters) &mdash; Raw tracking parameters set via setDebugTrackingParameter().
 - [`$customDimensions`](#$customdimensions)
 - [`$customData`](#$customdata)
 - [`$hasCookies`](#$hascookies)
@@ -71,6 +72,7 @@ This class defines the following properties:
 - [`$doBulkRequests`](#$dobulkrequests)
 - [`$storedTrackingActions`](#$storedtrackingactions)
 - [`$sendImageResponse`](#$sendimageresponse)
+- [`$exceptionsEnabled`](#$exceptionsenabled)
 - [`$outgoingTrackerCookies`](#$outgoingtrackercookies)
 - [`$incomingTrackerCookies`](#$incomingtrackercookies)
 - [`$visitorCustomVar`](#$visitorcustomvar)
@@ -103,8 +105,7 @@ MatomoTracker::$URL = 'http://yourwebsite.org/matomo/';
 
 #### Signature
 
-- Its type is not specified.
-
+- It is a `list&lt;array{0:` value.
 
 <a name="$attributioninfo" id="$attributioninfo"></a>
 <a name="attributionInfo" id="attributionInfo"></a>
@@ -112,8 +113,9 @@ MatomoTracker::$URL = 'http://yourwebsite.org/matomo/';
 
 #### Signature
 
-- Its type is not specified.
-
+- It can be one of the following types:
+    - `array&lt;int`
+    - `string,`
 
 <a name="$eventcustomvar" id="$eventcustomvar"></a>
 <a name="eventCustomVar" id="eventCustomVar"></a>
@@ -121,8 +123,7 @@ MatomoTracker::$URL = 'http://yourwebsite.org/matomo/';
 
 #### Signature
 
-- Its type is not specified.
-
+- It is a `array&lt;int,` value.
 
 <a name="$forceddatetime" id="$forceddatetime"></a>
 <a name="forcedDatetime" id="forcedDatetime"></a>
@@ -202,8 +203,7 @@ MatomoTracker::$URL = 'http://yourwebsite.org/matomo/';
 
 #### Signature
 
-- Its type is not specified.
-
+- It is a `array&lt;int,` value.
 
 <a name="$ecommerceview" id="$ecommerceview"></a>
 <a name="ecommerceView" id="ecommerceView"></a>
@@ -211,8 +211,7 @@ MatomoTracker::$URL = 'http://yourwebsite.org/matomo/';
 
 #### Signature
 
-- Its type is not specified.
-
+- It is a `array&lt;string,` value.
 
 <a name="$customparameters" id="$customparameters"></a>
 <a name="customParameters" id="customParameters"></a>
@@ -220,8 +219,18 @@ MatomoTracker::$URL = 'http://yourwebsite.org/matomo/';
 
 #### Signature
 
-- Its type is not specified.
+- It is a `array&lt;string,` value.
 
+<a name="$debugparameters" id="$debugparameters"></a>
+<a name="debugParameters" id="debugParameters"></a>
+### `$debugParameters`
+
+Raw tracking parameters set via setDebugTrackingParameter(). Their names and values are
+URL-encoded and appended after the built-in parameters, overriding any of the same name.
+
+#### Signature
+
+- It is a `array&lt;string,` value.
 
 <a name="$customdimensions" id="$customdimensions"></a>
 <a name="customDimensions" id="customDimensions"></a>
@@ -229,8 +238,7 @@ MatomoTracker::$URL = 'http://yourwebsite.org/matomo/';
 
 #### Signature
 
-- Its type is not specified.
-
+- It is a `array&lt;string,` value.
 
 <a name="$customdata" id="$customdata"></a>
 <a name="customData" id="customData"></a>
@@ -445,8 +453,7 @@ MatomoTracker::$URL = 'http://yourwebsite.org/matomo/';
 
 #### Signature
 
-- Its type is not specified.
-
+- It is a `array&lt;string,` value.
 
 <a name="$configvisitorcookietimeout" id="$configvisitorcookietimeout"></a>
 <a name="configVisitorCookieTimeout" id="configVisitorCookieTimeout"></a>
@@ -616,12 +623,20 @@ MatomoTracker::$URL = 'http://yourwebsite.org/matomo/';
 
 #### Signature
 
-- Its type is not specified.
-
+- It is a `list&lt;string&gt;` value.
 
 <a name="$sendimageresponse" id="$sendimageresponse"></a>
 <a name="sendImageResponse" id="sendImageResponse"></a>
 ### `$sendImageResponse`
+
+#### Signature
+
+- Its type is not specified.
+
+
+<a name="$exceptionsenabled" id="$exceptionsenabled"></a>
+<a name="exceptionsEnabled" id="exceptionsEnabled"></a>
+### `$exceptionsEnabled`
 
 #### Signature
 
@@ -634,8 +649,7 @@ MatomoTracker::$URL = 'http://yourwebsite.org/matomo/';
 
 #### Signature
 
-- Its type is not specified.
-
+- It is a `array&lt;string,` value.
 
 <a name="$incomingtrackercookies" id="$incomingtrackercookies"></a>
 <a name="incomingTrackerCookies" id="incomingTrackerCookies"></a>
@@ -643,8 +657,7 @@ MatomoTracker::$URL = 'http://yourwebsite.org/matomo/';
 
 #### Signature
 
-- Its type is not specified.
-
+- It is a `array&lt;string,` value.
 
 <a name="$visitorcustomvar" id="$visitorcustomvar"></a>
 <a name="visitorCustomVar" id="visitorCustomVar"></a>
@@ -652,8 +665,7 @@ MatomoTracker::$URL = 'http://yourwebsite.org/matomo/';
 
 #### Signature
 
-- Its type is not specified.
-
+- It is a `array&lt;int,` value.
 
 <a name="$debug_last_requested_url" id="$debug_last_requested_url"></a>
 <a name="DEBUG_LAST_REQUESTED_URL" id="DEBUG_LAST_REQUESTED_URL"></a>
@@ -703,6 +715,7 @@ The class defines the following methods:
 - [`enableCookies()`](#enablecookies) &mdash; Enable Cookie Creation - this will cause a first party VisitorId cookie to be set when the VisitorId is set or reset
 - [`disableSendImageResponse()`](#disablesendimageresponse) &mdash; If image response is disabled Matomo will respond with a HTTP 204 header instead of responding with a gif.
 - [`doTrackPageView()`](#dotrackpageview) &mdash; Tracks a page view
+- [`doTrackPageViewIfAIBot()`](#dotrackpageviewifaibot) &mdash; If the current user agent belongs to a known AI bot, tracks a pageview action.
 - [`setPageviewId()`](#setpageviewid) &mdash; Override PageView id for every use of `doTrackPageView()`.
 - [`getPageviewId()`](#getpageviewid) &mdash; Returns the PageView id.
 - [`doTrackEvent()`](#dotrackevent) &mdash; Tracks an event
@@ -719,6 +732,7 @@ The class defines the following methods:
 - [`doTrackCrash()`](#dotrackcrash) &mdash; Track a crash (requires CrashAnalytics to be enabled in the target Matomo)
 - [`doPing()`](#doping) &mdash; Sends a ping request.
 - [`setEcommerceView()`](#setecommerceview) &mdash; Sets the current page view as an item (product) page view, or an Ecommerce Category page view.
+- [`getUrlTrackAIBot()`](#geturltrackaibot) &mdash; Builds a URL to track a request from an AI bot.
 - [`getUrlTrackPageView()`](#geturltrackpageview) &mdash; Builds URL to track a page view.
 - [`getUrlTrackEvent()`](#geturltrackevent) &mdash; Builds URL to track a custom event.
 - [`getUrlTrackContentImpression()`](#geturltrackcontentimpression) &mdash; Builds URL to track a content impression.
@@ -752,8 +766,11 @@ The class defines the following methods:
 - [`setRequestConnectTimeout()`](#setrequestconnecttimeout) &mdash; Sets the maximum number of seconds that the tracker will spend tryint to connect to Matomo.
 - [`setRequestMethodNonBulk()`](#setrequestmethodnonbulk) &mdash; Sets the request method to POST, which is recommended when using setTokenAuth() to prevent the token from being recorded in server logs.
 - [`setProxy()`](#setproxy) &mdash; If a proxy is needed to look up the address of the Matomo site, set it with this
+- [`setCurlOptions()`](#setcurloptions) &mdash; Sets additional cURL options (a map of CURLOPT_* constant => value) for the tracking requests.
+- [`setExceptionsEnabled()`](#setexceptionsenabled) &mdash; Controls how failed tracking requests are handled.
 - [`setOutgoingTrackerCookie()`](#setoutgoingtrackercookie) &mdash; Sets a cookie to be sent to the tracking server.
 - [`getIncomingTrackerCookie()`](#getincomingtrackercookie) &mdash; Gets a cookie which was set by the tracking server.
+- [`isUserAgentAIBot()`](#isuseragentaibot) &mdash; Returns true if the given user agent belongs to a known AI bot.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -779,7 +796,7 @@ for a specific website, by using the Matomo Tracking API.
 -  It accepts the following parameter(s):
     - `$url` (`string`) &mdash;
       
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="setpagecharset" id="setpagecharset"></a>
 <a name="setPageCharset" id="setPageCharset"></a>
@@ -796,7 +813,7 @@ If required though, you can also specify another charset using this function.
 -  It accepts the following parameter(s):
     - `$charset` (`string`) &mdash;
       
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="seturl" id="seturl"></a>
 <a name="setUrl" id="setUrl"></a>
@@ -809,7 +826,7 @@ Sets the current URL being tracked
 -  It accepts the following parameter(s):
     - `$url` (`string`) &mdash;
        Raw URL (not URL encoded)
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="seturlreferrer" id="seturlreferrer"></a>
 <a name="setUrlReferrer" id="setUrlReferrer"></a>
@@ -820,9 +837,9 @@ Sets the URL referrer used to track Referrers details for new visits.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$url` (`string`) &mdash;
-       Raw URL (not URL encoded)
-- It returns a `$this` value.
+    - `$url` (`string`|`null`) &mdash;
+       Raw URL (not URL encoded), or null to unset the referrer
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="setgenerationtime" id="setgenerationtime"></a>
 <a name="setGenerationTime" id="setGenerationTime"></a>
@@ -839,7 +856,7 @@ This method is deprecated and does nothing. It used to set the time that it took
 -  It accepts the following parameter(s):
     - `$timeMs` (`int`) &mdash;
        Generation time in ms
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="setperformancetimings" id="setperformancetimings"></a>
 <a name="setPerformanceTimings" id="setPerformanceTimings"></a>
@@ -854,19 +871,19 @@ Sets timings for various browser performance metrics.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$network` (`null`|`int`) &mdash;
+    - `$network` (`int`|`null`) &mdash;
        Network time in ms (connectEnd – fetchStart)
-    - `$server` (`null`|`int`) &mdash;
+    - `$server` (`int`|`null`) &mdash;
        Server time in ms (responseStart – requestStart)
-    - `$transfer` (`null`|`int`) &mdash;
+    - `$transfer` (`int`|`null`) &mdash;
        Transfer time in ms (responseEnd – responseStart)
-    - `$domProcessing` (`null`|`int`) &mdash;
+    - `$domProcessing` (`int`|`null`) &mdash;
        DOM Processing to Interactive time in ms (domInteractive – domLoading)
-    - `$domCompletion` (`null`|`int`) &mdash;
+    - `$domCompletion` (`int`|`null`) &mdash;
        DOM Interactive to Complete time in ms (domComplete – domInteractive)
-    - `$onload` (`null`|`int`) &mdash;
+    - `$onload` (`int`|`null`) &mdash;
        Onload time in ms (loadEventEnd – loadEventStart)
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="clearperformancetimings" id="clearperformancetimings"></a>
 <a name="clearPerformanceTimings" id="clearPerformanceTimings"></a>
@@ -876,7 +893,7 @@ Clear / reset all previously set performance metrics.
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="setattributioninfo" id="setattributioninfo"></a>
 <a name="setAttributionInfo" id="setAttributionInfo"></a>
@@ -900,7 +917,7 @@ to the 'ref' first party cookie storing referral information.
 -  It accepts the following parameter(s):
     - `$jsonEncoded` (`string`) &mdash;
        JSON encoded array containing Attribution info
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -923,7 +940,7 @@ See https://matomo.org/docs/custom-variables/
        Custom variable value
     - `$scope` (`string`) &mdash;
        Custom variable scope. Possible values: visit, page, event
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -948,8 +965,9 @@ If scope is 'visit', it will attempt to read the value set in the first party co
     - `$scope` (`string`) &mdash;
        Custom variable scope. Possible values: visit, page, event
 
-- *Returns:*  `mixed` &mdash;
-    An array with this format: array( 0 => CustomVariableName, 1 => CustomVariableValue ) or false
+- *Returns:*  `array|false` &mdash;
+    string, 1: string}|false An array with this format:
+     array( 0 => CustomVariableName, 1 => CustomVariableValue ) or false
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -964,7 +982,7 @@ and you wish to clear Custom Variables of 'visit' scope.
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="setcustomdimension" id="setcustomdimension"></a>
 <a name="setCustomDimension" id="setCustomDimension"></a>
@@ -979,7 +997,7 @@ Sets a specific custom dimension
        id of custom dimension
     - `$value` (`string`) &mdash;
        value for custom dimension
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="clearcustomdimensions" id="clearcustomdimensions"></a>
 <a name="clearCustomDimensions" id="clearCustomDimensions"></a>
@@ -989,7 +1007,7 @@ Clears all previously set custom dimensions
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="getcustomdimension" id="getcustomdimension"></a>
 <a name="getCustomDimension" id="getCustomDimension"></a>
@@ -1019,9 +1037,9 @@ tracking request.
 -  It accepts the following parameter(s):
     - `$trackingApiParameter` (`string`) &mdash;
        The name of the tracking API parameter, eg 'bw_bytes'
-    - `$value` (`string`) &mdash;
-       Tracking parameter value that shall be sent for this tracking parameter.
-- It returns a `$this` value.
+    - `$value` (`string|array`) &mdash;
+       Tracking parameter value that shall be sent for this tracking parameter. An array value is serialized the same way as the Matomo JS tracker does it (via http_build_query).
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -1033,7 +1051,7 @@ Clear / reset all previously set custom tracking parameters.
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="setnewvisitorid" id="setnewvisitorid"></a>
 <a name="setNewVisitorId" id="setNewVisitorId"></a>
@@ -1043,7 +1061,7 @@ Sets the current visitor ID to a random new one.
 
 #### Signature
 
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="setidsite" id="setidsite"></a>
 <a name="setIdSite" id="setIdSite"></a>
@@ -1056,7 +1074,7 @@ Sets the current site ID.
 -  It accepts the following parameter(s):
     - `$idSite` (`int`) &mdash;
       
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="setbrowserlanguage" id="setbrowserlanguage"></a>
 <a name="setBrowserLanguage" id="setBrowserLanguage"></a>
@@ -1069,7 +1087,7 @@ Sets the Browser language. Used to guess visitor countries when GeoIP is not ena
 -  It accepts the following parameter(s):
     - `$acceptLanguage` (`string`) &mdash;
        For example "fr-fr"
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="setuseragent" id="setuseragent"></a>
 <a name="setUserAgent" id="setUserAgent"></a>
@@ -1084,7 +1102,7 @@ If this function is not called, the User Agent will default to the current user 
 -  It accepts the following parameter(s):
     - `$userAgent` (`string`) &mdash;
       
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="setclienthints" id="setclienthints"></a>
 <a name="setClientHints" id="setClientHints"></a>
@@ -1105,13 +1123,13 @@ Supported as of Matomo 4.12.0
        Value of the header 'HTTP_SEC_CH_UA_PLATFORM'
     - `$platformVersion` (`string`) &mdash;
        Value of the header 'HTTP_SEC_CH_UA_PLATFORM_VERSION'
-    - `$fullVersionList` (`string`|`array`) &mdash;
-       Value of header 'HTTP_SEC_CH_UA_FULL_VERSION_LIST' or an array containing all brands with the structure [['brand' => 'Chrome', 'version' => '10.0.2'], ['brand' => '...]
+    - `$fullVersionList` (`string|array`) &mdash;
+       string, version: string}> $fullVersionList Value of header 'HTTP_SEC_CH_UA_FULL_VERSION_LIST' or an array containing all brands with the structure [['brand' => 'Chrome', 'version' => '10.0.2'], ['brand' => '...]
     - `$uaFullVersion` (`string`) &mdash;
        Value of the header 'HTTP_SEC_CH_UA_FULL_VERSION'
-    - `$formFactors` (`string`|`array&lt;string&gt;`) &mdash;
+    - `$formFactors` (`string|array`) &mdash;
        Value of the header 'HTTP_SEC_CH_UA_FORM_FACTORS' or an array containing all form factors with structure ["Desktop", "XR"]
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="setcountry" id="setcountry"></a>
 <a name="setCountry" id="setCountry"></a>
@@ -1127,7 +1145,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 -  It accepts the following parameter(s):
     - `$country` (`string`) &mdash;
       
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="setregion" id="setregion"></a>
 <a name="setRegion" id="setRegion"></a>
@@ -1143,7 +1161,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 -  It accepts the following parameter(s):
     - `$region` (`string`) &mdash;
       
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="setcity" id="setcity"></a>
 <a name="setCity" id="setCity"></a>
@@ -1159,7 +1177,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 -  It accepts the following parameter(s):
     - `$city` (`string`) &mdash;
       
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="setlatitude" id="setlatitude"></a>
 <a name="setLatitude" id="setLatitude"></a>
@@ -1175,7 +1193,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 -  It accepts the following parameter(s):
     - `$lat` (`float`) &mdash;
       
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="setlongitude" id="setlongitude"></a>
 <a name="setLongitude" id="setLongitude"></a>
@@ -1191,7 +1209,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth().
 -  It accepts the following parameter(s):
     - `$long` (`float`) &mdash;
       
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="enablebulktracking" id="enablebulktracking"></a>
 <a name="enableBulkTracking" id="enableBulkTracking"></a>
@@ -1202,7 +1220,7 @@ doBulkTrack method is called. This method will send all tracking data at once.
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="disablebulktracking" id="disablebulktracking"></a>
 <a name="disableBulkTracking" id="disableBulkTracking"></a>
@@ -1213,7 +1231,7 @@ tracking actions previously as this method won't be sending any previously store
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="enablecookies" id="enablecookies"></a>
 <a name="enableCookies" id="enableCookies"></a>
@@ -1234,7 +1252,7 @@ Enable Cookie Creation - this will cause a first party VisitorId cookie to be se
        (optional) Set HTTPOnly flag for cookies
     - `$sameSite` (`string`) &mdash;
        (optional) Set SameSite flag for cookies
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="disablesendimageresponse" id="disablesendimageresponse"></a>
 <a name="disableSendImageResponse" id="disableSendImageResponse"></a>
@@ -1244,7 +1262,7 @@ If image response is disabled Matomo will respond with a HTTP 204 header instead
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="dotrackpageview" id="dotrackpageview"></a>
 <a name="doTrackPageView" id="doTrackPageView"></a>
@@ -1258,8 +1276,33 @@ Tracks a page view
     - `$documentTitle` (`string`) &mdash;
        Page title as it will appear in the Actions > Page titles report
 
-- *Returns:*  `mixed` &mdash;
+- *Returns:*  `string|bool` &mdash;
     Response string or true if using bulk requests.
+
+<a name="dotrackpageviewifaibot" id="dotrackpageviewifaibot"></a>
+<a name="doTrackPageViewIfAIBot" id="doTrackPageViewIfAIBot"></a>
+### `doTrackPageViewIfAIBot()`
+
+If the current user agent belongs to a known AI bot, tracks a pageview action.
+
+This method should be used server side to track AI bots that do not execute
+JavaScript. If the current user agent is not a known AI bot, nothing is tracked
+and null is returned.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$httpStatus` (`int`|`null`) &mdash;
+       the request's HTTP status code, if known.
+    - `$responseSizeBytes` (`int`|`null`) &mdash;
+       the size of the response sent to the AI bot, if known.
+    - `$serverTimeMs` (`int`|`null`) &mdash;
+       the number of milliseconds it took to process the request, if known.
+    - `$source` (`string`|`null`) &mdash;
+       the source/proxy that served the request (max 50 chars), if known.
+
+- *Returns:*  `string|bool|null` &mdash;
+    Response string, or null if the current user agent is not a known AI bot.
 
 <a name="setpageviewid" id="setpageviewid"></a>
 <a name="setPageviewId" id="setPageviewId"></a>
@@ -1273,7 +1316,7 @@ multiple times during tracking (if, for example, you are tracking a single page 
 -  It accepts the following parameter(s):
     - `$idPageview` (`string`) &mdash;
       
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="getpageviewid" id="getpageviewid"></a>
 <a name="getPageviewId" id="getPageviewId"></a>
@@ -1287,8 +1330,8 @@ be returned. If there was no last page view, this will be false.
 #### Signature
 
 
-- *Returns:*  `mixed` &mdash;
-    The PageView id as string or false if there is none yet.
+- *Returns:*  `string`|`null` &mdash;
+    The PageView id as string or null if there is none yet.
 
 <a name="dotrackevent" id="dotrackevent"></a>
 <a name="doTrackEvent" id="doTrackEvent"></a>
@@ -1303,12 +1346,12 @@ Tracks an event
        The Event Category (Videos, Music, Games...)
     - `$action` (`string`) &mdash;
        The Event's Action (Play, Pause, Duration, Add Playlist, Downloaded, Clicked...)
-    - `$name` (`string`|`bool`) &mdash;
+    - `$name` (`string`|`null`) &mdash;
        (optional) The Event's object Name (a particular Movie name, or Song name, or File name...)
-    - `$value` (`float`|`bool`) &mdash;
+    - `$value` (`int|float|null`) &mdash;
        (optional) The Event's value
 
-- *Returns:*  `mixed` &mdash;
+- *Returns:*  `string|bool` &mdash;
     Response string or true if using bulk requests.
 
 <a name="dotrackcontentimpression" id="dotrackcontentimpression"></a>
@@ -1324,10 +1367,10 @@ Tracks a content impression
        The name of the content. For instance 'Ad Foo Bar'
     - `$contentPiece` (`string`) &mdash;
        The actual content. For instance the path to an image, video, audio, any text
-    - `$contentTarget` (`string`|`bool`) &mdash;
+    - `$contentTarget` (`string`|`null`) &mdash;
        (optional) The target of the content. For instance the URL of a landing page.
 
-- *Returns:*  `mixed` &mdash;
+- *Returns:*  `string|bool` &mdash;
     Response string or true if using bulk requests.
 
 <a name="dotrackcontentinteraction" id="dotrackcontentinteraction"></a>
@@ -1346,10 +1389,10 @@ content piece, otherwise it will not count. To do so you should call the method 
        The name of the content. For instance 'Ad Foo Bar'
     - `$contentPiece` (`string`) &mdash;
        The actual content. For instance the path to an image, video, audio, any text
-    - `$contentTarget` (`string`|`bool`) &mdash;
+    - `$contentTarget` (`string`|`null`) &mdash;
        (optional) The target the content leading to when an interaction occurs. For instance the URL of a landing page.
 
-- *Returns:*  `mixed` &mdash;
+- *Returns:*  `string|bool` &mdash;
     Response string or true if using bulk requests.
 
 <a name="dotracksitesearch" id="dotracksitesearch"></a>
@@ -1367,10 +1410,10 @@ These are used to populate reports in Actions > Site Search.
        Searched query on the site
     - `$category` (`string`) &mdash;
        (optional) Search engine category if applicable
-    - `$countResults` (`bool`|`int`) &mdash;
+    - `$countResults` (`int`|`null`) &mdash;
        (optional) results displayed on the search result page. Used to track "zero result" keywords.
 
-- *Returns:*  `mixed` &mdash;
+- *Returns:*  `string|bool` &mdash;
     Response or true if using bulk requests.
 
 <a name="dotrackgoal" id="dotrackgoal"></a>
@@ -1384,10 +1427,10 @@ Records a Goal conversion
 -  It accepts the following parameter(s):
     - `$idGoal` (`int`) &mdash;
        Id Goal to record a conversion
-    - `$revenue` (`float`) &mdash;
-       Revenue for this conversion
+    - `$revenue` (`float`|`null`) &mdash;
+       Revenue for this conversion. Pass null (default) to omit the revenue so Matomo uses the goal's configured revenue; pass 0.0 to force a zero revenue.
 
-- *Returns:*  `mixed` &mdash;
+- *Returns:*  `string|bool` &mdash;
     Response or true if using bulk request
 
 <a name="dotrackaction" id="dotrackaction"></a>
@@ -1404,7 +1447,7 @@ Tracks a download or outlink
     - `$actionType` (`string`) &mdash;
        Type of the action: 'download' or 'link'
 
-- *Returns:*  `mixed` &mdash;
+- *Returns:*  `string|bool` &mdash;
     Response or true if using bulk request
 
 <a name="addecommerceitem" id="addecommerceitem"></a>
@@ -1425,13 +1468,13 @@ Ecommerce items added via this function are automatically cleared when doTrackEc
        (required) SKU, Product identifier
     - `$name` (`string`) &mdash;
        (optional) Product name
-    - `$category` (`string`|`array`) &mdash;
+    - `$category` (`string|array`) &mdash;
        (optional) Product category, or array of product categories (up to 5 categories can be specified for a given product)
-    - `$price` (`float`|`int`) &mdash;
+    - `$price` (`int|float|string`) &mdash;
        (optional) Individual product price (supports integer and decimal prices)
     - `$quantity` (`int`) &mdash;
        (optional) Product quantity. If not specified, will default to 1 in the Reports
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -1451,7 +1494,7 @@ Items which were in the previous cart and are not sent in later Cart updates wil
     - `$grandTotal` (`float`) &mdash;
        Cart grandTotal (typically the sum of all items' prices)
 
-- *Returns:*  `mixed` &mdash;
+- *Returns:*  `string|bool` &mdash;
     Response or true if using bulk request
 
 <a name="dobulktrack" id="dobulktrack"></a>
@@ -1465,7 +1508,7 @@ To enable bulk tracking, call enableBulkTracking().
 #### Signature
 
 
-- *Returns:*  `string` &mdash;
+- *Returns:*  `string|bool` &mdash;
     Response
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
@@ -1483,20 +1526,20 @@ Only the parameters $orderId and $grandTotal are required.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$orderId` (`string`|`int`) &mdash;
+    - `$orderId` (`string|int`) &mdash;
        (required) Unique Order ID. This will be used to count this order only once in the event the order page is reloaded several times. orderId must be unique for each transaction, even on different days, or the transaction will not be recorded by Matomo.
     - `$grandTotal` (`float`) &mdash;
        (required) Grand Total revenue of the transaction (including tax, shipping, etc.)
-    - `$subTotal` (`float`) &mdash;
-       (optional) Sub total amount, typically the sum of items prices for all items in this order (before Tax and Shipping costs are applied)
-    - `$tax` (`float`) &mdash;
+    - `$subTotal` (`float`|`null`) &mdash;
+       (optional) Sub total amount, typically the sum of items prices for all items in this order (before Tax and Shipping costs are applied). Pass null to omit, 0.0 to send an explicit zero.
+    - `$tax` (`float`|`null`) &mdash;
        (optional) Tax amount for this order
-    - `$shipping` (`float`) &mdash;
+    - `$shipping` (`float`|`null`) &mdash;
        (optional) Shipping amount for this order
-    - `$discount` (`float`) &mdash;
+    - `$discount` (`float`|`null`) &mdash;
        (optional) Discounted amount in this order
 
-- *Returns:*  `mixed` &mdash;
+- *Returns:*  `string|bool` &mdash;
     Response or true if using bulk request
 
 <a name="dotrackphpthrowable" id="dotrackphpthrowable"></a>
@@ -1508,12 +1551,12 @@ Tracks a PHP Throwable a crash (requires CrashAnalytics to be enabled in the tar
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$ex` ([`Throwable`](http://php.net/class.Throwable)) &mdash;
+    - `$throwable` ([`Throwable`](http://php.net/class.Throwable)) &mdash;
        (required) the throwable to track. The message, stack trace, file location and line number of the crash are deduced from this parameter. The crash type is set to the class name of the Throwable.
     - `$category` (`string`|`null`) &mdash;
        (optional) a category value for this crash. This can be any information you want to attach to the crash.
 
-- *Returns:*  `mixed` &mdash;
+- *Returns:*  `string|bool` &mdash;
     Response or true if using bulk request
 
 <a name="dotrackcrash" id="dotrackcrash"></a>
@@ -1540,7 +1583,7 @@ Track a crash (requires CrashAnalytics to be enabled in the target Matomo)
     - `$column` (`int`|`null`) &mdash;
        (optional) the source file column where the crash originated.
 
-- *Returns:*  `mixed` &mdash;
+- *Returns:*  `string|bool` &mdash;
     Response or true if using bulk request
 
 <a name="doping" id="doping"></a>
@@ -1556,7 +1599,7 @@ ping requests will create a new visit using the last action in the last known vi
 #### Signature
 
 
-- *Returns:*  `mixed` &mdash;
+- *Returns:*  `string|bool` &mdash;
     Response or true if using bulk request
 
 <a name="setecommerceview" id="setecommerceview"></a>
@@ -1567,7 +1610,7 @@ Sets the current page view as an item (product) page view, or an Ecommerce Categ
 
 This must be called before doTrackPageView() on this product/category page.
 
-On a category page, you may set the parameter $category only and set the other parameters to false.
+On a category page, you may set the parameter $category only and leave the other parameters empty.
 
 Tracking Product/Category page views will allow Matomo to report on Product & Categories
 conversion rates (Conversion rate = Ecommerce orders containing this product or category / Visits to the product or category)
@@ -1579,11 +1622,30 @@ conversion rates (Conversion rate = Ecommerce orders containing this product or 
        Product SKU being viewed
     - `$name` (`string`) &mdash;
        Product Name being viewed
-    - `$category` (`string`|`array`) &mdash;
+    - `$category` (`string|array`) &mdash;
        Category being viewed. On a Product page, this is the product's category. You can also specify an array of up to 5 categories for a given page view.
     - `$price` (`float`) &mdash;
        Specify the price at which the item was displayed
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
+
+<a name="geturltrackaibot" id="geturltrackaibot"></a>
+<a name="getUrlTrackAIBot" id="getUrlTrackAIBot"></a>
+### `getUrlTrackAIBot()`
+
+Builds a URL to track a request from an AI bot.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$httpStatus` (`int`|`null`) &mdash;
+       the request's HTTP status code, if it is known.
+    - `$responseSizeBytes` (`int`|`null`) &mdash;
+       the size of the response sent to the AI bot, if known.
+    - `$serverTimeMs` (`int`|`null`) &mdash;
+       the number of milliseconds it took to process the request, if known.
+    - `$source` (`string`|`null`) &mdash;
+       the source/proxy that served the request (max 50 chars), if known.
+- It returns a `string` value.
 
 <a name="geturltrackpageview" id="geturltrackpageview"></a>
 <a name="getUrlTrackPageView" id="getUrlTrackPageView"></a>
@@ -1621,15 +1683,15 @@ Builds URL to track a custom event.
        The Event Category (Videos, Music, Games...)
     - `$action` (`string`) &mdash;
        The Event's Action (Play, Pause, Duration, Add Playlist, Downloaded, Clicked...)
-    - `$name` (`string`|`bool`) &mdash;
+    - `$name` (`string`|`null`) &mdash;
        (optional) The Event's object Name (a particular Movie name, or Song name, or File name...)
-    - `$value` (`float`|`bool`) &mdash;
+    - `$value` (`int|float|null`) &mdash;
        (optional) The Event's value
 
 - *Returns:*  `string` &mdash;
     URL to matomo.php with all parameters set to track the pageview
 - It throws one of the following exceptions:
-    - ``
+    - [`Exception`](http://php.net/class.Exception)
 
 <a name="geturltrackcontentimpression" id="geturltrackcontentimpression"></a>
 <a name="getUrlTrackContentImpression" id="getUrlTrackContentImpression"></a>
@@ -1648,7 +1710,7 @@ Builds URL to track a content impression.
        The name of the content. For instance 'Ad Foo Bar'
     - `$contentPiece` (`string`) &mdash;
        The actual content. For instance the path to an image, video, audio, any text
-    - `$contentTarget` (`string`|`false`) &mdash;
+    - `$contentTarget` (`string`|`null`) &mdash;
        (optional) The target of the content. For instance the URL of a landing page.
 
 - *Returns:*  `string` &mdash;
@@ -1675,7 +1737,7 @@ Builds URL to track a content interaction.
        The name of the content. For instance 'Ad Foo Bar'
     - `$contentPiece` (`string`) &mdash;
        The actual content. For instance the path to an image, video, audio, any text
-    - `$contentTarget` (`string`|`false`) &mdash;
+    - `$contentTarget` (`string`|`null`) &mdash;
        (optional) The target the content leading to when an interaction occurs. For instance the URL of a landing page.
 
 - *Returns:*  `string` &mdash;
@@ -1700,7 +1762,7 @@ Builds URL to track a site search.
       
     - `$category` (`string`) &mdash;
       
-    - `$countResults` (`int`) &mdash;
+    - `$countResults` (`int`|`null`) &mdash;
       
 - It returns a `string` value.
 
@@ -1719,8 +1781,8 @@ Builds URL to track a goal with idGoal and revenue.
 -  It accepts the following parameter(s):
     - `$idGoal` (`int`) &mdash;
        Id Goal to record a conversion
-    - `$revenue` (`float`) &mdash;
-       Revenue for this conversion
+    - `$revenue` (`float`|`null`) &mdash;
+       Revenue for this conversion. Pass null (default) to omit the revenue so Matomo uses the goal's configured revenue; pass 0.0 to force a zero revenue.
 
 - *Returns:*  `string` &mdash;
     URL to matomo.php with all parameters set to track the goal conversion
@@ -1741,7 +1803,7 @@ Builds URL to track a new action.
     - `$actionUrl` (`string`) &mdash;
        URL of the download or outlink
     - `$actionType` (`string`) &mdash;
-       Type of the action: 'download' or 'link'
+       Type of the action, usually 'download' or 'link' (a plugin may define its own action parameter, so the value is URL-encoded rather than restricted).
 
 - *Returns:*  `string` &mdash;
     URL to matomo.php with all parameters set to track an action
@@ -1797,7 +1859,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth()
 -  It accepts the following parameter(s):
     - `$dateTime` (`string`) &mdash;
        Date with the format 'Y-m-d H:i:s', or a UNIX timestamp. If the datetime is older than one day (default value for tracking_requests_require_authentication_when_custom_timestamp_newer_than), then you must call setTokenAuth() with a valid Admin/Super user token.
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="setforcenewvisit" id="setforcenewvisit"></a>
 <a name="setForceNewVisit" id="setForceNewVisit"></a>
@@ -1810,7 +1872,7 @@ If you call setForceNewVisit() before calling doTrack*, then a new visit will be
 
 #### Signature
 
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="setip" id="setip"></a>
 <a name="setIp" id="setIp"></a>
@@ -1829,7 +1891,7 @@ Allowed only for Admin/Super User, must be used along with setTokenAuth()
 -  It accepts the following parameter(s):
     - `$ip` (`string`) &mdash;
        IP string, eg. 130.54.2.1
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="setuserid" id="setuserid"></a>
 <a name="setUserId" id="setUserId"></a>
@@ -1842,9 +1904,9 @@ A User ID can be a username, UUID or an email address, or any number or string t
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$userId` (`string`) &mdash;
-       Any user ID string (eg. email address, ID, username). Must be non empty. Set to false to de-assign a user id previously set.
-- It returns a `$this` value.
+    - `$userId` (`string`|`null`) &mdash;
+       Any user ID string (eg. email address, ID, username). Must be non-empty. Set to null to stop sending a User ID on subsequent requests. Note this does not retroactively remove the User ID from the visitor's current Matomo visit; for logout isolation, also start a new visit with a fresh visitor id (see setForceNewVisit() / setVisitorId()).
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -1859,7 +1921,7 @@ Note: matches implementation of Tracker\Request->getUserIdHashed()
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$id`
+    - `$id` (`string`) &mdash;
       
 - It returns a `string` value.
 
@@ -1879,7 +1941,7 @@ If not set, the visitor ID will be fetched from the 1st party cookie, or will be
 -  It accepts the following parameter(s):
     - `$visitorId` (`string`) &mdash;
        16 hexadecimal characters visitor ID, eg. "33c31e01394bdc63"
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -1910,7 +1972,9 @@ Returns the currently set user agent.
 
 #### Signature
 
-- It returns a `string` value.
+
+- *Returns:*  `string`|`null` &mdash;
+    
 
 <a name="getip" id="getip"></a>
 <a name="getIp" id="getIp"></a>
@@ -1920,7 +1984,9 @@ Returns the currently set IP address.
 
 #### Signature
 
-- It returns a `string` value.
+
+- *Returns:*  `string`|`null` &mdash;
+    
 
 <a name="getuserid" id="getuserid"></a>
 <a name="getUserId" id="getUserId"></a>
@@ -1931,7 +1997,9 @@ Returns the User ID string, which may have been set via:
 
 #### Signature
 
-- It returns a `bool` value.
+
+- *Returns:*  `string`|`null` &mdash;
+    
 
 <a name="deletecookies" id="deletecookies"></a>
 <a name="deleteCookies" id="deleteCookies"></a>
@@ -1941,7 +2009,7 @@ Deletes all first party cookies from the client
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="getattributioninfo" id="getattributioninfo"></a>
 <a name="getAttributionInfo" id="getAttributionInfo"></a>
@@ -1959,7 +2027,7 @@ can be read by PHP from the $_COOKIE array.
 #### Signature
 
 
-- *Returns:*  `string` &mdash;
+- *Returns:*  `string|false` &mdash;
     JSON Encoded string containing the Referrer information for Goal conversion attribution.
                Will return false if the cookie could not be found
 
@@ -1979,7 +2047,7 @@ The following features require access:
 -  It accepts the following parameter(s):
     - `$token_auth` (`string`) &mdash;
        token_auth 32 chars token_auth string
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="setlocaltime" id="setlocaltime"></a>
 <a name="setLocalTime" id="setLocalTime"></a>
@@ -1992,7 +2060,7 @@ Sets local visitor time
 -  It accepts the following parameter(s):
     - `$time` (`string`) &mdash;
        HH:MM:SS format
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="setresolution" id="setresolution"></a>
 <a name="setResolution" id="setResolution"></a>
@@ -2007,7 +2075,7 @@ Sets user resolution width and height.
       
     - `$height` (`int`) &mdash;
       
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="setbrowserhascookies" id="setbrowserhascookies"></a>
 <a name="setBrowserHasCookies" id="setBrowserHasCookies"></a>
@@ -2019,9 +2087,9 @@ This is reported in "List of plugins" report in Matomo.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$bool` (`bool`) &mdash;
+    - `$hasCookies` (`bool`) &mdash;
       
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="setdebugstringappend" id="setdebugstringappend"></a>
 <a name="setDebugStringAppend" id="setDebugStringAppend"></a>
@@ -2032,9 +2100,9 @@ Will append a custom string at the end of the Tracking request.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$string` (`string`) &mdash;
+    - `$debugString` (`string`) &mdash;
       
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="setplugins" id="setplugins"></a>
 <a name="setPlugins" id="setPlugins"></a>
@@ -2059,7 +2127,7 @@ Sets visitor browser supported plugins
       
     - `$silverlight` (`bool`) &mdash;
       
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="disablecookiesupport" id="disablecookiesupport"></a>
 <a name="disableCookieSupport" id="disableCookieSupport"></a>
@@ -2072,18 +2140,18 @@ This can be disabled by calling this function.
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="getrequesttimeout" id="getrequesttimeout"></a>
 <a name="getRequestTimeout" id="getRequestTimeout"></a>
 ### `getRequestTimeout()`
 
 Returns the maximum number of seconds the tracker will spend waiting for a response
-from Matomo. Defaults to 600 seconds.
+from Matomo. Defaults to 5 seconds.
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `int` value.
 
 <a name="setrequesttimeout" id="setrequesttimeout"></a>
 <a name="setRequestTimeout" id="setRequestTimeout"></a>
@@ -2097,7 +2165,7 @@ from Matomo.
 -  It accepts the following parameter(s):
     - `$timeout` (`int`) &mdash;
       
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -2107,11 +2175,11 @@ from Matomo.
 
 Returns the maximum number of seconds the tracker will spend trying to connect to Matomo.
 
-Defaults to 300 seconds.
+Defaults to 2 seconds.
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `int` value.
 
 <a name="setrequestconnecttimeout" id="setrequestconnecttimeout"></a>
 <a name="setRequestConnectTimeout" id="setRequestConnectTimeout"></a>
@@ -2124,7 +2192,7 @@ Sets the maximum number of seconds that the tracker will spend tryint to connect
 -  It accepts the following parameter(s):
     - `$timeout` (`int`) &mdash;
       
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 - It throws one of the following exceptions:
     - [`Exception`](http://php.net/class.Exception)
 
@@ -2142,7 +2210,7 @@ be aware that POST requests are not parseable/replayable.
 -  It accepts the following parameter(s):
     - `$method` (`string`) &mdash;
        Either 'POST' or 'GET'
-- It returns a `$this` value.
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="setproxy" id="setproxy"></a>
 <a name="setProxy" id="setProxy"></a>
@@ -2154,10 +2222,49 @@ If a proxy is needed to look up the address of the Matomo site, set it with this
 
 -  It accepts the following parameter(s):
     - `$proxy` (`string`) &mdash;
-       IP as string, for example "173.234.92.107"
+      
     - `$proxyPort` (`int`) &mdash;
       
-- It does not return anything or a mixed result.
+- It returns a `void` value.
+
+<a name="setcurloptions" id="setcurloptions"></a>
+<a name="setCurlOptions" id="setCurlOptions"></a>
+### `setCurlOptions()`
+
+Sets additional cURL options (a map of CURLOPT_* constant => value) for the tracking
+requests. They are applied after the built-in options, so they can extend them (e.g.
+
+`CURLOPT_IPRESOLVE`, `CURLOPT_HTTP_VERSION`) or override them. Only used on the cURL
+transport. Overriding core options such as CURLOPT_RETURNTRANSFER or CURLOPT_HEADER may
+break response handling, so use with care.
+
+`CURLOPT_HTTPHEADER` is a special case: any headers supplied here are merged with (appended
+to) the tracker's own headers rather than replacing them, so you can add a custom header
+without accidentally dropping the built-in ones (e.g. the Content-Type for POST/bulk).
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$curlOptions` (`array`) &mdash;
+       mixed> $curlOptions
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
+
+<a name="setexceptionsenabled" id="setexceptionsenabled"></a>
+<a name="setExceptionsEnabled" id="setExceptionsEnabled"></a>
+### `setExceptionsEnabled()`
+
+Controls how failed tracking requests are handled.
+
+By default a request that fails to reach Matomo (DNS, connection or timeout errors)
+throws a RuntimeException. Call setExceptionsEnabled(false) to have such failures return
+false instead, so tracking never breaks the calling application.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$enabled` (`bool`) &mdash;
+      
+- It returns a [`MatomoTracker`](MatomoTracker.md) value.
 
 <a name="setoutgoingtrackercookie" id="setoutgoingtrackercookie"></a>
 <a name="setOutgoingTrackerCookie" id="setOutgoingTrackerCookie"></a>
@@ -2168,11 +2275,11 @@ Sets a cookie to be sent to the tracking server.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$name`
+    - `$name` (`string`) &mdash;
       
-    - `$value`
-      
-- It does not return anything or a mixed result.
+    - `$value` (`string`|`null`) &mdash;
+       Cookie value, or null to remove a previously set cookie.
+- It returns a `void` value.
 
 <a name="getincomingtrackercookie" id="getincomingtrackercookie"></a>
 <a name="getIncomingTrackerCookie" id="getIncomingTrackerCookie"></a>
@@ -2183,9 +2290,22 @@ Gets a cookie which was set by the tracking server.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$name`
+    - `$name` (`string`) &mdash;
       
 
-- *Returns:*  `bool`|`string` &mdash;
-    
+- *Returns:*  `string|false` &mdash;
+    The cookie value, or false if no cookie with the given name was received.
+
+<a name="isuseragentaibot" id="isuseragentaibot"></a>
+<a name="isUserAgentAIBot" id="isUserAgentAIBot"></a>
+### `isUserAgentAIBot()`
+
+Returns true if the given user agent belongs to a known AI bot.
+
+#### Signature
+
+-  It accepts the following parameter(s):
+    - `$userAgent` (`string`|`null`) &mdash;
+      
+- It returns a `bool` value.
 

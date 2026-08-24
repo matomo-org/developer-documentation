@@ -81,7 +81,7 @@ to add a check to the Piwik\Plugins\Tour\Engagement::getChallenges() method
 
 #### Signature
 
-- It returns a `false` value.
+- It returns a `bool` value.
 
 <a name="getdescription" id="getdescription"></a>
 <a name="getDescription" id="getDescription"></a>

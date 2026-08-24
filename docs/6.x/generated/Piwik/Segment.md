@@ -113,7 +113,7 @@ Returns `true` if the segment is empty, `false` if otherwise.
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `bool` value.
 
 <a name="willbearchived" id="willbearchived"></a>
 <a name="willBeArchived" id="willBeArchived"></a>
