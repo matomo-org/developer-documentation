@@ -12,8 +12,10 @@ Every public method in a controller is exposed and can be called through an HTTP
 Controller methods should `return` their output (as opposed to `echo`ing it). Matomo will assume the output is HTML and will automatically take care of the appropriate HTTP response headers. If you want to output something other than HTML you will have to use the `Content-Type` HTTP response header. For example:
 
 ```php
-@header('Content-Type: application/json; charset=utf-8');
+@header('Content-Type: text/csv; charset=utf-8');
 ```
+
+For JSON responses use the `#[Piwik\Http\JsonResponse]` attribute instead of sending the header yourself — see [Using Controller Methods as API Methods](#using-controller-methods-as-api-methods).
 
 ## Using controller methods in the Matomo UI
 
@@ -135,21 +137,37 @@ In general, most functionality in Matomo controllers will render some HTML and r
 meant to return JSON, but is something you don't want exposed in an API method (as in, callable outside of a session). In this case, we create
 controller methods that return JSON. Whenever possible, an API method should be created though instead of a controller method unless it requires for example access to the session or if there is a different reason why an API method wouldn't work. 
 
-Unfortunately, they're not exactly built for it, so instead you have to do some extra work. In addition to sending the `Content-Type` header,
-you must echo the `json_encode`d data:
+As of Matomo 6, mark such an action with the `#[Piwik\Http\JsonResponse]` attribute and return the encoded string:
 
 ```php
-public function myControllerMethod()
+use Piwik\Http\JsonResponse;
+
+#[JsonResponse]
+public function myControllerMethod(): string
 {
     // ... check access ...
     // ... do something useful ...
 
     $result = ...; // get our response
 
-    \Piwik\DataTable\Renderer\Json::sendHeaderJSON();
     return json_encode($result);
 }
 ```
+
+Sending the `Content-Type` header from inside the action is fragile: the header is not committed until the body is echoed, so anything
+running afterwards while the action is still building its response — most commonly a `Piwik\View::render()` call, which defaults to
+`text/html` — silently overwrites it. The attribute makes Matomo (re-)send the JSON header once the action has fully returned, so it wins.
+
+For this to hold, an action carrying the attribute must:
+
+* always return its JSON body as a string;
+* not send the `Content-Type` header itself;
+* not emit output (`echo`, `print`, `flush`) or call `exit`/`die` before returning, as that commits the response headers first.
+
+These requirements are enforced by dedicated PHPStan rules.
+
+**The attribute is not inherited.** A subclass that overrides a JSON action must re-declare `#[JsonResponse]` and declare a compatible
+`string` return type. An inherited action the subclass does not override still resolves to the parent's declaration and keeps working.
 
 Note: if your method does not actually return anything, an error will result in the UI since Matomo's frontend won't know what to
 do with an empty response. So if you're calling a controller method like this, you do need to return something (or make sure Matomo
