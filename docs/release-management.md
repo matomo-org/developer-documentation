@@ -16,7 +16,7 @@ We follow [semantic versioning](https://semver.org/) where a version number look
   * Any regression fix or very important bug fixes that have a low risk for side effects can be merged into the `next_release` branch if this needs to be included in the next release. We then release another RC (which depends on things like time left to the release, whether other changes will be merged into `next_release` as well etc). The release manager should be notified to trigger a new release. It's not needed to create another PR for `*.x-dev` for the same change, as we merge the changes from `next_release` into `*.x-dev` after the release.
   * Any other change can be merged into `*.x-dev` as usual and won't be included in the upcoming release.
 * We usually run the RC for a minor release for at least a week, for major releases multiple weeks and for patch releases at least one day but better multiple days.
-* Once a new release has been released, we create a PR to merge the `next_release` branch into `*.x-dev` [see changes](https://github.com/matomo-org/matomo/compare/5.x-dev...next_release). The release manager will do this.
+* Once a new release has been released, we create a PR to merge the `next_release` branch into `*.x-dev` [see changes](https://github.com/matomo-org/matomo/compare/6.x-dev...next_release). The release manager will do this.
 * Should a patch release be needed, then we repeat this process. We create a branch `next_release` off the branch of the last release (not off `*.x-dev`). Any patch fix will need to be made against the `next_release` branch.
 
 ## New patch releases
@@ -69,16 +69,16 @@ Also, as soon as we start working on the next major version, we need to require 
 
 #### Starting to work on the new major version
 
-* Create a new branch in core that follows our standard, eg `5.x-dev` if next new major release will be `5`.
-* Update the version in core in `Version.php` to `5.0.0-b1`
+* Create a new branch in core that follows our standard, eg `6.x-dev` if next new major release will be `6`.
+* Update the version in core in `Version.php` to `6.0.0-b1`
 * For every plugin and premium feature that we maintain:
-  * Create this new branch `5.x-dev`
-  * Increase the required Matomo version to eg `"matomo": ">=5.0.0-b1,<6.0.0-b1"`
-  * Set the version number to `5.0.0`
+  * Create this new branch `6.x-dev`
+  * Increase the required Matomo version to eg `"matomo": ">=6.0.0-b1,<7.0.0-b1"`
+  * Set the version number to `6.0.0`
 * Adjust the min required PHP version in tests yml, so we no longer execute the tests on the previously required min PHP version.
 * GitHub test action: Update the scripts in the action, so the default branches to test against match the new one. e.g. in this file https://github.com/matomo-org/github-action-tests/blob/main/scripts/bash/checkout_test_against_branch.sh
-* Once the builds for `5.x-dev` branch succeeds, make it the default branch for Matomo core and all plugins
-* Update the [composer update action](https://github.com/matomo-org/matomo/blob/5.x-dev/.github/workflows/composer-update.yml) and the [CLDR action](https://github.com/matomo-org/matomo/blob/5.x-dev/.github/workflows/update-intl.yml) to use the new main branch.
+* Once the builds for `6.x-dev` branch succeeds, make it the default branch for Matomo core and all plugins
+* Update the [composer update action](https://github.com/matomo-org/matomo/blob/6.x-dev/.github/workflows/composer-update.yml) and the [CLDR action](https://github.com/matomo-org/matomo/blob/6.x-dev/.github/workflows/update-intl.yml) to use the new main branch.
 * We can now start working and merging PRs for the next major release
   * We first start working on the big issues that take a very long to make sure they are finished by the time we want to release the first RC, and so they won't delay the release
   * We look for all `@deprecated` APIs and review if we can remove the API now safely see also [Deprecating APIs](https://developer.matomo.org/guides/apis#deprecating-a-php-or-api-method). Removing an API now safely means
@@ -93,13 +93,13 @@ Also, as soon as we start working on the next major version, we need to require 
 
 #### api.matomo.org
 
-* In `config.ini.php` add two new release channels for this version. For example, when new major release is `5` as in `5.0.0` we need to add `path_latest_5x_stable` and `path_latest_5x_beta` release channels. We only need to add them for now, they can point to the same files as `latest_beta` (`LATEST_BETA`) and `latest_stable` (`LATEST`) for now. The Marketplace will use these release channels to check for latest available versions.
+* In `config.ini.php` add two new release channels for this version. For example, when new major release is `6` as in `6.0.0` we need to add `path_latest_6x_stable` and `path_latest_6x_beta` release channels. We only need to add them for now, they can point to the same files as `latest_beta` (`LATEST_BETA`) and `latest_stable` (`LATEST`) for now. The Marketplace will use these release channels to check for latest available versions.
 * In the `getLatestVersion` API method, request the required PHP version for the new major version similar to how it's done for the PHP version `7.2.5` to then serve the content of the version for the `latest_3x`.
 
 #### demo2.matomo.org
 
 * Get a DevOps to change the PHP version to the newly required minimum PHP version for this account
-* If new major release will be `5`, make sure we check out the newly created `5.x-dev` branch regularly (ssh onto server, then `cd ~/www/demo2.piwik.org && git fetch --all && git checkout 5.x-dev` might make this work) 
+* If new major release will be `6`, make sure we check out the newly created `6.x-dev` branch regularly (ssh onto server, then `cd ~/www/demo2.piwik.org && git fetch --all && git checkout 6.x-dev` might make this work) 
 
 #### plugins.matomo.org
 
@@ -122,7 +122,7 @@ To be ready for the next step, the first beta release of core, we need to:
 #### developer.matomo.org
 
 * Follow steps as described in [README.md](https://github.com/matomo-org/developer-documentation/#how-to-add-docs-for-a-new-matomo-version)
-* Replace all mentions of eg. `4.x-dev` by `5.x-dev` in the docs in `docs/*.md` and `docs/5.x/*.md` (for example [this page](https://github.com/matomo-org/developer-documentation/pull/233/files)). The files in `docs/4.x` should remain unchanged.
+* Replace all mentions of eg. `5.x-dev` by `6.x-dev` in the docs in `docs/*.md` and `docs/6.x/*.md` (for example [this page](https://github.com/matomo-org/developer-documentation/pull/233/files)). The files in `docs/5.x` should remain unchanged.
 * Document new APIs if there are any
 * Create the new migration guide for plugins similar to [this migration guide](https://developer.matomo.org/guides/migrate-matomo-3-to-4). We create this guide even if there are no breaking changes for plugins.
 * Remove docs from the previous version. For example, if we are currently on Matomo 4 and are starting to work on Matomo 5, and we are still showing docs for Matomo 3, then we edit [config/app.php](https://github.com/matomo-org/developer-documentation/blob/live/app/config/app.php#L13) to remove the docs for Matomo 3 from the UI assuming Matomo 3 was released more than 12 months ago. We keep the docs for at least 12 months as then the LTS expires (see bottom of this page).
