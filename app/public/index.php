@@ -65,8 +65,11 @@ $app = AppFactory::create();
 
 helpers\Twig::registerFilter($container->get("view")->getEnvironment());
 
-$app->add(new MatomoVersionMiddleware());
+// Slim runs middleware in LIFO order, so the version middleware is added last in
+// order to run first. It must stay ahead of the cache middleware, which expects to
+// receive an already normalised path.
 $app->add(new CacheMiddleware());
+$app->add(new MatomoVersionMiddleware());
 
 $routeCollector = $app->getRouteCollector();
 if (CACHING_ENABLED) {

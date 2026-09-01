@@ -56,7 +56,7 @@ class MatomoVersionMiddleware
 
     private static function hasPiwikVersionInUrl($path, &$matches)
     {
-        return preg_match('/\/(\d)+\.x(\/)?/', $path, $matches);
+        return preg_match('~^/(\d+)\.x(?=/|$)~', $path, $matches);
     }
 
     private static function isValidPiwikVersionAndAllowedToBeInPath($piwikVersion)

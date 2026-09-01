@@ -33,15 +33,17 @@ class CacheMiddleware
                     $response = $response->withHeader('Content-Type', 'application/json');
                     $response->getBody()->write($content);
                 } else {
+                    $response = $response->withHeader('Content-Type', 'text/html; charset=UTF-8');
                     $response->getBody()->write($content . "\n<!-- Cached response -->");
                 }
-                return $response;
+                return $response->withHeader('X-Content-Type-Options', 'nosniff');
             }
         }
 
         $response = $handler->handle($request);
         $content = $response->getBody();
-        if ($this->shouldCache($request) && 200 == $response->getStatusCode() && !$this->hadIncludeFileError($content)) {
+        if ($this->shouldCache($request) && 200 == $response->getStatusCode()
+            && $this->isCacheableResponse($response) && !$this->hadIncludeFileError($content)) {
             Cache::set($this->getCacheKey($request), $content);
         }
         return $response;
@@ -67,6 +69,49 @@ class CacheMiddleware
         $path = strtolower($path);
 
         return $path;
+    }
+
+    /**
+     * Only the response body is stored, and the cache key is built from the path
+     * without any request header, so a response is stored only when it can be replayed
+     * unchanged to every later request for the same path.
+     *
+     * @param Response $response
+     * @return bool
+     */
+    private function isCacheableResponse($response)
+    {
+        $directives = $this->getCacheControlDirectives($response);
+
+        foreach (['no-store', 'no-cache', 'private'] as $directive) {
+            if (in_array($directive, $directives, true)) {
+                return false;
+            }
+        }
+
+        if ('' !== trim($response->getHeaderLine('Vary'))) {
+            return false;
+        }
+
+        return !$response->hasHeader('Set-Cookie');
+    }
+
+    /**
+     * Returns the lower cased Cache-Control directive names, without their arguments.
+     *
+     * @param Response $response
+     * @return array
+     */
+    private function getCacheControlDirectives($response)
+    {
+        $directives = [];
+
+        foreach (explode(',', strtolower($response->getHeaderLine('Cache-Control'))) as $directive) {
+            $nameAndArgument = explode('=', $directive, 2);
+            $directives[] = trim($nameAndArgument[0]);
+        }
+
+        return $directives;
     }
 
     private function hadIncludeFileError($content)
