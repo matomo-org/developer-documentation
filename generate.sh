@@ -16,12 +16,15 @@ function generateDocs {
     git submodule foreach --recursive git reset --hard
     git clean -f -d
     git submodule foreach git clean -f
+    # a submodule working tree blocks checking out a branch that tracks the same path as real
+    # files (TrackingSpamPrevention); git clean can't remove it as the gitlink is tracked
+    git submodule deinit -f --all
     git fetch
     git checkout $1
     branchname=$(git rev-parse --abbrev-ref HEAD)
     if [ "$branchname" != "$1" ]; then
        echo "Not on correct branch"
-      return
+      exit 1
     fi
     sleep 4
     git rev-parse --abbrev-ref HEAD
