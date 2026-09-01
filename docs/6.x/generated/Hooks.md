@@ -993,7 +993,7 @@ Callback Signature:
 
 ### CompliancePolicy.setSettingEnforcedStatus
 
-*Defined in [Piwik/Settings/Interfaces/Traits/](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Settings/Interfaces/Traits/PolicyComparisonTrait.php) in line [107](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Settings/Interfaces/Traits/PolicyComparisonTrait.php#L107)*
+*Defined in [Piwik/Settings/Interfaces/Traits/](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Settings/Interfaces/Traits/PolicyComparisonTrait.php) in line [156](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Settings/Interfaces/Traits/PolicyComparisonTrait.php#L156)*
 
 Triggered when the enforcement state of a policy-controlled setting changes, to
 allow performing extra actions when a setting starts or stops being enforced. The enforcement state cannot be changed via this event.
@@ -1502,7 +1502,7 @@ Usages:
 
 ### CustomJsTracker.updateTracker
 
-*Defined in [Piwik/Plugins/PrivacyManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/API.php) in line [461](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/API.php#L461)*
+*Defined in [Piwik/Plugins/PrivacyManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/API.php) in line [544](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/API.php#L544)*
 
 
 
@@ -3712,7 +3712,7 @@ Callback Signature:
 
 ### SitesManager.addSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/API.php) in line [933](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/API.php#L933)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/API.php) in line [934](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/API.php#L934)*
 
 Triggered after a site has been added.
 
@@ -3728,7 +3728,7 @@ Usages:
 
 ### SitesManager.deleteSite.end
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/API.php) in line [1076](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/API.php#L1076)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/API.php) in line [1077](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/API.php#L1077)*
 
 Triggered after a site has been deleted. Plugins can use this event to remove site specific values or settings, such as removing all
 goals that belong to a specific website. If you store any data related to a website you
@@ -3746,7 +3746,7 @@ Usages:
 
 ### SitesManager.getImageTrackingCode
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/API.php) in line [260](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/API.php#L260)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/API.php) in line [261](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/API.php#L261)*
 
 Triggered when generating image link tracking code server side. Plugins can use
 this event to customise the image tracking code that is displayed to the
@@ -3768,7 +3768,7 @@ Callback Signature:
 
 ### SitesManager.getMessagesToWarnOnSiteRemoval
 
-*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/API.php) in line [553](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/API.php#L553)*
+*Defined in [Piwik/Plugins/SitesManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/API.php) in line [554](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/API.php#L554)*
 
 Triggered before a modal to delete a measurable is displayed A plugin can listen to it and add additional information to be displayed in the measurable delete modal body
 
@@ -3802,7 +3802,7 @@ Callback Signature:
 
 ### SitesManager.siteWithoutData.showInviteTeamMemberLink
 
-*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php) in line [374](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php#L374)*
+*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php) in line [381](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php#L381)*
 
 Triggered before rendering the invite team member link on the no data page. This event can be used to hide the link, for example if inviting users is handled
 outside of Matomo.
@@ -4154,7 +4154,7 @@ Usages:
 
 ### Template.afterGDPROverviewIntro
 
-*Defined in [Piwik/Plugins/PrivacyManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/Controller.php) in line [119](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/Controller.php#L119)*
+*Defined in [Piwik/Plugins/PrivacyManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/Controller.php) in line [120](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/Controller.php#L120)*
 
 
 
@@ -4276,7 +4276,7 @@ Callback Signature:
 
 ### Template.siteWithoutData.afterTrackingMethods
 
-*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php) in line [357](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php#L357)*
+*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php) in line [364](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php#L364)*
 
 Triggered on the no data page after the list of tracking methods and the section
 allowing users to temporarily hide the page. This event can be used to render additional content at the bottom of the no data page.
@@ -4291,7 +4291,7 @@ Callback Signature:
 
 ### Template.siteWithoutDataTab. . $obj::getId() . .content
 
-*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php) in line [214](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php#L214)*
+*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php) in line [221](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php#L221)*
 
 Event that can be used to manipulate the content of a certain tab on the no data page
 
@@ -4305,7 +4305,7 @@ Callback Signature:
 
 ### Template.siteWithoutDataTab. . $obj::getId() . .others
 
-*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php) in line [221](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php#L221)*
+*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php) in line [228](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php#L228)*
 
 Event that can be used to manipulate the content of a record on the others tab on the no data page
 
