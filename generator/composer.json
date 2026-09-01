@@ -30,8 +30,8 @@
         }
     ],
     "require": {
-        "php": ">=5.3.0",
-        "tsteur/sami": "dev-dev-4.x-devphp8-twig-update",
+        "php": ">=8.1.0",
+        "tsteur/sami": "dev-fix-union-and-intersection-types",
         "psr/container": "1.1.2"
     }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4fc359e455924554e1640f316cf9ab2d",
+    "content-hash": "71f1093276adaedfa5381176195346d9",
     "packages": [
         {
             "name": "blackfire/php-sdk",
@@ -442,12 +442,12 @@
             },
             "type": "library",
             "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
                 "branch-alias": {
                     "dev-main": "3.5-dev"
-                },
-                "thanks": {
-                    "name": "symfony/contracts",
-                    "url": "https://github.com/symfony/contracts"
                 }
             },
             "autoload": {
@@ -641,8 +641,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -720,8 +720,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -794,8 +794,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -989,11 +989,11 @@
         },
         {
             "name": "tsteur/sami",
-            "version": "dev-dev-4.x-devphp8-twig-update",
+            "version": "dev-fix-union-and-intersection-types",
             "source": {
                 "type": "git",
                 "url": "https://github.com/piwik/Sami",
-                "reference": "dfbee6d6d81180e2bf590022bdd5ae6eb27d403b"
+                "reference": "3292f19a98cf53175891df32a31d44d341af1211"
             },
             "require": {
                 "blackfire/php-sdk": "^1.5.18",
@@ -1040,7 +1040,7 @@
             "keywords": [
                 "phpdoc"
             ],
-            "time": "2024-05-13T20:32:37+00:00"
+            "time": "2026-08-24T19:14:39+00:00"
         },
         {
             "name": "twig/twig",
@@ -1131,7 +1131,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.3.0"
+        "php": ">=8.1.0"
     },
     "platform-dev": [],
     "plugin-api-version": "2.6.0"
