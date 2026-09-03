@@ -198,7 +198,13 @@
 ## Plugins\PagePerformance\Columns\Metrics\AverageTimeServer
 ## Plugins\PagePerformance\Columns\Metrics\AverageTimeTransfer
 ## Plugins\Referrers\Columns\Metrics\VisitorsFromReferrerPercent
+## Plugins\TagManager\MenuTagManager
+## Plugins\TagManager\Template\BaseTemplate
+## Plugins\TagManager\Template\Tag\BaseTag
+## Plugins\TagManager\Template\Trigger\BaseTrigger
+## Plugins\TagManager\Template\Variable\BaseVariable
 ## Plugins\Tour\Engagement\Challenge
+## Plugins\TreemapVisualization\TreemapConfig
 ## Plugins\UsersManager\UserPreferences
 ## Plugins\VisitFrequency\Columns\Metrics\ReturningMetric
 ## RankingQuery
