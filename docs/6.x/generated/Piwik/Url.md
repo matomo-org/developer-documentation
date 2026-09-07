@@ -49,7 +49,7 @@ The class defines the following methods:
 - [`getCurrentScriptPath()`](#getcurrentscriptpath) &mdash; Returns the path to the script being executed.
 - [`getCurrentScriptName()`](#getcurrentscriptname) &mdash; Returns the path to the script being executed.
 - [`getCurrentScheme()`](#getcurrentscheme) &mdash; Returns the current URL's protocol.
-- [`getCurrentHost()`](#getcurrenthost) &mdash; Returns the current host.
+- [`getCurrentHost()`](#getcurrenthost) &mdash; Returns the current host, preferring the hostname from proxy_host_headers when configured.
 - [`getCurrentQueryString()`](#getcurrentquerystring) &mdash; Returns the query string of the current URL.
 - [`getArrayFromCurrentQueryString()`](#getarrayfromcurrentquerystring) &mdash; Returns an array mapping query parameter names with query parameter values for the current URL.
 - [`getCurrentQueryStringWithParametersModified()`](#getcurrentquerystringwithparametersmodified) &mdash; Modifies the current query string with the supplied parameters and returns the result.
@@ -146,13 +146,13 @@ Returns the current URL's protocol.
 <a name="getCurrentHost" id="getCurrentHost"></a>
 ### `getCurrentHost()`
 
-Returns the current host.
+Returns the current host, preferring the hostname from proxy_host_headers when configured.
 
 #### Signature
 
 -  It accepts the following parameter(s):
     - `$default` (`string`) &mdash;
-       Default value to return if host unknown
+       Default value to return if no host can be resolved from the request or configuration.
     - `$checkTrustedHost` (`bool`) &mdash;
        Whether to do trusted host check. Should ALWAYS be true, except in Controller.
 
