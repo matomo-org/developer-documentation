@@ -301,20 +301,6 @@ Callback Signature:
 
 ### API.addGlossaryItems
 
-*Defined in [Piwik/Plugins/BotTracking/tests/Integration/RealTimeApiTest](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/BotTracking/tests/Integration/RealTimeApiTest.php) in line [151](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/BotTracking/tests/Integration/RealTimeApiTest.php#L151)*
-
-
-
-Callback Signature:
-<pre><code>function(&amp;$glossaryItems)</code></pre>
-
-Usages:
-
-[BotTracking::addGlossaryItems](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/BotTracking/BotTracking.php#L167), [TagManager::addGlossaryItems](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/TagManager.php#L124)
-
-
-### API.addGlossaryItems
-
 *Defined in [Piwik/Plugins/API/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/API/Controller.php) in line [199](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/API/Controller.php#L199)*
 
 Triggered to add or modify glossary items. You can either modify one of the existing core categories
@@ -333,6 +319,20 @@ Callback Signature:
 <pre><code>function(&amp;$glossaryItems)</code></pre>
 
 - array &$glossaryItems An array containing all glossary items.
+
+Usages:
+
+[BotTracking::addGlossaryItems](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/BotTracking/BotTracking.php#L167), [TagManager::addGlossaryItems](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/TagManager.php#L124)
+
+
+### API.addGlossaryItems
+
+*Defined in [Piwik/Plugins/BotTracking/tests/Integration/RealTimeApiTest](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/BotTracking/tests/Integration/RealTimeApiTest.php) in line [253](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/BotTracking/tests/Integration/RealTimeApiTest.php#L253)*
+
+
+
+Callback Signature:
+<pre><code>function(&amp;$glossaryItems)</code></pre>
 
 Usages:
 
