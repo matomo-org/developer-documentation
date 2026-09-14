@@ -7,6 +7,9 @@ This is the Matomo API Reference. It lists all functions that can be called, doc
 
 The APIs let you programmatically request any analytics reports from Matomo, for one or several websites and for any given date and period and in any format (CSV, JSON, XML, etc.). Matomo also provides Management APIs to create, update and delete websites, users, user privileges, custom dashboards, email reports, goals, funnels, custom dimensions, alerts, videos, heatmaps, session recordings, custom segments, and more. 
 
+Sites have their own timezone and this is used when requesting data for a single site.
+When requesting data for all sites the SitesManager.getDefaultTimezone() is used.
+
 ## API Request
  
 ### Standard API parameters
