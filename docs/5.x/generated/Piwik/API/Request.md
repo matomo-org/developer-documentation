@@ -160,8 +160,6 @@ request within any request, have a look at [isApiRequest()](/api-reference/Piwik
 #### Signature
 
 - It returns a `bool` value.
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception)
 
 <a name="iscurrentapirequesttherootapirequest" id="iscurrentapirequesttherootapirequest"></a>
 <a name="isCurrentApiRequestTheRootApiRequest" id="isCurrentApiRequestTheRootApiRequest"></a>
