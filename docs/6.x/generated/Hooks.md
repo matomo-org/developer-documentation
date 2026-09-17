@@ -75,7 +75,7 @@ Callback Signature:
 
 ### Access.modifyUserAccess
 
-*Defined in [Piwik/Access](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Access.php) in line [302](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Access.php#L302)*
+*Defined in [Piwik/Access](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Access.php) in line [329](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Access.php#L329)*
 
 Triggered after the initial access levels and permissions for the current user are loaded. Use this
 event to modify the current user's permissions (for example, making sure every user has view access
@@ -862,7 +862,7 @@ Callback Signature:
 
 Usages:
 
-[Actions::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Actions/Actions.php#L114), [Annotations::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Annotations/Annotations.php#L52), [AnonymousPiwikUsageMeasurement::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AnonymousPiwikUsageMeasurement/AnonymousPiwikUsageMeasurement.php#L100), [CoreAdminHome::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L147), [CoreHome::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreHome/CoreHome.php#L172), [CorePluginsAdmin::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L103), [CoreVisualizations::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L60), [CoreVue::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreVue/CoreVue.php#L23), [CustomAlerts::getJavaScriptFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L100), [CustomDimensions::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomDimensions/CustomDimensions.php#L206), [Dashboard::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Dashboard/Dashboard.php#L325), [Feedback::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Feedback/Feedback.php#L43), [Insights::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Insights/Insights.php#L30), [Live::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Live/Live.php#L175), [LogViewer::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LogViewer/LogViewer.php#L31), [Login::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Login.php#L252), [LoginLdap::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LoginLdap/LoginLdap.php#L59), [Marketplace::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/Marketplace.php#L67), [Overlay::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Overlay/Overlay.php#L32), [PagePerformance::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PagePerformance/PagePerformance.php#L52), [Referrers::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Referrers/Referrers.php#L139), [ScheduledReports::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L211), [SegmentEditor::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SegmentEditor/SegmentEditor.php#L337), [TagManager::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/TagManager.php#L967), [Transitions::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Transitions/Transitions.php#L48), [TreemapVisualization::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TreemapVisualization/TreemapVisualization.php#L56), [TwoFactorAuth::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TwoFactorAuth/TwoFactorAuth.php#L118), [UserCountry::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UserCountry/UserCountry.php#L75), [UserCountryMap::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UserCountryMap/UserCountryMap.php#L44), [UserId::getJavaScriptFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UserId/UserId.php#L38), [Widgetize::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Widgetize/Widgetize.php#L26)
+[Actions::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Actions/Actions.php#L114), [Annotations::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Annotations/Annotations.php#L52), [AnonymousPiwikUsageMeasurement::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AnonymousPiwikUsageMeasurement/AnonymousPiwikUsageMeasurement.php#L100), [CoreAdminHome::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L147), [CoreHome::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreHome/CoreHome.php#L172), [CorePluginsAdmin::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L103), [CoreVisualizations::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L60), [CoreVue::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreVue/CoreVue.php#L23), [CustomAlerts::getJavaScriptFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L100), [CustomDimensions::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomDimensions/CustomDimensions.php#L206), [Dashboard::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Dashboard/Dashboard.php#L325), [Feedback::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Feedback/Feedback.php#L43), [Insights::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Insights/Insights.php#L30), [Live::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Live/Live.php#L175), [LogViewer::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LogViewer/LogViewer.php#L31), [Login::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Login.php#L252), [LoginLdap::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LoginLdap/LoginLdap.php#L59), [Marketplace::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/Marketplace.php#L67), [Overlay::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Overlay/Overlay.php#L32), [PagePerformance::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PagePerformance/PagePerformance.php#L52), [Referrers::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Referrers/Referrers.php#L139), [ScheduledReports::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L212), [SegmentEditor::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SegmentEditor/SegmentEditor.php#L337), [TagManager::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/TagManager.php#L967), [Transitions::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Transitions/Transitions.php#L48), [TreemapVisualization::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TreemapVisualization/TreemapVisualization.php#L56), [TwoFactorAuth::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TwoFactorAuth/TwoFactorAuth.php#L118), [UserCountry::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UserCountry/UserCountry.php#L75), [UserCountryMap::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UserCountryMap/UserCountryMap.php#L44), [UserId::getJavaScriptFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UserId/UserId.php#L38), [Widgetize::getJsFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Widgetize/Widgetize.php#L26)
 
 
 ### AssetManager.getStylesheetFiles
@@ -891,7 +891,7 @@ Callback Signature:
 
 Usages:
 
-[Plugin::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/API/API.php#L1003), [Annotations::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Annotations/Annotations.php#L44), [BotTracking::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/BotTracking/BotTracking.php#L208), [CoreAdminHome::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L136), [CoreHome::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreHome/CoreHome.php#L125), [CorePluginsAdmin::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L83), [CoreVisualizations::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L40), [CustomAlerts::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L104), [CustomDimensions::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomDimensions/CustomDimensions.php#L211), [CustomVariables::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomVariables/CustomVariables.php#L139), [DBStats::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/DBStats/DBStats.php#L38), [Dashboard::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Dashboard/Dashboard.php#L333), [DevicesDetection::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/DevicesDetection/DevicesDetection.php#L53), [Diagnostics::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Diagnostics/Diagnostics.php#L44), [Events::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Events/Events.php#L257), [Feedback::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Feedback/Feedback.php#L35), [Goals::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Goals/Goals.php#L458), [Insights::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Insights/Insights.php#L25), [Installation::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Installation/Installation.php#L147), [JsTrackerInstallCheck::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/JsTrackerInstallCheck/JsTrackerInstallCheck.php#L41), [Live::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Live/Live.php#L169), [LogViewer::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LogViewer/LogViewer.php#L26), [Login::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Login.php#L262), [LoginLdap::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LoginLdap/LoginLdap.php#L64), [MarketingCampaignsReporting::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MarketingCampaignsReporting/MarketingCampaignsReporting.php#L49), [Marketplace::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/Marketplace.php#L58), [MobileMessaging::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L85), [MultiSites::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MultiSites/MultiSites.php#L111), [PrivacyManager::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/PrivacyManager.php#L622), [ProfessionalServices::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ProfessionalServices/ProfessionalServices.php#L42), [Referrers::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Referrers/Referrers.php#L105), [RssWidget::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/RssWidget/RssWidget.php#L31), [ScheduledReports::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L215), [SecurityInfo::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SecurityInfo/SecurityInfo.php#L27), [SegmentEditor::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SegmentEditor/SegmentEditor.php#L343), [SitesManager::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/SitesManager.php#L168), [TagManager::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/TagManager.php#L951), [Tour::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Tour/Tour.php#L135), [Transitions::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Transitions/Transitions.php#L36), [TreemapVisualization::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TreemapVisualization/TreemapVisualization.php#L50), [TwoFactorAuth::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TwoFactorAuth/TwoFactorAuth.php#L113), [UserCountry::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UserCountry/UserCountry.php#L70), [UserCountryMap::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UserCountryMap/UserCountryMap.php#L55), [UsersManager::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/UsersManager.php#L172), [VisitsSummary::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/VisitsSummary/VisitsSummary.php#L71), [Widgetize::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Widgetize/Widgetize.php#L34)
+[Plugin::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/API/API.php#L1003), [Annotations::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Annotations/Annotations.php#L44), [BotTracking::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/BotTracking/BotTracking.php#L208), [CoreAdminHome::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L136), [CoreHome::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreHome/CoreHome.php#L125), [CorePluginsAdmin::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L83), [CoreVisualizations::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L40), [CustomAlerts::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L104), [CustomDimensions::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomDimensions/CustomDimensions.php#L211), [CustomVariables::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomVariables/CustomVariables.php#L139), [DBStats::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/DBStats/DBStats.php#L38), [Dashboard::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Dashboard/Dashboard.php#L333), [DevicesDetection::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/DevicesDetection/DevicesDetection.php#L53), [Diagnostics::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Diagnostics/Diagnostics.php#L44), [Events::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Events/Events.php#L257), [Feedback::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Feedback/Feedback.php#L35), [Goals::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Goals/Goals.php#L458), [Insights::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Insights/Insights.php#L25), [Installation::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Installation/Installation.php#L147), [JsTrackerInstallCheck::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/JsTrackerInstallCheck/JsTrackerInstallCheck.php#L41), [Live::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Live/Live.php#L169), [LogViewer::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LogViewer/LogViewer.php#L26), [Login::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Login.php#L262), [LoginLdap::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LoginLdap/LoginLdap.php#L64), [MarketingCampaignsReporting::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MarketingCampaignsReporting/MarketingCampaignsReporting.php#L49), [Marketplace::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/Marketplace.php#L58), [MobileMessaging::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L85), [MultiSites::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MultiSites/MultiSites.php#L111), [PrivacyManager::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/PrivacyManager.php#L622), [ProfessionalServices::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ProfessionalServices/ProfessionalServices.php#L42), [Referrers::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Referrers/Referrers.php#L105), [RssWidget::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/RssWidget/RssWidget.php#L31), [ScheduledReports::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L216), [SecurityInfo::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SecurityInfo/SecurityInfo.php#L27), [SegmentEditor::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SegmentEditor/SegmentEditor.php#L343), [SitesManager::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/SitesManager.php#L168), [TagManager::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/TagManager.php#L951), [Tour::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Tour/Tour.php#L135), [Transitions::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Transitions/Transitions.php#L36), [TreemapVisualization::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TreemapVisualization/TreemapVisualization.php#L50), [TwoFactorAuth::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TwoFactorAuth/TwoFactorAuth.php#L113), [UserCountry::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UserCountry/UserCountry.php#L70), [UserCountryMap::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UserCountryMap/UserCountryMap.php#L55), [UsersManager::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/UsersManager.php#L172), [VisitsSummary::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/VisitsSummary/VisitsSummary.php#L71), [Widgetize::getStylesheetFiles](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Widgetize/Widgetize.php#L34)
 
 ## Category
 
@@ -1589,7 +1589,7 @@ Callback Signature:
 
 Usages:
 
-[AnonymousPiwikUsageMeasurement::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AnonymousPiwikUsageMeasurement/AnonymousPiwikUsageMeasurement.php#L56), [CustomAlerts::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L58), [CustomDimensions::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomDimensions/CustomDimensions.php#L414), [Dashboard::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Dashboard/Dashboard.php#L44), [ExampleLogTables::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ExampleLogTables/ExampleLogTables.php#L39), [LanguagesManager::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LanguagesManager/LanguagesManager.php#L61), [PrivacyManager::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/PrivacyManager.php#L250), [QueuedTracking::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/QueuedTracking/QueuedTracking.php#L35), [ScheduledReports::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L112), [SegmentEditor::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SegmentEditor/SegmentEditor.php#L81), [TagManager::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/TagManager.php#L86)
+[AnonymousPiwikUsageMeasurement::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AnonymousPiwikUsageMeasurement/AnonymousPiwikUsageMeasurement.php#L56), [CustomAlerts::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L58), [CustomDimensions::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomDimensions/CustomDimensions.php#L414), [Dashboard::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Dashboard/Dashboard.php#L44), [ExampleLogTables::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ExampleLogTables/ExampleLogTables.php#L39), [LanguagesManager::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LanguagesManager/LanguagesManager.php#L61), [PrivacyManager::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/PrivacyManager.php#L250), [QueuedTracking::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/QueuedTracking/QueuedTracking.php#L35), [ScheduledReports::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L113), [SegmentEditor::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SegmentEditor/SegmentEditor.php#L81), [TagManager::getTablesInstalled](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/TagManager.php#L86)
 
 ## Dimension
 
@@ -2588,7 +2588,7 @@ Callback Signature:
 
 Usages:
 
-[CustomAlerts::removePhoneNumberFromAllAlerts](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L153), [ScheduledReports::deletePhoneNumber](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L514)
+[CustomAlerts::removePhoneNumberFromAllAlerts](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L153), [ScheduledReports::deletePhoneNumber](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L515)
 
 ## MultiSites
 
@@ -3087,7 +3087,7 @@ Callback Signature:
 
 Usages:
 
-[Referrers::renameDeprecatedModuleAndAction](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Referrers/Referrers.php#L151), [RssWidget::renameExampleRssWidgetModule](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/RssWidget/RssWidget.php#L36), [ScheduledReports::renameDeprecatedModuleAndAction](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L118)
+[Referrers::renameDeprecatedModuleAndAction](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Referrers/Referrers.php#L151), [RssWidget::renameExampleRssWidgetModule](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/RssWidget/RssWidget.php#L36), [ScheduledReports::renameDeprecatedModuleAndAction](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L119)
 
 
 ### Request.initAuthenticationObject
@@ -3228,7 +3228,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::allowMultipleReports](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L202), [ScheduledReports::allowMultipleReports](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L373)
+[MobileMessaging::allowMultipleReports](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L202), [ScheduledReports::allowMultipleReports](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L374)
 
 
 ### ScheduledReports.getRendererInstance
@@ -3257,7 +3257,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::getRendererInstance](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L189), [ScheduledReports::getRendererInstance](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L358)
+[MobileMessaging::getRendererInstance](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L189), [ScheduledReports::getRendererInstance](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L359)
 
 
 ### ScheduledReports.getReportFormats
@@ -3279,7 +3279,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::getReportFormats](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L175), [ScheduledReports::getReportFormats](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L303)
+[MobileMessaging::getReportFormats](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L175), [ScheduledReports::getReportFormats](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L304)
 
 
 ### ScheduledReports.getReportMetadata
@@ -3305,7 +3305,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::getReportMetadata](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L152), [ScheduledReports::getReportMetadata](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L274)
+[MobileMessaging::getReportMetadata](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L152), [ScheduledReports::getReportMetadata](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L275)
 
 
 ### ScheduledReports.getReportParameters
@@ -3327,7 +3327,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::getReportParameters](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L182), [ScheduledReports::getReportParameters](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L310)
+[MobileMessaging::getReportParameters](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L182), [ScheduledReports::getReportParameters](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L311)
 
 
 ### ScheduledReports.getReportRecipients
@@ -3354,7 +3354,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::getReportRecipients](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L209), [ScheduledReports::getReportRecipients](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L556)
+[MobileMessaging::getReportRecipients](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L209), [ScheduledReports::getReportRecipients](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L557)
 
 
 ### ScheduledReports.getReportTypes
@@ -3372,7 +3372,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::getReportTypes](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L170), [ScheduledReports::getReportTypes](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L298)
+[MobileMessaging::getReportTypes](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L170), [ScheduledReports::getReportTypes](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L299)
 
 
 ### ScheduledReports.processReports
@@ -3403,7 +3403,7 @@ Callback Signature:
 
 Usages:
 
-[PagePerformance::processReports](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PagePerformance/PagePerformance.php#L152), [ScheduledReports::processReports](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L317)
+[PagePerformance::processReports](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PagePerformance/PagePerformance.php#L152), [ScheduledReports::processReports](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L318)
 
 
 ### ScheduledReports.sendReport
@@ -3445,7 +3445,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::sendReport](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L228), [ScheduledReports::sendReport](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L394)
+[MobileMessaging::sendReport](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L228), [ScheduledReports::sendReport](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L395)
 
 
 ### ScheduledReports.validateReportParameters
@@ -3465,7 +3465,7 @@ Callback Signature:
 
 Usages:
 
-[MobileMessaging::validateReportParameters](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L133), [ScheduledReports::validateReportParameters](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L220)
+[MobileMessaging::validateReportParameters](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L133), [ScheduledReports::validateReportParameters](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L221)
 
 ## ScheduledTasks
 
@@ -3588,7 +3588,7 @@ Callback Signature:
 
 Usages:
 
-[ScheduledReports::segmentDeactivation](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L625)
+[ScheduledReports::segmentDeactivation](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L626)
 
 
 ### SegmentEditor.update
@@ -3605,7 +3605,7 @@ Callback Signature:
 
 Usages:
 
-[ScheduledReports::segmentUpdated](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L592)
+[ScheduledReports::segmentUpdated](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L593)
 
 ## Segments
 
@@ -3689,7 +3689,7 @@ Usages:
 
 ### Session.shouldSendSameSiteCookieAsNoneForcefully
 
-*Defined in [Piwik/Session](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Session.php) in line [202](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Session.php#L202)*
+*Defined in [Piwik/Session](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Session.php) in line [209](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Session.php#L209)*
 
 Triggered to determine whether the session cookie SameSite value should be forced to None. Plugins can set `$shouldUseNoneForcefully` to true when the session cookie needs to be
 sent in a third-party context that is not covered by Matomo's built-in iframe, opt-out,
@@ -3741,7 +3741,7 @@ Callback Signature:
 
 Usages:
 
-[CustomAlerts::deleteAlertsForSite](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L134), [CustomDimensions::deleteCustomDimensionDefinitionsForSite](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomDimensions/CustomDimensions.php#L279), [Goals::deleteSiteGoals](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Goals/Goals.php#L267), [PrivacyManager::deleteSiteSpecificAnonymisationSettings](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/PrivacyManager.php#L1125), [ScheduledReports::deleteSiteReport](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L201), [SegmentEditor::onDeleteSite](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SegmentEditor/SegmentEditor.php#L66), [SitesManager::onSiteDeleted](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/SitesManager.php#L154), [TagManager::onSiteDeleted](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/TagManager.php#L993), [UsersManager::deleteSite](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/UsersManager.php#L128)
+[CustomAlerts::deleteAlertsForSite](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L134), [CustomDimensions::deleteCustomDimensionDefinitionsForSite](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomDimensions/CustomDimensions.php#L279), [Goals::deleteSiteGoals](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Goals/Goals.php#L267), [PrivacyManager::deleteSiteSpecificAnonymisationSettings](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/PrivacyManager.php#L1125), [ScheduledReports::deleteSiteReport](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L202), [SegmentEditor::onDeleteSite](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SegmentEditor/SegmentEditor.php#L66), [SitesManager::onSiteDeleted](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/SitesManager.php#L154), [TagManager::onSiteDeleted](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/TagManager.php#L993), [UsersManager::deleteSite](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/UsersManager.php#L128)
 
 
 ### SitesManager.getImageTrackingCode
@@ -4684,7 +4684,7 @@ Callback Signature:
 
 Usages:
 
-[AIProviders::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviders.php#L92), [Plugin::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/API/API.php#L1028), [Annotations::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Annotations/Annotations.php#L36), [BotTracking::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/BotTracking/BotTracking.php#L185), [CoreAdminHome::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L173), [CoreHome::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreHome/CoreHome.php#L207), [CorePluginsAdmin::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L108), [CoreVisualizations::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L70), [CustomAlerts::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L242), [CustomDimensions::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomDimensions/CustomDimensions.php#L284), [CustomVariables::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomVariables/CustomVariables.php#L120), [DBStats::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/DBStats/DBStats.php#L31), [Dashboard::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Dashboard/Dashboard.php#L356), [DevicesDetection::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/DevicesDetection/DevicesDetection.php#L31), [Diagnostics::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Diagnostics/Diagnostics.php#L36), [Ecommerce::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Ecommerce/Ecommerce.php#L36), [Feedback::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Feedback/Feedback.php#L47), [GeoIp2::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/GeoIp2/GeoIp2.php#L44), [Goals::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Goals/Goals.php#L469), [Installation::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Installation/Installation.php#L42), [Intl::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Intl/Intl.php#L21), [JsTrackerInstallCheck::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/JsTrackerInstallCheck/JsTrackerInstallCheck.php#L31), [LanguagesManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LanguagesManager/LanguagesManager.php#L50), [Live::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Live/Live.php#L185), [LogViewer::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LogViewer/LogViewer.php#L36), [Login::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Login.php#L96), [LoginLdap::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LoginLdap/LoginLdap.php#L74), [Marketplace::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/Marketplace.php#L72), [MobileMessaging::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L90), [MultiSites::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MultiSites/MultiSites.php#L53), [Overlay::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Overlay/Overlay.php#L38), [PagePerformance::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PagePerformance/PagePerformance.php#L59), [PrivacyManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/PrivacyManager.php#L260), [ProfessionalServices::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ProfessionalServices/ProfessionalServices.php#L48), [Referrers::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Referrers/Referrers.php#L110), [ScheduledReports::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L125), [SecurityInfo::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SecurityInfo/SecurityInfo.php#L32), [SegmentEditor::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SegmentEditor/SegmentEditor.php#L365), [SitesManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/SitesManager.php#L376), [TagManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/TagManager.php#L420), [TasksTimetable::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TasksTimetable/TasksTimetable.php#L25), [Tour::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Tour/Tour.php#L140), [Transitions::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Transitions/Transitions.php#L53), [TwoFactorAuth::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TwoFactorAuth/TwoFactorAuth.php#L50), [UserCountry::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UserCountry/UserCountry.php#L43), [UserCountryMap::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UserCountryMap/UserCountryMap.php#L61), [UserId::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UserId/UserId.php#L48), [UsersManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/UsersManager.php#L288), [VisitorGenerator::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/VisitorGenerator/VisitorGenerator.php#L24), [Widgetize::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Widgetize/Widgetize.php#L43)
+[AIProviders::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviders.php#L92), [Plugin::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/API/API.php#L1028), [Annotations::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Annotations/Annotations.php#L36), [BotTracking::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/BotTracking/BotTracking.php#L185), [CoreAdminHome::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L173), [CoreHome::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreHome/CoreHome.php#L207), [CorePluginsAdmin::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CorePluginsAdmin/CorePluginsAdmin.php#L108), [CoreVisualizations::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L70), [CustomAlerts::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L242), [CustomDimensions::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomDimensions/CustomDimensions.php#L284), [CustomVariables::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomVariables/CustomVariables.php#L120), [DBStats::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/DBStats/DBStats.php#L31), [Dashboard::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Dashboard/Dashboard.php#L356), [DevicesDetection::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/DevicesDetection/DevicesDetection.php#L31), [Diagnostics::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Diagnostics/Diagnostics.php#L36), [Ecommerce::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Ecommerce/Ecommerce.php#L36), [Feedback::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Feedback/Feedback.php#L47), [GeoIp2::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/GeoIp2/GeoIp2.php#L44), [Goals::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Goals/Goals.php#L469), [Installation::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Installation/Installation.php#L42), [Intl::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Intl/Intl.php#L21), [JsTrackerInstallCheck::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/JsTrackerInstallCheck/JsTrackerInstallCheck.php#L31), [LanguagesManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LanguagesManager/LanguagesManager.php#L50), [Live::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Live/Live.php#L185), [LogViewer::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LogViewer/LogViewer.php#L36), [Login::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Login.php#L96), [LoginLdap::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LoginLdap/LoginLdap.php#L74), [Marketplace::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/Marketplace.php#L72), [MobileMessaging::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MobileMessaging/MobileMessaging.php#L90), [MultiSites::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/MultiSites/MultiSites.php#L53), [Overlay::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Overlay/Overlay.php#L38), [PagePerformance::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PagePerformance/PagePerformance.php#L59), [PrivacyManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/PrivacyManager.php#L260), [ProfessionalServices::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ProfessionalServices/ProfessionalServices.php#L48), [Referrers::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Referrers/Referrers.php#L110), [ScheduledReports::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L126), [SecurityInfo::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SecurityInfo/SecurityInfo.php#L32), [SegmentEditor::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SegmentEditor/SegmentEditor.php#L365), [SitesManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/SitesManager.php#L376), [TagManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/TagManager.php#L420), [TasksTimetable::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TasksTimetable/TasksTimetable.php#L25), [Tour::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Tour/Tour.php#L140), [Transitions::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Transitions/Transitions.php#L53), [TwoFactorAuth::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TwoFactorAuth/TwoFactorAuth.php#L50), [UserCountry::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UserCountry/UserCountry.php#L43), [UserCountryMap::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UserCountryMap/UserCountryMap.php#L61), [UserId::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UserId/UserId.php#L48), [UsersManager::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/UsersManager.php#L288), [VisitorGenerator::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/VisitorGenerator/VisitorGenerator.php#L24), [Widgetize::getClientSideTranslationKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Widgetize/Widgetize.php#L43)
 
 ## TwoFactorAuth
 
@@ -4829,6 +4829,7 @@ Callback Signature:
 
 - [UsersManager.addUser.end](#usersmanageradduserend)
 - [UsersManager.checkPassword](#usersmanagercheckpassword)
+- [UsersManager.createUser](#usersmanagercreateuser)
 - [UsersManager.deleteUser](#usersmanagerdeleteuser)
 - [UsersManager.getDefaultDates](#usersmanagergetdefaultdates)
 - [UsersManager.getInviteVueComponents](#usersmanagergetinvitevuecomponents)
@@ -4884,9 +4885,9 @@ Usages:
 [LoginLdap::checkPassword](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LoginLdap/LoginLdap.php#L306)
 
 
-### UsersManager.deleteUser
+### UsersManager.createUser
 
-*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Model.php) in line [888](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Model.php#L888)*
+*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Model.php) in line [731](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Model.php#L731)*
 
 
 
@@ -4895,7 +4896,21 @@ Callback Signature:
 
 Usages:
 
-[CoreAdminHome::cleanupUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L131), [CoreVisualizations::deleteUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L35), [CustomAlerts::deleteAlertsForLogin](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L109), [Dashboard::deleteDashboardLayout](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Dashboard/Dashboard.php#L341), [LanguagesManager::deleteUserLanguage](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LanguagesManager/LanguagesManager.php#L124), [LoginLdap::onUserDeleted](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LoginLdap/LoginLdap.php#L330), [ScheduledReports::deleteUserReport](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L652), [SegmentEditor::onDeleteUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SegmentEditor/SegmentEditor.php#L447)
+[ScheduledReports::deleteUserReport](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L658)
+
+
+### UsersManager.deleteUser
+
+*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Model.php) in line [946](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Model.php#L946)*
+
+
+
+Callback Signature:
+<pre><code>function($userLogin)</code></pre>
+
+Usages:
+
+[CoreAdminHome::cleanupUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L131), [CoreVisualizations::deleteUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L35), [CustomAlerts::deleteAlertsForLogin](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L109), [Dashboard::deleteDashboardLayout](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Dashboard/Dashboard.php#L341), [LanguagesManager::deleteUserLanguage](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LanguagesManager/LanguagesManager.php#L124), [LoginLdap::onUserDeleted](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LoginLdap/LoginLdap.php#L330), [ScheduledReports::deleteUserReport](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L658), [SegmentEditor::onDeleteUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SegmentEditor/SegmentEditor.php#L447)
 
 
 ### UsersManager.getDefaultDates
@@ -4973,7 +4988,7 @@ Usages:
 
 ### UsersManager.inviteUser.generateInviteLinkToken
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php) in line [1834](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php#L1834)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php) in line [1846](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php#L1846)*
 
 Triggered after a new user invite token was generate.
 
@@ -4985,7 +5000,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.resendInvite
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php) in line [1783](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php#L1783)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php) in line [1795](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php#L1795)*
 
 Triggered after a new user was invited.
 
@@ -5006,7 +5021,7 @@ Callback Signature:
 
 Usages:
 
-[CustomAlerts::removeAlertsForUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L317), [ScheduledReports::deleteUserReportForSites](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L657)
+[CustomAlerts::removeAlertsForUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L317), [ScheduledReports::deleteUserReportForSites](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L663)
 
 
 ### UsersManager.removeSiteAccess
@@ -5020,7 +5035,7 @@ Callback Signature:
 
 Usages:
 
-[CustomAlerts::removeAlertsForUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L317), [ScheduledReports::deleteUserReportForSites](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L657)
+[CustomAlerts::removeAlertsForUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L317), [ScheduledReports::deleteUserReportForSites](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L663)
 
 
 ### UsersManager.removeSiteAccess
@@ -5034,12 +5049,12 @@ Callback Signature:
 
 Usages:
 
-[CustomAlerts::removeAlertsForUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L317), [ScheduledReports::deleteUserReportForSites](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L657)
+[CustomAlerts::removeAlertsForUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L317), [ScheduledReports::deleteUserReportForSites](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L663)
 
 
 ### UsersManager.removeSiteAccess
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php) in line [1249](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php#L1249)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php) in line [1251](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php#L1251)*
 
 
 
@@ -5048,7 +5063,7 @@ Callback Signature:
 
 Usages:
 
-[CustomAlerts::removeAlertsForUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L317), [ScheduledReports::deleteUserReportForSites](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L657)
+[CustomAlerts::removeAlertsForUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L317), [ScheduledReports::deleteUserReportForSites](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L663)
 
 
 ### UsersManager.updateUser.end
