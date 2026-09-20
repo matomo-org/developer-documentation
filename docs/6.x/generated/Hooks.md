@@ -149,7 +149,7 @@ Callback Signature:
 
 Usages:
 
-[Bandwidth::addActionMetrics](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Bandwidth/Bandwidth.php#L118), [PagePerformance::addActionMetrics](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PagePerformance/PagePerformance.php#L147)
+[Bandwidth::addActionMetrics](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Bandwidth/Bandwidth.php#L113), [PagePerformance::addActionMetrics](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PagePerformance/PagePerformance.php#L147)
 
 
 ### Actions.getCustomActionDimensionFieldsAndJoins
@@ -163,7 +163,7 @@ Callback Signature:
 
 Usages:
 
-[Bandwidth::provideActionDimensionFields](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Bandwidth/Bandwidth.php#L211), [Contents::provideActionDimensionFields](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Contents/Contents.php#L50), [CustomDimensions::provideActionDimensionFields](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomDimensions/CustomDimensions.php#L378), [CustomVariables::provideActionDimensionFields](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomVariables/CustomVariables.php#L144), [Ecommerce::provideActionDimensionFields](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Ecommerce/Ecommerce.php#L48), [Events::provideActionDimensionFields](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Events/Events.php#L262)
+[Bandwidth::provideActionDimensionFields](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Bandwidth/Bandwidth.php#L206), [Contents::provideActionDimensionFields](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Contents/Contents.php#L50), [CustomDimensions::provideActionDimensionFields](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomDimensions/CustomDimensions.php#L378), [CustomVariables::provideActionDimensionFields](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomVariables/CustomVariables.php#L144), [Ecommerce::provideActionDimensionFields](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Ecommerce/Ecommerce.php#L48), [Events::provideActionDimensionFields](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Events/Events.php#L262)
 
 ## AIProviders
 
@@ -5116,7 +5116,7 @@ Callback Signature:
 
 Usages:
 
-[Actions::configureViewDataTable](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Actions/Actions.php#L170), [Bandwidth::configureViewDataTable](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Bandwidth/Bandwidth.php#L136), [Events::configureViewDataTable](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Events/Events.php#L144), [PagePerformance::configureViewDataTable](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PagePerformance/PagePerformance.php#L138)
+[Actions::configureViewDataTable](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Actions/Actions.php#L170), [Bandwidth::configureViewDataTable](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Bandwidth/Bandwidth.php#L131), [Events::configureViewDataTable](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Events/Events.php#L144), [PagePerformance::configureViewDataTable](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PagePerformance/PagePerformance.php#L138)
 
 
 ### ViewDataTable.configure.end
