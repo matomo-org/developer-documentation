@@ -4988,7 +4988,7 @@ Usages:
 
 ### UsersManager.inviteUser.generateInviteLinkToken
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php) in line [1846](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php#L1846)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php) in line [1848](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php#L1848)*
 
 Triggered after a new user invite token was generate.
 
@@ -5000,7 +5000,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.resendInvite
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php) in line [1795](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php#L1795)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php) in line [1797](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php#L1797)*
 
 Triggered after a new user was invited.
 
