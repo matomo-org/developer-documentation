@@ -401,6 +401,7 @@ Index
 - [`getIdentity()`](Piwik/AuthResult.md#getidentity) &mdash; *Method in class* [`AuthResult`](Piwik/AuthResult.md)
 - [`getTokenAuth()`](Piwik/AuthResult.md#gettokenauth) &mdash; *Method in class* [`AuthResult`](Piwik/AuthResult.md)
 - [`getCode()`](Piwik/AuthResult.md#getcode) &mdash; *Method in class* [`AuthResult`](Piwik/AuthResult.md)
+- [`getAuthContext()`](Piwik/AuthResult.md#getauthcontext) &mdash; *Method in class* [`AuthResult`](Piwik/AuthResult.md)
 - [`getRules()`](Piwik/Auth/PasswordStrength.md#getrules) &mdash; *Method in class* [`PasswordStrength`](Piwik/Auth/PasswordStrength.md)
 - [`getRulesAsHtmlList()`](Piwik/Auth/PasswordStrength.md#getrulesashtmllist) &mdash; *Method in class* [`PasswordStrength`](Piwik/Auth/PasswordStrength.md)
 - [`getId()`](Piwik/Category/Subcategory.md#getid) &mdash; *Method in class* [`Subcategory`](Piwik/Category/Subcategory.md)

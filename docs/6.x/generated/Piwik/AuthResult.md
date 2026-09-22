@@ -16,6 +16,7 @@ The class defines the following methods:
 - [`getCode()`](#getcode) &mdash; Returns the authentication result code.
 - [`hasSuperUserAccess()`](#hassuperuseraccess) &mdash; Returns true if the user has Super User access, false otherwise.
 - [`wasAuthenticationSuccessful()`](#wasauthenticationsuccessful) &mdash; Returns true if this result was successfully authentication.
+- [`getAuthContext()`](#getauthcontext) &mdash; Returns optional context payload set during authentication.
 
 <a name="__construct" id="__construct"></a>
 <a name="__construct" id="__construct"></a>
@@ -32,6 +33,8 @@ Constructor for AuthResult
        identity
     - `$tokenAuth` (`string`) &mdash;
       
+    - `$authContext` (`array`|`null`) &mdash;
+       Optional context the Auth implementation wants to pass on. Declaring `token_access_level` - `null` included, meaning "no scope" - states the token scope and stops core looking it up on the token row, so leave the key out unless the implementation knows the scope itself.
 
 <a name="getidentity" id="getidentity"></a>
 <a name="getIdentity" id="getIdentity"></a>
@@ -82,4 +85,18 @@ Returns true if this result was successfully authentication.
 #### Signature
 
 - It returns a `bool` value.
+
+<a name="getauthcontext" id="getauthcontext"></a>
+<a name="getAuthContext" id="getAuthContext"></a>
+### `getAuthContext()`
+
+Since Matomo Matomo
+
+Returns optional context payload set during authentication.
+
+#### Signature
+
+
+- *Returns:*  `Piwik\array&lt;string,mixed&gt;`|`null` &mdash;
+    
 

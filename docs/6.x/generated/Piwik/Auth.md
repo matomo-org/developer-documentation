@@ -121,8 +121,8 @@ Sets the password to authenticate with.
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$password` (`string`) &mdash;
-       Password (not hashed).
+    - `$password` (`string`|`null`) &mdash;
+       Password (not hashed), or null to clear any previously set password.
 - It does not return anything or a mixed result.
 
 <a name="setpasswordhash" id="setpasswordhash"></a>
@@ -131,14 +131,15 @@ Sets the password to authenticate with.
 
 Sets the hash of the password to authenticate with. The hash will be an MD5 hash.
 
+An implementation that cannot verify a hash may reject any value, including the null a caller passes
+only to clear previously set state; that rejection is not an authentication error.
+
 #### Signature
 
 -  It accepts the following parameter(s):
-    - `$passwordHash` (`string`) &mdash;
-       The hashed password.
+    - `$passwordHash` (`string`|`null`) &mdash;
+       The hashed password, or null to clear any previously set hash.
 - It does not return anything or a mixed result.
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if authentication by hashed password is not supported.
 
 <a name="authenticate" id="authenticate"></a>
 <a name="authenticate" id="authenticate"></a>
