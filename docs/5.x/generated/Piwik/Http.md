@@ -74,6 +74,8 @@ Sends an HTTP request using best available transport method.
                            - **status**: the HTTP status code
                            - **headers**: the HTTP headers
                            - **data**: the HTTP response data
+                           - **effectiveUrl**: the final URL after following redirects (best effort on the
+                             fopen transport)
 
                            `false` is still returned on failure.
 - It throws one of the following exceptions:
