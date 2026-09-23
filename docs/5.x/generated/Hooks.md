@@ -2269,7 +2269,7 @@ Usages:
 
 ### Login.logout
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [688](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L688)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [702](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L702)*
 
 
 
@@ -4275,7 +4275,7 @@ Usages:
 
 ### Template.loginCancelResetPasswordContent
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [583](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L583)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [597](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L597)*
 
 Overwrite the content displayed on the "reset password process cancelled page". Will display default content if no event content returned.
 
@@ -4889,7 +4889,7 @@ Usages:
 
 ### UsersManager.createUser
 
-*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php) in line [728](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php#L728)*
+*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php) in line [762](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php#L762)*
 
 
 
@@ -4903,7 +4903,7 @@ Usages:
 
 ### UsersManager.deleteUser
 
-*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php) in line [943](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php#L943)*
+*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php) in line [1216](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/Model.php#L1216)*
 
 
 
@@ -4940,7 +4940,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.accepted
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [810](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L810)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [822](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L822)*
 
 Triggered after a user accepted an invite
 
@@ -4956,7 +4956,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.declined
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [881](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L881)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php) in line [916](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Login/Controller.php#L916)*
 
 Triggered after a user accepted an invite
 
@@ -4990,26 +4990,30 @@ Usages:
 
 ### UsersManager.inviteUser.generateInviteLinkToken
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1856](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1856)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1907](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1907)*
 
-Triggered after a new user invite token was generate.
+Triggered after a new user invite token was generated.
 
 Callback Signature:
 <pre><code>function($userLogin, $userfunction(&#039;email&#039;]]</code></pre>
 
 - string `$userLogin` The new user's login.
+
+- string `$email` The invited user's email address.
 
 
 ### UsersManager.inviteUser.resendInvite
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1805](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1805)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1849](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1849)*
 
-Triggered after a new user was invited.
+Triggered after an invitation was resent.
 
 Callback Signature:
 <pre><code>function($userLogin, $userfunction(&#039;email&#039;]]</code></pre>
 
-- string `$userLogin` The new user's login.
+- string `$userLogin` The invited user's login.
+
+- string `$email` The invited user's email address.
 
 
 ### UsersManager.removeSiteAccess
@@ -5056,7 +5060,7 @@ Usages:
 
 ### UsersManager.removeSiteAccess
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1263](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1263)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1295](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1295)*
 
 
 
@@ -5070,7 +5074,7 @@ Usages:
 
 ### UsersManager.updateUser.end
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1029](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1029)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php) in line [1061](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/UsersManager/API.php#L1061)*
 
 Triggered after an existing user has been updated. Event notify about password change.
 
@@ -5079,7 +5083,11 @@ Callback Signature:
 
 - string `$userLogin` The user's login handle.
 
-- boolean `$passwordHasBeenUpdated` Flag containing information about password change.
+- bool `$passwordHasBeenUpdated` Flag containing information about password change.
+
+- string `$email` The user's email address.
+
+- string `$password` The new password hash, or `false` when the password was not changed.
 
 ## ViewDataTable
 
