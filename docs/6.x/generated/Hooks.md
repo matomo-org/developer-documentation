@@ -3578,7 +3578,7 @@ Callback Signature:
 
 Usages:
 
-[CoreHome::filterSegments](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreHome/CoreHome.php#L471), [DevicesDetection::filterSegments](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/DevicesDetection/DevicesDetection.php#L78), [Ecommerce::filterSegments](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Ecommerce/Ecommerce.php#L87), [Goals::filterSegments](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Goals/Goals.php#L587), [Resolution::filterSegments](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Resolution/Resolution.php#L39), [VisitTime::filterSegments](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/VisitTime/VisitTime.php#L25)
+[CoreHome::filterSegments](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreHome/CoreHome.php#L461), [DevicesDetection::filterSegments](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/DevicesDetection/DevicesDetection.php#L78), [Ecommerce::filterSegments](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Ecommerce/Ecommerce.php#L87), [Goals::filterSegments](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Goals/Goals.php#L587), [Resolution::filterSegments](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Resolution/Resolution.php#L39), [VisitTime::filterSegments](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/VisitTime/VisitTime.php#L25)
 
 ## SegmentEditor
 
@@ -3914,7 +3914,7 @@ Callback Signature:
 
 ### TagManager.addTags
 
-*Defined in [Piwik/Plugins/TagManager/Template/Tag/TagsProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Tag/TagsProvider.php) in line [95](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Tag/TagsProvider.php#L95)*
+*Defined in [Piwik/Plugins/TagManager/Template/Tag/TagsProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Tag/TagsProvider.php) in line [93](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Tag/TagsProvider.php#L93)*
 
 Event to add custom tags. To filter tags have a look at the [TagManager.filterTags](/api-reference/events#tagmanagerfiltertags)
 event. **Example**
@@ -3932,7 +3932,7 @@ Callback Signature:
 
 ### TagManager.addTriggers
 
-*Defined in [Piwik/Plugins/TagManager/Template/Trigger/TriggersProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Trigger/TriggersProvider.php) in line [94](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Trigger/TriggersProvider.php#L94)*
+*Defined in [Piwik/Plugins/TagManager/Template/Trigger/TriggersProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Trigger/TriggersProvider.php) in line [92](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Trigger/TriggersProvider.php#L92)*
 
 Event to add custom triggers. To filter triggers have a look at the [TagManager.filterTriggers](/api-reference/events#tagmanagerfiltertriggers)
 event. **Example**
@@ -3950,7 +3950,7 @@ Callback Signature:
 
 ### TagManager.addVariables
 
-*Defined in [Piwik/Plugins/TagManager/Template/Variable/VariablesProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Variable/VariablesProvider.php) in line [112](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Variable/VariablesProvider.php#L112)*
+*Defined in [Piwik/Plugins/TagManager/Template/Variable/VariablesProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Variable/VariablesProvider.php) in line [108](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Variable/VariablesProvider.php#L108)*
 
 Event to add custom variables. To filter variables have a look at the [TagManager.filterVariables](/api-reference/events#tagmanagerfiltervariables)
 event. **Example**
@@ -3988,7 +3988,7 @@ Callback Signature:
 
 ### TagManager.deleteContainer.end
 
-*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php) in line [1319](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php#L1319)*
+*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php) in line [1321](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php#L1321)*
 
 
 
@@ -4008,7 +4008,7 @@ Callback Signature:
 
 ### TagManager.deleteContainerTrigger.end
 
-*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php) in line [832](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php#L832)*
+*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php) in line [833](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php#L833)*
 
 
 
@@ -4018,7 +4018,7 @@ Callback Signature:
 
 ### TagManager.deleteContainerVariable.end
 
-*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php) in line [1075](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php#L1075)*
+*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php) in line [1077](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php#L1077)*
 
 
 
@@ -4028,7 +4028,7 @@ Callback Signature:
 
 ### TagManager.deleteContainerVersion.end
 
-*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php) in line [1268](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php#L1268)*
+*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php) in line [1270](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php#L1270)*
 
 
 
@@ -4038,7 +4038,7 @@ Callback Signature:
 
 ### TagManager.filterTags
 
-*Defined in [Piwik/Plugins/TagManager/Template/Tag/TagsProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Tag/TagsProvider.php) in line [128](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Tag/TagsProvider.php#L128)*
+*Defined in [Piwik/Plugins/TagManager/Template/Tag/TagsProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Tag/TagsProvider.php) in line [126](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Tag/TagsProvider.php#L126)*
 
 Triggered to filter / restrict tags. **Example**
 
@@ -4059,7 +4059,7 @@ Callback Signature:
 
 ### TagManager.filterTriggers
 
-*Defined in [Piwik/Plugins/TagManager/Template/Trigger/TriggersProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Trigger/TriggersProvider.php) in line [127](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Trigger/TriggersProvider.php#L127)*
+*Defined in [Piwik/Plugins/TagManager/Template/Trigger/TriggersProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Trigger/TriggersProvider.php) in line [125](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Trigger/TriggersProvider.php#L125)*
 
 Event to filter / restrict triggers. **Example**
 
@@ -4080,7 +4080,7 @@ Callback Signature:
 
 ### TagManager.filterVariables
 
-*Defined in [Piwik/Plugins/TagManager/Template/Variable/VariablesProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Variable/VariablesProvider.php) in line [146](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Variable/VariablesProvider.php#L146)*
+*Defined in [Piwik/Plugins/TagManager/Template/Variable/VariablesProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Variable/VariablesProvider.php) in line [142](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Variable/VariablesProvider.php#L142)*
 
 Event to filter / restrict variables. **Example**
 
@@ -5195,7 +5195,7 @@ Usages:
 
 ### Visualization.beforeRender
 
-*Defined in [Piwik/Plugin/Visualization](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Plugin/Visualization.php) in line [838](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Plugin/Visualization.php#L838)*
+*Defined in [Piwik/Plugin/Visualization](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Plugin/Visualization.php) in line [849](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Plugin/Visualization.php#L849)*
 
 Posted immediately before rendering the view. Plugins can use this event to perform last minute
 configuration of the view based on it's data or the report being viewed.

@@ -92,9 +92,7 @@ Get the translated description of this template.
 
 #### Signature
 
-
-- *Returns:*  `string`|`null` &mdash;
-    
+- It returns a `string` value.
 
 <a name="gethelp" id="gethelp"></a>
 <a name="getHelp" id="getHelp"></a>
@@ -104,9 +102,7 @@ Get the translated help text for this template.
 
 #### Signature
 
-
-- *Returns:*  `string`|`null` &mdash;
-    
+- It returns a `string` value.
 
 <a name="getorder" id="getorder"></a>
 <a name="getOrder" id="getOrder"></a>
