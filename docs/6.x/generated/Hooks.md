@@ -976,7 +976,7 @@ Callback Signature:
 
 ### CompliancePolicy.setActiveStatus
 
-*Defined in [Piwik/Policy/CompliancePolicy](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Policy/CompliancePolicy.php) in line [212](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Policy/CompliancePolicy.php#L212)*
+*Defined in [Piwik/Policy/CompliancePolicy](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Policy/CompliancePolicy.php) in line [189](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Policy/CompliancePolicy.php#L189)*
 
 This event is triggered when the status of a compliance policy changes, and
 is to be used to perform extra actions when a policy is activated/deactivated. The status of a policy cannot be changed via this event.
@@ -1011,7 +1011,7 @@ Callback Signature:
 
 ### CompliancePolicy.shouldShowWarnings
 
-*Defined in [Piwik/Policy/CompliancePolicy](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Policy/CompliancePolicy.php) in line [113](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Policy/CompliancePolicy.php#L113)*
+*Defined in [Piwik/Policy/CompliancePolicy](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Policy/CompliancePolicy.php) in line [90](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Policy/CompliancePolicy.php#L90)*
 
 This event is triggered while the description of a compliance policy is
 being generated, and controls whether any warnings specific to the policy
@@ -1025,7 +1025,7 @@ Callback Signature:
 
 ### CompliancePolicy.updatePolicyDescription
 
-*Defined in [Piwik/Policy/CompliancePolicy](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Policy/CompliancePolicy.php) in line [102](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Policy/CompliancePolicy.php#L102)*
+*Defined in [Piwik/Policy/CompliancePolicy](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Policy/CompliancePolicy.php) in line [79](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Policy/CompliancePolicy.php#L79)*
 
 This event is triggered while the description of a compliance policy is
 being generated. The policy description can be modified via this event.
