@@ -1580,7 +1580,7 @@ Callback Signature:
 
 ### Db.getTablesInstalled
 
-*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Db/Schema/Mysql.php) in line [530](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Db/Schema/Mysql.php#L530)*
+*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Db/Schema/Mysql.php) in line [531](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Db/Schema/Mysql.php#L531)*
 
 
 
@@ -4898,7 +4898,7 @@ Usages:
 
 ### UsersManager.createUser
 
-*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Model.php) in line [996](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Model.php#L996)*
+*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Model.php) in line [997](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Model.php#L997)*
 
 
 
@@ -4912,7 +4912,7 @@ Usages:
 
 ### UsersManager.deleteUser
 
-*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Model.php) in line [1450](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Model.php#L1450)*
+*Defined in [Piwik/Plugins/UsersManager/Model](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Model.php) in line [1466](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Model.php#L1466)*
 
 
 
@@ -4999,7 +4999,7 @@ Usages:
 
 ### UsersManager.inviteUser.generateInviteLinkToken
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php) in line [1915](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php#L1915)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php) in line [1916](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php#L1916)*
 
 Triggered after a new user invite token was generated.
 
@@ -5013,7 +5013,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.resendInvite
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php) in line [1857](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php#L1857)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php) in line [1858](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php#L1858)*
 
 Triggered after an invitation was resent.
 
@@ -5069,7 +5069,7 @@ Usages:
 
 ### UsersManager.removeSiteAccess
 
-*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php) in line [1283](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php#L1283)*
+*Defined in [Piwik/Plugins/UsersManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php) in line [1284](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/API.php#L1284)*
 
 
 
