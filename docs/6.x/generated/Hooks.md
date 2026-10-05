@@ -1181,8 +1181,19 @@ eg `Notification\Manager::cancel($notificationId)`.
 ## Core
 
 - [Core.configFileChanged](#coreconfigfilechanged)
+- [Core.configFileChanged](#coreconfigfilechanged)
 - [Core.configFileDeleted](#coreconfigfiledeleted)
 - [Core.configFileSanityCheckFailed](#coreconfigfilesanitycheckfailed)
+
+### Core.configFileChanged
+
+*Defined in [Piwik/Plugins/CoreAdminHome/tests/Integration/](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/tests/Integration/EncryptionKeyRotatorTest.php) in line [319](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/tests/Integration/EncryptionKeyRotatorTest.php#L319)*
+
+
+
+Callback Signature:
+<pre><code>function($config-&gt;getLocalPath()]</code></pre>
+
 
 ### Core.configFileChanged
 
@@ -1222,6 +1233,8 @@ Callback Signature:
 - [CoreAdminHome.archiveReports.complete](#coreadminhomearchivereportscomplete)
 - [CoreAdminHome.archiveReports.start](#coreadminhomearchivereportsstart)
 - [CoreAdminHome.customLogoChanged](#coreadminhomecustomlogochanged)
+- [CoreAdminHome.encryptionKeyRotated](#coreadminhomeencryptionkeyrotated)
+- [CoreAdminHome.getEncryptionKeyRotationTargets](#coreadminhomegetencryptionkeyrotationtargets)
 
 ### CoreAdminHome.archiveReports.complete
 
@@ -1264,6 +1277,87 @@ Callback Signature:
 <pre><code>function($absolutePath]</code></pre>
 
 - string `$absolutePath` The absolute path to the logo file on the Piwik server.
+
+
+### CoreAdminHome.encryptionKeyRotated
+
+*Defined in [Piwik/Plugins/CoreAdminHome/EncryptionKeyRotator](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/EncryptionKeyRotator.php) in line [217](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/EncryptionKeyRotator.php#L217)*
+
+Triggered after a plugin's encryption key was replaced and all of its stored values were
+re-encrypted with the new key. Plugins can use this to discard anything they cached that was decrypted or encrypted with the
+old key. Option and settings caches are already cleared when this event is posted, unless clearing one
+failed, which is logged as a warning. A settings object created before the rotation still holds the
+old values, so create it again before saving it.
+An exception thrown by a listener is logged as a warning and does not undo the rotation.
+
+**Example**
+
+    public function onEncryptionKeyRotated(string $pluginName): void
+    {
+        if ($pluginName === 'MyPlugin') {
+            $this->clearCachedAccessToken();
+        }
+    }
+
+Callback Signature:
+<pre><code>function($pluginName]</code></pre>
+
+- string `$pluginName` The plugin whose key was rotated.
+
+
+### CoreAdminHome.getEncryptionKeyRotationTargets
+
+*Defined in [Piwik/Plugins/CoreAdminHome/Commands/RotateEncryptionKeys](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/Commands/RotateEncryptionKeys.php) in line [226](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/Commands/RotateEncryptionKeys.php#L226)*
+
+Triggered to collect the plugins whose encryption key can be rotated by the
+`core:rotate-encryption-keys` command. A plugin that stores values encrypted with a key from the local config file (`config/config.ini.php` by default) adds an entry keyed
+by its plugin name. Every listed value that `isEncrypted` accepts is decrypted with the old key and
+re-encrypted with a newly generated one, and the new key is saved to the config.
+
+Only system plugin settings, site settings and options with a fixed name can be declared, and a
+declared setting must hold a single string rather than a list. Values in per-user plugin settings,
+or in options named at runtime, would not be re-encrypted and could not be decrypted after the
+rotation, so a plugin storing any must not opt in. A rotation fails while a per-user setting of the
+plugin holds a value `isEncrypted` accepts.
+
+**Example**
+
+    public function getEncryptionKeyRotationTargets(array &$targets): void
+    {
+        $targets['MyPlugin'] = [
+            'configSection' => 'MyPlugin',
+            'configKey' => 'encryption_key',
+            'options' => ['MyPlugin.oauthToken'],
+            'pluginSettings' => ['apiKey'],
+            'siteSettings' => ['siteToken'],
+            'isEncrypted' => function (string $value): bool { ... },
+            'decrypt' => function (string $value, #[\SensitiveParameter] string $key): string { ... },
+            'encrypt' => function (#[\SensitiveParameter] string $value, #[\SensitiveParameter] string $key): string { ... },
+        ];
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$targets]</code></pre>
+
+- array &$targets An array keyed by plugin name. Each entry holds:
+
+                       - **configSection** (string): the config section holding the key. It must not
+                         be a section that config/global.ini.php also defines.
+                       - **configKey** (string): the name of the key within that section.
+                       - **options** (string[], optional): names of options holding encrypted values.
+                       - **pluginSettings** (string[], optional): names of the plugin's system
+                         settings holding encrypted values.
+                       - **siteSettings** (string[], optional): names of the plugin's measurable
+                         settings holding encrypted values, for every site.
+                       - **isEncrypted** (callable): receives a stored value and returns whether it
+                         is encrypted. Values it rejects are left untouched.
+                       - **decrypt** (callable): receives an encrypted value and the raw key from
+                         the config, and returns the plaintext. Throws when it cannot decrypt.
+                       - **encrypt** (callable): receives a plaintext value and a raw key, and
+                         returns the encrypted value. New keys are 32 random bytes, base64 encoded.
+
+                       The command prints the message of any exception these callbacks throw, so it
+                       must not include the value or the key.
 
 ## CoreUpdater
 
