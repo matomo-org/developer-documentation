@@ -75,7 +75,7 @@ Callback Signature:
 
 ### Access.modifyUserAccess
 
-*Defined in [Piwik/Access](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Access.php) in line [413](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Access.php#L413)*
+*Defined in [Piwik/Access](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Access.php) in line [424](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Access.php#L424)*
 
 Triggered after the initial access levels and permissions for the current user are loaded. Use this
 event to modify the current user's permissions (for example, making sure every user has view access
@@ -3358,7 +3358,7 @@ Usages:
 
 ### ScheduledReports.allowMultipleReports
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1270](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1270)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1271](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1271)*
 
 Triggered when we're determining if a scheduled report transport medium can
 handle sending multiple Matomo reports in one scheduled report or not. Plugins that provide their own transport mediums should use this
@@ -3381,7 +3381,7 @@ Usages:
 
 ### ScheduledReports.getRendererInstance
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [784](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L784)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [785](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L785)*
 
 Triggered when obtaining a renderer instance based on the scheduled report output format. Plugins that provide new scheduled report output formats should use this event to
 handle their new report formats.
@@ -3410,7 +3410,7 @@ Usages:
 
 ### ScheduledReports.getReportFormats
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1320](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1320)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1321](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1321)*
 
 Triggered when gathering all available scheduled report formats. Plugins that provide their own scheduled report format should use
 this event to make their format available.
@@ -3432,7 +3432,7 @@ Usages:
 
 ### ScheduledReports.getReportMetadata
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1240](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1240)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1241](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1241)*
 
 TODO: change this event so it returns a list of API methods instead of report metadata arrays. Triggered when gathering the list of Matomo reports that can be used with a certain
 transport medium.
@@ -3458,7 +3458,7 @@ Usages:
 
 ### ScheduledReports.getReportParameters
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1028](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1028)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1029](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1029)*
 
 Triggered when gathering the available parameters for a scheduled report type. Plugins that provide their own scheduled report transport mediums should use this
 event to list the available report parameters for their transport medium.
@@ -3480,7 +3480,7 @@ Usages:
 
 ### ScheduledReports.getReportRecipients
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1353](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1353)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1354](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1354)*
 
 Triggered when getting the list of recipients of a scheduled report. Plugins that provide their own scheduled report transport medium should use this event
 to extract the list of recipients their backend's specific scheduled report
@@ -3507,7 +3507,7 @@ Usages:
 
 ### ScheduledReports.getReportTypes
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1294](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1294)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1295](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1295)*
 
 Triggered when gathering all available transport mediums. Plugins that provide their own transport mediums should use this
 event to make their medium available.
@@ -3525,7 +3525,7 @@ Usages:
 
 ### ScheduledReports.processReports
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [759](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L759)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [760](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L760)*
 
 Triggered when generating the content of scheduled reports. This event can be used to modify the report data or report metadata of one or more reports
 in a scheduled report, before the scheduled report is rendered and delivered.
@@ -3556,7 +3556,7 @@ Usages:
 
 ### ScheduledReports.sendReport
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [953](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L953)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [954](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L954)*
 
 Triggered when sending scheduled reports. Plugins that provide new scheduled report transport mediums should use this event to
 send the scheduled report.
@@ -3598,7 +3598,7 @@ Usages:
 
 ### ScheduledReports.validateReportParameters
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1055](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1055)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1056](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1056)*
 
 Triggered when validating the parameters for a scheduled report. Plugins that provide their own scheduled reports backend should use this
 event to validate the custom parameters defined with ScheduledReports::getReportParameters().
@@ -4051,7 +4051,7 @@ Callback Signature:
 
 ### TagManager.addTags
 
-*Defined in [Piwik/Plugins/TagManager/Template/Tag/TagsProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Tag/TagsProvider.php) in line [93](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Tag/TagsProvider.php#L93)*
+*Defined in [Piwik/Plugins/TagManager/Template/Tag/TagsProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Tag/TagsProvider.php) in line [95](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Tag/TagsProvider.php#L95)*
 
 Event to add custom tags. To filter tags have a look at the [TagManager.filterTags](/api-reference/events#tagmanagerfiltertags)
 event. **Example**
@@ -4069,7 +4069,7 @@ Callback Signature:
 
 ### TagManager.addTriggers
 
-*Defined in [Piwik/Plugins/TagManager/Template/Trigger/TriggersProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Trigger/TriggersProvider.php) in line [92](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Trigger/TriggersProvider.php#L92)*
+*Defined in [Piwik/Plugins/TagManager/Template/Trigger/TriggersProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Trigger/TriggersProvider.php) in line [94](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Trigger/TriggersProvider.php#L94)*
 
 Event to add custom triggers. To filter triggers have a look at the [TagManager.filterTriggers](/api-reference/events#tagmanagerfiltertriggers)
 event. **Example**
@@ -4087,7 +4087,7 @@ Callback Signature:
 
 ### TagManager.addVariables
 
-*Defined in [Piwik/Plugins/TagManager/Template/Variable/VariablesProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Variable/VariablesProvider.php) in line [108](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Variable/VariablesProvider.php#L108)*
+*Defined in [Piwik/Plugins/TagManager/Template/Variable/VariablesProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Variable/VariablesProvider.php) in line [112](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Variable/VariablesProvider.php#L112)*
 
 Event to add custom variables. To filter variables have a look at the [TagManager.filterVariables](/api-reference/events#tagmanagerfiltervariables)
 event. **Example**
@@ -4125,7 +4125,7 @@ Callback Signature:
 
 ### TagManager.deleteContainer.end
 
-*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php) in line [1321](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php#L1321)*
+*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php) in line [1319](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php#L1319)*
 
 
 
@@ -4145,7 +4145,7 @@ Callback Signature:
 
 ### TagManager.deleteContainerTrigger.end
 
-*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php) in line [833](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php#L833)*
+*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php) in line [832](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php#L832)*
 
 
 
@@ -4155,7 +4155,7 @@ Callback Signature:
 
 ### TagManager.deleteContainerVariable.end
 
-*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php) in line [1077](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php#L1077)*
+*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php) in line [1075](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php#L1075)*
 
 
 
@@ -4165,7 +4165,7 @@ Callback Signature:
 
 ### TagManager.deleteContainerVersion.end
 
-*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php) in line [1270](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php#L1270)*
+*Defined in [Piwik/Plugins/TagManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php) in line [1268](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/API.php#L1268)*
 
 
 
@@ -4175,7 +4175,7 @@ Callback Signature:
 
 ### TagManager.filterTags
 
-*Defined in [Piwik/Plugins/TagManager/Template/Tag/TagsProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Tag/TagsProvider.php) in line [126](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Tag/TagsProvider.php#L126)*
+*Defined in [Piwik/Plugins/TagManager/Template/Tag/TagsProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Tag/TagsProvider.php) in line [128](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Tag/TagsProvider.php#L128)*
 
 Triggered to filter / restrict tags. **Example**
 
@@ -4196,7 +4196,7 @@ Callback Signature:
 
 ### TagManager.filterTriggers
 
-*Defined in [Piwik/Plugins/TagManager/Template/Trigger/TriggersProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Trigger/TriggersProvider.php) in line [125](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Trigger/TriggersProvider.php#L125)*
+*Defined in [Piwik/Plugins/TagManager/Template/Trigger/TriggersProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Trigger/TriggersProvider.php) in line [127](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Trigger/TriggersProvider.php#L127)*
 
 Event to filter / restrict triggers. **Example**
 
@@ -4217,7 +4217,7 @@ Callback Signature:
 
 ### TagManager.filterVariables
 
-*Defined in [Piwik/Plugins/TagManager/Template/Variable/VariablesProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Variable/VariablesProvider.php) in line [142](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Variable/VariablesProvider.php#L142)*
+*Defined in [Piwik/Plugins/TagManager/Template/Variable/VariablesProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Variable/VariablesProvider.php) in line [146](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/Template/Variable/VariablesProvider.php#L146)*
 
 Event to filter / restrict variables. **Example**
 

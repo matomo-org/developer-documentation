@@ -89,6 +89,9 @@ Sets/overwrites the current default value
 
 Set whether setting is writable or not. For example to hide setting from the UI set it to false.
 
+The value applies to the current access. For another access, eg. inside Access::doAsSuperUser(),
+it can only restrict what that access is allowed to write.
+
 #### Signature
 
 -  It accepts the following parameter(s):
