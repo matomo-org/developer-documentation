@@ -167,8 +167,30 @@ Usages:
 
 ## AIProviders
 
+- [AIProviders.addAIProcessingFeatures](#aiprovidersaddaiprocessingfeatures)
 - [AIProviders.addAIProviders](#aiprovidersaddaiproviders)
+- [AIProviders.aiProcessingSettingsChanged](#aiprovidersaiprocessingsettingschanged)
 - [AIProviders.filterAIProviders](#aiprovidersfilteraiproviders)
+
+### AIProviders.addAIProcessingFeatures
+
+*Defined in [Piwik/Plugins/AIProviders/Model/AIProcessingSettings](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/AIProviders/Model/AIProcessingSettings.php) in line [113](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/AIProviders/Model/AIProcessingSettings.php#L113)*
+
+Triggered to let plugins list their AI features under the data category they need. **Example**
+
+    public function addAIProcessingFeatures(array &$features): void
+    {
+        $features[AIProcessingSettings::CATEGORY_AGGREGATED_ANALYTICS][] = [
+            'name' => Piwik::translate('MyPlugin_FeatureName'),
+            'disclosureUrl' => 'https://matomo.org/faq/...',
+        ];
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$features]</code></pre>
+
+- \array<string, list<array{name: string, disclosureUrl: string}>> &$features Keyed by category.
+
 
 ### AIProviders.addAIProviders
 
@@ -197,6 +219,20 @@ Callback Signature:
 Usages:
 
 [AIProviders::addAIProviders](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/AIProviders/AIProviders.php#L35)
+
+
+### AIProviders.aiProcessingSettingsChanged
+
+*Defined in [Piwik/Plugins/AIProviders/Model/AIProcessingSettings](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/AIProviders/Model/AIProcessingSettings.php) in line [86](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/AIProviders/Model/AIProcessingSettings.php#L86)*
+
+Triggered after a super user changed which data categories AI features may process.
+
+Callback Signature:
+<pre><code>function($enabled, $previous]</code></pre>
+
+- \list<string> `$enabled` Categories that are now enabled.
+
+- \list<string> `$previous` Categories that were enabled before.
 
 
 ### AIProviders.filterAIProviders
