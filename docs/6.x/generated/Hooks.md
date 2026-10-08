@@ -170,7 +170,11 @@ Usages:
 - [AIProviders.addAIProcessingFeatures](#aiprovidersaddaiprocessingfeatures)
 - [AIProviders.addAIProviders](#aiprovidersaddaiproviders)
 - [AIProviders.aiProcessingSettingsChanged](#aiprovidersaiprocessingsettingschanged)
+- [AIProviders.beforeRequest](#aiprovidersbeforerequest)
+- [AIProviders.checkFeatureAllowed](#aiproviderscheckfeatureallowed)
 - [AIProviders.filterAIProviders](#aiprovidersfilteraiproviders)
+- [AIProviders.getRemainingBudget](#aiprovidersgetremainingbudget)
+- [AIProviders.usage](#aiprovidersusage)
 
 ### AIProviders.addAIProcessingFeatures
 
@@ -242,6 +246,66 @@ Callback Signature:
 - \list<string> `$previous` Categories that were enabled before.
 
 
+### AIProviders.beforeRequest
+
+*Defined in [Piwik/Plugins/AIProviders/AIProviderService](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php) in line [516](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php#L516)*
+
+Triggered before every complete() and converse() provider
+call, after the provider is resolved, so a plugin can deny the call, for
+example when a usage limit is reached. A denied call is not sent: the
+caller gets an AIQuotaExceededException carrying the decision. Also triggered by assertRequestAllowed(), with
+`$context->isProbe()` true.
+
+Listeners can only deny, so a denial stands whatever the order. A
+probe, a denial or a failing listener means no usage event follows.
+Otherwise the context's request ID is repeated in the matching
+`AIProviders.usage` event, which is the one to meter.
+Connection tests and model listings in the admin UI call the provider
+directly and post neither event.
+
+**Example**
+
+    public function decideAiRequest(AIRequestContext $context, AIRequestDecision $decision): void
+    {
+        if ($this->isOverLimit($context->getFeatureKey())) {
+            $decision->deny('limit_reached', Piwik::translate('MyPlugin_AiLimitReached'), $used, $limit, 0);
+        }
+    }
+
+Callback Signature:
+<pre><code>function($context, $decision]</code></pre>
+
+- \AIRequestContext `$context` The call about to be made. No prompt content.
+
+- \AIRequestDecision `$decision` Starts as allowed; call `deny()` to refuse.
+
+
+### AIProviders.checkFeatureAllowed
+
+*Defined in [Piwik/Plugins/AIProviders/AIProviderService](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php) in line [279](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php#L279)*
+
+Triggered before a plugin performs an AI feature action, for example
+adding a prompt, so a plugin enforcing limits can deny it. Listeners can only deny, so a denial stands whatever the order.
+
+**Example**
+
+    public function decideAiFeature(string $featureKey, array $payload, AIRequestDecision $decision): void
+    {
+        if ($featureKey === 'MyPlugin.addPrompt' && $payload['currentCount'] >= $this->getPromptLimit()) {
+            $decision->deny('limit_reached', Piwik::translate('MyPlugin_PromptLimitReached'));
+        }
+    }
+
+Callback Signature:
+<pre><code>function($featureKey, $payload, $decision]</code></pre>
+
+- string `$featureKey` The action, for example `'MyPlugin.addPrompt'`.
+
+- \array<string, mixed> $payload    Facts sent by the caller, for example `['currentCount' => 3]`.
+
+- \AIRequestDecision `$decision` Starts as allowed; call `deny()` to refuse.
+
+
 ### AIProviders.filterAIProviders
 
 *Defined in [Piwik/Plugins/AIProviders/AIProviders](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviders.php) in line [87](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviders.php#L87)*
@@ -259,6 +323,62 @@ Callback Signature:
 <pre><code>function($providers]</code></pre>
 
 - \AIProvidersList `$providers` Provider registry to mutate.
+
+
+### AIProviders.getRemainingBudget
+
+*Defined in [Piwik/Plugins/AIProviders/AIProviderService](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php) in line [242](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php#L242)*
+
+Triggered when a plugin asks how much of an AI feature's allowance is
+left, before it plans a batch of AI requests. Leave `$budget` untouched for unlimited. Otherwise only ever lower it:
+set it when it is null or above your remaining units, so the
+strictest listener wins whatever the order.
+
+**Example**
+
+    public function provideAiBudget(string $featureKey, ?int &$budget): void
+    {
+        $remaining = $this->getRemainingChecks($featureKey);
+        if ($budget === null || $remaining < $budget) {
+            $budget = $remaining;
+        }
+    }
+
+Callback Signature:
+<pre><code>function($featureKey, &amp;$budget]</code></pre>
+
+- string `$featureKey` The feature key, for example `'MyPlugin.promptQuery'`.
+
+- int &$budget  Remaining units, null for unlimited.
+
+
+### AIProviders.usage
+
+*Defined in [Piwik/Plugins/AIProviders/AIProviderService](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php) in line [574](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php#L574)*
+
+Triggered after every complete() and converse()
+provider call, whatever the outcome, so a plugin can meter or bill
+AI usage. Check `$usage->getOutcome()` and meter only
+AIUsage::OUTCOME\_SUCCESS: an error is reported too, and may
+mean nothing was sent or billed, for example when no API key is
+configured. Unlike most events, an exception thrown by a listener is logged and
+not passed on, because the provider call has already been made
+and paid for, and the caller should still get its answer. It does
+stop the listeners after it, so catch your own errors.
+
+**Example**
+
+    public function recordAiUsage(AIUsage $usage): void
+    {
+        if ($usage->isSuccess()) {
+            $this->store($usage->getContext()->getRequestId(), $usage->getInputTokens(), $usage->getOutputTokens());
+        }
+    }
+
+Callback Signature:
+<pre><code>function($usage]</code></pre>
+
+- \AIUsage `$usage` What the call used. No prompt or response content.
 
 ## API
 
