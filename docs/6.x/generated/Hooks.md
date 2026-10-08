@@ -694,23 +694,33 @@ Usages:
 
 ### Archiver.filterRecordBuilders
 
-*Defined in [Piwik/Plugin/Archiver](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Plugin/Archiver.php) in line [156](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Plugin/Archiver.php#L156)*
+*Defined in [Piwik/Plugin/Archiver](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Plugin/Archiver.php) in line [165](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Plugin/Archiver.php#L165)*
 
-Triggered to filter / restrict reports. **Example**
+Triggered to filter / restrict reports, or to replace a RecordBuilder for the archive being processed. The RecordBuilder instances are shared by every archive built in the same request, so replace or
+remove entries rather than modifying an instance.
 
-    public function filterRecordBuilders(&$recordBuilders)
+**Example**
+
+    public function filterRecordBuilders(&$recordBuilders, ArchiveProcessor $archiveProcessor)
     {
-        foreach ($reports as $index => $recordBuilder) {
-             if ($recordBuilders instanceof AnotherPluginRecordBuilder) {
-                 unset($reports[$index]);
+        if ($archiveProcessor->getParams()->getSite()->getId() != $this->idSiteToRestrict) {
+            return;
+        }
+
+        foreach ($recordBuilders as $index => $recordBuilder) {
+             if ($recordBuilder instanceof AnotherPluginRecordBuilder) {
+                 unset($recordBuilders[$index]);
              }
         }
     }
 
 Callback Signature:
-<pre><code>function(&amp;$recordBuilders]</code></pre>
+<pre><code>function(&amp;$recordBuilders, $this-&gt;processor]</code></pre>
 
 - \ArchiveProcessor\RecordBuilder `&$recordBuilders` An array of RecordBuilder instances
+
+- \ArchiveProcessor `$archiveProcessor` The processor of the archive the RecordBuilders will build,
+                                          for its site, period and segment.
 
 ## Archiving
 
