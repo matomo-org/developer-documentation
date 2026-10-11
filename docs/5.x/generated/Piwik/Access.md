@@ -38,6 +38,9 @@ before this method exits. Privileges will be rescinded even if an exception is t
 
 Use this method with care, as it might open up attack vectors
 
+Keys the callback saves or deletes through Cache::getTransientCache() are removed from
+the caller's cache when it returns. Keep per-request data that depends on the user there.
+
 #### Signature
 
 -  It accepts the following parameter(s):
@@ -46,6 +49,4 @@ Use this method with care, as it might open up attack vectors
 
 - *Returns:*  `mixed` &mdash;
     The result of `$function`.
-- It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; rethrows any exceptions thrown by `$function`.
 
