@@ -4456,7 +4456,7 @@ Usages:
 
 ### Template.beforeGoalListActionsBody
 
-*Defined in [Piwik/Plugins/Goals/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Goals/Controller.php) in line [161](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Goals/Controller.php#L161)*
+*Defined in [Piwik/Plugins/Goals/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Goals/Controller.php) in line [163](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Goals/Controller.php#L163)*
 
 
 
@@ -4466,7 +4466,7 @@ Callback Signature:
 
 ### Template.beforeGoalListActionsHead
 
-*Defined in [Piwik/Plugins/Goals/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Goals/Controller.php) in line [170](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Goals/Controller.php#L170)*
+*Defined in [Piwik/Plugins/Goals/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Goals/Controller.php) in line [172](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Goals/Controller.php#L172)*
 
 
 
@@ -4476,7 +4476,7 @@ Callback Signature:
 
 ### Template.endGoalEditTable
 
-*Defined in [Piwik/Plugins/Goals/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Goals/Controller.php) in line [176](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Goals/Controller.php#L176)*
+*Defined in [Piwik/Plugins/Goals/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Goals/Controller.php) in line [178](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Goals/Controller.php#L178)*
 
 
 
