@@ -154,7 +154,7 @@ Usages:
 
 ### Actions.getCustomActionDimensionFieldsAndJoins
 
-*Defined in [Piwik/Plugins/Actions/VisitorDetails](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Actions/VisitorDetails.php) in line [308](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Actions/VisitorDetails.php#L308)*
+*Defined in [Piwik/Plugins/Actions/VisitorDetails](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Actions/VisitorDetails.php) in line [323](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Actions/VisitorDetails.php#L323)*
 
 
 
@@ -1804,7 +1804,7 @@ Usages:
 
 ### Db.getActionReferenceColumnsByTable
 
-*Defined in [Piwik/Plugin/Dimension/DimensionMetadataProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Plugin/Dimension/DimensionMetadataProvider.php) in line [92](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Plugin/Dimension/DimensionMetadataProvider.php#L92)*
+*Defined in [Piwik/Plugin/Dimension/DimensionMetadataProvider](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Plugin/Dimension/DimensionMetadataProvider.php) in line [95](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Plugin/Dimension/DimensionMetadataProvider.php#L95)*
 
 Triggered when detecting which log_action entries to keep. Any log tables that use the log_action
 table to reference text via an ID should add their table info so no actions that are still in use
@@ -1847,7 +1847,7 @@ Callback Signature:
 
 ### Db.getTablesInstalled
 
-*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Db/Schema/Mysql.php) in line [541](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Db/Schema/Mysql.php#L541)*
+*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Db/Schema/Mysql.php) in line [561](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Db/Schema/Mysql.php#L561)*
 
 
 
@@ -4755,7 +4755,7 @@ Callback Signature:
 
 ### Tracker.getDatabaseConfig
 
-*Defined in [Piwik/Tracker/Db](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/Db.php) in line [264](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/Db.php#L264)*
+*Defined in [Piwik/Tracker/Db](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/Db.php) in line [272](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/Db.php#L272)*
 
 Triggered before a connection to the database is established by the Tracker. This event can be used to change the database connection settings used by the Tracker.
 
