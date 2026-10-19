@@ -605,7 +605,7 @@ Usages:
 
 ### API.Request.authenticate
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php) in line [505](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php#L505)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php) in line [512](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php#L512)*
 
 Triggered when authenticating an API request, but only if the **token_auth**
 query parameter is found in the request. Plugins that provide authentication capabilities should subscribe to this event
@@ -3236,7 +3236,7 @@ Usages:
 
 ### Request.getRenamedModuleAndAction
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php) in line [183](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php#L183)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php) in line [190](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php#L190)*
 
 This event is posted in the Request dispatcher and can be used
 to overwrite the Module and Action to dispatch. This is useful when some Controller methods or API methods have been renamed or moved to another plugin.
@@ -3340,7 +3340,7 @@ Usages:
 
 ### Request.shouldDisablePostProcessing
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php) in line [792](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php#L792)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php) in line [799](https://github.com/matomo-org/matomo/blob/5.x-dev/core/API/Request.php#L799)*
 
 After an API method returns a value, the value is post processed (eg, rows are sorted
 based on the `filter_sort_column` query parameter, rows are truncated based on the
