@@ -1665,7 +1665,7 @@ Usages:
 
 ### CustomJsTracker.updateTracker
 
-*Defined in [Piwik/Plugins/PrivacyManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/API.php) in line [559](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/API.php#L559)*
+*Defined in [Piwik/Plugins/PrivacyManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/API.php) in line [560](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/API.php#L560)*
 
 
 
@@ -2911,11 +2911,22 @@ Usages:
 
 ## PrivacyManager
 
+- [PrivacyManager.compliancePolicySettingsUpdated](#privacymanagercompliancepolicysettingsupdated)
 - [PrivacyManager.deleteDataSubjects](#privacymanagerdeletedatasubjects)
 - [PrivacyManager.deleteDataSubjectsForDeletedSites](#privacymanagerdeletedatasubjectsfordeletedsites)
 - [PrivacyManager.deleteLogsOlderThan](#privacymanagerdeletelogsolderthan)
 - [PrivacyManager.exportDataSubjects](#privacymanagerexportdatasubjects)
 - [PrivacyManager.shouldIgnoreDnt](#privacymanagershouldignorednt)
+
+### PrivacyManager.compliancePolicySettingsUpdated
+
+*Defined in [Piwik/Plugins/PrivacyManager/API](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/API.php) in line [1002](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/PrivacyManager/API.php#L1002)*
+
+
+
+Callback Signature:
+<pre><code>function(function(&#039;policy&#039; =&gt; $policy::getName(), &#039;idSite&#039; =&gt; $idSite, &#039;policyEnforced&#039; =&gt; !empty($afterfunction(&#039;policyEnforced&#039;]), &#039;changes&#039; =&gt; $changes]]</code></pre>
+
 
 ### PrivacyManager.deleteDataSubjects
 
