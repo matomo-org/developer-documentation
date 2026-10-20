@@ -2536,7 +2536,7 @@ Usages:
 
 ### Login.logout
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [702](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L702)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [701](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L701)*
 
 
 
@@ -5237,7 +5237,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.accepted
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [822](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L822)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [821](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L821)*
 
 Triggered after a user accepted an invite
 
@@ -5253,7 +5253,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.declined
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [916](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L916)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [915](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L915)*
 
 Triggered after a user accepted an invite
 
