@@ -30,6 +30,18 @@ Learn more about Piwik's MVC system [here](/guides/mvc-in-piwik).
 
     <a href="?module=MyPlugin&action=index&idSite=1&period=day&date=2013-10-10">Link</a>
 
+Constants
+---------
+
+This abstract class defines the following constants:
+
+- [`PHP_CRITICAL_VULNERABILITY_FIXED_RELEASES`](#php_critical_vulnerability_fixed_releases) — First upstream release of each PHP branch that fixes the critical vulnerabilities announced on 2026-10-21. Inherited from [`Controller`](../../Piwik/Plugin/Controller.md)
+<a name="php_critical_vulnerability_fixed_releases" id="php_critical_vulnerability_fixed_releases"></a>
+<a name="PHP_CRITICAL_VULNERABILITY_FIXED_RELEASES" id="PHP_CRITICAL_VULNERABILITY_FIXED_RELEASES"></a>
+### `PHP_CRITICAL_VULNERABILITY_FIXED_RELEASES`
+
+Older branches get no upstream fix, newer branches were never affected.
+
 Properties
 ----------
 
