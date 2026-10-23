@@ -3741,7 +3741,7 @@ Callback Signature:
 
 Usages:
 
-[CoreHome::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/CoreHome.php#L470), [DevicesDetection::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/DevicesDetection/DevicesDetection.php#L78), [Ecommerce::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Ecommerce/Ecommerce.php#L87), [Goals::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Goals/Goals.php#L608), [Resolution::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Resolution/Resolution.php#L39), [VisitTime::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/VisitTime/VisitTime.php#L25)
+[CoreHome::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreHome/CoreHome.php#L470), [DevicesDetection::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/DevicesDetection/DevicesDetection.php#L78), [Ecommerce::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Ecommerce/Ecommerce.php#L87), [Goals::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Goals/Goals.php#L612), [Resolution::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Resolution/Resolution.php#L39), [VisitTime::filterSegments](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/VisitTime/VisitTime.php#L25)
 
 ## SegmentEditor
 
@@ -4363,7 +4363,7 @@ Usages:
 
 ### Template.beforeGoalListActionsBody
 
-*Defined in [Piwik/Plugins/Goals/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Goals/Controller.php) in line [164](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Goals/Controller.php#L164)*
+*Defined in [Piwik/Plugins/Goals/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Goals/Controller.php) in line [166](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Goals/Controller.php#L166)*
 
 
 
@@ -4373,7 +4373,7 @@ Callback Signature:
 
 ### Template.beforeGoalListActionsHead
 
-*Defined in [Piwik/Plugins/Goals/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Goals/Controller.php) in line [173](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Goals/Controller.php#L173)*
+*Defined in [Piwik/Plugins/Goals/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Goals/Controller.php) in line [175](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Goals/Controller.php#L175)*
 
 
 
@@ -4383,7 +4383,7 @@ Callback Signature:
 
 ### Template.endGoalEditTable
 
-*Defined in [Piwik/Plugins/Goals/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Goals/Controller.php) in line [179](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Goals/Controller.php#L179)*
+*Defined in [Piwik/Plugins/Goals/Controller](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Goals/Controller.php) in line [181](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Goals/Controller.php#L181)*
 
 
 
