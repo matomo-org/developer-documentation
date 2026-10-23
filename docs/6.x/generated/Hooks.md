@@ -248,7 +248,7 @@ Callback Signature:
 
 ### AIProviders.beforeRequest
 
-*Defined in [Piwik/Plugins/AIProviders/AIProviderService](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php) in line [516](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php#L516)*
+*Defined in [Piwik/Plugins/AIProviders/AIProviderService](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php) in line [532](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php#L532)*
 
 Triggered before every complete() and converse() provider
 call, after the provider is resolved, so a plugin can deny the call, for
@@ -256,8 +256,10 @@ example when a usage limit is reached. A denied call is not sent: the
 caller gets an AIQuotaExceededException carrying the decision. Also triggered by assertRequestAllowed(), with
 `$context->isProbe()` true.
 
-Listeners can only deny, so a denial stands whatever the order. A
-probe, a denial or a failing listener means no usage event follows.
+Listeners can deny but not allow again, so a denial stands whatever the
+order. Usage reported on an allowed decision is not passed on here; only
+checkFeatureAllowed() returns an allowed decision to its caller.
+A probe, a denial or a failing listener means no usage event follows.
 Otherwise the context's request ID is repeated in the matching
 `AIProviders.usage` event, which is the one to meter.
 Connection tests and model listings in the admin UI call the provider
@@ -282,17 +284,28 @@ Callback Signature:
 
 ### AIProviders.checkFeatureAllowed
 
-*Defined in [Piwik/Plugins/AIProviders/AIProviderService](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php) in line [279](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php#L279)*
+*Defined in [Piwik/Plugins/AIProviders/AIProviderService](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php) in line [293](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php#L293)*
 
 Triggered before a plugin performs an AI feature action, for example
-adding a prompt, so a plugin enforcing limits can deny it. Listeners can only deny, so a denial stands whatever the order.
+adding a prompt, so a plugin enforcing limits can deny it. Listeners can deny but not allow again, so a denial stands whatever the
+order. A listener that allows can still call `reportUsage()` so the caller
+can show the figures, for example "20 of 25 prompts used".
 
 **Example**
 
     public function decideAiFeature(string $featureKey, array $payload, AIRequestDecision $decision): void
     {
-        if ($featureKey === 'MyPlugin.addPrompt' && $payload['currentCount'] >= $this->getPromptLimit()) {
-            $decision->deny('limit_reached', Piwik::translate('MyPlugin_PromptLimitReached'));
+        if ($featureKey !== 'MyPlugin.addPrompt') {
+            return;
+        }
+
+        $used = $payload['currentCount'];
+        $limit = $this->getPromptLimit();
+
+        if ($used >= $limit) {
+            $decision->deny('limit_reached', Piwik::translate('MyPlugin_PromptLimitReached'), $used, $limit, 0);
+        } else {
+            $decision->reportUsage($used, $limit, $limit - $used);
         }
     }
 
@@ -303,7 +316,8 @@ Callback Signature:
 
 - \array<string, mixed> $payload    Facts sent by the caller, for example `['currentCount' => 3]`.
 
-- \AIRequestDecision `$decision` Starts as allowed; call `deny()` to refuse.
+- \AIRequestDecision `$decision` Starts as allowed; call `deny()` to refuse, or
+                                        `reportUsage()` to share the figures when allowing.
 
 
 ### AIProviders.filterAIProviders
@@ -354,7 +368,7 @@ Callback Signature:
 
 ### AIProviders.usage
 
-*Defined in [Piwik/Plugins/AIProviders/AIProviderService](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php) in line [574](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php#L574)*
+*Defined in [Piwik/Plugins/AIProviders/AIProviderService](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php) in line [590](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php#L590)*
 
 Triggered after every complete() and converse()
 provider call, whatever the outcome, so a plugin can meter or bill
