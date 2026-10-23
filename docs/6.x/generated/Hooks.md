@@ -4851,7 +4851,7 @@ Callback Signature:
 
 Usages:
 
-[JsTrackerInstallCheck::isExcludedVisit](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/JsTrackerInstallCheck/JsTrackerInstallCheck.php#L49), [TrackingSpamPrevention::isExcludedVisit](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TrackingSpamPrevention/TrackingSpamPrevention.php#L74)
+[JsTrackerInstallCheck::isExcludedVisit](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/JsTrackerInstallCheck/JsTrackerInstallCheck.php#L49), [TrackingSpamPrevention::isExcludedVisit](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TrackingSpamPrevention/TrackingSpamPrevention.php#L76)
 
 
 ### Tracker.makeNewVisitObject
