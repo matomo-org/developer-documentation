@@ -2648,10 +2648,11 @@ Callback Signature:
 ## Marketplace
 
 - [Marketplace.pluginTrialRequested](#marketplaceplugintrialrequested)
+- [Marketplace.trialRequestEmailsUnsubscribed](#marketplacetrialrequestemailsunsubscribed)
 
 ### Marketplace.pluginTrialRequested
 
-*Defined in [Piwik/Plugins/Marketplace/PluginTrial/Request](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/PluginTrial/Request.php) in line [67](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/PluginTrial/Request.php#L67)*
+*Defined in [Piwik/Plugins/Marketplace/PluginTrial/Request](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/PluginTrial/Request.php) in line [69](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/PluginTrial/Request.php#L69)*
 
 Triggered after the current user has requested a trial of a plugin, so an audit trail can record it. **Example**
 
@@ -2665,6 +2666,24 @@ Callback Signature:
 - string `$pluginName` The name of the requested plugin.
 
 - string `$pluginDisplayName` The plugin's display name, or an empty string when none was given.
+
+
+### Marketplace.trialRequestEmailsUnsubscribed
+
+*Defined in [Piwik/Plugins/Marketplace/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/Controller.php) in line [491](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/Controller.php#L491)*
+
+Triggered after a user has turned off plugin trial request emails from the link in one of those
+emails, so an audit trail can record it. Not posted when they were already off. The current user may
+be anonymous or someone other than `$login`, so use `$login`. **Example**
+
+    Piwik::addAction('Marketplace.trialRequestEmailsUnsubscribed', function ($login) {
+        $this->logActivity($login, 'unsubscribed from plugin trial request emails');
+    });
+
+Callback Signature:
+<pre><code>function($login]</code></pre>
+
+- string `$login` The login of the user who unsubscribed.
 
 ## MeasurableSettings
 
