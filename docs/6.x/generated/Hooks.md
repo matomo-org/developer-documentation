@@ -746,7 +746,7 @@ Callback Signature:
 
 ### ArchiveProcessor.ComputeNbUniques.getIdSites
 
-*Defined in [Piwik/ArchiveProcessor](https://github.com/matomo-org/matomo/blob/6.x-dev/core/ArchiveProcessor.php) in line [564](https://github.com/matomo-org/matomo/blob/6.x-dev/core/ArchiveProcessor.php#L564)*
+*Defined in [Piwik/ArchiveProcessor](https://github.com/matomo-org/matomo/blob/6.x-dev/core/ArchiveProcessor.php) in line [562](https://github.com/matomo-org/matomo/blob/6.x-dev/core/ArchiveProcessor.php#L562)*
 
 Triggered to change which site ids should be looked at when processing unique visitors and users.
 
@@ -2029,7 +2029,7 @@ Callback Signature:
 
 ### Http.sendHttpRequest.end
 
-*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Http.php) in line [1015](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Http.php#L1015)*
+*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Http.php) in line [1012](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Http.php#L1012)*
 
 Triggered when an HTTP request finished. A plugin can for example listen to this and alter the response,
 status code, or finish a timer in case the plugin is measuring how long it took to execute the request
@@ -2092,7 +2092,7 @@ Usages:
 
 ### Installation.defaultSettingsForm.init
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Installation/Controller.php) in line [442](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Installation/Controller.php#L442)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Installation/Controller.php) in line [439](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Installation/Controller.php#L439)*
 
 Triggered on initialization of the form to customize default Matomo settings (at the end of the installation process).
 
@@ -2108,7 +2108,7 @@ Usages:
 
 ### Installation.defaultSettingsForm.submit
 
-*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Installation/Controller.php) in line [453](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Installation/Controller.php#L453)*
+*Defined in [Piwik/Plugins/Installation/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Installation/Controller.php) in line [450](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Installation/Controller.php#L450)*
 
 Triggered on submission of the form to customize default Matomo settings (at the end of the installation process).
 
