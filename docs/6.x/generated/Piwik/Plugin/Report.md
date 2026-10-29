@@ -253,7 +253,7 @@ customize the error message. Eg.
 
 ```
 if (!$this->isEnabled()) {
-throw new Exception('Setting XYZ is not enabled or the user has not enough permission');
+throw new NoPrivilegesException('Setting XYZ is not enabled or the user has not enough permission', 403);
 }
 ```
 
