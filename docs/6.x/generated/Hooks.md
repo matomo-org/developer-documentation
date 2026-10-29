@@ -2670,7 +2670,7 @@ Callback Signature:
 
 ### Marketplace.trialRequestEmailsUnsubscribed
 
-*Defined in [Piwik/Plugins/Marketplace/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/Controller.php) in line [491](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/Controller.php#L491)*
+*Defined in [Piwik/Plugins/Marketplace/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/Controller.php) in line [492](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/Controller.php#L492)*
 
 Triggered after a user has turned off plugin trial request emails from the link in one of those
 emails, so an audit trail can record it. Not posted when they were already off. The current user may
