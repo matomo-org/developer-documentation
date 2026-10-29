@@ -3435,7 +3435,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/Request.php) in line [267](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/Request.php#L267)*
+*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/Request.php) in line [269](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/Request.php#L269)*
 
 
 
@@ -4549,7 +4549,7 @@ Callback Signature:
 
 Usages:
 
-[Plugin::getJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/API/API.php#L1012), [AnonymousPiwikUsageMeasurement::addMatomoClientTracking](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AnonymousPiwikUsageMeasurement/AnonymousPiwikUsageMeasurement.php#L107), [CoreAdminHome::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L162), [LanguagesManager::jsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LanguagesManager/LanguagesManager.php#L83), [Live::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Live/Live.php#L45), [Transitions::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Transitions/Transitions.php#L126)
+[Plugin::getJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/API/API.php#L1012), [AnonymousPiwikUsageMeasurement::addMatomoClientTracking](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AnonymousPiwikUsageMeasurement/AnonymousPiwikUsageMeasurement.php#L107), [CoreAdminHome::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L162), [LanguagesManager::jsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LanguagesManager/LanguagesManager.php#L83), [Live::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Live/Live.php#L45), [Transitions::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Transitions/Transitions.php#L127)
 
 
 ### Template.jsGlobalVariables
@@ -4563,7 +4563,7 @@ Callback Signature:
 
 Usages:
 
-[Plugin::getJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/API/API.php#L1012), [AnonymousPiwikUsageMeasurement::addMatomoClientTracking](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AnonymousPiwikUsageMeasurement/AnonymousPiwikUsageMeasurement.php#L107), [CoreAdminHome::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L162), [LanguagesManager::jsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LanguagesManager/LanguagesManager.php#L83), [Live::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Live/Live.php#L45), [Transitions::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Transitions/Transitions.php#L126)
+[Plugin::getJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/API/API.php#L1012), [AnonymousPiwikUsageMeasurement::addMatomoClientTracking](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AnonymousPiwikUsageMeasurement/AnonymousPiwikUsageMeasurement.php#L107), [CoreAdminHome::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L162), [LanguagesManager::jsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LanguagesManager/LanguagesManager.php#L83), [Live::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Live/Live.php#L45), [Transitions::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Transitions/Transitions.php#L127)
 
 
 ### Template.jsGlobalVariables
@@ -4577,7 +4577,7 @@ Callback Signature:
 
 Usages:
 
-[Plugin::getJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/API/API.php#L1012), [AnonymousPiwikUsageMeasurement::addMatomoClientTracking](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AnonymousPiwikUsageMeasurement/AnonymousPiwikUsageMeasurement.php#L107), [CoreAdminHome::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L162), [LanguagesManager::jsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LanguagesManager/LanguagesManager.php#L83), [Live::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Live/Live.php#L45), [Transitions::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Transitions/Transitions.php#L126)
+[Plugin::getJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/API/API.php#L1012), [AnonymousPiwikUsageMeasurement::addMatomoClientTracking](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AnonymousPiwikUsageMeasurement/AnonymousPiwikUsageMeasurement.php#L107), [CoreAdminHome::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L162), [LanguagesManager::jsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LanguagesManager/LanguagesManager.php#L83), [Live::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Live/Live.php#L45), [Transitions::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Transitions/Transitions.php#L127)
 
 
 ### Template.jsGlobalVariables
@@ -4591,7 +4591,7 @@ Callback Signature:
 
 Usages:
 
-[Plugin::getJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/API/API.php#L1012), [AnonymousPiwikUsageMeasurement::addMatomoClientTracking](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AnonymousPiwikUsageMeasurement/AnonymousPiwikUsageMeasurement.php#L107), [CoreAdminHome::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L162), [LanguagesManager::jsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LanguagesManager/LanguagesManager.php#L83), [Live::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Live/Live.php#L45), [Transitions::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Transitions/Transitions.php#L126)
+[Plugin::getJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/API/API.php#L1012), [AnonymousPiwikUsageMeasurement::addMatomoClientTracking](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AnonymousPiwikUsageMeasurement/AnonymousPiwikUsageMeasurement.php#L107), [CoreAdminHome::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L162), [LanguagesManager::jsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LanguagesManager/LanguagesManager.php#L83), [Live::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Live/Live.php#L45), [Transitions::addJsGlobalVariables](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Transitions/Transitions.php#L127)
 
 
 ### Template.loginCancelResetPasswordContent
@@ -4922,7 +4922,7 @@ Usages:
 
 ### Tracker.Request.getIdSite
 
-*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/Request.php) in line [657](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/Request.php#L657)*
+*Defined in [Piwik/Tracker/Request](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/Request.php) in line [671](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/Request.php#L671)*
 
 Triggered when obtaining the ID of the site we are tracking a visit for. This event can be used to change the site ID so data is tracked for a different
 website.
