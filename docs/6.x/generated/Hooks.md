@@ -633,7 +633,7 @@ Callback Signature:
 
 Usages:
 
-[Login::apiRequestAuthenticate](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Login.php#L339), [LoginLdap::apiRequestAuthenticate](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LoginLdap/LoginLdap.php#L236)
+[Login::apiRequestAuthenticate](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Login.php#L344), [LoginLdap::apiRequestAuthenticate](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LoginLdap/LoginLdap.php#L236)
 
 
 ### API.Request.dispatch
