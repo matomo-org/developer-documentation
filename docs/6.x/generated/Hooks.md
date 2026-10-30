@@ -5262,7 +5262,7 @@ Usages:
 
 ### UsersManager.getDefaultDates
 
-*Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Controller.php) in line [233](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Controller.php#L233)*
+*Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Controller.php) in line [234](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Controller.php#L234)*
 
 Triggered when the list of available dates is requested, for example for the
 User Settings > Report date to load by default.
@@ -5275,7 +5275,7 @@ Callback Signature:
 
 ### UsersManager.getInviteVueComponents
 
-*Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Controller.php) in line [159](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Controller.php#L159)*
+*Defined in [Piwik/Plugins/UsersManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Controller.php) in line [160](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/UsersManager/Controller.php#L160)*
 
 
 
