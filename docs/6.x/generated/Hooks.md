@@ -619,7 +619,7 @@ Usages:
 
 ### API.Request.authenticate
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/6.x-dev/core/API/Request.php) in line [515](https://github.com/matomo-org/matomo/blob/6.x-dev/core/API/Request.php#L515)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/6.x-dev/core/API/Request.php) in line [516](https://github.com/matomo-org/matomo/blob/6.x-dev/core/API/Request.php#L516)*
 
 Triggered when authenticating an API request, but only if the **token_auth**
 query parameter is found in the request. Plugins that provide authentication capabilities should subscribe to this event
@@ -2550,7 +2550,7 @@ Usages:
 
 ### Login.logout
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [701](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L701)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [702](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L702)*
 
 
 
@@ -3405,7 +3405,7 @@ Usages:
 
 ### Request.getRenamedModuleAndAction
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/6.x-dev/core/API/Request.php) in line [183](https://github.com/matomo-org/matomo/blob/6.x-dev/core/API/Request.php#L183)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/6.x-dev/core/API/Request.php) in line [184](https://github.com/matomo-org/matomo/blob/6.x-dev/core/API/Request.php#L184)*
 
 This event is posted in the Request dispatcher and can be used
 to overwrite the Module and Action to dispatch. This is useful when some Controller methods or API methods have been renamed or moved to another plugin.
@@ -3509,7 +3509,7 @@ Usages:
 
 ### Request.shouldDisablePostProcessing
 
-*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/6.x-dev/core/API/Request.php) in line [824](https://github.com/matomo-org/matomo/blob/6.x-dev/core/API/Request.php#L824)*
+*Defined in [Piwik/API/Request](https://github.com/matomo-org/matomo/blob/6.x-dev/core/API/Request.php) in line [825](https://github.com/matomo-org/matomo/blob/6.x-dev/core/API/Request.php#L825)*
 
 After an API method returns a value, the value is post processed (eg, rows are sorted
 based on the `filter_sort_column` query parameter, rows are truncated based on the
@@ -4596,7 +4596,7 @@ Usages:
 
 ### Template.loginCancelResetPasswordContent
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [597](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L597)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [598](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L598)*
 
 Overwrite the content displayed on the "reset password process cancelled page". Will display default content if no event content returned.
 
@@ -5285,7 +5285,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.accepted
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [821](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L821)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [827](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L827)*
 
 Triggered after a user accepted an invite
 
@@ -5301,7 +5301,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.declined
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [915](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L915)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [926](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L926)*
 
 Triggered after a user accepted an invite
 
