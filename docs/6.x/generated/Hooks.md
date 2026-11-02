@@ -1584,7 +1584,7 @@ Usages:
 
 ### CronArchive.archiveSingleSite.finish
 
-*Defined in [Piwik/CronArchive/QueueConsumer](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive/QueueConsumer.php) in line [297](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive/QueueConsumer.php#L297)*
+*Defined in [Piwik/CronArchive/QueueConsumer](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive/QueueConsumer.php) in line [290](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive/QueueConsumer.php#L290)*
 
 This event is triggered immediately after the cron archiving process finishes archiving data for a single
 site. Note: multiple archiving processes can post this event.
