@@ -125,6 +125,7 @@
 ## Plugins\Bandwidth\Columns\Metrics\PageviewBandwidth
 ## Plugins\Bandwidth\Columns\Metrics\SumBandwidth
 ## Plugins\BotTracking\Columns\Metrics\AIChatbotRequests
+## Plugins\BotTracking\Columns\Metrics\AIChatbotTrafficRatio
 ## Plugins\BotTracking\Columns\Metrics\AcquiredVisits
 ## Plugins\BotTracking\Columns\Metrics\AvgResponseSize
 ## Plugins\BotTracking\Columns\Metrics\AvgServerTime

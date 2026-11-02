@@ -129,6 +129,7 @@ This is a complete list of available classes:
 - [`Plugins\Bandwidth\Columns\Metrics\PageviewBandwidth`](Piwik/Plugins/Bandwidth/Columns/Metrics/PageviewBandwidth.md) &mdash; The total amount bandwidth used for page views.
 - [`Plugins\Bandwidth\Columns\Metrics\SumBandwidth`](Piwik/Plugins/Bandwidth/Columns/Metrics/SumBandwidth.md) &mdash; The sum amount bandwidth of a pages.
 - [`Plugins\BotTracking\Columns\Metrics\AIChatbotRequests`](Piwik/Plugins/BotTracking/Columns/Metrics/AIChatbotRequests.md) &mdash; Column metric for the AI-chatbot request count on the Human/AI-Favoured Pages reports.
+- [`Plugins\BotTracking\Columns\Metrics\AIChatbotTrafficRatio`](Piwik/Plugins/BotTracking/Columns/Metrics/AIChatbotTrafficRatio.md)
 - [`Plugins\BotTracking\Columns\Metrics\AcquiredVisits`](Piwik/Plugins/BotTracking/Columns/Metrics/AcquiredVisits.md)
 - [`Plugins\BotTracking\Columns\Metrics\AvgResponseSize`](Piwik/Plugins/BotTracking/Columns/Metrics/AvgResponseSize.md)
 - [`Plugins\BotTracking\Columns\Metrics\AvgServerTime`](Piwik/Plugins/BotTracking/Columns/Metrics/AvgServerTime.md)
