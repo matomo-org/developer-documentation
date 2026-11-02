@@ -5442,7 +5442,7 @@ Callback Signature:
 
 ### ViewDataTable.configure
 
-*Defined in [Piwik/Plugin/ViewDataTable](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Plugin/ViewDataTable.php) in line [275](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Plugin/ViewDataTable.php#L275)*
+*Defined in [Piwik/Plugin/ViewDataTable](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Plugin/ViewDataTable.php) in line [280](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Plugin/ViewDataTable.php#L280)*
 
 Triggered during [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) construction. Subscribers should customize
 the view based on the report that is being displayed. This event is triggered before view configuration properties are overwritten by saved settings or request
@@ -5476,7 +5476,7 @@ Usages:
 
 ### ViewDataTable.configure.end
 
-*Defined in [Piwik/Plugin/ViewDataTable](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Plugin/ViewDataTable.php) in line [318](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Plugin/ViewDataTable.php#L318)*
+*Defined in [Piwik/Plugin/ViewDataTable](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Plugin/ViewDataTable.php) in line [324](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Plugin/ViewDataTable.php#L324)*
 
 Triggered after [ViewDataTable](/api-reference/Piwik/Plugin/ViewDataTable) construction. Subscribers should customize
 the view based on the report that is being displayed. This event is triggered after all view configuration values have been overwritten by saved settings or
