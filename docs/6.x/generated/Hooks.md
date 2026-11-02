@@ -1838,7 +1838,7 @@ Callback Signature:
 
 ### Db.getDatabaseConfig
 
-*Defined in [Piwik/Db](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Db.php) in line [130](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Db.php#L130)*
+*Defined in [Piwik/Db](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Db.php) in line [131](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Db.php#L131)*
 
 Triggered before a database connection is established. This event can be used to change the settings used to establish a connection.
 
@@ -3424,7 +3424,7 @@ Usages:
 
 ### Request.initAuthenticationObject
 
-*Defined in [Piwik/Plugins/BulkTracking/Tracker/Handler](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/BulkTracking/Tracker/Handler.php) in line [127](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/BulkTracking/Tracker/Handler.php#L127)*
+*Defined in [Piwik/Plugins/BulkTracking/Tracker/Handler](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/BulkTracking/Tracker/Handler.php) in line [135](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/BulkTracking/Tracker/Handler.php#L135)*
 
 
 
@@ -4788,7 +4788,7 @@ Callback Signature:
 
 ### Tracker.getDatabaseConfig
 
-*Defined in [Piwik/Tracker/Db](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/Db.php) in line [272](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/Db.php#L272)*
+*Defined in [Piwik/Tracker/Db](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/Db.php) in line [328](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/Db.php#L328)*
 
 Triggered before a connection to the database is established by the Tracker. This event can be used to change the database connection settings used by the Tracker.
 
