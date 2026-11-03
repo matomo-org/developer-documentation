@@ -4905,7 +4905,7 @@ Callback Signature:
 
 ### Tracker.PageUrl.getQueryParametersToExclude
 
-*Defined in [Piwik/Tracker/PageUrl](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/PageUrl.php) in line [102](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/PageUrl.php#L102)*
+*Defined in [Piwik/Tracker/PageUrl](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/PageUrl.php) in line [124](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Tracker/PageUrl.php#L124)*
 
 Triggered before setting the action url in Piwik\Tracker\Action so plugins can register
 parameters to be excluded from the tracking URL (e.g. campaign parameters).
