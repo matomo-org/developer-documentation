@@ -149,12 +149,9 @@ Find more information about goal tracking in Matomo in the [**Tracking Goals**](
 
 ### Improve visit duration accuracy with the Heartbeat Timer
 
-By default, Matomo calculates visit duration from the time between tracked actions. If no later tracking request is sent:
+By default, Matomo calculates visit duration from the time between tracked actions. If no later tracking request is sent, a visit containing only one page view has a visit duration of 0 seconds.  
 
-* A visit containing only one page view has a visit duration of 0 seconds.
-* The final page in a visit has no recorded time on page because there is no subsequent tracked action from which Matomo can calculate its duration.
-
-You can enable the Heartbeat Timer to improve visit duration tracking by sending a heartbeat ping when the visitor leaves or hides the page.
+In Matomo 6, the Heartbeat Timer improves both visit duration and time on page accuracy. It sends heartbeat pings when visitors leave a page or switch focus away, provided the configured minimum active time has elapsed. These pings help Matomo record time spent on individual pages, including the final page of a visit.
 
 **Enable the Heartbeat Timer**
 
@@ -171,7 +168,7 @@ The Heartbeat Timer becomes active only after Matomo has sent the first tracking
 By default, Matomo sends a heartbeat request only if at least 15 seconds have passed since the previous tracking request. You can specify a different interval in seconds. The minimum supported value is 5 seconds:
 
 ```javascript
-// Require at least 30 seconds between tracking requests/
+// Require at least 30 seconds between tracking requests
 _paq.push(['enableHeartBeatTimer', 30]);
 ```
 The interval sets the minimum time before Matomo can send a heartbeat ping. During this time, the tab must remain active and in focus. For example, with a 15-second interval, Matomo can send a heartbeat ping when:
@@ -186,27 +183,26 @@ The Heartbeat Timer responds to browser events and does not send requests contin
 
 * the initial page view has been tracked, and
 * the configured minimum interval has elapsed, and
-* the visitor switches to another browser tab, minimises the browser, or
-* switches to another application or browser window, or
-* closes the tab, refreshes the page, or navigates to another page.
+* a qualifying browser event triggers the ping (for example, switches to another tab, minimises the browser, or navigates to another page).
 
 **What the Heartbeat Timer improves**
 
-A heartbeat ping updates the recorded duration of the visit but does not change how Matomo calculates page-level duration metrics. The Heartbeat Timer improves:
+Matomo records time on page for each page view, using the page view identifier (`pv_id`) that the tracker sends with every request. This lets Matomo match a heartbeat ping to the right page view and update its duration.
+
+The Heartbeat Timer improves:
 
 * The Visit duration, particularly for single-page visits and the final page of a visit.
-* The last-page time shown in **Visitors** > [Visits Log](https://matomo.org/faq/reports/the-visits-log-report/), which Matomo derives from the visit duration.
+* The `Avg. time on page` metric in **Behaviour** > [Pages](https://matomo.org/faq/introduction-to-page-analytics-reports/), by including page-view duration recorded through heartbeat pings.
+* The time shown for the final page in **Visitors** > [Visits Log](https://matomo.org/faq/reports/the-visits-log-report/), which reflects the measured page duration when that information is available.
+* More accurate page-level duration tracking across multiple browser tabs. This reduces the risk of attributing time to the wrong page when visitors have multiple browser tabs open.
 
-The heartbeat ping does not create a new page view, action, or conversion.
-
-**Heartbeat Timer Limitations**
-
-* The Heartbeat Timer does not improve the `Avg. time on page` metric in **Behaviour** > [Pages](https://matomo.org/faq/introduction-to-page-analytics-reports/) report. Matomo calculates this metric from the time between tracked page views. The heartbeat pings do not update the underlying page-level value.
-* It does not resolve attribution between multiple open tabs. If a visitor opens the same website in several tabs or switches between them, Matomo may attribute time to the wrong page. Browser-based analytics cannot reliably determine which page the visitor is reading.
+Heartbeat pings update duration information without creating new page views, actions, or conversions.
 
 **Testing the Heartbeat Timer**
 
-To test the Heartbeat Timer, leave the page open for longer than the configured minimum interval, then switch tabs, minimise the browser, refresh the page, close the tab, or navigate away. These actions trigger a heartbeat ping. Inspect the Network tab in your browser's developer tools and look for a request containing `ping=1`.
+To test the Heartbeat Timer, leave the page open for longer than the configured minimum interval, then switch tabs, minimise the browser, refresh the page, close the tab, or navigate away. These events can trigger a heartbeat ping when the required conditions are met. 
+
+Inspect the Network tab in your browser's developer tools and look for a request containing `ping=1`.
 
 ## Ecommerce tracking
 
