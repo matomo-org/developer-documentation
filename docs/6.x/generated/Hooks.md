@@ -2550,7 +2550,7 @@ Usages:
 
 ### Login.logout
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [703](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L703)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [704](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L704)*
 
 
 
@@ -4113,7 +4113,7 @@ Callback Signature:
 
 Usages:
 
-[TagManager::getMessagesToWarnOnSiteRemoval](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/TagManager.php#L1037)
+[TagManager::getMessagesToWarnOnSiteRemoval](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/TagManager.php#L1039)
 
 
 ### SitesManager.shouldPerformEmptySiteCheck
@@ -4596,7 +4596,7 @@ Usages:
 
 ### Template.loginCancelResetPasswordContent
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [599](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L599)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [600](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L600)*
 
 Overwrite the content displayed on the "reset password process cancelled page". Will display default content if no event content returned.
 
@@ -5243,7 +5243,7 @@ Callback Signature:
 
 Usages:
 
-[CoreAdminHome::cleanupUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L131), [CoreVisualizations::deleteUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L35), [CustomAlerts::deleteAlertsForLogin](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L109), [Dashboard::deleteDashboardLayout](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Dashboard/Dashboard.php#L529), [LanguagesManager::deleteUserLanguage](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LanguagesManager/LanguagesManager.php#L124), [LoginLdap::onUserDeleted](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LoginLdap/LoginLdap.php#L329), [Marketplace::anonymizePluginTrialRequests](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/Marketplace.php#L400), [ScheduledReports::deleteUserReport](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L658), [SegmentEditor::onDeleteUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SegmentEditor/SegmentEditor.php#L477), [TagManager::onUserDeleted](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/TagManager.php#L1028)
+[CoreAdminHome::cleanupUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L131), [CoreVisualizations::deleteUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L35), [CustomAlerts::deleteAlertsForLogin](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L109), [Dashboard::deleteDashboardLayout](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Dashboard/Dashboard.php#L529), [LanguagesManager::deleteUserLanguage](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LanguagesManager/LanguagesManager.php#L124), [LoginLdap::onUserDeleted](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LoginLdap/LoginLdap.php#L329), [Marketplace::anonymizePluginTrialRequests](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/Marketplace.php#L400), [ScheduledReports::deleteUserReport](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L658), [SegmentEditor::onDeleteUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SegmentEditor/SegmentEditor.php#L477), [TagManager::onUserDeleted](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/TagManager.php#L1030)
 
 
 ### UsersManager.deleteUser
@@ -5257,7 +5257,7 @@ Callback Signature:
 
 Usages:
 
-[CoreAdminHome::cleanupUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L131), [CoreVisualizations::deleteUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L35), [CustomAlerts::deleteAlertsForLogin](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L109), [Dashboard::deleteDashboardLayout](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Dashboard/Dashboard.php#L529), [LanguagesManager::deleteUserLanguage](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LanguagesManager/LanguagesManager.php#L124), [LoginLdap::onUserDeleted](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LoginLdap/LoginLdap.php#L329), [Marketplace::anonymizePluginTrialRequests](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/Marketplace.php#L400), [ScheduledReports::deleteUserReport](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L658), [SegmentEditor::onDeleteUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SegmentEditor/SegmentEditor.php#L477), [TagManager::onUserDeleted](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/TagManager.php#L1028)
+[CoreAdminHome::cleanupUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L131), [CoreVisualizations::deleteUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L35), [CustomAlerts::deleteAlertsForLogin](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CustomAlerts/CustomAlerts.php#L109), [Dashboard::deleteDashboardLayout](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Dashboard/Dashboard.php#L529), [LanguagesManager::deleteUserLanguage](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LanguagesManager/LanguagesManager.php#L124), [LoginLdap::onUserDeleted](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LoginLdap/LoginLdap.php#L329), [Marketplace::anonymizePluginTrialRequests](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/Marketplace.php#L400), [ScheduledReports::deleteUserReport](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L658), [SegmentEditor::onDeleteUser](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SegmentEditor/SegmentEditor.php#L477), [TagManager::onUserDeleted](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/TagManager.php#L1030)
 
 
 ### UsersManager.getDefaultDates
@@ -5285,7 +5285,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.accepted
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [828](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L828)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [829](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L829)*
 
 Triggered after a user accepted an invite
 
@@ -5301,7 +5301,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.declined
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [927](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L927)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [928](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L928)*
 
 Triggered after a user accepted an invite
 
