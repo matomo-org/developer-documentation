@@ -2652,7 +2652,7 @@ Callback Signature:
 
 ### Marketplace.pluginTrialRequested
 
-*Defined in [Piwik/Plugins/Marketplace/PluginTrial/Request](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/PluginTrial/Request.php) in line [69](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/PluginTrial/Request.php#L69)*
+*Defined in [Piwik/Plugins/Marketplace/PluginTrial/Request](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/PluginTrial/Request.php) in line [70](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/PluginTrial/Request.php#L70)*
 
 Triggered after the current user has requested a trial of a plugin, so an audit trail can record it. **Example**
 
@@ -2670,7 +2670,7 @@ Callback Signature:
 
 ### Marketplace.trialRequestEmailsUnsubscribed
 
-*Defined in [Piwik/Plugins/Marketplace/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/Controller.php) in line [492](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/Controller.php#L492)*
+*Defined in [Piwik/Plugins/Marketplace/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/Controller.php) in line [509](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Marketplace/Controller.php#L509)*
 
 Triggered after a user has turned off plugin trial request emails from the link in one of those
 emails, so an audit trail can record it. Not posted when they were already off. The current user may
