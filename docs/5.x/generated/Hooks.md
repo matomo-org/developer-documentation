@@ -2494,7 +2494,7 @@ Callback Signature:
 
 Usages:
 
-[LoginLdap::skipPasswordConfirmation](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/LoginLdap/LoginLdap.php#L334)
+[LoginLdap::skipPasswordConfirmation](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/LoginLdap/LoginLdap.php#L333)
 
 ## Mail
 
@@ -5058,7 +5058,7 @@ Callback Signature:
 
 Usages:
 
-[LoginLdap::checkPassword](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/LoginLdap/LoginLdap.php#L322)
+[LoginLdap::checkPassword](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/LoginLdap/LoginLdap.php#L321)
 
 
 ### UsersManager.createUser
@@ -5086,7 +5086,7 @@ Callback Signature:
 
 Usages:
 
-[CoreAdminHome::cleanupUser](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L131), [CoreVisualizations::deleteUser](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L35), [CustomAlerts::deleteAlertsForLogin](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/CustomAlerts.php#L109), [Dashboard::deleteDashboardLayout](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Dashboard/Dashboard.php#L433), [LanguagesManager::deleteUserLanguage](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/LanguagesManager/LanguagesManager.php#L124), [LoginLdap::onUserDeleted](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/LoginLdap/LoginLdap.php#L346), [ScheduledReports::deleteUserReport](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ScheduledReports/ScheduledReports.php#L656), [SegmentEditor::onDeleteUser](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/SegmentEditor.php#L448)
+[CoreAdminHome::cleanupUser](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreAdminHome/CoreAdminHome.php#L131), [CoreVisualizations::deleteUser](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CoreVisualizations/CoreVisualizations.php#L35), [CustomAlerts::deleteAlertsForLogin](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/CustomAlerts/CustomAlerts.php#L109), [Dashboard::deleteDashboardLayout](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/Dashboard/Dashboard.php#L433), [LanguagesManager::deleteUserLanguage](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/LanguagesManager/LanguagesManager.php#L124), [LoginLdap::onUserDeleted](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/LoginLdap/LoginLdap.php#L345), [ScheduledReports::deleteUserReport](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/ScheduledReports/ScheduledReports.php#L656), [SegmentEditor::onDeleteUser](https://github.com/matomo-org/matomo/blob/5.x-dev/plugins/SegmentEditor/SegmentEditor.php#L448)
 
 
 ### UsersManager.getDefaultDates
