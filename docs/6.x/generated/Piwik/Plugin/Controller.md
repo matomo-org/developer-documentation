@@ -104,7 +104,9 @@ The Site object created with [$idSite](/api-reference/Piwik/Plugin/Controller#$i
 
 #### Signature
 
-- It is a [`Site`](../../Piwik/Site.md) value.
+- It can be one of the following types:
+    - [`Site`](../../Piwik/Site.md)
+    - `null`
 
 <a name="$securitypolicy" id="$securitypolicy"></a>
 <a name="securityPolicy" id="securityPolicy"></a>
@@ -216,7 +218,7 @@ This will render the 'index.twig' file within the plugin templates folder and as
     - `$template` (`string`) &mdash;
        The name of the template file. If only a name is given it will automatically use the template within the plugin folder. For instance 'myTemplate' will result in '@$pluginName/myTemplate.twig'. Alternatively you can include the full path: '@anyOtherFolder/otherTemplate'. The trailing '.twig' is not needed.
     - `$variables` (`array`) &mdash;
-       For instance array('myViewVar' => 'myValue'). In template you can use {{ myViewVar }}
+       mixed> $variables For instance array('myViewVar' => 'myValue'). In template you can use {{ myViewVar }}
 - It returns a `string` value.
 
 <a name="renderreport" id="renderreport"></a>
@@ -271,9 +273,9 @@ object based on the arguments supplied.
        The name of the current plugin.
     - `$currentControllerAction` (`string`) &mdash;
        The name of the action that renders the desired report.
-    - `$columnsToDisplay` (`array`) &mdash;
+    - `$columnsToDisplay` (`string[]`|`false`) &mdash;
        The value to use for the ViewDataTable's columns_to_display config property.
-    - `$selectableColumns` (`array`) &mdash;
+    - `$selectableColumns` (`string[]`) &mdash;
        The value to use for the ViewDataTable's selectable_columns config property.
     - `$reportDocumentation` (`bool`|`string`) &mdash;
        The value to use for the ViewDataTable's documentation config property.
@@ -296,8 +298,8 @@ The current site ID and period will be used.
 -  It accepts the following parameter(s):
     - `$action` (`string`) &mdash;
        Method name of the controller that serves the report.
-    - `$customParameters` (`array`) &mdash;
-       The array of query parameter name/value pairs that should be set in result URL.
+    - `$customParameters` (`Piwik\Plugin\array&lt;string,`) &mdash;
+       mixed> $customParameters The array of query parameter name/value pairs that should be set in result URL.
 
 - *Returns:*  `string` &mdash;
     The generated URL.
@@ -315,7 +317,7 @@ Sets the first date available in the period selector's calendar.
        The min date.
     - `$view` ([`View`](../../Piwik/View.md)) &mdash;
        The view that contains the period selector.
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="setmaxdateview" id="setmaxdateview"></a>
 <a name="setMaxDateView" id="setMaxDateView"></a>
@@ -331,7 +333,7 @@ for a site (which varies based on the timezone of a site).
        The max date.
     - `$view` ([`View`](../../Piwik/View.md)) &mdash;
        The view that contains the period selector.
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="setgeneralvariablesview" id="setgeneralvariablesview"></a>
 <a name="setGeneralVariablesView" id="setGeneralVariablesView"></a>
@@ -391,7 +393,7 @@ Also calls [setHostValidationVariablesView()](/api-reference/Piwik/Plugin/Contro
 -  It accepts the following parameter(s):
     - `$view` ([`View`](../../Piwik/View.md)) &mdash;
       
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="sethostvalidationvariablesview" id="sethostvalidationvariablesview"></a>
 <a name="setHostValidationVariablesView" id="setHostValidationVariablesView"></a>
@@ -410,7 +412,7 @@ Checks if the current host is valid and sets variables on the given view, includ
 -  It accepts the following parameter(s):
     - `$view` ([`View`](../../Piwik/View.md)) &mdash;
       
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 
 <a name="setperiodvariablesview" id="setperiodvariablesview"></a>
 <a name="setPeriodVariablesView" id="setPeriodVariablesView"></a>
@@ -429,9 +431,9 @@ Sets general period variables on a view, including:
 -  It accepts the following parameter(s):
     - `$view` ([`View`](../../Piwik/View.md)) &mdash;
       
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 - It throws one of the following exceptions:
-    - [`Exception`](http://php.net/class.Exception) &mdash; if the current period is invalid.
+    - `Piwik\Http\BadRequestException` &mdash; if the current period is invalid.
 
 <a name="redirecttoindex" id="redirecttoindex"></a>
 <a name="redirectToIndex" id="redirectToIndex"></a>
@@ -454,9 +456,9 @@ This function will exit immediately after executing.
        The new period query parameter, eg, `'day'`.
     - `$defaultDate` (`string`|`null`) &mdash;
        The new date query parameter, eg, `'today'`.
-    - `$parameters` (`array`) &mdash;
-       Other query parameters to append to the URL.
-- It does not return anything or a mixed result.
+    - `$parameters` (`Piwik\Plugin\array&lt;string,`) &mdash;
+       mixed> $parameters Other query parameters to append to the URL.
+- It returns a `void` value.
 
 <a name="checktokeninurl" id="checktokeninurl"></a>
 <a name="checkTokenInUrl" id="checkTokenInUrl"></a>
@@ -474,7 +476,7 @@ If called from JavaScript by using the `ajaxHelper` you have to call `ajaxHelper
 
 #### Signature
 
-- It does not return anything or a mixed result.
+- It returns a `void` value.
 - It throws one of the following exceptions:
     - [`Piwik\NoAccessException`](../../Piwik/NoAccessException.md) &mdash; If the token doesn&#039;t match.
 
