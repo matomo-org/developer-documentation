@@ -3542,7 +3542,7 @@ Usages:
 
 ### ScheduledReports.allowMultipleReports
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1274](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1274)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1276](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1276)*
 
 Triggered when we're determining if a scheduled report transport medium can
 handle sending multiple Matomo reports in one scheduled report or not. Plugins that provide their own transport mediums should use this
@@ -3565,7 +3565,7 @@ Usages:
 
 ### ScheduledReports.getRendererInstance
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [786](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L786)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [788](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L788)*
 
 Triggered when obtaining a renderer instance based on the scheduled report output format. Plugins that provide new scheduled report output formats should use this event to
 handle their new report formats.
@@ -3594,7 +3594,7 @@ Usages:
 
 ### ScheduledReports.getReportFormats
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1324](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1324)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1326](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1326)*
 
 Triggered when gathering all available scheduled report formats. Plugins that provide their own scheduled report format should use
 this event to make their format available.
@@ -3616,7 +3616,7 @@ Usages:
 
 ### ScheduledReports.getReportMetadata
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1244](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1244)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1246](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1246)*
 
 TODO: change this event so it returns a list of API methods instead of report metadata arrays. Triggered when gathering the list of Matomo reports that can be used with a certain
 transport medium.
@@ -3642,7 +3642,7 @@ Usages:
 
 ### ScheduledReports.getReportParameters
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1030](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1030)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1032](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1032)*
 
 Triggered when gathering the available parameters for a scheduled report type. Plugins that provide their own scheduled report transport mediums should use this
 event to list the available report parameters for their transport medium.
@@ -3664,7 +3664,7 @@ Usages:
 
 ### ScheduledReports.getReportRecipients
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1357](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1357)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1359](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1359)*
 
 Triggered when getting the list of recipients of a scheduled report. Plugins that provide their own scheduled report transport medium should use this event
 to extract the list of recipients their backend's specific scheduled report
@@ -3691,7 +3691,7 @@ Usages:
 
 ### ScheduledReports.getReportTypes
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1298](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1298)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1300](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1300)*
 
 Triggered when gathering all available transport mediums. Plugins that provide their own transport mediums should use this
 event to make their medium available.
@@ -3709,7 +3709,7 @@ Usages:
 
 ### ScheduledReports.processReports
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [761](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L761)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [763](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L763)*
 
 Triggered when generating the content of scheduled reports. This event can be used to modify the report data or report metadata of one or more reports
 in a scheduled report, before the scheduled report is rendered and delivered.
@@ -3740,7 +3740,7 @@ Usages:
 
 ### ScheduledReports.sendReport
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [955](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L955)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [957](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L957)*
 
 Triggered when sending scheduled reports. Plugins that provide new scheduled report transport mediums should use this event to
 send the scheduled report.
@@ -3782,7 +3782,7 @@ Usages:
 
 ### ScheduledReports.validateReportParameters
 
-*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1057](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1057)*
+*Defined in [Piwik/Plugins/ScheduledReports/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php) in line [1059](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/API.php#L1059)*
 
 Triggered when validating the parameters for a scheduled report. Plugins that provide their own scheduled reports backend should use this
 event to validate the custom parameters defined with ScheduledReports::getReportParameters().
