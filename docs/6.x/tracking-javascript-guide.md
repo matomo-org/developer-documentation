@@ -171,11 +171,11 @@ By default, Matomo sends a heartbeat request only if at least 15 seconds have pa
 // Require at least 30 seconds between tracking requests
 _paq.push(['enableHeartBeatTimer', 30]);
 ```
-The interval sets the minimum time before Matomo can send a heartbeat ping. During this time, the tab must remain active and in focus. For example, with a 15-second interval, Matomo can send a heartbeat ping when:
+The interval sets the minimum time before Matomo can send a heartbeat ping. For example, with a 15-second interval, Matomo can send a heartbeat ping when:
 
-* The tab has remained active and in focus for at least 15 seconds.
-* The visitor then switches tabs, hides the page, navigates away, or closes it.
 * At least 15 seconds have passed since the previous tracking request.
+* If the visitor left the tab and came back, at least 15 seconds have passed since they returned.
+* The visitor then switches tabs, hides the page, navigates away, or closes it.
 
 **How the Heartbeat Timer works**
 
