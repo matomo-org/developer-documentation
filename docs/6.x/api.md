@@ -182,9 +182,10 @@ Here is a list of metrics returned by the API and their definition.
 
 #### General Metrics
 
-*   `nb_uniq_visitors` - Number of unique visitors
+*   `nb_uniq_visitors` - Number of unique visitors. For weeks, months, years and date ranges this can be an estimate, see `uniques_estimated`
 *   `nb_visits` - Number of Visits (30 min of inactivity considered a new visit)
-*   `nb_users` - Number of unique active users (visitors with a known [User ID](https://matomo.org/docs/user-id/)). If you are not using User ID then this metric will be set to zero.
+*   `nb_users` - Number of unique active users (visitors with a known [User ID](https://matomo.org/docs/user-id/)). If you are not using User ID then this metric will be set to zero. For weeks, months, years and date ranges this can be an estimate, see `uniques_estimated`
+*   `uniques_estimated` - Only returned for periods set to be estimated with the `[General] enable_processing_estimated_unique_visitors_*` config settings. `1` when `nb_uniq_visitors` and `nb_users` are estimates (usually within 2% of the exact count), `0` when the period could not be estimated and they are counted exactly or left out. Returned by `VisitsSummary.get`, `VisitFrequency.get` and `AIAgents.get` (with the same column suffixes as their other metrics) and `API.get`. `VisitsSummary.getUniqueVisitors` and `VisitsSummary.getUsers` also return the estimate, but without this flag.
 *   `nb_actions` - Number of actions (page views, internal site searches, outlinks and downloads)
 *   `sum_visit_length` - Total time spent, in seconds
 *   `bounce_count` - Number of visits that bounced (viewed only one page)
@@ -204,7 +205,7 @@ Here is a list of metrics returned by the API and their definition.
 *   `exit_nb_visits` - Number of visits that finished on this page
 *   `exit_nb_uniq_visitors` - Number of unique visitors that ended their visit on this page
 *   `sum_time_spent` - Total time spent on this page, in seconds
-*   `sum_daily_nb_uniq_visitors` - Sum of daily unique visitors over days in the period. Matomo doesn't process unique visitors across the full period.
+*   `sum_daily_nb_uniq_visitors` - Sum of daily unique visitors over days in the period. Matomo doesn't process unique visitors across the full period for reports with a dimension.
 *   `sum_daily_entry_nb_uniq_visitors` - Sum of daily unique visitors that started their visit on this page
 *   `sum_daily_exit_nb_uniq_visitors` - (deprecated) Same as `sum_daily_entry_nb_uniq_visitors`
 *   `exit_bounce_count` - (deprecated) Same as `entry_bounce_count`
