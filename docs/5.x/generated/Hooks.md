@@ -3878,7 +3878,7 @@ Callback Signature:
 
 ### Session.shouldSendSameSiteCookieAsNoneForcefully
 
-*Defined in [Piwik/Session](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Session.php) in line [209](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Session.php#L209)*
+*Defined in [Piwik/Session](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Session.php) in line [216](https://github.com/matomo-org/matomo/blob/5.x-dev/core/Session.php#L216)*
 
 Triggered to determine whether the session cookie SameSite value should be forced to None. Plugins can set `$shouldUseNoneForcefully` to true when the session cookie needs to be
 sent in a third-party context that is not covered by Matomo's built-in iframe, opt-out,
