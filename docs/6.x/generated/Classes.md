@@ -192,6 +192,7 @@ This is a complete list of available classes:
 - [`Plugins\Live\Visitor`](Piwik/Plugins/Live/Visitor.md)
 - [`Plugins\Live\VisitorDetailsAbstract`](Piwik/Plugins/Live/VisitorDetailsAbstract.md) &mdash; Class VisitorDetailsAbstract
 - [`Plugins\Live\Visualizations\VisitorLog\Config`](Piwik/Plugins/Live/Visualizations/VisitorLog/Config.md) &mdash; DataTable Visualization that derives from HtmlTable and sets show_extra_columns to true.
+- [`Plugins\Login\SecondFactorVerifier`](Piwik/Plugins/Login/SecondFactorVerifier.md) &mdash; Requires the current user to confirm a sensitive action with their second factor, e.g.
 - [`Plugins\MobileMessaging\SMSProvider`](Piwik/Plugins/MobileMessaging/SMSProvider.md) &mdash; The SMSProvider abstract class is used as a base class for SMS provider implementations.
 - [`Plugins\MultiSites\Columns\Metrics\EcommerceOnlyEvolutionMetric`](Piwik/Plugins/MultiSites/Columns/Metrics/EcommerceOnlyEvolutionMetric.md) &mdash; Ecommerce evolution metric adapter.
 - [`Plugins\PagePerformance\Columns\Metrics\AveragePageLoadTime`](Piwik/Plugins/PagePerformance/Columns/Metrics/AveragePageLoadTime.md) &mdash; The average amount of time it took loading a page completely.

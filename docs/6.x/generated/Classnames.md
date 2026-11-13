@@ -188,6 +188,7 @@
 ## Plugins\Live\Visitor
 ## Plugins\Live\VisitorDetailsAbstract
 ## Plugins\Live\Visualizations\VisitorLog\Config
+## Plugins\Login\SecondFactorVerifier
 ## Plugins\MobileMessaging\SMSProvider
 ## Plugins\MultiSites\Columns\Metrics\EcommerceOnlyEvolutionMetric
 ## Plugins\PagePerformance\Columns\Metrics\AveragePageLoadTime

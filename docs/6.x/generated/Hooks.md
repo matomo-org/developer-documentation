@@ -2275,6 +2275,8 @@ Callback Signature:
 - [Login.resetPassword.confirmed](#loginresetpasswordconfirmed)
 - [Login.resetPassword.initiated](#loginresetpasswordinitiated)
 - [Login.userRequiresPasswordConfirmation](#loginuserrequirespasswordconfirmation)
+- [Login.userRequiresSecondFactorConfirmation](#loginuserrequiressecondfactorconfirmation)
+- [Login.verifySecondFactor](#loginverifysecondfactor)
 
 ### Login.authenticate
 
@@ -2550,7 +2552,7 @@ Usages:
 
 ### Login.logout
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [704](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L704)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [754](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L754)*
 
 
 
@@ -2613,6 +2615,65 @@ Callback Signature:
 Usages:
 
 [LoginLdap::skipPasswordConfirmation](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LoginLdap/LoginLdap.php#L317)
+
+
+### Login.userRequiresSecondFactorConfirmation
+
+*Defined in [Piwik/Plugins/Login/SecondFactorVerifier](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/SecondFactorVerifier.php) in line [119](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/SecondFactorVerifier.php#L119)*
+
+Triggered to check if a user has to confirm sensitive actions with a second factor. Plugins providing a second factor, such as two-factor authentication, set `$requiresSecondFactor`
+to `true` for users who have it configured. They also need to verify the codes in
+`Login.verifySecondFactor`.
+
+**Example**
+
+    public function userRequiresSecondFactorConfirmation(bool &$requiresSecondFactor, string $login): void
+    {
+        if ($this->hasDeviceConfigured($login)) {
+            $requiresSecondFactor = true;
+        }
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$requiresSecondFactor, $login]</code></pre>
+
+- bool &$requiresSecondFactor Whether a second factor confirmation is required
+
+- string `$login` Login of the user
+
+Usages:
+
+[TwoFactorAuth::userRequiresSecondFactorConfirmation](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TwoFactorAuth/TwoFactorAuth.php#L166)
+
+
+### Login.verifySecondFactor
+
+*Defined in [Piwik/Plugins/Login/SecondFactorVerifier](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/SecondFactorVerifier.php) in line [257](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/SecondFactorVerifier.php#L257)*
+
+Triggered to verify a code the user entered to confirm a sensitive action with their second factor. Plugins that require a second factor in `Login.userRequiresSecondFactorConfirmation` set `$isValid`
+to `true` if the code is valid for the user. A code should only be accepted once.
+
+**Example**
+
+    public function verifySecondFactor(bool &$isValid, string $login, string $code): void
+    {
+        if (!$isValid && $this->hasDeviceConfigured($login)) {
+            $isValid = $this->isValidCodeNotUsedBefore($login, $code);
+        }
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$isValid, $login, $code]</code></pre>
+
+- bool &$isValid Whether the code is valid
+
+- string `$login` Login of the user
+
+- string `$code` The code entered by the user
+
+Usages:
+
+[TwoFactorAuth::verifySecondFactor](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TwoFactorAuth/TwoFactorAuth.php#L173)
 
 ## Mail
 
@@ -4620,7 +4681,7 @@ Usages:
 
 ### Template.loginCancelResetPasswordContent
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [600](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L600)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [650](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L650)*
 
 Overwrite the content displayed on the "reset password process cancelled page". Will display default content if no event content returned.
 
@@ -5050,7 +5111,7 @@ Usages:
 
 ### TwoFactorAuth.disabled
 
-*Defined in [Piwik/Plugins/TwoFactorAuth/TwoFactorAuthentication](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TwoFactorAuth/TwoFactorAuthentication.php) in line [72](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TwoFactorAuth/TwoFactorAuthentication.php#L72)*
+*Defined in [Piwik/Plugins/TwoFactorAuth/TwoFactorAuthentication](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TwoFactorAuth/TwoFactorAuthentication.php) in line [75](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TwoFactorAuth/TwoFactorAuthentication.php#L75)*
 
 
 
@@ -5060,7 +5121,7 @@ Callback Signature:
 
 ### TwoFactorAuth.enabled
 
-*Defined in [Piwik/Plugins/TwoFactorAuth/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TwoFactorAuth/Controller.php) in line [262](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TwoFactorAuth/Controller.php#L262)*
+*Defined in [Piwik/Plugins/TwoFactorAuth/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TwoFactorAuth/Controller.php) in line [337](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TwoFactorAuth/Controller.php#L337)*
 
 
 
@@ -5070,7 +5131,7 @@ Callback Signature:
 
 ### TwoFactorAuth.requiresTwoFactorAuthentication
 
-*Defined in [Piwik/Plugins/TwoFactorAuth/TwoFactorAuth](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TwoFactorAuth/TwoFactorAuth.php) in line [322](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TwoFactorAuth/TwoFactorAuth.php#L322)*
+*Defined in [Piwik/Plugins/TwoFactorAuth/TwoFactorAuth](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TwoFactorAuth/TwoFactorAuth.php) in line [328](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TwoFactorAuth/TwoFactorAuth.php#L328)*
 
 
 
@@ -5309,7 +5370,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.accepted
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [829](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L829)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [879](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L879)*
 
 Triggered after a user accepted an invite
 
@@ -5325,7 +5386,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.declined
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [928](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L928)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [978](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L978)*
 
 Triggered after a user accepted an invite
 
