@@ -885,7 +885,7 @@ Callback Signature:
 
 ### Archiving.getIdSitesToMarkArchivesAsInvalidated
 
-*Defined in [Piwik/Archive/ArchiveInvalidator](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Archive/ArchiveInvalidator.php) in line [315](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Archive/ArchiveInvalidator.php#L315)*
+*Defined in [Piwik/Archive/ArchiveInvalidator](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Archive/ArchiveInvalidator.php) in line [320](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Archive/ArchiveInvalidator.php#L320)*
 
 Triggered when a Matomo user requested the invalidation of some reporting archives. Using this event, plugin
 developers can automatically invalidate another site, when a site is being invalidated. A plugin may even
@@ -1425,7 +1425,7 @@ Callback Signature:
 
 ### CoreAdminHome.archiveReports.complete
 
-*Defined in [Piwik/Plugins/CoreAdminHome/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/API.php) in line [368](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/API.php#L368)*
+*Defined in [Piwik/Plugins/CoreAdminHome/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/API.php) in line [374](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/API.php#L374)*
 
 Triggered after a full archiveReports run completes. Usage example:
 Piwik::addAction('CoreAdminHome.archiveReports.complete', function ($idSite, $period, $segment, $plugin, $report, $isArchivePhpTriggered, $idArchives, $wasCached) { ... });
@@ -1440,7 +1440,7 @@ Usages:
 
 ### CoreAdminHome.archiveReports.start
 
-*Defined in [Piwik/Plugins/CoreAdminHome/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/API.php) in line [337](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/API.php#L337)*
+*Defined in [Piwik/Plugins/CoreAdminHome/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/API.php) in line [343](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/API.php#L343)*
 
 Triggered before a full archiveReports run starts. Usage example:
 Piwik::addAction('CoreAdminHome.archiveReports.start', function ($idSite, $period, $segment, $plugin, $report, $isArchivePhpTriggered) { ... });
@@ -1584,7 +1584,7 @@ Usages:
 
 ### CronArchive.archiveSingleSite.finish
 
-*Defined in [Piwik/CronArchive/QueueConsumer](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive/QueueConsumer.php) in line [290](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive/QueueConsumer.php#L290)*
+*Defined in [Piwik/CronArchive/QueueConsumer](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive/QueueConsumer.php) in line [308](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive/QueueConsumer.php#L308)*
 
 This event is triggered immediately after the cron archiving process finishes archiving data for a single
 site. Note: multiple archiving processes can post this event.
@@ -1599,7 +1599,7 @@ Callback Signature:
 
 ### CronArchive.archiveSingleSite.start
 
-*Defined in [Piwik/CronArchive/QueueConsumer](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive/QueueConsumer.php) in line [150](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive/QueueConsumer.php#L150)*
+*Defined in [Piwik/CronArchive/QueueConsumer](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive/QueueConsumer.php) in line [154](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive/QueueConsumer.php#L154)*
 
 This event is triggered before the cron archiving process starts archiving data for a single
 site. Note: multiple archiving processes can post this event.
@@ -1614,7 +1614,7 @@ Callback Signature:
 
 ### CronArchive.end
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive.php) in line [711](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive.php#L711)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive.php) in line [877](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive.php#L877)*
 
 This event is triggered after archiving.
 
@@ -1626,7 +1626,7 @@ Callback Signature:
 
 ### CronArchive.filterWebsiteIds
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive.php) in line [897](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive.php#L897)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive.php) in line [1063](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive.php#L1063)*
 
 Triggered by the **core:archive** console command so plugins can modify the priority of
 websites that the archiving process will be launched for. Plugins can use this hook to add websites to archive, remove websites to archive, or change
@@ -1656,7 +1656,7 @@ Callback Signature:
 
 ### CronArchive.init.finish
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive.php) in line [388](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive.php#L388)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive.php) in line [399](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive.php#L399)*
 
 This event is triggered after a CronArchive instance is initialized.
 
@@ -1670,7 +1670,7 @@ Callback Signature:
 
 ### CronArchive.init.start
 
-*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive.php) in line [344](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive.php#L344)*
+*Defined in [Piwik/CronArchive](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive.php) in line [355](https://github.com/matomo-org/matomo/blob/6.x-dev/core/CronArchive.php#L355)*
 
 This event is triggered during initializing archiving.
 
@@ -1861,7 +1861,7 @@ Callback Signature:
 
 ### Db.getTablesInstalled
 
-*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Db/Schema/Mysql.php) in line [561](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Db/Schema/Mysql.php#L561)*
+*Defined in [Piwik/Db/Schema/Mysql](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Db/Schema/Mysql.php) in line [581](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Db/Schema/Mysql.php#L581)*
 
 
 
