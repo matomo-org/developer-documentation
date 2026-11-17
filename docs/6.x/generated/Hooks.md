@@ -2552,7 +2552,7 @@ Usages:
 
 ### Login.logout
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [754](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L754)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [755](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L755)*
 
 
 
@@ -4681,7 +4681,7 @@ Usages:
 
 ### Template.loginCancelResetPasswordContent
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [650](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L650)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [651](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L651)*
 
 Overwrite the content displayed on the "reset password process cancelled page". Will display default content if no event content returned.
 
@@ -5370,7 +5370,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.accepted
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [879](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L879)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [880](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L880)*
 
 Triggered after a user accepted an invite
 
@@ -5386,7 +5386,7 @@ Callback Signature:
 
 ### UsersManager.inviteUser.declined
 
-*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [978](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L978)*
+*Defined in [Piwik/Plugins/Login/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php) in line [979](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Controller.php#L979)*
 
 Triggered after a user accepted an invite
 
