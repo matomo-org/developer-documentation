@@ -2838,15 +2838,44 @@ Callback Signature:
 
 ## Metrics
 
+- [Metrics.formatEvolutionValue](#metricsformatevolutionvalue)
 - [Metrics.getDefaultMetricDocumentationTranslations](#metricsgetdefaultmetricdocumentationtranslations)
 - [Metrics.getDefaultMetricSemanticTypes](#metricsgetdefaultmetricsemantictypes)
 - [Metrics.getDefaultMetricTranslations](#metricsgetdefaultmetrictranslations)
 - [Metrics.getEvolutionUnit](#metricsgetevolutionunit)
 - [Metrics.isLowerValueBetter](#metricsislowervaluebetter)
 
+### Metrics.formatEvolutionValue
+
+*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Metrics.php) in line [401](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Metrics.php#L401)*
+
+Use this event to format a custom metric's values in the row evolution popover, for example
+to apply the metric's own number of decimals. The text is shown as it is, without the unit from
+`Metrics.getEvolutionUnit`. Metrics no plugin formats keep row evolution's default formatting. **Example**
+
+    public function formatEvolutionValue(&$formatted, $value, $column, $idSite)
+    {
+        if ($column === 'my_metric') {
+            $formatted = NumberFormatter::getInstance()->formatPercent($value * 100, 1, 1);
+        }
+    }
+
+Callback Signature:
+<pre><code>function(&amp;$formatted, $value, $column, $idSite]</code></pre>
+
+- string &$formatted set it to the formatted value including any unit, e.g. `6.00 €`;
+                               leave it null for metrics the plugin does not format
+
+- int `$value` the raw value, e.g. a ratio for a percentage metric
+
+- string `$column` name of the column the value belongs to
+
+- int `$idSite` id of the current site
+
+
 ### Metrics.getDefaultMetricDocumentationTranslations
 
-*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Metrics.php) in line [631](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Metrics.php#L631)*
+*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Metrics.php) in line [668](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Metrics.php#L668)*
 
 Use this event to register translations for metrics documentation processed by your plugin.
 
@@ -2862,7 +2891,7 @@ Usages:
 
 ### Metrics.getDefaultMetricSemanticTypes
 
-*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Metrics.php) in line [433](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Metrics.php#L433)*
+*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Metrics.php) in line [470](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Metrics.php#L470)*
 
 Use this event to notify Matomo of the semantic types of metrics your plugin adds. A metric's semantic type is metadata used primarily in integrations with Matomo
 and third party services/applications. It provides information that can be used
@@ -2886,7 +2915,7 @@ Usages:
 
 ### Metrics.getDefaultMetricTranslations
 
-*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Metrics.php) in line [497](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Metrics.php#L497)*
+*Defined in [Piwik/Metrics](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Metrics.php) in line [534](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Metrics.php#L534)*
 
 Use this event to register translations for metrics processed by your plugin.
 
