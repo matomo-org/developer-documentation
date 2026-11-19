@@ -10,6 +10,7 @@ Matomo differentiates between tracking and cookie consent:
 
 * **Tracking consent:** no cookies will be used and no tracking request will be sent unless consent was given. As soon as consent was given, tracking requests will be sent and cookies will be used. 
 * **Cookie consent:** tracking requests will be always sent. However, cookies will be only used if consent for storing and using cookies was given by the user. [Learn how cookies impact reports accuracy](https://matomo.org/faq/general/faq_156/).
+* **Hybrid Tracking:** every visitor is measured under a compliance exemption, such as the CNIL consent exemption, and visitors who consent are also measured with the data the exemption withholds. See [Hybrid Tracking](/guides/tracking-consent-hybrid).
            
 Matomo has guides available for setting up consent tracking with the following popular consent managers:
 
