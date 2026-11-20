@@ -161,28 +161,35 @@ try {
     exit(1);
 }
 
+if ($plugins === [] || array_filter($plugins, function ($plugin) {
+    return !is_string($plugin) || $plugin === '';
+}) !== []) {
+    fwrite(STDERR, "Unexpected plugin list from ApiReference.getAllowedPlugins\n");
+    exit(1);
+}
+
 $written = 0;
 $expectedPaths = [];
+
+// Excluded plugins' specs are committed by hand, and demo need not list those plugins at all.
+foreach ($excludedPlugins as $plugin) {
+    $existingPath = getSpecPath($targetDirectory, $plugin, $version);
+    if (is_file($existingPath)) {
+        $expectedPaths[] = $existingPath;
+    }
+}
+
 $excludedPlugins = array_fill_keys($excludedPlugins, true);
 
 foreach ($plugins as $plugin) {
-    if (!is_string($plugin) || $plugin === '') {
-        continue;
-    }
-
     if (isset($excludedPlugins[$plugin])) {
-        $existingPath = getSpecPath($targetDirectory, $plugin, $version);
-        if (is_file($existingPath)) {
-            $expectedPaths[] = $existingPath;
-        }
-
         continue;
     }
 
     try {
         $spec = fetchJson($baseUrl, $tokenAuth, [
-            'method' => 'ApiReference.getGeneratedOpenApiSpec',
-            'plugin' => $plugin,
+            'method' => 'ApiReference.getOpenApiSpec',
+            'pluginName' => $plugin,
         ]);
 
         $path = getSpecPath($targetDirectory, $plugin, $version);
@@ -194,6 +201,11 @@ foreach ($plugins as $plugin) {
         fwrite(STDERR, "Failed for $plugin: {$e->getMessage()}\n");
         exit(1);
     }
+}
+
+if ($written === 0) {
+    fwrite(STDERR, "No spec files were fetched\n");
+    exit(1);
 }
 
 try {
