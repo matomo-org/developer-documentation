@@ -1,0 +1,38 @@
+name: Check OpenAPI specs
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Fetch the specs from demo.matomo.cloud
+        run: php fetch-openapi-specs.php
+
+      - name: Check the published specs were refreshed recently
+        if: ${{ !cancelled() }}
+        env:
+          # The fetch script writes the metadata file only after every plugin's spec succeeded.
+          METADATA_URL: https://developer.matomo.org/openapi/plugin_metadata_v1.0.0.json
+          MAX_AGE_DAYS: 3
+        run: |
+          last_modified=$(curl -fsSI "$METADATA_URL" | tr -d '\r' | sed -n 's/^last-modified: //Ip')
+          # date -d '' means today, so a missing header would otherwise pass.
+          if [ -z "$last_modified" ]; then
+            echo "::error::No Last-Modified header on $METADATA_URL"
+            exit 1
+          fi
+          age_days=$(( ($(date +%s) - $(date -d "$last_modified" +%s)) / 86400 ))
+          echo "Published specs last refreshed $last_modified ($age_days days ago)"
+          if [ "$age_days" -gt "$MAX_AGE_DAYS" ]; then
+            echo "::error::The published OpenAPI specs have not been refreshed for $age_days days"
+            exit 1
+          fi
