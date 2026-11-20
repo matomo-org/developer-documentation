@@ -181,8 +181,8 @@ foreach ($plugins as $plugin) {
 
     try {
         $spec = fetchJson($baseUrl, $tokenAuth, [
-            'method' => 'ApiReference.getGeneratedOpenApiSpec',
-            'plugin' => $plugin,
+            'method' => 'ApiReference.getOpenApiSpec',
+            'pluginName' => $plugin,
         ]);
 
         $path = getSpecPath($targetDirectory, $plugin, $version);
