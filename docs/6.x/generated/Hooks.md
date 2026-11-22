@@ -1422,6 +1422,7 @@ Callback Signature:
 - [CoreAdminHome.customLogoChanged](#coreadminhomecustomlogochanged)
 - [CoreAdminHome.encryptionKeyRotated](#coreadminhomeencryptionkeyrotated)
 - [CoreAdminHome.getEncryptionKeyRotationTargets](#coreadminhomegetencryptionkeyrotationtargets)
+- [CoreAdminHome.mailSettingsUpdated](#coreadminhomemailsettingsupdated)
 
 ### CoreAdminHome.archiveReports.complete
 
@@ -1545,6 +1546,28 @@ Callback Signature:
 
                        The command prints the message of any exception these callbacks throw, so it
                        must not include the value or the key.
+
+
+### CoreAdminHome.mailSettingsUpdated
+
+*Defined in [Piwik/Plugins/CoreAdminHome/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/Controller.php) in line [232](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/Controller.php#L232)*
+
+Triggered after the email server settings were saved on the general settings page. The event is posted once for each save, also if no value changed. It is not posted when
+the save fails. It never contains the password.
+
+**Example**
+
+    Piwik::addAction('CoreAdminHome.mailSettingsUpdated', function ($settings) {
+        Log::info('SMTP host: ' . $settings['host']);
+    });
+
+Callback Signature:
+<pre><code>function(function(&#039;transport&#039; =&gt; $mailfunction(&#039;transport&#039;], &#039;host&#039; =&gt; $mailfunction(&#039;host&#039;], &#039;port&#039; =&gt; $mailfunction(&#039;port&#039;], &#039;type&#039; =&gt; $mailfunction(&#039;type&#039;], &#039;username&#039; =&gt; $mailfunction(&#039;username&#039;], &#039;encryption&#039; =&gt; $mailfunction(&#039;encryption&#039;], &#039;noreply_email_name&#039; =&gt; $generalfunction(&#039;noreply_email_name&#039;], &#039;noreply_email_address&#039; =&gt; $generalfunction(&#039;noreply_email_address&#039;], &#039;password_set&#039; =&gt; (string) $mailfunction(&#039;password&#039;] !== &#039;&#039;]]</code></pre>
+
+- array `$settings` The saved settings: `transport`, `host`, `port`, `type`, `username` and
+                       `encryption` of the `[mail]` config section, `noreply_email_name` and
+                       `noreply_email_address` of the `[General]` config section, and
+                       `password_set`, which is `true` if a password is stored.
 
 ## CoreUpdater
 
@@ -4153,6 +4176,7 @@ Callback Signature:
 - [SitesManager.deleteSite.end](#sitesmanagerdeletesiteend)
 - [SitesManager.getImageTrackingCode](#sitesmanagergetimagetrackingcode)
 - [SitesManager.getMessagesToWarnOnSiteRemoval](#sitesmanagergetmessagestowarnonsiteremoval)
+- [SitesManager.globalSettingsUpdated](#sitesmanagerglobalsettingsupdated)
 - [SitesManager.shouldPerformEmptySiteCheck](#sitesmanagershouldperformemptysitecheck)
 - [SitesManager.siteWithoutData.showInviteTeamMemberLink](#sitesmanagersitewithoutdatashowinviteteammemberlink)
 
@@ -4230,6 +4254,30 @@ Usages:
 [TagManager::getMessagesToWarnOnSiteRemoval](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TagManager/TagManager.php#L1048)
 
 
+### SitesManager.globalSettingsUpdated
+
+*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php) in line [173](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php#L173)*
+
+Triggered after the global website settings were saved on the global settings page. The event is posted once for each save, also if no value changed. If the save fails part
+way, the values saved before the failure stay saved. The event is then posted only if
+these values changed a setting. It is not posted when one of the `SitesManager.setGlobal*`,
+`SitesManager.setKeepURLFragmentsGlobal`, `SitesManager.setDefaultCurrency` or
+`SitesManager.setDefaultTimezone` API methods is called directly.
+
+**Example**
+
+    Piwik::addAction('SitesManager.globalSettingsUpdated', function ($settings) {
+        Log::info('Global excluded IPs: ' . $settings['excludedIpsGlobal']);
+    });
+
+Callback Signature:
+<pre><code>function($settingsAfterSave]</code></pre>
+
+- array `$settings` The current global website settings after the save, with the same
+                       keys as the `SitesManager.getGlobalSettings` controller action
+                       returns, but without the compliance policy information.
+
+
 ### SitesManager.shouldPerformEmptySiteCheck
 
 *Defined in [Piwik/Plugins/SitesManager/SitesManager](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/SitesManager.php) in line [149](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/SitesManager.php#L149)*
@@ -4248,7 +4296,7 @@ Callback Signature:
 
 ### SitesManager.siteWithoutData.showInviteTeamMemberLink
 
-*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php) in line [381](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php#L381)*
+*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php) in line [434](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php#L434)*
 
 Triggered before rendering the invite team member link on the no data page. This event can be used to hide the link, for example if inviting users is handled
 outside of Matomo.
@@ -4722,7 +4770,7 @@ Callback Signature:
 
 ### Template.siteWithoutData.afterTrackingMethods
 
-*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php) in line [364](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php#L364)*
+*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php) in line [417](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php#L417)*
 
 Triggered on the no data page after the list of tracking methods and the section
 allowing users to temporarily hide the page. This event can be used to render additional content at the bottom of the no data page.
@@ -4737,7 +4785,7 @@ Callback Signature:
 
 ### Template.siteWithoutDataTab. . $obj::getId() . .content
 
-*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php) in line [221](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php#L221)*
+*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php) in line [274](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php#L274)*
 
 Event that can be used to manipulate the content of a certain tab on the no data page
 
@@ -4751,7 +4799,7 @@ Callback Signature:
 
 ### Template.siteWithoutDataTab. . $obj::getId() . .others
 
-*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php) in line [228](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php#L228)*
+*Defined in [Piwik/Plugins/SitesManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php) in line [281](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/SitesManager/Controller.php#L281)*
 
 Event that can be used to manipulate the content of a record on the others tab on the no data page
 
