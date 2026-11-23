@@ -325,7 +325,7 @@ The HTTP status code of a tracking request tells whether it was tracked and whet
 
 A tracking pixel (a `GET` request without `send_image=0`) is answered with the tracking image even when it fails, so it doesn't show a broken image. Other failed requests can have an empty or a plain text body, so check the status code rather than the body. Bulk requests are answered with JSON, see [Bulk tracking responses](#bulk-tracking-responses).
 
-If a `Tracker.end` listener or building the response fails after a request was recorded, the request keeps its success response, so a client that sends failed requests again doesn't track it twice.
+If something fails after a request was recorded, eg a `Tracker.end` listener, the request keeps its success response, so a client that sends failed requests again doesn't track it twice. Only a PHP fatal error is still answered with `500` then.
 
 Error status codes other than `400`, `401`, `403`, `500` and `503` are only used since Matomo 6.1. In Matomo 6.0, an exception thrown outside the request processing, eg in a `Tracker.newHandler` or `Tracker.end` listener, was answered with `200` and a body starting with `Error:`.
 
