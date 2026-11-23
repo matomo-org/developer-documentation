@@ -178,7 +178,7 @@ Note: the user of the HTTP API is responsible for determining the source locatio
 
 ### Other parameters
 
-* `send_image` &mdash; If set to 0 (`send_image=0`) Matomo will respond with an HTTP 204 response code instead of a GIF image. This improves performance and can fix errors if images are not allowed to be obtained directly (eg Chrome Apps). Available since Matomo 2.10.0
+* `send_image` &mdash; If set to 0 (`send_image=0`) Matomo will respond with an HTTP 204 response code instead of a GIF image. This improves performance and can fix errors if images are not allowed to be obtained directly (eg Chrome Apps). Available since Matomo 2.10.0. A request that fails is still answered with its error status code, without a body (see [Responses](#responses)).
 * `ping`  &mdash; If set to 1 (`ping=1`), the request will be a [Heartbeat request](https://matomo.org/faq/how-to/faq_21824/) which will not track any new activity (such as a new visit, new action or new goal). The heartbeat request will only update the visit's total time to provide accurate "Visit duration" metric when this parameter is set. It won't record any other data. This means by sending an additional tracking request when the user leaves your site or app with `&ping=1`, you fix the issue where the time spent of the last page visited is reported as 0 seconds.
 
 ## Tracking Bots
@@ -284,6 +284,41 @@ Here is the command to send this request to Matomo using curl (without `token_au
 
 This will track **two** actions using only **one** HTTP request to Matomo.
 
+### Bulk tracking responses
+
+Matomo answers a bulk tracking request with a JSON object:
+
+    {"status":"success","tracked":2,"invalid":0}
+
+* `status` &mdash; `success`, or `error` if the bulk request as a whole failed.
+* `tracked` &mdash; the number of requests that were tracked.
+* `invalid` &mdash; the number of requests Matomo rejected as invalid, eg because of an unknown site or a malformed parameter. The other requests are still tracked.
+* `invalid_indices` &mdash; the positions of the invalid requests in `requests`, starting at `0`. Only included when the bulk request is authenticated with the `token_auth` of a super user.
+
+A bulk request that fails as a whole is answered with an error status code and `"status":"error"`, eg `500` for a server error, or `401`/`403` when `[Tracker] bulk_requests_require_authentication` is enabled and the `token_auth` is missing or lacks write access. As bulk requests are recorded within one database transaction by default (`[Tracker] bulk_requests_use_transaction = 1`), none of its requests are stored then, and the whole bulk request can be sent again after a server error.
+
+Since Matomo 6.1, this also applies to a request a plugin rejects with a `4xx` status code other than `408` and `429`: it is counted as invalid while the other requests are tracked. A `408`, `429` or `5xx` for a single request fails the whole bulk request, so it can be sent again.
+
+## Responses
+
+The HTTP status code of a tracking request tells whether it was tracked and whether sending it again makes sense:
+
+| Status code | Meaning | Send again? |
+|---|---|---|
+| `200` | Tracked. The body is a 1x1 transparent GIF, or the image configured in `[Tracker] custom_image`. | No |
+| `204` | Tracked, sent with `send_image=0`. No body. | No |
+| `400` | The request is invalid, eg an unknown site, a malformed parameter, a custom timestamp (`cdt`) outside the allowed range, or a parameter that requires a valid `token_auth`. | No |
+| `401`, `403` | A bulk request requiring authentication has no `token_auth` (`401`), or one without write access to the site (`403`). | No, fix the `token_auth` first |
+| Other `4xx` | A plugin rejected the request, eg `404`, or `429` for a rate limit. | Only for `408` and `429`, after a delay |
+| `500` | A server error. The error is logged in the [configured log writers](#debugging-the-tracker). | Yes, after a delay |
+| `503` | Matomo isn't installed yet, or tracking is disabled (`[Tracker] record_statistics = 0`). | Yes, after a delay |
+
+A failed request is answered with the tracking image too, so a tracking pixel doesn't show a broken image, or without a body when it was sent with `send_image=0`. Bulk requests are answered with JSON, see [Bulk tracking responses](#bulk-tracking-responses).
+
+If a `Tracker.end` listener or building the response fails after a request was recorded, the request keeps its success response, so a client that sends failed requests again doesn't track it twice.
+
+Status codes other than `400`, `401`, `403`, `500` and `503` are only used since Matomo 6.1. In Matomo 6.0 and earlier, an error that happened before Matomo started processing the request, eg in a plugin, was answered with `200` and a body starting with `Error:`.
+
 ## Debugging the Tracker
 
 To verify that your data is being tracked properly, you can enable debug logging in the Matomo tracking file, **matomo.php**.
@@ -307,6 +342,8 @@ Since Matomo 3.10 to enable the profiling of SQL queries you additionally need t
     * If the requests take place in a browser, you can use a tool such as the [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/) to see all requests to **matomo.php**.
     * If the requests are triggered from your app or software directly, you can output or log the output of tracking requests and to view the debug messages.
     * You can also [log messages to file or database](https://matomo.org/faq/troubleshooting/faq_115/) (requires at least Matomo 2.15.0).
+
+Server errors of tracking requests (answered with status code `500`) are logged in the log writers configured in `[log] log_writers`. Tracking requests can't use the `screen` writer, so with the default configuration (`log_writers[] = screen`) these errors aren't logged anywhere. To see them, add a `file`, `errorlog` or `syslog` writer. Since Matomo 6.1, tracker errors are no longer written to PHP's error log in addition, and log records of tracking requests no longer include the request's query string, as it holds visitor data.
 
 If you receive too many tracking requests and the log gets spammed by these requests or if you want to only debug some specific requests you can alternatively enable `debug_on_demand` in `config.ini.php`:
 

@@ -59,6 +59,23 @@ public function processRequestParams(VisitProperties $visitProperties, Request $
 }
 ```
 
+#### Rejecting a tracking request
+
+If a tracking request is invalid, for example because it contains a parameter value your plugin can't handle, throw an exception instead. Since Matomo 6.1, the tracker answers an exception implementing `Piwik\Http\HttpCodeException` with its `4xx` or `5xx` code, for example a `Piwik\Http\BadRequestException` with `400`. An exception with a `4xx` code is only logged at debug level, and in a [bulk request](/api-reference/tracking-api#bulk-tracking) only that request is counted as invalid. A `Piwik\Exception\InvalidRequestParameterException` is answered with `400` too.
+
+```php
+use Piwik\Http\BadRequestException;
+
+public function processRequestParams(VisitProperties $visitProperties, Request $request)
+{
+      if (!$this->isValidFormId($request->getParam('my_form_id'))) {
+           throw new BadRequestException('The form ID is invalid');
+      }
+}
+```
+
+Any other exception is answered with `500` and logged as an error, so only let it happen for actual server errors, such as a failing database query. Use `408` or `429` for a client error that is worth sending again later, as clients retry those.
+
 #### Recording additional data
 
 If you want to track additional log raw data, then usually you will want to [create a dimension](https://developer.matomo.org/guides/dimensions). In some cases, for example if you want to track data into a completely new log table that is not defined in core, this won't work. In those cases you will need to overwrite the `recordLogs` method where you can store any kind of data.
