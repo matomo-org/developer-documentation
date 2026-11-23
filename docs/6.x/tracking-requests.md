@@ -61,7 +61,7 @@ public function processRequestParams(VisitProperties $visitProperties, Request $
 
 #### Rejecting a tracking request
 
-If a tracking request is invalid, for example because it contains a parameter value your plugin can't handle, throw an exception instead. Since Matomo 6.1, the tracker answers an exception implementing `Piwik\Http\HttpCodeException` with its `4xx` or `5xx` code, for example a `Piwik\Http\BadRequestException` with `400`. An exception with a `4xx` code is only logged at debug level, and in a [bulk request](/api-reference/tracking-api#bulk-tracking) only that request is counted as invalid. A `Piwik\Exception\InvalidRequestParameterException` is answered with `400` too.
+If a tracking request is invalid, for example because it contains a parameter value your plugin can't handle, throw an exception instead. Since Matomo 6.1, the tracker answers an exception implementing `Piwik\Http\HttpCodeException` with its `4xx` or `5xx` code, for example a `Piwik\Http\BadRequestException` with `400`. An exception with a `4xx` code is only logged at debug level, and in a [bulk request](/api-reference/tracking-api#bulk-tracking-responses) only that request is counted as invalid, unless the code is `408` or `429`. In Matomo 6.0, such an exception is answered with `500` and fails a whole bulk request. A `Piwik\Exception\InvalidRequestParameterException` is answered with `400` and counted as invalid in all Matomo 6 versions.
 
 ```php
 use Piwik\Http\BadRequestException;
@@ -74,7 +74,7 @@ public function processRequestParams(VisitProperties $visitProperties, Request $
 }
 ```
 
-Any other exception is answered with `500` and logged as an error, so only let it happen for actual server errors, such as a failing database query. Use `408` or `429` for a client error that is worth sending again later, as clients retry those.
+Any other exception is answered with `500` and logged as an error, so only let it happen for actual server errors, such as a failing database query. This includes a `PluginDeactivatedException` or `PluginNotFoundException`, and an `HttpCodeException` with a code outside `400` to `599`. Use `408` or `429` for a client error that is worth sending again later, as the [Tracking API](/api-reference/tracking-api#responses) tells clients to send only those and `5xx` errors again.
 
 #### Recording additional data
 

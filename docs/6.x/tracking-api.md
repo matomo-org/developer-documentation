@@ -290,14 +290,24 @@ Matomo answers a bulk tracking request with a JSON object:
 
     {"status":"success","tracked":2,"invalid":0}
 
+If the bulk request contains `"send_image": 0`, a successful bulk request is answered with `204` and no body instead.
+
 * `status` &mdash; `success`, or `error` if the bulk request as a whole failed.
-* `tracked` &mdash; the number of requests that were tracked.
+* `tracked` &mdash; the number of requests that were tracked, including requests that were excluded, eg by an IP exclusion.
 * `invalid` &mdash; the number of requests Matomo rejected as invalid, eg because of an unknown site or a malformed parameter. The other requests are still tracked.
 * `invalid_indices` &mdash; the positions of the invalid requests in `requests`, starting at `0`. Only included when the bulk request is authenticated with the `token_auth` of a super user.
 
-A bulk request that fails as a whole is answered with an error status code and `"status":"error"`, eg `500` for a server error, or `401`/`403` when `[Tracker] bulk_requests_require_authentication` is enabled and the `token_auth` is missing or lacks write access. As bulk requests are recorded within one database transaction by default (`[Tracker] bulk_requests_use_transaction = 1`), none of its requests are stored then, and the whole bulk request can be sent again after a server error.
+A request that hits a database lock wait timeout is skipped, so `tracked` and `invalid` can add up to less than the number of requests.
 
-Since Matomo 6.1, this also applies to a request a plugin rejects with a `4xx` status code other than `408` and `429`: it is counted as invalid while the other requests are tracked. A `408`, `429` or `5xx` for a single request fails the whole bulk request, so it can be sent again.
+A bulk request that fails as a whole is answered with an error status code, eg:
+
+* `500` for a server error,
+* `401` or `403` when `[Tracker] bulk_requests_require_authentication` is enabled and the `token_auth` is missing or lacks write access,
+* `403` when the `token_auth` is sent from an IP address that is blocked by Matomo's brute force detection.
+
+The body is usually JSON with `"status":"error"`, but it can be empty, so check the status code. In an error response, `tracked` and `invalid` don't describe what was stored. As bulk requests are recorded within one database transaction by default (`[Tracker] bulk_requests_use_transaction = 1`), none of its requests are stored then, and the whole bulk request can be sent again after a server error. Without the transaction, the requests tracked before the error are stored, so sending the bulk request again tracks them twice.
+
+Since Matomo 6.1, a request that a plugin rejects with a `4xx` status code other than `408` and `429` is counted as invalid too, and the other requests are still tracked. A `408`, `429` or `5xx` for a single request fails the whole bulk request, so it can be sent again.
 
 ## Responses
 
@@ -305,19 +315,19 @@ The HTTP status code of a tracking request tells whether it was tracked and whet
 
 | Status code | Meaning | Send again? |
 |---|---|---|
-| `200` | Tracked. The body is a 1x1 transparent GIF, or the image configured in `[Tracker] custom_image`. | No |
+| `200` | Tracked, or excluded, eg by an IP exclusion. The body is a 1x1 transparent GIF, or the image configured in `[Tracker] custom_image`. | No |
 | `204` | Tracked, sent with `send_image=0`. No body. | No |
 | `400` | The request is invalid, eg an unknown site, a malformed parameter, a custom timestamp (`cdt`) outside the allowed range, or a parameter that requires a valid `token_auth`. | No |
-| `401`, `403` | A bulk request requiring authentication has no `token_auth` (`401`), or one without write access to the site (`403`). | No, fix the `token_auth` first |
+| `401`, `403` | The `token_auth` of a bulk request is missing or lacks the required access (see [Bulk tracking responses](#bulk-tracking-responses)), or a plugin rejected the request. | No, fix the `token_auth` first |
 | Other `4xx` | A plugin rejected the request, eg `404`, or `429` for a rate limit. | Only for `408` and `429`, after a delay |
 | `500` | A server error. The error is logged in the [configured log writers](#debugging-the-tracker). | Yes, after a delay |
 | `503` | Matomo isn't installed yet, or tracking is disabled (`[Tracker] record_statistics = 0`). | Yes, after a delay |
 
-A failed request is answered with the tracking image too, so a tracking pixel doesn't show a broken image, or without a body when it was sent with `send_image=0`. Bulk requests are answered with JSON, see [Bulk tracking responses](#bulk-tracking-responses).
+A tracking pixel (a `GET` request without `send_image=0`) is answered with the tracking image even when it fails, so it doesn't show a broken image. Other failed requests can have an empty or a plain text body, so check the status code rather than the body. Bulk requests are answered with JSON, see [Bulk tracking responses](#bulk-tracking-responses).
 
 If a `Tracker.end` listener or building the response fails after a request was recorded, the request keeps its success response, so a client that sends failed requests again doesn't track it twice.
 
-Status codes other than `400`, `401`, `403`, `500` and `503` are only used since Matomo 6.1. In Matomo 6.0 and earlier, an error that happened before Matomo started processing the request, eg in a plugin, was answered with `200` and a body starting with `Error:`.
+Error status codes other than `400`, `401`, `403`, `500` and `503` are only used since Matomo 6.1. In Matomo 6.0, an exception thrown outside the request processing, eg in a `Tracker.newHandler` or `Tracker.end` listener, was answered with `200` and a body starting with `Error:`.
 
 ## Debugging the Tracker
 
@@ -343,7 +353,7 @@ Since Matomo 3.10 to enable the profiling of SQL queries you additionally need t
     * If the requests are triggered from your app or software directly, you can output or log the output of tracking requests and to view the debug messages.
     * You can also [log messages to file or database](https://matomo.org/faq/troubleshooting/faq_115/) (requires at least Matomo 2.15.0).
 
-Server errors of tracking requests (answered with status code `500`) are logged in the log writers configured in `[log] log_writers`. Tracking requests can't use the `screen` writer, so with the default configuration (`log_writers[] = screen`) these errors aren't logged anywhere. To see them, add a `file`, `errorlog` or `syslog` writer. Since Matomo 6.1, tracker errors are no longer written to PHP's error log in addition, and log records of tracking requests no longer include the request's query string, as it holds visitor data.
+Server errors of tracking requests (answered with status code `500`) are logged in the log writers configured in `[log] log_writers`. Outside the tracker debug mode, tracking requests can't use the `screen` writer, so with the default configuration (`log_writers[] = screen`) Matomo doesn't log these errors anywhere. PHP still logs fatal errors in its own error log. To see the errors, add a `file`, `errorlog` or `syslog` writer. Since Matomo 6.1, Matomo no longer writes tracker errors to PHP's error log in addition, and error log records of tracking requests no longer include the request's query string as context, as it holds visitor data.
 
 If you receive too many tracking requests and the log gets spammed by these requests or if you want to only debug some specific requests you can alternatively enable `debug_on_demand` in `config.ini.php`:
 
