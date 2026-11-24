@@ -4897,7 +4897,7 @@ Usages:
 
 ### Tracker.detectReferrerAIAssistant
 
-*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Referrers/Columns/Base.php) in line [439](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Referrers/Columns/Base.php#L439)*
+*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Referrers/Columns/Base.php) in line [440](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Referrers/Columns/Base.php#L440)*
 
 Triggered when detecting the AI of a referrer URL. Plugins can use this event to provide custom AI detection logic.
 
@@ -4915,7 +4915,7 @@ Callback Signature:
 
 ### Tracker.detectReferrerSearchEngine
 
-*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Referrers/Columns/Base.php) in line [337](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Referrers/Columns/Base.php#L337)*
+*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Referrers/Columns/Base.php) in line [338](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Referrers/Columns/Base.php#L338)*
 
 Triggered when detecting the search engine of a referrer URL. Plugins can use this event to provide custom search engine detection
 logic.
@@ -4937,7 +4937,7 @@ Callback Signature:
 
 ### Tracker.detectReferrerSocialNetwork
 
-*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Referrers/Columns/Base.php) in line [388](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Referrers/Columns/Base.php#L388)*
+*Defined in [Piwik/Plugins/Referrers/Columns/Base](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Referrers/Columns/Base.php) in line [389](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Referrers/Columns/Base.php#L389)*
 
 Triggered when detecting the social network of a referrer URL. Plugins can use this event to provide custom social network detection
 logic.
