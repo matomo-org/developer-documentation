@@ -1815,7 +1815,7 @@ Usages:
 
 ### CustomJsTracker.updateTracker
 
-*Defined in [Piwik/Plugins/PrivacyManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/API.php) in line [684](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/API.php#L684)*
+*Defined in [Piwik/Plugins/PrivacyManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/API.php) in line [685](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/API.php#L685)*
 
 
 
@@ -3201,7 +3201,7 @@ Usages:
 
 ### PrivacyManager.compliancePolicySettingsUpdated
 
-*Defined in [Piwik/Plugins/PrivacyManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/API.php) in line [1272](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/API.php#L1272)*
+*Defined in [Piwik/Plugins/PrivacyManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/API.php) in line [1273](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/API.php#L1273)*
 
 
 
@@ -3211,7 +3211,7 @@ Callback Signature:
 
 ### PrivacyManager.consentAwareAnalyticsUpdated
 
-*Defined in [Piwik/Plugins/PrivacyManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/API.php) in line [1194](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/API.php#L1194)*
+*Defined in [Piwik/Plugins/PrivacyManager/API](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/API.php) in line [1195](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/API.php#L1195)*
 
 
 
@@ -4668,7 +4668,7 @@ Usages:
 
 ### Template.afterGDPROverviewIntro
 
-*Defined in [Piwik/Plugins/PrivacyManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/Controller.php) in line [120](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/Controller.php#L120)*
+*Defined in [Piwik/Plugins/PrivacyManager/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/Controller.php) in line [121](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/PrivacyManager/Controller.php#L121)*
 
 
 
