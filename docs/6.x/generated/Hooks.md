@@ -1559,7 +1559,7 @@ Callback Signature:
 
 ### CoreAdminHome.mailSettingsUpdated
 
-*Defined in [Piwik/Plugins/CoreAdminHome/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/Controller.php) in line [232](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/Controller.php#L232)*
+*Defined in [Piwik/Plugins/CoreAdminHome/Controller](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/Controller.php) in line [254](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/CoreAdminHome/Controller.php#L254)*
 
 Triggered after the email server settings were saved on the general settings page. The event is posted once for each save, also if no value changed. It is not posted when
 the save fails. It never contains the password.
@@ -2008,7 +2008,7 @@ command).
 
 ### FrontController.modifyErrorPage
 
-*Defined in [Piwik/ExceptionHandler](https://github.com/matomo-org/matomo/blob/6.x-dev/core/ExceptionHandler.php) in line [227](https://github.com/matomo-org/matomo/blob/6.x-dev/core/ExceptionHandler.php#L227)*
+*Defined in [Piwik/ExceptionHandler](https://github.com/matomo-org/matomo/blob/6.x-dev/core/ExceptionHandler.php) in line [235](https://github.com/matomo-org/matomo/blob/6.x-dev/core/ExceptionHandler.php#L235)*
 
 Triggered before a Piwik error page is displayed to the user. This event can be used to modify the content of the error page that is displayed when
 an exception is caught.
@@ -2031,7 +2031,7 @@ Usages:
 
 ### Http.sendHttpRequest
 
-*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Http.php) in line [442](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Http.php#L442)*
+*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Http.php) in line [446](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Http.php#L446)*
 
 Triggered to send an HTTP request. Allows plugins to resolve the HTTP request themselves or to find out
 when an HTTP request is triggered to log this information for example to a monitoring tool.
@@ -2051,6 +2051,8 @@ Callback Signature:
                      - 'destinationPath' If set, the response of the HTTP request should be saved to this file
                      - 'validateEgressIp' Whether the caller asked for SSRF-safe semantics. A listener
                        resolving the request itself must honour them or leave it unhandled
+                     - 'followRedirects' When false, a listener resolving the request itself must not
+                       follow a redirect, as the request carries a secret
 
 - string &$response A plugin listening to this event should assign the HTTP response it received to this variable, for example "{value: true}"
 
@@ -2061,7 +2063,7 @@ Callback Signature:
 
 ### Http.sendHttpRequest.end
 
-*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Http.php) in line [1012](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Http.php#L1012)*
+*Defined in [Piwik/Http](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Http.php) in line [1025](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Http.php#L1025)*
 
 Triggered when an HTTP request finished. A plugin can for example listen to this and alter the response,
 status code, or finish a timer in case the plugin is measuring how long it took to execute the request
@@ -2081,6 +2083,8 @@ Callback Signature:
                      - 'destinationPath' If set, the response of the HTTP request should be saved to this file
                      - 'validateEgressIp' Whether the caller asked for SSRF-safe semantics. A listener
                        resolving the request itself must honour them or leave it unhandled
+                     - 'followRedirects' When false, a redirect was not followed and the response is the
+                       redirect response itself
 
 - string &$response The response of the HTTP request, for example "{value: true}"
 
@@ -2714,7 +2718,7 @@ Usages:
 
 ### Mail.send
 
-*Defined in [Piwik/Mail](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Mail.php) in line [295](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Mail.php#L295)*
+*Defined in [Piwik/Mail](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Mail.php) in line [291](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Mail.php#L291)*
 
 This event is posted right before an email is sent. You can use it to customize the email by, for example, replacing
 the subject/body, changing the from address, etc.
@@ -2727,7 +2731,7 @@ Callback Signature:
 
 ### Mail.shouldSend
 
-*Defined in [Piwik/Mail](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Mail.php) in line [407](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Mail.php#L407)*
+*Defined in [Piwik/Mail](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Mail.php) in line [403](https://github.com/matomo-org/matomo/blob/6.x-dev/core/Mail.php#L403)*
 
 This event is posted before sending an email. You can use it to abort sending a specific email, if you want.
 

@@ -314,10 +314,6 @@ Sends the mail
 
 - *Returns:*  `bool`|`null` &mdash;
     returns null if sending the mail was aborted by the Mail.send event
-- It throws one of the following exceptions:
-    - `Piwik\Exception\DI\DependencyException`
-    - `Piwik\Exception\DI\NotFoundException`
-    - `PHPMailer\PHPMailer\Exception`
 
 <a name="safesend" id="safesend"></a>
 <a name="safeSend" id="safeSend"></a>
