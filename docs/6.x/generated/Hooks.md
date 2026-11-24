@@ -248,17 +248,17 @@ Callback Signature:
 
 ### AIProviders.beforeRequest
 
-*Defined in [Piwik/Plugins/AIProviders/AIProviderService](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php) in line [532](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php#L532)*
+*Defined in [Piwik/Plugins/AIProviders/AIProviderService](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php) in line [551](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php#L551)*
 
 Triggered before every complete() and converse() provider
 call, after the provider is resolved, so a plugin can deny the call, for
 example when a usage limit is reached. A denied call is not sent: the
-caller gets an AIQuotaExceededException carrying the decision. Also triggered by assertRequestAllowed(), with
-`$context->isProbe()` true.
+caller gets an AIQuotaExceededException carrying the decision. Also triggered by assertRequestAllowed() and probeRequest(),
+with `$context->isProbe()` true.
 
 Listeners can deny but not allow again, so a denial stands whatever the
-order. Usage reported on an allowed decision is not passed on here; only
-checkFeatureAllowed() returns an allowed decision to its caller.
+order. A listener that allows can call `reportUsage()`; only
+probeRequest() passes the report on to its caller.
 A probe, a denial or a failing listener means no usage event follows.
 Otherwise the context's request ID is repeated in the matching
 `AIProviders.usage` event, which is the one to meter.
@@ -269,8 +269,14 @@ directly and post neither event.
 
     public function decideAiRequest(AIRequestContext $context, AIRequestDecision $decision): void
     {
-        if ($this->isOverLimit($context->getFeatureKey())) {
+        $featureKey = $context->getFeatureKey();
+        $used = $this->getUsedUnits($featureKey);
+        $limit = $this->getUsageLimit($featureKey);
+
+        if ($used >= $limit) {
             $decision->deny('limit_reached', Piwik::translate('MyPlugin_AiLimitReached'), $used, $limit, 0);
+        } else {
+            $decision->reportUsage($used, $limit, $limit - $used, Piwik::translate('MyPlugin_AiRenews'));
         }
     }
 
@@ -279,12 +285,14 @@ Callback Signature:
 
 - \AIRequestContext `$context` The call about to be made. No prompt content.
 
-- \AIRequestDecision `$decision` Starts as allowed; call `deny()` to refuse.
+- \AIRequestDecision `$decision` Starts as allowed; call `deny()` to refuse, or
+                                   `reportUsage()` to share the figures when allowing.
+                                   Both can pass an `AIUsageAction` link.
 
 
 ### AIProviders.checkFeatureAllowed
 
-*Defined in [Piwik/Plugins/AIProviders/AIProviderService](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php) in line [293](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php#L293)*
+*Defined in [Piwik/Plugins/AIProviders/AIProviderService](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php) in line [304](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php#L304)*
 
 Triggered before a plugin performs an AI feature action, for example
 adding a prompt, so a plugin enforcing limits can deny it. Listeners can deny but not allow again, so a denial stands whatever the
@@ -318,6 +326,7 @@ Callback Signature:
 
 - \AIRequestDecision `$decision` Starts as allowed; call `deny()` to refuse, or
                                         `reportUsage()` to share the figures when allowing.
+                                        Both can pass an `AIUsageAction` link.
 
 
 ### AIProviders.filterAIProviders
@@ -341,7 +350,7 @@ Callback Signature:
 
 ### AIProviders.getRemainingBudget
 
-*Defined in [Piwik/Plugins/AIProviders/AIProviderService](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php) in line [242](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php#L242)*
+*Defined in [Piwik/Plugins/AIProviders/AIProviderService](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php) in line [252](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php#L252)*
 
 Triggered when a plugin asks how much of an AI feature's allowance is
 left, before it plans a batch of AI requests. Leave `$budget` untouched for unlimited. Otherwise only ever lower it:
@@ -368,7 +377,7 @@ Callback Signature:
 
 ### AIProviders.usage
 
-*Defined in [Piwik/Plugins/AIProviders/AIProviderService](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php) in line [590](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php#L590)*
+*Defined in [Piwik/Plugins/AIProviders/AIProviderService](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php) in line [611](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/AIProviders/AIProviderService.php#L611)*
 
 Triggered after every complete() and converse()
 provider call, whatever the outcome, so a plugin can meter or bill
