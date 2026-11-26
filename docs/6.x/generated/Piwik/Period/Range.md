@@ -411,8 +411,8 @@ the range spans over.
 -  It accepts the following parameter(s):
     - `$period` (`string`) &mdash;
        The sub period type, `'day'`, `'week'`, `'month'` and `'year'`.
-    - `$lastN` (`int`) &mdash;
-       The number of periods of type `$period` that the result range should span.
+    - `$lastN` (`string`) &mdash;
+       A relative range, for example `'last7'` or `'previous7'`.
     - `$endDate` (`string`) &mdash;
        The desired end date of the range.
     - `$site` ([`Site`](../../Piwik/Site.md)) &mdash;
