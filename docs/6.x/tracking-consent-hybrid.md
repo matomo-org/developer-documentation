@@ -19,7 +19,7 @@ Hybrid Tracking is being released in stages. This guide covers campaign names an
 
 ## How it works
 
-Hybrid Tracking only applies when all three of these are true:
+Consent lifts a policy's restrictions only when all three of these are true:
 
 1. **A compliance policy is enforced for the website**, such as the CNIL consent exemption in *Administration → Privacy → Compliance*. Hybrid Tracking relaxes what that policy restricts, so without a policy every visitor is measured the same way.
 2. **Hybrid Tracking is enabled for the website, or for all websites** in Matomo. It is off by default.
@@ -134,7 +134,7 @@ If you track server-side or with a [tracking API client](/guides/tracking-api-cl
 * `consent=1`: the visitor had given consent when the request was sent.
 * Any other value, or no `consent` parameter: no consent is being signalled. This is not recorded as a refusal.
 
-`consent` is set by your own tracking code and Matomo does not authenticate it, as with the other tracking API parameters. It only has an effect on a website where Hybrid Tracking applies. There, the consent is recorded on the visit, so later requests of the same visit are measured as consenting even without the parameter.
+`consent` is set by your own tracking code and Matomo does not authenticate it, as with the other tracking API parameters. It only has an effect on a website with Hybrid Tracking turned on (see Step 1). There, the consent is recorded on the visit, so later requests of the same visit are measured as consenting even without the parameter.
 
 See the [Tracking HTTP API reference](/api-reference/tracking-api).
 
@@ -160,7 +160,7 @@ On a website whose compliance policy disables the visits log, turning on Hybrid 
 
 ## Known limitations
 
-* **Marketing Campaigns Reporting plugin:** campaign dimensions from this plugin stay masked for consenting visitors until the plugin is updated to support Hybrid Tracking.
+* **Marketing Campaigns Reporting plugin:** its campaign dimensions are kept for consenting visitors from version 6.1.0. With an earlier version, they stay masked for every visitor.
 * **Roll-up websites** offer the setting but never receive tracking requests, so it has no effect on them.
 * **Heatmaps, Session Recordings, A/B Testing and Advertising Conversion Export** do not yet treat consenting visitors differently.
 
