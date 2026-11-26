@@ -27,7 +27,7 @@ Hybrid Tracking only applies when all three of these are true:
 
 Matomo records consent on the visit itself, so later requests in the same visit are still treated as consenting even if they don't repeat the signal.
 
-If any of the three is missing, tracking works exactly as it does without Hybrid Tracking.
+If Hybrid Tracking is off or the tracking code reports no consent, tracking works exactly as it does without Hybrid Tracking. Without a policy, consent is still recorded on the visit, but there is no restriction for it to lift.
 
 Only a superuser can enforce a compliance policy or enable Hybrid Tracking, because both change what a compliance policy enforces. A website administrator does not see the setting at all.
 
@@ -67,6 +67,7 @@ _paq.push(['enableLinkTracking']);
 * **withholds cookies until the visitor gives consent or accepts cookies**, as `requireCookieConsent()` does. Call it *instead of* `requireCookieConsent()`, not as well as it. If the visitor accepted cookies on an earlier page view, the cookies are not removed again. Visitors who don't consent are therefore measured without cookies: a website that set cookies for every visitor under the exemption will recognise fewer returning visitors once it switches to this call.
 * **is processed before other queued commands**, wherever you push it in `_paq`.
 * **must not be combined with `requireConsent()`.** `requireConsent()` sends nothing until consent is given, and it takes priority if both are called. The tracker logs a console error if it sees both.
+* **lets campaign parameters through once the visitor consents**, if you also call `disableCampaignParameters()`. Before consent, they are still removed.
 
 This call is also what makes the tracker's consent-aware behaviour apply. A page that uses `requireConsent()` instead already sends `consent=1` once the visitor consents, so on a website with Hybrid Tracking its requests are measured as consenting too.
 
@@ -156,6 +157,7 @@ Consent is stored in the `consent` column of the `log_visit` table (see the [dat
 To report on consenting visitors, use the `consentState` [segment](/api-reference/reporting-api-segmentation) or the *Consent state* visit dimension. `consentState==consented` matches visits stored with consent, and `consentState==unknown` matches every other visit.
 
 On a website whose compliance policy disables the visits log, turning on Hybrid Tracking also brings back the Visits Log, the Visitor Profile, the Real-time widget and map, and the Ecommerce log, with only the visits of visitors who gave consent. The GDPR tools can find and export these visits too, even with Hybrid Tracking off, so that their visitors' requests to access or erase their data can still be answered.
+
 ## Known limitations
 
 * **Marketing Campaigns Reporting plugin:** campaign dimensions from this plugin stay masked for consenting visitors until the plugin is updated to support Hybrid Tracking.
@@ -166,8 +168,8 @@ On a website whose compliance policy disables the visits log, turning on Hybrid 
 
 If your plugin withholds data under a compliance policy, you can relax it for consenting visitors with the same rule core uses:
 
-* `Piwik\Tracker\Request::hasConsent()` returns whether the request can be measured as coming from a consenting visitor. It returns `false` on any website where Hybrid Tracking does not apply, whatever the request reports.
-* `Piwik\Tracker\Request::measuresConsentAwareAnalytics()` returns whether Hybrid Tracking applies to the request's website at all.
+* `Piwik\Tracker\Request::hasConsent()` returns whether the request can be measured as coming from a consenting visitor. It returns `false` when Hybrid Tracking is off for the website or the website forces cookieless tracking, whatever the request reports. It does not check whether a policy is enforced.
+* `Piwik\Tracker\Request::measuresConsentAwareAnalytics()` returns whether Hybrid Tracking is on for the request's website and the website does not force cookieless tracking.
 * `Piwik\Plugins\PrivacyManager\Config::getConfiguredValue()` returns the value an administrator configured for one of PrivacyManager's privacy settings, such as `anonymizeReferrer`, without the stricter value a policy may enforce on top of it. Use it so that consent relaxes only what the policy requires and never what the administrator chose. It reads the tracker cache, so it is safe to call while tracking. It only supports the settings PrivacyManager caches for this and throws an exception for any other one.
 
 In the JavaScript tracker, `isRestrictedDataConsentRequired()` returns whether the page called `requireConsentForRestrictedData()`.
