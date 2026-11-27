@@ -180,6 +180,7 @@ Note: the user of the HTTP API is responsible for determining the source locatio
 
 * `send_image` &mdash; If set to 0 (`send_image=0`) Matomo will respond with an HTTP 204 response code instead of a GIF image. This improves performance and can fix errors if images are not allowed to be obtained directly (eg Chrome Apps). Available since Matomo 2.10.0
 * `ping`  &mdash; If set to 1 (`ping=1`), the request will be a [Heartbeat request](https://matomo.org/faq/how-to/faq_21824/) which will not track any new activity (such as a new visit, new action or new goal). The heartbeat request will only update the visit's total time to provide accurate "Visit duration" metric when this parameter is set. It won't record any other data. This means by sending an additional tracking request when the user leaves your site or app with `&ping=1`, you fix the issue where the time spent of the last page visited is reported as 0 seconds.
+* `hb` &mdash; Set `hb=1` together with `ping=1` and the page view's `pv_id` when the ping reports that the page lost focus, was hidden or was left, as the JavaScript tracker's heartbeat timer does. Matomo then no longer extends that page view's time when a later page view of the visit arrives; only requests with the same `pv_id` can still add to it. A `ping=1` without `hb=1` behaves as before. Only used when `[Tracker] record_accurate_page_view_time` is enabled (the default). Available since Matomo 6.1.0
 
 ## Tracking Bots
 
