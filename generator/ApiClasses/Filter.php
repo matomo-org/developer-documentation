@@ -132,6 +132,23 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
         return $rc->isSubclassOf($subclass);
     }
 
+    private function declaresApi(\ReflectionClass $rc)
+    {
+        if (false !== strpos((string) $rc->getDocComment(), '@api')) {
+            return true;
+        }
+
+        foreach (array_merge($rc->getMethods(), $rc->getProperties()) as $member) {
+            if ($member->getDeclaringClass()->getName() === $rc->getName()
+                && false !== strpos((string) $member->getDocComment(), '@api')
+            ) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private function inheritsFromBlacklistedClass(ClassReflection $class)
     {
         $rc = new \ReflectionClass($class->getName());
@@ -173,6 +190,27 @@ class Filter extends \Sami\Parser\Filter\DefaultFilter {
 
         if ($this->isSubclassOf($rc, 'Piwik\Plugin\Visualization')) {
             return true;
+        }
+
+        // plugin implementations of extension points whose members are tagged @api, unless they declare an API themselves
+        $extensionPoints = array(
+            'Piwik\Plugin',
+            'Piwik\Plugin\API',
+            'Piwik\Category\Category',
+            'Piwik\Category\Subcategory',
+            'Piwik\ArchiveProcessor\RecordBuilder',
+            'Piwik\Settings\Setting',
+            'Piwik\Plugins\Live\VisitorDetailsAbstract',
+            'Piwik\Plugins\Live\ProfileSummary\ProfileSummaryAbstract',
+            'Piwik\Plugins\UserCountry\LocationProvider',
+        );
+
+        if (0 === strpos($rc->getName(), 'Piwik\Plugins\\') && !$this->declaresApi($rc)) {
+            foreach ($extensionPoints as $extensionPoint) {
+                if ($this->isSubclassOf($rc, $extensionPoint)) {
+                    return true;
+                }
+            }
         }
 
         if (class_exists('Piwik\Plugins\TagManager\Template\Tag\BaseTag')
