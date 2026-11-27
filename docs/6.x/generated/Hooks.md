@@ -3482,6 +3482,7 @@ Callback Signature:
 - [Request.initAuthenticationObject](#requestinitauthenticationobject)
 - [Request.initAuthenticationObject](#requestinitauthenticationobject)
 - [Request.initAuthenticationObject](#requestinitauthenticationobject)
+- [Request.initAuthenticationObject](#requestinitauthenticationobject)
 - [Request.shouldDisablePostProcessing](#requestshoulddisablepostprocessing)
 
 ### Request.dispatch
@@ -3559,6 +3560,17 @@ Callback Signature:
 Usages:
 
 [Referrers::renameDeprecatedModuleAndAction](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Referrers/Referrers.php#L151), [RssWidget::renameExampleRssWidgetModule](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/RssWidget/RssWidget.php#L36), [ScheduledReports::renameDeprecatedModuleAndAction](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/ScheduledReports/ScheduledReports.php#L118)
+
+
+### Request.initAuthenticationObject
+
+*Defined in [Piwik/Plugins/TrackingSpamPrevention/Tracker/RequestProcessor](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TrackingSpamPrevention/Tracker/RequestProcessor.php) in line [111](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/TrackingSpamPrevention/Tracker/RequestProcessor.php#L111)*
+
+
+
+Usages:
+
+[Login::onInitAuthenticationObject](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/Login/Login.php#L120), [LoginLdap::initAuthenticationObject](https://github.com/matomo-org/matomo/blob/6.x-dev/plugins/LoginLdap/LoginLdap.php#L228)
 
 
 ### Request.initAuthenticationObject
